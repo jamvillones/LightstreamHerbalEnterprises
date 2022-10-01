@@ -39,6 +39,7 @@ namespace LightstreamHerbalEnterprise
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure you want to logout?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
             IsLoggedOut = true;
             this.Close();
         }

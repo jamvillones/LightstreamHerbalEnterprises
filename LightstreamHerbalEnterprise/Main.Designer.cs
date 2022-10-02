@@ -261,7 +261,7 @@
             this.minimizeButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.minimizeButton.FlatAppearance.BorderSize = 0;
             this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.minimizeButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.minimizeButton.Location = new System.Drawing.Point(568, 0);
             this.minimizeButton.Name = "minimizeButton";
@@ -276,7 +276,7 @@
             this.maximizeButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.maximizeButton.FlatAppearance.BorderSize = 0;
             this.maximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.maximizeButton.Location = new System.Drawing.Point(608, 0);
             this.maximizeButton.Name = "maximizeButton";
             this.maximizeButton.Size = new System.Drawing.Size(40, 30);
@@ -304,11 +304,11 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.CausesValidation = false;
-            this.label1.Font = new System.Drawing.Font("The Bold Font", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("The Bold Font", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
-            this.label1.Location = new System.Drawing.Point(36, 3);
+            this.label1.Location = new System.Drawing.Point(36, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(303, 24);
+            this.label1.Size = new System.Drawing.Size(210, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Lightstream Herbal Enterprise";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

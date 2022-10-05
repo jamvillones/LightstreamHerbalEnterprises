@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LightstreamHerbalEnterprise.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -94,6 +95,22 @@ namespace LightstreamHerbalEnterprise
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            using (var context = new Lightstream_DBContext())
+            {
+                var materials = context.Materials.Select(CreateRow).ToArray();
+                MaterialTable.Rows.AddRange(materials);
+            }
+        }
+
+        DataGridViewRow CreateRow(Material m)
+        {
+            var row = new DataGridViewRow();
+            row.CreateCells(MaterialTable, m.Id, m.Name, m.UnitOfMeasurement, "edit", "delete");
+            return row;
         }
     }
 }

@@ -3,6 +3,7 @@ using Lightstream.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Lightstream.Migrations
 {
     [DbContext(typeof(LHEContext))]
-    partial class LHEContextModelSnapshot : ModelSnapshot
+    [Migration("20221008061035_added_to_context")]
+    partial class added_to_context
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,9 +33,6 @@ namespace Lightstream.Migrations
 
                     b.Property<decimal>("Cost")
                         .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("Ingredient_Product_Id")
-                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -128,9 +127,6 @@ namespace Lightstream.Migrations
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("Product_Ingredient_Id")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

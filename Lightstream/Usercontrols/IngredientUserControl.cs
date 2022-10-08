@@ -75,10 +75,10 @@ namespace Lightstream.Usercontrols
             if (e.RowIndex == -1) return;
             /// check the index if 5. 5 which is the index for the delete button 
             if (e.ColumnIndex != 5) return;
-            /// add a validation for the delete
-            if (MessageBox.Show("Are you sure you want to delete this item?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
             ///get the datagridview who fired the event, check if the one who fired the event is a datagridview and assign it to d
             if (sender is not DataGridView d) return;
+            /// add a validation for the delete
+            if (MessageBox.Show("Are you sure you want to delete " + d[1, e.RowIndex].Value?.ToString()?.ToUpper() + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
             ///get the id. 0 because the id is always in 0 index.
             if (d[0, e.RowIndex].Value is int id)
             {

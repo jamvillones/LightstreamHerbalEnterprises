@@ -51,7 +51,7 @@
             this.ingredientsTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ingredientsTable.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.ingredientsTable.BackgroundColor = System.Drawing.Color.White;
             this.ingredientsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ingredientsTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -79,7 +79,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.ingredientsTable.DefaultCellStyle = dataGridViewCellStyle2;
             this.ingredientsTable.EnableHeadersVisualStyles = false;
-            this.ingredientsTable.Location = new System.Drawing.Point(32, 79);
+            this.ingredientsTable.Location = new System.Drawing.Point(32, 56);
             this.ingredientsTable.Margin = new System.Windows.Forms.Padding(5);
             this.ingredientsTable.MultiSelect = false;
             this.ingredientsTable.Name = "ingredientsTable";
@@ -87,7 +87,7 @@
             this.ingredientsTable.RowHeadersVisible = false;
             this.ingredientsTable.RowTemplate.Height = 25;
             this.ingredientsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ingredientsTable.Size = new System.Drawing.Size(1049, 600);
+            this.ingredientsTable.Size = new System.Drawing.Size(1049, 623);
             this.ingredientsTable.TabIndex = 0;
             this.ingredientsTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ingredientsTable_CellMouseClick);
             // 
@@ -136,6 +136,7 @@
             this.panel1.Controls.Add(this.addNewBtn);
             this.panel1.Controls.Add(this.ingredientsTable);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1112, 706);
@@ -144,11 +145,15 @@
             // addNewBtn
             // 
             this.addNewBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addNewBtn.Location = new System.Drawing.Point(914, 29);
+            this.addNewBtn.FlatAppearance.BorderSize = 0;
+            this.addNewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addNewBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.addNewBtn.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.addNewBtn.Location = new System.Drawing.Point(914, 18);
             this.addNewBtn.Name = "addNewBtn";
-            this.addNewBtn.Size = new System.Drawing.Size(167, 23);
+            this.addNewBtn.Size = new System.Drawing.Size(167, 30);
             this.addNewBtn.TabIndex = 1;
-            this.addNewBtn.Text = "Add New Ingredient";
+            this.addNewBtn.Text = "ADD NEW INGREDIENT";
             this.addNewBtn.UseVisualStyleBackColor = true;
             this.addNewBtn.Click += new System.EventHandler(this.addNewBtn_Click);
             // 

@@ -73,34 +73,33 @@ namespace Lightstream.Usercontrols
         {
             /// check if the index click is not the row index which is -1
             if (e.RowIndex == -1) return;
+            /// check the index if 5. 5 which is the index for the delete button 
+            if (e.ColumnIndex != 5) return;
             /// add a validation for the delete
             if (MessageBox.Show("Are you sure you want to delete this item?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
             ///get the datagridview who fired the event, check if the one who fired the event is a datagridview and assign it to d
             if (sender is not DataGridView d) return;
-            /// check the index if 5. 5 which is the index for the delete button 
-            if (e.ColumnIndex == 5)
+            ///get the id. 0 because the id is always in 0 index.
+            if (d[0, e.RowIndex].Value is int id)
             {
-                ///get the id. 0 because the id is always in 0 index.
-                if (d[0, e.RowIndex].Value is int id)
+                ///open connection
+                using (var context = factory.CreateDbContext())
                 {
-                    ///open connection
-                    using (var context = factory.CreateDbContext())
+                    /// get the item using the id selected during the click
+                    var tobeRemoved = context.Ingredients.FirstOrDefault(x => x.Id == id);
+                    /// if found
+                    if (tobeRemoved is not null)
                     {
-                        /// get the item using the id selected during the click
-                        var tobeRemoved = context.Ingredients.FirstOrDefault(x => x.Id == id);
-                        /// if found
-                        if (tobeRemoved is not null)
-                        {
-                            /// remove from the list
-                            context.Ingredients.Remove(tobeRemoved);
-                            ///save the changes to the database
-                            context.SaveChanges();
-                            ///finally, remove the item to the table itself by using the rowindex that is supplied during the click event
-                            d.Rows.RemoveAt(e.RowIndex);
-                        }
+                        /// remove from the list
+                        context.Ingredients.Remove(tobeRemoved);
+                        ///save the changes to the database
+                        context.SaveChanges();
+                        ///finally, remove the item to the table itself by using the rowindex that is supplied during the click event
+                        d.Rows.RemoveAt(e.RowIndex);
                     }
                 }
             }
+
         }
     }
 }

@@ -11,8 +11,6 @@ namespace Lightstream.Models
         public string UnitOfMeasurement { get; set; }
         public decimal Cost { get; set; }
 
-        public int Ingredient_Product_Id { get; set; }
-
         public ICollection<IngredientWithQty> Product { get; set; }
     }
 }

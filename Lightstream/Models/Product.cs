@@ -11,9 +11,7 @@ namespace Lightstream.Models
         public string Description { get; set; }
         public decimal Price { get; set; }
 
-        public int Product_Ingredient_Id { get; set; }
-
-        public ICollection<IngredientWithQty> RequiredIngredinet { get; set; }
+        public ICollection<IngredientWithQty> RequiredIngredient { get; set; }
 
     }
 }

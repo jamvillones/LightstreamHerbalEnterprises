@@ -28,8 +28,7 @@ namespace Lightstream.Usercontrols
             {
                 using (var context = factory.CreateDbContext())
                 {
-                    foreach (var i in context.Ingredients)
-                        ingredientsTable.Rows.Add(CreateRow(ingredientsTable, i));
+                    LoadTableWithIngredientsData(context.Ingredients);
                 }
             }
             catch (Exception ex)
@@ -107,20 +106,20 @@ namespace Lightstream.Usercontrols
         {
             if (sender is not TextBox textbox)
                 return;
-            string text = textbox.Text;
-            if (string.IsNullOrWhiteSpace(text))
+            string searchTerm = textbox.Text;
+            if (string.IsNullOrWhiteSpace(searchTerm))
                 return;
             if (e.KeyCode == Keys.Enter)
             {
                 using (var context = factory.CreateDbContext())
                 {
                     //var filteredIngredients = context.Ingredients.Where(x => x.Name.Contains(text)).ToArray();
-                    var filteredIngredients = SearchHandler.FilterList(
+                    var resultingIngredients = SearchHandler.FilterList(
                         context.Ingredients,
-                        filteringConditions: (b) => b.Name.ToLower().Contains(text.ToLower()))
+                        filteringConditions: (b) => b.Name.ToLower().Contains(searchTerm.ToLower()))
                         .ToArray();
 
-                    if (filteredIngredients.Length == 0)
+                    if (resultingIngredients.Length == 0)
                     {
                         MessageBox.Show("No entries found!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
@@ -128,8 +127,7 @@ namespace Lightstream.Usercontrols
 
                     ingredientsTable.Rows.Clear();
 
-                    foreach (var i in filteredIngredients)
-                        ingredientsTable.Rows.Add(CreateRow(ingredientsTable, i));
+                    LoadTableWithIngredientsData(resultingIngredients);
 
                     hasPerformedSearch = true;
                 }
@@ -148,10 +146,15 @@ namespace Lightstream.Usercontrols
 
             using (var context = factory.CreateDbContext())
             {
-                ingredientsTable.Rows.Clear();
-                foreach (var i in context.Ingredients)
-                    ingredientsTable.Rows.Add(CreateRow(ingredientsTable, i));
+                LoadTableWithIngredientsData(context.Ingredients);
             }
+        }
+
+        private void LoadTableWithIngredientsData(IEnumerable<Ingredient> ingredients)
+        {
+            ingredientsTable.Rows.Clear();
+            foreach (var ingredient in ingredients)
+                ingredientsTable.Rows.Add(CreateRow(ingredientsTable, ingredient));
         }
     }
 }

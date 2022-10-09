@@ -26,10 +26,7 @@ namespace Lightstream.Usercontrols
         {
             try
             {
-                using (var context = factory.CreateDbContext())
-                {
-                    LoadTableWithIngredientsData(context.Ingredients);
-                }
+                LoadIngredientsFromDbContext();
             }
             catch (Exception ex)
             {
@@ -144,12 +141,13 @@ namespace Lightstream.Usercontrols
 
             if (!hasPerformedSearch) return;
 
-            using (var context = factory.CreateDbContext())
-            {
-                LoadTableWithIngredientsData(context.Ingredients);
-            }
+            LoadIngredientsFromDbContext();
         }
-
+        private void LoadIngredientsFromDbContext()
+        {
+            using (var context = factory.CreateDbContext())
+                LoadTableWithIngredientsData(context.Ingredients);
+        }
         private void LoadTableWithIngredientsData(IEnumerable<Ingredient> ingredients)
         {
             ingredientsTable.Rows.Clear();

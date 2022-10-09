@@ -101,5 +101,53 @@ namespace Lightstream.Usercontrols
             }
 
         }
+        bool hasPerformedSearch = false;
+        private void searchTxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (sender is not TextBox textbox)
+                return;
+            string text = textbox.Text;
+            if (string.IsNullOrWhiteSpace(text))
+                return;
+            if (e.KeyCode == Keys.Enter)
+            {
+                using (var context = factory.CreateDbContext())
+                {
+                    var filteredIngredients = context.Ingredients.Where(x => x.Name.Contains(text)).ToArray();
+                    if (filteredIngredients.Length == 0)
+                    {
+                        MessageBox.Show("No entries found!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    ingredientsTable.Rows.Clear();
+
+                    foreach (var i in filteredIngredients)
+                        ingredientsTable.Rows.Add(CreateRow(ingredientsTable, i));
+
+                    hasPerformedSearch = true;
+                }
+            }
+        }
+
+        private void searchTxt_TextChanged(object sender, EventArgs e)
+        {
+            if (sender is not TextBox textbox)
+                return;
+
+            var text = textbox.Text;
+
+            if (!string.IsNullOrWhiteSpace(text)) return;
+
+            if (!hasPerformedSearch)
+                return;
+
+            using (var context = factory.CreateDbContext())
+            {
+                ingredientsTable.Rows.Clear();
+                foreach (var i in context.Ingredients)
+                    ingredientsTable.Rows.Add(CreateRow(ingredientsTable, i));
+            }
+        }
     }
 }

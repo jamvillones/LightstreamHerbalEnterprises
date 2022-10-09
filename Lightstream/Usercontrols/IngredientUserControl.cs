@@ -132,15 +132,13 @@ namespace Lightstream.Usercontrols
 
         private void searchTxt_TextChanged(object sender, EventArgs e)
         {
-            if (sender is not TextBox textbox)
-                return;
+            if (sender is not TextBox textbox) return;
 
             var text = textbox.Text;
 
             if (!string.IsNullOrWhiteSpace(text)) return;
 
-            if (!hasPerformedSearch)
-                return;
+            if (!hasPerformedSearch) return;
 
             using (var context = factory.CreateDbContext())
             {

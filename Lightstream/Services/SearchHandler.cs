@@ -19,7 +19,11 @@ namespace Lightstream.Services
         /// <returns></returns>
         public static IEnumerable<T> FilterList<T>(IEnumerable<T> items, FilteringFlow flow = FilteringFlow.StopUponSatisfaction, params Func<T, bool>[] filteringConditions) where T : class
         {
+            if (items.Count() == 0 || items is null)
+                return Enumerable.Empty<T>();
+
             IEnumerable<T> itemRef = items.ToList();
+
             foreach (var i in filteringConditions)
             {
                 itemRef = itemRef.Where(i);
@@ -27,6 +31,7 @@ namespace Lightstream.Services
                 if (itemRef.Count() > 0 && flow == FilteringFlow.StopUponSatisfaction)
                     break;
             }
+
             return itemRef;
         }
 

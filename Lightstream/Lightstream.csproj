@@ -39,6 +39,7 @@
 
   <ItemGroup>
     <Folder Include="Images\LoginButton\" />
+    <Folder Include="Services\Interface\" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,6 @@
 ﻿using Lightstream.Forms;
 using Lightstream.Models;
+using Lightstream.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -113,7 +114,12 @@ namespace Lightstream.Usercontrols
             {
                 using (var context = factory.CreateDbContext())
                 {
-                    var filteredIngredients = context.Ingredients.Where(x => x.Name.Contains(text)).ToArray();
+                    //var filteredIngredients = context.Ingredients.Where(x => x.Name.Contains(text)).ToArray();
+                    var filteredIngredients = SearchHandler.FilterList(
+                        context.Ingredients,
+                        filteringConditions: (b) => b.Name.ToLower().Contains(text.ToLower()))
+                        .ToArray();
+
                     if (filteredIngredients.Length == 0)
                     {
                         MessageBox.Show("No entries found!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);

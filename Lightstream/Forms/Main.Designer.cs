@@ -45,7 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.ingredientUserControl1 = new Lightstream.Usercontrols.IngredientUserControl();
+            this.ingredientUserControl1 = new Lightstream.Usercontrols.IngredientsUserControl();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -384,6 +384,6 @@
         private Button maximizeButton;
         private Button closeBtn;
         private Panel panel3;
-        private Usercontrols.IngredientUserControl ingredientUserControl1;
+        private Usercontrols.IngredientsUserControl ingredientUserControl1;
     }
 }

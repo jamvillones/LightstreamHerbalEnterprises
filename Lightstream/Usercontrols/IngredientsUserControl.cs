@@ -13,11 +13,11 @@ using System.Windows.Forms;
 
 namespace Lightstream.Usercontrols
 {
-    public partial class IngredientUserControl : UserControl
+    public partial class IngredientsUserControl : UserControl
     {
         private DbContextFactory factory = new DbContextFactory();
 
-        public IngredientUserControl()
+        public IngredientsUserControl()
         {
             InitializeComponent();
         }
@@ -50,7 +50,7 @@ namespace Lightstream.Usercontrols
         /// <param name="d">datagridview</param>
         /// <param name="i">data source for ingredient</param>
         /// <returns></returns>
-        DataGridViewRow CreateRow(DataGridView d, Ingredient i)
+        DataGridViewRow CreateRow(DataGridView d,Ingredient i)
         {
             var row = new DataGridViewRow();
 
@@ -60,7 +60,8 @@ namespace Lightstream.Usercontrols
                 string.Format("₱ {0:n}", i.Cost),
                 i.UnitOfMeasurement,
                 "edit",
-                "delete"
+                "delete",
+                "show   "
                 );
 
             return row;
@@ -148,7 +149,7 @@ namespace Lightstream.Usercontrols
             using (var context = factory.CreateDbContext())
                 LoadTableWithIngredientsData(context.Ingredients);
         }
-        private void LoadTableWithIngredientsData(IEnumerable<Ingredient> ingredients)
+        private void LoadTableWithIngredientsData(IEnumerable<Models.Ingredient> ingredients)
         {
             ingredientsTable.Rows.Clear();
             foreach (var ingredient in ingredients)

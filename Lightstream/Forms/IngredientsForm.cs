@@ -14,10 +14,9 @@ namespace Lightstream.Forms
     public partial class IngredientsForm : Form
     {
         private DbContextFactory factory = new DbContextFactory();
-        public string IngredientName => nameTxt.Text.Trim();
-        public string UnitOfMeasurement => unitofMeasuremenTxt.Text.Trim();
-        public decimal Cost => cost.Value;
-        public int Id { get; private set; } = 0;
+        public string IngredientName => ingredientField.IngredientName;
+        public string UnitOfMeasurement => ingredientField.IngredientName;
+        public decimal Cost => ingredientField.Cost;
         public bool NewItemCreated { get; private set; }
         public Ingredient CreatedIngredient { get; private set; }
 
@@ -51,13 +50,12 @@ namespace Lightstream.Forms
                 /// save changes
                 context.SaveChanges();
 
-                Id = ingredient.Id;
                 CreatedIngredient = ingredient;
             }
 
             NewItemCreated = true;
 
-            DialogResult = DialogResult.OK;            
+            DialogResult = DialogResult.OK;
         }
 
         private bool ValidateFields()

@@ -81,13 +81,13 @@
             this.pnlHolder.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.pnlHolder.Location = new System.Drawing.Point(215, 29);
             this.pnlHolder.Name = "pnlHolder";
-            this.pnlHolder.Size = new System.Drawing.Size(589, 507);
+            this.pnlHolder.Size = new System.Drawing.Size(589, 661);
             this.pnlHolder.TabIndex = 7;
             // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(64, 7);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(48, 20);
             this.button5.TabIndex = 2;
@@ -126,9 +126,9 @@
             this.pnlNtf.Controls.Add(this.lblTm);
             this.pnlNtf.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlNtf.Location = new System.Drawing.Point(804, 29);
-            this.pnlNtf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlNtf.Margin = new System.Windows.Forms.Padding(2);
             this.pnlNtf.Name = "pnlNtf";
-            this.pnlNtf.Size = new System.Drawing.Size(154, 507);
+            this.pnlNtf.Size = new System.Drawing.Size(154, 661);
             this.pnlNtf.TabIndex = 5;
             // 
             // lblstatus
@@ -149,7 +149,7 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(43, 17);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(119, 82);
             this.pictureBox1.TabIndex = 0;
@@ -167,10 +167,10 @@
             this.btnFls.Image = ((System.Drawing.Image)(resources.GetObject("btnFls.Image")));
             this.btnFls.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFls.Location = new System.Drawing.Point(0, 124);
-            this.btnFls.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFls.Margin = new System.Windows.Forms.Padding(2);
             this.btnFls.Name = "btnFls";
             this.btnFls.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btnFls.Size = new System.Drawing.Size(198, 33);
+            this.btnFls.Size = new System.Drawing.Size(215, 33);
             this.btnFls.TabIndex = 1;
             this.btnFls.Text = "Files";
             this.btnFls.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -183,9 +183,9 @@
             this.pnlLogo.Controls.Add(this.pictureBox1);
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
-            this.pnlLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(198, 124);
+            this.pnlLogo.Size = new System.Drawing.Size(215, 124);
             this.pnlLogo.TabIndex = 0;
             this.pnlLogo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlLogo_Paint);
             // 
@@ -197,10 +197,10 @@
             this.btnUM.Font = new System.Drawing.Font("Century Schoolbook", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnUM.ForeColor = System.Drawing.Color.LightGray;
             this.btnUM.Location = new System.Drawing.Point(0, 72);
-            this.btnUM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUM.Margin = new System.Windows.Forms.Padding(2);
             this.btnUM.Name = "btnUM";
             this.btnUM.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.btnUM.Size = new System.Drawing.Size(198, 25);
+            this.btnUM.Size = new System.Drawing.Size(215, 25);
             this.btnUM.TabIndex = 3;
             this.btnUM.Text = "Unit Management";
             this.btnUM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -215,10 +215,10 @@
             this.btnPM.Font = new System.Drawing.Font("Century Schoolbook", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnPM.ForeColor = System.Drawing.Color.LightGray;
             this.btnPM.Location = new System.Drawing.Point(0, 48);
-            this.btnPM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPM.Margin = new System.Windows.Forms.Padding(2);
             this.btnPM.Name = "btnPM";
             this.btnPM.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.btnPM.Size = new System.Drawing.Size(198, 24);
+            this.btnPM.Size = new System.Drawing.Size(215, 24);
             this.btnPM.TabIndex = 2;
             this.btnPM.Text = "Price management";
             this.btnPM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -233,10 +233,10 @@
             this.btnIng.Font = new System.Drawing.Font("Century Schoolbook", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnIng.ForeColor = System.Drawing.Color.LightGray;
             this.btnIng.Location = new System.Drawing.Point(0, 24);
-            this.btnIng.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIng.Margin = new System.Windows.Forms.Padding(2);
             this.btnIng.Name = "btnIng";
             this.btnIng.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.btnIng.Size = new System.Drawing.Size(198, 24);
+            this.btnIng.Size = new System.Drawing.Size(215, 24);
             this.btnIng.TabIndex = 1;
             this.btnIng.Text = "Ingredients";
             this.btnIng.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -251,10 +251,10 @@
             this.btnPrd.Font = new System.Drawing.Font("Century Schoolbook", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnPrd.ForeColor = System.Drawing.Color.LightGray;
             this.btnPrd.Location = new System.Drawing.Point(0, 0);
-            this.btnPrd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPrd.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrd.Name = "btnPrd";
             this.btnPrd.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.btnPrd.Size = new System.Drawing.Size(198, 24);
+            this.btnPrd.Size = new System.Drawing.Size(215, 24);
             this.btnPrd.TabIndex = 0;
             this.btnPrd.Text = "Production";
             this.btnPrd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -272,10 +272,10 @@
             this.btnTrnsctn.Image = ((System.Drawing.Image)(resources.GetObject("btnTrnsctn.Image")));
             this.btnTrnsctn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTrnsctn.Location = new System.Drawing.Point(0, 254);
-            this.btnTrnsctn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTrnsctn.Margin = new System.Windows.Forms.Padding(2);
             this.btnTrnsctn.Name = "btnTrnsctn";
             this.btnTrnsctn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btnTrnsctn.Size = new System.Drawing.Size(198, 29);
+            this.btnTrnsctn.Size = new System.Drawing.Size(215, 29);
             this.btnTrnsctn.TabIndex = 3;
             this.btnTrnsctn.Text = "Transaction";
             this.btnTrnsctn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -291,9 +291,9 @@
             this.pnlFiles.Controls.Add(this.btnPrd);
             this.pnlFiles.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlFiles.Location = new System.Drawing.Point(0, 157);
-            this.pnlFiles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlFiles.Margin = new System.Windows.Forms.Padding(2);
             this.pnlFiles.Name = "pnlFiles";
-            this.pnlFiles.Size = new System.Drawing.Size(198, 97);
+            this.pnlFiles.Size = new System.Drawing.Size(215, 97);
             this.pnlFiles.TabIndex = 2;
             // 
             // btnPO
@@ -304,10 +304,10 @@
             this.btnPO.Font = new System.Drawing.Font("Century Schoolbook", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnPO.ForeColor = System.Drawing.Color.LightGray;
             this.btnPO.Location = new System.Drawing.Point(0, 24);
-            this.btnPO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPO.Margin = new System.Windows.Forms.Padding(2);
             this.btnPO.Name = "btnPO";
             this.btnPO.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.btnPO.Size = new System.Drawing.Size(198, 24);
+            this.btnPO.Size = new System.Drawing.Size(215, 24);
             this.btnPO.TabIndex = 2;
             this.btnPO.Text = "Purchase Order";
             this.btnPO.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -322,10 +322,10 @@
             this.btnPOS.Font = new System.Drawing.Font("Century Schoolbook", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnPOS.ForeColor = System.Drawing.Color.LightGray;
             this.btnPOS.Location = new System.Drawing.Point(0, 0);
-            this.btnPOS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPOS.Margin = new System.Windows.Forms.Padding(2);
             this.btnPOS.Name = "btnPOS";
             this.btnPOS.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.btnPOS.Size = new System.Drawing.Size(198, 24);
+            this.btnPOS.Size = new System.Drawing.Size(215, 24);
             this.btnPOS.TabIndex = 1;
             this.btnPOS.Text = "POS";
             this.btnPOS.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -343,10 +343,10 @@
             this.btnInvntry.Image = ((System.Drawing.Image)(resources.GetObject("btnInvntry.Image")));
             this.btnInvntry.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInvntry.Location = new System.Drawing.Point(0, 334);
-            this.btnInvntry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInvntry.Margin = new System.Windows.Forms.Padding(2);
             this.btnInvntry.Name = "btnInvntry";
             this.btnInvntry.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btnInvntry.Size = new System.Drawing.Size(198, 31);
+            this.btnInvntry.Size = new System.Drawing.Size(215, 31);
             this.btnInvntry.TabIndex = 5;
             this.btnInvntry.Text = "Inventory";
             this.btnInvntry.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -360,9 +360,9 @@
             this.pnlTrnsctn.Controls.Add(this.btnPOS);
             this.pnlTrnsctn.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTrnsctn.Location = new System.Drawing.Point(0, 283);
-            this.pnlTrnsctn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlTrnsctn.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTrnsctn.Name = "pnlTrnsctn";
-            this.pnlTrnsctn.Size = new System.Drawing.Size(198, 51);
+            this.pnlTrnsctn.Size = new System.Drawing.Size(215, 51);
             this.pnlTrnsctn.TabIndex = 4;
             // 
             // btnMUp
@@ -373,10 +373,10 @@
             this.btnMUp.Font = new System.Drawing.Font("Century Schoolbook", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnMUp.ForeColor = System.Drawing.Color.LightGray;
             this.btnMUp.Location = new System.Drawing.Point(0, 48);
-            this.btnMUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMUp.Margin = new System.Windows.Forms.Padding(2);
             this.btnMUp.Name = "btnMUp";
             this.btnMUp.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.btnMUp.Size = new System.Drawing.Size(198, 26);
+            this.btnMUp.Size = new System.Drawing.Size(215, 26);
             this.btnMUp.TabIndex = 5;
             this.btnMUp.Text = "Mark-Up";
             this.btnMUp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -391,10 +391,10 @@
             this.btnRawM.Font = new System.Drawing.Font("Century Schoolbook", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnRawM.ForeColor = System.Drawing.Color.LightGray;
             this.btnRawM.Location = new System.Drawing.Point(0, 24);
-            this.btnRawM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRawM.Margin = new System.Windows.Forms.Padding(2);
             this.btnRawM.Name = "btnRawM";
             this.btnRawM.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.btnRawM.Size = new System.Drawing.Size(198, 24);
+            this.btnRawM.Size = new System.Drawing.Size(215, 24);
             this.btnRawM.TabIndex = 4;
             this.btnRawM.Text = "Raw Materials Inventory";
             this.btnRawM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -409,10 +409,10 @@
             this.btnProdInvtnry.Font = new System.Drawing.Font("Century Schoolbook", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnProdInvtnry.ForeColor = System.Drawing.Color.LightGray;
             this.btnProdInvtnry.Location = new System.Drawing.Point(0, 0);
-            this.btnProdInvtnry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnProdInvtnry.Margin = new System.Windows.Forms.Padding(2);
             this.btnProdInvtnry.Name = "btnProdInvtnry";
             this.btnProdInvtnry.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.btnProdInvtnry.Size = new System.Drawing.Size(198, 24);
+            this.btnProdInvtnry.Size = new System.Drawing.Size(215, 24);
             this.btnProdInvtnry.TabIndex = 3;
             this.btnProdInvtnry.Text = "Production Inventory";
             this.btnProdInvtnry.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -430,10 +430,10 @@
             this.bbtnSlsSmry.Image = ((System.Drawing.Image)(resources.GetObject("bbtnSlsSmry.Image")));
             this.bbtnSlsSmry.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bbtnSlsSmry.Location = new System.Drawing.Point(0, 439);
-            this.bbtnSlsSmry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bbtnSlsSmry.Margin = new System.Windows.Forms.Padding(2);
             this.bbtnSlsSmry.Name = "bbtnSlsSmry";
             this.bbtnSlsSmry.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.bbtnSlsSmry.Size = new System.Drawing.Size(198, 30);
+            this.bbtnSlsSmry.Size = new System.Drawing.Size(215, 30);
             this.bbtnSlsSmry.TabIndex = 7;
             this.bbtnSlsSmry.Text = "Reports";
             this.bbtnSlsSmry.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -448,9 +448,9 @@
             this.pnlInvntry.Controls.Add(this.btnProdInvtnry);
             this.pnlInvntry.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlInvntry.Location = new System.Drawing.Point(0, 365);
-            this.pnlInvntry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlInvntry.Margin = new System.Windows.Forms.Padding(2);
             this.pnlInvntry.Name = "pnlInvntry";
-            this.pnlInvntry.Size = new System.Drawing.Size(198, 74);
+            this.pnlInvntry.Size = new System.Drawing.Size(215, 74);
             this.pnlInvntry.TabIndex = 6;
             // 
             // btnSP
@@ -460,7 +460,7 @@
             this.btnSP.Font = new System.Drawing.Font("Century Schoolbook", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSP.ForeColor = System.Drawing.Color.LightGray;
             this.btnSP.Location = new System.Drawing.Point(0, 48);
-            this.btnSP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSP.Margin = new System.Windows.Forms.Padding(2);
             this.btnSP.Name = "btnSP";
             this.btnSP.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
             this.btnSP.Size = new System.Drawing.Size(197, 27);
@@ -478,10 +478,10 @@
             this.btnExp.Font = new System.Drawing.Font("Century Schoolbook", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnExp.ForeColor = System.Drawing.Color.LightGray;
             this.btnExp.Location = new System.Drawing.Point(0, 24);
-            this.btnExp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExp.Margin = new System.Windows.Forms.Padding(2);
             this.btnExp.Name = "btnExp";
             this.btnExp.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.btnExp.Size = new System.Drawing.Size(198, 24);
+            this.btnExp.Size = new System.Drawing.Size(215, 24);
             this.btnExp.TabIndex = 5;
             this.btnExp.Text = "Expiration Reports";
             this.btnExp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -496,10 +496,10 @@
             this.btnSlsSmry.Font = new System.Drawing.Font("Century Schoolbook", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSlsSmry.ForeColor = System.Drawing.Color.LightGray;
             this.btnSlsSmry.Location = new System.Drawing.Point(0, 0);
-            this.btnSlsSmry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSlsSmry.Margin = new System.Windows.Forms.Padding(2);
             this.btnSlsSmry.Name = "btnSlsSmry";
             this.btnSlsSmry.Padding = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.btnSlsSmry.Size = new System.Drawing.Size(198, 24);
+            this.btnSlsSmry.Size = new System.Drawing.Size(215, 24);
             this.btnSlsSmry.TabIndex = 4;
             this.btnSlsSmry.Text = "Sales Summary Report";
             this.btnSlsSmry.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -517,10 +517,10 @@
             this.btnSttngs.Image = ((System.Drawing.Image)(resources.GetObject("btnSttngs.Image")));
             this.btnSttngs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSttngs.Location = new System.Drawing.Point(0, 544);
-            this.btnSttngs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSttngs.Margin = new System.Windows.Forms.Padding(2);
             this.btnSttngs.Name = "btnSttngs";
             this.btnSttngs.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btnSttngs.Size = new System.Drawing.Size(198, 27);
+            this.btnSttngs.Size = new System.Drawing.Size(215, 27);
             this.btnSttngs.TabIndex = 10;
             this.btnSttngs.Text = "Settings";
             this.btnSttngs.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -537,11 +537,11 @@
             this.btnSOut.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnSOut.Image = ((System.Drawing.Image)(resources.GetObject("btnSOut.Image")));
             this.btnSOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSOut.Location = new System.Drawing.Point(0, 571);
-            this.btnSOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSOut.Location = new System.Drawing.Point(0, 634);
+            this.btnSOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnSOut.Name = "btnSOut";
             this.btnSOut.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btnSOut.Size = new System.Drawing.Size(198, 27);
+            this.btnSOut.Size = new System.Drawing.Size(215, 27);
             this.btnSOut.TabIndex = 9;
             this.btnSOut.Text = "SignOut";
             this.btnSOut.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -557,9 +557,9 @@
             this.pnlSlsSmry.Controls.Add(this.btnSlsSmry);
             this.pnlSlsSmry.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSlsSmry.Location = new System.Drawing.Point(0, 469);
-            this.pnlSlsSmry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlSlsSmry.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSlsSmry.Name = "pnlSlsSmry";
-            this.pnlSlsSmry.Size = new System.Drawing.Size(198, 75);
+            this.pnlSlsSmry.Size = new System.Drawing.Size(215, 75);
             this.pnlSlsSmry.TabIndex = 8;
             // 
             // pnlSideMenu
@@ -579,9 +579,9 @@
             this.pnlSideMenu.Controls.Add(this.pnlLogo);
             this.pnlSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSideMenu.Location = new System.Drawing.Point(0, 29);
-            this.pnlSideMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlSideMenu.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSideMenu.Name = "pnlSideMenu";
-            this.pnlSideMenu.Size = new System.Drawing.Size(215, 507);
+            this.pnlSideMenu.Size = new System.Drawing.Size(215, 661);
             this.pnlSideMenu.TabIndex = 4;
             // 
             // timer1
@@ -593,7 +593,7 @@
             this.pnlUp.BackColor = System.Drawing.Color.Black;
             this.pnlUp.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlUp.Location = new System.Drawing.Point(0, 0);
-            this.pnlUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlUp.Margin = new System.Windows.Forms.Padding(2);
             this.pnlUp.Name = "pnlUp";
             this.pnlUp.Size = new System.Drawing.Size(958, 29);
             this.pnlUp.TabIndex = 6;
@@ -602,13 +602,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 536);
+            this.ClientSize = new System.Drawing.Size(958, 690);
             this.Controls.Add(this.pnlHolder);
             this.Controls.Add(this.pnlNtf);
             this.Controls.Add(this.pnlSideMenu);
             this.Controls.Add(this.pnlUp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FDashboard";
             this.Text = "FDashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

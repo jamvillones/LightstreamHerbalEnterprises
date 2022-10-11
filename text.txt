@@ -5,3 +5,5 @@ line 4 line 4 is good
 line 5 added by branch0
 line 6
 line 7 changes 777
+
+git is awesome

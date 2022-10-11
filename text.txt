@@ -1,4 +1,4 @@
 line 1 is awesome
 line 2
 line 3
-line 4 line 4 is lame
+line 4 line 4 is good

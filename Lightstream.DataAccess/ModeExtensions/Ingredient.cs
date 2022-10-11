@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lightstream.Models
+namespace Lightstream.DataAccess.Models
 {
-    public class DomainObject
+    public partial class Ingredient
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public string GetUnit => UnitMeasurement.Name;
     }
 }

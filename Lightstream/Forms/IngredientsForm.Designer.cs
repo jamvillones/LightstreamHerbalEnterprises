@@ -57,7 +57,7 @@
             this.ingredientField.Name = "ingredientField";
             this.ingredientField.Size = new System.Drawing.Size(359, 87);
             this.ingredientField.TabIndex = 7;
-            this.ingredientField.UnitOfMeasurement = "";
+            //this.ingredientField.UnitOfMeasurement = "";
             // 
             // IngredientsForm
             // 

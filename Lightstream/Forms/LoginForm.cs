@@ -1,10 +1,12 @@
-using Lightstream.Models;
+
+
+using Lightstream.DataAccess.Models;
 
 namespace Lightstream
 {
     public partial class LoginForm : Form
     {
-        private Models.DbContextFactory dbFactory = new Models.DbContextFactory();
+        private DbContextFactory dbFactory = new DbContextFactory();
         #region private fields
         int lockinPeriod = 30;
         string username => textBox2.Text.Trim();

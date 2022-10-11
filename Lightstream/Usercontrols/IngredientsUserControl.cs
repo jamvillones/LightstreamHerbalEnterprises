@@ -1,6 +1,7 @@
-﻿using Lightstream.Forms;
-using Lightstream.Models;
+﻿using Lightstream.DataAccess.Models;
+using Lightstream.Forms;
 using Lightstream.Services;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,7 +51,7 @@ namespace Lightstream.Usercontrols
         /// <param name="d">datagridview</param>
         /// <param name="i">data source for ingredient</param>
         /// <returns></returns>
-        DataGridViewRow CreateRow(DataGridView d,Ingredient i)
+        DataGridViewRow CreateRow(DataGridView d, Ingredient i)
         {
             var row = new DataGridViewRow();
 
@@ -58,7 +59,7 @@ namespace Lightstream.Usercontrols
                 i.Id,
                 i.Name,
                 string.Format("₱ {0:n}", i.Cost),
-                i.UnitOfMeasurement,
+                i.GetUnit,
                 "edit",
                 "delete",
                 "show   "
@@ -147,9 +148,11 @@ namespace Lightstream.Usercontrols
         private void LoadIngredientsFromDbContext()
         {
             using (var context = factory.CreateDbContext())
-                LoadTableWithIngredientsData(context.Ingredients);
+            {
+                LoadTableWithIngredientsData(context.Ingredients.Include(x=>x.UnitMeasurement));
+            }
         }
-        private void LoadTableWithIngredientsData(IEnumerable<Models.Ingredient> ingredients)
+        private void LoadTableWithIngredientsData(IEnumerable<Ingredient> ingredients)
         {
             ingredientsTable.Rows.Clear();
             foreach (var ingredient in ingredients)

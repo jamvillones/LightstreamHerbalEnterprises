@@ -32,8 +32,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cost = new System.Windows.Forms.NumericUpDown();
-            this.unitofMeasuremenTxt = new System.Windows.Forms.TextBox();
             this.nameTxt = new System.Windows.Forms.TextBox();
+            this.unitOption = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.cost)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,15 +80,6 @@
             this.cost.TabIndex = 8;
             this.cost.ThousandsSeparator = true;
             // 
-            // unitofMeasuremenTxt
-            // 
-            this.unitofMeasuremenTxt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.unitofMeasuremenTxt.Location = new System.Drawing.Point(131, 32);
-            this.unitofMeasuremenTxt.Name = "unitofMeasuremenTxt";
-            this.unitofMeasuremenTxt.Size = new System.Drawing.Size(333, 23);
-            this.unitofMeasuremenTxt.TabIndex = 7;
-            // 
             // nameTxt
             // 
             this.nameTxt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -98,18 +89,32 @@
             this.nameTxt.Size = new System.Drawing.Size(333, 23);
             this.nameTxt.TabIndex = 6;
             // 
+            // unitOption
+            // 
+            this.unitOption.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.unitOption.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.unitOption.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.unitOption.DisplayMember = "Name";
+            this.unitOption.FormattingEnabled = true;
+            this.unitOption.Location = new System.Drawing.Point(131, 32);
+            this.unitOption.Name = "unitOption";
+            this.unitOption.Size = new System.Drawing.Size(333, 23);
+            this.unitOption.TabIndex = 12;
+            // 
             // FieldsIngredientsUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.unitOption);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cost);
-            this.Controls.Add(this.unitofMeasuremenTxt);
             this.Controls.Add(this.nameTxt);
             this.Name = "FieldsIngredientsUserControl";
             this.Size = new System.Drawing.Size(467, 87);
+            this.Load += new System.EventHandler(this.FieldsIngredientsUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cost)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -122,7 +127,7 @@
         private Label label2;
         private Label label1;
         private NumericUpDown cost;
-        private TextBox unitofMeasuremenTxt;
         private TextBox nameTxt;
+        private ComboBox unitOption;
     }
 }

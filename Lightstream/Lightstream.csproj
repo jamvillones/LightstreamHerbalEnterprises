@@ -42,4 +42,8 @@
     <Folder Include="Services\Interface\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Lightstream.DataAccess\Lightstream.DataAccess.csproj" />
+  </ItemGroup>
+
 </Project>

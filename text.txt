@@ -1,5 +1,5 @@
 line 1 is awesomeness
-line 2 dev1 is great
+line 2 dev1 is great changes
 line 3
 line 4 line 4 is good
 line 5 added by branch0

@@ -3,12 +3,7 @@ line 2 dev1 is great changes
 line 3
 line 4 line 4 is good
 line 5 added by branch0
-<<<<<<< HEAD
-line 6 i hate it
-line 7 changes 777
-=======
 line 6
 line 7 changes 777
 
 git is awesome
->>>>>>> main

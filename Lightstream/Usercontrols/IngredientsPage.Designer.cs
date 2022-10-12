@@ -34,9 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ingredientsTable = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.searchTxt = new System.Windows.Forms.TextBox();
-            this.addNewBtn = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +41,9 @@
             this.Column5 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.searchTxt = new System.Windows.Forms.TextBox();
+            this.addNewBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientsTable)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -85,55 +85,17 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.ingredientsTable.DefaultCellStyle = dataGridViewCellStyle5;
             this.ingredientsTable.EnableHeadersVisualStyles = false;
-            this.ingredientsTable.Location = new System.Drawing.Point(32, 56);
-            this.ingredientsTable.Margin = new System.Windows.Forms.Padding(5);
+            this.ingredientsTable.Location = new System.Drawing.Point(10, 48);
+            this.ingredientsTable.Margin = new System.Windows.Forms.Padding(10);
             this.ingredientsTable.MultiSelect = false;
             this.ingredientsTable.Name = "ingredientsTable";
             this.ingredientsTable.ReadOnly = true;
             this.ingredientsTable.RowHeadersVisible = false;
             this.ingredientsTable.RowTemplate.Height = 25;
             this.ingredientsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ingredientsTable.Size = new System.Drawing.Size(662, 317);
+            this.ingredientsTable.Size = new System.Drawing.Size(780, 442);
             this.ingredientsTable.TabIndex = 0;
             this.ingredientsTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ingredientsTable_CellMouseClick);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.searchTxt);
-            this.panel1.Controls.Add(this.addNewBtn);
-            this.panel1.Controls.Add(this.ingredientsTable);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(725, 400);
-            this.panel1.TabIndex = 1;
-            // 
-            // searchTxt
-            // 
-            this.searchTxt.Location = new System.Drawing.Point(32, 18);
-            this.searchTxt.Name = "searchTxt";
-            this.searchTxt.PlaceholderText = "Search...";
-            this.searchTxt.Size = new System.Drawing.Size(281, 23);
-            this.searchTxt.TabIndex = 2;
-            this.searchTxt.TextChanged += new System.EventHandler(this.searchTxt_TextChanged);
-            this.searchTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchTxt_KeyDown);
-            // 
-            // addNewBtn
-            // 
-            this.addNewBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addNewBtn.FlatAppearance.BorderSize = 0;
-            this.addNewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addNewBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addNewBtn.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.addNewBtn.Location = new System.Drawing.Point(527, 18);
-            this.addNewBtn.Name = "addNewBtn";
-            this.addNewBtn.Size = new System.Drawing.Size(167, 30);
-            this.addNewBtn.TabIndex = 1;
-            this.addNewBtn.Text = "ADD NEW INGREDIENT";
-            this.addNewBtn.UseVisualStyleBackColor = true;
-            this.addNewBtn.Click += new System.EventHandler(this.addNewBtn_Click);
             // 
             // Column1
             // 
@@ -194,13 +156,52 @@
             this.Column7.ReadOnly = true;
             this.Column7.Width = 50;
             // 
-            // IngredientsUserControl
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.searchTxt);
+            this.panel1.Controls.Add(this.addNewBtn);
+            this.panel1.Controls.Add(this.ingredientsTable);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 500);
+            this.panel1.TabIndex = 1;
+            // 
+            // searchTxt
+            // 
+            this.searchTxt.Location = new System.Drawing.Point(10, 10);
+            this.searchTxt.Margin = new System.Windows.Forms.Padding(10);
+            this.searchTxt.Name = "searchTxt";
+            this.searchTxt.PlaceholderText = "Search...";
+            this.searchTxt.Size = new System.Drawing.Size(281, 23);
+            this.searchTxt.TabIndex = 2;
+            this.searchTxt.TextChanged += new System.EventHandler(this.searchTxt_TextChanged);
+            this.searchTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchTxt_KeyDown);
+            // 
+            // addNewBtn
+            // 
+            this.addNewBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addNewBtn.FlatAppearance.BorderSize = 0;
+            this.addNewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addNewBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.addNewBtn.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.addNewBtn.Location = new System.Drawing.Point(623, 10);
+            this.addNewBtn.Name = "addNewBtn";
+            this.addNewBtn.Size = new System.Drawing.Size(167, 30);
+            this.addNewBtn.TabIndex = 1;
+            this.addNewBtn.Text = "ADD NEW INGREDIENT";
+            this.addNewBtn.UseVisualStyleBackColor = true;
+            this.addNewBtn.Click += new System.EventHandler(this.addNewBtn_Click);
+            // 
+            // IngredientsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
-            this.Name = "IngredientsUserControl";
-            this.Size = new System.Drawing.Size(725, 400);
+            this.Name = "IngredientsPage";
+            this.Size = new System.Drawing.Size(800, 500);
             this.Load += new System.EventHandler(this.IngredientUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ingredientsTable)).EndInit();
             this.panel1.ResumeLayout(false);

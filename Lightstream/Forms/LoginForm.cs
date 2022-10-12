@@ -105,12 +105,14 @@ namespace Lightstream
         private async void loginBtn_Click(object sender, EventArgs e)
         {
             loginBtn.Text = "Logging in...";
+            loginBtn.Enabled = false;
 
             CurrentLogin = await TryLoginAsync(username, password);
             IsLoginSuccessful = CurrentLogin is not null;
 
             if (!IsLoginSuccessful)
             {
+                loginBtn.Enabled = true;
                 Attempts--;
                 return;
             }

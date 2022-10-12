@@ -19,32 +19,70 @@ namespace Lightstream.Forms
         {
             InitializeComponent();
         }
-
+        List<Unit> AvailableUnits { get; set; } = null!;
+        List<Conversion> AvailableConversion { get; set; } = null!;
         private void RecipeForm_Load(object sender, EventArgs e)
         {
             using (var context = factory.CreateDbContext())
             {
                 var ingredients = context.Ingredients.Include(x => x.UnitMeasurement)
-                    .Select(a => new { Value = a, Key = a.Name + "-" + a.UnitMeasurement.Name })
+                    .Select(a => new { Value = a, Key = a.Name + " in " + a.UnitMeasurement.Name })
                     .ToArray();
 
                 ingredientOption.DataSource = ingredients;
+
+                AvailableUnits = context.Units.ToList();
+
+                unitOption.DataSource = AvailableUnits;
+
+                AvailableConversion = context.Conversions
+                    .Include(x => x.FromUnit)
+                    .Include(y => y.ToUnit)
+                    .ToList();
             }
         }
-
-        int ingredientOptValue => ((Ingredient)ingredientOption.SelectedValue).Id;
-
+        Conversion? selectedConversion = null;
         private void ingredientOption_SelectedIndexChanged(object sender, EventArgs e)
         {
-            unitOption.Text = string.Empty;
-            unitOption.Items.Clear();
-            using (var context = factory.CreateDbContext())
+            if (ingredientOption.SelectedValue is Ingredient ing && unitOption.SelectedItem is Unit fromUnit)
             {
-                var units = context.Units.Where(x => x.Id != ingredientOptValue).ToArray();
+                bool isFound = IsConversionAvailable(fromUnit, ing.UnitMeasurement, out selectedConversion);
 
-                unitOption.Items.AddRange(units);
-                unitOption.AutoCompleteCustomSource.AddRange(units.Select(x => x.Name).ToArray());
+                addConversionBtn.Enabled = !isFound;
+                saveBtn.Enabled = isFound;
             }
         }
+
+        bool IsConversionAvailable(Unit from, Unit to, out Conversion? conversion)
+        {
+            if (from.Id == to.Id)
+            {
+                conversion = null;
+                return true;
+            }
+
+            conversion = AvailableConversion.FirstOrDefault(x => x.FromUnitId == from.Id && x.ToUnitId == to.Id);
+            return conversion != null;
+        }
+
+        void OpenConversionCreation()
+        {
+
+        }
+
+        public Recipe RecipeDetails { get; private set; }
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            RecipeDetails = new Recipe()
+            {
+                Qty = qty.Value,
+                Ingredient = (Ingredient)ingredientOption.SelectedValue,
+                Conversion = selectedConversion
+            };
+
+            DialogResult = DialogResult.OK;
+        }
+
     }
+
 }

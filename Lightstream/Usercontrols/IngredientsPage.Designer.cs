@@ -1,6 +1,6 @@
 ﻿namespace Lightstream.Usercontrols
 {
-    partial class IngredientsUserControl
+    partial class IngredientsPage
     {
         /// <summary> 
         /// Required designer variable.

@@ -14,11 +14,11 @@ using System.Windows.Forms;
 
 namespace Lightstream.Usercontrols
 {
-    public partial class IngredientsUserControl : UserControl
+    public partial class IngredientsPage : UserControl
     {
         private DbContextFactory factory = new DbContextFactory();
 
-        public IngredientsUserControl()
+        public IngredientsPage()
         {
             InitializeComponent();
         }

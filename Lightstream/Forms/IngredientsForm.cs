@@ -16,6 +16,8 @@ namespace Lightstream.Forms
         private DbContextFactory factory = new DbContextFactory();
         public string IngredientName => ingredientField.IngredientName;
         public Unit UnitOfMeasurement => ingredientField.UnitOfMeasurement;
+
+        string UOMString => ingredientField.UnitOfMeasurementString;
         public decimal Cost => ingredientField.Cost;
         public bool NewItemCreated { get; private set; }
         public Ingredient CreatedIngredient { get; private set; }
@@ -41,8 +43,7 @@ namespace Lightstream.Forms
                 {
                     Name = this.IngredientName,
                     Cost = this.Cost,
-                    UnitMeasurementId = UnitOfMeasurement.Id
-
+                    UnitMeasurement = UnitOfMeasurement ?? new Unit() { Name = UOMString }
                 };
 
                 /// add to the list of ingredients
@@ -52,7 +53,7 @@ namespace Lightstream.Forms
                 context.SaveChanges();
 
 
-                ingredient.UnitMeasurement = UnitOfMeasurement;
+                //ingredient.UnitMeasurement = UnitOfMeasurement;
                 CreatedIngredient = ingredient;
             }
 

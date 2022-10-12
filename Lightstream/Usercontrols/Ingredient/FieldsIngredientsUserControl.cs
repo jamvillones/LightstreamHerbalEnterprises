@@ -25,6 +25,7 @@ namespace Lightstream.Usercontrols.IngredientForm
             set => nameTxt.Text = value;
         }
         public Unit UnitOfMeasurement => (Unit)unitOption.SelectedItem;
+        public string UnitOfMeasurementString => unitOption.Text.Trim();
         public decimal Cost { get => cost.Value; set => cost.Value = value; }
 
         private void FieldsIngredientsUserControl_Load(object sender, EventArgs e)

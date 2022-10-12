@@ -114,7 +114,7 @@ namespace Lightstream.Usercontrols
                 {
                     //var filteredIngredients = context.Ingredients.Where(x => x.Name.Contains(text)).ToArray();
                     var resultingIngredients = SearchHandler.FilterList(
-                        context.Ingredients,
+                        context.Ingredients.Include(a=>a.UnitMeasurement),
                         filteringConditions: (b) => b.Name.ToLower().Contains(searchTerm.ToLower()))
                         .ToArray();
 
@@ -129,6 +129,8 @@ namespace Lightstream.Usercontrols
                     LoadTableWithIngredientsData(resultingIngredients);
 
                     hasPerformedSearch = true;
+
+                    textbox.SelectAll();
                 }
             }
         }

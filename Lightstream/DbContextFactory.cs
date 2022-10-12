@@ -17,7 +17,7 @@ namespace Lightstream
         {
             var option = new DbContextOptionsBuilder<LHE_DBContext>();
             option.UseSqlServer(
-                "Server=MSI\\SQLEXPRESS;" +
+                "Server=DESKTOP-EP1IGTA\\SQLEXPRESS;" +
                 "Database=LHE_DB;" +
                 "Trusted_Connection=True;"
                 );

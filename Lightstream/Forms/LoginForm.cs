@@ -1,6 +1,8 @@
 
 
+using Lightstream.DataAccess.Data;
 using Lightstream.DataAccess.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Lightstream
 {
@@ -89,11 +91,23 @@ namespace Lightstream
             return false;
         }
 
-        public Login CurrentLogin { get; private set; }
-
-        private void loginBtn_Click(object sender, EventArgs e)
+        async Task<Login?> TryLoginAsync(string username, string pass)
         {
-            IsLoginSuccessful = TryLogin(username, password);
+            return await Task.Run(async () =>
+            {
+                using (var context = dbFactory.CreateDbContext())
+                    return await context.Logins.FirstOrDefaultAsync(x => x.Username == username && x.Password == pass);
+            });
+        }
+
+        public Login? CurrentLogin { get; private set; }
+
+        private async void loginBtn_Click(object sender, EventArgs e)
+        {
+            loginBtn.Text = "Logging in...";
+
+            CurrentLogin = await TryLoginAsync(username, password);
+            IsLoginSuccessful = CurrentLogin is not null;
 
             if (!IsLoginSuccessful)
             {

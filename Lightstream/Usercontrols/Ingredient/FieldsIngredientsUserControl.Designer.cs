@@ -58,11 +58,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(83, 6);
+            this.label1.Location = new System.Drawing.Point(23, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 15);
+            this.label1.Size = new System.Drawing.Size(102, 15);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Name:";
+            this.label1.Text = " Ingredient Name:";
             // 
             // cost
             // 
@@ -76,8 +76,8 @@
             0,
             0});
             this.cost.Name = "cost";
-            this.cost.Size = new System.Drawing.Size(333, 23);
-            this.cost.TabIndex = 8;
+            this.cost.Size = new System.Drawing.Size(202, 23);
+            this.cost.TabIndex = 2;
             this.cost.ThousandsSeparator = true;
             // 
             // nameTxt
@@ -86,8 +86,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nameTxt.Location = new System.Drawing.Point(131, 3);
             this.nameTxt.Name = "nameTxt";
-            this.nameTxt.Size = new System.Drawing.Size(333, 23);
-            this.nameTxt.TabIndex = 6;
+            this.nameTxt.Size = new System.Drawing.Size(202, 23);
+            this.nameTxt.TabIndex = 0;
             // 
             // unitOption
             // 
@@ -99,8 +99,8 @@
             this.unitOption.FormattingEnabled = true;
             this.unitOption.Location = new System.Drawing.Point(131, 32);
             this.unitOption.Name = "unitOption";
-            this.unitOption.Size = new System.Drawing.Size(333, 23);
-            this.unitOption.TabIndex = 12;
+            this.unitOption.Size = new System.Drawing.Size(202, 23);
+            this.unitOption.TabIndex = 1;
             // 
             // FieldsIngredientsUserControl
             // 
@@ -113,7 +113,7 @@
             this.Controls.Add(this.cost);
             this.Controls.Add(this.nameTxt);
             this.Name = "FieldsIngredientsUserControl";
-            this.Size = new System.Drawing.Size(467, 87);
+            this.Size = new System.Drawing.Size(336, 87);
             this.Load += new System.EventHandler(this.FieldsIngredientsUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cost)).EndInit();
             this.ResumeLayout(false);

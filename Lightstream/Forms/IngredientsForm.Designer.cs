@@ -34,13 +34,16 @@
             // 
             // addBtn
             // 
-            this.addBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addBtn.Location = new System.Drawing.Point(201, 114);
+            this.addBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.addBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.addBtn.FlatAppearance.BorderSize = 0;
+            this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addBtn.Location = new System.Drawing.Point(124, 114);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(170, 23);
+            this.addBtn.Size = new System.Drawing.Size(120, 23);
             this.addBtn.TabIndex = 6;
             this.addBtn.Text = "Add";
-            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.UseVisualStyleBackColor = false;
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // ingredientField
@@ -55,17 +58,19 @@
             this.ingredientField.IngredientName = "";
             this.ingredientField.Location = new System.Drawing.Point(12, 12);
             this.ingredientField.Name = "ingredientField";
-            this.ingredientField.Size = new System.Drawing.Size(359, 87);
+            this.ingredientField.Size = new System.Drawing.Size(345, 87);
             this.ingredientField.TabIndex = 7;
-            //this.ingredientField.UnitOfMeasurement = "";
             // 
             // IngredientsForm
             // 
+            this.AcceptButton = this.addBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(383, 149);
+            this.ClientSize = new System.Drawing.Size(369, 149);
             this.Controls.Add(this.ingredientField);
             this.Controls.Add(this.addBtn);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "IngredientsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingredient";

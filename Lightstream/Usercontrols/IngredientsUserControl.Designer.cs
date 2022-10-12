@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ingredientsTable = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.searchTxt = new System.Windows.Forms.TextBox();
@@ -73,14 +76,14 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ingredientsTable.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ingredientsTable.DefaultCellStyle = dataGridViewCellStyle5;
             this.ingredientsTable.EnableHeadersVisualStyles = false;
             this.ingredientsTable.Location = new System.Drawing.Point(32, 56);
             this.ingredientsTable.Margin = new System.Windows.Forms.Padding(5);
@@ -90,7 +93,7 @@
             this.ingredientsTable.RowHeadersVisible = false;
             this.ingredientsTable.RowTemplate.Height = 25;
             this.ingredientsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ingredientsTable.Size = new System.Drawing.Size(626, 317);
+            this.ingredientsTable.Size = new System.Drawing.Size(662, 317);
             this.ingredientsTable.TabIndex = 0;
             this.ingredientsTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ingredientsTable_CellMouseClick);
             // 
@@ -104,7 +107,7 @@
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(689, 400);
+            this.panel1.Size = new System.Drawing.Size(725, 400);
             this.panel1.TabIndex = 1;
             // 
             // searchTxt
@@ -124,7 +127,7 @@
             this.addNewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addNewBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.addNewBtn.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.addNewBtn.Location = new System.Drawing.Point(491, 18);
+            this.addNewBtn.Location = new System.Drawing.Point(527, 18);
             this.addNewBtn.Name = "addNewBtn";
             this.addNewBtn.Size = new System.Drawing.Size(167, 30);
             this.addNewBtn.TabIndex = 1;
@@ -134,9 +137,11 @@
             // 
             // Column1
             // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column1.HeaderText = "Id";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            this.Column1.Width = 42;
             // 
             // Column2
             // 
@@ -153,30 +158,41 @@
             // Column4
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column4.HeaderText = "Unit of Measurement";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Column5.HeaderText = "";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 70;
+            this.Column5.Width = 50;
             // 
             // Column6
             // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Column6.HeaderText = "";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
-            this.Column6.Width = 70;
+            this.Column6.Width = 50;
             // 
             // Column7
             // 
+            this.Column7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Column7.HeaderText = "";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
-            this.Column7.Width = 70;
+            this.Column7.Width = 50;
             // 
             // IngredientsUserControl
             // 
@@ -184,7 +200,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "IngredientsUserControl";
-            this.Size = new System.Drawing.Size(689, 400);
+            this.Size = new System.Drawing.Size(725, 400);
             this.Load += new System.EventHandler(this.IngredientUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ingredientsTable)).EndInit();
             this.panel1.ResumeLayout(false);

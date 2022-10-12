@@ -29,7 +29,7 @@ namespace Lightstream.DataAccess.Data
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=MSI\\SQLEXPRESS;Database=LHE_DB;Integrated Security = true;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-EP1IGTA\\SQLEXPRESS;Database=LHE_DB;Trusted_Connection=True; Integrated Security=true;");
             }
         }
 
@@ -38,6 +38,10 @@ namespace Lightstream.DataAccess.Data
             modelBuilder.Entity<Conversion>(entity =>
             {
                 entity.ToTable("Conversion");
+
+                entity.HasIndex(e => e.FromUnitId, "IX_Conversion_FromUnitId");
+
+                entity.HasIndex(e => e.ToUnitId, "IX_Conversion_ToUnitId");
 
                 entity.Property(e => e.Value).HasColumnType("decimal(18, 2)");
 
@@ -57,6 +61,9 @@ namespace Lightstream.DataAccess.Data
             modelBuilder.Entity<Ingredient>(entity =>
             {
                 entity.ToTable("Ingredient");
+
+                entity.HasIndex(e => e.UnitMeasurementId, "IX_Ingredient_UnitMeasurementId");
+
                 entity.Property(e => e.Cost).HasColumnType("decimal(18, 2)");
 
                 entity.HasOne(d => d.UnitMeasurement)
@@ -68,7 +75,13 @@ namespace Lightstream.DataAccess.Data
 
             modelBuilder.Entity<Login>(entity =>
             {
+                entity.ToTable("Login");
+
                 entity.Property(e => e.FirstName).HasMaxLength(50);
+
+                entity.Property(e => e.FullName)
+                    .HasMaxLength(101)
+                    .HasComputedColumnSql("(concat([FIRSTNAME],' ',[LASTNAME]))", false);
 
                 entity.Property(e => e.LastName).HasMaxLength(50);
             });
@@ -76,6 +89,7 @@ namespace Lightstream.DataAccess.Data
             modelBuilder.Entity<Product>(entity =>
             {
                 entity.ToTable("Product");
+
                 entity.Property(e => e.Price).HasColumnType("decimal(18, 2)");
             });
 
@@ -86,6 +100,8 @@ namespace Lightstream.DataAccess.Data
                 entity.HasIndex(e => e.IngredientId, "IX_ProductToIngredientBridge_IngredientId");
 
                 entity.HasIndex(e => e.ProductId, "IX_ProductToIngredientBridge_ProductId");
+
+                entity.HasIndex(e => e.ConversionId, "IX_Recipe_ConversionId");
 
                 entity.HasOne(d => d.Conversion)
                     .WithMany(p => p.Recipes)

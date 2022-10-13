@@ -12,22 +12,22 @@ namespace Lightstream
         static void Main()
         {            
             ApplicationConfiguration.Initialize();
-
             bool loggedOut = false;
-            do
-            {
-                loggedOut = false;
-                var login = new LoginForm();
-                Application.Run(login);
-                if (login.IsLoginSuccessful)
-                {
-                    var main = new Main();
-                    Application.Run(main);
-                    loggedOut = main.IsLoggedOut;
-                }
-            } while (loggedOut);
 
-            //Application.Run(new ProductForm());
+            //do
+            //{
+            //    loggedOut = false;
+            //    var login = new LoginForm();
+            //    Application.Run(login);
+            //    if (login.IsLoginSuccessful)
+            //    {
+            //        var main = new Main();
+            //        Application.Run(main);
+            //        loggedOut = main.IsLoggedOut;
+            //    }
+            //} while (loggedOut);
+
+            Application.Run(new ProductForm());
         }
     }
 }

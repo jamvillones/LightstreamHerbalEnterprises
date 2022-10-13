@@ -64,6 +64,7 @@
             this.createNewBtn.TabStop = false;
             this.createNewBtn.Text = "Create New User";
             this.createNewBtn.UseVisualStyleBackColor = false;
+            this.createNewBtn.Click += new System.EventHandler(this.createNewBtn_Click);
             // 
             // loginBtn
             // 
@@ -155,7 +156,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
             this.label1.Location = new System.Drawing.Point(127, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 34);
+            this.label1.Size = new System.Drawing.Size(182, 31);
             this.label1.TabIndex = 6;
             this.label1.Text = "Lightstream\r\n";
             // 

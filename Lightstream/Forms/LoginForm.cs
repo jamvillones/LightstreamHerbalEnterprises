@@ -2,6 +2,7 @@
 
 using Lightstream.DataAccess.Data;
 using Lightstream.DataAccess.Models;
+using Lightstream.Forms;
 using Microsoft.EntityFrameworkCore;
 
 namespace Lightstream
@@ -132,6 +133,17 @@ namespace Lightstream
 
                 loginBtn.Text = "Login";
                 countdownTimer.Stop();
+            }
+        }
+
+        private void createNewBtn_Click(object sender, EventArgs e)
+        {
+            using (var createLogin = new CreateNewUserForm())
+            {
+                if (createLogin.ShowDialog() == DialogResult.OK)
+                {
+
+                }
             }
         }
     }

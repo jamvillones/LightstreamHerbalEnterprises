@@ -85,6 +85,16 @@ namespace Lightstream.Forms
             DialogResult = DialogResult.OK;
         }
 
+        private void addConversionBtn_Click(object sender, EventArgs e)
+        {
+            using(var conversion = new ConversionForm())
+            {
+                if(conversion.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            }
+        }
     }
 
 }

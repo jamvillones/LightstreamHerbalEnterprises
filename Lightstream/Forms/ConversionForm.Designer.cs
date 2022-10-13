@@ -56,12 +56,14 @@
             // 
             // _0_fromOpt
             // 
+            this._0_fromOpt.DisplayMember = "Name";
             this._0_fromOpt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._0_fromOpt.FormattingEnabled = true;
             this._0_fromOpt.Location = new System.Drawing.Point(76, 12);
             this._0_fromOpt.Name = "_0_fromOpt";
             this._0_fromOpt.Size = new System.Drawing.Size(171, 33);
             this._0_fromOpt.TabIndex = 1;
+            this._0_fromOpt.ValueMember = "Id";
             // 
             // label2
             // 
@@ -74,12 +76,14 @@
             // 
             // _0_ToOpt
             // 
+            this._0_ToOpt.DisplayMember = "Name";
             this._0_ToOpt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._0_ToOpt.FormattingEnabled = true;
             this._0_ToOpt.Location = new System.Drawing.Point(293, 12);
             this._0_ToOpt.Name = "_0_ToOpt";
             this._0_ToOpt.Size = new System.Drawing.Size(200, 33);
             this._0_ToOpt.TabIndex = 3;
+            this._0_ToOpt.ValueMember = "Id";
             // 
             // _0_Value
             // 
@@ -115,12 +119,14 @@
             // 
             // _1_ToOpt
             // 
+            this._1_ToOpt.DisplayMember = "Name";
             this._1_ToOpt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._1_ToOpt.FormattingEnabled = true;
             this._1_ToOpt.Location = new System.Drawing.Point(293, 115);
             this._1_ToOpt.Name = "_1_ToOpt";
             this._1_ToOpt.Size = new System.Drawing.Size(200, 33);
             this._1_ToOpt.TabIndex = 9;
+            this._1_ToOpt.ValueMember = "Id";
             // 
             // label5
             // 
@@ -133,12 +139,14 @@
             // 
             // _1_fromOpt
             // 
+            this._1_fromOpt.DisplayMember = "Name";
             this._1_fromOpt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._1_fromOpt.FormattingEnabled = true;
             this._1_fromOpt.Location = new System.Drawing.Point(76, 115);
             this._1_fromOpt.Name = "_1_fromOpt";
             this._1_fromOpt.Size = new System.Drawing.Size(171, 33);
             this._1_fromOpt.TabIndex = 7;
+            this._1_fromOpt.ValueMember = "Id";
             // 
             // label6
             // 
@@ -182,6 +190,7 @@
             this.MinimizeBox = false;
             this.Name = "ConversionForm";
             this.Text = "Conversion";
+            this.Load += new System.EventHandler(this.ConversionForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this._0_Value)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._1_ValueOption)).EndInit();
             this.ResumeLayout(false);

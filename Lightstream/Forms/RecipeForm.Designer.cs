@@ -46,14 +46,15 @@
             this.qty.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.qty.DecimalPlaces = 2;
-            this.qty.Location = new System.Drawing.Point(97, 40);
+            this.qty.Location = new System.Drawing.Point(139, 67);
+            this.qty.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.qty.Maximum = new decimal(new int[] {
             100000000,
             0,
             0,
             0});
             this.qty.Name = "qty";
-            this.qty.Size = new System.Drawing.Size(235, 23);
+            this.qty.Size = new System.Drawing.Size(336, 31);
             this.qty.TabIndex = 0;
             this.qty.ThousandsSeparator = true;
             this.qty.Value = new decimal(new int[] {
@@ -70,9 +71,10 @@
             this.unitOption.DisplayMember = "Name";
             this.unitOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unitOption.FormattingEnabled = true;
-            this.unitOption.Location = new System.Drawing.Point(97, 69);
+            this.unitOption.Location = new System.Drawing.Point(139, 115);
+            this.unitOption.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.unitOption.Name = "unitOption";
-            this.unitOption.Size = new System.Drawing.Size(235, 23);
+            this.unitOption.Size = new System.Drawing.Size(334, 33);
             this.unitOption.TabIndex = 1;
             this.unitOption.SelectedIndexChanged += new System.EventHandler(this.ingredientOption_SelectedIndexChanged);
             // 
@@ -84,9 +86,10 @@
             this.ingredientOption.DisplayMember = "Key";
             this.ingredientOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ingredientOption.FormattingEnabled = true;
-            this.ingredientOption.Location = new System.Drawing.Point(97, 11);
+            this.ingredientOption.Location = new System.Drawing.Point(139, 18);
+            this.ingredientOption.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ingredientOption.Name = "ingredientOption";
-            this.ingredientOption.Size = new System.Drawing.Size(235, 23);
+            this.ingredientOption.Size = new System.Drawing.Size(334, 33);
             this.ingredientOption.TabIndex = 2;
             this.ingredientOption.ValueMember = "Value";
             this.ingredientOption.SelectedIndexChanged += new System.EventHandler(this.ingredientOption_SelectedIndexChanged);
@@ -94,27 +97,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 42);
+            this.label1.Location = new System.Drawing.Point(17, 70);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 15);
+            this.label1.Size = new System.Drawing.Size(120, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Required Qty:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 14);
+            this.label3.Location = new System.Drawing.Point(43, 23);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 15);
+            this.label3.Size = new System.Drawing.Size(93, 25);
             this.label3.TabIndex = 6;
             this.label3.Text = "Ingredient";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(59, 72);
+            this.label4.Location = new System.Drawing.Point(84, 120);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 15);
+            this.label4.Size = new System.Drawing.Size(48, 25);
             this.label4.TabIndex = 7;
             this.label4.Text = "Unit:";
             // 
@@ -122,9 +128,10 @@
             // 
             this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveBtn.Location = new System.Drawing.Point(257, 106);
+            this.saveBtn.Location = new System.Drawing.Point(367, 177);
+            this.saveBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtn.Size = new System.Drawing.Size(107, 38);
             this.saveBtn.TabIndex = 8;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = true;
@@ -136,19 +143,21 @@
             this.addConversionBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.addConversionBtn.Enabled = false;
             this.addConversionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addConversionBtn.Location = new System.Drawing.Point(97, 106);
+            this.addConversionBtn.Location = new System.Drawing.Point(139, 177);
+            this.addConversionBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addConversionBtn.Name = "addConversionBtn";
-            this.addConversionBtn.Size = new System.Drawing.Size(154, 23);
+            this.addConversionBtn.Size = new System.Drawing.Size(220, 38);
             this.addConversionBtn.TabIndex = 9;
             this.addConversionBtn.Text = "Add Conversion";
             this.toolTip1.SetToolTip(this.addConversionBtn, "Conversion for  the units is not yet defined");
             this.addConversionBtn.UseVisualStyleBackColor = false;
+            this.addConversionBtn.Click += new System.EventHandler(this.addConversionBtn_Click);
             // 
             // RecipeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 141);
+            this.ClientSize = new System.Drawing.Size(491, 235);
             this.Controls.Add(this.addConversionBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.label4);
@@ -157,6 +166,7 @@
             this.Controls.Add(this.ingredientOption);
             this.Controls.Add(this.unitOption);
             this.Controls.Add(this.qty);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RecipeForm";

@@ -63,6 +63,7 @@ namespace Lightstream.Forms
             }
 
             conversion = AvailableConversion.FirstOrDefault(x => x.FromUnitId == from.Id && x.ToUnitId == to.Id);
+            
             return conversion != null;
         }
 

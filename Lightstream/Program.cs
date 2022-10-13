@@ -27,7 +27,7 @@ namespace Lightstream
                 }
             } while (loggedOut);
 
-            ///Application.Run(new ProductForm());
+            //Application.Run(new ProductForm());
         }
     }
 }

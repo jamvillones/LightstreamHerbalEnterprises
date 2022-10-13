@@ -1,4 +1,5 @@
-﻿using Lightstream.DataAccess.Models;
+﻿using Lightstream.DataAccess.Data;
+using Lightstream.DataAccess.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

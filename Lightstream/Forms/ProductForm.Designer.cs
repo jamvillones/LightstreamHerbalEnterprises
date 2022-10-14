@@ -56,8 +56,8 @@
             // 
             // addIngBtn
             // 
-            this.addIngBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.addIngBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.addIngBtn.FlatAppearance.BorderSize = 0;
             this.addIngBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addIngBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.addIngBtn.Location = new System.Drawing.Point(0, 0);
@@ -65,17 +65,19 @@
             this.addIngBtn.Size = new System.Drawing.Size(310, 30);
             this.addIngBtn.TabIndex = 4;
             this.addIngBtn.Text = "Add Ingredient";
+            this.addIngBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.addIngBtn.UseVisualStyleBackColor = false;
             this.addIngBtn.Click += new System.EventHandler(this.addIngBtn_Click);
             // 
             // saveBtn
             // 
-            this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.saveBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveBtn.Location = new System.Drawing.Point(470, 284);
+            this.saveBtn.Location = new System.Drawing.Point(12, 284);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(152, 30);
+            this.saveBtn.Size = new System.Drawing.Size(610, 30);
             this.saveBtn.TabIndex = 5;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = false;

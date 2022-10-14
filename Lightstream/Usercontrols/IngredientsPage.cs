@@ -111,34 +111,33 @@ namespace Lightstream.Usercontrols
 
         private void _delete_Click(object sender, EventArgs e)
         {
-            if (_ingredientsTable.RowCount == 0 || 
+            if (_ingredientsTable.RowCount == 0 ||
                 MessageBox.Show(
                     "Are you sure you want to remove " + SelectedIngredient?.Name + "?",
-                    "", 
-                    MessageBoxButtons.OKCancel, 
+                    "",
+                    MessageBoxButtons.OKCancel,
                     MessageBoxIcon.Question) == DialogResult.Cancel
                     )
                 return;
 
-            if (DeleteIngredient(out Ingredient? ing))
-                if (ing is not null)
-                    _ingredients.Remove(ing);
+            if (DeleteIngredient(SelectedIngredient))
+                _ingredients.Remove(SelectedIngredient);
         }
 
-        private bool DeleteIngredient(out Ingredient? ing)
+        private bool DeleteIngredient(Ingredient ing)
         {
             try
             {
                 using (var context = factory.CreateDbContext())
                 {
-                    var i = context.Ingredients.FirstOrDefault(x => x.Id == SelectedIngredient.Id);
+                    var i = context.Ingredients.FirstOrDefault(x => x.Id == ing.Id);
 
                     if (i is not null)
                     {
                         context.Ingredients.Remove(i);
                         context.SaveChanges();
                         Console.WriteLine("removed");
-                        ing = SelectedIngredient;
+
                         return true;
                     }
                 }
@@ -147,7 +146,6 @@ namespace Lightstream.Usercontrols
             {
                 Console.WriteLine(ex.Message);
             }
-            ing = null;
             return false;
         }
     }

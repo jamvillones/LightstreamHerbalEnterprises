@@ -1,6 +1,5 @@
 ﻿using Lightstream.DataAccess.Data;
 using Lightstream.DataAccess.Models;
-using Lightstream.Forms;
 using Lightstream.Services;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -15,17 +14,21 @@ using System.Windows.Forms;
 
 namespace Lightstream.Usercontrols
 {
-    public partial class IngredientsPage : UserControl
+    public partial class IngredientsPage : Form
     {
         private DbContextFactory factory = new DbContextFactory();
+
+        Ingredient? SelectedIngredient => _ingredientsTable.SelectedRows[0].DataBoundItem as Ingredient;
 
         public IngredientsPage()
         {
             InitializeComponent();
+            _ingredientsTable.AutoGenerateColumns = false;
         }
 
         private void IngredientUserControl_Load(object sender, EventArgs e)
         {
+            _ingredientsTable.DataSource = _ingredients;
             try
             {
                 LoadIngredientsFromDbContext();
@@ -38,11 +41,20 @@ namespace Lightstream.Usercontrols
 
         private void addNewBtn_Click(object sender, EventArgs e)
         {
-            using (var ingredientForm = new IngredientsForm())
+            using (var ingredientForm = new Forms.IngredientsForm())
             {
                 if (ingredientForm.ShowDialog() == DialogResult.OK)
                     if (ingredientForm.NewItemCreated)
-                        ingredientsTable.Rows.Add(CreateRow(ingredientsTable, ingredientForm.CreatedIngredient));
+                    {
+                        //////_ingredientsTable.Rows.Add(CreateRow(_ingredientsTable, ingredientForm.CreatedIngredient));
+                        ///((BindingList<Ingredient>)_ingredientsTable.DataSource).Add(ingredientForm.CreatedIngredient);
+                        _ingredients.Add(ingredientForm.CreatedIngredient);
+                        //data.Add(ingredientForm.CreatedIngredient);
+
+                        //_ingredientsTable.DataSource = data;
+
+
+                    }
             }
         }
 
@@ -113,23 +125,22 @@ namespace Lightstream.Usercontrols
             {
                 using (var context = factory.CreateDbContext())
                 {
-                    //var filteredIngredients = context.Ingredients.Where(x => x.Name.Contains(text)).ToArray();
                     var resultingIngredients = SearchHandler.FilterList(
-                        context.Ingredients.Include(a=>a.UnitMeasurement),
+                        context.Ingredients.Include(a => a.UnitMeasurement),
                         filteringConditions: (b) => b.Name.ToLower().Contains(searchTerm.ToLower()))
-                        .ToArray();
+                        .ToList();
 
-                    if (resultingIngredients.Length == 0)
+                    if (resultingIngredients.Count == 0)
                     {
                         MessageBox.Show("No entries found!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
 
-                    ingredientsTable.Rows.Clear();
-
-                    LoadTableWithIngredientsData(resultingIngredients);
-
                     hasPerformedSearch = true;
+
+                    _ingredients.Clear();
+                    foreach (var i in resultingIngredients)
+                        _ingredients.Add(i);
 
                     textbox.SelectAll();
                 }
@@ -148,18 +159,19 @@ namespace Lightstream.Usercontrols
 
             LoadIngredientsFromDbContext();
         }
+
+        BindingList<Ingredient> _ingredients = new BindingList<Ingredient>();
         private void LoadIngredientsFromDbContext()
         {
             using (var context = factory.CreateDbContext())
             {
-                LoadTableWithIngredientsData(context.Ingredients.Include(x=>x.UnitMeasurement));
+                var ingredients = context.Ingredients.Include(x => x.UnitMeasurement).ToList();
+
+                _ingredients.Clear();
+                foreach (var i in ingredients)
+                    _ingredients.Add(i);
+                //_ingredientsTable.DataSource = ingredients;
             }
-        }
-        private void LoadTableWithIngredientsData(IEnumerable<Ingredient> ingredients)
-        {
-            ingredientsTable.Rows.Clear();
-            foreach (var ingredient in ingredients)
-                ingredientsTable.Rows.Add(CreateRow(ingredientsTable, ingredient));
         }
     }
 }

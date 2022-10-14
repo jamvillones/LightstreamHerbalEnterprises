@@ -52,10 +52,7 @@ namespace Lightstream.Forms
                 r.Id,
                 r.Qty,
                 r.Conversion == null ? r.Ingredient.UnitMeasurement.Name : r.Conversion.FromUnit.Name,
-                r.Ingredient.Name,
-                "edit",
-                "delete",
-                "show"
+                r.Ingredient.Name
                 );
             return row;
         }

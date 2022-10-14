@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this._0_fromOpt = new System.Windows.Forms.ComboBox();
-            this._0_ToOpt = new System.Windows.Forms.ComboBox();
+            this._convertFromOpt = new System.Windows.Forms.ComboBox();
+            this._convertToOpt = new System.Windows.Forms.ComboBox();
             this._0_Value = new System.Windows.Forms.NumericUpDown();
             this._1_ValueOption = new System.Windows.Forms.NumericUpDown();
-            this._1_ToOpt = new System.Windows.Forms.ComboBox();
-            this._1_fromOpt = new System.Windows.Forms.ComboBox();
+            this._convertBackToOpt = new System.Windows.Forms.ComboBox();
+            this._convertBackfromOpt = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -54,29 +54,29 @@
             // 
             // _0_fromOpt
             // 
-            this._0_fromOpt.DisplayMember = "Name";
-            this._0_fromOpt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._0_fromOpt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._0_fromOpt.FormattingEnabled = true;
-            this._0_fromOpt.Location = new System.Drawing.Point(5, 16);
-            this._0_fromOpt.Margin = new System.Windows.Forms.Padding(2);
-            this._0_fromOpt.Name = "_0_fromOpt";
-            this._0_fromOpt.Size = new System.Drawing.Size(190, 23);
-            this._0_fromOpt.TabIndex = 1;
-            this._0_fromOpt.ValueMember = "Id";
+            this._convertFromOpt.DisplayMember = "Name";
+            this._convertFromOpt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._convertFromOpt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._convertFromOpt.FormattingEnabled = true;
+            this._convertFromOpt.Location = new System.Drawing.Point(5, 16);
+            this._convertFromOpt.Margin = new System.Windows.Forms.Padding(2);
+            this._convertFromOpt.Name = "_0_fromOpt";
+            this._convertFromOpt.Size = new System.Drawing.Size(190, 23);
+            this._convertFromOpt.TabIndex = 1;
+            this._convertFromOpt.ValueMember = "Id";
             // 
             // _0_ToOpt
             // 
-            this._0_ToOpt.DisplayMember = "Name";
-            this._0_ToOpt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._0_ToOpt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._0_ToOpt.FormattingEnabled = true;
-            this._0_ToOpt.Location = new System.Drawing.Point(5, 16);
-            this._0_ToOpt.Margin = new System.Windows.Forms.Padding(2);
-            this._0_ToOpt.Name = "_0_ToOpt";
-            this._0_ToOpt.Size = new System.Drawing.Size(190, 23);
-            this._0_ToOpt.TabIndex = 3;
-            this._0_ToOpt.ValueMember = "Id";
+            this._convertToOpt.DisplayMember = "Name";
+            this._convertToOpt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._convertToOpt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._convertToOpt.FormattingEnabled = true;
+            this._convertToOpt.Location = new System.Drawing.Point(5, 16);
+            this._convertToOpt.Margin = new System.Windows.Forms.Padding(2);
+            this._convertToOpt.Name = "_0_ToOpt";
+            this._convertToOpt.Size = new System.Drawing.Size(190, 23);
+            this._convertToOpt.TabIndex = 3;
+            this._convertToOpt.ValueMember = "Id";
             // 
             // _0_Value
             // 
@@ -100,29 +100,29 @@
             // 
             // _1_ToOpt
             // 
-            this._1_ToOpt.DisplayMember = "Name";
-            this._1_ToOpt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._1_ToOpt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._1_ToOpt.FormattingEnabled = true;
-            this._1_ToOpt.Location = new System.Drawing.Point(5, 16);
-            this._1_ToOpt.Margin = new System.Windows.Forms.Padding(2);
-            this._1_ToOpt.Name = "_1_ToOpt";
-            this._1_ToOpt.Size = new System.Drawing.Size(190, 23);
-            this._1_ToOpt.TabIndex = 9;
-            this._1_ToOpt.ValueMember = "Id";
+            this._convertBackToOpt.DisplayMember = "Name";
+            this._convertBackToOpt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._convertBackToOpt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._convertBackToOpt.FormattingEnabled = true;
+            this._convertBackToOpt.Location = new System.Drawing.Point(5, 16);
+            this._convertBackToOpt.Margin = new System.Windows.Forms.Padding(2);
+            this._convertBackToOpt.Name = "_1_ToOpt";
+            this._convertBackToOpt.Size = new System.Drawing.Size(190, 23);
+            this._convertBackToOpt.TabIndex = 9;
+            this._convertBackToOpt.ValueMember = "Id";
             // 
             // _1_fromOpt
             // 
-            this._1_fromOpt.DisplayMember = "Name";
-            this._1_fromOpt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._1_fromOpt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._1_fromOpt.FormattingEnabled = true;
-            this._1_fromOpt.Location = new System.Drawing.Point(5, 16);
-            this._1_fromOpt.Margin = new System.Windows.Forms.Padding(2);
-            this._1_fromOpt.Name = "_1_fromOpt";
-            this._1_fromOpt.Size = new System.Drawing.Size(190, 23);
-            this._1_fromOpt.TabIndex = 7;
-            this._1_fromOpt.ValueMember = "Id";
+            this._convertBackfromOpt.DisplayMember = "Name";
+            this._convertBackfromOpt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._convertBackfromOpt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._convertBackfromOpt.FormattingEnabled = true;
+            this._convertBackfromOpt.Location = new System.Drawing.Point(5, 16);
+            this._convertBackfromOpt.Margin = new System.Windows.Forms.Padding(2);
+            this._convertBackfromOpt.Name = "_1_fromOpt";
+            this._convertBackfromOpt.Size = new System.Drawing.Size(190, 23);
+            this._convertBackfromOpt.TabIndex = 7;
+            this._convertBackfromOpt.ValueMember = "Id";
             // 
             // button1
             // 
@@ -140,7 +140,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this._0_fromOpt);
+            this.groupBox1.Controls.Add(this._convertFromOpt);
             this.groupBox1.Location = new System.Drawing.Point(20, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 0, 5, 5);
@@ -151,7 +151,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this._0_ToOpt);
+            this.groupBox2.Controls.Add(this._convertToOpt);
             this.groupBox2.Location = new System.Drawing.Point(20, 63);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 5);
@@ -173,7 +173,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this._1_fromOpt);
+            this.groupBox4.Controls.Add(this._convertBackfromOpt);
             this.groupBox4.Location = new System.Drawing.Point(233, 12);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(5, 0, 5, 5);
@@ -184,7 +184,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this._1_ToOpt);
+            this.groupBox5.Controls.Add(this._convertBackToOpt);
             this.groupBox5.Location = new System.Drawing.Point(233, 63);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(5, 0, 5, 5);
@@ -245,12 +245,12 @@
         }
 
         #endregion
-        private ComboBox _0_fromOpt;
-        private ComboBox _0_ToOpt;
+        private ComboBox _convertFromOpt;
+        private ComboBox _convertToOpt;
         private NumericUpDown _0_Value;
         private NumericUpDown _1_ValueOption;
-        private ComboBox _1_ToOpt;
-        private ComboBox _1_fromOpt;
+        private ComboBox _convertBackToOpt;
+        private ComboBox _convertBackfromOpt;
         private Button button1;
         private GroupBox groupBox1;
         private GroupBox groupBox2;

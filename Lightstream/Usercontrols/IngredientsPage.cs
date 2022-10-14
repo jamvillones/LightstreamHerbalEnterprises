@@ -45,74 +45,10 @@ namespace Lightstream.Usercontrols
             {
                 if (ingredientForm.ShowDialog() == DialogResult.OK)
                     if (ingredientForm.NewItemCreated)
-                    {
-                        //////_ingredientsTable.Rows.Add(CreateRow(_ingredientsTable, ingredientForm.CreatedIngredient));
-                        ///((BindingList<Ingredient>)_ingredientsTable.DataSource).Add(ingredientForm.CreatedIngredient);
                         _ingredients.Add(ingredientForm.CreatedIngredient);
-                        //data.Add(ingredientForm.CreatedIngredient);
-
-                        //_ingredientsTable.DataSource = data;
-
-
-                    }
             }
         }
 
-        /// <summary>
-        /// create the row for ingredient
-        /// </summary>
-        /// <param name="d">datagridview</param>
-        /// <param name="i">data source for ingredient</param>
-        /// <returns></returns>
-        DataGridViewRow CreateRow(DataGridView d, Ingredient i)
-        {
-            var row = new DataGridViewRow();
-
-            row.CreateCells(d,
-                i.Id,
-                i.Name,
-                string.Format("₱ {0:n}", i.Cost),
-                i.GetUnit,
-                "edit",
-                "delete",
-                "show   "
-                );
-
-            return row;
-        }
-
-        private void ingredientsTable_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            /// check if the index click is not the row index which is -1
-            if (e.RowIndex == -1) return;
-            /// check the index if 5. 5 which is the index for the delete button 
-            if (e.ColumnIndex != 5) return;
-            ///get the datagridview who fired the event, check if the one who fired the event is a datagridview and assign it to d
-            if (sender is not DataGridView d) return;
-            /// add a validation for the delete
-            if (MessageBox.Show("Are you sure you want to delete " + d[1, e.RowIndex].Value?.ToString()?.ToUpper() + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
-            ///get the id. 0 because the id is always in 0 index.
-            if (d[0, e.RowIndex].Value is int id)
-            {
-                ///open connection
-                using (var context = factory.CreateDbContext())
-                {
-                    /// get the item using the id selected during the click
-                    var tobeRemoved = context.Ingredients.FirstOrDefault(x => x.Id == id);
-                    /// if found
-                    if (tobeRemoved is not null)
-                    {
-                        /// remove from the list
-                        context.Ingredients.Remove(tobeRemoved);
-                        ///save the changes to the database
-                        context.SaveChanges();
-                        ///finally, remove the item to the table itself by using the rowindex that is supplied during the click event
-                        d.Rows.RemoveAt(e.RowIndex);
-                    }
-                }
-            }
-
-        }
         bool hasPerformedSearch = false;
         private void searchTxt_KeyDown(object sender, KeyEventArgs e)
         {
@@ -170,8 +106,49 @@ namespace Lightstream.Usercontrols
                 _ingredients.Clear();
                 foreach (var i in ingredients)
                     _ingredients.Add(i);
-                //_ingredientsTable.DataSource = ingredients;
             }
+        }
+
+        private void _delete_Click(object sender, EventArgs e)
+        {
+            if (_ingredientsTable.RowCount == 0 || 
+                MessageBox.Show(
+                    "Are you sure you want to remove " + SelectedIngredient?.Name + "?",
+                    "", 
+                    MessageBoxButtons.OKCancel, 
+                    MessageBoxIcon.Question) == DialogResult.Cancel
+                    )
+                return;
+
+            if (DeleteIngredient(out Ingredient? ing))
+                if (ing is not null)
+                    _ingredients.Remove(ing);
+        }
+
+        private bool DeleteIngredient(out Ingredient? ing)
+        {
+            try
+            {
+                using (var context = factory.CreateDbContext())
+                {
+                    var i = context.Ingredients.FirstOrDefault(x => x.Id == SelectedIngredient.Id);
+
+                    if (i is not null)
+                    {
+                        context.Ingredients.Remove(i);
+                        context.SaveChanges();
+                        Console.WriteLine("removed");
+                        ing = SelectedIngredient;
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            ing = null;
+            return false;
         }
     }
 }

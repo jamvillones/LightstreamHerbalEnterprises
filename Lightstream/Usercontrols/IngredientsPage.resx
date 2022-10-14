@@ -73,7 +73,7 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="_delete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAQJJREFUOE9j
         gIG+Y/85px3+L4gNN1z9zwZVhh30n/zZMOHUz//Y8PyLv+73HfsmDVWKCfBpvvHh7/9l134/n3zyuyJU
@@ -83,7 +83,7 @@
         +/T/0xjQkiUDAwBqVuilSagKqgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="_edit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAThJREFUOE9j
         gIG+Y/85px3+L4gNN1z9zwZVhh30n/zZMOHUz//Y8PyLv+73HfsmDVWKCfBpvvHh7/9l134/n3zyuyJU
@@ -94,7 +94,7 @@
         7+DAAgBm0fVdUUcuNQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="addNewBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="_create.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAASBJREFUOE/V
         zrFKw1AUBmARERxFNyd9kmCEdMnsIr6FiyBcKDiINAXBNYliBov4CKVEC6lLI7ZUaXEQ8eqkNNbGoL83

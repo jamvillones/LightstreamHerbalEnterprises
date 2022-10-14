@@ -46,9 +46,9 @@
             this.searchTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.addNewBtn = new System.Windows.Forms.Button();
+            this._delete = new System.Windows.Forms.Button();
+            this._edit = new System.Windows.Forms.Button();
+            this._create = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._ingredientsTable)).BeginInit();
             this.ingredientActions.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -97,7 +97,7 @@
             this._ingredientsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._ingredientsTable.Size = new System.Drawing.Size(460, 325);
             this._ingredientsTable.TabIndex = 0;
-            this._ingredientsTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ingredientsTable_CellMouseClick);
+            //this._ingredientsTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ingredientsTable_CellMouseClick);
             // 
             // Column1
             // 
@@ -199,71 +199,72 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.addNewBtn);
+            this.panel2.Controls.Add(this._delete);
+            this.panel2.Controls.Add(this._edit);
+            this.panel2.Controls.Add(this._create);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 25);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(120, 375);
             this.panel2.TabIndex = 10;
             // 
-            // button2
+            // _delete
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("The Bold Font", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.Maroon;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 80);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(120, 40);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Edit";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
+            this._delete.Dock = System.Windows.Forms.DockStyle.Top;
+            this._delete.FlatAppearance.BorderSize = 0;
+            this._delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._delete.Font = new System.Drawing.Font("The Bold Font", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this._delete.ForeColor = System.Drawing.Color.Maroon;
+            this._delete.Image = ((System.Drawing.Image)(resources.GetObject("_delete.Image")));
+            this._delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this._delete.Location = new System.Drawing.Point(0, 80);
+            this._delete.Name = "_delete";
+            this._delete.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this._delete.Size = new System.Drawing.Size(120, 40);
+            this._delete.TabIndex = 7;
+            this._delete.Text = "Remove";
+            this._delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this._delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this._delete.UseVisualStyleBackColor = true;
+            this._delete.Click += new System.EventHandler(this._delete_Click);
             // 
-            // button1
+            // _edit
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("The Bold Font", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 40);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(120, 40);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Delete";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this._edit.Dock = System.Windows.Forms.DockStyle.Top;
+            this._edit.FlatAppearance.BorderSize = 0;
+            this._edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._edit.Font = new System.Drawing.Font("The Bold Font", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this._edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this._edit.Image = ((System.Drawing.Image)(resources.GetObject("_edit.Image")));
+            this._edit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this._edit.Location = new System.Drawing.Point(0, 40);
+            this._edit.Name = "_edit";
+            this._edit.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this._edit.Size = new System.Drawing.Size(120, 40);
+            this._edit.TabIndex = 6;
+            this._edit.Text = "Edit";
+            this._edit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this._edit.UseVisualStyleBackColor = true;
             // 
-            // addNewBtn
+            // _create
             // 
-            this.addNewBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.addNewBtn.FlatAppearance.BorderSize = 0;
-            this.addNewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addNewBtn.Font = new System.Drawing.Font("The Bold Font", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addNewBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
-            this.addNewBtn.Image = ((System.Drawing.Image)(resources.GetObject("addNewBtn.Image")));
-            this.addNewBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addNewBtn.Location = new System.Drawing.Point(0, 0);
-            this.addNewBtn.Name = "addNewBtn";
-            this.addNewBtn.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.addNewBtn.Size = new System.Drawing.Size(120, 40);
-            this.addNewBtn.TabIndex = 5;
-            this.addNewBtn.Text = "Create";
-            this.addNewBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addNewBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.addNewBtn.UseVisualStyleBackColor = true;
-            this.addNewBtn.Click += new System.EventHandler(this.addNewBtn_Click);
+            this._create.Dock = System.Windows.Forms.DockStyle.Top;
+            this._create.FlatAppearance.BorderSize = 0;
+            this._create.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._create.Font = new System.Drawing.Font("The Bold Font", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this._create.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
+            this._create.Image = ((System.Drawing.Image)(resources.GetObject("_create.Image")));
+            this._create.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this._create.Location = new System.Drawing.Point(0, 0);
+            this._create.Name = "_create";
+            this._create.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this._create.Size = new System.Drawing.Size(120, 40);
+            this._create.TabIndex = 5;
+            this._create.Text = "Create";
+            this._create.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this._create.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this._create.UseVisualStyleBackColor = true;
+            this._create.Click += new System.EventHandler(this.addNewBtn_Click);
             // 
             // IngredientsPage
             // 
@@ -305,8 +306,8 @@
         private DataGridViewTextBoxColumn Column4;
         private Label label1;
         private Panel panel2;
-        private Button button2;
-        private Button button1;
-        private Button addNewBtn;
+        private Button _delete;
+        private Button _edit;
+        private Button _create;
     }
 }

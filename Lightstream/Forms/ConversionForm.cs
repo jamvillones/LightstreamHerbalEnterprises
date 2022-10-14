@@ -19,6 +19,14 @@ namespace Lightstream.Forms
             InitializeComponent();
         }
 
+        Unit _from = null, _to = null;
+        public ConversionForm(Unit from, Unit to)
+        {
+            InitializeComponent();
+            _from = from;
+            _to = to;
+        }
+
         int FromId_0 => (int)_0_fromOpt.SelectedValue;
         int ToId_0 => (int)_0_ToOpt.SelectedValue;
         int FromId_1 => (int)_1_fromOpt.SelectedValue;
@@ -63,6 +71,17 @@ namespace Lightstream.Forms
 
                 _1_fromOpt.DataSource = units.ToList();
                 _1_ToOpt.DataSource = units.ToList();
+
+                if(_from is not null && _to is not null)
+                {
+                    _0_fromOpt.Text = _from.Name;
+                    _0_ToOpt.Text = _to.Name;
+
+                    _1_fromOpt.Text = _to.Name;
+                    _1_ToOpt.Text = _from.Name;
+
+                    _0_fromOpt.Enabled = _0_ToOpt.Enabled = _1_fromOpt.Enabled = _1_ToOpt.Enabled = false;
+                }
             }
         }
     }

@@ -117,13 +117,13 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Unit:";
             // 
-            // saveBtn
+            // _save
             // 
             this._save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._save.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this._save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._save.Location = new System.Drawing.Point(132, 106);
-            this._save.Name = "saveBtn";
+            this._save.Name = "_save";
             this._save.Size = new System.Drawing.Size(200, 23);
             this._save.TabIndex = 8;
             this._save.Text = "Save";
@@ -142,6 +142,7 @@
             this.Controls.Add(this.ingredientOption);
             this.Controls.Add(this.unitOption);
             this.Controls.Add(this.qty);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RecipeForm";

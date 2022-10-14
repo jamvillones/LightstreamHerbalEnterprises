@@ -73,7 +73,11 @@ namespace Lightstream.Forms
 
         void OpenConversionCreation()
         {
-            using (var conversion = new ConversionForm())
+            using (var conversion = new ConversionForm
+                (
+                (Unit)(unitOption.SelectedItem),
+                ((Ingredient)(ingredientOption.SelectedValue)).UnitMeasurement)
+                )
             {
                 if (conversion.ShowDialog() == DialogResult.OK)
                 {

@@ -120,12 +120,16 @@ namespace Lightstream.Usercontrols
                     )
                 return;
 
-            if (DeleteIngredient(SelectedIngredient))
-                _ingredients.Remove(SelectedIngredient);
+            if (SelectedIngredient is not null)
+                if (DeleteIngredient(SelectedIngredient))
+                    _ingredients.Remove(SelectedIngredient);
         }
 
-        private bool DeleteIngredient(Ingredient ing)
+        private bool DeleteIngredient(Ingredient? ing)
         {
+            if (ing is null)
+                return false;
+
             try
             {
                 using (var context = factory.CreateDbContext())

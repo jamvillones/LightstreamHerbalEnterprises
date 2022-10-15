@@ -28,10 +28,7 @@ namespace Lightstream.Forms
                 {
                     var recipe = recimeForm.RecipeDetails;
                     if (RecipeValidationSuccessfull(recipe.Ingredient.Name) || _recipe.Items.Count == 0)
-                    {
                         recipes.Add(recipe);
-                    }
-                    //_ingredientsTable.Rows.Add(CreateRow(_ingredientsTable, recipe));
                 }
             }
         }

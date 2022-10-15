@@ -137,7 +137,9 @@ namespace Lightstream.Usercontrols
         }
         void _ingredientsTable_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.RowIndex == -1 || e.ColumnIndex != deleteBtnCol.Index ||
+            if (e.Button != MouseButtons.Left||
+                e.RowIndex == -1 ||
+                e.ColumnIndex != deleteBtnCol.Index ||
                   MessageBox.Show(
                     "Are you sure you want to remove " + SelectedIngredient?.Name + "?",
                     "",

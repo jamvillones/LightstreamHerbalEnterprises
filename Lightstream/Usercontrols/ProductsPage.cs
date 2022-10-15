@@ -31,14 +31,13 @@ namespace Lightstream.Usercontrols
             {
                 if (product.ShowDialog() == DialogResult.OK)
                 {
-
+                    products.Add(new ProductViewModel(new Product() { Id=-1, Name ="Newly Added Product!", Description="Lerom Ipsum Dolor Amet" }));
                 }
             }
         }
 
         private void ProductsPage_Load(object sender, EventArgs e)
         {
-
             for (int i = 0; i < 6; i++)
             {
                 products.Add(new ProductViewModel(new Product() { Id = i, Name = "sample product name", Description = "lerom ipsum" }));
@@ -47,15 +46,23 @@ namespace Lightstream.Usercontrols
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {            
+            EditProduct(SelectedRow);            
+        }
+
+        void EditProduct(ProductViewModel? incomingProduct)
         {
-            var p = SelectedRow;
+            ///to do
+            ///open the form
+            ///update            
+
+            var p = incomingProduct;
 
             p.Data.Id = 5487;
             p.Data.Name = "edit this shit!";
             p.Data.Description = "Lerom Ipsum Dolor Amet";
-            //= new Product() { Id = 890, Name = "Edit this shit", Description = "Lerom Ipsum" };
-            p.UpdateValues();
-            
+
+            p.UpdateValues();            
         }
     }
 }

@@ -27,21 +27,21 @@ namespace Lightstream.Forms
                 if (recimeForm.ShowDialog() == DialogResult.OK)
                 {
                     var recipe = recimeForm.RecipeDetails;
-                    if (RecipeVAlidationSuccessfull(recipe.Ingredient.Name) || _recipe.Items.Count == 0)
+                    if (RecipeValidationSuccessfull(recipe.Ingredient.Name) || _recipe.Items.Count == 0)
                     {
                         recipes.Add(recipe);
                     }
-                        //_ingredientsTable.Rows.Add(CreateRow(_ingredientsTable, recipe));
+                    //_ingredientsTable.Rows.Add(CreateRow(_ingredientsTable, recipe));
                 }
             }
         }
 
-        private bool RecipeVAlidationSuccessfull(string incomingIngName)
+        private bool RecipeValidationSuccessfull(string incomingIngName)
         {
             return true;
-             //   _ingredientsTable.Rows.Cast<DataGridViewRow>().Any(x =>
-             //!string.Equals(incomingIngName, x.Cells[3].Value.ToString(), StringComparison.OrdinalIgnoreCase)
-             //);
+            //   _ingredientsTable.Rows.Cast<DataGridViewRow>().Any(x =>
+            //!string.Equals(incomingIngName, x.Cells[3].Value.ToString(), StringComparison.OrdinalIgnoreCase)
+            //);
             //return a.ToLower().Trim() != b.ToLower().Trim();
         }
 
@@ -66,6 +66,11 @@ namespace Lightstream.Forms
         private void ProductForm_Load(object sender, EventArgs e)
         {
             _recipe.DataSource = recipes;
+        }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
         }
     }
 }

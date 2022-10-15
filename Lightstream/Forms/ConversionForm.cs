@@ -19,33 +19,40 @@ namespace Lightstream.Forms
             InitializeComponent();
         }
 
-        int FromId_0 => (int)_0_fromOpt.SelectedValue;
-        int ToId_0 => (int)_0_ToOpt.SelectedValue;
-        int FromId_1 => (int)_1_fromOpt.SelectedValue;
-        int ToId_1 => (int)_1_ToOpt.SelectedValue;
+        Unit _from = null, _to = null;
+        public ConversionForm(Unit from, Unit to)
+        {
+            InitializeComponent();
+            _from = from;
+            _to = to;
+        }
+
+        int FromId_0 => (int)_convertFromOpt.SelectedValue;
+        int ToId_0 => (int)_convertToOpt.SelectedValue;
+        int FromId_1 => (int)_convertBackfromOpt.SelectedValue;
+        int ToId_1 => (int)_convertBackToOpt.SelectedValue;
         decimal Value { get; set; }
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
             using (var context = new LHE_DBContext())
             {
-                var conversion0 = new Conversion()
+                var convert = new Conversion()
                 {
                     FromUnitId = FromId_0,
                     ToUnitId = ToId_0,
                     Value = Value
                 };
 
-                var conversion1 = new Conversion()
+                var convertBack = new Conversion()
                 {
                     FromUnitId = FromId_1,
                     ToUnitId = ToId_1,
                     Value = Value
                 };
 
-                context.Conversions.Add(conversion0);
-                context.Conversions.Add(conversion1);
-
+                context.Conversions.Add(convert);
+                context.Conversions.Add(convertBack);
                 context.SaveChanges();
             }
 
@@ -58,11 +65,22 @@ namespace Lightstream.Forms
             {
                 var units = context.Units.ToArray();
 
-                _0_fromOpt.DataSource = units.ToList();
-                _0_ToOpt.DataSource = units.ToList();
+                _convertFromOpt.DataSource = units.ToList();
+                _convertToOpt.DataSource = units.ToList();
 
-                _1_fromOpt.DataSource = units.ToList();
-                _1_ToOpt.DataSource = units.ToList();
+                _convertBackfromOpt.DataSource = units.ToList();
+                _convertBackToOpt.DataSource = units.ToList();
+
+                if(_from is not null && _to is not null)
+                {
+                    _convertFromOpt.Text = _from.Name;
+                    _convertToOpt.Text = _to.Name;
+
+                    _convertBackfromOpt.Text = _to.Name;
+                    _convertBackToOpt.Text = _from.Name;
+
+                    _convertFromOpt.Enabled = _convertToOpt.Enabled = _convertBackfromOpt.Enabled = _convertBackToOpt.Enabled = false;
+                }
             }
         }
     }

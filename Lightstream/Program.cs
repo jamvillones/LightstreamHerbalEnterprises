@@ -14,20 +14,20 @@ namespace Lightstream
             ApplicationConfiguration.Initialize();
             bool loggedOut = false;
 
-            //do
-            //{
-            //    loggedOut = false;
-            //    var login = new LoginForm();
-            //    Application.Run(login);
-            //    if (login.IsLoginSuccessful)
-            //    {
-            //        var main = new Main();
-            //        Application.Run(main);
-            //        loggedOut = main.IsLoggedOut;
-            //    }
-            //} while (loggedOut);
+            do
+            {
+                loggedOut = false;
+                var login = new LoginForm();
+                Application.Run(login);
+                if (login.IsLoginSuccessful)
+                {
+                    var main = new Main();
+                    Application.Run(main);
+                    loggedOut = main.IsLoggedOut;
+                }
+            } while (loggedOut);
 
-            Application.Run(new ProductForm());
+            //Application.Run(new ProductForm());
         }
     }
 }

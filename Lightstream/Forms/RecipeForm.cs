@@ -43,14 +43,18 @@ namespace Lightstream.Forms
             }
         }
         Conversion? selectedConversion = null;
+
+        bool isFound;
         private void ingredientOption_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ingredientOption.SelectedValue is Ingredient ing && unitOption.SelectedItem is Unit fromUnit)
             {
-                bool isFound = IsConversionAvailable(fromUnit, ing.UnitMeasurement, out selectedConversion);
+                isFound = IsConversionAvailable(fromUnit, ing.UnitMeasurement, out selectedConversion);
 
-                addConversionBtn.Enabled = !isFound;
-                saveBtn.Enabled = isFound;
+                //addConversionBtn.Enabled = !isFound;
+                //saveBtn.Visible = isFound;
+                _save.Text = isFound ? "Save" : "Define Conversion";
+                _save.BackColor = isFound ? SystemColors.ActiveCaption : Color.IndianRed;
             }
         }
 
@@ -69,11 +73,20 @@ namespace Lightstream.Forms
 
         void OpenConversionCreation()
         {
+            using (var conversion = new ConversionForm
+                (
+                (Unit)(unitOption.SelectedItem),
+                ((Ingredient)(ingredientOption.SelectedValue)).UnitMeasurement)
+                )
+            {
+                if (conversion.ShowDialog() == DialogResult.OK)
+                {
 
+                }
+            }
         }
 
-        public Recipe RecipeDetails { get; private set; }
-        private void saveBtn_Click(object sender, EventArgs e)
+        bool Save()
         {
             RecipeDetails = new Recipe()
             {
@@ -83,17 +96,23 @@ namespace Lightstream.Forms
             };
 
             DialogResult = DialogResult.OK;
+
+            return true;
+        }
+
+        public Recipe RecipeDetails { get; private set; }
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            if (isFound)
+                Save();
+
+            else
+                OpenConversionCreation();
         }
 
         private void addConversionBtn_Click(object sender, EventArgs e)
         {
-            using(var conversion = new ConversionForm())
-            {
-                if(conversion.ShowDialog() == DialogResult.OK)
-                {
-
-                }
-            }
+            //OpenConversionCreation();
         }
     }
 

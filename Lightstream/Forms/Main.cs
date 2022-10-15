@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lightstream.Usercontrols;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,43 +26,34 @@ namespace Lightstream
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
+        Panel[] collapsiblePanels;
+        Button? currentButton = null;
+        Form? currentForm = null;
+        Color selectedButtonColor = Color.FromArgb(66, 120, 37);
+        Color normalButtonColor = Color.FromArgb(45,45,45);
+        public bool IsLoggedOut { get; private set; } = false;
         public Main()
         {
             InitializeComponent();
-            currentButton = button3;
 
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.DoubleBuffered = true;
-            this.SetStyle(ControlStyles.ResizeRedraw, true);
+            collapsiblePanels = new Panel[] {
+                _filesButtonPanel,
+                _transacPanel,
+                _inventoryPanel,
+                _reportsPanel,
+            };
         }
+        private void Main_Load(object sender, EventArgs e)
+        {
 
-        public bool IsLoggedOut { get; private set; } = false;
-
-        private void button1_Click(object sender, EventArgs e)
+        }
+        private void logout_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to logout?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
             IsLoggedOut = true;
             this.Close();
         }
 
-        private void button9_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            this.WindowState = this.WindowState == FormWindowState.Maximized ? FormWindowState.Normal : FormWindowState.Maximized;
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        Button currentButton;
-        Color selectedButtonColor = Color.FromArgb(66, 120, 37);
-        Color normalButtonColor = Color.FromArgb(31, 31, 31);
         void ChangeButtonStateUponClick(Button nextButton)
         {
             if (currentButton is not null)
@@ -70,12 +62,56 @@ namespace Lightstream
             currentButton = nextButton;
 
             currentButton.BackColor = selectedButtonColor;
+        }
+        void TogglePanel(Panel p)
+        {
+            p.Visible = !p.Visible;
 
+            if (p.Visible)
+            {
+                foreach (var i in collapsiblePanels.Where(x => x != p))
+                    if (i.Visible) i.Visible = false;
+            }
+        }
+        void OpenForm<TForm>() where TForm : Form, new()
+        {
+            //if there is an open form
+            if (currentForm is not null)
+            {
+                //abort if the incoming form type is the same as of the old one
+                if (typeof(TForm) == currentForm.GetType())
+                    return;
+
+                currentForm.Close();
+            }
+
+            currentForm = new TForm();
+
+            currentForm.FormClosed += (a, b) =>
+                currentForm = null;
+
+            currentForm.TopLevel = false;
+            currentForm.Size = _contentsPanel.Size;
+            currentForm.Dock = DockStyle.Fill;
+
+            _contentsPanel.Controls.Add(currentForm);
+
+            currentForm.BringToFront();
+            currentForm.Show();
         }
 
-        private void sideButton_Click(object sender, EventArgs e)
+        #region windowchrome functions
+        private void button9_Click(object sender, EventArgs e)
         {
-            if (sender is Button b) ChangeButtonStateUponClick(b);
+            this.Close();
+        }
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.WindowState = this.WindowState == FormWindowState.Maximized ? FormWindowState.Normal : FormWindowState.Maximized;
+        }
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
         /// <summary>
         /// handles the drag and maximize of custom status bar
@@ -95,21 +131,45 @@ namespace Lightstream
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+        #endregion
 
-        private void Main_Load(object sender, EventArgs e)
+        #region opening form
+        private void button9_Click_1(object sender, EventArgs e)
         {
-            //using (var context = new Lightstream_DBContext())
-            //{
-            //    var materials = context.Materials.Select(CreateRow).ToArray();
-            //    MaterialTable.Rows.AddRange(materials);
-            //}
+            if (sender is Button btn)
+                ChangeButtonStateUponClick(btn);
+
+            OpenForm<ProductsPage>();
+        }
+        private void button10_Click_1(object sender, EventArgs e)
+        {
+            if (sender is Button btn)
+                ChangeButtonStateUponClick(btn);
+
+            OpenForm<IngredientsPage>();
+        }
+        #endregion
+
+        #region toggling panels
+        private void _filesBtn_Click(object sender, EventArgs e)
+        {
+            TogglePanel(_filesButtonPanel);
         }
 
-        //DataGridViewRow CreateRow(Material m)
-        //{
-        //    //var row = new DataGridViewRow();
-        //    //row.CreateCells(MaterialTable, m.Id, m.Name, m.UnitOfMeasurement, "edit", "delete");
-        //    //return row;
-        //}
+        private void button8_Click(object sender, EventArgs e)
+        {
+            TogglePanel(_transacPanel);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            TogglePanel(_inventoryPanel);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            TogglePanel(_reportsPanel);
+        }
+        #endregion
     }
 }

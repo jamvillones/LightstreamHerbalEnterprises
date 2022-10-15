@@ -18,13 +18,11 @@ namespace Lightstream.ViewModels
             Update(nameof(ProductName));
             Update(nameof(Description));
         }
-
         public Product Data { get => _product; set => _product = value; }
         public ProductViewModel(Product prod)
         {
             _product = prod;
         }
-
         public int Id => _product.Id;
         public string ProductName => _product.Name;
         public string Description => _product.Description;

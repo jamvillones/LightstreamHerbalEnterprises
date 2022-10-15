@@ -2,55 +2,43 @@
 using Lightstream.DataAccess.Models;
 using Lightstream.Services;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Lightstream.Usercontrols
 {
-    public partial class IngredientsPage : Form
+    internal sealed partial class IngredientsPage : Form
     {
-        private DbContextFactory factory = new DbContextFactory();
-
+        DbContextFactory factory = new DbContextFactory();
         Ingredient? SelectedIngredient => _ingredientsTable.SelectedRows[0].DataBoundItem as Ingredient;
-
+        BindingList<Ingredient> ingredients = new BindingList<Ingredient>();
+        bool searchFound = false;
         public IngredientsPage()
         {
             InitializeComponent();
             _ingredientsTable.AutoGenerateColumns = false;
         }
-
-        private void IngredientUserControl_Load(object sender, EventArgs e)
+        void IngredientUserControl_Load(object sender, EventArgs e)
         {
-            _ingredientsTable.DataSource = _ingredients;
+            _ingredientsTable.DataSource = ingredients;
             try
             {
-                LoadIngredientsFromDbContext();
+                LoadAllIngredients();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void addNewBtn_Click(object sender, EventArgs e)
+        void addNewBtn_Click(object sender, EventArgs e)
         {
             using (var ingredientForm = new Forms.IngredientsForm())
             {
                 if (ingredientForm.ShowDialog() == DialogResult.OK)
                     if (ingredientForm.NewItemCreated)
-                        _ingredients.Add(ingredientForm.CreatedIngredient);
+                        ingredients.Add(ingredientForm.CreatedIngredient);
             }
         }
-
-        bool hasPerformedSearch = false;
-        private void searchTxt_KeyDown(object sender, KeyEventArgs e)
+        void searchTxt_KeyDown(object sender, KeyEventArgs e)
         {
             if (sender is not TextBox textbox)
                 return;
@@ -72,18 +60,17 @@ namespace Lightstream.Usercontrols
                         return;
                     }
 
-                    hasPerformedSearch = true;
+                    searchFound = true;
 
-                    _ingredients.Clear();
+                    ingredients.Clear();
                     foreach (var i in resultingIngredients)
-                        _ingredients.Add(i);
+                        ingredients.Add(i);
 
                     textbox.SelectAll();
                 }
             }
         }
-
-        private void searchTxt_TextChanged(object sender, EventArgs e)
+        void searchTxt_TextChanged(object sender, EventArgs e)
         {
             if (sender is not TextBox textbox) return;
 
@@ -91,25 +78,22 @@ namespace Lightstream.Usercontrols
 
             if (!string.IsNullOrWhiteSpace(text)) return;
 
-            if (!hasPerformedSearch) return;
+            if (!searchFound) return;
 
-            LoadIngredientsFromDbContext();
+            LoadAllIngredients();
         }
-
-        BindingList<Ingredient> _ingredients = new BindingList<Ingredient>();
-        private void LoadIngredientsFromDbContext()
+        void LoadAllIngredients()
         {
             using (var context = factory.CreateDbContext())
             {
                 var ingredients = context.Ingredients.Include(x => x.UnitMeasurement).ToList();
 
-                _ingredients.Clear();
+                this.ingredients.Clear();
                 foreach (var i in ingredients)
-                    _ingredients.Add(i);
+                    this.ingredients.Add(i);
             }
         }
-
-        private void _delete_Click(object sender, EventArgs e)
+        void _delete_Click(object sender, EventArgs e)
         {
             if (_ingredientsTable.RowCount == 0 ||
                 MessageBox.Show(
@@ -122,10 +106,9 @@ namespace Lightstream.Usercontrols
 
             if (SelectedIngredient is not null)
                 if (DeleteIngredient(SelectedIngredient))
-                    _ingredients.Remove(SelectedIngredient);
+                    ingredients.Remove(SelectedIngredient);
         }
-
-        private bool DeleteIngredient(Ingredient? ing)
+        bool DeleteIngredient(Ingredient? ing)
         {
             if (ing is null)
                 return false;
@@ -151,6 +134,21 @@ namespace Lightstream.Usercontrols
                 Console.WriteLine(ex.Message);
             }
             return false;
+        }
+        void _ingredientsTable_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex == -1 || e.ColumnIndex != deleteBtnCol.Index ||
+                  MessageBox.Show(
+                    "Are you sure you want to remove " + SelectedIngredient?.Name + "?",
+                    "",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Question) == DialogResult.Cancel
+                    )
+                return;
+
+            if (SelectedIngredient is not null)
+                if (DeleteIngredient(SelectedIngredient))
+                    ingredients.Remove(SelectedIngredient);
         }
     }
 }

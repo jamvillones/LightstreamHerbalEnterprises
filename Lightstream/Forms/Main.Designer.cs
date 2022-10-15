@@ -117,7 +117,7 @@
             this.button5.Location = new System.Drawing.Point(0, 90);
             this.button5.Margin = new System.Windows.Forms.Padding(5);
             this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.button5.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.button5.Size = new System.Drawing.Size(168, 45);
             this.button5.TabIndex = 6;
             this.button5.TabStop = false;
@@ -140,7 +140,7 @@
             this.button6.Location = new System.Drawing.Point(0, 45);
             this.button6.Margin = new System.Windows.Forms.Padding(5);
             this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.button6.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.button6.Size = new System.Drawing.Size(168, 45);
             this.button6.TabIndex = 5;
             this.button6.TabStop = false;
@@ -163,7 +163,7 @@
             this.button17.Location = new System.Drawing.Point(0, 0);
             this.button17.Margin = new System.Windows.Forms.Padding(5);
             this.button17.Name = "button17";
-            this.button17.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.button17.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.button17.Size = new System.Drawing.Size(168, 45);
             this.button17.TabIndex = 4;
             this.button17.TabStop = false;
@@ -223,7 +223,7 @@
             this.button9.Location = new System.Drawing.Point(0, 90);
             this.button9.Margin = new System.Windows.Forms.Padding(5);
             this.button9.Name = "button9";
-            this.button9.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.button9.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.button9.Size = new System.Drawing.Size(168, 45);
             this.button9.TabIndex = 6;
             this.button9.TabStop = false;
@@ -246,7 +246,7 @@
             this.button15.Location = new System.Drawing.Point(0, 45);
             this.button15.Margin = new System.Windows.Forms.Padding(5);
             this.button15.Name = "button15";
-            this.button15.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.button15.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.button15.Size = new System.Drawing.Size(168, 45);
             this.button15.TabIndex = 5;
             this.button15.TabStop = false;
@@ -269,7 +269,7 @@
             this.button16.Location = new System.Drawing.Point(0, 0);
             this.button16.Margin = new System.Windows.Forms.Padding(5);
             this.button16.Name = "button16";
-            this.button16.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.button16.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.button16.Size = new System.Drawing.Size(168, 45);
             this.button16.TabIndex = 4;
             this.button16.TabStop = false;
@@ -328,7 +328,7 @@
             this.button13.Location = new System.Drawing.Point(0, 45);
             this.button13.Margin = new System.Windows.Forms.Padding(5);
             this.button13.Name = "button13";
-            this.button13.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.button13.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.button13.Size = new System.Drawing.Size(168, 45);
             this.button13.TabIndex = 5;
             this.button13.TabStop = false;
@@ -351,7 +351,7 @@
             this.button14.Location = new System.Drawing.Point(0, 0);
             this.button14.Margin = new System.Windows.Forms.Padding(5);
             this.button14.Name = "button14";
-            this.button14.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.button14.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.button14.Size = new System.Drawing.Size(168, 45);
             this.button14.TabIndex = 4;
             this.button14.TabStop = false;
@@ -412,7 +412,7 @@
             this.button12.Location = new System.Drawing.Point(0, 135);
             this.button12.Margin = new System.Windows.Forms.Padding(5);
             this.button12.Name = "button12";
-            this.button12.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.button12.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.button12.Size = new System.Drawing.Size(168, 45);
             this.button12.TabIndex = 7;
             this.button12.TabStop = false;
@@ -435,7 +435,7 @@
             this.button11.Location = new System.Drawing.Point(0, 90);
             this.button11.Margin = new System.Windows.Forms.Padding(5);
             this.button11.Name = "button11";
-            this.button11.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.button11.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.button11.Size = new System.Drawing.Size(168, 45);
             this.button11.TabIndex = 6;
             this.button11.TabStop = false;
@@ -458,7 +458,7 @@
             this.button10.Location = new System.Drawing.Point(0, 45);
             this.button10.Margin = new System.Windows.Forms.Padding(5);
             this.button10.Name = "button10";
-            this.button10.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.button10.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.button10.Size = new System.Drawing.Size(168, 45);
             this.button10.TabIndex = 5;
             this.button10.TabStop = false;
@@ -482,7 +482,7 @@
             this._prodBtn.Location = new System.Drawing.Point(0, 0);
             this._prodBtn.Margin = new System.Windows.Forms.Padding(5);
             this._prodBtn.Name = "_prodBtn";
-            this._prodBtn.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this._prodBtn.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this._prodBtn.Size = new System.Drawing.Size(168, 45);
             this._prodBtn.TabIndex = 4;
             this._prodBtn.TabStop = false;

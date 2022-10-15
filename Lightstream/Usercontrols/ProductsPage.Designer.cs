@@ -28,22 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductsPage));
             this.searchTxt = new System.Windows.Forms.TextBox();
-            this.ingredientsTable = new System.Windows.Forms.DataGridView();
+            this._prodTable = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.addNewBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.ingredientsTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._prodTable)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -58,52 +60,55 @@
             this.searchTxt.Size = new System.Drawing.Size(200, 16);
             this.searchTxt.TabIndex = 3;
             // 
-            // ingredientsTable
+            // _prodTable
             // 
-            this.ingredientsTable.AllowUserToAddRows = false;
-            this.ingredientsTable.AllowUserToDeleteRows = false;
-            this.ingredientsTable.AllowUserToResizeRows = false;
-            this.ingredientsTable.BackgroundColor = System.Drawing.Color.White;
-            this.ingredientsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ingredientsTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ingredientsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.ingredientsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ingredientsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this._prodTable.AllowUserToAddRows = false;
+            this._prodTable.AllowUserToDeleteRows = false;
+            this._prodTable.AllowUserToResizeRows = false;
+            this._prodTable.BackgroundColor = System.Drawing.Color.White;
+            this._prodTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this._prodTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._prodTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this._prodTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._prodTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column3,
-            this.Column4});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ingredientsTable.DefaultCellStyle = dataGridViewCellStyle4;
-            this.ingredientsTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ingredientsTable.EnableHeadersVisualStyles = false;
-            this.ingredientsTable.Location = new System.Drawing.Point(10, 40);
-            this.ingredientsTable.Margin = new System.Windows.Forms.Padding(10);
-            this.ingredientsTable.MultiSelect = false;
-            this.ingredientsTable.Name = "ingredientsTable";
-            this.ingredientsTable.ReadOnly = true;
-            this.ingredientsTable.RowHeadersVisible = false;
-            this.ingredientsTable.RowTemplate.Height = 25;
-            this.ingredientsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ingredientsTable.Size = new System.Drawing.Size(460, 325);
-            this.ingredientsTable.TabIndex = 4;
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._prodTable.DefaultCellStyle = dataGridViewCellStyle2;
+            this._prodTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._prodTable.EnableHeadersVisualStyles = false;
+            this._prodTable.Location = new System.Drawing.Point(10, 40);
+            this._prodTable.Margin = new System.Windows.Forms.Padding(10);
+            this._prodTable.MultiSelect = false;
+            this._prodTable.Name = "_prodTable";
+            this._prodTable.ReadOnly = true;
+            this._prodTable.RowHeadersVisible = false;
+            this._prodTable.RowTemplate.Height = 25;
+            this._prodTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this._prodTable.Size = new System.Drawing.Size(510, 325);
+            this._prodTable.TabIndex = 4;
             // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column1.DataPropertyName = "Id";
             this.Column1.HeaderText = "Id";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -111,22 +116,54 @@
             // 
             // Column2
             // 
+            this.Column2.DataPropertyName = "ProductName";
             this.Column2.HeaderText = "Name";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Price";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
             // Column4
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.DataPropertyName = "Description";
             this.Column4.HeaderText = "Description";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Column5.HeaderText = "";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column5.Text = "Edit";
+            this.Column5.UseColumnTextForButtonValue = true;
+            this.Column5.Width = 60;
+            // 
+            // Column6
+            // 
+            this.Column6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Column6.HeaderText = "";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column6.Text = "Delete";
+            this.Column6.UseColumnTextForButtonValue = true;
+            this.Column6.Width = 60;
+            // 
+            // Column7
+            // 
+            this.Column7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Column7.HeaderText = "";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column7.Text = "Show";
+            this.Column7.UseColumnTextForButtonValue = true;
+            this.Column7.Width = 60;
             // 
             // addNewBtn
             // 
@@ -177,6 +214,7 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -198,13 +236,13 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.ingredientsTable);
+            this.panel2.Controls.Add(this._prodTable);
             this.panel2.Controls.Add(this.searchTxt);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(120, 25);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10, 40, 10, 10);
-            this.panel2.Size = new System.Drawing.Size(480, 375);
+            this.panel2.Size = new System.Drawing.Size(530, 375);
             this.panel2.TabIndex = 7;
             // 
             // label1
@@ -215,7 +253,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(600, 25);
+            this.label1.Size = new System.Drawing.Size(650, 25);
             this.label1.TabIndex = 8;
             this.label1.Text = "Products";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -225,7 +263,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(600, 400);
+            this.ClientSize = new System.Drawing.Size(650, 400);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -235,7 +273,8 @@
             this.Name = "ProductsPage";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            ((System.ComponentModel.ISupportInitialize)(this.ingredientsTable)).EndInit();
+            this.Load += new System.EventHandler(this.ProductsPage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this._prodTable)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -246,7 +285,7 @@
         #endregion
 
         private TextBox searchTxt;
-        private DataGridView ingredientsTable;
+        private DataGridView _prodTable;
         private Button addNewBtn;
         private Panel panel1;
         private Button button2;
@@ -255,7 +294,9 @@
         private Label label1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
+        private DataGridViewButtonColumn Column5;
+        private DataGridViewButtonColumn Column6;
+        private DataGridViewButtonColumn Column7;
     }
 }

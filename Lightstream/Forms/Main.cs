@@ -1,4 +1,5 @@
-﻿using Lightstream.Usercontrols;
+﻿using Lightstream.Forms;
+using Lightstream.Usercontrols;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -171,5 +172,11 @@ namespace Lightstream
             TogglePanel(_reportsPanel);
         }
         #endregion
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CreateNewUserForm cc = new CreateNewUserForm();
+            cc.Show();
+        }
     }
 }

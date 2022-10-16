@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            this.createNewBtn = new System.Windows.Forms.Button();
             this.loginBtn = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -47,25 +46,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // createNewBtn
-            // 
-            this.createNewBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.createNewBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.createNewBtn.FlatAppearance.BorderSize = 0;
-            this.createNewBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.createNewBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.createNewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createNewBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.createNewBtn.Location = new System.Drawing.Point(113, 365);
-            this.createNewBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.createNewBtn.Name = "createNewBtn";
-            this.createNewBtn.Size = new System.Drawing.Size(399, 50);
-            this.createNewBtn.TabIndex = 0;
-            this.createNewBtn.TabStop = false;
-            this.createNewBtn.Text = "Create New User";
-            this.createNewBtn.UseVisualStyleBackColor = false;
-            this.createNewBtn.Click += new System.EventHandler(this.createNewBtn_Click);
             // 
             // loginBtn
             // 
@@ -210,7 +190,6 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.loginBtn);
-            this.Controls.Add(this.createNewBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -232,8 +211,6 @@
         }
 
         #endregion
-
-        private Button createNewBtn;
         private Button loginBtn;
         private TextBox textBox2;
         private Panel panel1;

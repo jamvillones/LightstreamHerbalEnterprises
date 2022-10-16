@@ -68,5 +68,10 @@ namespace Lightstream.Forms
 
             return true;
         }
+
+        private void CreateNewUserForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

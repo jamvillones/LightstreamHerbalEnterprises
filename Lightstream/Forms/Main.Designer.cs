@@ -85,8 +85,9 @@
             this._sideButtonPanel.Controls.Add(this._filesBtn);
             this._sideButtonPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._sideButtonPanel.Location = new System.Drawing.Point(0, 0);
+            this._sideButtonPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._sideButtonPanel.Name = "_sideButtonPanel";
-            this._sideButtonPanel.Size = new System.Drawing.Size(168, 498);
+            this._sideButtonPanel.Size = new System.Drawing.Size(240, 831);
             this._sideButtonPanel.TabIndex = 1;
             // 
             // _reportsPanel
@@ -97,9 +98,10 @@
             this._reportsPanel.Controls.Add(this.button6);
             this._reportsPanel.Controls.Add(this.button17);
             this._reportsPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this._reportsPanel.Location = new System.Drawing.Point(0, 605);
+            this._reportsPanel.Location = new System.Drawing.Point(0, 1007);
+            this._reportsPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._reportsPanel.Name = "_reportsPanel";
-            this._reportsPanel.Size = new System.Drawing.Size(168, 135);
+            this._reportsPanel.Size = new System.Drawing.Size(240, 225);
             this._reportsPanel.TabIndex = 12;
             this._reportsPanel.Visible = false;
             // 
@@ -114,11 +116,11 @@
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(0, 90);
-            this.button5.Margin = new System.Windows.Forms.Padding(5);
+            this.button5.Location = new System.Drawing.Point(0, 150);
+            this.button5.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(168, 45);
+            this.button5.Padding = new System.Windows.Forms.Padding(43, 0, 0, 0);
+            this.button5.Size = new System.Drawing.Size(240, 75);
             this.button5.TabIndex = 6;
             this.button5.TabStop = false;
             this.button5.Text = "Stock";
@@ -137,11 +139,11 @@
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(0, 45);
-            this.button6.Margin = new System.Windows.Forms.Padding(5);
+            this.button6.Location = new System.Drawing.Point(0, 75);
+            this.button6.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(168, 45);
+            this.button6.Padding = new System.Windows.Forms.Padding(43, 0, 0, 0);
+            this.button6.Size = new System.Drawing.Size(240, 75);
             this.button6.TabIndex = 5;
             this.button6.TabStop = false;
             this.button6.Text = "Expiration";
@@ -161,10 +163,10 @@
             this.button17.Image = ((System.Drawing.Image)(resources.GetObject("button17.Image")));
             this.button17.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button17.Location = new System.Drawing.Point(0, 0);
-            this.button17.Margin = new System.Windows.Forms.Padding(5);
+            this.button17.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.button17.Name = "button17";
-            this.button17.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button17.Size = new System.Drawing.Size(168, 45);
+            this.button17.Padding = new System.Windows.Forms.Padding(43, 0, 0, 0);
+            this.button17.Size = new System.Drawing.Size(240, 75);
             this.button17.TabIndex = 4;
             this.button17.TabStop = false;
             this.button17.Text = "Sales Summary";
@@ -182,11 +184,11 @@
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(0, 555);
-            this.button7.Margin = new System.Windows.Forms.Padding(5);
+            this.button7.Location = new System.Drawing.Point(0, 924);
+            this.button7.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.button7.Name = "button7";
-            this.button7.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(168, 50);
+            this.button7.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
+            this.button7.Size = new System.Drawing.Size(240, 83);
             this.button7.TabIndex = 7;
             this.button7.TabStop = false;
             this.button7.Text = "Reports";
@@ -203,9 +205,10 @@
             this._inventoryPanel.Controls.Add(this.button15);
             this._inventoryPanel.Controls.Add(this.button16);
             this._inventoryPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this._inventoryPanel.Location = new System.Drawing.Point(0, 420);
+            this._inventoryPanel.Location = new System.Drawing.Point(0, 699);
+            this._inventoryPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._inventoryPanel.Name = "_inventoryPanel";
-            this._inventoryPanel.Size = new System.Drawing.Size(168, 135);
+            this._inventoryPanel.Size = new System.Drawing.Size(240, 225);
             this._inventoryPanel.TabIndex = 11;
             this._inventoryPanel.Visible = false;
             // 
@@ -220,11 +223,11 @@
             this.button9.ForeColor = System.Drawing.Color.White;
             this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
             this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(0, 90);
-            this.button9.Margin = new System.Windows.Forms.Padding(5);
+            this.button9.Location = new System.Drawing.Point(0, 150);
+            this.button9.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.button9.Name = "button9";
-            this.button9.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button9.Size = new System.Drawing.Size(168, 45);
+            this.button9.Padding = new System.Windows.Forms.Padding(43, 0, 0, 0);
+            this.button9.Size = new System.Drawing.Size(240, 75);
             this.button9.TabIndex = 6;
             this.button9.TabStop = false;
             this.button9.Text = "Mark-Up";
@@ -243,11 +246,11 @@
             this.button15.ForeColor = System.Drawing.Color.White;
             this.button15.Image = ((System.Drawing.Image)(resources.GetObject("button15.Image")));
             this.button15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button15.Location = new System.Drawing.Point(0, 45);
-            this.button15.Margin = new System.Windows.Forms.Padding(5);
+            this.button15.Location = new System.Drawing.Point(0, 75);
+            this.button15.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.button15.Name = "button15";
-            this.button15.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button15.Size = new System.Drawing.Size(168, 45);
+            this.button15.Padding = new System.Windows.Forms.Padding(43, 0, 0, 0);
+            this.button15.Size = new System.Drawing.Size(240, 75);
             this.button15.TabIndex = 5;
             this.button15.TabStop = false;
             this.button15.Text = "Raw Materials";
@@ -267,10 +270,10 @@
             this.button16.Image = ((System.Drawing.Image)(resources.GetObject("button16.Image")));
             this.button16.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button16.Location = new System.Drawing.Point(0, 0);
-            this.button16.Margin = new System.Windows.Forms.Padding(5);
+            this.button16.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.button16.Name = "button16";
-            this.button16.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button16.Size = new System.Drawing.Size(168, 45);
+            this.button16.Padding = new System.Windows.Forms.Padding(43, 0, 0, 0);
+            this.button16.Size = new System.Drawing.Size(240, 75);
             this.button16.TabIndex = 4;
             this.button16.TabStop = false;
             this.button16.Text = "Production Inventory";
@@ -288,11 +291,11 @@
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 370);
-            this.button4.Margin = new System.Windows.Forms.Padding(5);
+            this.button4.Location = new System.Drawing.Point(0, 616);
+            this.button4.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(168, 50);
+            this.button4.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
+            this.button4.Size = new System.Drawing.Size(240, 83);
             this.button4.TabIndex = 4;
             this.button4.TabStop = false;
             this.button4.Text = "Inventory";
@@ -308,9 +311,10 @@
             this._transacPanel.Controls.Add(this.button13);
             this._transacPanel.Controls.Add(this.button14);
             this._transacPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this._transacPanel.Location = new System.Drawing.Point(0, 280);
+            this._transacPanel.Location = new System.Drawing.Point(0, 466);
+            this._transacPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._transacPanel.Name = "_transacPanel";
-            this._transacPanel.Size = new System.Drawing.Size(168, 90);
+            this._transacPanel.Size = new System.Drawing.Size(240, 150);
             this._transacPanel.TabIndex = 10;
             this._transacPanel.Visible = false;
             // 
@@ -325,11 +329,11 @@
             this.button13.ForeColor = System.Drawing.Color.White;
             this.button13.Image = ((System.Drawing.Image)(resources.GetObject("button13.Image")));
             this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(0, 45);
-            this.button13.Margin = new System.Windows.Forms.Padding(5);
+            this.button13.Location = new System.Drawing.Point(0, 75);
+            this.button13.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.button13.Name = "button13";
-            this.button13.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button13.Size = new System.Drawing.Size(168, 45);
+            this.button13.Padding = new System.Windows.Forms.Padding(43, 0, 0, 0);
+            this.button13.Size = new System.Drawing.Size(240, 75);
             this.button13.TabIndex = 5;
             this.button13.TabStop = false;
             this.button13.Text = "Purchase Order";
@@ -349,10 +353,10 @@
             this.button14.Image = ((System.Drawing.Image)(resources.GetObject("button14.Image")));
             this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button14.Location = new System.Drawing.Point(0, 0);
-            this.button14.Margin = new System.Windows.Forms.Padding(5);
+            this.button14.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.button14.Name = "button14";
-            this.button14.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button14.Size = new System.Drawing.Size(168, 45);
+            this.button14.Padding = new System.Windows.Forms.Padding(43, 0, 0, 0);
+            this.button14.Size = new System.Drawing.Size(240, 75);
             this.button14.TabIndex = 4;
             this.button14.TabStop = false;
             this.button14.Text = "POS";
@@ -370,11 +374,11 @@
             this.button8.ForeColor = System.Drawing.Color.White;
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(0, 230);
-            this.button8.Margin = new System.Windows.Forms.Padding(5);
+            this.button8.Location = new System.Drawing.Point(0, 383);
+            this.button8.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.button8.Name = "button8";
-            this.button8.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.button8.Size = new System.Drawing.Size(168, 50);
+            this.button8.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
+            this.button8.Size = new System.Drawing.Size(240, 83);
             this.button8.TabIndex = 8;
             this.button8.TabStop = false;
             this.button8.Text = "Transaction";
@@ -392,9 +396,10 @@
             this._filesButtonPanel.Controls.Add(this.button10);
             this._filesButtonPanel.Controls.Add(this._prodBtn);
             this._filesButtonPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this._filesButtonPanel.Location = new System.Drawing.Point(0, 50);
+            this._filesButtonPanel.Location = new System.Drawing.Point(0, 83);
+            this._filesButtonPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._filesButtonPanel.Name = "_filesButtonPanel";
-            this._filesButtonPanel.Size = new System.Drawing.Size(168, 180);
+            this._filesButtonPanel.Size = new System.Drawing.Size(240, 300);
             this._filesButtonPanel.TabIndex = 9;
             this._filesButtonPanel.Visible = false;
             // 
@@ -409,11 +414,11 @@
             this.button12.ForeColor = System.Drawing.Color.White;
             this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(0, 135);
-            this.button12.Margin = new System.Windows.Forms.Padding(5);
+            this.button12.Location = new System.Drawing.Point(0, 225);
+            this.button12.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.button12.Name = "button12";
-            this.button12.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button12.Size = new System.Drawing.Size(168, 45);
+            this.button12.Padding = new System.Windows.Forms.Padding(43, 0, 0, 0);
+            this.button12.Size = new System.Drawing.Size(240, 75);
             this.button12.TabIndex = 7;
             this.button12.TabStop = false;
             this.button12.Text = "Unit Mangement";
@@ -432,11 +437,11 @@
             this.button11.ForeColor = System.Drawing.Color.White;
             this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(0, 90);
-            this.button11.Margin = new System.Windows.Forms.Padding(5);
+            this.button11.Location = new System.Drawing.Point(0, 150);
+            this.button11.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.button11.Name = "button11";
-            this.button11.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button11.Size = new System.Drawing.Size(168, 45);
+            this.button11.Padding = new System.Windows.Forms.Padding(43, 0, 0, 0);
+            this.button11.Size = new System.Drawing.Size(240, 75);
             this.button11.TabIndex = 6;
             this.button11.TabStop = false;
             this.button11.Text = "Price Management";
@@ -455,11 +460,11 @@
             this.button10.ForeColor = System.Drawing.Color.White;
             this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(0, 45);
-            this.button10.Margin = new System.Windows.Forms.Padding(5);
+            this.button10.Location = new System.Drawing.Point(0, 75);
+            this.button10.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.button10.Name = "button10";
-            this.button10.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button10.Size = new System.Drawing.Size(168, 45);
+            this.button10.Padding = new System.Windows.Forms.Padding(43, 0, 0, 0);
+            this.button10.Size = new System.Drawing.Size(240, 75);
             this.button10.TabIndex = 5;
             this.button10.TabStop = false;
             this.button10.Text = "Ingredients";
@@ -480,10 +485,10 @@
             this._prodBtn.Image = ((System.Drawing.Image)(resources.GetObject("_prodBtn.Image")));
             this._prodBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._prodBtn.Location = new System.Drawing.Point(0, 0);
-            this._prodBtn.Margin = new System.Windows.Forms.Padding(5);
+            this._prodBtn.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this._prodBtn.Name = "_prodBtn";
-            this._prodBtn.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this._prodBtn.Size = new System.Drawing.Size(168, 45);
+            this._prodBtn.Padding = new System.Windows.Forms.Padding(43, 0, 0, 0);
+            this._prodBtn.Size = new System.Drawing.Size(240, 75);
             this._prodBtn.TabIndex = 4;
             this._prodBtn.TabStop = false;
             this._prodBtn.Text = "Production";
@@ -504,10 +509,10 @@
             this._filesBtn.Image = ((System.Drawing.Image)(resources.GetObject("_filesBtn.Image")));
             this._filesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._filesBtn.Location = new System.Drawing.Point(0, 0);
-            this._filesBtn.Margin = new System.Windows.Forms.Padding(5);
+            this._filesBtn.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this._filesBtn.Name = "_filesBtn";
-            this._filesBtn.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this._filesBtn.Size = new System.Drawing.Size(168, 50);
+            this._filesBtn.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
+            this._filesBtn.Size = new System.Drawing.Size(240, 83);
             this._filesBtn.TabIndex = 3;
             this._filesBtn.TabStop = false;
             this._filesBtn.Text = "Files";
@@ -524,9 +529,10 @@
             this._topPanel.Controls.Add(this.label1);
             this._topPanel.Controls.Add(this.pictureBox1);
             this._topPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this._topPanel.Location = new System.Drawing.Point(170, 0);
+            this._topPanel.Location = new System.Drawing.Point(242, 0);
+            this._topPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._topPanel.Name = "_topPanel";
-            this._topPanel.Size = new System.Drawing.Size(680, 30);
+            this._topPanel.Size = new System.Drawing.Size(972, 50);
             this._topPanel.TabIndex = 3;
             this._topPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
@@ -537,9 +543,10 @@
             this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.minimizeButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.minimizeButton.Location = new System.Drawing.Point(560, 0);
+            this.minimizeButton.Location = new System.Drawing.Point(801, 0);
+            this.minimizeButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.Size = new System.Drawing.Size(40, 30);
+            this.minimizeButton.Size = new System.Drawing.Size(57, 50);
             this.minimizeButton.TabIndex = 4;
             this.minimizeButton.Text = "🗕";
             this.minimizeButton.UseVisualStyleBackColor = true;
@@ -551,9 +558,10 @@
             this.maximizeButton.FlatAppearance.BorderSize = 0;
             this.maximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.maximizeButton.Location = new System.Drawing.Point(600, 0);
+            this.maximizeButton.Location = new System.Drawing.Point(858, 0);
+            this.maximizeButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.maximizeButton.Name = "maximizeButton";
-            this.maximizeButton.Size = new System.Drawing.Size(40, 30);
+            this.maximizeButton.Size = new System.Drawing.Size(57, 50);
             this.maximizeButton.TabIndex = 3;
             this.maximizeButton.Text = "🗖";
             this.maximizeButton.UseVisualStyleBackColor = true;
@@ -565,9 +573,10 @@
             this.closeBtn.FlatAppearance.BorderSize = 0;
             this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeBtn.ForeColor = System.Drawing.Color.IndianRed;
-            this.closeBtn.Location = new System.Drawing.Point(640, 0);
+            this.closeBtn.Location = new System.Drawing.Point(915, 0);
+            this.closeBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(40, 30);
+            this.closeBtn.Size = new System.Drawing.Size(57, 50);
             this.closeBtn.TabIndex = 2;
             this.closeBtn.Text = "✖";
             this.closeBtn.UseVisualStyleBackColor = false;
@@ -580,9 +589,10 @@
             this.label1.CausesValidation = false;
             this.label1.Font = new System.Drawing.Font("The Bold Font", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
-            this.label1.Location = new System.Drawing.Point(36, 8);
+            this.label1.Location = new System.Drawing.Point(51, 13);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 17);
+            this.label1.Size = new System.Drawing.Size(324, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "Lightstream Herbal Enterprise";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -593,8 +603,9 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 30);
+            this.pictureBox1.Size = new System.Drawing.Size(51, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -606,8 +617,9 @@
             this._sidePanel.Controls.Add(this._sideButtonPanel);
             this._sidePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this._sidePanel.Location = new System.Drawing.Point(0, 0);
+            this._sidePanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._sidePanel.Name = "_sidePanel";
-            this._sidePanel.Size = new System.Drawing.Size(170, 500);
+            this._sidePanel.Size = new System.Drawing.Size(242, 833);
             this._sidePanel.TabIndex = 4;
             // 
             // panel1
@@ -617,9 +629,10 @@
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 438);
+            this.panel1.Location = new System.Drawing.Point(0, 731);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(168, 60);
+            this.panel1.Size = new System.Drawing.Size(240, 100);
             this.panel1.TabIndex = 2;
             // 
             // button2
@@ -631,14 +644,15 @@
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(5);
+            this.button2.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(168, 30);
+            this.button2.Size = new System.Drawing.Size(240, 50);
             this.button2.TabIndex = 3;
             this.button2.TabStop = false;
             this.button2.Text = "Settings";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -648,10 +662,10 @@
             this.button1.Font = new System.Drawing.Font("The Bold Font", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 30);
-            this.button1.Margin = new System.Windows.Forms.Padding(5);
+            this.button1.Location = new System.Drawing.Point(0, 50);
+            this.button1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 30);
+            this.button1.Size = new System.Drawing.Size(240, 50);
             this.button1.TabIndex = 2;
             this.button1.TabStop = false;
             this.button1.Text = "Log out";
@@ -662,22 +676,24 @@
             // _contentsPanel
             // 
             this._contentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._contentsPanel.Location = new System.Drawing.Point(170, 30);
+            this._contentsPanel.Location = new System.Drawing.Point(242, 50);
+            this._contentsPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._contentsPanel.Name = "_contentsPanel";
-            this._contentsPanel.Size = new System.Drawing.Size(680, 470);
+            this._contentsPanel.Size = new System.Drawing.Size(972, 783);
             this._contentsPanel.TabIndex = 4;
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 500);
+            this.ClientSize = new System.Drawing.Size(1214, 833);
             this.ControlBox = false;
             this.Controls.Add(this._contentsPanel);
             this.Controls.Add(this._topPanel);
             this.Controls.Add(this._sidePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lightstream Herbal Enterprise";

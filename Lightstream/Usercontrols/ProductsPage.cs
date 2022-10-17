@@ -64,5 +64,20 @@ namespace Lightstream.Usercontrols
 
             p.UpdateValues();            
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void _prodTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

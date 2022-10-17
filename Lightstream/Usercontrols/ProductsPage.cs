@@ -109,8 +109,18 @@ namespace Lightstream.Usercontrols
             if (ValidationSuccessful())
                 if (SaveProduct(out Product? savedProduct))
                     if (savedProduct is not null)
+                    {
+                        Clear();
                         products.Add(new ProductViewModel(savedProduct));
+                    }
         }
+
+        private void Clear()
+        {
+            recipes.Clear();
+            _productName.Text = _description.Text = string.Empty;
+        }
+
         bool ValidationSuccessful()
         {
             if (string.IsNullOrWhiteSpace(_productName.Text))
@@ -165,8 +175,7 @@ namespace Lightstream.Usercontrols
         {
             if (MessageBox.Show("Are you sure you want to cancel?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
                 return;
-            recipes.Clear();
-            _productName.Text = _description.Text = string.Empty;
+            Clear();
         }
 
         private void _deleteProduct_Click(object sender, EventArgs e)

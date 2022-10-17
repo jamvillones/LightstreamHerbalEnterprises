@@ -32,13 +32,13 @@ namespace Lightstream.Usercontrols
 
         private void addNewBtn_Click(object sender, EventArgs e)
         {
-            using (var product = new ProductForm())
-            {
-                if (product.ShowDialog() == DialogResult.OK)
-                {
-                    products.Add(new ProductViewModel(new Product() { Id = -1, Name = "Newly Added Product!", Description = "Lerom Ipsum Dolor Amet" }));
-                }
-            }
+            //using (var product = new EditProductForm())
+            //{
+            //    if (product.ShowDialog() == DialogResult.OK)
+            //    {
+            //        products.Add(new ProductViewModel(new Product() { Id = -1, Name = "Newly Added Product!", Description = "Lerom Ipsum Dolor Amet" }));
+            //    }
+            //}
         }
         void LoadProducts()
         {
@@ -180,23 +180,28 @@ namespace Lightstream.Usercontrols
             ClearFields();
         }
 
+        #region delete product
         private void _deleteProduct_Click(object sender, EventArgs e)
         {
-            if (SelectedProduct is null ||
-                MessageBox.Show(
-                    "Are you sure you want to delete " + SelectedProduct.ProductName + "?",
-                    "",
-                    MessageBoxButtons.OKCancel,
-                    MessageBoxIcon.Question
-                    ) == DialogResult.Cancel)
-                return;
-
             if (DeleteProduct(SelectedProduct.Data))
                 products.Remove(SelectedProduct);
         }
 
+        bool DeleteValidationSuccessful(Product product)
+        {
+            return (SelectedProduct is not null &&
+                MessageBox.Show(
+                    "Are you sure you want to delete " + product.Name + "?",
+                    "",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Question
+                    ) == DialogResult.OK);
+        }
         bool DeleteProduct(Product product)
         {
+            if (!DeleteValidationSuccessful(SelectedProduct.Data))
+                return false;
+
             using (var context = factory.CreateDbContext())
             {
                 context.Products.Remove(product);
@@ -204,7 +209,33 @@ namespace Lightstream.Usercontrols
             }
             return true;
         }
+        #endregion
 
+        #region edit product
+        bool EditValidationSuccessful(Product product)
+        {
+            return (SelectedProduct is not null &&
+                MessageBox.Show(
+                    "Are you sure you want to edit " + product.Name + "?",
+                    "",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Question
+                    ) == DialogResult.OK);
+        }
+        void OpenEditForm()
+        {
+            if (!EditValidationSuccessful(SelectedProduct.Data))
+                return;
+
+            using (var edit = new EditProductForm(SelectedProduct.Data))
+            {
+                if (edit.ShowDialog() == DialogResult.OK)
+                {
+                    //handle changes
+                }
+            }
+        }
+        #endregion
         #region search
 
         bool searchDone = false;
@@ -252,22 +283,19 @@ namespace Lightstream.Usercontrols
 
         private void _prodTable_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            if (e.RowIndex == -1)
+                return;
             ///if the click column is the delete column or the clicked row is the header
-            if (e.ColumnIndex != delCol.Index ||
-                e.RowIndex == -1)
-                return;
+            if (e.ColumnIndex == delCol.Index)
+            {
+                if (DeleteProduct(SelectedProduct.Data))
+                    products.Remove(SelectedProduct);
 
-            if (SelectedProduct is null ||
-                MessageBox.Show(
-                    "Are you sure you want to delete " + SelectedProduct.ProductName + "?",
-                    "",
-                    MessageBoxButtons.OKCancel,
-                    MessageBoxIcon.Question
-                    ) == DialogResult.Cancel)
-                return;
-
-            if (DeleteProduct(SelectedProduct.Data))
-                products.Remove(SelectedProduct);
+            }
+            else if (e.ColumnIndex == editCol.Index)
+            {
+                OpenEditForm();
+            }
         }
     }
 }

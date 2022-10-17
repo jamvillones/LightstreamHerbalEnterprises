@@ -11,7 +11,7 @@ namespace Lightstream.ViewModels
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public void Update(string propertyName)
+        public void UpdateProperty(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

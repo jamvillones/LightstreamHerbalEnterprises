@@ -14,9 +14,9 @@ namespace Lightstream.ViewModels
         Product _product;        
         public void UpdateValues()
         {
-            Update(nameof(Id));
-            Update(nameof(ProductName));
-            Update(nameof(Description));
+            UpdateProperty(nameof(Id));
+            UpdateProperty(nameof(ProductName));
+            UpdateProperty(nameof(Description));
         }
         public Product Data { get => _product; set => _product = value; }
         public ProductViewModel(Product prod)

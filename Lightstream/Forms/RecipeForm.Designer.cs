@@ -146,6 +146,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RecipeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Required Ingredient";
             this.Load += new System.EventHandler(this.RecipeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.qty)).EndInit();

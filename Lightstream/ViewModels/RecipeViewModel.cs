@@ -29,6 +29,10 @@ namespace Lightstream.ViewModels
             UpdateProperty(nameof(DisplayMember));
         }
 
+        public decimal Qty => Data.Qty;
+        public string Unit => Data.GetUnit;
+        public string Ingredient => Data.Ingredient.Name;
+
         public string DisplayMember => _recipe.DisplayMember;
 
     }

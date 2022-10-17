@@ -24,6 +24,7 @@ namespace Lightstream.Forms
         public EditProductForm(Product product)
         {
             InitializeComponent();
+            _recipe.AutoGenerateColumns = false;
             this.product = product;
         }
 
@@ -34,7 +35,7 @@ namespace Lightstream.Forms
                 if (recimeForm.ShowDialog() == DialogResult.OK)
                 {
                     var recipe = recimeForm.RecipeDetails;
-                    if (RecipeValidationSuccessfull(recipe.Ingredient.Name) || _recipe.Items.Count == 0)
+                    if (RecipeValidationSuccessfull(recipe.Ingredient.Name) || _recipe.RowCount == 0)
                         recipes.Add(new RecipeViewModel(recipe));
                 }
             }
@@ -52,8 +53,8 @@ namespace Lightstream.Forms
             {
                 var prod = context.Products
                     .Include(x => x.Recipes)
-                    .ThenInclude(r=>r.Ingredient)
-                    .ThenInclude(r=>r.UnitMeasurement)                 
+                    .ThenInclude(r => r.Ingredient)
+                    .ThenInclude(r => r.UnitMeasurement)
                     .FirstOrDefault(y => y.Id == product.Id);
                 if (prod is null)
                     return;

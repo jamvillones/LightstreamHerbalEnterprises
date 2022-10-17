@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecipeForm));
             this.qty = new System.Windows.Forms.NumericUpDown();
             this.unitOption = new System.Windows.Forms.ComboBox();
             this.ingredientOption = new System.Windows.Forms.ComboBox();
@@ -147,6 +148,7 @@
             this.Controls.Add(this.unitOption);
             this.Controls.Add(this.qty);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RecipeForm";

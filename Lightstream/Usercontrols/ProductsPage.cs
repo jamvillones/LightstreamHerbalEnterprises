@@ -56,10 +56,7 @@ namespace Lightstream.Usercontrols
         private void ProductsPage_Load(object sender, EventArgs e)
         {
             LoadProducts();
-            //for (int i = 0; i < 6; i++)
-            //{
-            //    products.Add(new ProductViewModel(new Product() { Id = i, Name = "sample product name", Description = "lerom ipsum" }));
-            //}
+           
             _prodTable.DataSource = products;
             _recipe.DataSource = recipes;
         }
@@ -71,17 +68,17 @@ namespace Lightstream.Usercontrols
 
         void EditProduct(ProductViewModel? incomingProduct)
         {
-            ///to do
-            ///open the form
-            ///update            
+            /////to do
+            /////open the form
+            /////update            
 
-            var p = incomingProduct;
+            //var p = incomingProduct;
 
-            p.Data.Id = 5487;
-            p.Data.Name = "edit this shit!";
-            p.Data.Description = "Lerom Ipsum Dolor Amet";
+            //p.Data.Id = 5487;
+            //p.Data.Name = "edit this shit!";
+            //p.Data.Description = "Lerom Ipsum Dolor Amet";
 
-            p.UpdateValues();
+            //p.UpdateValues();
         }
 
         private void _addIngredients_Click(object sender, EventArgs e)

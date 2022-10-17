@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -56,7 +57,7 @@ namespace Lightstream.Usercontrols
         private void ProductsPage_Load(object sender, EventArgs e)
         {
             LoadProducts();
-           
+
             _prodTable.DataSource = products;
             _recipe.DataSource = recipes;
         }
@@ -204,6 +205,8 @@ namespace Lightstream.Usercontrols
             return true;
         }
 
+        #region search
+
         bool searchDone = false;
         private void searchTxt_TextChanged(object sender, EventArgs e)
         {
@@ -244,6 +247,27 @@ namespace Lightstream.Usercontrols
                         products.Add(new ProductViewModel(i));
                 }
             }
+        }
+        #endregion
+
+        private void _prodTable_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            ///if the click column is the delete column or the clicked row is the header
+            if (e.ColumnIndex != delCol.Index ||
+                e.RowIndex == -1)
+                return;
+
+            if (SelectedProduct is null ||
+                MessageBox.Show(
+                    "Are you sure you want to delete " + SelectedProduct.ProductName + "?",
+                    "",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Question
+                    ) == DialogResult.Cancel)
+                return;
+
+            if (DeleteProduct(SelectedProduct.Data))
+                products.Remove(SelectedProduct);
         }
     }
 }

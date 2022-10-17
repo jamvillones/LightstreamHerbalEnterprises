@@ -67,6 +67,8 @@
             this.searchTxt.PlaceholderText = "Search...";
             this.searchTxt.Size = new System.Drawing.Size(214, 16);
             this.searchTxt.TabIndex = 3;
+            this.searchTxt.TextChanged += new System.EventHandler(this.searchTxt_TextChanged);
+            this.searchTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchTxt_KeyDown);
             // 
             // _prodTable
             // 

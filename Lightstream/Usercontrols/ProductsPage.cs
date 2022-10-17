@@ -1,6 +1,7 @@
 ﻿using Lightstream.DataAccess.Data;
 using Lightstream.DataAccess.Models;
 using Lightstream.Forms;
+using Lightstream.Services;
 using Lightstream.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -38,9 +39,9 @@ namespace Lightstream.Usercontrols
                 }
             }
         }
-
-        private void ProductsPage_Load(object sender, EventArgs e)
+        void LoadProducts()
         {
+            products.Clear();
             try
             {
                 using (var context = factory.CreateDbContext())
@@ -51,6 +52,10 @@ namespace Lightstream.Usercontrols
                 }
             }
             catch { }
+        }
+        private void ProductsPage_Load(object sender, EventArgs e)
+        {
+            LoadProducts();
             //for (int i = 0; i < 6; i++)
             //{
             //    products.Add(new ProductViewModel(new Product() { Id = i, Name = "sample product name", Description = "lerom ipsum" }));
@@ -201,6 +206,48 @@ namespace Lightstream.Usercontrols
                 context.SaveChanges();
             }
             return true;
+        }
+
+        bool searchDone = false;
+        private void searchTxt_TextChanged(object sender, EventArgs e)
+        {
+            if (sender is TextBox t)
+            {
+                var text = t.Text.Trim();
+                if (string.IsNullOrWhiteSpace(text) && searchDone)
+                {
+                    LoadProducts();
+                    searchDone = false;
+                }
+            }
+        }
+
+        private void searchTxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (sender is TextBox t && e.KeyCode == Keys.Enter)
+            {
+                var text = t.Text.Trim();
+
+                if (string.IsNullOrWhiteSpace(text))
+                    return;
+
+                using (var context = factory.CreateDbContext())
+                {
+                    var filtered = SearchHandler.FilterList(context.Products, filteringConditions: x => x.Name.ToLower().Contains(text.ToLower()));
+                    searchDone = filtered.Count() != 0;
+
+                    if (!searchDone)
+                    {
+                        MessageBox.Show("No products found!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    searchDone = true;
+                    t.SelectAll();
+                    products.Clear();
+                    foreach (var i in filtered)
+                        products.Add(new ProductViewModel(i));
+                }
+            }
         }
     }
 }

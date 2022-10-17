@@ -12,9 +12,8 @@ namespace Lightstream.DataAccess.Models
 
         public int Id { get; set; }
         public int FromUnitId { get; set; }
-        public int ToUnitId { get; set; }
+        public int ToUnitId { get; set; }        
         public decimal Value { get; set; }
-
         public virtual Unit FromUnit { get; set; } = null!;
         public virtual Unit ToUnit { get; set; } = null!;
         public virtual ICollection<Recipe> Recipes { get; set; }

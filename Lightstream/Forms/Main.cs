@@ -31,7 +31,7 @@ namespace Lightstream
         Button? currentButton = null;
         Form? currentForm = null;
         Color selectedButtonColor = Color.FromArgb(66, 120, 37);
-        Color normalButtonColor = Color.FromArgb(45,45,45);
+        Color normalButtonColor = Color.FromArgb(45, 45, 45);
         public bool IsLoggedOut { get; private set; } = false;
         public Main()
         {
@@ -175,8 +175,13 @@ namespace Lightstream
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CreateNewUserForm cc = new CreateNewUserForm();
-            cc.Show();
+            using (CreateNewUserForm cc = new CreateNewUserForm())
+            {
+                if (cc.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            }
         }
     }
 }

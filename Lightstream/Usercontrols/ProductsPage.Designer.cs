@@ -307,9 +307,9 @@
             this._recipe.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._recipe.FormattingEnabled = true;
             this._recipe.ItemHeight = 15;
-            this._recipe.Location = new System.Drawing.Point(5, 21);
+            this._recipe.Location = new System.Drawing.Point(5, 20);
             this._recipe.Name = "_recipe";
-            this._recipe.Size = new System.Drawing.Size(240, 111);
+            this._recipe.Size = new System.Drawing.Size(240, 112);
             this._recipe.TabIndex = 1;
             // 
             // _addIngredients
@@ -331,6 +331,7 @@
             this._description.Name = "_description";
             this._description.Size = new System.Drawing.Size(263, 23);
             this._description.TabIndex = 1;
+            this._description.TextChanged += new System.EventHandler(this.fields_TextChanged);
             // 
             // _cancel
             // 
@@ -350,6 +351,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(263, 23);
             this.textBox2.TabIndex = 2;
+            this.textBox2.TextChanged += new System.EventHandler(this.fields_TextChanged);
             // 
             // _save
             // 
@@ -370,6 +372,7 @@
             this._productName.Name = "_productName";
             this._productName.Size = new System.Drawing.Size(263, 23);
             this._productName.TabIndex = 0;
+            this._productName.TextChanged += new System.EventHandler(this.fields_TextChanged);
             // 
             // label4
             // 

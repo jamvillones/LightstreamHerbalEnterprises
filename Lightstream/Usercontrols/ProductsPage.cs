@@ -24,10 +24,25 @@ namespace Lightstream.Usercontrols
         BindingList<ProductViewModel> products = new BindingList<ProductViewModel>();
         BindingList<RecipeViewModel> recipes = new BindingList<RecipeViewModel>();
         ProductViewModel? SelectedProduct => _prodTable.RowCount == 0 ? null : (ProductViewModel)_prodTable.SelectedRows[0].DataBoundItem;
+
+        bool CanSaveProduct => !string.IsNullOrWhiteSpace(_productName.Text.Trim()) && recipes.Count > 0;
+        bool CanReset => !string.IsNullOrWhiteSpace(_productName.Text) ||
+                         !string.IsNullOrWhiteSpace(_description.Text) ||
+                         !string.IsNullOrWhiteSpace(textBox2.Text) ||
+                         recipes.Count > 0;
         public ProductsPage()
         {
             InitializeComponent();
             _prodTable.AutoGenerateColumns = false;
+            recipes.ListChanged += Recipes_ListChanged;
+            _save.Enabled = _cancel.Enabled = false;
+        }
+
+        private void Recipes_ListChanged(object? sender, ListChangedEventArgs e)
+        {
+            _save.Enabled = CanSaveProduct;
+            _cancel.Enabled = CanReset;
+            //throw new NotImplementedException();
         }
 
         private void addNewBtn_Click(object sender, EventArgs e)
@@ -296,6 +311,12 @@ namespace Lightstream.Usercontrols
             {
                 OpenEditForm();
             }
+        }
+
+        private void fields_TextChanged(object sender, EventArgs e)
+        {
+            _save.Enabled = CanSaveProduct;
+            _cancel.Enabled = CanReset;
         }
     }
 }

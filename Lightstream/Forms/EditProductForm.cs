@@ -101,6 +101,11 @@ namespace Lightstream.Forms
         {
             if (MessageBox.Show("Are you sure you want to save changes?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
                 return false;
+            if(recipes.Count == 0)
+            {
+                MessageBox.Show("Ingredients cannot be empty!","", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
             return true;
         }
         //DbContextFactory factory = new DbContextFactory();

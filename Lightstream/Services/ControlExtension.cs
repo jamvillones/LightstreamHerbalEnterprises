@@ -14,7 +14,19 @@ namespace Lightstream.Extensions
                 control.Invoke(action);
             else
                 action.Invoke();
-
         }
+
+        public static DialogResult OpenFormModal(this Form control, FormClosedEventHandler closingCallback = null)
+        {
+            using (control)
+            {
+                if (closingCallback != null)
+                    control.FormClosed += closingCallback;
+
+                return control.ShowDialog();
+            }
+        }
+
+
     }
 }

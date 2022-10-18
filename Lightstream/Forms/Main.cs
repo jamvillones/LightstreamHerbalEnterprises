@@ -33,6 +33,16 @@ namespace Lightstream
         Color selectedButtonColor = Color.FromArgb(66, 120, 37);
         Color normalButtonColor = Color.FromArgb(45, 45, 45);
         public bool IsLoggedOut { get; private set; } = false;
+        //protected override void WndProc(ref Message message)
+        //{
+        //    const int WM_NCHITTEST = 0x0084;
+
+        //    if (message.Msg == WM_NCHITTEST)
+        //        return;
+
+        //    base.WndProc(ref message);
+        //}
+
         public Main()
         {
             InitializeComponent();

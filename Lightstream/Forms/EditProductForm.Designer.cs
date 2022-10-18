@@ -63,7 +63,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(20, 125);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(0);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(502, 436);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
@@ -102,7 +102,7 @@
             this._recipe.DefaultCellStyle = dataGridViewCellStyle4;
             this._recipe.Dock = System.Windows.Forms.DockStyle.Fill;
             this._recipe.EnableHeadersVisualStyles = false;
-            this._recipe.Location = new System.Drawing.Point(0, 45);
+            this._recipe.Location = new System.Drawing.Point(2, 47);
             this._recipe.Margin = new System.Windows.Forms.Padding(0);
             this._recipe.MultiSelect = false;
             this._recipe.Name = "_recipe";
@@ -110,7 +110,7 @@
             this._recipe.RowHeadersVisible = false;
             this._recipe.RowTemplate.Height = 25;
             this._recipe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._recipe.Size = new System.Drawing.Size(502, 391);
+            this._recipe.Size = new System.Drawing.Size(498, 387);
             this._recipe.TabIndex = 10;
             this._recipe.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._recipe_CellMouseClick);
             // 
@@ -174,12 +174,13 @@
             // _addIngredients
             // 
             this._addIngredients.Dock = System.Windows.Forms.DockStyle.Top;
-            this._addIngredients.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this._addIngredients.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
+            this._addIngredients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._addIngredients.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._addIngredients.Location = new System.Drawing.Point(0, 15);
-            this._addIngredients.Margin = new System.Windows.Forms.Padding(0);
+            this._addIngredients.Location = new System.Drawing.Point(2, 17);
+            this._addIngredients.Margin = new System.Windows.Forms.Padding(5);
             this._addIngredients.Name = "_addIngredients";
-            this._addIngredients.Size = new System.Drawing.Size(502, 30);
+            this._addIngredients.Size = new System.Drawing.Size(498, 30);
             this._addIngredients.TabIndex = 2;
             this._addIngredients.Text = "Add Ingredients";
             this._addIngredients.UseVisualStyleBackColor = true;
@@ -284,9 +285,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EditProductForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

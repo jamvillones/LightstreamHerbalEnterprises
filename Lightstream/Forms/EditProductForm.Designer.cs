@@ -112,6 +112,7 @@
             this._recipe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._recipe.Size = new System.Drawing.Size(502, 391);
             this._recipe.TabIndex = 10;
+            this._recipe.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._recipe_CellMouseClick);
             // 
             // Column2
             // 
@@ -204,6 +205,7 @@
             this._cancel.TabIndex = 15;
             this._cancel.Text = "Reset";
             this._cancel.UseVisualStyleBackColor = true;
+            this._cancel.Click += new System.EventHandler(this._cancel_Click);
             // 
             // textBox2
             // 
@@ -226,6 +228,7 @@
             this._save.TabIndex = 14;
             this._save.Text = "Save";
             this._save.UseVisualStyleBackColor = false;
+            this._save.Click += new System.EventHandler(this._save_Click);
             // 
             // _productName
             // 

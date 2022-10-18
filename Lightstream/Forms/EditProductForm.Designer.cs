@@ -102,8 +102,8 @@
             this._recipe.DefaultCellStyle = dataGridViewCellStyle4;
             this._recipe.Dock = System.Windows.Forms.DockStyle.Fill;
             this._recipe.EnableHeadersVisualStyles = false;
-            this._recipe.Location = new System.Drawing.Point(0, 15);
-            this._recipe.Margin = new System.Windows.Forms.Padding(10);
+            this._recipe.Location = new System.Drawing.Point(0, 45);
+            this._recipe.Margin = new System.Windows.Forms.Padding(0);
             this._recipe.MultiSelect = false;
             this._recipe.Name = "_recipe";
             this._recipe.ReadOnly = true;
@@ -173,10 +173,10 @@
             // 
             // _addIngredients
             // 
-            this._addIngredients.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this._addIngredients.Dock = System.Windows.Forms.DockStyle.Top;
             this._addIngredients.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this._addIngredients.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._addIngredients.Location = new System.Drawing.Point(0, 406);
+            this._addIngredients.Location = new System.Drawing.Point(0, 15);
             this._addIngredients.Margin = new System.Windows.Forms.Padding(0);
             this._addIngredients.Name = "_addIngredients";
             this._addIngredients.Size = new System.Drawing.Size(502, 30);

@@ -26,7 +26,5 @@ namespace Lightstream.Extensions
                 return control.ShowDialog();
             }
         }
-
-
     }
 }

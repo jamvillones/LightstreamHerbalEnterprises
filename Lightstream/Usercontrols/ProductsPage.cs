@@ -1,5 +1,6 @@
 ﻿using Lightstream.DataAccess.Data;
 using Lightstream.DataAccess.Models;
+using Lightstream.Extensions;
 using Lightstream.Forms;
 using Lightstream.Services;
 using Lightstream.ViewModels;
@@ -10,6 +11,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -242,17 +244,15 @@ namespace Lightstream.Usercontrols
             if (!EditValidationSuccessful(SelectedProduct.Data))
                 return;
 
-            using (var edit = new EditProductForm(SelectedProduct.Data))
+            var result = new EditProductForm(SelectedProduct.Data).OpenFormModal();
+            if(result == DialogResult.OK)
             {
-                if (edit.ShowDialog() == DialogResult.OK)
-                {
-                    //handle changes
-                }
+                //handle the update of the item editted
             }
         }
         #endregion
+        
         #region search
-
         bool searchDone = false;
         private void searchTxt_TextChanged(object sender, EventArgs e)
         {

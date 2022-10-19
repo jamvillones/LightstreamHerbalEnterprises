@@ -32,6 +32,7 @@ namespace Lightstream.Usercontrols
             set => _unitOption.SelectedItem = value;
         }
         ProductViewModel? SelectedProduct => _prodTable.RowCount == 0 ? null : (ProductViewModel)_prodTable.SelectedRows[0].DataBoundItem;
+        RecipeViewModel? SelectedRecipe => _recipe.SelectedItem is RecipeViewModel r ? r : null;
         bool CanSaveProduct => !string.IsNullOrWhiteSpace(_productName.Text.Trim()) && recipes.Count > 0;
         bool CanReset => !string.IsNullOrWhiteSpace(_productName.Text) ||
                          !string.IsNullOrWhiteSpace(_description.Text) ||
@@ -57,59 +58,36 @@ namespace Lightstream.Usercontrols
             //throw new NotImplementedException();
         }
 
-        private void addNewBtn_Click(object sender, EventArgs e)
-        {
-            //using (var product = new EditProductForm())
-            //{
-            //    if (product.ShowDialog() == DialogResult.OK)
-            //    {
-            //        products.Add(new ProductViewModel(new Product() { Id = -1, Name = "Newly Added Product!", Description = "Lerom Ipsum Dolor Amet" }));
-            //    }
-            //}
-        }
-        void LoadValues()
+        void LoadProductValues(LHE_DBContext context)
         {
             products.Clear();
             try
             {
-                using (var context = factory.CreateDbContext())
-                {
-                    var prods = context.Products.Include(x => x.Recipes).Select(p => new ProductViewModel(p)).ToList();
-                    products = new BindingList<ProductViewModel>(prods);
-
-                    var u = context.Units.ToList();
-                    units = new BindingList<Unit>(u);
-                }
+                var prods = context.Products
+                    .Include(x => x.Recipes)
+                    .Include(u => u.UnitQty)
+                    .Select(p => new ProductViewModel(p)).ToList();
+                foreach (var i in prods)
+                    products.Add(i);
             }
             catch { }
         }
         private void ProductsPage_Load(object sender, EventArgs e)
         {
-            LoadValues();
-
             _unitOption.DataSource = units;
             _prodTable.DataSource = products;
             _recipe.DataSource = recipes;
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            EditProduct(SelectedProduct);
-        }
+            using (var context = factory.CreateDbContext())
+            {
+                LoadProductValues(context);
 
-        void EditProduct(ProductViewModel? incomingProduct)
-        {
-            /////to do
-            /////open the form
-            /////update            
+                var u = context.Units.ToList();
 
-            //var p = incomingProduct;
+                foreach (var i in u)
+                    units.Add(i);
+            }
 
-            //p.Data.Id = 5487;
-            //p.Data.Name = "edit this shit!";
-            //p.Data.Description = "Lerom Ipsum Dolor Amet";
-
-            //p.UpdateValues();
         }
 
         private void _addIngredients_Click(object sender, EventArgs e)
@@ -127,6 +105,13 @@ namespace Lightstream.Usercontrols
                     }
                 }
             }
+        }
+        private void _removeRecipe_Click(object sender, EventArgs e)
+        {
+            if (SelectedRecipe is null)
+                return;
+
+            recipes.Remove(SelectedRecipe);
         }
 
         private bool RecipeAlreadyPresent(Recipe recipe)
@@ -292,7 +277,10 @@ namespace Lightstream.Usercontrols
                 var text = t.Text.Trim();
                 if (string.IsNullOrWhiteSpace(text) && searchDone)
                 {
-                    LoadValues();
+                    using (var context = factory.CreateDbContext())
+                    {
+                        LoadProductValues(context);
+                    }
                     searchDone = false;
                 }
             }
@@ -309,7 +297,12 @@ namespace Lightstream.Usercontrols
 
                 using (var context = factory.CreateDbContext())
                 {
-                    var filtered = SearchHandler.FilterList(context.Products, filteringConditions: x => x.Name.ToLower().Contains(text.ToLower()));
+                    var filtered = SearchHandler.FilterList(
+                        context.Products.Include(x => x.Recipes).Include(u => u.UnitQty),
+                        FilteringFlow.StopUponSatisfaction,
+                        x => x.Name.ToLower().Contains(text.ToLower()),
+                        x => string.Equals(x.Barcode, text, StringComparison.CurrentCultureIgnoreCase)
+                        );
                     searchDone = filtered.Count() != 0;
 
                     if (!searchDone)
@@ -342,6 +335,7 @@ namespace Lightstream.Usercontrols
             {
                 OpenEditForm();
             }
+            // Debug.WriteLine(e.Clicks);
         }
 
         private void fields_TextChanged(object sender, EventArgs e)
@@ -375,5 +369,15 @@ namespace Lightstream.Usercontrols
             }
 
         }
+
+        private void _prodTable_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex == -1)
+                return;
+
+            OpenEditForm();
+        }
+
+
     }
 }

@@ -45,7 +45,8 @@ namespace Lightstream.Usercontrols
             recipes.ListChanged += Recipes_ListChanged;
             _save.Enabled = _cancel.Enabled = false;
 
-            Column3.DataPropertyName = nameof(ProductViewModel.Unit);
+            unitCol.DataPropertyName = nameof(ProductViewModel.Unit);
+            ingCol.DataPropertyName = nameof(ProductViewModel.Ingredients);
         }
 
         private void Recipes_ListChanged(object? sender, ListChangedEventArgs e)

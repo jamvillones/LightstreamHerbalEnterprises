@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Lightstream.ViewModels
 {
-    internal sealed class ProductViewModel :ViewModelBase , IViewmodelDataHolder<Product>
+    internal sealed class ProductViewModel : ViewModelBase, IViewmodelDataHolder<Product>
     {
-        Product _product;        
+        Product _product;
         public void UpdateValues()
         {
             UpdateProperty(nameof(Id));
@@ -26,6 +26,7 @@ namespace Lightstream.ViewModels
         public int Id => _product.Id;
         public string ProductName => _product.Name;
         public string Unit => _product.UnitQty.SingularName;
+        public string Ingredients => _product.Recipes.Count > 1 ? (_product.Recipes.Count + " ingredients") : (_product.Recipes.Count + " ingredient");
         public string Description => _product.Description;
 
     }

@@ -47,6 +47,7 @@ namespace Lightstream.Usercontrols
 
             unitCol.DataPropertyName = nameof(ProductViewModel.Unit);
             ingCol.DataPropertyName = nameof(ProductViewModel.Ingredients);
+            barcodeCol.DataPropertyName = nameof(ProductViewModel.Barcode);
         }
 
         private void Recipes_ListChanged(object? sender, ListChangedEventArgs e)
@@ -150,7 +151,7 @@ namespace Lightstream.Usercontrols
         private void ClearFields()
         {
             recipes.Clear();
-            _productName.Text = _description.Text = string.Empty;
+            _productName.Text = _barcode.Text = _description.Text = string.Empty;
         }
 
         bool ValidationSuccessful()
@@ -180,9 +181,17 @@ namespace Lightstream.Usercontrols
             {
                 using (var context = factory.CreateDbContext())
                 {
+                    if (context.Products.Any(x => x.Barcode == _barcode.Text.Trim()))
+                    {
+                        MessageBox.Show("Barcode already taken!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        savedProduct = null;
+                        return false;
+                    }
+
                     var newProduct = new Product()
                     {
-                        Description = _description.Text.Trim(),
+                        Description = string.IsNullOrWhiteSpace(_description.Text) ? null : _description.Text.Trim(),
+                        Barcode = string.IsNullOrWhiteSpace(_barcode.Text) ? null : _barcode.Text.Trim(),
                         Name = _productName.Text.Trim(),
                         Price = 0,
                         UnitQty = context.Units.FirstOrDefault(x => x.Id == SelectedUnit.Id) ?? new Unit() { SingularName = _unitOption.Text.Trim() }

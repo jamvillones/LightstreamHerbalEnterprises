@@ -49,6 +49,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this._unitOption = new System.Windows.Forms.ComboBox();
+            this._barcode = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._recipe)).BeginInit();
             this.SuspendLayout();
@@ -61,11 +63,11 @@
             this.groupBox1.Controls.Add(this._recipe);
             this.groupBox1.Controls.Add(this._addIngredients);
             this.groupBox1.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(20, 125);
+            this.groupBox1.Location = new System.Drawing.Point(20, 161);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(502, 436);
-            this.groupBox1.TabIndex = 16;
+            this.groupBox1.Size = new System.Drawing.Size(502, 400);
+            this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Required Ingredients";
             // 
@@ -110,7 +112,7 @@
             this._recipe.RowHeadersVisible = false;
             this._recipe.RowTemplate.Height = 25;
             this._recipe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._recipe.Size = new System.Drawing.Size(498, 387);
+            this._recipe.Size = new System.Drawing.Size(498, 351);
             this._recipe.TabIndex = 10;
             this._recipe.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._recipe_CellMouseClick);
             // 
@@ -188,10 +190,11 @@
             // 
             this._description.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this._description.Location = new System.Drawing.Point(118, 49);
+            this._description.Location = new System.Drawing.Point(118, 84);
             this._description.Name = "_description";
+            this._description.PlaceholderText = "optional...";
             this._description.Size = new System.Drawing.Size(404, 23);
-            this._description.TabIndex = 12;
+            this._description.TabIndex = 2;
             // 
             // _cancel
             // 
@@ -226,14 +229,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this._productName.Location = new System.Drawing.Point(118, 12);
             this._productName.Name = "_productName";
+            this._productName.PlaceholderText = "required...";
             this._productName.Size = new System.Drawing.Size(404, 23);
-            this._productName.TabIndex = 11;
+            this._productName.TabIndex = 0;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(20, 90);
+            this.label4.Location = new System.Drawing.Point(20, 124);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 15);
             this.label4.TabIndex = 19;
@@ -243,7 +247,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(55, 53);
+            this.label3.Location = new System.Drawing.Point(55, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 15);
             this.label3.TabIndex = 18;
@@ -262,17 +266,39 @@
             // 
             // _unitOption
             // 
-            this._unitOption.Location = new System.Drawing.Point(118, 86);
+            this._unitOption.Location = new System.Drawing.Point(118, 120);
             this._unitOption.Name = "_unitOption";
             this._unitOption.Size = new System.Drawing.Size(404, 23);
-            this._unitOption.TabIndex = 20;
+            this._unitOption.TabIndex = 3;
             this._unitOption.Validated += new System.EventHandler(this._unitOption_Validated);
+            // 
+            // _barcode
+            // 
+            this._barcode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._barcode.Location = new System.Drawing.Point(118, 48);
+            this._barcode.Name = "_barcode";
+            this._barcode.PlaceholderText = "optional...";
+            this._barcode.Size = new System.Drawing.Size(404, 23);
+            this._barcode.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(67, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 15);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Barcode:";
             // 
             // EditProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 611);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this._barcode);
             this.Controls.Add(this._unitOption);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this._description);
@@ -313,5 +339,7 @@
         private DataGridViewButtonColumn editCol;
         private DataGridViewButtonColumn delCol;
         private ComboBox _unitOption;
+        private TextBox _barcode;
+        private Label label1;
     }
 }

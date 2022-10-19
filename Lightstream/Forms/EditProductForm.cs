@@ -88,6 +88,7 @@ namespace Lightstream.Forms
 
                 _productName.Text = prod.Name;
                 _description.Text = prod.Description;
+                _barcode.Text = prod.Barcode;
                 SelectedUnit = units.FirstOrDefault(x => x.Id == prod.UnitQty.Id);
 
                 foreach (var i in prod.Recipes)
@@ -129,6 +130,14 @@ namespace Lightstream.Forms
         {
             using (var context = factory.CreateDbContext())
             {
+                if (context.Products
+                    .Where(x => x.Id != productReferenced.Id)
+                    .Any(y => y.Barcode == productReferenced.Barcode))
+                {
+                    MessageBox.Show("Barcode already taken!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
                 var productTobeSaved = context.Products
                     .Include(p => p.Recipes)
                     .FirstOrDefault(x => x.Id == productReferenced.Id);

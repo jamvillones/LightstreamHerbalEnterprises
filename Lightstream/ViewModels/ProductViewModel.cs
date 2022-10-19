@@ -25,6 +25,7 @@ namespace Lightstream.ViewModels
         }
         public int Id => _product.Id;
         public string ProductName => _product.Name;
+        public string Unit => _product.UnitQty.SingularName;
         public string Description => _product.Description;
 
     }

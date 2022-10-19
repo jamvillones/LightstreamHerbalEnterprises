@@ -44,6 +44,8 @@ namespace Lightstream.Usercontrols
             _prodTable.AutoGenerateColumns = false;
             recipes.ListChanged += Recipes_ListChanged;
             _save.Enabled = _cancel.Enabled = false;
+
+            Column3.DataPropertyName = nameof(ProductViewModel.Unit);
         }
 
         private void Recipes_ListChanged(object? sender, ListChangedEventArgs e)

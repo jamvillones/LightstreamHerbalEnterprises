@@ -73,11 +73,11 @@ namespace Lightstream.Forms
 
                 if(_from is not null && _to is not null)
                 {
-                    _convertFromOpt.Text = _from.Name;
-                    _convertToOpt.Text = _to.Name;
+                    _convertFromOpt.Text = _from.SingularName;
+                    _convertToOpt.Text = _to.SingularName;
 
-                    _convertBackfromOpt.Text = _to.Name;
-                    _convertBackToOpt.Text = _from.Name;
+                    _convertBackfromOpt.Text = _to.SingularName;
+                    _convertBackToOpt.Text = _from.SingularName;
 
                     _convertFromOpt.Enabled = _convertToOpt.Enabled = _convertBackfromOpt.Enabled = _convertBackToOpt.Enabled = false;
                 }

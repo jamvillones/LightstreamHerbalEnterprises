@@ -27,7 +27,7 @@ namespace Lightstream.Forms
             using (var context = factory.CreateDbContext())
             {
                 var ingredients = context.Ingredients.Include(x => x.UnitMeasurement)
-                    .Select(a => new { Value = a, Key = a.Name + " in " + a.UnitMeasurement.Name })
+                    .Select(a => new { Value = a, Key = a.Name + " in " + a.UnitMeasurement.SingularName })
                     .ToArray();
 
                 ingredientOption.DataSource = ingredients;

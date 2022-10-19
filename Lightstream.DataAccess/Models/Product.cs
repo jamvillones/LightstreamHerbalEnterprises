@@ -15,6 +15,9 @@ namespace Lightstream.DataAccess.Models
         public decimal Price { get; set; }
         public string Name { get; set; } = null!;
 
+        public virtual Unit UnitQty { get; set; }
+
         public virtual ICollection<Recipe> Recipes { get; set; }
+        
     }
 }

@@ -44,7 +44,7 @@ namespace Lightstream.Forms
                 {
                     Name = this.IngredientName,
                     Cost = this.Cost,
-                    UnitMeasurement = SelectedUnit is null ? new Unit() { Name = UOMString } : context.Units.FirstOrDefault(x => x.Id == SelectedUnit.Id)
+                    UnitMeasurement = SelectedUnit is null ? new Unit() { SingularName = UOMString } : context.Units.FirstOrDefault(x => x.Id == SelectedUnit.Id)
                 };
 
                 /// add to the list of ingredients

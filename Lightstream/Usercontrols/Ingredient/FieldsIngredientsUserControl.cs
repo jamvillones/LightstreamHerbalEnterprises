@@ -32,9 +32,9 @@ namespace Lightstream.Usercontrols.IngredientForm
         {
             using (var context = new LHE_DBContext())
             {
-                var units = context.Units.OrderBy(x => x.Name).ToArray();
+                var units = context.Units.OrderBy(x => x.SingularName).ToArray();
                 unitOption.Items.AddRange(units);
-                unitOption.AutoCompleteCustomSource.AddRange(units.Select(x => x.Name).ToArray());
+                unitOption.AutoCompleteCustomSource.AddRange(units.Select(x => x.SingularName).ToArray());
             }
         }
     }

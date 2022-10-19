@@ -1,5 +1,6 @@
 ﻿using Lightstream.DataAccess.Data;
 using Lightstream.DataAccess.Models;
+using Lightstream.Extensions;
 using Lightstream.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -22,10 +23,18 @@ namespace Lightstream.Forms
         DbContextFactory factory = new DbContextFactory();
         private BindingList<RecipeViewModel> recipes = new BindingList<RecipeViewModel>();
         private RecipeViewModel? SelectedRecipe => _recipe.RowCount == 0 ? null : _recipe.SelectedRows[0].DataBoundItem as RecipeViewModel;
+        BindingList<Unit> units = new BindingList<Unit>();
+        Unit? SelectedUnit
+        {
+            get => _unitOption.SelectedItem is Unit unit ? unit : null;
+            set => _unitOption.SelectedItem = value;
+        }
         public EditProductForm(Product product)
         {
             InitializeComponent();
             _recipe.AutoGenerateColumns = false;
+            _unitOption.DisplayMember = nameof(Unit.SingularName);
+            _unitOption.DataSource = units;
             this.productReferenced = product;
         }
 
@@ -54,8 +63,9 @@ namespace Lightstream.Forms
 
         private void ProductForm_Load(object sender, EventArgs e)
         {
-            LoadValues();
+            _unitOption.DataSource = units;
             _recipe.DataSource = recipes;
+            LoadValues();
 
         }
         void LoadValues()
@@ -63,6 +73,11 @@ namespace Lightstream.Forms
             recipes.Clear();
             using (var context = factory.CreateDbContext())
             {
+                units.Clear();
+                var u = context.Units.ToList();
+                foreach (var i in u)
+                    units.Add(i);
+
                 var prod = context.Products
                     .Include(x => x.Recipes)
                     .ThenInclude(r => r.Ingredient)
@@ -73,6 +88,7 @@ namespace Lightstream.Forms
 
                 _productName.Text = prod.Name;
                 _description.Text = prod.Description;
+                SelectedUnit = units.FirstOrDefault(x => x.Id == prod.UnitQty.Id);
 
                 foreach (var i in prod.Recipes)
                     recipes.Add(new RecipeViewModel(i));
@@ -101,9 +117,9 @@ namespace Lightstream.Forms
         {
             if (MessageBox.Show("Are you sure you want to save changes?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
                 return false;
-            if(recipes.Count == 0)
+            if (recipes.Count == 0)
             {
-                MessageBox.Show("Ingredients cannot be empty!","", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Ingredients cannot be empty!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
             return true;
@@ -121,6 +137,7 @@ namespace Lightstream.Forms
 
                 productTobeSaved.Name = _productName.Text.Trim();
                 productTobeSaved.Description = _description.Text.Trim();
+                productTobeSaved.UnitQty = context.Units.FirstOrDefault(x => x.Id == SelectedUnit.Id) ?? new Unit() { SingularName = _unitOption.Text.Trim() };
                 ///remove the recipes that is no longer available
                 foreach (var i in productTobeSaved.Recipes.ToList())
                 {
@@ -163,6 +180,32 @@ namespace Lightstream.Forms
         {
             if (MessageBox.Show("Are you sure you want to discard changes?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel) return;
             LoadValues();
+        }
+
+        private void _unitOption_Validated(object sender, EventArgs e)
+        {
+            var u = units.FirstOrDefault(x => string.Equals(x.SingularName, _unitOption.Text.Trim(), StringComparison.OrdinalIgnoreCase));
+            if (u is null)
+                OpenUnitForm();
+            else
+                SelectedUnit = u;
+        }
+
+        void OpenUnitForm()
+        {
+            if (MessageBox.Show("Unit is not recognised. Would you like to register new unit?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
+                return;
+
+            var unitForm = new UnitForm(_unitOption.Text.Trim());
+            var result = unitForm.OpenFormModal();
+
+            if (result == DialogResult.OK)
+            {
+                var unit = unitForm.ResultingUnit;
+                units.Add(unit);
+                _unitOption.SelectedItem = unit;
+            }
+
         }
     }
 }

@@ -41,11 +41,11 @@ namespace Lightstream.Usercontrols
         public ProductsPage()
         {
             InitializeComponent();
-            _unitOption.DisplayMember = nameof(Unit.SingularName);
-            _prodTable.AutoGenerateColumns = false;
             recipes.ListChanged += Recipes_ListChanged;
-            _save.Enabled = _cancel.Enabled = false;
 
+            _save.Enabled = _cancel.Enabled = false;
+            _prodTable.AutoGenerateColumns = false;
+            _unitOption.DisplayMember = nameof(Unit.SingularName);
             unitCol.DataPropertyName = nameof(ProductViewModel.Unit);
             ingCol.DataPropertyName = nameof(ProductViewModel.Ingredients);
             barcodeCol.DataPropertyName = nameof(ProductViewModel.Barcode);

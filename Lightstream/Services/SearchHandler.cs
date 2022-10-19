@@ -30,6 +30,8 @@ namespace Lightstream.Services
 
                 if (itemRef.Count() > 0 && flow == FilteringFlow.StopUponSatisfaction)
                     break;
+                else
+                    itemRef = items.ToList();
             }
 
             return itemRef;

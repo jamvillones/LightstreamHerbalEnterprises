@@ -54,7 +54,7 @@
             0});
             this.qty.Name = "qty";
             this.qty.Size = new System.Drawing.Size(302, 23);
-            this.qty.TabIndex = 0;
+            this.qty.TabIndex = 1;
             this.qty.ThousandsSeparator = true;
             this.qty.Value = new decimal(new int[] {
             1,
@@ -73,7 +73,7 @@
             this.unitOption.Location = new System.Drawing.Point(76, 102);
             this.unitOption.Name = "unitOption";
             this.unitOption.Size = new System.Drawing.Size(302, 23);
-            this.unitOption.TabIndex = 1;
+            this.unitOption.TabIndex = 2;
             this.unitOption.SelectedIndexChanged += new System.EventHandler(this.ingredientOption_SelectedIndexChanged);
             // 
             // ingredientOption
@@ -87,7 +87,7 @@
             this.ingredientOption.Location = new System.Drawing.Point(76, 12);
             this.ingredientOption.Name = "ingredientOption";
             this.ingredientOption.Size = new System.Drawing.Size(302, 23);
-            this.ingredientOption.TabIndex = 2;
+            this.ingredientOption.TabIndex = 0;
             this.ingredientOption.ValueMember = "Value";
             this.ingredientOption.SelectedIndexChanged += new System.EventHandler(this.ingredientOption_SelectedIndexChanged);
             // 
@@ -130,7 +130,7 @@
             this._save.Location = new System.Drawing.Point(228, 141);
             this._save.Name = "_save";
             this._save.Size = new System.Drawing.Size(150, 30);
-            this._save.TabIndex = 8;
+            this._save.TabIndex = 3;
             this._save.Text = "Save";
             this._save.UseVisualStyleBackColor = false;
             this._save.Click += new System.EventHandler(this.saveBtn_Click);

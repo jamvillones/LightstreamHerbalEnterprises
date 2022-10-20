@@ -86,6 +86,9 @@ namespace Lightstream.Usercontrols
 
                 foreach (var i in u)
                     units.Add(i);
+
+                var uAutocomplete = context.Units.Select(x => x.SingularName);
+                _unitOption.AutoCompleteCustomSource.AddRange(uAutocomplete.ToArray());
             }
 
         }
@@ -347,7 +350,7 @@ namespace Lightstream.Usercontrols
         private void _unitOption_Validated(object sender, EventArgs e)
         {
             var u = units.FirstOrDefault(x => string.Equals(x.SingularName, _unitOption.Text.Trim(), StringComparison.OrdinalIgnoreCase));
-            if (u is null)
+            if (SelectedUnit is null)
                 OpenUnitForm();
             else
                 SelectedUnit = u;

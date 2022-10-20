@@ -49,8 +49,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this._recipe = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this._removeRecipe = new System.Windows.Forms.Button();
             this._addRecipe = new System.Windows.Forms.Button();
+            this._removeRecipe = new System.Windows.Forms.Button();
             this._description = new System.Windows.Forms.TextBox();
             this._cancel = new System.Windows.Forms.Button();
             this._save = new System.Windows.Forms.Button();
@@ -227,6 +227,8 @@
             // 
             // _unitOption
             // 
+            this._unitOption.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this._unitOption.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this._unitOption.Location = new System.Drawing.Point(99, 122);
             this._unitOption.Name = "_unitOption";
             this._unitOption.Size = new System.Drawing.Size(268, 23);
@@ -273,21 +275,6 @@
             this.panel2.Size = new System.Drawing.Size(236, 25);
             this.panel2.TabIndex = 24;
             // 
-            // _removeRecipe
-            // 
-            this._removeRecipe.BackColor = System.Drawing.SystemColors.Control;
-            this._removeRecipe.Dock = System.Windows.Forms.DockStyle.Right;
-            this._removeRecipe.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
-            this._removeRecipe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this._removeRecipe.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._removeRecipe.Location = new System.Drawing.Point(156, 0);
-            this._removeRecipe.Name = "_removeRecipe";
-            this._removeRecipe.Size = new System.Drawing.Size(80, 25);
-            this._removeRecipe.TabIndex = 1;
-            this._removeRecipe.Text = "- remove";
-            this._removeRecipe.UseVisualStyleBackColor = false;
-            this._removeRecipe.Click += new System.EventHandler(this._removeRecipe_Click);
-            // 
             // _addRecipe
             // 
             this._addRecipe.BackColor = System.Drawing.SystemColors.Control;
@@ -302,6 +289,21 @@
             this._addRecipe.Text = "+ Add";
             this._addRecipe.UseVisualStyleBackColor = false;
             this._addRecipe.Click += new System.EventHandler(this._addIngredients_Click);
+            // 
+            // _removeRecipe
+            // 
+            this._removeRecipe.BackColor = System.Drawing.SystemColors.Control;
+            this._removeRecipe.Dock = System.Windows.Forms.DockStyle.Right;
+            this._removeRecipe.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
+            this._removeRecipe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this._removeRecipe.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._removeRecipe.Location = new System.Drawing.Point(156, 0);
+            this._removeRecipe.Name = "_removeRecipe";
+            this._removeRecipe.Size = new System.Drawing.Size(80, 25);
+            this._removeRecipe.TabIndex = 1;
+            this._removeRecipe.Text = "- remove";
+            this._removeRecipe.UseVisualStyleBackColor = false;
+            this._removeRecipe.Click += new System.EventHandler(this._removeRecipe_Click);
             // 
             // _description
             // 

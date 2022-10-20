@@ -1,5 +1,6 @@
 ﻿using Lightstream.DataAccess.Data;
 using Lightstream.DataAccess.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +20,7 @@ namespace Lightstream.Forms
             InitializeComponent();
         }
 
-        Unit _from = null, _to = null;
+        Unit? _from = null, _to = null;
         public Conversion? ResultConversion { get; private set; }
         public ConversionForm(Unit from, Unit to)
         {
@@ -31,20 +32,16 @@ namespace Lightstream.Forms
         public Unit? FromUnit => _fromOpt.SelectedItem is Unit u ? u : null;
         public Unit? ToUnit => _toOpt.SelectedItem is Unit u ? u : null;
 
-        decimal Value { get; set; }
-
         private void saveBtn_Click(object sender, EventArgs e)
         {
             using (var context = new LHE_DBContext())
             {
                 var conversion = new Conversion()
                 {
-                    FromUnitId = FromUnit.Id,
-                    ToUnitId = ToUnit.Id,
-                    Value = _conversionValue.Value,
-                    // BackConvesionValue = _backConversionValue.Value
+                    FromUnitId = FromUnit!.Id,
+                    ToUnitId = ToUnit!.Id,
+                    Value = _conversionValue.Value                    
                 };
-
                 context.Conversions.Add(conversion);
 
                 var backConversion = new Conversion()
@@ -53,11 +50,12 @@ namespace Lightstream.Forms
                     ToUnitId = FromUnit.Id,
                     Value = _backConversionValue.Value
                 };
-
                 context.Conversions.Add(backConversion);
 
                 context.SaveChanges();
                 ResultConversion = conversion;
+
+                context.Entry(ResultConversion!).Reference(b => b.FromUnit).Load();
             }
 
             DialogResult = DialogResult.OK;

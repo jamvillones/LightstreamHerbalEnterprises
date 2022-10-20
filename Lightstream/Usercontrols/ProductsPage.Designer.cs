@@ -48,8 +48,9 @@
             this._unitOption = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this._recipe = new System.Windows.Forms.ListBox();
-            this._addRecipe = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this._removeRecipe = new System.Windows.Forms.Button();
+            this._addRecipe = new System.Windows.Forms.Button();
             this._description = new System.Windows.Forms.TextBox();
             this._cancel = new System.Windows.Forms.Button();
             this._save = new System.Windows.Forms.Button();
@@ -65,6 +66,7 @@
             this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this._prodTable)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -236,12 +238,10 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this._recipe);
-            this.groupBox1.Controls.Add(this._addRecipe);
-            this.groupBox1.Controls.Add(this._removeRecipe);
+            this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(387, 20);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(0);
             this.groupBox1.Size = new System.Drawing.Size(242, 167);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
@@ -249,51 +249,59 @@
             // 
             // _recipe
             // 
-            this._recipe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this._recipe.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._recipe.DisplayMember = "DisplayMember";
+            this._recipe.Dock = System.Windows.Forms.DockStyle.Fill;
             this._recipe.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._recipe.FormattingEnabled = true;
             this._recipe.ItemHeight = 15;
-            this._recipe.Location = new System.Drawing.Point(5, 16);
+            this._recipe.Location = new System.Drawing.Point(3, 43);
             this._recipe.Margin = new System.Windows.Forms.Padding(5);
             this._recipe.Name = "_recipe";
-            this._recipe.Size = new System.Drawing.Size(232, 90);
+            this._recipe.Size = new System.Drawing.Size(236, 121);
             this._recipe.TabIndex = 1;
             this._recipe.TabStop = false;
             this.toolTip1.SetToolTip(this._recipe, "Delete to remove ingredient");
             // 
-            // _addRecipe
+            // panel2
             // 
-            this._addRecipe.BackColor = System.Drawing.SystemColors.Control;
-            this._addRecipe.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this._addRecipe.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
-            this._addRecipe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this._addRecipe.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._addRecipe.Location = new System.Drawing.Point(0, 117);
-            this._addRecipe.Name = "_addRecipe";
-            this._addRecipe.Size = new System.Drawing.Size(242, 25);
-            this._addRecipe.TabIndex = 0;
-            this._addRecipe.Text = "Add";
-            this._addRecipe.UseVisualStyleBackColor = false;
-            this._addRecipe.Click += new System.EventHandler(this._addIngredients_Click);
+            this.panel2.Controls.Add(this._addRecipe);
+            this.panel2.Controls.Add(this._removeRecipe);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(3, 18);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(236, 25);
+            this.panel2.TabIndex = 24;
             // 
             // _removeRecipe
             // 
             this._removeRecipe.BackColor = System.Drawing.SystemColors.Control;
-            this._removeRecipe.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this._removeRecipe.Dock = System.Windows.Forms.DockStyle.Right;
             this._removeRecipe.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
             this._removeRecipe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this._removeRecipe.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._removeRecipe.Location = new System.Drawing.Point(0, 142);
+            this._removeRecipe.Location = new System.Drawing.Point(156, 0);
             this._removeRecipe.Name = "_removeRecipe";
-            this._removeRecipe.Size = new System.Drawing.Size(242, 25);
+            this._removeRecipe.Size = new System.Drawing.Size(80, 25);
             this._removeRecipe.TabIndex = 1;
-            this._removeRecipe.Text = "remove";
+            this._removeRecipe.Text = "- remove";
             this._removeRecipe.UseVisualStyleBackColor = false;
             this._removeRecipe.Click += new System.EventHandler(this._removeRecipe_Click);
+            // 
+            // _addRecipe
+            // 
+            this._addRecipe.BackColor = System.Drawing.SystemColors.Control;
+            this._addRecipe.Dock = System.Windows.Forms.DockStyle.Right;
+            this._addRecipe.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
+            this._addRecipe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this._addRecipe.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._addRecipe.Location = new System.Drawing.Point(76, 0);
+            this._addRecipe.Name = "_addRecipe";
+            this._addRecipe.Size = new System.Drawing.Size(80, 25);
+            this._addRecipe.TabIndex = 0;
+            this._addRecipe.Text = "+ Add";
+            this._addRecipe.UseVisualStyleBackColor = false;
+            this._addRecipe.Click += new System.EventHandler(this._addIngredients_Click);
             // 
             // _description
             // 
@@ -455,6 +463,7 @@
             this.Load += new System.EventHandler(this.ProductsPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this._prodTable)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -495,5 +504,6 @@
         private Panel panel4;
         private Panel panel1;
         private Label label6;
+        private Panel panel2;
     }
 }

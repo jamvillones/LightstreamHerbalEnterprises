@@ -46,14 +46,14 @@
             this.qty.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.qty.DecimalPlaces = 2;
-            this.qty.Location = new System.Drawing.Point(76, 49);
+            this.qty.Location = new System.Drawing.Point(76, 57);
             this.qty.Maximum = new decimal(new int[] {
             100000000,
             0,
             0,
             0});
             this.qty.Name = "qty";
-            this.qty.Size = new System.Drawing.Size(256, 23);
+            this.qty.Size = new System.Drawing.Size(302, 23);
             this.qty.TabIndex = 0;
             this.qty.ThousandsSeparator = true;
             this.qty.Value = new decimal(new int[] {
@@ -70,9 +70,9 @@
             this.unitOption.DisplayMember = "Name";
             this.unitOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unitOption.FormattingEnabled = true;
-            this.unitOption.Location = new System.Drawing.Point(76, 86);
+            this.unitOption.Location = new System.Drawing.Point(76, 102);
             this.unitOption.Name = "unitOption";
-            this.unitOption.Size = new System.Drawing.Size(256, 23);
+            this.unitOption.Size = new System.Drawing.Size(302, 23);
             this.unitOption.TabIndex = 1;
             this.unitOption.SelectedIndexChanged += new System.EventHandler(this.ingredientOption_SelectedIndexChanged);
             // 
@@ -86,7 +86,7 @@
             this.ingredientOption.FormattingEnabled = true;
             this.ingredientOption.Location = new System.Drawing.Point(76, 12);
             this.ingredientOption.Name = "ingredientOption";
-            this.ingredientOption.Size = new System.Drawing.Size(256, 23);
+            this.ingredientOption.Size = new System.Drawing.Size(302, 23);
             this.ingredientOption.TabIndex = 2;
             this.ingredientOption.ValueMember = "Value";
             this.ingredientOption.SelectedIndexChanged += new System.EventHandler(this.ingredientOption_SelectedIndexChanged);
@@ -95,9 +95,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bebas Neue", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(17, 53);
+            this.label1.Location = new System.Drawing.Point(17, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 14);
+            this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Required Qty:";
             // 
@@ -107,7 +107,7 @@
             this.label3.Font = new System.Drawing.Font("Bebas Neue", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(23, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 14);
+            this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Ingredient:";
             // 
@@ -115,9 +115,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bebas Neue", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(46, 90);
+            this.label4.Location = new System.Drawing.Point(46, 107);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(24, 14);
+            this.label4.Size = new System.Drawing.Size(24, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Unit:";
             // 
@@ -127,7 +127,7 @@
             this._save.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this._save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._save.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._save.Location = new System.Drawing.Point(182, 126);
+            this._save.Location = new System.Drawing.Point(228, 141);
             this._save.Name = "_save";
             this._save.Size = new System.Drawing.Size(150, 30);
             this._save.TabIndex = 8;
@@ -139,7 +139,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 168);
+            this.ClientSize = new System.Drawing.Size(390, 183);
             this.Controls.Add(this._save);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);

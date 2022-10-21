@@ -61,6 +61,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this._contentsPanel = new System.Windows.Forms.Panel();
+            this._notifPanel = new System.Windows.Forms.Panel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this._sideButtonPanel.SuspendLayout();
             this._reportsPanel.SuspendLayout();
             this._inventoryPanel.SuspendLayout();
@@ -70,6 +72,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this._sidePanel.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // _sideButtonPanel
@@ -663,10 +669,39 @@
             // _contentsPanel
             // 
             this._contentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._contentsPanel.Location = new System.Drawing.Point(170, 30);
+            this._contentsPanel.Location = new System.Drawing.Point(0, 0);
             this._contentsPanel.Name = "_contentsPanel";
-            this._contentsPanel.Size = new System.Drawing.Size(694, 534);
+            this._contentsPanel.Size = new System.Drawing.Size(580, 534);
             this._contentsPanel.TabIndex = 4;
+            // 
+            // _notifPanel
+            // 
+            this._notifPanel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this._notifPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._notifPanel.Location = new System.Drawing.Point(0, 0);
+            this._notifPanel.Name = "_notifPanel";
+            this._notifPanel.Size = new System.Drawing.Size(110, 534);
+            this._notifPanel.TabIndex = 5;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer1.Location = new System.Drawing.Point(170, 30);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this._contentsPanel);
+            this.splitContainer1.Panel1MinSize = 300;
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this._notifPanel);
+            this.splitContainer1.Panel2MinSize = 110;
+            this.splitContainer1.Size = new System.Drawing.Size(694, 534);
+            this.splitContainer1.SplitterDistance = 580;
+            this.splitContainer1.TabIndex = 6;
             // 
             // Main
             // 
@@ -674,7 +709,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(864, 564);
             this.ControlBox = false;
-            this.Controls.Add(this._contentsPanel);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this._topPanel);
             this.Controls.Add(this._sidePanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -694,6 +729,10 @@
             this._sidePanel.ResumeLayout(false);
             this._sidePanel.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -731,5 +770,7 @@
         private Panel panel1;
         private Button button2;
         private Button button1;
+        private Panel _notifPanel;
+        private SplitContainer splitContainer1;
     }
 }

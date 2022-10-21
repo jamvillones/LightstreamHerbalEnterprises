@@ -257,10 +257,10 @@
             this._recipe.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._recipe.FormattingEnabled = true;
             this._recipe.ItemHeight = 15;
-            this._recipe.Location = new System.Drawing.Point(3, 44);
+            this._recipe.Location = new System.Drawing.Point(3, 43);
             this._recipe.Margin = new System.Windows.Forms.Padding(5);
             this._recipe.Name = "_recipe";
-            this._recipe.Size = new System.Drawing.Size(236, 120);
+            this._recipe.Size = new System.Drawing.Size(236, 121);
             this._recipe.TabIndex = 1;
             this._recipe.TabStop = false;
             this.toolTip1.SetToolTip(this._recipe, "Delete to remove ingredient");
@@ -270,7 +270,7 @@
             this.panel2.Controls.Add(this._addRecipe);
             this.panel2.Controls.Add(this._removeRecipe);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(3, 19);
+            this.panel2.Location = new System.Drawing.Point(3, 18);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(236, 25);
             this.panel2.TabIndex = 24;
@@ -316,6 +316,7 @@
             // 
             // _cancel
             // 
+            this._cancel.Enabled = false;
             this._cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._cancel.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._cancel.Location = new System.Drawing.Point(251, 158);

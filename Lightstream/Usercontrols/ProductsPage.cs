@@ -36,14 +36,13 @@ namespace Lightstream.Usercontrols
         bool CanSaveProduct => !string.IsNullOrWhiteSpace(_productName.Text.Trim()) && recipes.Count > 0;
         bool CanReset => !string.IsNullOrWhiteSpace(_productName.Text) ||
                          !string.IsNullOrWhiteSpace(_description.Text) ||
-                         SelectedUnit is not null ||
                          recipes.Count > 0;
         public ProductsPage()
         {
             InitializeComponent();
             recipes.ListChanged += Recipes_ListChanged;
 
-            _save.Enabled = _cancel.Enabled = false;
+            //_save.Enabled = _cancel.Enabled = false;
             _prodTable.AutoGenerateColumns = false;
             _unitOption.DisplayMember = nameof(Unit.SingularName);
             unitCol.DataPropertyName = nameof(ProductViewModel.Unit);
@@ -53,7 +52,7 @@ namespace Lightstream.Usercontrols
 
         private void Recipes_ListChanged(object? sender, ListChangedEventArgs e)
         {
-            _save.Enabled = CanSaveProduct;
+            //_save.Enabled = CanSaveProduct;
             _cancel.Enabled = CanReset;
             //throw new NotImplementedException();
         }
@@ -145,9 +144,9 @@ namespace Lightstream.Usercontrols
         bool ValidationSuccessful()
         {
             ///product name is empty
-            if (string.IsNullOrWhiteSpace(_productName.Text))
+            if (string.IsNullOrWhiteSpace(_productName.Text) || recipes.Count == 0)
             {
-                MessageBox.Show("Product name cannot be empty!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Product name and ingredients cannot be empty!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             ///selected unit is not registered
@@ -343,7 +342,7 @@ namespace Lightstream.Usercontrols
 
         private void fields_TextChanged(object sender, EventArgs e)
         {
-            _save.Enabled = CanSaveProduct;
+            //_save.Enabled = CanSaveProduct;
             _cancel.Enabled = CanReset;
         }
 

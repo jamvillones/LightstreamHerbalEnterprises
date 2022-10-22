@@ -8,16 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Lightstream
+namespace Lightstream.Forms
 {
-    public partial class FPOS : Form
+    public partial class HelpandAboutForm : Form
     {
-        public FPOS()
+        public HelpandAboutForm()
         {
             InitializeComponent();
         }
 
-        private void proc_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HelpandAboutForm_Load(object sender, EventArgs e)
         {
 
         }

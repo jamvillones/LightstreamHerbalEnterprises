@@ -39,9 +39,9 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.ProdCH = new System.Windows.Forms.ColumnHeader();
             this.DescCH = new System.Windows.Forms.ColumnHeader();
+            this.PriceCH = new System.Windows.Forms.ColumnHeader();
             this.RETURNbtn = new System.Windows.Forms.Button();
             this.QUEUEbtn = new System.Windows.Forms.Button();
-            this.PriceCH = new System.Windows.Forms.ColumnHeader();
             this.Totallbl = new System.Windows.Forms.Label();
             this.Discountlbl = new System.Windows.Forms.Label();
             this.VATlbl = new System.Windows.Forms.Label();
@@ -49,6 +49,10 @@
             this.cashlbl = new System.Windows.Forms.Label();
             this.changelbl = new System.Windows.Forms.Label();
             this.listView2 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.TOTALtextBox = new System.Windows.Forms.TextBox();
             this.DISCOUNTtextBox = new System.Windows.Forms.TextBox();
             this.VATtextBox = new System.Windows.Forms.TextBox();
@@ -56,10 +60,6 @@
             this.CASHtextBox = new System.Windows.Forms.TextBox();
             this.CHANGEtextBox = new System.Windows.Forms.TextBox();
             this.proc = new System.Windows.Forms.Button();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // labelProductname
@@ -151,6 +151,10 @@
             // 
             this.DescCH.Text = "Description";
             // 
+            // PriceCH
+            // 
+            this.PriceCH.Text = "Price";
+            // 
             // RETURNbtn
             // 
             this.RETURNbtn.Location = new System.Drawing.Point(537, 377);
@@ -168,10 +172,6 @@
             this.QUEUEbtn.TabIndex = 10;
             this.QUEUEbtn.Text = "QUEUE";
             this.QUEUEbtn.UseVisualStyleBackColor = true;
-            // 
-            // PriceCH
-            // 
-            this.PriceCH.Text = "Price";
             // 
             // Totallbl
             // 
@@ -240,6 +240,23 @@
             this.listView2.TabIndex = 17;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
+            this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Quantity";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Product Name";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Price";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Total";
             // 
             // TOTALtextBox
             // 
@@ -292,22 +309,6 @@
             this.proc.Text = "PROCESS PAYMENT";
             this.proc.UseVisualStyleBackColor = true;
             this.proc.Click += new System.EventHandler(this.proc_Click);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Quantity";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Product Name";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Price";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Total";
             // 
             // FPOS
             // 

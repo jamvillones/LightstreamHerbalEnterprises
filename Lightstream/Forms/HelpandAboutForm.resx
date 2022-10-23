@@ -57,7 +57,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="HelpandAboutlistBox.Items" xml:space="preserve">
-    <value>In this project, the proponents aim to improve the business transaction of the company, and importantly it will be beneficial for the owner, its staff, and its customers in terms of time and convenience.</value>
-  </data>
 </root>

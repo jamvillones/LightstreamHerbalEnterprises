@@ -34,7 +34,7 @@ namespace Lightstream.DataAccess.Data
         {
             if (!optionsBuilder.IsConfigured)
                 optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=LHE_DB;Trusted_Connection=True; Integrated Security=true;");
-       }
+        }
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
         {
@@ -45,6 +45,12 @@ namespace Lightstream.DataAccess.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<ProductionHistory>(entity => { entity.ToTable(nameof(ProductionHistory)); });
+            modelBuilder.Entity<Sale>(entity => { entity.ToTable(nameof(Sale)); });
+            modelBuilder.Entity<SoldProduct>(entity => { entity.ToTable(nameof(SoldProduct)); });
+            modelBuilder.Entity<ProductInventory>(entity => { entity.ToTable(nameof(ProductInventory)); });
+            modelBuilder.Entity<Customer>(entity => { entity.ToTable(nameof(Customer)); });
+
             modelBuilder.Entity<Conversion>(entity =>
             {
                 entity.ToTable("Conversion");

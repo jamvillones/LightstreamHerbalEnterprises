@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Lightstream.Forms
 {
-    public partial class HelpandAboutForm : Form
+    public partial class _frmHelpandAbout : Form
     {
-        public HelpandAboutForm()
+        public _frmHelpandAbout()
         {
             InitializeComponent();
         }

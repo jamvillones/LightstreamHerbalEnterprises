@@ -16,15 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="FPOS.cs" />
-    <Compile Remove="FPOS.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Remove="FPOS.resx" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="icons8_mint.ico" />
   </ItemGroup>
 

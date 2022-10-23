@@ -104,7 +104,7 @@
             this._recipe.DefaultCellStyle = dataGridViewCellStyle4;
             this._recipe.Dock = System.Windows.Forms.DockStyle.Fill;
             this._recipe.EnableHeadersVisualStyles = false;
-            this._recipe.Location = new System.Drawing.Point(2, 47);
+            this._recipe.Location = new System.Drawing.Point(2, 48);
             this._recipe.Margin = new System.Windows.Forms.Padding(0);
             this._recipe.MultiSelect = false;
             this._recipe.Name = "_recipe";
@@ -112,7 +112,7 @@
             this._recipe.RowHeadersVisible = false;
             this._recipe.RowTemplate.Height = 25;
             this._recipe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._recipe.Size = new System.Drawing.Size(498, 351);
+            this._recipe.Size = new System.Drawing.Size(498, 350);
             this._recipe.TabIndex = 10;
             this._recipe.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._recipe_CellMouseClick);
             // 
@@ -177,7 +177,7 @@
             this._addIngredients.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
             this._addIngredients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._addIngredients.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._addIngredients.Location = new System.Drawing.Point(2, 17);
+            this._addIngredients.Location = new System.Drawing.Point(2, 18);
             this._addIngredients.Margin = new System.Windows.Forms.Padding(5);
             this._addIngredients.Name = "_addIngredients";
             this._addIngredients.Size = new System.Drawing.Size(498, 30);
@@ -286,11 +286,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(67, 52);
+            this.label1.Location = new System.Drawing.Point(35, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 15);
+            this.label1.Size = new System.Drawing.Size(75, 15);
             this.label1.TabIndex = 22;
-            this.label1.Text = "Barcode:";
+            this.label1.Text = "Product Number:";
             // 
             // EditProductForm
             // 

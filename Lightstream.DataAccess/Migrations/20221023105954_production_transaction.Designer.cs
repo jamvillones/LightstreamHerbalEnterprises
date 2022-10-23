@@ -4,6 +4,7 @@ using Lightstream.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Lightstream.DataAccess.Migrations
 {
     [DbContext(typeof(LHE_DBContext))]
-    partial class LHE_DBContextModelSnapshot : ModelSnapshot
+    [Migration("20221023105954_production_transaction")]
+    partial class production_transaction
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,7 +74,7 @@ namespace Lightstream.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customers");
+                    b.ToTable("Customer");
                 });
 
             modelBuilder.Entity("Lightstream.DataAccess.Models.Ingredient", b =>
@@ -202,7 +204,7 @@ namespace Lightstream.DataAccess.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductInventories");
+                    b.ToTable("ProductInventory");
                 });
 
             modelBuilder.Entity("Lightstream.DataAccess.Models.ProductionHistory", b =>
@@ -236,7 +238,7 @@ namespace Lightstream.DataAccess.Migrations
 
                     b.HasIndex("ProductInventoryId");
 
-                    b.ToTable("ProducedProduct");
+                    b.ToTable("ProductionHistory");
                 });
 
             modelBuilder.Entity("Lightstream.DataAccess.Models.Recipe", b =>
@@ -294,10 +296,10 @@ namespace Lightstream.DataAccess.Migrations
 
                     b.HasIndex("LoginId");
 
-                    b.ToTable("Sales");
+                    b.ToTable("Sale");
                 });
 
-            modelBuilder.Entity("Lightstream.DataAccess.Models.SoldProduct", b =>
+            modelBuilder.Entity("Lightstream.DataAccess.Models.SoldItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -324,7 +326,7 @@ namespace Lightstream.DataAccess.Migrations
 
                     b.HasIndex("SaleId");
 
-                    b.ToTable("SoldProducts");
+                    b.ToTable("SoldItem");
                 });
 
             modelBuilder.Entity("Lightstream.DataAccess.Models.Unit", b =>
@@ -471,7 +473,7 @@ namespace Lightstream.DataAccess.Migrations
                     b.Navigation("Login");
                 });
 
-            modelBuilder.Entity("Lightstream.DataAccess.Models.SoldProduct", b =>
+            modelBuilder.Entity("Lightstream.DataAccess.Models.SoldItem", b =>
                 {
                     b.HasOne("Lightstream.DataAccess.Models.ProductInventory", "ProductInventory")
                         .WithMany("SoldItems")

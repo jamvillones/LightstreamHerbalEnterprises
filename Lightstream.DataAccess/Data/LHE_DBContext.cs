@@ -20,9 +20,15 @@ namespace Lightstream.DataAccess.Data
         public virtual DbSet<Conversion> Conversions { get; set; } = null!;
         public virtual DbSet<Ingredient> Ingredients { get; set; } = null!;
         public virtual DbSet<Login> Logins { get; set; } = null!;
+        public virtual DbSet<Customer> Customers { get; set; } = null!;
         public virtual DbSet<Product> Products { get; set; } = null!;
         public virtual DbSet<Recipe> Recipes { get; set; } = null!;
         public virtual DbSet<Unit> Units { get; set; } = null!;
+        public virtual DbSet<Sale> Sales { get; set; } = null!;
+        public virtual DbSet<ProductInventory> ProductInventories { get; set; } = null!;
+        public virtual DbSet<SoldProduct> SoldProducts { get; set; } = null!;
+        public virtual DbSet<ProductionHistory> ProducedProduct { get; set; } = null!;
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

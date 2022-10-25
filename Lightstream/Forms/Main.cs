@@ -31,8 +31,18 @@ namespace Lightstream
         Button? currentButton = null;
         Form? currentForm = null;
         Color selectedButtonColor = Color.FromArgb(66, 120, 37);
-        Color normalButtonColor = Color.FromArgb(45,45,45);
+        Color normalButtonColor = Color.FromArgb(45, 45, 45);
         public bool IsLoggedOut { get; private set; } = false;
+        //protected override void WndProc(ref Message message)
+        //{
+        //    const int WM_NCHITTEST = 0x0084;
+
+        //    if (message.Msg == WM_NCHITTEST)
+        //        return;
+
+        //    base.WndProc(ref message);
+        //}
+
         public Main()
         {
             InitializeComponent();
@@ -175,8 +185,28 @@ namespace Lightstream
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CreateNewUserForm cc = new CreateNewUserForm();
-            cc.Show();
+            using (CreateNewUserForm cc = new CreateNewUserForm())
+            {
+                if (cc.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            OpenForm<FPOS>();
+        }
+
+        private void _contentsPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+            OpenForm<PricingMangmtForm>();
         }
     }
 }

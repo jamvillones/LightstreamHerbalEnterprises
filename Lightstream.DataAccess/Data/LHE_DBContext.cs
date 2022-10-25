@@ -20,30 +20,37 @@ namespace Lightstream.DataAccess.Data
         public virtual DbSet<Conversion> Conversions { get; set; } = null!;
         public virtual DbSet<Ingredient> Ingredients { get; set; } = null!;
         public virtual DbSet<Login> Logins { get; set; } = null!;
+        public virtual DbSet<Customer> Customers { get; set; } = null!;
         public virtual DbSet<Product> Products { get; set; } = null!;
         public virtual DbSet<Recipe> Recipes { get; set; } = null!;
         public virtual DbSet<Unit> Units { get; set; } = null!;
+        public virtual DbSet<Sale> Sales { get; set; } = null!;
+        public virtual DbSet<ProductInventory> ProductInventories { get; set; } = null!;
+        public virtual DbSet<SoldProduct> SoldProducts { get; set; } = null!;
+        public virtual DbSet<ProductionHistory> ProducedProduct { get; set; } = null!;
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=LHE_DB;Trusted_Connection=True; Integrated Security=true;");
-          // sa login
-            }
-
         }
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
         {
             configurationBuilder.Properties<string>().HaveMaxLength(50);
 
-            configurationBuilder.Properties<decimal>().HavePrecision(18, 2);
+            configurationBuilder.Properties<decimal>().HavePrecision(18, 4);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<ProductionHistory>(entity => { entity.ToTable(nameof(ProductionHistory)); });
+            modelBuilder.Entity<Sale>(entity => { entity.ToTable(nameof(Sale)); });
+            modelBuilder.Entity<SoldProduct>(entity => { entity.ToTable(nameof(SoldProduct)); });
+            modelBuilder.Entity<ProductInventory>(entity => { entity.ToTable(nameof(ProductInventory)); });
+            modelBuilder.Entity<Customer>(entity => { entity.ToTable(nameof(Customer)); });
+
             modelBuilder.Entity<Conversion>(entity =>
             {
                 entity.ToTable("Conversion");
@@ -51,8 +58,6 @@ namespace Lightstream.DataAccess.Data
                 entity.HasIndex(e => e.FromUnitId, "IX_Conversion_FromUnitId");
 
                 entity.HasIndex(e => e.ToUnitId, "IX_Conversion_ToUnitId");
-
-                //entity.Property(e => e.Value).HasColumnType("decimal(18, 2)");
 
                 entity.HasOne(d => d.FromUnit)
                     .WithMany(p => p.ConversionFromUnits)
@@ -73,8 +78,6 @@ namespace Lightstream.DataAccess.Data
 
                 entity.HasIndex(e => e.UnitMeasurementId, "IX_Ingredient_UnitMeasurementId");
 
-                //entity.Property(e => e.Cost).HasColumnType("decimal(18, 2)");
-
                 entity.HasOne(d => d.UnitMeasurement)
                     .WithMany(p => p.Ingredients)
                     .HasForeignKey(d => d.UnitMeasurementId)
@@ -86,8 +89,6 @@ namespace Lightstream.DataAccess.Data
             {
                 entity.ToTable("Login");
 
-                //entity.Property(e => e.FirstName).HasMaxLength(50);
-
                 entity.Property(e => e.FullName)
                     .HasMaxLength(101)
                     .HasComputedColumnSql("(concat([FIRSTNAME],' ',[LASTNAME]))", false);
@@ -98,8 +99,6 @@ namespace Lightstream.DataAccess.Data
             modelBuilder.Entity<Product>(entity =>
             {
                 entity.ToTable("Product");
-
-                //entity.Property(e => e.Price).HasColumnType("decimal(18, 2)");
             });
 
             modelBuilder.Entity<Recipe>(entity =>
@@ -131,8 +130,6 @@ namespace Lightstream.DataAccess.Data
             modelBuilder.Entity<Unit>(entity =>
             {
                 entity.ToTable("Unit");
-
-                //entity.Property(e => e.Name).HasMaxLength(50);
             });
 
             OnModelCreatingPartial(modelBuilder);

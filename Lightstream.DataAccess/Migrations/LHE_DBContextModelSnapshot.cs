@@ -37,8 +37,8 @@ namespace Lightstream.DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("Value")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
 
                     b.HasKey("Id");
 
@@ -47,6 +47,32 @@ namespace Lightstream.DataAccess.Migrations
                     b.HasIndex(new[] { "ToUnitId" }, "IX_Conversion_ToUnitId");
 
                     b.ToTable("Conversion", (string)null);
+                });
+
+            modelBuilder.Entity("Lightstream.DataAccess.Models.Customer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("ContactDetails")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Customer", (string)null);
                 });
 
             modelBuilder.Entity("Lightstream.DataAccess.Models.Ingredient", b =>
@@ -58,8 +84,8 @@ namespace Lightstream.DataAccess.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<decimal>("Cost")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -129,8 +155,11 @@ namespace Lightstream.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("Barcode")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -140,12 +169,74 @@ namespace Lightstream.DataAccess.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<decimal>("Price")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<int>("UnitQtyId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("UnitQtyId");
+
                     b.ToTable("Product", (string)null);
+                });
+
+            modelBuilder.Entity("Lightstream.DataAccess.Models.ProductInventory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductInventory", (string)null);
+                });
+
+            modelBuilder.Entity("Lightstream.DataAccess.Models.ProductionHistory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("DateTimeProduction")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("LoginId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProductInventoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("QtyProduced")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LoginId");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("ProductInventoryId");
+
+                    b.ToTable("ProductionHistory", (string)null);
                 });
 
             modelBuilder.Entity("Lightstream.DataAccess.Models.Recipe", b =>
@@ -166,8 +257,8 @@ namespace Lightstream.DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("Qty")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
 
                     b.HasKey("Id");
 
@@ -180,6 +271,62 @@ namespace Lightstream.DataAccess.Migrations
                     b.ToTable("Recipe", (string)null);
                 });
 
+            modelBuilder.Entity("Lightstream.DataAccess.Models.Sale", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateTimeTransaction")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("LoginId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("LoginId");
+
+                    b.ToTable("Sale", (string)null);
+                });
+
+            modelBuilder.Entity("Lightstream.DataAccess.Models.SoldProduct", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("ProductInventoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SaleId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("SoldPrice")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<int>("SoldQty")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductInventoryId");
+
+                    b.HasIndex("SaleId");
+
+                    b.ToTable("SoldProduct", (string)null);
+                });
+
             modelBuilder.Entity("Lightstream.DataAccess.Models.Unit", b =>
                 {
                     b.Property<int>("Id")
@@ -188,7 +335,15 @@ namespace Lightstream.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Abbreviation")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("PluralName")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("SingularName")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
@@ -228,6 +383,49 @@ namespace Lightstream.DataAccess.Migrations
                     b.Navigation("UnitMeasurement");
                 });
 
+            modelBuilder.Entity("Lightstream.DataAccess.Models.Product", b =>
+                {
+                    b.HasOne("Lightstream.DataAccess.Models.Unit", "UnitQty")
+                        .WithMany("Products")
+                        .HasForeignKey("UnitQtyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("UnitQty");
+                });
+
+            modelBuilder.Entity("Lightstream.DataAccess.Models.ProductInventory", b =>
+                {
+                    b.HasOne("Lightstream.DataAccess.Models.Product", "Product")
+                        .WithMany("ProductInventories")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("Lightstream.DataAccess.Models.ProductionHistory", b =>
+                {
+                    b.HasOne("Lightstream.DataAccess.Models.Login", "Login")
+                        .WithMany("ProductionHistories")
+                        .HasForeignKey("LoginId");
+
+                    b.HasOne("Lightstream.DataAccess.Models.Product", "Product")
+                        .WithMany("ProductionHistory")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Lightstream.DataAccess.Models.ProductInventory", null)
+                        .WithMany("ProductionHistories")
+                        .HasForeignKey("ProductInventoryId");
+
+                    b.Navigation("Login");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("Lightstream.DataAccess.Models.Recipe", b =>
                 {
                     b.HasOne("Lightstream.DataAccess.Models.Conversion", "Conversion")
@@ -256,9 +454,46 @@ namespace Lightstream.DataAccess.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("Lightstream.DataAccess.Models.Sale", b =>
+                {
+                    b.HasOne("Lightstream.DataAccess.Models.Customer", "Customer")
+                        .WithMany("Transactions")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Lightstream.DataAccess.Models.Login", "Login")
+                        .WithMany("Transactons")
+                        .HasForeignKey("LoginId");
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("Login");
+                });
+
+            modelBuilder.Entity("Lightstream.DataAccess.Models.SoldProduct", b =>
+                {
+                    b.HasOne("Lightstream.DataAccess.Models.ProductInventory", "ProductInventory")
+                        .WithMany("SoldItems")
+                        .HasForeignKey("ProductInventoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Lightstream.DataAccess.Models.Sale", null)
+                        .WithMany("SoldItems")
+                        .HasForeignKey("SaleId");
+
+                    b.Navigation("ProductInventory");
+                });
+
             modelBuilder.Entity("Lightstream.DataAccess.Models.Conversion", b =>
                 {
                     b.Navigation("Recipes");
+                });
+
+            modelBuilder.Entity("Lightstream.DataAccess.Models.Customer", b =>
+                {
+                    b.Navigation("Transactions");
                 });
 
             modelBuilder.Entity("Lightstream.DataAccess.Models.Ingredient", b =>
@@ -266,9 +501,32 @@ namespace Lightstream.DataAccess.Migrations
                     b.Navigation("Recipes");
                 });
 
+            modelBuilder.Entity("Lightstream.DataAccess.Models.Login", b =>
+                {
+                    b.Navigation("ProductionHistories");
+
+                    b.Navigation("Transactons");
+                });
+
             modelBuilder.Entity("Lightstream.DataAccess.Models.Product", b =>
                 {
+                    b.Navigation("ProductInventories");
+
+                    b.Navigation("ProductionHistory");
+
                     b.Navigation("Recipes");
+                });
+
+            modelBuilder.Entity("Lightstream.DataAccess.Models.ProductInventory", b =>
+                {
+                    b.Navigation("ProductionHistories");
+
+                    b.Navigation("SoldItems");
+                });
+
+            modelBuilder.Entity("Lightstream.DataAccess.Models.Sale", b =>
+                {
+                    b.Navigation("SoldItems");
                 });
 
             modelBuilder.Entity("Lightstream.DataAccess.Models.Unit", b =>
@@ -278,6 +536,8 @@ namespace Lightstream.DataAccess.Migrations
                     b.Navigation("ConversionToUnits");
 
                     b.Navigation("Ingredients");
+
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

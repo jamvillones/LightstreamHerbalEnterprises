@@ -1,5 +1,6 @@
 ﻿using Lightstream.DataAccess.Data;
 using Lightstream.DataAccess.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +20,8 @@ namespace Lightstream.Forms
             InitializeComponent();
         }
 
-        Unit _from = null, _to = null;
+        Unit? _from = null, _to = null;
+        public Conversion? ResultConversion { get; private set; }
         public ConversionForm(Unit from, Unit to)
         {
             InitializeComponent();
@@ -27,33 +29,33 @@ namespace Lightstream.Forms
             _to = to;
         }
 
-        int FromId_0 => (int)_convertFromOpt.SelectedValue;
-        int ToId_0 => (int)_convertToOpt.SelectedValue;
-        int FromId_1 => (int)_convertBackfromOpt.SelectedValue;
-        int ToId_1 => (int)_convertBackToOpt.SelectedValue;
-        decimal Value { get; set; }
+        public Unit? FromUnit => _fromOpt.SelectedItem is Unit u ? u : null;
+        public Unit? ToUnit => _toOpt.SelectedItem is Unit u ? u : null;
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
             using (var context = new LHE_DBContext())
             {
-                var convert = new Conversion()
+                var conversion = new Conversion()
                 {
-                    FromUnitId = FromId_0,
-                    ToUnitId = ToId_0,
-                    Value = Value
+                    FromUnitId = FromUnit!.Id,
+                    ToUnitId = ToUnit!.Id,
+                    Value = _conversionValue.Value                    
                 };
+                context.Conversions.Add(conversion);
 
-                var convertBack = new Conversion()
+                var backConversion = new Conversion()
                 {
-                    FromUnitId = FromId_1,
-                    ToUnitId = ToId_1,
-                    Value = Value
+                    FromUnitId = ToUnit.Id,
+                    ToUnitId = FromUnit.Id,
+                    Value = _backConversionValue.Value
                 };
+                context.Conversions.Add(backConversion);
 
-                context.Conversions.Add(convert);
-                context.Conversions.Add(convertBack);
                 context.SaveChanges();
+                ResultConversion = conversion;
+
+                context.Entry(ResultConversion!).Reference(b => b.FromUnit).Load();
             }
 
             DialogResult = DialogResult.OK;
@@ -63,24 +65,21 @@ namespace Lightstream.Forms
         {
             using (var context = new LHE_DBContext())
             {
-                var units = context.Units.ToArray();
+                var units = context.Units;
 
-                _convertFromOpt.DataSource = units.ToList();
-                _convertToOpt.DataSource = units.ToList();
+                _fromOpt.DataSource = units.ToList();
+                _toOpt.DataSource = units.ToList();
 
-                _convertBackfromOpt.DataSource = units.ToList();
-                _convertBackToOpt.DataSource = units.ToList();
+                var isReadonly = _from is not null && _to is not null;
 
-                if(_from is not null && _to is not null)
-                {
-                    _convertFromOpt.Text = _from.Name;
-                    _convertToOpt.Text = _to.Name;
+                _fromOpt.Text = _from.ToString();
+                _toOpt.Text = _to.ToString();
 
-                    _convertBackfromOpt.Text = _to.Name;
-                    _convertBackToOpt.Text = _from.Name;
+                toolTip1.SetToolTip(_conversionValue, "1" + FromUnit.SingularName + " = ?" + ToUnit.SingularName);
+                toolTip1.SetToolTip(_backConversionValue, "1" + ToUnit.SingularName + " = ?" + FromUnit.SingularName);
 
-                    _convertFromOpt.Enabled = _convertToOpt.Enabled = _convertBackfromOpt.Enabled = _convertBackToOpt.Enabled = false;
-                }
+                _fromOpt.Enabled = !isReadonly;
+                _toOpt.Enabled = !isReadonly;
             }
         }
     }

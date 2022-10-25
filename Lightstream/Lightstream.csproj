@@ -10,6 +10,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Services\Interface\**" />
+    <EmbeddedResource Remove="Services\Interface\**" />
+    <None Remove="Services\Interface\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="icons8_mint.ico" />
   </ItemGroup>
 
@@ -39,7 +45,6 @@
 
   <ItemGroup>
     <Folder Include="Images\LoginButton\" />
-    <Folder Include="Services\Interface\" />
   </ItemGroup>
 
   <ItemGroup>

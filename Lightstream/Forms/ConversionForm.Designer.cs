@@ -28,236 +28,169 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this._convertFromOpt = new System.Windows.Forms.ComboBox();
-            this._convertToOpt = new System.Windows.Forms.ComboBox();
-            this._0_Value = new System.Windows.Forms.NumericUpDown();
-            this._1_ValueOption = new System.Windows.Forms.NumericUpDown();
-            this._convertBackToOpt = new System.Windows.Forms.ComboBox();
-            this._convertBackfromOpt = new System.Windows.Forms.ComboBox();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConversionForm));
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this._0_Value)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._1_ValueOption)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
+            this._fromOpt = new System.Windows.Forms.ComboBox();
+            this._toOpt = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this._conversionValue = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this._backConversionValue = new System.Windows.Forms.NumericUpDown();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this._conversionValue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._backConversionValue)).BeginInit();
             this.SuspendLayout();
-            // 
-            // _0_fromOpt
-            // 
-            this._convertFromOpt.DisplayMember = "Name";
-            this._convertFromOpt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._convertFromOpt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._convertFromOpt.FormattingEnabled = true;
-            this._convertFromOpt.Location = new System.Drawing.Point(5, 16);
-            this._convertFromOpt.Margin = new System.Windows.Forms.Padding(2);
-            this._convertFromOpt.Name = "_0_fromOpt";
-            this._convertFromOpt.Size = new System.Drawing.Size(190, 23);
-            this._convertFromOpt.TabIndex = 1;
-            this._convertFromOpt.ValueMember = "Id";
-            // 
-            // _0_ToOpt
-            // 
-            this._convertToOpt.DisplayMember = "Name";
-            this._convertToOpt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._convertToOpt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._convertToOpt.FormattingEnabled = true;
-            this._convertToOpt.Location = new System.Drawing.Point(5, 16);
-            this._convertToOpt.Margin = new System.Windows.Forms.Padding(2);
-            this._convertToOpt.Name = "_0_ToOpt";
-            this._convertToOpt.Size = new System.Drawing.Size(190, 23);
-            this._convertToOpt.TabIndex = 3;
-            this._convertToOpt.ValueMember = "Id";
-            // 
-            // _0_Value
-            // 
-            this._0_Value.DecimalPlaces = 4;
-            this._0_Value.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._0_Value.Location = new System.Drawing.Point(5, 16);
-            this._0_Value.Margin = new System.Windows.Forms.Padding(2);
-            this._0_Value.Name = "_0_Value";
-            this._0_Value.Size = new System.Drawing.Size(190, 23);
-            this._0_Value.TabIndex = 4;
-            // 
-            // _1_ValueOption
-            // 
-            this._1_ValueOption.DecimalPlaces = 4;
-            this._1_ValueOption.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._1_ValueOption.Location = new System.Drawing.Point(5, 16);
-            this._1_ValueOption.Margin = new System.Windows.Forms.Padding(2);
-            this._1_ValueOption.Name = "_1_ValueOption";
-            this._1_ValueOption.Size = new System.Drawing.Size(190, 23);
-            this._1_ValueOption.TabIndex = 10;
-            // 
-            // _1_ToOpt
-            // 
-            this._convertBackToOpt.DisplayMember = "Name";
-            this._convertBackToOpt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._convertBackToOpt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._convertBackToOpt.FormattingEnabled = true;
-            this._convertBackToOpt.Location = new System.Drawing.Point(5, 16);
-            this._convertBackToOpt.Margin = new System.Windows.Forms.Padding(2);
-            this._convertBackToOpt.Name = "_1_ToOpt";
-            this._convertBackToOpt.Size = new System.Drawing.Size(190, 23);
-            this._convertBackToOpt.TabIndex = 9;
-            this._convertBackToOpt.ValueMember = "Id";
-            // 
-            // _1_fromOpt
-            // 
-            this._convertBackfromOpt.DisplayMember = "Name";
-            this._convertBackfromOpt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._convertBackfromOpt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._convertBackfromOpt.FormattingEnabled = true;
-            this._convertBackfromOpt.Location = new System.Drawing.Point(5, 16);
-            this._convertBackfromOpt.Margin = new System.Windows.Forms.Padding(2);
-            this._convertBackfromOpt.Name = "_1_fromOpt";
-            this._convertBackfromOpt.Size = new System.Drawing.Size(190, 23);
-            this._convertBackfromOpt.TabIndex = 7;
-            this._convertBackfromOpt.ValueMember = "Id";
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(20, 179);
+            this.button1.Location = new System.Drawing.Point(25, 167);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(413, 30);
+            this.button1.Size = new System.Drawing.Size(403, 30);
             this.button1.TabIndex = 12;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.saveBtn_Click);
             // 
-            // groupBox1
+            // _fromOpt
             // 
-            this.groupBox1.Controls.Add(this._convertFromOpt);
-            this.groupBox1.Location = new System.Drawing.Point(20, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.groupBox1.Size = new System.Drawing.Size(200, 45);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "From";
+            this._fromOpt.DisplayMember = "Name";
+            this._fromOpt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._fromOpt.FormattingEnabled = true;
+            this._fromOpt.Location = new System.Drawing.Point(25, 31);
+            this._fromOpt.Margin = new System.Windows.Forms.Padding(2);
+            this._fromOpt.Name = "_fromOpt";
+            this._fromOpt.Size = new System.Drawing.Size(190, 23);
+            this._fromOpt.TabIndex = 20;
+            this._fromOpt.ValueMember = "Id";
             // 
-            // groupBox2
+            // _toOpt
             // 
-            this.groupBox2.Controls.Add(this._convertToOpt);
-            this.groupBox2.Location = new System.Drawing.Point(20, 63);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.groupBox2.Size = new System.Drawing.Size(200, 45);
-            this.groupBox2.TabIndex = 14;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "To";
+            this._toOpt.DisplayMember = "Name";
+            this._toOpt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._toOpt.FormattingEnabled = true;
+            this._toOpt.Location = new System.Drawing.Point(238, 31);
+            this._toOpt.Margin = new System.Windows.Forms.Padding(2);
+            this._toOpt.Name = "_toOpt";
+            this._toOpt.Size = new System.Drawing.Size(190, 23);
+            this._toOpt.TabIndex = 21;
+            this._toOpt.ValueMember = "Id";
             // 
-            // groupBox3
+            // label1
             // 
-            this.groupBox3.Controls.Add(this._0_Value);
-            this.groupBox3.Location = new System.Drawing.Point(20, 114);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.groupBox3.Size = new System.Drawing.Size(200, 45);
-            this.groupBox3.TabIndex = 15;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Value";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bebas Neue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(25, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 15);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Unit A";
             // 
-            // groupBox4
+            // label2
             // 
-            this.groupBox4.Controls.Add(this._convertBackfromOpt);
-            this.groupBox4.Location = new System.Drawing.Point(233, 12);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.groupBox4.Size = new System.Drawing.Size(200, 45);
-            this.groupBox4.TabIndex = 16;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "From";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bebas Neue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(238, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 15);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Unit B";
             // 
-            // groupBox5
+            // _conversionValue
             // 
-            this.groupBox5.Controls.Add(this._convertBackToOpt);
-            this.groupBox5.Location = new System.Drawing.Point(233, 63);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.groupBox5.Size = new System.Drawing.Size(200, 45);
-            this.groupBox5.TabIndex = 17;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "To";
+            this._conversionValue.DecimalPlaces = 2;
+            this._conversionValue.Location = new System.Drawing.Point(118, 84);
+            this._conversionValue.Margin = new System.Windows.Forms.Padding(2);
+            this._conversionValue.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this._conversionValue.Name = "_conversionValue";
+            this._conversionValue.Size = new System.Drawing.Size(310, 23);
+            this._conversionValue.TabIndex = 24;
+            this._conversionValue.ThousandsSeparator = true;
             // 
-            // groupBox6
+            // label3
             // 
-            this.groupBox6.Controls.Add(this._1_ValueOption);
-            this.groupBox6.Location = new System.Drawing.Point(233, 114);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.groupBox6.Size = new System.Drawing.Size(200, 45);
-            this.groupBox6.TabIndex = 18;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Value";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Bebas Neue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(36, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 15);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "A TO B CONVERSION";
             // 
-            // panel1
+            // label4
             // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(226, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1, 156);
-            this.panel1.TabIndex = 19;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Bebas Neue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(36, 126);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 15);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "B TO A CONVERSION";
+            // 
+            // _backConversionValue
+            // 
+            this._backConversionValue.DecimalPlaces = 2;
+            this._backConversionValue.Location = new System.Drawing.Point(118, 123);
+            this._backConversionValue.Margin = new System.Windows.Forms.Padding(2);
+            this._backConversionValue.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this._backConversionValue.Name = "_backConversionValue";
+            this._backConversionValue.Size = new System.Drawing.Size(310, 23);
+            this._backConversionValue.TabIndex = 26;
+            this._backConversionValue.ThousandsSeparator = true;
             // 
             // ConversionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 220);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(452, 217);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this._backConversionValue);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this._conversionValue);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this._toOpt);
+            this.Controls.Add(this._fromOpt);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ConversionForm";
             this.Text = "Conversion";
             this.Load += new System.EventHandler(this.ConversionForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this._0_Value)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._1_ValueOption)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this._conversionValue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._backConversionValue)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private ComboBox _convertFromOpt;
-        private ComboBox _convertToOpt;
-        private NumericUpDown _0_Value;
-        private NumericUpDown _1_ValueOption;
-        private ComboBox _convertBackToOpt;
-        private ComboBox _convertBackfromOpt;
         private Button button1;
-        private GroupBox groupBox1;
-        private GroupBox groupBox2;
-        private GroupBox groupBox3;
-        private GroupBox groupBox4;
-        private GroupBox groupBox5;
-        private GroupBox groupBox6;
-        private Panel panel1;
+        private ComboBox _fromOpt;
+        private ComboBox _toOpt;
+        private Label label1;
+        private Label label2;
+        private NumericUpDown _conversionValue;
+        private Label label3;
+        private Label label4;
+        private NumericUpDown _backConversionValue;
+        private ToolTip toolTip1;
     }
 }

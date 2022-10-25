@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateNewUserForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this._firstName = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -54,11 +55,9 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this._firstName);
-            this.groupBox1.Location = new System.Drawing.Point(17, 20);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(427, 67);
+            this.groupBox1.Size = new System.Drawing.Size(299, 40);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "First Name";
@@ -69,11 +68,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this._firstName.BackColor = System.Drawing.SystemColors.Control;
             this._firstName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this._firstName.Location = new System.Drawing.Point(9, 28);
-            this._firstName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this._firstName.Location = new System.Drawing.Point(6, 17);
             this._firstName.MaxLength = 50;
             this._firstName.Name = "_firstName";
-            this._firstName.Size = new System.Drawing.Size(410, 24);
+            this._firstName.Size = new System.Drawing.Size(287, 16);
             this._firstName.TabIndex = 0;
             // 
             // groupBox2
@@ -81,11 +79,9 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this._lastName);
-            this.groupBox2.Location = new System.Drawing.Point(17, 97);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Location = new System.Drawing.Point(12, 58);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(427, 67);
+            this.groupBox2.Size = new System.Drawing.Size(299, 40);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Last Name";
@@ -96,11 +92,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this._lastName.BackColor = System.Drawing.SystemColors.Control;
             this._lastName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this._lastName.Location = new System.Drawing.Point(9, 28);
-            this._lastName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this._lastName.Location = new System.Drawing.Point(6, 17);
             this._lastName.MaxLength = 50;
             this._lastName.Name = "_lastName";
-            this._lastName.Size = new System.Drawing.Size(410, 24);
+            this._lastName.Size = new System.Drawing.Size(287, 16);
             this._lastName.TabIndex = 0;
             // 
             // groupBox3
@@ -108,11 +103,9 @@
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this._password);
-            this.groupBox3.Location = new System.Drawing.Point(17, 327);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox3.Location = new System.Drawing.Point(12, 196);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox3.Size = new System.Drawing.Size(427, 67);
+            this.groupBox3.Size = new System.Drawing.Size(299, 40);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Password";
@@ -123,13 +116,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this._password.BackColor = System.Drawing.SystemColors.Control;
             this._password.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this._password.Location = new System.Drawing.Point(9, 28);
-            this._password.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this._password.Location = new System.Drawing.Point(6, 17);
             this._password.MaxLength = 50;
             this._password.Name = "_password";
             this._password.PasswordChar = '●';
             this._password.PlaceholderText = "Required...";
-            this._password.Size = new System.Drawing.Size(410, 24);
+            this._password.Size = new System.Drawing.Size(287, 16);
             this._password.TabIndex = 0;
             // 
             // groupBox4
@@ -137,11 +129,9 @@
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this._confirmPassword);
-            this.groupBox4.Location = new System.Drawing.Point(17, 403);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox4.Location = new System.Drawing.Point(12, 242);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox4.Size = new System.Drawing.Size(427, 67);
+            this.groupBox4.Size = new System.Drawing.Size(299, 40);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Confirm Password";
@@ -152,13 +142,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this._confirmPassword.BackColor = System.Drawing.SystemColors.Control;
             this._confirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this._confirmPassword.Location = new System.Drawing.Point(9, 28);
-            this._confirmPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this._confirmPassword.Location = new System.Drawing.Point(6, 17);
             this._confirmPassword.MaxLength = 50;
             this._confirmPassword.Name = "_confirmPassword";
             this._confirmPassword.PasswordChar = '●';
             this._confirmPassword.PlaceholderText = "Required...";
-            this._confirmPassword.Size = new System.Drawing.Size(410, 24);
+            this._confirmPassword.Size = new System.Drawing.Size(287, 16);
             this._confirmPassword.TabIndex = 0;
             // 
             // groupBox5
@@ -166,11 +155,9 @@
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox5.Controls.Add(this._userName);
-            this.groupBox5.Location = new System.Drawing.Point(17, 250);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox5.Location = new System.Drawing.Point(12, 150);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox5.Size = new System.Drawing.Size(427, 67);
+            this.groupBox5.Size = new System.Drawing.Size(299, 40);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Username";
@@ -181,12 +168,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this._userName.BackColor = System.Drawing.SystemColors.Control;
             this._userName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this._userName.Location = new System.Drawing.Point(9, 28);
-            this._userName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this._userName.Location = new System.Drawing.Point(6, 17);
             this._userName.MaxLength = 50;
             this._userName.Name = "_userName";
             this._userName.PlaceholderText = "Required...";
-            this._userName.Size = new System.Drawing.Size(410, 24);
+            this._userName.Size = new System.Drawing.Size(287, 16);
             this._userName.TabIndex = 0;
             // 
             // groupBox6
@@ -194,11 +180,9 @@
             this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox6.Controls.Add(this._email);
-            this.groupBox6.Location = new System.Drawing.Point(17, 173);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox6.Location = new System.Drawing.Point(12, 104);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox6.Size = new System.Drawing.Size(427, 67);
+            this.groupBox6.Size = new System.Drawing.Size(299, 40);
             this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Email";
@@ -209,11 +193,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this._email.BackColor = System.Drawing.SystemColors.Control;
             this._email.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this._email.Location = new System.Drawing.Point(9, 28);
-            this._email.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this._email.Location = new System.Drawing.Point(6, 17);
             this._email.MaxLength = 50;
             this._email.Name = "_email";
-            this._email.Size = new System.Drawing.Size(410, 24);
+            this._email.Size = new System.Drawing.Size(287, 16);
             this._email.TabIndex = 0;
             // 
             // _save
@@ -223,10 +206,9 @@
             this._save.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this._save.FlatAppearance.BorderSize = 0;
             this._save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._save.Location = new System.Drawing.Point(17, 505);
-            this._save.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this._save.Location = new System.Drawing.Point(12, 303);
             this._save.Name = "_save";
-            this._save.Size = new System.Drawing.Size(427, 50);
+            this._save.Size = new System.Drawing.Size(299, 30);
             this._save.TabIndex = 6;
             this._save.Text = "Save";
             this._save.UseVisualStyleBackColor = false;
@@ -235,9 +217,9 @@
             // CreateNewUserForm
             // 
             this.AcceptButton = this._save;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 575);
+            this.ClientSize = new System.Drawing.Size(323, 345);
             this.Controls.Add(this._save);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
@@ -245,7 +227,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CreateNewUserForm";

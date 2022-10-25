@@ -8,7 +8,7 @@ namespace Lightstream.DataAccess.Models
 {
     public partial class Ingredient
     {
-        public string GetUnit => UnitMeasurement.Name;
+        public string GetUnit => UnitMeasurement.SingularName;
         public string GetFormattedCost => string.Format("₱ {0:n}", this.Cost);
     }
 }

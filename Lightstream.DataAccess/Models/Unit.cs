@@ -13,10 +13,13 @@ namespace Lightstream.DataAccess.Models
         }
 
         public int Id { get; set; }
-        public string Name { get; set; } = null!;
+        public string SingularName { get; set; } = null!;
+        public string? PluralName { get; set; } = null;
+        public string? Abbreviation { get; set; } = null;
 
         public virtual ICollection<Conversion> ConversionFromUnits { get; set; }
         public virtual ICollection<Conversion> ConversionToUnits { get; set; }
         public virtual ICollection<Ingredient> Ingredients { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

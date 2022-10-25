@@ -9,5 +9,7 @@ namespace Lightstream.ViewModels
     internal interface IViewmodelDataHolder<IData> where IData : class
     {
         public IData Data { get; set; }
+
+        void UpdateValues();
     }
 }

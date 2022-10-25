@@ -206,7 +206,12 @@ namespace Lightstream
 
         private void button11_Click_1(object sender, EventArgs e)
         {
-            OpenForm<PricingMangmtForm>();
+            OpenForm<PriceMangmtForm>();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            OpenForm<UnitMangmtForm>();
         }
     }
 }

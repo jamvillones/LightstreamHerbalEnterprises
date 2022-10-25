@@ -10,15 +10,11 @@ using System.Windows.Forms;
 
 namespace Lightstream.Forms
 {
-    public partial class PriceMangmtForm : Form
+    public partial class UnitMangmtForm : Form
     {
-        public PriceMangmtForm()
+        public UnitMangmtForm()
         {
             InitializeComponent();
-        }
-
-        private void _PMTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
     }

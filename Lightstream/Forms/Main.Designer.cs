@@ -92,7 +92,7 @@
             this._sideButtonPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._sideButtonPanel.Location = new System.Drawing.Point(0, 0);
             this._sideButtonPanel.Name = "_sideButtonPanel";
-            this._sideButtonPanel.Size = new System.Drawing.Size(168, 562);
+            this._sideButtonPanel.Size = new System.Drawing.Size(168, 770);
             this._sideButtonPanel.TabIndex = 1;
             // 
             // _reportsPanel
@@ -365,6 +365,7 @@
             this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button8
             // 
@@ -449,6 +450,7 @@
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click_1);
             // 
             // button10
             // 
@@ -588,7 +590,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
             this.label1.Location = new System.Drawing.Point(36, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 17);
+            this.label1.Size = new System.Drawing.Size(210, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Lightstream Herbal Enterprise";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -613,7 +615,7 @@
             this._sidePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this._sidePanel.Location = new System.Drawing.Point(0, 0);
             this._sidePanel.Name = "_sidePanel";
-            this._sidePanel.Size = new System.Drawing.Size(170, 564);
+            this._sidePanel.Size = new System.Drawing.Size(170, 772);
             this._sidePanel.TabIndex = 4;
             // 
             // panel1
@@ -623,7 +625,7 @@
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 502);
+            this.panel1.Location = new System.Drawing.Point(0, 710);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(168, 60);
             this.panel1.TabIndex = 2;
@@ -671,8 +673,9 @@
             this._contentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._contentsPanel.Location = new System.Drawing.Point(0, 0);
             this._contentsPanel.Name = "_contentsPanel";
-            this._contentsPanel.Size = new System.Drawing.Size(580, 534);
+            this._contentsPanel.Size = new System.Drawing.Size(580, 742);
             this._contentsPanel.TabIndex = 4;
+            this._contentsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this._contentsPanel_Paint);
             // 
             // _notifPanel
             // 
@@ -680,7 +683,7 @@
             this._notifPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._notifPanel.Location = new System.Drawing.Point(0, 0);
             this._notifPanel.Name = "_notifPanel";
-            this._notifPanel.Size = new System.Drawing.Size(110, 534);
+            this._notifPanel.Size = new System.Drawing.Size(110, 742);
             this._notifPanel.TabIndex = 5;
             // 
             // splitContainer1
@@ -699,7 +702,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this._notifPanel);
             this.splitContainer1.Panel2MinSize = 110;
-            this.splitContainer1.Size = new System.Drawing.Size(694, 534);
+            this.splitContainer1.Size = new System.Drawing.Size(694, 742);
             this.splitContainer1.SplitterDistance = 580;
             this.splitContainer1.TabIndex = 6;
             // 
@@ -707,7 +710,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 564);
+            this.ClientSize = new System.Drawing.Size(864, 772);
             this.ControlBox = false;
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this._topPanel);

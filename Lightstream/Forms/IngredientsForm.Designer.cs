@@ -39,7 +39,7 @@
             this.addBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.addBtn.FlatAppearance.BorderSize = 0;
             this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addBtn.Location = new System.Drawing.Point(208, 137);
+            this.addBtn.Location = new System.Drawing.Point(208, 135);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(158, 30);
             this.addBtn.TabIndex = 6;
@@ -58,7 +58,7 @@
             this.ingredientField.IngredientName = "";
             this.ingredientField.Location = new System.Drawing.Point(0, 0);
             this.ingredientField.Name = "ingredientField";
-            this.ingredientField.Size = new System.Drawing.Size(384, 132);
+            this.ingredientField.Size = new System.Drawing.Size(384, 129);
             this.ingredientField.TabIndex = 7;
             // 
             // IngredientsForm
@@ -66,7 +66,7 @@
             this.AcceptButton = this.addBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 179);
+            this.ClientSize = new System.Drawing.Size(384, 177);
             this.Controls.Add(this.ingredientField);
             this.Controls.Add(this.addBtn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -127,7 +127,7 @@
             this._prodTable.RowHeadersVisible = false;
             this._prodTable.RowTemplate.Height = 25;
             this._prodTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._prodTable.Size = new System.Drawing.Size(629, 181);
+            this._prodTable.Size = new System.Drawing.Size(662, 181);
             this._prodTable.StandardTab = true;
             this._prodTable.TabIndex = 9;
             this._prodTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._prodTable_CellMouseClick);
@@ -244,7 +244,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(387, 20);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(242, 167);
+            this.groupBox1.Size = new System.Drawing.Size(258, 167);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Required Ingredients";
@@ -260,7 +260,7 @@
             this._recipe.Location = new System.Drawing.Point(3, 44);
             this._recipe.Margin = new System.Windows.Forms.Padding(5);
             this._recipe.Name = "_recipe";
-            this._recipe.Size = new System.Drawing.Size(236, 120);
+            this._recipe.Size = new System.Drawing.Size(252, 120);
             this._recipe.TabIndex = 1;
             this._recipe.TabStop = false;
             this.toolTip1.SetToolTip(this._recipe, "Delete to remove ingredient");
@@ -272,7 +272,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(3, 19);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(236, 25);
+            this.panel2.Size = new System.Drawing.Size(252, 25);
             this.panel2.TabIndex = 24;
             // 
             // _addRecipe
@@ -282,7 +282,7 @@
             this._addRecipe.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
             this._addRecipe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this._addRecipe.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._addRecipe.Location = new System.Drawing.Point(76, 0);
+            this._addRecipe.Location = new System.Drawing.Point(92, 0);
             this._addRecipe.Name = "_addRecipe";
             this._addRecipe.Size = new System.Drawing.Size(80, 25);
             this._addRecipe.TabIndex = 0;
@@ -297,7 +297,7 @@
             this._removeRecipe.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
             this._removeRecipe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this._removeRecipe.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._removeRecipe.Location = new System.Drawing.Point(156, 0);
+            this._removeRecipe.Location = new System.Drawing.Point(172, 0);
             this._removeRecipe.Name = "_removeRecipe";
             this._removeRecipe.Size = new System.Drawing.Size(80, 25);
             this._removeRecipe.TabIndex = 1;
@@ -388,7 +388,7 @@
             this.label1.Location = new System.Drawing.Point(20, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(629, 25);
+            this.label1.Size = new System.Drawing.Size(662, 25);
             this.label1.TabIndex = 8;
             this.label1.Text = "Create Product";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -401,7 +401,7 @@
             this.panel3.Location = new System.Drawing.Point(20, 257);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(629, 211);
+            this.panel3.Size = new System.Drawing.Size(662, 211);
             this.panel3.TabIndex = 24;
             // 
             // panel4
@@ -420,7 +420,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(20, 25);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(629, 206);
+            this.panel4.Size = new System.Drawing.Size(662, 206);
             this.panel4.TabIndex = 25;
             // 
             // panel1
@@ -429,7 +429,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(20, 231);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(629, 1);
+            this.panel1.Size = new System.Drawing.Size(662, 1);
             this.panel1.TabIndex = 26;
             // 
             // label6
@@ -440,7 +440,7 @@
             this.label6.Location = new System.Drawing.Point(20, 232);
             this.label6.Name = "label6";
             this.label6.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.label6.Size = new System.Drawing.Size(629, 25);
+            this.label6.Size = new System.Drawing.Size(662, 25);
             this.label6.TabIndex = 27;
             this.label6.Text = "Products";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -450,7 +450,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(669, 488);
+            this.ClientSize = new System.Drawing.Size(702, 488);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);

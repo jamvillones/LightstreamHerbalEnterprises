@@ -17,5 +17,6 @@ namespace Lightstream.DataAccess.Models
         public Customer Customer { get; set; } = null!;
         public Login? Login { get; set; }
         public ICollection<SoldProduct> SoldItems { get; set; } = null!;
+
     }
 }

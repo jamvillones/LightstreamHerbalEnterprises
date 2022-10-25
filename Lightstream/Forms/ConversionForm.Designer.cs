@@ -104,7 +104,7 @@
             // 
             // _conversionValue
             // 
-            this._conversionValue.DecimalPlaces = 4;
+            this._conversionValue.DecimalPlaces = 2;
             this._conversionValue.Location = new System.Drawing.Point(118, 84);
             this._conversionValue.Margin = new System.Windows.Forms.Padding(2);
             this._conversionValue.Maximum = new decimal(new int[] {
@@ -139,7 +139,7 @@
             // 
             // _backConversionValue
             // 
-            this._backConversionValue.DecimalPlaces = 4;
+            this._backConversionValue.DecimalPlaces = 2;
             this._backConversionValue.Location = new System.Drawing.Point(118, 123);
             this._backConversionValue.Margin = new System.Windows.Forms.Padding(2);
             this._backConversionValue.Maximum = new decimal(new int[] {

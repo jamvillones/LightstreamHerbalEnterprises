@@ -41,7 +41,7 @@
             // 
             this.cost.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cost.DecimalPlaces = 4;
+            this.cost.DecimalPlaces = 2;
             this.cost.Location = new System.Drawing.Point(117, 57);
             this.cost.Maximum = new decimal(new int[] {
             10000000,

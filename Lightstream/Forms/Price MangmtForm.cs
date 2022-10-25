@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Lightstream.Forms
 {
-    public partial class _frmHelpandAbout : Form
+    public partial class PricingMangmtForm : Form
     {
-        public _frmHelpandAbout()
+        public PricingMangmtForm()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void HelpandAboutForm_Load(object sender, EventArgs e)
-        {
-            _details.Text = "";
         }
     }
 }

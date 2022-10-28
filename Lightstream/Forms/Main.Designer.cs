@@ -62,7 +62,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this._contentsPanel = new System.Windows.Forms.Panel();
             this._notifPanel = new System.Windows.Forms.Panel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.divider = new System.Windows.Forms.SplitContainer();
             this._sideButtonPanel.SuspendLayout();
             this._reportsPanel.SuspendLayout();
             this._inventoryPanel.SuspendLayout();
@@ -72,10 +72,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this._sidePanel.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.divider)).BeginInit();
+            this.divider.Panel1.SuspendLayout();
+            this.divider.Panel2.SuspendLayout();
+            this.divider.SuspendLayout();
             this.SuspendLayout();
             // 
             // _sideButtonPanel
@@ -92,7 +92,7 @@
             this._sideButtonPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._sideButtonPanel.Location = new System.Drawing.Point(0, 0);
             this._sideButtonPanel.Name = "_sideButtonPanel";
-            this._sideButtonPanel.Size = new System.Drawing.Size(168, 482);
+            this._sideButtonPanel.Size = new System.Drawing.Size(168, 548);
             this._sideButtonPanel.TabIndex = 1;
             // 
             // _reportsPanel
@@ -185,7 +185,7 @@
             this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(165)))), ((int)(((byte)(109)))));
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("The Bold Font", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.Location = new System.Drawing.Point(0, 555);
@@ -291,7 +291,7 @@
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(165)))), ((int)(((byte)(109)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("The Bold Font", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.Location = new System.Drawing.Point(0, 370);
@@ -374,7 +374,7 @@
             this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(165)))), ((int)(((byte)(109)))));
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("The Bold Font", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button8.Location = new System.Drawing.Point(0, 230);
@@ -509,7 +509,7 @@
             this._filesBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(165)))), ((int)(((byte)(109)))));
             this._filesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._filesBtn.Font = new System.Drawing.Font("The Bold Font", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this._filesBtn.ForeColor = System.Drawing.Color.White;
+            this._filesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this._filesBtn.Image = ((System.Drawing.Image)(resources.GetObject("_filesBtn.Image")));
             this._filesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._filesBtn.Location = new System.Drawing.Point(0, 0);
@@ -535,7 +535,7 @@
             this._topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this._topPanel.Location = new System.Drawing.Point(170, 0);
             this._topPanel.Name = "_topPanel";
-            this._topPanel.Size = new System.Drawing.Size(614, 30);
+            this._topPanel.Size = new System.Drawing.Size(680, 30);
             this._topPanel.TabIndex = 3;
             this._topPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
@@ -546,7 +546,7 @@
             this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.minimizeButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.minimizeButton.Location = new System.Drawing.Point(494, 0);
+            this.minimizeButton.Location = new System.Drawing.Point(560, 0);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.Size = new System.Drawing.Size(40, 30);
             this.minimizeButton.TabIndex = 4;
@@ -560,7 +560,7 @@
             this.maximizeButton.FlatAppearance.BorderSize = 0;
             this.maximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.maximizeButton.Location = new System.Drawing.Point(534, 0);
+            this.maximizeButton.Location = new System.Drawing.Point(600, 0);
             this.maximizeButton.Name = "maximizeButton";
             this.maximizeButton.Size = new System.Drawing.Size(40, 30);
             this.maximizeButton.TabIndex = 3;
@@ -574,7 +574,7 @@
             this.closeBtn.FlatAppearance.BorderSize = 0;
             this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeBtn.ForeColor = System.Drawing.Color.IndianRed;
-            this.closeBtn.Location = new System.Drawing.Point(574, 0);
+            this.closeBtn.Location = new System.Drawing.Point(640, 0);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(40, 30);
             this.closeBtn.TabIndex = 2;
@@ -616,7 +616,7 @@
             this._sidePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this._sidePanel.Location = new System.Drawing.Point(0, 0);
             this._sidePanel.Name = "_sidePanel";
-            this._sidePanel.Size = new System.Drawing.Size(170, 484);
+            this._sidePanel.Size = new System.Drawing.Size(170, 550);
             this._sidePanel.TabIndex = 4;
             // 
             // panel1
@@ -626,7 +626,7 @@
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 422);
+            this.panel1.Location = new System.Drawing.Point(0, 488);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(168, 60);
             this.panel1.TabIndex = 2;
@@ -637,7 +637,7 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("The Bold Font", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(0, 0);
             this.button2.Margin = new System.Windows.Forms.Padding(5);
@@ -656,7 +656,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("The Bold Font", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(0, 30);
             this.button1.Margin = new System.Windows.Forms.Padding(5);
@@ -671,53 +671,57 @@
             // 
             // _contentsPanel
             // 
+            this._contentsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this._contentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._contentsPanel.Location = new System.Drawing.Point(0, 0);
             this._contentsPanel.Name = "_contentsPanel";
-            this._contentsPanel.Size = new System.Drawing.Size(500, 454);
+            this._contentsPanel.Size = new System.Drawing.Size(570, 520);
             this._contentsPanel.TabIndex = 4;
             this._contentsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this._contentsPanel_Paint);
             // 
             // _notifPanel
             // 
             this._notifPanel.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this._notifPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this._notifPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._notifPanel.Location = new System.Drawing.Point(0, 0);
             this._notifPanel.Name = "_notifPanel";
-            this._notifPanel.Size = new System.Drawing.Size(110, 454);
+            this._notifPanel.Size = new System.Drawing.Size(108, 520);
             this._notifPanel.TabIndex = 5;
             // 
-            // splitContainer1
+            // divider
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainer1.Location = new System.Drawing.Point(170, 30);
-            this.splitContainer1.Name = "splitContainer1";
+            this.divider.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.divider.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.divider.Location = new System.Drawing.Point(170, 30);
+            this.divider.Name = "divider";
             // 
-            // splitContainer1.Panel1
+            // divider.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this._contentsPanel);
-            this.splitContainer1.Panel1MinSize = 300;
+            this.divider.Panel1.Controls.Add(this._contentsPanel);
+            this.divider.Panel1MinSize = 300;
             // 
-            // splitContainer1.Panel2
+            // divider.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this._notifPanel);
-            this.splitContainer1.Panel2MinSize = 110;
-            this.splitContainer1.Size = new System.Drawing.Size(614, 454);
-            this.splitContainer1.SplitterDistance = 500;
-            this.splitContainer1.TabIndex = 6;
+            this.divider.Panel2.Controls.Add(this._notifPanel);
+            this.divider.Panel2MinSize = 100;
+            this.divider.Size = new System.Drawing.Size(680, 520);
+            this.divider.SplitterDistance = 570;
+            this.divider.SplitterWidth = 2;
+            this.divider.TabIndex = 6;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 484);
+            this.ClientSize = new System.Drawing.Size(850, 550);
             this.ControlBox = false;
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.divider);
             this.Controls.Add(this._topPanel);
             this.Controls.Add(this._sidePanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(600, 400);
+            this.MinimumSize = new System.Drawing.Size(800, 400);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Main_Load);
@@ -733,10 +737,10 @@
             this._sidePanel.ResumeLayout(false);
             this._sidePanel.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.divider.Panel1.ResumeLayout(false);
+            this.divider.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.divider)).EndInit();
+            this.divider.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -775,6 +779,6 @@
         private Button button2;
         private Button button1;
         private Panel _notifPanel;
-        private SplitContainer splitContainer1;
+        private SplitContainer divider;
     }
 }

@@ -49,8 +49,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this._recipe = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this._addRecipe = new System.Windows.Forms.Button();
             this._removeRecipe = new System.Windows.Forms.Button();
+            this._addRecipe = new System.Windows.Forms.Button();
             this._description = new System.Windows.Forms.TextBox();
             this._cancel = new System.Windows.Forms.Button();
             this._save = new System.Windows.Forms.Button();
@@ -219,6 +219,8 @@
             // 
             // _barcode
             // 
+            this._barcode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this._barcode.Location = new System.Drawing.Point(99, 60);
             this._barcode.Name = "_barcode";
             this._barcode.PlaceholderText = "optional...";
@@ -227,6 +229,8 @@
             // 
             // _unitOption
             // 
+            this._unitOption.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this._unitOption.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this._unitOption.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this._unitOption.Location = new System.Drawing.Point(99, 122);
@@ -237,14 +241,14 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this._recipe);
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(387, 20);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(258, 167);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.groupBox1.Size = new System.Drawing.Size(275, 167);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Required Ingredients";
@@ -257,47 +261,32 @@
             this._recipe.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._recipe.FormattingEnabled = true;
             this._recipe.ItemHeight = 15;
-            this._recipe.Location = new System.Drawing.Point(3, 44);
+            this._recipe.Location = new System.Drawing.Point(6, 44);
             this._recipe.Margin = new System.Windows.Forms.Padding(5);
             this._recipe.Name = "_recipe";
-            this._recipe.Size = new System.Drawing.Size(252, 120);
+            this._recipe.Size = new System.Drawing.Size(263, 120);
             this._recipe.TabIndex = 1;
             this._recipe.TabStop = false;
             this.toolTip1.SetToolTip(this._recipe, "Delete to remove ingredient");
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this._addRecipe);
             this.panel2.Controls.Add(this._removeRecipe);
+            this.panel2.Controls.Add(this._addRecipe);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(3, 19);
+            this.panel2.Location = new System.Drawing.Point(6, 19);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(252, 25);
+            this.panel2.Size = new System.Drawing.Size(263, 25);
             this.panel2.TabIndex = 24;
-            // 
-            // _addRecipe
-            // 
-            this._addRecipe.BackColor = System.Drawing.SystemColors.Control;
-            this._addRecipe.Dock = System.Windows.Forms.DockStyle.Right;
-            this._addRecipe.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
-            this._addRecipe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this._addRecipe.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._addRecipe.Location = new System.Drawing.Point(92, 0);
-            this._addRecipe.Name = "_addRecipe";
-            this._addRecipe.Size = new System.Drawing.Size(80, 25);
-            this._addRecipe.TabIndex = 0;
-            this._addRecipe.Text = "+ Add";
-            this._addRecipe.UseVisualStyleBackColor = false;
-            this._addRecipe.Click += new System.EventHandler(this._addIngredients_Click);
             // 
             // _removeRecipe
             // 
             this._removeRecipe.BackColor = System.Drawing.SystemColors.Control;
-            this._removeRecipe.Dock = System.Windows.Forms.DockStyle.Right;
+            this._removeRecipe.Dock = System.Windows.Forms.DockStyle.Left;
             this._removeRecipe.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
             this._removeRecipe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this._removeRecipe.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._removeRecipe.Location = new System.Drawing.Point(172, 0);
+            this._removeRecipe.Location = new System.Drawing.Point(80, 0);
             this._removeRecipe.Name = "_removeRecipe";
             this._removeRecipe.Size = new System.Drawing.Size(80, 25);
             this._removeRecipe.TabIndex = 1;
@@ -305,8 +294,25 @@
             this._removeRecipe.UseVisualStyleBackColor = false;
             this._removeRecipe.Click += new System.EventHandler(this._removeRecipe_Click);
             // 
+            // _addRecipe
+            // 
+            this._addRecipe.BackColor = System.Drawing.SystemColors.Control;
+            this._addRecipe.Dock = System.Windows.Forms.DockStyle.Left;
+            this._addRecipe.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
+            this._addRecipe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this._addRecipe.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._addRecipe.Location = new System.Drawing.Point(0, 0);
+            this._addRecipe.Name = "_addRecipe";
+            this._addRecipe.Size = new System.Drawing.Size(80, 25);
+            this._addRecipe.TabIndex = 0;
+            this._addRecipe.Text = "+ Add";
+            this._addRecipe.UseVisualStyleBackColor = false;
+            this._addRecipe.Click += new System.EventHandler(this._addIngredients_Click);
+            // 
             // _description
             // 
+            this._description.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this._description.Location = new System.Drawing.Point(99, 91);
             this._description.Name = "_description";
             this._description.PlaceholderText = "optional...";
@@ -316,12 +322,13 @@
             // 
             // _cancel
             // 
+            this._cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._cancel.Enabled = false;
             this._cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._cancel.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._cancel.Location = new System.Drawing.Point(251, 158);
+            this._cancel.Location = new System.Drawing.Point(267, 157);
             this._cancel.Name = "_cancel";
-            this._cancel.Size = new System.Drawing.Size(116, 29);
+            this._cancel.Size = new System.Drawing.Size(100, 30);
             this._cancel.TabIndex = 6;
             this._cancel.Text = "Cancel";
             this._cancel.UseVisualStyleBackColor = true;
@@ -329,12 +336,13 @@
             // 
             // _save
             // 
+            this._save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._save.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this._save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._save.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._save.Location = new System.Drawing.Point(0, 158);
+            this._save.Location = new System.Drawing.Point(161, 157);
             this._save.Name = "_save";
-            this._save.Size = new System.Drawing.Size(245, 29);
+            this._save.Size = new System.Drawing.Size(100, 30);
             this._save.TabIndex = 5;
             this._save.Text = "Save";
             this._save.UseVisualStyleBackColor = false;
@@ -342,6 +350,8 @@
             // 
             // _productName
             // 
+            this._productName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this._productName.Location = new System.Drawing.Point(99, 29);
             this._productName.Name = "_productName";
             this._productName.PlaceholderText = "required...";

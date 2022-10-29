@@ -175,13 +175,17 @@ namespace Lightstream.Usercontrols
                         return false;
                     }
 
+                    if (SelectedUnit != null)
+                        context.Entry(SelectedUnit).State = EntityState.Unchanged;
+                    var u = SelectedUnit ?? new Unit() { SingularName = _unitOption.Text.Trim() };
                     var newProduct = new Product()
                     {
                         Description = string.IsNullOrWhiteSpace(_description.Text) ? null : _description.Text.Trim(),
                         Barcode = string.IsNullOrWhiteSpace(_barcode.Text) ? null : _barcode.Text.Trim(),
                         Name = _productName.Text.Trim(),
                         Price = 0,
-                        UnitQty = context.Units.FirstOrDefault(x => x.Id == SelectedUnit.Id) ?? new Unit() { SingularName = _unitOption.Text.Trim() }
+                        UnitQty = u
+                        //UnitQty = context.Units.FirstOrDefault(x => x.Id == SelectedUnit.Id) ?? new Unit() { SingularName = _unitOption.Text.Trim() }
                     };
 
                     foreach (var i in recipes)

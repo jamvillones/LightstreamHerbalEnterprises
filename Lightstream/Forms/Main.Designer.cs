@@ -675,7 +675,7 @@
             this._contentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._contentsPanel.Location = new System.Drawing.Point(0, 0);
             this._contentsPanel.Name = "_contentsPanel";
-            this._contentsPanel.Size = new System.Drawing.Size(570, 520);
+            this._contentsPanel.Size = new System.Drawing.Size(560, 520);
             this._contentsPanel.TabIndex = 4;
             this._contentsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this._contentsPanel_Paint);
             // 
@@ -686,7 +686,7 @@
             this._notifPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._notifPanel.Location = new System.Drawing.Point(0, 0);
             this._notifPanel.Name = "_notifPanel";
-            this._notifPanel.Size = new System.Drawing.Size(108, 520);
+            this._notifPanel.Size = new System.Drawing.Size(118, 520);
             this._notifPanel.TabIndex = 5;
             // 
             // divider
@@ -704,9 +704,9 @@
             // divider.Panel2
             // 
             this.divider.Panel2.Controls.Add(this._notifPanel);
-            this.divider.Panel2MinSize = 100;
+            this.divider.Panel2MinSize = 110;
             this.divider.Size = new System.Drawing.Size(680, 520);
-            this.divider.SplitterDistance = 570;
+            this.divider.SplitterDistance = 560;
             this.divider.SplitterWidth = 2;
             this.divider.TabIndex = 6;
             // 

@@ -34,6 +34,7 @@ namespace Lightstream.DataAccess.Data
         {
             if (!optionsBuilder.IsConfigured)
                 optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=LHE_DB;Trusted_Connection=True; Integrated Security=true;");
+            optionsBuilder.EnableSensitiveDataLogging();
         }
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)

@@ -26,9 +26,19 @@ namespace Lightstream.ViewModels
         public int Id => _product.Id;
         public string ProductName => _product.Name;
         public string Unit => _product.UnitQty.SingularName;
-        public string Ingredients => _product.Recipes.Count > 1 ? (_product.Recipes.Count + " ingredients") : (_product.Recipes.Count + " ingredient");
-        public string Description => _product.Description ?? "*no description available";
-        public string Barcode => _product.Barcode ?? "*not set";
+        //public string Ingredients => _product.Recipes.Count > 1 ? (_product.Recipes.Count + " ingredients") : (_product.Recipes.Count + " ingredient");
+        public string Ingredients
+        {
+            get
+            {
+                var sb = new StringBuilder();
+                foreach (var r in _product.Recipes)
+                    sb.AppendLine("● " + r.Qty.ToString().TrimEnd('0', '.') + " " + r.GetUnit + " " + r.Ingredient.Name);
+                return sb.ToString();
+            }
+        }
+        public string Description => _product.Description ?? string.Empty;
+        public string Barcode => _product.Barcode ?? string.Empty;
 
         
     }

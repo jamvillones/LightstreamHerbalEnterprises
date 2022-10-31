@@ -1,5 +1,6 @@
 ﻿using Lightstream.DataAccess.Data;
 using Lightstream.DataAccess.Models;
+using Lightstream.DataAccess.Repositories;
 using Lightstream.Extensions;
 using Lightstream.Forms;
 using Lightstream.Services;
@@ -22,7 +23,7 @@ namespace Lightstream.Usercontrols
 {
     public partial class ProductsPage : Form
     {
-        DbContextFactory factory = new DbContextFactory();
+        //DbContextFactory factory = new DbContextFactory();
         BindingList<ProductViewModel> products = new BindingList<ProductViewModel>();
         BindingList<RecipeViewModel> recipes = new BindingList<RecipeViewModel>();
         BindingList<Unit> units = new BindingList<Unit>();
@@ -37,12 +38,27 @@ namespace Lightstream.Usercontrols
         bool CanReset => !string.IsNullOrWhiteSpace(_productName.Text) ||
                          !string.IsNullOrWhiteSpace(_description.Text) ||
                          recipes.Count > 0;
-        public ProductsPage()
+
+        GenericRepository<Product> _productService;
+        IGetRepository<Unit> _unitGetService;
+
+        public ProductsPage(
+            GenericRepository<Product> productService,
+            IGetRepository<Unit> unitService
+            )
         {
             InitializeComponent();
+
+            _productService = productService;
+            _unitGetService = unitService;
+
             recipes.ListChanged += Recipes_ListChanged;
 
-            //_save.Enabled = _cancel.Enabled = false;
+            SetDataGridColumnBindings();
+        }
+
+        void SetDataGridColumnBindings()
+        {
             _prodTable.AutoGenerateColumns = false;
             _unitOption.DisplayMember = nameof(Unit.SingularName);
             unitCol.DataPropertyName = nameof(ProductViewModel.Unit);
@@ -52,43 +68,37 @@ namespace Lightstream.Usercontrols
 
         private void Recipes_ListChanged(object? sender, ListChangedEventArgs e)
         {
-            //_save.Enabled = CanSaveProduct;
             _cancel.Enabled = CanReset;
-            //throw new NotImplementedException();
         }
 
-        void LoadProductValues(LHE_DBContext context)
+        async void LoadProductValues()
         {
             products.Clear();
-            try
-            {
-                var prods = context.Products
-                    .Include(x => x.Recipes)
-                    .Include(u => u.UnitQty)
-                    .Select(p => new ProductViewModel(p)).ToList();
-                foreach (var i in prods)
-                    products.Add(i);
-            }
-            catch { }
+
+            var prods = await _productService.GetAll_Async();
+
+            foreach (var i in prods)
+                products.Add(new ProductViewModel(i));
         }
-        private void ProductsPage_Load(object sender, EventArgs e)
+
+        private async void ProductsPage_Load(object sender, EventArgs e)
         {
             _unitOption.DataSource = units;
             _prodTable.DataSource = products;
             _recipe.DataSource = recipes;
 
-            using (var context = factory.CreateDbContext())
-            {
-                LoadProductValues(context);
+            LoadProductValues();
 
-                var u = context.Units.ToList();
 
-                foreach (var i in u)
-                    units.Add(i);
 
-                var uAutocomplete = context.Units.Select(x => x.SingularName);
-                _unitOption.AutoCompleteCustomSource.AddRange(uAutocomplete.ToArray());
-            }
+            //var u = context.Units.ToList();
+            var u = await _unitGetService.GetAll_Async();
+
+            foreach (var i in u)
+                units.Add(i);
+            var uAutocomplete = u.Select(x => x.SingularName);
+            _unitOption.AutoCompleteCustomSource.AddRange(uAutocomplete.ToArray());
+
 
         }
 
@@ -108,6 +118,7 @@ namespace Lightstream.Usercontrols
                 }
             }
         }
+
         private void _removeRecipe_Click(object sender, EventArgs e)
         {
             if (SelectedRecipe is null)
@@ -124,15 +135,18 @@ namespace Lightstream.Usercontrols
             return recipes.Any(x => x.Data.Ingredient.Id == recipe.Ingredient.Id);
         }
 
-        private void _save_Click(object sender, EventArgs e)
+        private async void _save_Click(object sender, EventArgs e)
         {
             if (ValidationSuccessful())
-                if (SaveProduct(out Product? savedProduct))
-                    if (savedProduct is not null)
-                    {
-                        ClearFields();
-                        products.Add(new ProductViewModel(savedProduct));
-                    }
+            {
+                var savedProduct = await SaveProductAsync();
+
+                if (savedProduct is not null)
+                {
+                    ClearFields();
+                    products.Add(new ProductViewModel(savedProduct));
+                }
+            }
         }
 
         private void ClearFields()
@@ -162,54 +176,19 @@ namespace Lightstream.Usercontrols
             return true;
         }
 
-        bool SaveProduct(out Product? savedProduct)
+        async Task<Product?> SaveProductAsync()
         {
-            try
+            var product = new Product()
             {
-                using (var context = factory.CreateDbContext())
-                {
-                    if (context.Products.Any(x => x.Barcode == _barcode.Text.Trim()))
-                    {
-                        MessageBox.Show("Barcode already taken!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        savedProduct = null;
-                        return false;
-                    }
+                Description = string.IsNullOrWhiteSpace(_description.Text) ? null : _description.Text.Trim(),
+                Barcode = string.IsNullOrWhiteSpace(_barcode.Text) ? null : _barcode.Text.Trim(),
+                Name = _productName.Text.Trim(),
+                Price = 0,
+                UnitQty = SelectedUnit,
+                Recipes = recipes.Select(r => r.Data).ToList()
+            };
 
-                    if (SelectedUnit != null)
-                        context.Entry(SelectedUnit).State = EntityState.Unchanged;
-                    var u = SelectedUnit ?? new Unit() { SingularName = _unitOption.Text.Trim() };
-                    var newProduct = new Product()
-                    {
-                        Description = string.IsNullOrWhiteSpace(_description.Text) ? null : _description.Text.Trim(),
-                        Barcode = string.IsNullOrWhiteSpace(_barcode.Text) ? null : _barcode.Text.Trim(),
-                        Name = _productName.Text.Trim(),
-                        Price = 0,
-                        UnitQty = u
-                        //UnitQty = context.Units.FirstOrDefault(x => x.Id == SelectedUnit.Id) ?? new Unit() { SingularName = _unitOption.Text.Trim() }
-                    };
-
-                    foreach (var i in recipes)
-                        newProduct.Recipes.Add(new Recipe()
-                        {
-                            Id = i.Data.Id,
-                            Qty = i.Data.Qty,
-                            ConversionId = i.Data.Conversion?.Id,
-                            IngredientId = i.Data.Ingredient.Id,
-                        });
-
-                    context.Products.Add(newProduct);
-                    context.SaveChanges();
-
-                    savedProduct = newProduct;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                savedProduct = null;
-                return false;
-            }
-            return true;
+            return await _productService.Add_Async(product);
         }
 
         private void _cancel_Click(object sender, EventArgs e)
@@ -241,11 +220,11 @@ namespace Lightstream.Usercontrols
             if (!DeleteValidationSuccessful(SelectedProduct.Data))
                 return false;
 
-            using (var context = factory.CreateDbContext())
-            {
-                context.Products.Remove(product);
-                context.SaveChanges();
-            }
+            //using (var context = factory.CreateDbContext())
+            //{
+            //    context.Products.Remove(product);
+            //    context.SaveChanges();
+            //}
             return true;
         }
         #endregion
@@ -283,10 +262,10 @@ namespace Lightstream.Usercontrols
                 var text = t.Text.Trim();
                 if (string.IsNullOrWhiteSpace(text) && searchDone)
                 {
-                    using (var context = factory.CreateDbContext())
-                    {
-                        LoadProductValues(context);
-                    }
+                    //using (var context = factory.CreateDbContext())
+                    //{
+                    //    LoadProductValues(context);
+                    //}
                     searchDone = false;
                 }
             }
@@ -301,27 +280,27 @@ namespace Lightstream.Usercontrols
                 if (string.IsNullOrWhiteSpace(text))
                     return;
 
-                using (var context = factory.CreateDbContext())
-                {
-                    var filtered = SearchHandler.FilterList(
-                        context.Products.Include(x => x.Recipes).Include(u => u.UnitQty),
-                        FilteringFlow.StopUponSatisfaction,
-                        x => x.Name.ToLower().Contains(text.ToLower()),
-                        x => string.Equals(x.Barcode, text, StringComparison.CurrentCultureIgnoreCase)
-                        );
-                    searchDone = filtered.Count() != 0;
+                //using (var context = factory.CreateDbContext())
+                //{
+                //    var filtered = SearchHandler.FilterList(
+                //        context.Products.Include(x => x.Recipes).Include(u => u.UnitQty),
+                //        FilteringFlow.StopUponSatisfaction,
+                //        x => x.Name.ToLower().Contains(text.ToLower()),
+                //        x => string.Equals(x.Barcode, text, StringComparison.CurrentCultureIgnoreCase)
+                //        );
+                //    searchDone = filtered.Count() != 0;
 
-                    if (!searchDone)
-                    {
-                        MessageBox.Show("No products found!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-                    searchDone = true;
-                    t.SelectAll();
-                    products.Clear();
-                    foreach (var i in filtered)
-                        products.Add(new ProductViewModel(i));
-                }
+                //    if (!searchDone)
+                //    {
+                //        MessageBox.Show("No products found!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //        return;
+                //    }
+                //    searchDone = true;
+                //    t.SelectAll();
+                //    products.Clear();
+                //    foreach (var i in filtered)
+                //        products.Add(new ProductViewModel(i));
+                //}
             }
         }
         #endregion
@@ -383,7 +362,5 @@ namespace Lightstream.Usercontrols
 
             OpenEditForm();
         }
-
-
     }
 }

@@ -1,4 +1,6 @@
-﻿using Lightstream.Forms;
+﻿using Lightstream.DataAccess.Models;
+using Lightstream.DataAccess.Repositories;
+using Lightstream.Forms;
 using Lightstream.Usercontrols;
 using System;
 using System.Collections.Generic;
@@ -11,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace Lightstream
 {
@@ -110,6 +112,32 @@ namespace Lightstream
             currentForm.BringToFront();
             currentForm.Show();
         }
+        void OpenForm(Form next)
+        {
+            //if there is an open form
+            if (currentForm is not null)
+            {
+                //abort if the incoming form type is the same as of the old one
+                if (next.GetType() == currentForm.GetType())
+                    return;
+
+                currentForm.Close();
+            }
+
+            currentForm = next;
+
+            currentForm.FormClosed += (a, b) =>
+                currentForm = null;
+
+            currentForm.TopLevel = false;
+            currentForm.Size = _contentsPanel.Size;
+            currentForm.Dock = DockStyle.Fill;
+
+            _contentsPanel.Controls.Add(currentForm);
+
+            currentForm.BringToFront();
+            currentForm.Show();
+        }
 
         #region windowchrome functions
         private void button9_Click(object sender, EventArgs e)
@@ -150,7 +178,13 @@ namespace Lightstream
             if (sender is Button btn)
                 ChangeButtonStateUponClick(btn);
 
-            OpenForm<ProductsPage>();
+            var prodPage = new ProductsPage(
+                new ProductService(),
+                new GenericRepository<Unit>()
+                );
+
+            OpenForm(prodPage);
+            //OpenForm<ProductsPage>();
         }
         private void button10_Click_1(object sender, EventArgs e)
         {

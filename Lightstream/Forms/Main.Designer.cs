@@ -92,7 +92,7 @@
             this._sideButtonPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._sideButtonPanel.Location = new System.Drawing.Point(0, 0);
             this._sideButtonPanel.Name = "_sideButtonPanel";
-            this._sideButtonPanel.Size = new System.Drawing.Size(168, 548);
+            this._sideButtonPanel.Size = new System.Drawing.Size(168, 504);
             this._sideButtonPanel.TabIndex = 1;
             // 
             // _reportsPanel
@@ -535,7 +535,7 @@
             this._topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this._topPanel.Location = new System.Drawing.Point(170, 0);
             this._topPanel.Name = "_topPanel";
-            this._topPanel.Size = new System.Drawing.Size(680, 30);
+            this._topPanel.Size = new System.Drawing.Size(730, 30);
             this._topPanel.TabIndex = 3;
             this._topPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
@@ -546,7 +546,7 @@
             this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.minimizeButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.minimizeButton.Location = new System.Drawing.Point(560, 0);
+            this.minimizeButton.Location = new System.Drawing.Point(610, 0);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.Size = new System.Drawing.Size(40, 30);
             this.minimizeButton.TabIndex = 4;
@@ -560,7 +560,7 @@
             this.maximizeButton.FlatAppearance.BorderSize = 0;
             this.maximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.maximizeButton.Location = new System.Drawing.Point(600, 0);
+            this.maximizeButton.Location = new System.Drawing.Point(650, 0);
             this.maximizeButton.Name = "maximizeButton";
             this.maximizeButton.Size = new System.Drawing.Size(40, 30);
             this.maximizeButton.TabIndex = 3;
@@ -574,7 +574,7 @@
             this.closeBtn.FlatAppearance.BorderSize = 0;
             this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeBtn.ForeColor = System.Drawing.Color.IndianRed;
-            this.closeBtn.Location = new System.Drawing.Point(640, 0);
+            this.closeBtn.Location = new System.Drawing.Point(690, 0);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(40, 30);
             this.closeBtn.TabIndex = 2;
@@ -616,7 +616,7 @@
             this._sidePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this._sidePanel.Location = new System.Drawing.Point(0, 0);
             this._sidePanel.Name = "_sidePanel";
-            this._sidePanel.Size = new System.Drawing.Size(170, 550);
+            this._sidePanel.Size = new System.Drawing.Size(170, 506);
             this._sidePanel.TabIndex = 4;
             // 
             // panel1
@@ -626,7 +626,7 @@
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 488);
+            this.panel1.Location = new System.Drawing.Point(0, 444);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(168, 60);
             this.panel1.TabIndex = 2;
@@ -675,7 +675,7 @@
             this._contentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._contentsPanel.Location = new System.Drawing.Point(0, 0);
             this._contentsPanel.Name = "_contentsPanel";
-            this._contentsPanel.Size = new System.Drawing.Size(560, 520);
+            this._contentsPanel.Size = new System.Drawing.Size(612, 476);
             this._contentsPanel.TabIndex = 4;
             this._contentsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this._contentsPanel_Paint);
             // 
@@ -686,7 +686,7 @@
             this._notifPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._notifPanel.Location = new System.Drawing.Point(0, 0);
             this._notifPanel.Name = "_notifPanel";
-            this._notifPanel.Size = new System.Drawing.Size(118, 520);
+            this._notifPanel.Size = new System.Drawing.Size(116, 476);
             this._notifPanel.TabIndex = 5;
             // 
             // divider
@@ -705,8 +705,8 @@
             // 
             this.divider.Panel2.Controls.Add(this._notifPanel);
             this.divider.Panel2MinSize = 110;
-            this.divider.Size = new System.Drawing.Size(680, 520);
-            this.divider.SplitterDistance = 560;
+            this.divider.Size = new System.Drawing.Size(730, 476);
+            this.divider.SplitterDistance = 612;
             this.divider.SplitterWidth = 2;
             this.divider.TabIndex = 6;
             // 
@@ -714,7 +714,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 550);
+            this.ClientSize = new System.Drawing.Size(900, 506);
             this.ControlBox = false;
             this.Controls.Add(this.divider);
             this.Controls.Add(this._topPanel);

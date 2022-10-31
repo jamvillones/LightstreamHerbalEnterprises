@@ -8,11 +8,9 @@ namespace Lightstream.DataAccess.Models
 {
     public partial class Unit
     {
-        public override string ToString() => 
+        public override string ToString() =>
             (string.IsNullOrWhiteSpace(Abbreviation) ? string.Empty : "(" + Abbreviation + ") ") +
             SingularName +
             (string.IsNullOrWhiteSpace(PluralName) ? string.Empty : "/" + PluralName);
-      
-       
     }
 }

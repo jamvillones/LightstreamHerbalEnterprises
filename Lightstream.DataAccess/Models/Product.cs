@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Lightstream.DataAccess.Models
 {
-    public partial class Product
+    public partial class Product : BaseEntityModel
     {
         public Product()
         {
@@ -12,8 +12,8 @@ namespace Lightstream.DataAccess.Models
             ProductionHistory = new HashSet<ProductionHistory>();
         }
 
-        public int Id { get; set; }
-        public string Name { get; set; } = null!;
+        //public int Id { get; set; }
+        //public string Name { get; set; } = null!;
         public string? Barcode { get; set; }
         public string? Description { get; set; }
         public decimal Price { get; set; }

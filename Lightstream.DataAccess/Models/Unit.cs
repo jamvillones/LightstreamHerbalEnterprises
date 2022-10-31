@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Lightstream.DataAccess.Models
 {
-    public partial class Unit
+    public partial class Unit : IIDModel
     {
         public Unit()
         {

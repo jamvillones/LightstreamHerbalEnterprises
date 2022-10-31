@@ -11,7 +11,9 @@ using System.Threading.Tasks;
 namespace Lightstream.DataAccess.Repositories
 {
     public class GenericRepository<TModel> :
-        IGetRepository<TModel>
+        IGetRepository<TModel>,
+        IAddRepository<TModel>,
+        IUpdateRepository<TModel>
         where TModel : class, IIDModel
     {
         protected readonly DbContextFactory _factory = new();
@@ -19,6 +21,7 @@ namespace Lightstream.DataAccess.Repositories
         {
 
         }
+
         public virtual async Task<IEnumerable<TModel>> GetAll_Async()
         {
             try
@@ -92,6 +95,63 @@ namespace Lightstream.DataAccess.Repositories
                 Debug.WriteLine(ex.Message);
             }
             return default(TModel);
+        }
+        public virtual async Task<bool> AddRange_Async(IEnumerable<TModel> entities)
+        {
+            try
+            {
+                using (var context = _factory.CreateDbContext())
+                {
+                    await context.Set<TModel>().AddRangeAsync(entities);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            return false;
+        }
+
+        public virtual async Task<TModel?> Update_Async(TModel model)
+        {
+            try
+            {
+                using (var context = _factory.CreateDbContext())
+                {
+                    var e = context.Update(model);
+
+                    await context.SaveChangesAsync();
+
+                    return e.Entity;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+            return default(TModel);
+        }
+
+        public virtual async Task<bool> Remove_Async(TModel model)
+        {
+            try
+            {
+                using (var context = _factory.CreateDbContext())
+                {
+                    context.Entry(model).State = EntityState.Deleted;
+                    //context.Remove(model);
+                    await context.SaveChangesAsync();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+            return false;
         }
     }
 }

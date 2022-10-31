@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Mime;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 namespace Lightstream.DataAccess.Repositories
 {
     public sealed class ProductService : GenericRepository<Product>
-    {       
+    {
         public override async Task<IEnumerable<Product>> GetAll_Async()
         {
             try
@@ -99,19 +100,10 @@ namespace Lightstream.DataAccess.Repositories
             {
                 using (var context = _factory.CreateDbContext())
                 {
-                    /// using state approach
                     foreach (var r in product.Recipes)
                         context.Entry(r).State = EntityState.Added;
 
                     context.Entry(product).State = EntityState.Added;
-
-                    /// verbose approach where you have to manually attach references by setting their states
-                    //var unit = product.UnitQty;
-                    //context.Entry(unit).State = EntityState.Unchanged;
-                    //foreach (var r in product.Recipes)
-                    //    context.Entry(r).State = EntityState.Added;
-
-                    //var e = await context.Products.AddAsync(product);
 
                     await context.SaveChangesAsync();
 
@@ -124,6 +116,32 @@ namespace Lightstream.DataAccess.Repositories
             }
 
             return default(Product);
+        }
+
+        public override async Task<Product?> Update_Async(Product product)
+        {
+            using (var context = _factory.CreateDbContext())
+            {
+                //we get the raw so that we can remove the recipe that is no longer available at the new recipe
+                var existingProduct = await context.Products
+                    .Include(p => p.Recipes)
+                    .AsNoTracking()
+                    .FirstOrDefaultAsync(p => p.Id == product.Id);
+
+                //if the existing recipe is not already in the new product. it means it has been removed and should be removed in the database
+                foreach (var recipe in existingProduct!.Recipes)
+                    if (!product.Recipes.Any(r => r.Id == recipe.Id))
+                        context.Entry(recipe).State = EntityState.Deleted;
+
+                foreach (var recipe in product.Recipes)
+                    context.Entry(recipe).State = recipe.Id == 0 ? EntityState.Added : EntityState.Modified;
+
+                context.Entry(product.UnitQty).State = EntityState.Unchanged;
+                context.Entry(product).State = EntityState.Modified;
+                await context.SaveChangesAsync();
+
+                return product;
+            }
         }
     }
 }

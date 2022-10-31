@@ -1,29 +1,16 @@
-﻿using Lightstream.DataAccess.Data;
-using Lightstream.DataAccess.Models;
+﻿using Lightstream.DataAccess.Models;
 using Lightstream.DataAccess.Repositories;
 using Lightstream.Extensions;
 using Lightstream.Forms;
 using Lightstream.Services;
 using Lightstream.ViewModels;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Configuration;
 using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Lightstream.Usercontrols
 {
     public partial class ProductsPage : Form
     {
-        //DbContextFactory factory = new DbContextFactory();
         BindingList<ProductViewModel> products = new BindingList<ProductViewModel>();
         BindingList<RecipeViewModel> recipes = new BindingList<RecipeViewModel>();
         BindingList<Unit> units = new BindingList<Unit>();
@@ -87,19 +74,14 @@ namespace Lightstream.Usercontrols
             _prodTable.DataSource = products;
             _recipe.DataSource = recipes;
 
-            LoadProducts();
+            await LoadProducts();
 
-
-
-            //var u = context.Units.ToList();
             var u = await _unitGetService.GetAll_Async();
 
             foreach (var i in u)
                 units.Add(i);
             var uAutocomplete = u.Select(x => x.SingularName);
             _unitOption.AutoCompleteCustomSource.AddRange(uAutocomplete.ToArray());
-
-
         }
 
         #region crud operations

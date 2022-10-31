@@ -71,29 +71,14 @@ namespace Lightstream.Forms
             return !recipes.Any(x => x.Data.Ingredient.Id == recipe.Ingredient.Id);
         }
 
-        private void ProductForm_Load(object sender, EventArgs e)
+        private async void ProductForm_Load(object sender, EventArgs e)
         {
             _unitOption.DataSource = units;
             _recipe.DataSource = recipes;
-            LoadValues();
+            await LoadValues();
         }
-        async void LoadValues()
+        async Task LoadValues()
         {
-            //using (var context = factory.CreateDbContext())
-            //{
-            //    units.Clear();
-            //    var u = context.Units.ToList();
-            //    foreach (var i in u)
-            //        units.Add(i);
-
-            //    var prod = context.Products
-            //        .Include(x => x.Recipes)
-            //        .ThenInclude(r => r.Ingredient)
-            //        .ThenInclude(r => r.UnitMeasurement)
-            //        .FirstOrDefault(y => y.Id == productReferenced.Id);
-            //    if (prod is null)
-            //        return;
-
             var prod = productReferenced;
 
             units.Clear();
@@ -108,41 +93,42 @@ namespace Lightstream.Forms
 
             foreach (var i in prod.Recipes)
                 recipes.Add(new RecipeViewModel(i));
-            //}
         }
 
-        private void saveBtn_Click(object sender, EventArgs e)
+        private async void _save_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            await SaveChanges();
         }
 
-        private void _save_Click(object sender, EventArgs e)
+        private async Task SaveChanges()
         {
-            SaveChanges();
-        }
-
-        private async void SaveChanges()
-        {
-            if (ValidationSuccessful())
+            if (await ValidationSuccessful())
                 if (await SaveProduct())
                     DialogResult = DialogResult.OK;
             ///throw new NotImplementedException();
         }
 
-        bool ValidationSuccessful()
+        async Task<bool> ValidationSuccessful()
         {
-            if (MessageBox.Show("Are you sure you want to save changes?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+            var products = await _productService.GetAll_Async();
+            if (products.Where(p => p.Barcode != productReferenced.Barcode && !string.IsNullOrWhiteSpace(p.Barcode)).Any(p => p.Barcode == _barcode.Text.Trim()))
+            {
+                MessageBox.Show("Product number already registered.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
+            }
             if (recipes.Count == 0)
             {
                 MessageBox.Show("Ingredients cannot be empty!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
+
+            if (MessageBox.Show("Are you sure you want to save changes?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                return false;
             return true;
         }
         //DbContextFactory factory = new DbContextFactory();
         async Task<bool> SaveProduct()
-        {            
+        {
             var product = await _productService.Update_Async(newProduct);
 
             this.Tag = product;

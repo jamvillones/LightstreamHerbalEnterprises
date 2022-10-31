@@ -37,7 +37,6 @@
             // 
             this.addBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.addBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.addBtn.FlatAppearance.BorderSize = 0;
             this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addBtn.Location = new System.Drawing.Point(208, 135);
             this.addBtn.Name = "addBtn";

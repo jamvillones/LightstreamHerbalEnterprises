@@ -71,7 +71,7 @@ namespace Lightstream.Usercontrols
             _cancel.Enabled = CanReset;
         }
 
-        async void LoadProductValues()
+        async Task LoadProducts()
         {
             products.Clear();
 
@@ -87,7 +87,7 @@ namespace Lightstream.Usercontrols
             _prodTable.DataSource = products;
             _recipe.DataSource = recipes;
 
-            LoadProductValues();
+            LoadProducts();
 
 
 
@@ -100,80 +100,6 @@ namespace Lightstream.Usercontrols
             _unitOption.AutoCompleteCustomSource.AddRange(uAutocomplete.ToArray());
 
 
-        }
-
-        private void _addIngredients_Click(object sender, EventArgs e)
-        {
-            using (var recipeForm = new RecipeForm())
-            {
-                if (recipeForm.ShowDialog() == DialogResult.OK)
-                {
-                    var recipe = recipeForm.RecipeDetails;
-                    if (!RecipeAlreadyPresent(recipe))
-                        recipes.Add(new RecipeViewModel(recipe));
-                    else
-                    {
-                        MessageBox.Show("Ingredient " + recipe.Ingredient.Name + " is already listed.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-            }
-        }
-
-        private void _removeRecipe_Click(object sender, EventArgs e)
-        {
-            if (SelectedRecipe is null)
-                return;
-
-            recipes.Remove(SelectedRecipe);
-        }
-
-        private bool RecipeAlreadyPresent(Recipe recipe)
-        {
-            if (recipes.Count == 0)
-                return false;
-
-            return recipes.Any(x => x.Data.Ingredient.Id == recipe.Ingredient.Id);
-        }
-
-        private async void _save_Click(object sender, EventArgs e)
-        {
-            if (ValidationSuccessful())
-            {
-                var savedProduct = await SaveProductAsync();
-
-                if (savedProduct is not null)
-                {
-                    ClearFields();
-                    products.Add(new ProductViewModel(savedProduct));
-                }
-            }
-        }
-
-        private void ClearFields()
-        {
-            recipes.Clear();
-            _productName.Text = _barcode.Text = _description.Text = string.Empty;
-        }
-
-        bool ValidationSuccessful()
-        {
-            ///product name is empty
-            if (string.IsNullOrWhiteSpace(_productName.Text) || recipes.Count == 0)
-            {
-                MessageBox.Show("Product name and ingredients cannot be empty!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            ///selected unit is not registered
-            if (!units.Any(x => string.Equals(x.SingularName, _unitOption.Text.Trim(), StringComparison.OrdinalIgnoreCase)))
-            {
-                OpenUnitForm();
-                return false;
-            }
-            ///user validation
-            if (MessageBox.Show("Are you sure you want to save Product?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
-                return false;
-
-            return true;
         }
 
         #region crud operations
@@ -200,29 +126,72 @@ namespace Lightstream.Usercontrols
         }
         #endregion
 
-        private void _cancel_Click(object sender, EventArgs e)
+        #region recipe
+        private bool RecipeAlreadyPresent(Recipe recipe)
         {
-            if (MessageBox.Show("Are you sure you want to cancel?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+            if (recipes.Count == 0)
+                return false;
+
+            return recipes.Any(x => x.Data.Ingredient.Id == recipe.Ingredient.Id);
+        }
+        private void _addIngredients_Click(object sender, EventArgs e)
+        {
+            using (var recipeForm = new RecipeForm())
+            {
+                if (recipeForm.ShowDialog() == DialogResult.OK)
+                {
+                    var recipe = recipeForm.RecipeDetails;
+                    if (!RecipeAlreadyPresent(recipe))
+                        recipes.Add(new RecipeViewModel(recipe));
+                    else
+                    {
+                        MessageBox.Show("Ingredient " + recipe.Ingredient.Name + " is already listed.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+        }
+        private void _removeRecipe_Click(object sender, EventArgs e)
+        {
+            if (SelectedRecipe is null)
                 return;
-            ClearFields();
-        }
 
-        #region delete product
-        private async void _deleteProduct_Click(object sender, EventArgs e)
-        {
-            if (await DeleteProduct(SelectedProduct.Data))
-                products.Remove(SelectedProduct);
+            recipes.Remove(SelectedRecipe);
         }
+        #endregion
 
-        bool DeleteValidationSuccessful(Product product)
+        #region add product
+        bool ValidationSuccessful()
         {
-            return (SelectedProduct is not null &&
-                MessageBox.Show(
-                    "Are you sure you want to delete " + product.Name + "?",
-                    "",
-                    MessageBoxButtons.OKCancel,
-                    MessageBoxIcon.Question
-                    ) == DialogResult.OK);
+            ///product name is empty
+            if (string.IsNullOrWhiteSpace(_productName.Text) || recipes.Count == 0)
+            {
+                MessageBox.Show("Product name and ingredients cannot be empty!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            ///selected unit is not registered
+            if (!units.Any(x => string.Equals(x.SingularName, _unitOption.Text.Trim(), StringComparison.OrdinalIgnoreCase)))
+            {
+                OpenUnitForm();
+                return false;
+            }
+            ///user validation
+            if (MessageBox.Show("Are you sure you want to save Product?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                return false;
+
+            return true;
+        }
+        private async void _save_Click(object sender, EventArgs e)
+        {
+            if (ValidationSuccessful())
+            {
+                var savedProduct = await SaveProductAsync();
+
+                if (savedProduct is not null)
+                {
+                    ClearFields();
+                    products.Add(new ProductViewModel(savedProduct));
+                }
+            }
         }
         #endregion
 
@@ -256,27 +225,49 @@ namespace Lightstream.Usercontrols
                 //handle the update of the item editted
             }
         }
+        private void _prodTable_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex == -1)
+                return;
+
+            OpenEditForm();
+        }
+        #endregion
+
+        #region delete product
+        bool DeleteValidationSuccessful(Product product)
+        {
+            return (SelectedProduct is not null &&
+                MessageBox.Show(
+                    "Are you sure you want to delete " + product.Name + "?",
+                    "",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Question
+                    ) == DialogResult.OK);
+        }
+        private async void _deleteProduct_Click(object sender, EventArgs e)
+        {
+            if (await DeleteProduct(SelectedProduct.Data))
+                products.Remove(SelectedProduct);
+        }
         #endregion
 
         #region search
-        bool searchDone = false;
-        private void searchTxt_TextChanged(object sender, EventArgs e)
+        bool searchSuccessful = false;
+        private async void searchTxt_TextChanged(object sender, EventArgs e)
         {
             if (sender is TextBox t)
             {
                 var text = t.Text.Trim();
-                if (string.IsNullOrWhiteSpace(text) && searchDone)
+                if (string.IsNullOrWhiteSpace(text) && searchSuccessful)
                 {
-                    //using (var context = factory.CreateDbContext())
-                    //{
-                    //    LoadProductValues(context);
-                    //}
-                    searchDone = false;
+                    await LoadProducts();
+                    searchSuccessful = false;
                 }
             }
         }
 
-        private void searchTxt_KeyDown(object sender, KeyEventArgs e)
+        private async void searchTxt_KeyDown(object sender, KeyEventArgs e)
         {
             if (sender is TextBox t && e.KeyCode == Keys.Enter)
             {
@@ -284,28 +275,29 @@ namespace Lightstream.Usercontrols
 
                 if (string.IsNullOrWhiteSpace(text))
                     return;
+                var products = await _productService.GetAll_Async();
 
-                //using (var context = factory.CreateDbContext())
-                //{
-                //    var filtered = SearchHandler.FilterList(
-                //        context.Products.Include(x => x.Recipes).Include(u => u.UnitQty),
-                //        FilteringFlow.StopUponSatisfaction,
-                //        x => x.Name.ToLower().Contains(text.ToLower()),
-                //        x => string.Equals(x.Barcode, text, StringComparison.CurrentCultureIgnoreCase)
-                //        );
-                //    searchDone = filtered.Count() != 0;
+                var filtered = SearchHandler.FilterList(
+                    products,
+                    FilteringFlow.StopUponSatisfaction,
+                    x => string.Equals(x.Barcode, text, StringComparison.CurrentCultureIgnoreCase),
+                    x => x.Name.ToLower().Contains(text.ToLower())
+                    );
 
-                //    if (!searchDone)
-                //    {
-                //        MessageBox.Show("No products found!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //        return;
-                //    }
-                //    searchDone = true;
-                //    t.SelectAll();
-                //    products.Clear();
-                //    foreach (var i in filtered)
-                //        products.Add(new ProductViewModel(i));
-                //}
+                searchSuccessful = filtered.Count() != 0;
+
+                if (!searchSuccessful)
+                {
+                    MessageBox.Show("No products found!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                t.SelectAll();
+
+                this.products.Clear();
+
+                foreach (var i in filtered)
+                    this.products.Add(new ProductViewModel(i));
             }
         }
         #endregion
@@ -327,13 +319,22 @@ namespace Lightstream.Usercontrols
             }
             // Debug.WriteLine(e.Clicks);
         }
-
+        private void ClearFields()
+        {
+            recipes.Clear();
+            _productName.Text = _barcode.Text = _description.Text = string.Empty;
+        }
         private void fields_TextChanged(object sender, EventArgs e)
         {
             //_save.Enabled = CanSaveProduct;
             _cancel.Enabled = CanReset;
         }
-
+        private void _cancel_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to cancel?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                return;
+            ClearFields();
+        }
         private void _unitOption_Validated(object sender, EventArgs e)
         {
             var u = units.FirstOrDefault(x => string.Equals(x.SingularName, _unitOption.Text.Trim(), StringComparison.OrdinalIgnoreCase));
@@ -342,7 +343,6 @@ namespace Lightstream.Usercontrols
             else
                 SelectedUnit = u;
         }
-
         void OpenUnitForm()
         {
             if (MessageBox.Show("Unit is not recognised. Would you like to register new unit?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
@@ -358,14 +358,6 @@ namespace Lightstream.Usercontrols
                 _unitOption.SelectedItem = unit;
             }
 
-        }
-
-        private void _prodTable_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.RowIndex == -1)
-                return;
-
-            OpenEditForm();
         }
     }
 }

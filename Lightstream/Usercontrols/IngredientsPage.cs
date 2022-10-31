@@ -11,7 +11,7 @@ namespace Lightstream.Usercontrols
         DbContextFactory factory = new DbContextFactory();
         Ingredient? SelectedIngredient => _ingredientsTable.SelectedRows[0].DataBoundItem as Ingredient;
         BindingList<Ingredient> ingredients = new BindingList<Ingredient>();
-        bool searchFound = false;
+        bool searchSuccessful = false;
         public IngredientsPage()
         {
             InitializeComponent();
@@ -54,19 +54,21 @@ namespace Lightstream.Usercontrols
                         filteringConditions: (b) => b.Name.ToLower().Contains(searchTerm.ToLower()))
                         .ToList();
 
-                    if (resultingIngredients.Count == 0)
+                    searchSuccessful = resultingIngredients.Count > 0;
+
+                    if (!searchSuccessful)
                     {
                         MessageBox.Show("No entries found!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
 
-                    searchFound = true;
-
+                    textbox.SelectAll();
+                    ///clear the ingredients list
                     ingredients.Clear();
+                    ///repopulate with the new values
                     foreach (var i in resultingIngredients)
                         ingredients.Add(i);
 
-                    textbox.SelectAll();
                 }
             }
         }
@@ -78,7 +80,7 @@ namespace Lightstream.Usercontrols
 
             if (!string.IsNullOrWhiteSpace(text)) return;
 
-            if (!searchFound) return;
+            if (!searchSuccessful) return;
 
             LoadAllIngredients();
         }
@@ -137,7 +139,7 @@ namespace Lightstream.Usercontrols
         }
         void _ingredientsTable_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.Button != MouseButtons.Left||
+            if (e.Button != MouseButtons.Left ||
                 e.RowIndex == -1 ||
                 e.ColumnIndex != deleteBtnCol.Index ||
                   MessageBox.Show(

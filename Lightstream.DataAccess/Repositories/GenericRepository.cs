@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace Lightstream.DataAccess.Repositories
 {
-    public class GenericRepository<TModel> : 
-        IGetRepository<TModel> 
+    public class GenericRepository<TModel> :
+        IGetRepository<TModel>
         where TModel : class, IIDModel
     {
-        private readonly DbContextFactory _factory = new();
+        protected readonly DbContextFactory _factory = new();
         public GenericRepository()
         {
 
@@ -74,6 +74,24 @@ namespace Lightstream.DataAccess.Repositories
                 Debug.WriteLine(ex.Message);
             }
             return default;
+        }
+
+        public virtual async Task<TModel?> Add_Async(TModel m)
+        {
+            try
+            {
+                using (var cont = _factory.CreateDbContext())
+                {
+                    var e = cont.Set<TModel>().AddAsync(m);
+                    await cont.SaveChangesAsync();
+                    return e.Result.Entity;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            return default(TModel);
         }
     }
 }

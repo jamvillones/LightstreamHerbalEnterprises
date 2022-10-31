@@ -40,11 +40,11 @@ namespace Lightstream.Usercontrols
                          recipes.Count > 0;
 
         GenericRepository<Product> _productService;
-        IGetRepository<Unit> _unitGetService;
+        GenericRepository<Unit> _unitGetService;
 
         public ProductsPage(
             GenericRepository<Product> productService,
-            IGetRepository<Unit> unitService
+            GenericRepository<Unit> unitService
             )
         {
             InitializeComponent();
@@ -176,6 +176,14 @@ namespace Lightstream.Usercontrols
             return true;
         }
 
+        #region crud operations
+        async Task<bool> DeleteProduct(Product product)
+        {
+            if (!DeleteValidationSuccessful(product))
+                return false;
+
+            return await _productService.Remove_Async(product);
+        }
         async Task<Product?> SaveProductAsync()
         {
             var product = new Product()
@@ -190,6 +198,7 @@ namespace Lightstream.Usercontrols
 
             return await _productService.Add_Async(product);
         }
+        #endregion
 
         private void _cancel_Click(object sender, EventArgs e)
         {
@@ -199,9 +208,9 @@ namespace Lightstream.Usercontrols
         }
 
         #region delete product
-        private void _deleteProduct_Click(object sender, EventArgs e)
+        private async void _deleteProduct_Click(object sender, EventArgs e)
         {
-            if (DeleteProduct(SelectedProduct.Data))
+            if (await DeleteProduct(SelectedProduct.Data))
                 products.Remove(SelectedProduct);
         }
 
@@ -214,18 +223,6 @@ namespace Lightstream.Usercontrols
                     MessageBoxButtons.OKCancel,
                     MessageBoxIcon.Question
                     ) == DialogResult.OK);
-        }
-        bool DeleteProduct(Product product)
-        {
-            if (!DeleteValidationSuccessful(SelectedProduct.Data))
-                return false;
-
-            //using (var context = factory.CreateDbContext())
-            //{
-            //    context.Products.Remove(product);
-            //    context.SaveChanges();
-            //}
-            return true;
         }
         #endregion
 
@@ -245,9 +242,17 @@ namespace Lightstream.Usercontrols
             if (!EditValidationSuccessful(SelectedProduct.Data))
                 return;
 
-            var result = new EditProductForm(SelectedProduct.Data).OpenFormModal();
+            var editProductForm = new EditProductForm(
+                SelectedProduct.Data,
+                _productService,
+                _unitGetService
+                );
+
+            var result = editProductForm.OpenFormModal();
             if (result == DialogResult.OK)
             {
+                var data = editProductForm.Tag as Product;
+                SelectedProduct.Data = data;
                 //handle the update of the item editted
             }
         }
@@ -305,14 +310,14 @@ namespace Lightstream.Usercontrols
         }
         #endregion
 
-        private void _prodTable_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private async void _prodTable_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex == -1)
                 return;
             ///if the click column is the delete column or the clicked row is the header
             if (e.ColumnIndex == delCol.Index)
             {
-                if (DeleteProduct(SelectedProduct.Data))
+                if (await DeleteProduct(SelectedProduct.Data))
                     products.Remove(SelectedProduct);
 
             }

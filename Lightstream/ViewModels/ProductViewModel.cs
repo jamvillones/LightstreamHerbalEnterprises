@@ -15,10 +15,20 @@ namespace Lightstream.ViewModels
         public void UpdateValues()
         {
             UpdateProperty(nameof(Id));
+            UpdateProperty(nameof(Barcode));
             UpdateProperty(nameof(ProductName));
             UpdateProperty(nameof(Description));
+            UpdateProperty(nameof(Ingredients));
         }
-        public Product Data { get => _product; set => _product = value; }
+        public Product Data
+        {
+            get => _product;
+            set
+            {
+                _product = value;
+                UpdateValues();
+            }
+        }
         public ProductViewModel(Product prod)
         {
             _product = prod;
@@ -40,6 +50,6 @@ namespace Lightstream.ViewModels
         public string Description => _product.Description ?? string.Empty;
         public string Barcode => _product.Barcode ?? string.Empty;
 
-        
+
     }
 }

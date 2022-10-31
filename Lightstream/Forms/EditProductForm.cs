@@ -1,5 +1,6 @@
 ﻿using Lightstream.DataAccess.Data;
 using Lightstream.DataAccess.Models;
+using Lightstream.DataAccess.Repositories;
 using Lightstream.Extensions;
 using Lightstream.ViewModels;
 using Microsoft.EntityFrameworkCore;
@@ -29,9 +30,18 @@ namespace Lightstream.Forms
             get => _unitOption.SelectedItem is Unit unit ? unit : null;
             set => _unitOption.SelectedItem = value;
         }
-        public EditProductForm(Product product)
+
+        GenericRepository<Product> _productService;
+        GenericRepository<Unit> _unitService;
+        public EditProductForm(
+            Product product,
+            GenericRepository<Product> productService,
+            GenericRepository<Unit> unitService
+            )
         {
             InitializeComponent();
+            _productService = productService;
+            _unitService = unitService;
             _recipe.AutoGenerateColumns = false;
             _unitOption.DisplayMember = nameof(Unit.SingularName);
             _unitOption.DataSource = units;
@@ -66,34 +76,39 @@ namespace Lightstream.Forms
             _unitOption.DataSource = units;
             _recipe.DataSource = recipes;
             LoadValues();
-
         }
-        void LoadValues()
+        async void LoadValues()
         {
+            //using (var context = factory.CreateDbContext())
+            //{
+            //    units.Clear();
+            //    var u = context.Units.ToList();
+            //    foreach (var i in u)
+            //        units.Add(i);
+
+            //    var prod = context.Products
+            //        .Include(x => x.Recipes)
+            //        .ThenInclude(r => r.Ingredient)
+            //        .ThenInclude(r => r.UnitMeasurement)
+            //        .FirstOrDefault(y => y.Id == productReferenced.Id);
+            //    if (prod is null)
+            //        return;
+
+            var prod = productReferenced;
+
+            units.Clear();
+            foreach (var unit in await _unitService.GetAll_Async())
+                units.Add(unit);
+
             recipes.Clear();
-            using (var context = factory.CreateDbContext())
-            {
-                units.Clear();
-                var u = context.Units.ToList();
-                foreach (var i in u)
-                    units.Add(i);
+            _productName.Text = prod.Name;
+            _description.Text = prod.Description;
+            _barcode.Text = prod.Barcode;
+            SelectedUnit = units.FirstOrDefault(x => x.Id == prod.UnitQty.Id);
 
-                var prod = context.Products
-                    .Include(x => x.Recipes)
-                    .ThenInclude(r => r.Ingredient)
-                    .ThenInclude(r => r.UnitMeasurement)
-                    .FirstOrDefault(y => y.Id == productReferenced.Id);
-                if (prod is null)
-                    return;
-
-                _productName.Text = prod.Name;
-                _description.Text = prod.Description;
-                _barcode.Text = prod.Barcode;
-                SelectedUnit = units.FirstOrDefault(x => x.Id == prod.UnitQty.Id);
-
-                foreach (var i in prod.Recipes)
-                    recipes.Add(new RecipeViewModel(i));
-            }
+            foreach (var i in prod.Recipes)
+                recipes.Add(new RecipeViewModel(i));
+            //}
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -106,10 +121,10 @@ namespace Lightstream.Forms
             SaveChanges();
         }
 
-        private void SaveChanges()
+        private async void SaveChanges()
         {
             if (ValidationSuccessful())
-                if (SaveProduct())
+                if (await SaveProduct())
                     DialogResult = DialogResult.OK;
             ///throw new NotImplementedException();
         }
@@ -126,49 +141,29 @@ namespace Lightstream.Forms
             return true;
         }
         //DbContextFactory factory = new DbContextFactory();
-        bool SaveProduct()
+        async Task<bool> SaveProduct()
+        {            
+            var product = await _productService.Update_Async(newProduct);
+
+            this.Tag = product;
+
+            return product != null;
+        }
+
+        Product newProduct
         {
-            using (var context = factory.CreateDbContext())
+            get
             {
-                if (context.Products
-                    .Where(x => x.Id != productReferenced.Id)
-                    .Any(y => y.Barcode == productReferenced.Barcode))
+                return new Product()
                 {
-                    MessageBox.Show("Barcode already taken!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
-
-                var productTobeSaved = context.Products
-                    .Include(p => p.Recipes)
-                    .FirstOrDefault(x => x.Id == productReferenced.Id);
-
-                if (productTobeSaved is null) return false;
-
-                productTobeSaved.Name = _productName.Text.Trim();
-                productTobeSaved.Description = _description.Text.Trim();
-                productTobeSaved.UnitQty = context.Units.FirstOrDefault(x => x.Id == SelectedUnit.Id) ?? new Unit() { SingularName = _unitOption.Text.Trim() };
-                ///remove the recipes that is no longer available
-                foreach (var i in productTobeSaved.Recipes.ToList())
-                {
-                    bool isDeleted = !recipes.Any(x => x.Data.Id == i.Id);
-                    if (isDeleted)
-                        productTobeSaved.Recipes.Remove(i);
-                }
-                ///add newly added recipes
-                foreach (var i in recipes.Where(r => r.Data.Id == 0))
-                {
-                    productTobeSaved.Recipes.Add(new Recipe()
-                    {
-                        Qty = i.Qty,
-                        ConversionId = i.Data.Conversion?.Id,
-                        IngredientId = i.Data.Ingredient.Id
-                    });
-                }
-                context.SaveChanges();
-                return true;
+                    Id = productReferenced.Id,
+                    Name = _productName.Text.Trim(),
+                    Barcode = _barcode.Text.Trim(),
+                    Description = _description.Text.Trim(),
+                    UnitQty = (Unit)_unitOption.SelectedItem,
+                    Recipes = recipes.Select(r => r.Data).ToList()
+                };
             }
-
-            //return false;
         }
 
         private void _recipe_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

@@ -39,6 +39,7 @@
             this._removedisc = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this._variantsTable = new System.Windows.Forms.DataGridView();
             this.prodVariantDescriptionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +47,7 @@
             this.prodVariantCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this._productsTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -60,9 +62,11 @@
             this._search.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._search.Location = new System.Drawing.Point(26, 41);
             this._search.Name = "_search";
-            this._search.Size = new System.Drawing.Size(251, 16);
+            this._search.PlaceholderText = "Search...";
+            this._search.Size = new System.Drawing.Size(269, 16);
             this._search.TabIndex = 0;
-            this._search.Text = "Search...";
+            this._search.TextChanged += new System.EventHandler(this._search_TextChanged);
+            this._search.KeyDown += new System.Windows.Forms.KeyEventHandler(this._search_KeyDown);
             // 
             // _productsTable
             // 
@@ -70,7 +74,6 @@
             this._productsTable.AllowUserToDeleteRows = false;
             this._productsTable.AllowUserToResizeRows = false;
             this._productsTable.BackgroundColor = System.Drawing.Color.White;
-            this._productsTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this._productsTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -86,7 +89,7 @@
             this.nameCol});
             this._productsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._productsTable.EnableHeadersVisualStyles = false;
-            this._productsTable.Location = new System.Drawing.Point(4, 3);
+            this._productsTable.Location = new System.Drawing.Point(4, 23);
             this._productsTable.Margin = new System.Windows.Forms.Padding(10);
             this._productsTable.MultiSelect = false;
             this._productsTable.Name = "_productsTable";
@@ -95,7 +98,7 @@
             this._productsTable.RowHeadersWidth = 62;
             this._productsTable.RowTemplate.Height = 25;
             this._productsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._productsTable.Size = new System.Drawing.Size(264, 335);
+            this._productsTable.Size = new System.Drawing.Size(273, 315);
             this._productsTable.StandardTab = true;
             this._productsTable.TabIndex = 9;
             this._productsTable.SelectionChanged += new System.EventHandler(this._productsTable_SelectionChanged);
@@ -176,35 +179,48 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this._productsTable);
+            this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.splitContainer1.Panel1MinSize = 200;
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
             this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.splitContainer1.Size = new System.Drawing.Size(657, 341);
-            this.splitContainer1.SplitterDistance = 272;
+            this.splitContainer1.SplitterDistance = 281;
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 10;
             // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.Font = new System.Drawing.Font("The Bold Font", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
+            this.label3.Location = new System.Drawing.Point(4, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(273, 20);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Products";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this._variantsTable);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(4, 3);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(374, 335);
+            this.panel1.Size = new System.Drawing.Size(365, 335);
             this.panel1.TabIndex = 0;
             // 
-            // _variants
+            // _variantsTable
             // 
             this._variantsTable.AllowUserToAddRows = false;
             this._variantsTable.AllowUserToDeleteRows = false;
             this._variantsTable.AllowUserToResizeRows = false;
             this._variantsTable.BackgroundColor = System.Drawing.SystemColors.Control;
-            this._variantsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._variantsTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -223,16 +239,16 @@
             this.Column2});
             this._variantsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._variantsTable.EnableHeadersVisualStyles = false;
-            this._variantsTable.Location = new System.Drawing.Point(0, 0);
+            this._variantsTable.Location = new System.Drawing.Point(0, 20);
             this._variantsTable.Margin = new System.Windows.Forms.Padding(2);
             this._variantsTable.MultiSelect = false;
-            this._variantsTable.Name = "_variants";
+            this._variantsTable.Name = "_variantsTable";
             this._variantsTable.ReadOnly = true;
             this._variantsTable.RowHeadersVisible = false;
             this._variantsTable.RowHeadersWidth = 62;
             this._variantsTable.RowTemplate.Height = 33;
             this._variantsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._variantsTable.Size = new System.Drawing.Size(372, 333);
+            this._variantsTable.Size = new System.Drawing.Size(365, 315);
             this._variantsTable.TabIndex = 1;
             this._variantsTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._variants_CellMouseClick);
             // 
@@ -257,19 +273,33 @@
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Edit";
+            this.Column1.HeaderText = "";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Text = "Edit";
             this.Column1.UseColumnTextForButtonValue = true;
+            this.Column1.Width = 60;
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Delete";
+            this.Column2.HeaderText = "";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             this.Column2.Text = "Delete";
             this.Column2.UseColumnTextForButtonValue = true;
+            this.Column2.Width = 60;
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("The Bold Font", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(365, 20);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Variants";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PriceManagementForm
             // 
@@ -322,5 +352,7 @@
         private DataGridViewTextBoxColumn prodVariantCost;
         private DataGridViewButtonColumn Column1;
         private DataGridViewButtonColumn Column2;
+        private Label label2;
+        private Label label3;
     }
 }

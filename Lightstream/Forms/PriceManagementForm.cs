@@ -25,30 +25,29 @@ namespace Lightstream.Forms
         Product _selectedProduct;
         public Product SelectedProduct
         {
-            get
-            {
-                return _selectedProduct;
-            }
+            get => _selectedProduct;
+
             set
             {
                 _selectedProduct = value;
+
+                _selectedProductName.Text = _selectedProduct.Name;
                 variants.Clear();
+
                 foreach (var v in _selectedProduct.ProductVariants.Where(v => !v.Archived))
                     variants.Add(v);
             }
         }
+
         public PriceManagementForm(GenericRepository<Product> productService)
         {
             InitializeComponent();
-            //set the service using di pattern
+
+            //set the service using DI pattern
             _productService = productService;
+
             products = new BindingList<ProductViewModel>();
             variants = new BindingList<ProductVariant>();
-        }
-
-        private void _PMTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private async void PriceManagementForm_Load(object sender, EventArgs e)
@@ -60,18 +59,18 @@ namespace Lightstream.Forms
 
         async Task LoadProductsAsync()
         {
-            var productValues = await _productService.GetAll_Async();
-
             products.Clear();
 
-            foreach (var p in productValues)
-                products.Add(new ProductViewModel(p));
+            var productValues = await _productService.GetAll_Async();
+
+            foreach (var p in productValues) products.Add(new ProductViewModel(p));
         }
 
         void SetupDataGridSettings()
         {
             products = new BindingList<ProductViewModel>();
-            //we manually set the values with bindings
+
+            //we manually set the values with bindings thats why we set it to false
             _productsTable.AutoGenerateColumns = false;
             _variantsTable.AutoGenerateColumns = false;
 
@@ -89,16 +88,14 @@ namespace Lightstream.Forms
         private void _productsTable_SelectionChanged(object sender, EventArgs e)
         {
             if (sender is DataGridView table)
-            {
                 if (table.SelectedRows.Count > 0)
                     if (table.SelectedRows[0].DataBoundItem is ProductViewModel p)
                         SelectedProduct = p.Data;
-            }
         }
 
-        private async void _variants_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void _variants_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.RowIndex == -1)
+            if (e.RowIndex == -1 || e.ColumnIndex != delCol.Index)
                 return;
 
             _variantsTable.Rows.RemoveAt(e.RowIndex);
@@ -120,13 +117,13 @@ namespace Lightstream.Forms
 
         private async void _search_KeyDown(object sender, KeyEventArgs e)
         {
+            var textbox = sender as TextBox;
             //get the text from textbox
-            var text = ((TextBox)sender).Text.Trim();
+            var text = textbox!.Text.Trim();
 
             //check if the key pressed is enter and then, check if the text is not empty
             if (e.KeyCode == Keys.Enter && !string.IsNullOrWhiteSpace(text))
             {
-
                 //get all the products
                 var prods = await _productService.GetAll_Async();
 
@@ -138,16 +135,18 @@ namespace Lightstream.Forms
                     p => p.Name.ToLower().Contains(text.ToLower())
                     );
 
-                // search successful if the results count is not 0
+                // search successful if the results not empty
                 searchSuccessful = results.Count() > 0;
 
-                // fire a propmt if search not found then return
+                // if NOTHING found, inform the user via propmt and then stop(return)
                 if (!searchSuccessful)
                 {
                     MessageBox.Show("No products found!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
-                // if found, then clear the current product list
+
+                textbox.SelectAll();
+                //reset the list
                 products.Clear();
 
                 // repopulate the products with the filtered one

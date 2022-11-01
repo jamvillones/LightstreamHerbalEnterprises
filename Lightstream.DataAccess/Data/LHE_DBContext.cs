@@ -86,6 +86,8 @@ namespace Lightstream.DataAccess.Data
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Ingredients_Unit");
 
+                entity.Property(p => p.Cost).HasPrecision(18, 2);
+
                 entity.Navigation(i => i.UnitMeasurement).AutoInclude();
             });
 
@@ -135,6 +137,14 @@ namespace Lightstream.DataAccess.Data
             {
                 entity.ToTable("Unit");
             });
+
+            modelBuilder.Entity<ProductVariant>(ent =>
+            {
+                ent.Property(e => e.Price).HasPrecision(18, 2);
+                ent.Property(e => e.Cost).HasPrecision(18, 2);
+            });
+
+            //modelBuilder.Entity<ProductVariant>(ent => ent.Property(e => e.Price).HasPrecision(18, 2));
 
             OnModelCreatingPartial(modelBuilder);
         }

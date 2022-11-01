@@ -38,39 +38,7 @@ namespace Lightstream.DataAccess.Repositories
             }
             return Enumerable.Empty<Product>();
         }
-        public override async Task<IEnumerable<Product>> GetFiltered_Async(
-            Func<Product, bool> filter,
-            Range? range = null)
-        {
-            try
-            {
-                using (var cont = _factory.CreateDbContext())
-                {
-                    var list = await cont.Products
-                        .Include(p => p.UnitQty)
-                        .Include(p => p.Recipes)
-                            .ThenInclude(r => r.Conversion)
-                            .ThenInclude(r => r.FromUnit)
-                        .Include(p => p.Recipes)
-                            .ThenInclude(r => r.Ingredient)
-                            .ThenInclude(r => r.UnitMeasurement)
-                        .AsNoTracking()
-                        .ToListAsync();
 
-                    /// apply range is available
-                    if (range is not null)
-                        return list.Where(filter).Take((Range)range);
-
-                    return list.Where(filter);
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-            }
-
-            return Enumerable.Empty<Product>();
-        }
         public override async Task<Product?> Get_Async(int id)
         {
             try

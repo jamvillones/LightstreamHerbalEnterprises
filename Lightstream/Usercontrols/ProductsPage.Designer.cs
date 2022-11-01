@@ -62,6 +62,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this._prodTable)).BeginInit();
@@ -69,6 +70,10 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // searchTxt
@@ -213,7 +218,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(18, 64);
+            this.label5.Location = new System.Drawing.Point(22, 47);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 15);
             this.label5.TabIndex = 23;
@@ -223,10 +228,10 @@
             // 
             this._barcode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this._barcode.Location = new System.Drawing.Point(99, 60);
+            this._barcode.Location = new System.Drawing.Point(103, 43);
             this._barcode.Name = "_barcode";
             this._barcode.PlaceholderText = "optional...";
-            this._barcode.Size = new System.Drawing.Size(268, 23);
+            this._barcode.Size = new System.Drawing.Size(242, 23);
             this._barcode.TabIndex = 1;
             // 
             // _unitOption
@@ -235,22 +240,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this._unitOption.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this._unitOption.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this._unitOption.Location = new System.Drawing.Point(99, 122);
+            this._unitOption.Location = new System.Drawing.Point(103, 105);
             this._unitOption.Name = "_unitOption";
-            this._unitOption.Size = new System.Drawing.Size(268, 23);
+            this._unitOption.Size = new System.Drawing.Size(242, 23);
             this._unitOption.TabIndex = 3;
             this._unitOption.Validated += new System.EventHandler(this._unitOption_Validated);
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this._recipe);
             this.groupBox1.Controls.Add(this.panel2);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(387, 20);
+            this.groupBox1.Location = new System.Drawing.Point(5, 5);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 3, 6, 3);
-            this.groupBox1.Size = new System.Drawing.Size(275, 167);
+            this.groupBox1.Size = new System.Drawing.Size(292, 187);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Required Ingredient/s";
@@ -263,10 +269,10 @@
             this._recipe.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._recipe.FormattingEnabled = true;
             this._recipe.ItemHeight = 15;
-            this._recipe.Location = new System.Drawing.Point(6, 44);
+            this._recipe.Location = new System.Drawing.Point(6, 39);
             this._recipe.Margin = new System.Windows.Forms.Padding(5);
             this._recipe.Name = "_recipe";
-            this._recipe.Size = new System.Drawing.Size(263, 120);
+            this._recipe.Size = new System.Drawing.Size(280, 145);
             this._recipe.TabIndex = 1;
             this._recipe.TabStop = false;
             // 
@@ -277,19 +283,19 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(6, 19);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(263, 25);
+            this.panel2.Size = new System.Drawing.Size(280, 20);
             this.panel2.TabIndex = 24;
             // 
             // _removeRecipe
             // 
-            this._removeRecipe.BackColor = System.Drawing.SystemColors.Control;
+            this._removeRecipe.BackColor = System.Drawing.Color.White;
             this._removeRecipe.Dock = System.Windows.Forms.DockStyle.Left;
-            this._removeRecipe.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
-            this._removeRecipe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this._removeRecipe.FlatAppearance.BorderSize = 0;
+            this._removeRecipe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._removeRecipe.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._removeRecipe.Location = new System.Drawing.Point(80, 0);
+            this._removeRecipe.Location = new System.Drawing.Point(60, 0);
             this._removeRecipe.Name = "_removeRecipe";
-            this._removeRecipe.Size = new System.Drawing.Size(80, 25);
+            this._removeRecipe.Size = new System.Drawing.Size(60, 20);
             this._removeRecipe.TabIndex = 1;
             this._removeRecipe.Text = "- remove";
             this._removeRecipe.UseVisualStyleBackColor = false;
@@ -297,14 +303,14 @@
             // 
             // _addRecipe
             // 
-            this._addRecipe.BackColor = System.Drawing.SystemColors.Control;
+            this._addRecipe.BackColor = System.Drawing.Color.White;
             this._addRecipe.Dock = System.Windows.Forms.DockStyle.Left;
-            this._addRecipe.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
-            this._addRecipe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this._addRecipe.FlatAppearance.BorderSize = 0;
+            this._addRecipe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._addRecipe.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._addRecipe.Location = new System.Drawing.Point(0, 0);
             this._addRecipe.Name = "_addRecipe";
-            this._addRecipe.Size = new System.Drawing.Size(80, 25);
+            this._addRecipe.Size = new System.Drawing.Size(60, 20);
             this._addRecipe.TabIndex = 0;
             this._addRecipe.Text = "+ Add";
             this._addRecipe.UseVisualStyleBackColor = false;
@@ -314,20 +320,20 @@
             // 
             this._description.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this._description.Location = new System.Drawing.Point(99, 91);
+            this._description.Location = new System.Drawing.Point(103, 74);
             this._description.Name = "_description";
             this._description.PlaceholderText = "optional...";
-            this._description.Size = new System.Drawing.Size(268, 23);
+            this._description.Size = new System.Drawing.Size(242, 23);
             this._description.TabIndex = 2;
             this._description.TextChanged += new System.EventHandler(this.fields_TextChanged);
             // 
             // _cancel
             // 
-            this._cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this._cancel.Enabled = false;
             this._cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._cancel.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._cancel.Location = new System.Drawing.Point(267, 157);
+            this._cancel.Location = new System.Drawing.Point(113, 161);
             this._cancel.Name = "_cancel";
             this._cancel.Size = new System.Drawing.Size(100, 30);
             this._cancel.TabIndex = 6;
@@ -337,11 +343,11 @@
             // 
             // _save
             // 
-            this._save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this._save.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this._save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._save.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._save.Location = new System.Drawing.Point(161, 157);
+            this._save.Location = new System.Drawing.Point(7, 161);
             this._save.Name = "_save";
             this._save.Size = new System.Drawing.Size(100, 30);
             this._save.TabIndex = 5;
@@ -353,10 +359,10 @@
             // 
             this._productName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this._productName.Location = new System.Drawing.Point(99, 29);
+            this._productName.Location = new System.Drawing.Point(103, 12);
             this._productName.Name = "_productName";
             this._productName.PlaceholderText = "required...";
-            this._productName.Size = new System.Drawing.Size(268, 23);
+            this._productName.Size = new System.Drawing.Size(242, 23);
             this._productName.TabIndex = 0;
             this._productName.TextChanged += new System.EventHandler(this.fields_TextChanged);
             // 
@@ -364,7 +370,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(3, 126);
+            this.label4.Location = new System.Drawing.Point(7, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 15);
             this.label4.TabIndex = 10;
@@ -374,7 +380,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(38, 95);
+            this.label3.Location = new System.Drawing.Point(42, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 15);
             this.label3.TabIndex = 9;
@@ -385,7 +391,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(28, 33);
+            this.label2.Location = new System.Drawing.Point(32, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 15);
             this.label2.TabIndex = 8;
@@ -417,22 +423,43 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.groupBox1);
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this._barcode);
-            this.panel4.Controls.Add(this._productName);
-            this.panel4.Controls.Add(this._unitOption);
-            this.panel4.Controls.Add(this._save);
-            this.panel4.Controls.Add(this._cancel);
-            this.panel4.Controls.Add(this._description);
+            this.panel4.Controls.Add(this.splitContainer1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(20, 25);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(662, 206);
             this.panel4.TabIndex = 25;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.label2);
+            this.splitContainer1.Panel1.Controls.Add(this._save);
+            this.splitContainer1.Panel1.Controls.Add(this._description);
+            this.splitContainer1.Panel1.Controls.Add(this._cancel);
+            this.splitContainer1.Panel1.Controls.Add(this.label3);
+            this.splitContainer1.Panel1.Controls.Add(this._unitOption);
+            this.splitContainer1.Panel1.Controls.Add(this.label5);
+            this.splitContainer1.Panel1.Controls.Add(this._productName);
+            this.splitContainer1.Panel1.Controls.Add(this.label4);
+            this.splitContainer1.Panel1.Controls.Add(this._barcode);
+            this.splitContainer1.Panel1MinSize = 300;
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
+            this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(5);
+            this.splitContainer1.Panel2MinSize = 200;
+            this.splitContainer1.Size = new System.Drawing.Size(656, 197);
+            this.splitContainer1.SplitterDistance = 350;
+            this.splitContainer1.TabIndex = 24;
             // 
             // panel1
             // 
@@ -481,7 +508,11 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -519,5 +550,6 @@
         private DataGridViewTextBoxColumn ingCol;
         private DataGridViewButtonColumn editCol;
         private DataGridViewButtonColumn delCol;
+        private SplitContainer splitContainer1;
     }
 }

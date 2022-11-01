@@ -44,26 +44,12 @@ namespace Lightstream.DataAccess.Repositories
             Func<TModel, bool> filter,
             Range? range = default)
         {
-            try
-            {
-                using (var cont = _factory.CreateDbContext())
-                {
-                    var list = await cont.Set<TModel>()
-                        .ToListAsync();
+            var models = (await GetAll_Async()).Where(filter);
 
-                    /// apply range is available
-                    if (range is not null)
-                        return list.Where(filter).Take((Range)range);
+            if (range is not null)
+                return models.Where(filter).Take((Range)range);
 
-                    return list.Where(filter);
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-            }
-
-            return Enumerable.Empty<TModel>();
+            return models;
         }
         public virtual async Task<TModel?> Get_Async(int id)
         {
@@ -87,8 +73,8 @@ namespace Lightstream.DataAccess.Repositories
             {
                 using (var cont = _factory.CreateDbContext())
                 {
-                    //var e = cont.Set<TModel>().AddAsync(m);
-                    var e = cont.Entry(m).State = EntityState.Added;
+                    cont.Entry(m).State = EntityState.Added;
+
                     await cont.SaveChangesAsync();
                     return m;
                 }

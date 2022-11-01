@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,13 +14,13 @@ namespace Lightstream.DataAccess.Repositories
     public class GenericRepository<TModel> :
         IGetRepository<TModel>,
         IAddRepository<TModel>,
-        IUpdateRepository<TModel>
+        IUpdateRepository<TModel>,
+        IRemoveRepository<TModel>
         where TModel : class, IIDModel
     {
         protected readonly DbContextFactory _factory = new();
         public GenericRepository()
         {
-
         }
 
         public virtual async Task<IEnumerable<TModel>> GetAll_Async()
@@ -38,6 +39,7 @@ namespace Lightstream.DataAccess.Repositories
 
             return Enumerable.Empty<TModel>();
         }
+
         public virtual async Task<IEnumerable<TModel>> GetFiltered_Async(
             Func<TModel, bool> filter,
             Range? range = default)
@@ -85,9 +87,10 @@ namespace Lightstream.DataAccess.Repositories
             {
                 using (var cont = _factory.CreateDbContext())
                 {
-                    var e = cont.Set<TModel>().AddAsync(m);
+                    //var e = cont.Set<TModel>().AddAsync(m);
+                    var e = cont.Entry(m).State = EntityState.Added;
                     await cont.SaveChangesAsync();
-                    return e.Result.Entity;
+                    return m;
                 }
             }
             catch (Exception ex)
@@ -151,6 +154,24 @@ namespace Lightstream.DataAccess.Repositories
                 Debug.WriteLine(ex.Message);
             }
 
+            return false;
+        }
+
+        public async Task<bool> RemoveRange_Async(IEnumerable<TModel> models)
+        {
+            try
+            {
+                using (var context = _factory.CreateDbContext())
+                {
+                    context.RemoveRange(models.ToArray());
+                    await context.SaveChangesAsync();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
             return false;
         }
     }

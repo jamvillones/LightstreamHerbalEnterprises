@@ -191,7 +191,8 @@ namespace Lightstream
             if (sender is Button btn)
                 ChangeButtonStateUponClick(btn);
 
-            OpenForm<IngredientsPage>();
+            var ingForm = new IngredientsPage(new GenericRepository<Ingredient>());
+            OpenForm(ingForm);
         }
         #endregion
 
@@ -240,7 +241,9 @@ namespace Lightstream
 
         private void button11_Click_1(object sender, EventArgs e)
         {
-            OpenForm<PriceMangmtForm>();
+            ChangeButtonStateUponClick(sender as Button);
+            PriceManagementForm priceManagement = new(new GenericRepository<Product>());
+            OpenForm(priceManagement);
         }
 
         private void button12_Click(object sender, EventArgs e)

@@ -22,6 +22,7 @@ namespace Lightstream.DataAccess.Data
         public virtual DbSet<Login> Logins { get; set; } = null!;
         public virtual DbSet<Customer> Customers { get; set; } = null!;
         public virtual DbSet<Product> Products { get; set; } = null!;
+        public virtual DbSet<ProductVariant> ProductVariants { get; set; } = null!;
         public virtual DbSet<Recipe> Recipes { get; set; } = null!;
         public virtual DbSet<Unit> Units { get; set; } = null!;
         public virtual DbSet<Sale> Sales { get; set; } = null!;
@@ -84,6 +85,8 @@ namespace Lightstream.DataAccess.Data
                     .HasForeignKey(d => d.UnitMeasurementId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Ingredients_Unit");
+
+                entity.Navigation(i => i.UnitMeasurement).AutoInclude();
             });
 
             modelBuilder.Entity<Login>(entity =>

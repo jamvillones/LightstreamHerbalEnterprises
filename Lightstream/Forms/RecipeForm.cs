@@ -23,6 +23,7 @@ namespace Lightstream.Forms
         }
         List<Unit> AvailableUnits { get; set; } = null!;
         List<Conversion> AvailableConversion { get; set; } = null!;
+
         private void RecipeForm_Load(object sender, EventArgs e)
         {
             using (var context = factory.CreateDbContext())
@@ -31,29 +32,33 @@ namespace Lightstream.Forms
                     .Select(a => new { Value = a, Key = a.Name + " in " + a.UnitMeasurement.SingularName })
                     .ToArray();
 
-                ingredientOption.DataSource = ingredients;
-
                 AvailableUnits = context.Units.ToList();
-
-                unitOption.DataSource = AvailableUnits;
 
                 AvailableConversion = context.Conversions
                     .Include(x => x.FromUnit)
                     .Include(y => y.ToUnit)
                     .ToList();
+
+                ingredientOption.SelectedIndexChanged += ingredientOption_SelectedIndexChanged;
+                unitOption.SelectedIndexChanged += ingredientOption_SelectedIndexChanged;
+
+                unitOption.DataSource = AvailableUnits;
+                ingredientOption.DataSource = ingredients;
             }
+
         }
+
         Conversion? selectedConversion = null;
 
-        //bool isFound;
         private void ingredientOption_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (AvailableConversion is null)
+                return;
+
             if (ingredientOption.SelectedValue is Ingredient ing && unitOption.SelectedItem is Unit fromUnit)
             {
                 bool isFound = IsConversionAvailable(fromUnit, ing.UnitMeasurement, out selectedConversion);
 
-                //addConversionBtn.Enabled = !isFound;
-                //saveBtn.Visible = isFound;
                 _save.Text = isFound ? "Save" : "Define Conversion";
                 _save.BackColor = isFound ? SystemColors.ActiveCaption : Color.IndianRed;
             }

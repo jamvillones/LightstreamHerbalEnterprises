@@ -74,7 +74,6 @@
             this.unitOption.Name = "unitOption";
             this.unitOption.Size = new System.Drawing.Size(302, 23);
             this.unitOption.TabIndex = 2;
-            this.unitOption.SelectedIndexChanged += new System.EventHandler(this.ingredientOption_SelectedIndexChanged);
             // 
             // ingredientOption
             // 
@@ -89,7 +88,6 @@
             this.ingredientOption.Size = new System.Drawing.Size(302, 23);
             this.ingredientOption.TabIndex = 0;
             this.ingredientOption.ValueMember = "Value";
-            this.ingredientOption.SelectedIndexChanged += new System.EventHandler(this.ingredientOption_SelectedIndexChanged);
             // 
             // label1
             // 

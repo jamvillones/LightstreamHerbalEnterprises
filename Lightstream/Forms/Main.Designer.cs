@@ -45,6 +45,7 @@
             this.button14 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this._filesButtonPanel = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -103,7 +104,7 @@
             this._reportsPanel.Controls.Add(this.button6);
             this._reportsPanel.Controls.Add(this.button17);
             this._reportsPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this._reportsPanel.Location = new System.Drawing.Point(0, 605);
+            this._reportsPanel.Location = new System.Drawing.Point(0, 650);
             this._reportsPanel.Name = "_reportsPanel";
             this._reportsPanel.Size = new System.Drawing.Size(168, 135);
             this._reportsPanel.TabIndex = 12;
@@ -188,7 +189,7 @@
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(0, 555);
+            this.button7.Location = new System.Drawing.Point(0, 600);
             this.button7.Margin = new System.Windows.Forms.Padding(5);
             this.button7.Name = "button7";
             this.button7.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
@@ -209,7 +210,7 @@
             this._inventoryPanel.Controls.Add(this.button15);
             this._inventoryPanel.Controls.Add(this.button16);
             this._inventoryPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this._inventoryPanel.Location = new System.Drawing.Point(0, 420);
+            this._inventoryPanel.Location = new System.Drawing.Point(0, 465);
             this._inventoryPanel.Name = "_inventoryPanel";
             this._inventoryPanel.Size = new System.Drawing.Size(168, 135);
             this._inventoryPanel.TabIndex = 11;
@@ -294,7 +295,7 @@
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 370);
+            this.button4.Location = new System.Drawing.Point(0, 415);
             this.button4.Margin = new System.Windows.Forms.Padding(5);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
@@ -314,7 +315,7 @@
             this._transacPanel.Controls.Add(this.button13);
             this._transacPanel.Controls.Add(this.button14);
             this._transacPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this._transacPanel.Location = new System.Drawing.Point(0, 280);
+            this._transacPanel.Location = new System.Drawing.Point(0, 325);
             this._transacPanel.Name = "_transacPanel";
             this._transacPanel.Size = new System.Drawing.Size(168, 90);
             this._transacPanel.TabIndex = 10;
@@ -377,7 +378,7 @@
             this.button8.ForeColor = System.Drawing.Color.White;
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(0, 230);
+            this.button8.Location = new System.Drawing.Point(0, 275);
             this.button8.Margin = new System.Windows.Forms.Padding(5);
             this.button8.Name = "button8";
             this.button8.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
@@ -394,6 +395,7 @@
             // 
             this._filesButtonPanel.AutoSize = true;
             this._filesButtonPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this._filesButtonPanel.Controls.Add(this.button3);
             this._filesButtonPanel.Controls.Add(this.button12);
             this._filesButtonPanel.Controls.Add(this.button11);
             this._filesButtonPanel.Controls.Add(this.button10);
@@ -401,9 +403,32 @@
             this._filesButtonPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this._filesButtonPanel.Location = new System.Drawing.Point(0, 50);
             this._filesButtonPanel.Name = "_filesButtonPanel";
-            this._filesButtonPanel.Size = new System.Drawing.Size(168, 180);
+            this._filesButtonPanel.Size = new System.Drawing.Size(168, 225);
             this._filesButtonPanel.TabIndex = 9;
             this._filesButtonPanel.Visible = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(165)))), ((int)(((byte)(109)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(0, 180);
+            this.button3.Margin = new System.Windows.Forms.Padding(5);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.button3.Size = new System.Drawing.Size(168, 45);
+            this.button3.TabIndex = 8;
+            this.button3.TabStop = false;
+            this.button3.Text = "Supplier Management";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // button12
             // 
@@ -675,7 +700,7 @@
             this._contentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._contentsPanel.Location = new System.Drawing.Point(0, 0);
             this._contentsPanel.Name = "_contentsPanel";
-            this._contentsPanel.Size = new System.Drawing.Size(616, 480);
+            this._contentsPanel.Size = new System.Drawing.Size(606, 480);
             this._contentsPanel.TabIndex = 4;
             this._contentsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this._contentsPanel_Paint);
             // 
@@ -686,7 +711,7 @@
             this._notifPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._notifPanel.Location = new System.Drawing.Point(0, 0);
             this._notifPanel.Name = "_notifPanel";
-            this._notifPanel.Size = new System.Drawing.Size(112, 480);
+            this._notifPanel.Size = new System.Drawing.Size(122, 480);
             this._notifPanel.TabIndex = 5;
             // 
             // divider
@@ -706,7 +731,7 @@
             this.divider.Panel2.Controls.Add(this._notifPanel);
             this.divider.Panel2MinSize = 110;
             this.divider.Size = new System.Drawing.Size(730, 480);
-            this.divider.SplitterDistance = 616;
+            this.divider.SplitterDistance = 606;
             this.divider.SplitterWidth = 2;
             this.divider.TabIndex = 6;
             // 
@@ -780,5 +805,6 @@
         private Button button1;
         private Panel _notifPanel;
         private SplitContainer divider;
+        private Button button3;
     }
 }

@@ -10,7 +10,7 @@ namespace Lightstream
         /// </summary>
         [STAThread]
         static void Main()
-        {            
+        {
             ApplicationConfiguration.Initialize();
             bool loggedOut = false;
 
@@ -21,9 +21,13 @@ namespace Lightstream
                 Application.Run(login);
                 if (login.IsLoginSuccessful)
                 {
-                    var main = new Main();
-                    Application.Run(main);
-                    loggedOut = main.IsLoggedOut;
+                    Form form = login.CurrentLogin.UserType == (int)UserType.admin ?
+                         new Main() : new FPOS();
+                    
+                    Application.Run(form);
+
+                    if (form is ILogoutForm f)
+                        loggedOut = f.IsLoggedout;
                 }
             } while (loggedOut);
 

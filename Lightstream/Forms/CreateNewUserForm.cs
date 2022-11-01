@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace Lightstream.Forms
 {
+    public enum UserType { admin, cashier, count }
     public partial class CreateNewUserForm : Form
     {
         public CreateNewUserForm()
@@ -40,9 +41,10 @@ namespace Lightstream.Forms
                         FirstName = _firstName.Text.Trim(),
                         LastName = _lastName.Text.Trim(),
                         Email = _email.Text.Trim(),
-
+                        UserType = (int)UserType.cashier,
                         Username = _userName.Text.Trim(),
                         Password = _password.Text.Trim(),
+                        DateTimeRegistered = DateTime.Now
                     };
 
                     context.Logins.Add(login);

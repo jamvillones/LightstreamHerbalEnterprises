@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace Lightstream
 {
-    public partial class FPOS : Form
+    public partial class FPOS : Form, ILogoutForm
     {
+        public bool IsLoggedout => false;
+
         public FPOS()
         {
             InitializeComponent();

@@ -18,7 +18,7 @@ using System.Windows.Forms;
 namespace Lightstream
 {
 
-    public partial class Main : Form
+    public partial class Main : Form,ILogoutForm
     {
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -34,7 +34,7 @@ namespace Lightstream
         Form? currentForm = null;
         Color selectedButtonColor = Color.FromArgb(66, 120, 37);
         Color normalButtonColor = Color.FromArgb(45, 45, 45);
-        public bool IsLoggedOut { get; private set; } = false;
+        public bool IsLoggedout { get; private set; } = false;
         //protected override void WndProc(ref Message message)
         //{
         //    const int WM_NCHITTEST = 0x0084;
@@ -63,7 +63,7 @@ namespace Lightstream
         private void logout_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to logout?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
-            IsLoggedOut = true;
+            IsLoggedout = true;
             this.Close();
         }
 

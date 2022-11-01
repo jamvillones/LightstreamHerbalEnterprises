@@ -18,5 +18,7 @@ namespace Lightstream.DataAccess.Models
         public decimal Price { get; set; }
         [Required]
         public decimal Cost { get; set; }
+        [Required]
+        public bool Archived { get; set; } = false;
     }
 }

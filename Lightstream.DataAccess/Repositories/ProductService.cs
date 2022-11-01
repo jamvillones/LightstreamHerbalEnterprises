@@ -20,6 +20,7 @@ namespace Lightstream.DataAccess.Repositories
                 using (var cont = _factory.CreateDbContext())
                 {
                     return await cont.Products
+                        .Include(p=>p.ProductVariants)
                         .Include(p => p.UnitQty)
                         .Include(p => p.Recipes)
                             .ThenInclude(r => r.Conversion)

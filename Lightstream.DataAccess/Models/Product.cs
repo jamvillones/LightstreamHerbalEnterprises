@@ -19,6 +19,6 @@ namespace Lightstream.DataAccess.Models
         public virtual ICollection<Recipe> Recipes { get; set; }
         public ICollection<ProductInventory> ProductInventories { get; set; }
         public ICollection<ProductionHistory> ProductionHistory { get; set; }
-        public ICollection<ProductVariant> GetProductVariants { get; set; }
+        public ICollection<ProductVariant> ProductVariants { get; set; }
     }
 }

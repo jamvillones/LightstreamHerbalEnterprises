@@ -11,6 +11,8 @@ namespace Lightstream.DataAccess.Models
     [Table("ProductVariant")]
     public class ProductVariant : BaseEntityModel
     {
+        [Required]
+        public string Description { get; set; } 
         public Product Product { get; set; }
         [Required]
         public decimal Price { get; set; }

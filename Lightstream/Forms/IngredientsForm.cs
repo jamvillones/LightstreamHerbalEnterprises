@@ -22,8 +22,8 @@ namespace Lightstream.Forms
         public decimal Cost => ingredientField.Cost;
         public bool NewItemCreated { get; private set; }
         public Ingredient CreatedIngredient { get; private set; }
-        IAddRepository<Ingredient> _ingService;
-        public IngredientsForm(IAddRepository<Ingredient> ingService)
+        GenericRepository<Ingredient> _ingService;
+        public IngredientsForm(GenericRepository<Ingredient> ingService)
         {
             _ingService = ingService;
             InitializeComponent();
@@ -31,9 +31,8 @@ namespace Lightstream.Forms
 
         private async void addBtn_Click(object sender, EventArgs e)
         {
-            if (ValidateFields() == false)
+            if (!await ValidateFields())
             {
-                MessageBox.Show("Name and Description cannot be empty!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             /// create new ingredient
@@ -51,9 +50,23 @@ namespace Lightstream.Forms
             DialogResult = DialogResult.OK;
         }
 
-        private bool ValidateFields()
+        private async Task<bool> ValidateFields()
         {
-            return !string.IsNullOrWhiteSpace(Name);
+
+            if (string.IsNullOrWhiteSpace(Name))
+            {
+                MessageBox.Show("Name cannot be empty!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            var ings = await _ingService.GetAll_Async();
+            if (ings.Any(i => string.Equals(i.Name, this.IngredientName, StringComparison.OrdinalIgnoreCase)))
+            {
+                MessageBox.Show("Name already taken!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
         }
     }
 }

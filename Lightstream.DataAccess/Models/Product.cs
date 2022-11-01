@@ -12,8 +12,6 @@ namespace Lightstream.DataAccess.Models
             ProductionHistory = new HashSet<ProductionHistory>();
         }
 
-        //public int Id { get; set; }
-        //public string Name { get; set; } = null!;
         public string? Barcode { get; set; }
         public string? Description { get; set; }
         public decimal Price { get; set; }
@@ -21,6 +19,6 @@ namespace Lightstream.DataAccess.Models
         public virtual ICollection<Recipe> Recipes { get; set; }
         public ICollection<ProductInventory> ProductInventories { get; set; }
         public ICollection<ProductionHistory> ProductionHistory { get; set; }
-
+        public ICollection<ProductVariant> GetProductVariants { get; set; }
     }
 }

@@ -19,7 +19,6 @@ namespace Lightstream.DataAccess.Repositories
         protected readonly DbContextFactory _factory = new();
         public GenericRepository()
         {
-
         }
 
         public virtual async Task<IEnumerable<TModel>> GetAll_Async()
@@ -38,6 +37,7 @@ namespace Lightstream.DataAccess.Repositories
 
             return Enumerable.Empty<TModel>();
         }
+
         public virtual async Task<IEnumerable<TModel>> GetFiltered_Async(
             Func<TModel, bool> filter,
             Range? range = default)

@@ -239,6 +239,37 @@ namespace Lightstream.DataAccess.Migrations
                     b.ToTable("ProductionHistory", (string)null);
                 });
 
+            modelBuilder.Entity("Lightstream.DataAccess.Models.ProductVariant", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<decimal>("Cost")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<decimal>("Price")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductVariant");
+                });
+
             modelBuilder.Entity("Lightstream.DataAccess.Models.Recipe", b =>
                 {
                     b.Property<int>("Id")
@@ -426,6 +457,17 @@ namespace Lightstream.DataAccess.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("Lightstream.DataAccess.Models.ProductVariant", b =>
+                {
+                    b.HasOne("Lightstream.DataAccess.Models.Product", "Product")
+                        .WithMany("GetProductVariants")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("Lightstream.DataAccess.Models.Recipe", b =>
                 {
                     b.HasOne("Lightstream.DataAccess.Models.Conversion", "Conversion")
@@ -510,6 +552,8 @@ namespace Lightstream.DataAccess.Migrations
 
             modelBuilder.Entity("Lightstream.DataAccess.Models.Product", b =>
                 {
+                    b.Navigation("GetProductVariants");
+
                     b.Navigation("ProductInventories");
 
                     b.Navigation("ProductionHistory");

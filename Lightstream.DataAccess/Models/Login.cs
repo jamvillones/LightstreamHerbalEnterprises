@@ -17,6 +17,9 @@ namespace Lightstream.DataAccess.Models
         public string FirstName { get; set; } = null!;
         public string LastName { get; set; } = null!;
         public string FullName { get; private set; } = null!;
+        public int UserType { get; set; } = 0;
+
+        public DateTime DateTimeRegistered { get; set; } = DateTime.MinValue;
         public ICollection<Sale> Transactons { get; set; }
         public ICollection<ProductionHistory> ProductionHistories { get; set; }
     }

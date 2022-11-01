@@ -271,6 +271,17 @@
             this.Column2.Text = "Delete";
             this.Column2.UseColumnTextForButtonValue = true;
             // 
+            // _Load
+            // 
+            this._Load.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this._Load.Location = new System.Drawing.Point(0, 318);
+            this._Load.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._Load.Name = "_Load";
+            this._Load.Size = new System.Drawing.Size(383, 20);
+            this._Load.TabIndex = 0;
+            this._Load.Text = "Load";
+            this._Load.UseVisualStyleBackColor = true;
+            // 
             // PriceManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);

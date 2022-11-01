@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Lightstream.Forms
 {
-    public partial class FSupplier : Form
+    public partial class SupplierManagement : Form
     {
-        public FSupplier()
+        public SupplierManagement()
         {
             InitializeComponent();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

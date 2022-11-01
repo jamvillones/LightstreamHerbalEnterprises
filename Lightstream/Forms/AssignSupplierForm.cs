@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Lightstream.Forms
 {
-    public partial class FAssignSupplier : Form
+    public partial class AssignSupplierForm : Form
     {
-        public FAssignSupplier()
+        public AssignSupplierForm()
         {
             InitializeComponent();
         }

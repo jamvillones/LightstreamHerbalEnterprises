@@ -203,9 +203,11 @@
             // 
             this._save.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this._save.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this._save.BackColor = System.Drawing.Color.ForestGreen;
             this._save.FlatAppearance.BorderSize = 0;
             this._save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._save.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._save.ForeColor = System.Drawing.Color.White;
             this._save.Location = new System.Drawing.Point(12, 303);
             this._save.Name = "_save";
             this._save.Size = new System.Drawing.Size(299, 30);

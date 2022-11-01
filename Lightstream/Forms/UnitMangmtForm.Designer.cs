@@ -87,21 +87,27 @@
             // 
             // _cancel
             // 
+            this._cancel.BackColor = System.Drawing.Color.ForestGreen;
+            this._cancel.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._cancel.ForeColor = System.Drawing.Color.White;
             this._cancel.Location = new System.Drawing.Point(633, 313);
             this._cancel.Name = "_cancel";
             this._cancel.Size = new System.Drawing.Size(97, 34);
             this._cancel.TabIndex = 2;
             this._cancel.Text = "Cancel";
-            this._cancel.UseVisualStyleBackColor = true;
+            this._cancel.UseVisualStyleBackColor = false;
             // 
             // _save
             // 
+            this._save.BackColor = System.Drawing.Color.ForestGreen;
+            this._save.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._save.ForeColor = System.Drawing.Color.White;
             this._save.Location = new System.Drawing.Point(517, 313);
             this._save.Name = "_save";
             this._save.Size = new System.Drawing.Size(97, 34);
             this._save.TabIndex = 3;
             this._save.Text = "Save";
-            this._save.UseVisualStyleBackColor = true;
+            this._save.UseVisualStyleBackColor = false;
             // 
             // _statusOption
             // 

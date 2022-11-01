@@ -45,7 +45,6 @@ namespace Lightstream.Forms
                 unitOption.DataSource = AvailableUnits;
                 ingredientOption.DataSource = ingredients;
             }
-
         }
 
         Conversion? selectedConversion = null;

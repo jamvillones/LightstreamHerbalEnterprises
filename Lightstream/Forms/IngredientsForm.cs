@@ -1,5 +1,6 @@
 ﻿using Lightstream.DataAccess.Data;
 using Lightstream.DataAccess.Models;
+using Lightstream.DataAccess.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,49 +18,36 @@ namespace Lightstream.Forms
         private DbContextFactory factory = new DbContextFactory();
         public string IngredientName => ingredientField.IngredientName;
         public Unit SelectedUnit => ingredientField.UnitOfMeasurement;
-
         string UOMString => ingredientField.UnitOfMeasurementString;
         public decimal Cost => ingredientField.Cost;
         public bool NewItemCreated { get; private set; }
         public Ingredient CreatedIngredient { get; private set; }
-
-        public IngredientsForm()
+        IAddRepository<Ingredient> _ingService;
+        public IngredientsForm(IAddRepository<Ingredient> ingService)
         {
+            _ingService = ingService;
             InitializeComponent();
         }
 
-        private void addBtn_Click(object sender, EventArgs e)
+        private async void addBtn_Click(object sender, EventArgs e)
         {
             if (ValidateFields() == false)
             {
                 MessageBox.Show("Name and Description cannot be empty!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            ///open connection
-            using (var context = factory.CreateDbContext())
+            /// create new ingredient
+            var ingredient = new Ingredient()
             {
-                /// create new ingredient
-                var ingredient = new Ingredient()
-                {
-                    Name = this.IngredientName,
-                    Cost = this.Cost,
-                    UnitMeasurement = SelectedUnit is null ? new Unit() { SingularName = UOMString } : context.Units.FirstOrDefault(x => x.Id == SelectedUnit.Id)
-                };
+                Name = this.IngredientName,
+                Cost = this.Cost,
+                UnitMeasurement = SelectedUnit ?? new Unit() { SingularName = UOMString }
+            };
 
-                /// add to the list of ingredients
-                context.Ingredients.Add(ingredient);
+            await _ingService.Add_Async(ingredient);
 
-                /// save changes
-                context.SaveChanges();
-
-
-                //ingredient.UnitMeasurement = UnitOfMeasurement;
-                CreatedIngredient = ingredient;
-            }
-
+            CreatedIngredient = ingredient;
             NewItemCreated = true;
-
             DialogResult = DialogResult.OK;
         }
 

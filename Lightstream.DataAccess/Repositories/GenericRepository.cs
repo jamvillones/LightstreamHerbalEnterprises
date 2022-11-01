@@ -87,9 +87,10 @@ namespace Lightstream.DataAccess.Repositories
             {
                 using (var cont = _factory.CreateDbContext())
                 {
-                    var e = cont.Set<TModel>().AddAsync(m);
+                    //var e = cont.Set<TModel>().AddAsync(m);
+                    var e = cont.Entry(m).State = EntityState.Added;
                     await cont.SaveChangesAsync();
-                    return e.Result.Entity;
+                    return m;
                 }
             }
             catch (Exception ex)

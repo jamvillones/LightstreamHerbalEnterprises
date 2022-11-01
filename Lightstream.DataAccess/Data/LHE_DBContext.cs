@@ -85,6 +85,8 @@ namespace Lightstream.DataAccess.Data
                     .HasForeignKey(d => d.UnitMeasurementId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Ingredients_Unit");
+
+                entity.Navigation(i => i.UnitMeasurement).AutoInclude();
             });
 
             modelBuilder.Entity<Login>(entity =>

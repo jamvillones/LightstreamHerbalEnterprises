@@ -1,5 +1,6 @@
 ﻿using Lightstream.DataAccess.Data;
 using Lightstream.DataAccess.Models;
+using Lightstream.DataAccess.Repositories;
 using Lightstream.Services;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
@@ -12,33 +13,31 @@ namespace Lightstream.Usercontrols
         Ingredient? SelectedIngredient => _ingredientsTable.SelectedRows[0].DataBoundItem as Ingredient;
         BindingList<Ingredient> ingredients = new BindingList<Ingredient>();
         bool searchSuccessful = false;
-        public IngredientsPage()
+
+        private GenericRepository<Ingredient> _ingredientService;
+        public IngredientsPage(GenericRepository<Ingredient> ingService)
         {
             InitializeComponent();
+
+            _ingredientService = ingService;
             _ingredientsTable.AutoGenerateColumns = false;
         }
-        void IngredientUserControl_Load(object sender, EventArgs e)
+        async void IngredientUserControl_Load(object sender, EventArgs e)
         {
             _ingredientsTable.DataSource = ingredients;
-            try
-            {
-                LoadAllIngredients();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+            await LoadAllIngredients();
         }
         void addNewBtn_Click(object sender, EventArgs e)
         {
-            using (var ingredientForm = new Forms.IngredientsForm())
+            using (var ingredientForm = new Forms.IngredientsForm(_ingredientService))
             {
                 if (ingredientForm.ShowDialog() == DialogResult.OK)
                     if (ingredientForm.NewItemCreated)
                         ingredients.Add(ingredientForm.CreatedIngredient);
             }
         }
-        void searchTxt_KeyDown(object sender, KeyEventArgs e)
+        async void searchTxt_KeyDown(object sender, KeyEventArgs e)
         {
             if (sender is not TextBox textbox)
                 return;
@@ -47,32 +46,31 @@ namespace Lightstream.Usercontrols
                 return;
             if (e.KeyCode == Keys.Enter)
             {
-                using (var context = factory.CreateDbContext())
-                {
-                    var resultingIngredients = SearchHandler.FilterList(
-                        context.Ingredients.Include(a => a.UnitMeasurement),
-                        filteringConditions: (b) => b.Name.ToLower().Contains(searchTerm.ToLower()))
+                var ings = await _ingredientService.GetAll_Async();
+
+                var resultingIngredients = SearchHandler.FilterList(
+                    ings,
+                    filteringConditions: (b) => b.Name.ToLower().Contains(searchTerm.ToLower())
+                    )
                         .ToList();
 
-                    searchSuccessful = resultingIngredients.Count > 0;
+                searchSuccessful = resultingIngredients.Count > 0;
 
-                    if (!searchSuccessful)
-                    {
-                        MessageBox.Show("No entries found!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-
-                    textbox.SelectAll();
-                    ///clear the ingredients list
-                    ingredients.Clear();
-                    ///repopulate with the new values
-                    foreach (var i in resultingIngredients)
-                        ingredients.Add(i);
-
+                if (!searchSuccessful)
+                {
+                    MessageBox.Show("No entries found!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
+
+                textbox.SelectAll();
+                ///clear the ingredients list
+                ingredients.Clear();
+                ///repopulate with the new values
+                foreach (var i in resultingIngredients)
+                    ingredients.Add(i);
             }
         }
-        void searchTxt_TextChanged(object sender, EventArgs e)
+        async void searchTxt_TextChanged(object sender, EventArgs e)
         {
             if (sender is not TextBox textbox) return;
 
@@ -82,20 +80,20 @@ namespace Lightstream.Usercontrols
 
             if (!searchSuccessful) return;
 
-            LoadAllIngredients();
+            await LoadAllIngredients();
         }
-        void LoadAllIngredients()
-        {
-            using (var context = factory.CreateDbContext())
-            {
-                var ingredients = context.Ingredients.Include(x => x.UnitMeasurement).ToList();
 
-                this.ingredients.Clear();
-                foreach (var i in ingredients)
-                    this.ingredients.Add(i);
-            }
+        async Task LoadAllIngredients()
+        {
+            var ingredients = await _ingredientService.GetAll_Async();
+
+            this.ingredients.Clear();
+
+            foreach (var i in ingredients)
+                this.ingredients.Add(i);
         }
-        void _delete_Click(object sender, EventArgs e)
+
+        async void _delete_Click(object sender, EventArgs e)
         {
             if (_ingredientsTable.RowCount == 0 ||
                 MessageBox.Show(
@@ -107,37 +105,17 @@ namespace Lightstream.Usercontrols
                 return;
 
             if (SelectedIngredient is not null)
-                if (DeleteIngredient(SelectedIngredient))
+                if (await DeleteIngredient(SelectedIngredient))
                     ingredients.Remove(SelectedIngredient);
         }
-        bool DeleteIngredient(Ingredient? ing)
+        async Task<bool> DeleteIngredient(Ingredient? ing)
         {
             if (ing is null)
                 return false;
 
-            try
-            {
-                using (var context = factory.CreateDbContext())
-                {
-                    var i = context.Ingredients.FirstOrDefault(x => x.Id == ing.Id);
-
-                    if (i is not null)
-                    {
-                        context.Ingredients.Remove(i);
-                        context.SaveChanges();
-                        Console.WriteLine("removed");
-
-                        return true;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            return false;
+            return await _ingredientService.Remove_Async(ing);
         }
-        void _ingredientsTable_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        async void _ingredientsTable_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left ||
                 e.RowIndex == -1 ||
@@ -151,7 +129,7 @@ namespace Lightstream.Usercontrols
                 return;
 
             if (SelectedIngredient is not null)
-                if (DeleteIngredient(SelectedIngredient))
+                if (await DeleteIngredient(SelectedIngredient))
                     ingredients.Remove(SelectedIngredient);
         }
     }

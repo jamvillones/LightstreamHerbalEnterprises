@@ -645,7 +645,7 @@
             this.button2.Size = new System.Drawing.Size(168, 30);
             this.button2.TabIndex = 3;
             this.button2.TabStop = false;
-            this.button2.Text = "Settings";
+            this.button2.Text = "Utilities";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -675,7 +675,7 @@
             this._contentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._contentsPanel.Location = new System.Drawing.Point(0, 0);
             this._contentsPanel.Name = "_contentsPanel";
-            this._contentsPanel.Size = new System.Drawing.Size(614, 480);
+            this._contentsPanel.Size = new System.Drawing.Size(616, 480);
             this._contentsPanel.TabIndex = 4;
             this._contentsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this._contentsPanel_Paint);
             // 
@@ -686,7 +686,7 @@
             this._notifPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._notifPanel.Location = new System.Drawing.Point(0, 0);
             this._notifPanel.Name = "_notifPanel";
-            this._notifPanel.Size = new System.Drawing.Size(114, 480);
+            this._notifPanel.Size = new System.Drawing.Size(112, 480);
             this._notifPanel.TabIndex = 5;
             // 
             // divider
@@ -706,7 +706,7 @@
             this.divider.Panel2.Controls.Add(this._notifPanel);
             this.divider.Panel2MinSize = 110;
             this.divider.Size = new System.Drawing.Size(730, 480);
-            this.divider.SplitterDistance = 614;
+            this.divider.SplitterDistance = 616;
             this.divider.SplitterWidth = 2;
             this.divider.TabIndex = 6;
             // 

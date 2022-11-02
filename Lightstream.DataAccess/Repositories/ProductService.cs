@@ -20,7 +20,7 @@ namespace Lightstream.DataAccess.Repositories
                 using (var cont = _factory.CreateDbContext())
                 {
                     return await cont.Products
-                        .Include(p=>p.ProductVariants)
+                        .Include(p => p.ProductVariants)
                         .Include(p => p.UnitQty)
                         .Include(p => p.Recipes)
                             .ThenInclude(r => r.Conversion)
@@ -69,6 +69,9 @@ namespace Lightstream.DataAccess.Repositories
             {
                 using (var context = _factory.CreateDbContext())
                 {
+                    if (product.UnitQty.Id == 0)
+                        context.Entry(product.UnitQty).State = EntityState.Added;
+
                     foreach (var r in product.Recipes)
                         context.Entry(r).State = EntityState.Added;
 

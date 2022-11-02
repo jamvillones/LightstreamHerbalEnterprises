@@ -63,16 +63,17 @@ namespace Lightstream.DataAccess.Repositories
             return default;
         }
 
-        public virtual async Task<TModel?> Add_Async(TModel m)
+        public virtual async Task<TModel?> Add_Async(TModel model)
         {
             try
             {
                 using (var cont = _factory.CreateDbContext())
                 {
-                    cont.Update(m);
+                    cont.Update(model);
+                    //cont.Entry(model).State = EntityState.Added;
 
                     await cont.SaveChangesAsync();
-                    return m;
+                    return model;
                 }
             }
             catch (Exception ex)

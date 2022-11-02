@@ -242,7 +242,7 @@ namespace Lightstream
         private void button11_Click_1(object sender, EventArgs e)
         {
             ChangeButtonStateUponClick(sender as Button);
-            PriceManagementForm priceManagement = new(new ProductService());
+            PriceManagementForm priceManagement = new(new ProductVariantService());
             OpenForm(priceManagement);
         }
 

@@ -19,10 +19,6 @@ namespace Lightstream.DataAccess.Repositories
         where TModel : class, IIDModel
     {
         protected readonly DbContextFactory _factory = new();
-        public GenericRepository()
-        {
-        }
-
         public virtual async Task<IEnumerable<TModel>> GetAll_Async()
         {
             try
@@ -47,7 +43,7 @@ namespace Lightstream.DataAccess.Repositories
             var models = (await GetAll_Async()).Where(filter);
 
             if (range is not null)
-                return models.Where(filter).Take((Range)range);
+                return models.Take((Range)range);
 
             return models;
         }
@@ -73,7 +69,8 @@ namespace Lightstream.DataAccess.Repositories
             {
                 using (var cont = _factory.CreateDbContext())
                 {
-                    cont.Entry(m).State = EntityState.Added;
+                    // cont.Entry(m).State = EntityState.Added;
+                    cont.Update(m);
 
                     await cont.SaveChangesAsync();
                     return m;

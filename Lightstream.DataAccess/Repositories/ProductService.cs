@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Lightstream.DataAccess.Repositories
 {
-    public sealed class ProductService : GenericRepository<Product>
+    public class ProductService : GenericRepository<Product>
     {
         public override async Task<IEnumerable<Product>> GetAll_Async()
         {

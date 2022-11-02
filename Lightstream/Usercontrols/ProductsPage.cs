@@ -101,7 +101,7 @@ namespace Lightstream.Usercontrols
                 Name = _productName.Text.Trim(),
                 Price = 0,
                 UnitQty = SelectedUnit,
-                Recipes = recipes.Select(r => 
+                Recipes = recipes.Select(r =>
                     new Recipe()
                     {
                         Ingredient = r.Data.Ingredient,

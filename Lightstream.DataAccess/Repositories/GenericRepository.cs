@@ -69,7 +69,6 @@ namespace Lightstream.DataAccess.Repositories
             {
                 using (var cont = _factory.CreateDbContext())
                 {
-                    // cont.Entry(m).State = EntityState.Added;
                     cont.Update(m);
 
                     await cont.SaveChangesAsync();

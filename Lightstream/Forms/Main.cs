@@ -21,13 +21,13 @@ namespace Lightstream
     public partial class Main : Form,ILogoutForm
     {
 
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
+        //public const int WM_NCLBUTTONDOWN = 0xA1;
+        //public const int HT_CAPTION = 0x2;
 
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
+        //[System.Runtime.InteropServices.DllImport("user32.dll")]
+        //public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        //[System.Runtime.InteropServices.DllImport("user32.dll")]
+        //public static extern bool ReleaseCapture();
 
         Panel[] collapsiblePanels;
         Button? currentButton = null;
@@ -64,7 +64,7 @@ namespace Lightstream
         {
             if (MessageBox.Show("Are you sure you want to logout?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
             IsLoggedout = true;
-            this.Close();
+            Close();
         }
 
         void ChangeButtonStateUponClick(Button nextButton)
@@ -138,39 +138,6 @@ namespace Lightstream
             currentForm.BringToFront();
             currentForm.Show();
         }
-
-        #region windowchrome functions
-        private void button9_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        private void button10_Click(object sender, EventArgs e)
-        {
-            this.WindowState = this.WindowState == FormWindowState.Maximized ? FormWindowState.Normal : FormWindowState.Maximized;
-        }
-        private void button11_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-        /// <summary>
-        /// handles the drag and maximize of custom status bar
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void panel2_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Clicks == 2)
-            {
-                this.WindowState = WindowState == FormWindowState.Maximized ? FormWindowState.Normal : FormWindowState.Maximized;
-                return;
-            }
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
-        }
-        #endregion
 
         #region opening form
         private void button9_Click_1(object sender, EventArgs e)

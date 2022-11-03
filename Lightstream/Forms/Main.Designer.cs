@@ -51,12 +51,6 @@
             this._btnIngredients = new System.Windows.Forms.Button();
             this._btnProduction = new System.Windows.Forms.Button();
             this._mainBtn_Files = new System.Windows.Forms.Button();
-            this._topPanel = new System.Windows.Forms.Panel();
-            this.minimizeButton = new System.Windows.Forms.Button();
-            this.maximizeButton = new System.Windows.Forms.Button();
-            this.closeBtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this._sidePanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this._utilities = new System.Windows.Forms.Button();
@@ -69,8 +63,6 @@
             this._inventoryPanel.SuspendLayout();
             this._transacPanel.SuspendLayout();
             this._filesButtonPanel.SuspendLayout();
-            this._topPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this._sidePanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.divider)).BeginInit();
@@ -550,89 +542,6 @@
             this._mainBtn_Files.UseVisualStyleBackColor = false;
             this._mainBtn_Files.Click += new System.EventHandler(this._filesBtn_Click);
             // 
-            // _topPanel
-            // 
-            this._topPanel.Controls.Add(this.minimizeButton);
-            this._topPanel.Controls.Add(this.maximizeButton);
-            this._topPanel.Controls.Add(this.closeBtn);
-            this._topPanel.Controls.Add(this.label1);
-            this._topPanel.Controls.Add(this.pictureBox1);
-            this._topPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this._topPanel.Location = new System.Drawing.Point(170, 0);
-            this._topPanel.Name = "_topPanel";
-            this._topPanel.Size = new System.Drawing.Size(730, 30);
-            this._topPanel.TabIndex = 3;
-            this._topPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
-            // 
-            // minimizeButton
-            // 
-            this.minimizeButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.minimizeButton.FlatAppearance.BorderSize = 0;
-            this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.minimizeButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.minimizeButton.Location = new System.Drawing.Point(610, 0);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.Size = new System.Drawing.Size(40, 30);
-            this.minimizeButton.TabIndex = 4;
-            this.minimizeButton.Text = "🗕";
-            this.minimizeButton.UseVisualStyleBackColor = true;
-            this.minimizeButton.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // maximizeButton
-            // 
-            this.maximizeButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.maximizeButton.FlatAppearance.BorderSize = 0;
-            this.maximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.maximizeButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.maximizeButton.Location = new System.Drawing.Point(650, 0);
-            this.maximizeButton.Name = "maximizeButton";
-            this.maximizeButton.Size = new System.Drawing.Size(40, 30);
-            this.maximizeButton.TabIndex = 3;
-            this.maximizeButton.Text = "🗖";
-            this.maximizeButton.UseVisualStyleBackColor = true;
-            this.maximizeButton.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // closeBtn
-            // 
-            this.closeBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.closeBtn.FlatAppearance.BorderSize = 0;
-            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeBtn.ForeColor = System.Drawing.Color.IndianRed;
-            this.closeBtn.Location = new System.Drawing.Point(690, 0);
-            this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(40, 30);
-            this.closeBtn.TabIndex = 2;
-            this.closeBtn.Text = "✖";
-            this.closeBtn.UseVisualStyleBackColor = false;
-            this.closeBtn.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.CausesValidation = false;
-            this.label1.Font = new System.Drawing.Font("The Bold Font", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
-            this.label1.Location = new System.Drawing.Point(36, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(210, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Lightstream Herbal Enterprise";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // _sidePanel
             // 
             this._sidePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -700,7 +609,7 @@
             this._contentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._contentsPanel.Location = new System.Drawing.Point(0, 0);
             this._contentsPanel.Name = "_contentsPanel";
-            this._contentsPanel.Size = new System.Drawing.Size(611, 480);
+            this._contentsPanel.Size = new System.Drawing.Size(613, 510);
             this._contentsPanel.TabIndex = 4;
             this._contentsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this._contentsPanel_Paint);
             // 
@@ -711,14 +620,14 @@
             this._notifPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._notifPanel.Location = new System.Drawing.Point(0, 0);
             this._notifPanel.Name = "_notifPanel";
-            this._notifPanel.Size = new System.Drawing.Size(117, 480);
+            this._notifPanel.Size = new System.Drawing.Size(115, 510);
             this._notifPanel.TabIndex = 5;
             // 
             // divider
             // 
             this.divider.Dock = System.Windows.Forms.DockStyle.Fill;
             this.divider.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.divider.Location = new System.Drawing.Point(170, 30);
+            this.divider.Location = new System.Drawing.Point(170, 0);
             this.divider.Name = "divider";
             // 
             // divider.Panel1
@@ -730,8 +639,8 @@
             // 
             this.divider.Panel2.Controls.Add(this._notifPanel);
             this.divider.Panel2MinSize = 110;
-            this.divider.Size = new System.Drawing.Size(730, 480);
-            this.divider.SplitterDistance = 611;
+            this.divider.Size = new System.Drawing.Size(730, 510);
+            this.divider.SplitterDistance = 613;
             this.divider.SplitterWidth = 2;
             this.divider.TabIndex = 6;
             // 
@@ -742,7 +651,6 @@
             this.ClientSize = new System.Drawing.Size(900, 510);
             this.ControlBox = false;
             this.Controls.Add(this.divider);
-            this.Controls.Add(this._topPanel);
             this.Controls.Add(this._sidePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -756,9 +664,6 @@
             this._inventoryPanel.ResumeLayout(false);
             this._transacPanel.ResumeLayout(false);
             this._filesButtonPanel.ResumeLayout(false);
-            this._topPanel.ResumeLayout(false);
-            this._topPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this._sidePanel.ResumeLayout(false);
             this._sidePanel.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -776,12 +681,6 @@
         private Button _mainBtn_Transaction;
         private Button _mainBtn_Reports;
         private Button _mainBtn_Inventory;
-        private Panel _topPanel;
-        private Label label1;
-        private PictureBox pictureBox1;
-        private Button minimizeButton;
-        private Button maximizeButton;
-        private Button closeBtn;
         private Panel _sidePanel;
         private Panel _contentsPanel;
         private Panel _filesButtonPanel;

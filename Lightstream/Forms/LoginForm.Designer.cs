@@ -33,18 +33,14 @@
             this.loginBtn = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.userNameLine = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.passwordLine = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.countdownTimer = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // loginBtn
@@ -71,10 +67,10 @@
             this.textBox2.BackColor = System.Drawing.SystemColors.Control;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(0, 0);
+            this.textBox2.Location = new System.Drawing.Point(5, 5);
             this.textBox2.Name = "textBox2";
             this.textBox2.PlaceholderText = "username...";
-            this.textBox2.Size = new System.Drawing.Size(233, 16);
+            this.textBox2.Size = new System.Drawing.Size(223, 16);
             this.textBox2.TabIndex = 3;
             this.textBox2.TextChanged += new System.EventHandler(this.textFields_TextChanged);
             // 
@@ -82,29 +78,31 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(114, 99);
+            this.panel1.Controls.Add(this.userNameLine);
+            this.panel1.Location = new System.Drawing.Point(102, 93);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(233, 20);
+            this.panel1.Padding = new System.Windows.Forms.Padding(5);
+            this.panel1.Size = new System.Drawing.Size(233, 30);
             this.panel1.TabIndex = 4;
             // 
-            // panel2
+            // userNameLine
             // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 19);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(233, 1);
-            this.panel2.TabIndex = 5;
+            this.userNameLine.BackColor = System.Drawing.Color.Black;
+            this.userNameLine.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.userNameLine.Location = new System.Drawing.Point(5, 23);
+            this.userNameLine.Name = "userNameLine";
+            this.userNameLine.Size = new System.Drawing.Size(223, 2);
+            this.userNameLine.TabIndex = 5;
             // 
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.Controls.Add(this.textBox3);
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(114, 144);
+            this.panel3.Controls.Add(this.passwordLine);
+            this.panel3.Location = new System.Drawing.Point(102, 138);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(233, 20);
+            this.panel3.Padding = new System.Windows.Forms.Padding(5);
+            this.panel3.Size = new System.Drawing.Size(233, 30);
             this.panel3.TabIndex = 5;
             // 
             // textBox3
@@ -112,22 +110,22 @@
             this.textBox3.BackColor = System.Drawing.SystemColors.Control;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Location = new System.Drawing.Point(0, 0);
+            this.textBox3.Location = new System.Drawing.Point(5, 5);
             this.textBox3.Name = "textBox3";
             this.textBox3.PasswordChar = '●';
             this.textBox3.PlaceholderText = "password...";
-            this.textBox3.Size = new System.Drawing.Size(233, 16);
+            this.textBox3.Size = new System.Drawing.Size(223, 16);
             this.textBox3.TabIndex = 3;
             this.textBox3.TextChanged += new System.EventHandler(this.textFields_TextChanged);
             // 
-            // panel4
+            // passwordLine
             // 
-            this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 19);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(233, 1);
-            this.panel4.TabIndex = 5;
+            this.passwordLine.BackColor = System.Drawing.Color.Black;
+            this.passwordLine.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.passwordLine.Location = new System.Drawing.Point(5, 23);
+            this.passwordLine.Name = "passwordLine";
+            this.passwordLine.Size = new System.Drawing.Size(223, 2);
+            this.passwordLine.TabIndex = 5;
             // 
             // label1
             // 
@@ -146,36 +144,12 @@
             this.countdownTimer.Interval = 1000;
             this.countdownTimer.Tick += new System.EventHandler(this.countdownTimer_Tick);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::Lightstream.Properties.Resources.Female_Profile_15px;
-            this.pictureBox1.Location = new System.Drawing.Point(89, 96);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(19, 19);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = global::Lightstream.Properties.Resources.keepass_15px;
-            this.pictureBox2.Location = new System.Drawing.Point(89, 141);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(19, 19);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            // 
             // LoginForm
             // 
             this.AcceptButton = this.loginBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(436, 261);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -192,8 +166,6 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,13 +175,11 @@
         private Button loginBtn;
         private TextBox textBox2;
         private Panel panel1;
-        private Panel panel2;
+        private Panel userNameLine;
         private Panel panel3;
-        private Panel panel4;
+        private Panel passwordLine;
         private TextBox textBox3;
         private Label label1;
         private System.Windows.Forms.Timer countdownTimer;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
     }
 }

@@ -18,7 +18,7 @@ namespace Lightstream.DataAccess.Repositories
                 using (var cont = _factory.CreateDbContext())
                 {
                     return await cont.Products
-                        .Include(p => p.ProductVariants)                        
+                        .Include(p => p.ProductVariants)
                         .AsNoTracking()
                         .ToListAsync();
                 }
@@ -28,6 +28,43 @@ namespace Lightstream.DataAccess.Repositories
                 Debug.WriteLine(ex.Message);
             }
             return Enumerable.Empty<Product>();
+        }
+        public override async Task<Product?> Update_Async(Product product)
+        {
+            try
+            {
+                using (var cont = _factory.CreateDbContext())
+                {
+                    var ptemp = await cont.Products
+                        .Include(p => p.ProductVariants)
+                        .AsNoTracking()
+                        .FirstOrDefaultAsync(x => x.Id == product.Id);
+
+                    foreach (var v in ptemp.ProductVariants)
+                    {
+                        if (!product.ProductVariants.Any(x => x.Id == v.Id))
+                        {
+                            cont.Entry(v).State = EntityState.Modified;
+                            v.Archived = true;
+                        }
+                    }
+
+                    foreach (var v in product.ProductVariants)
+                        cont.Entry(v).State = v.Id == 0 ?
+                             EntityState.Added : EntityState.Modified;
+
+                    cont.Entry(product).State = EntityState.Modified;
+
+                    await cont.SaveChangesAsync();
+
+                    return product;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            return null;
         }
     }
 }

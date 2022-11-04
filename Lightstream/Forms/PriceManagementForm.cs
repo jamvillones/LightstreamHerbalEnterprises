@@ -22,6 +22,21 @@ namespace Lightstream.Forms
         private BindingList<ProductViewModel> products;
         private BindingList<ProductVariant> variants;
 
+        private ProductVariant? selectedVariant
+        {
+            get
+            {
+                if (_variantsTable.RowCount == 0)
+                    return null;
+
+                return _variantsTable.SelectedRows[0].DataBoundItem as ProductVariant;
+            }
+            set
+            {
+                variants[_variantsTable.SelectedRows[0].Index] = value;
+            }
+        }
+
         Product _selectedProduct;
         public Product SelectedProduct
         {
@@ -80,6 +95,7 @@ namespace Lightstream.Forms
             prodVariantDescriptionCol.DataPropertyName = nameof(ProductVariant.Description);
             prodVariantPrice.DataPropertyName = nameof(ProductVariant.Price);
             prodVariantCost.DataPropertyName = nameof(ProductVariant.Cost);
+            idCol.DataPropertyName = nameof(ProductVariant.Id);
 
             _productsTable.DataSource = products;
             _variantsTable.DataSource = variants;
@@ -95,10 +111,19 @@ namespace Lightstream.Forms
 
         private void _variants_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.RowIndex == -1 || e.ColumnIndex != delCol.Index)
+            if (e.RowIndex == -1)
                 return;
 
-            _variantsTable.Rows.RemoveAt(e.RowIndex);
+            if (e.ColumnIndex == delCol.Index)
+                _variantsTable.Rows.RemoveAt(e.RowIndex);
+
+            if (e.ColumnIndex == editCol.Index)
+            {
+                var v = OpenVariantForm(selectedVariant);
+
+                if (v is not null)
+                    selectedVariant = v;
+            }
         }
 
         bool searchSuccessful = false;
@@ -153,6 +178,51 @@ namespace Lightstream.Forms
                 foreach (var p in results)
                     products.Add(new ProductViewModel(p));
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var v = OpenVariantForm();
+            if (v is not null)
+                variants.Add(v);
+        }
+
+        ProductVariant? OpenVariantForm(ProductVariant? v = null)
+        {
+
+            var f = v is null ?
+                new ProductVariantForm() :
+                new ProductVariantForm(v);
+
+            using (f)
+            {
+                if (f.ShowDialog() == DialogResult.OK)
+                    return f.Tag as ProductVariant;
+            }
+
+            return null;
+        }
+        bool changesMade = true;
+        private async void button4_Click(object sender, EventArgs e)
+        {
+            var prod = SelectedProduct;
+            prod.ProductVariants = variants.ToList();
+
+            if (changesMade)
+            {
+                var productSaved = await _productService.Update_Async(prod);
+
+                if (productSaved is not null)
+                    MessageBox.Show("Product saved!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void _variantsTable_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            var row = _variantsTable.Rows[e.RowIndex];
+            if ((int)(row.Cells[0].Value) == 0)
+                row.DefaultCellStyle.ForeColor = SystemColors.ControlDarkDark;
+
         }
     }
 }

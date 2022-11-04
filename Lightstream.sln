@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lightstream", "Lightstream\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lightstream.DataAccess", "Lightstream.DataAccess\Lightstream.DataAccess.csproj", "{B752F63E-817F-4BD7-AC9D-C36A65F3AF6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{CAD125F9-A8F7-48C8-B02E-B4584C5764D8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{B752F63E-817F-4BD7-AC9D-C36A65F3AF6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B752F63E-817F-4BD7-AC9D-C36A65F3AF6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B752F63E-817F-4BD7-AC9D-C36A65F3AF6A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CAD125F9-A8F7-48C8-B02E-B4584C5764D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CAD125F9-A8F7-48C8-B02E-B4584C5764D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CAD125F9-A8F7-48C8-B02E-B4584C5764D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CAD125F9-A8F7-48C8-B02E-B4584C5764D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 namespace Lightstream.DataAccess.Models
 {
     [Table("ProductVariant")]
-    public class ProductVariant : BaseEntityModel
+    public class ProductVariant : IIDModel
     {
+        public int Id { get; set; }
         [Required]
-        public string Description { get; set; } 
+        public string Description { get; set; }
         public Product Product { get; set; }
         [Required]
         public decimal Price { get; set; }

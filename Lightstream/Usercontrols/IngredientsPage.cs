@@ -150,11 +150,8 @@ namespace Lightstream.Usercontrols
                     ))
                 {
                     if (ingredientForm.ShowDialog() == DialogResult.OK)
-                        if (ingredientForm.Tag is Ingredient i)
-                        {
+                        if (ingredientForm.Tag is Ingredient i)                        
                             SelectedIngredient = i;
-                            //ingredients.Add(i);
-                        }
                 }
             }
         }

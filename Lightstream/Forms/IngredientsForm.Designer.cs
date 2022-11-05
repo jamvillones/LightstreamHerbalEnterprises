@@ -44,8 +44,8 @@
             this.addBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.addBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addBtn.Font = new System.Drawing.Font("Bebas Neue", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addBtn.Location = new System.Drawing.Point(222, 159);
+            this.addBtn.Font = new System.Drawing.Font("Bebas Neue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addBtn.Location = new System.Drawing.Point(272, 169);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(150, 30);
             this.addBtn.TabIndex = 6;
@@ -93,7 +93,7 @@
             this.unitOption.FormattingEnabled = true;
             this.unitOption.Location = new System.Drawing.Point(111, 112);
             this.unitOption.Name = "unitOption";
-            this.unitOption.Size = new System.Drawing.Size(261, 23);
+            this.unitOption.Size = new System.Drawing.Size(311, 23);
             this.unitOption.TabIndex = 22;
             // 
             // cost
@@ -108,7 +108,7 @@
             0,
             0});
             this.cost.Name = "cost";
-            this.cost.Size = new System.Drawing.Size(261, 23);
+            this.cost.Size = new System.Drawing.Size(311, 23);
             this.cost.TabIndex = 23;
             this.cost.ThousandsSeparator = true;
             // 
@@ -120,7 +120,7 @@
             this.nameTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nameTxt.Location = new System.Drawing.Point(111, 22);
             this.nameTxt.Name = "nameTxt";
-            this.nameTxt.Size = new System.Drawing.Size(261, 23);
+            this.nameTxt.Size = new System.Drawing.Size(311, 23);
             this.nameTxt.TabIndex = 21;
             // 
             // IngredientsForm
@@ -128,7 +128,7 @@
             this.AcceptButton = this.addBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 201);
+            this.ClientSize = new System.Drawing.Size(434, 211);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);

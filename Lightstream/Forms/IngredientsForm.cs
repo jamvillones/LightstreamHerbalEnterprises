@@ -15,18 +15,41 @@ namespace Lightstream.Forms
 {
     public partial class IngredientsForm : Form
     {
-        private DbContextFactory factory = new DbContextFactory();
-        public string IngredientName => ingredientField.IngredientName;
-        public Unit SelectedUnit => ingredientField.UnitOfMeasurement;
-        string UOMString => ingredientField.UnitOfMeasurementString;
-        public decimal Cost => ingredientField.Cost;
-        public bool NewItemCreated { get; private set; }
-        public Ingredient CreatedIngredient { get; private set; }
+        public string IngredientName => nameTxt.Text.Trim();
+        public Unit? SelectedUnit => unitOption.SelectedItem as Unit;
+        public decimal Cost => cost.Value;
+
+        BindingList<Unit> units = new BindingList<Unit>();
+
         GenericRepository<Ingredient> _ingService;
-        public IngredientsForm(GenericRepository<Ingredient> ingService)
+        GenericRepository<Unit> _unitService;
+
+        private Ingredient _referecencedIngredient;
+        public Ingredient ReferencedIngredient
         {
-            _ingService = ingService;
+            get => _referecencedIngredient;
+            set
+            {
+                _referecencedIngredient = value;
+
+                nameTxt.Text = _referecencedIngredient?.Name;
+                cost.Value = _referecencedIngredient?.Cost ?? 0;
+                //unitOption.SelectedItem = _referecencedIngredient?.UnitMeasurement;
+
+                this.Text = _referecencedIngredient is null ? "Add Ingredient" : "Edit Ingredient";
+            }
+        }
+
+        bool EditMode => ReferencedIngredient is not null;
+
+        public IngredientsForm(GenericRepository<Ingredient> ingService, GenericRepository<Unit> unitService, Ingredient? ingredient = null)
+        {
             InitializeComponent();
+
+            _ingService = ingService;
+            _unitService = unitService;
+
+            ReferencedIngredient = ingredient;
         }
 
         private async void addBtn_Click(object sender, EventArgs e)
@@ -38,18 +61,20 @@ namespace Lightstream.Forms
             /// create new ingredient
             var ingredient = new Ingredient()
             {
+                Id = ReferencedIngredient?.Id ?? 0,
                 Name = this.IngredientName,
                 Cost = this.Cost,
-                UnitMeasurement = SelectedUnit ?? new Unit() { SingularName = UOMString }
+                UnitMeasurement = SelectedUnit
             };
 
             await _ingService.Add_Async(ingredient);
 
-            CreatedIngredient = ingredient;
-            NewItemCreated = true;
+            Tag = ingredient;
+            // CreatedIngredient = ingredient;
+            //NewItemCreated = true;
             DialogResult = DialogResult.OK;
         }
-        
+
         private async Task<bool> ValidateFields()
         {
 
@@ -59,16 +84,34 @@ namespace Lightstream.Forms
                 return false;
             }
 
-            var ings = await _ingService.GetAll_Async();
-            if (ings.Any(i => string.Equals(i.Name, this.IngredientName, StringComparison.OrdinalIgnoreCase)))
+            if (!EditMode)
             {
-                MessageBox.Show("Name already taken!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
+                var ings = await _ingService.GetAll_Async();
+                if (ings.Any(i => string.Equals(i.Name, this.IngredientName, StringComparison.OrdinalIgnoreCase)))
+                {
+                    MessageBox.Show("Name already taken!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
             }
 
             return true;
 
-            
+
         }
+
+        private async void IngredientsForm_Load(object sender, EventArgs e)
+        {
+            var units = await _unitService.GetAll_Async();
+            foreach (var u in units.OrderBy(x => x.SingularName))
+                this.units.Add(u);
+
+            unitOption.DataSource = units;
+
+            if (EditMode)
+                unitOption.SelectedItem = units.FirstOrDefault(x => x.Id == ReferencedIngredient.UnitMeasurement.Id);
+        }
+
+
+
     }
 }

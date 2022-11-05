@@ -10,7 +10,15 @@ namespace Lightstream.Usercontrols
     internal sealed partial class IngredientsPage : Form
     {
         DbContextFactory factory = new DbContextFactory();
-        Ingredient? SelectedIngredient => _ingredientsTable.SelectedRows[0].DataBoundItem as Ingredient;
+        Ingredient? SelectedIngredient
+        {
+            get => _ingredientsTable.SelectedRows[0].DataBoundItem as Ingredient;
+
+            set
+            {
+                ingredients[_ingredientsTable.SelectedRows[0].Index] = value;
+            }
+        }
         BindingList<Ingredient> ingredients = new BindingList<Ingredient>();
         bool searchSuccessful = false;
 
@@ -30,11 +38,11 @@ namespace Lightstream.Usercontrols
         }
         void addNewBtn_Click(object sender, EventArgs e)
         {
-            using (var ingredientForm = new Forms.IngredientsForm(_ingredientService))
+            using (var ingredientForm = new Forms.IngredientsForm(_ingredientService, new GenericRepository<Unit>()))
             {
                 if (ingredientForm.ShowDialog() == DialogResult.OK)
-                    if (ingredientForm.NewItemCreated)
-                        ingredients.Add(ingredientForm.CreatedIngredient);
+                    if (ingredientForm.Tag is Ingredient i)
+                        ingredients.Add(i);
             }
         }
         async void searchTxt_KeyDown(object sender, KeyEventArgs e)
@@ -117,20 +125,38 @@ namespace Lightstream.Usercontrols
         }
         async void _ingredientsTable_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.Button != MouseButtons.Left ||
-                e.RowIndex == -1 ||
-                e.ColumnIndex != deleteBtnCol.Index ||
+            if (e.Button != MouseButtons.Left || e.RowIndex == -1)
+                return;
+
+            if (e.ColumnIndex == deleteBtnCol.Index &&
                   MessageBox.Show(
                     "Are you sure you want to remove " + SelectedIngredient?.Name + "?",
                     "",
                     MessageBoxButtons.OKCancel,
-                    MessageBoxIcon.Question) == DialogResult.Cancel
+                    MessageBoxIcon.Question) == DialogResult.OK
                     )
-                return;
+            {
+                if (SelectedIngredient is not null)
+                    if (await DeleteIngredient(SelectedIngredient))
+                        ingredients.Remove(SelectedIngredient);
+            }
 
-            if (SelectedIngredient is not null)
-                if (await DeleteIngredient(SelectedIngredient))
-                    ingredients.Remove(SelectedIngredient);
+            if (e.ColumnIndex == editCol.Index)
+            {
+                using (var ingredientForm = new Forms.IngredientsForm(
+                    _ingredientService,
+                    new GenericRepository<Unit>(),
+                    SelectedIngredient
+                    ))
+                {
+                    if (ingredientForm.ShowDialog() == DialogResult.OK)
+                        if (ingredientForm.Tag is Ingredient i)
+                        {
+                            SelectedIngredient = i;
+                            //ingredients.Add(i);
+                        }
+                }
+            }
         }
     }
 }

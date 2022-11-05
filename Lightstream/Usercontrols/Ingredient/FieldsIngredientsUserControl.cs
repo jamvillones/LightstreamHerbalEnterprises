@@ -19,23 +19,23 @@ namespace Lightstream.Usercontrols.IngredientForm
             InitializeComponent();
         }
 
-        public string IngredientName
-        {
-            get => nameTxt.Text.Trim();
-            set => nameTxt.Text = value;
-        }
-        public Unit UnitOfMeasurement => (Unit)unitOption.SelectedItem;
-        public string UnitOfMeasurementString => unitOption.Text.Trim();
-        public decimal Cost { get => cost.Value; set => cost.Value = value; }
+        //public string IngredientName
+        //{
+        //    get => nameTxt.Text.Trim();
+        //    set => nameTxt.Text = value;
+        //}
+        //public Unit UnitOfMeasurement => (Unit)unitOption.SelectedItem;
+        //public string UnitOfMeasurementString => unitOption.Text.Trim();
+        //public decimal Cost { get => cost.Value; set => cost.Value = value; }
 
         private void FieldsIngredientsUserControl_Load(object sender, EventArgs e)
         {
-            using (var context = new LHE_DBContext())
-            {
-                var units = context.Units.OrderBy(x => x.SingularName).ToArray();
-                unitOption.Items.AddRange(units);
-                unitOption.AutoCompleteCustomSource.AddRange(units.Select(x => x.SingularName).ToArray());
-            }
+            //using (var context = new LHE_DBContext())
+            //{
+            //    var units = context.Units.OrderBy(x => x.SingularName).ToArray();
+            //    unitOption.Items.AddRange(units);
+            //    unitOption.AutoCompleteCustomSource.AddRange(units.Select(x => x.SingularName).ToArray());
+            //}
         }
     }
 }

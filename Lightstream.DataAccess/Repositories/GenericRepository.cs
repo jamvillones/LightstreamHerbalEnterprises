@@ -69,11 +69,11 @@ namespace Lightstream.DataAccess.Repositories
             {
                 using (var cont = _factory.CreateDbContext())
                 {
-                    cont.Update(model);
-                    //cont.Entry(model).State = EntityState.Added;
+                    var newMod = cont.Update(model);
 
                     await cont.SaveChangesAsync();
-                    return model;
+
+                    return newMod.Entity;
                 }
             }
             catch (Exception ex)

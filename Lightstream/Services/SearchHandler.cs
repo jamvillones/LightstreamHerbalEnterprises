@@ -28,11 +28,20 @@ namespace Lightstream.Services
             {
                 itemRef = itemRef.Where(i);
 
-                if (itemRef.Count() > 0 && flow == FilteringFlow.StopUponSatisfaction)
-                    break;
+                //if (itemRef.Count() > 0 && flow == FilteringFlow.StopUponSatisfaction)
+                //    break;
 
-                else if (flow == FilteringFlow.LoopAll)
-                    itemRef = items.ToList();
+                //else if (flow == FilteringFlow.LoopAll)
+                //    itemRef = items.ToList();
+
+                if (flow == FilteringFlow.StopUponSatisfaction)
+                {
+                    if (itemRef.Count() > 0)
+                        break;
+
+                    if (!i.Equals(filteringConditions.Last()))
+                        itemRef = items.ToList();
+                }
             }
 
             return itemRef;

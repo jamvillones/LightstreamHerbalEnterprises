@@ -217,5 +217,36 @@ namespace Lightstream
         {
             OpenForm<UnitMangmtForm>();
         }
+
+        private void _btnSupplierManagement_Click(object sender, EventArgs e)
+        {
+            OpenForm<SupplierManagement>();
+        }
+
+        private void _btnPurchaseOrder_Click(object sender, EventArgs e)
+        {
+            OpenForm<FPO>();
+        }
+
+        private void _btnVat_Click(object sender, EventArgs e)
+        {
+            _Vat vat = new _Vat();
+            vat.ShowDialog();
+        }
+
+        private void _btnSaleSummary_Click(object sender, EventArgs e)
+        {
+            OpenForm<_salesReport>();
+        }
+
+        private void _btnExpiration_Click(object sender, EventArgs e)
+        {
+            OpenForm<_expiry>();
+        }
+
+        private void _btnStock_Click(object sender, EventArgs e)
+        {
+            OpenForm<_stockReport>();
+        }
     }
 }

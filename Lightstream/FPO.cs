@@ -16,5 +16,10 @@ namespace Lightstream
         {
             InitializeComponent();
         }
+
+        private void _close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

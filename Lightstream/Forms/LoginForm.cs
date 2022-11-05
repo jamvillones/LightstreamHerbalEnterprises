@@ -115,6 +115,8 @@ namespace Lightstream
             {
                 loginBtn.Enabled = true;
                 Attempts--;
+                Main main = new Main();
+                main.WindowState = FormWindowState.Maximized;
                 return;
             }
 

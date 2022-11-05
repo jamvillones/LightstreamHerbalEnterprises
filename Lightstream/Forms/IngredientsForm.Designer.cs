@@ -38,9 +38,10 @@
             this.addBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.addBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addBtn.Location = new System.Drawing.Point(208, 135);
+            this.addBtn.Location = new System.Drawing.Point(297, 225);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(158, 30);
+            this.addBtn.Size = new System.Drawing.Size(226, 50);
             this.addBtn.TabIndex = 6;
             this.addBtn.Text = "Add";
             this.addBtn.UseVisualStyleBackColor = false;
@@ -56,19 +57,21 @@
             this.ingredientField.Dock = System.Windows.Forms.DockStyle.Top;
             this.ingredientField.IngredientName = "";
             this.ingredientField.Location = new System.Drawing.Point(0, 0);
+            this.ingredientField.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.ingredientField.Name = "ingredientField";
-            this.ingredientField.Size = new System.Drawing.Size(384, 129);
+            this.ingredientField.Size = new System.Drawing.Size(549, 212);
             this.ingredientField.TabIndex = 7;
             // 
             // IngredientsForm
             // 
             this.AcceptButton = this.addBtn;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 177);
+            this.ClientSize = new System.Drawing.Size(549, 295);
             this.Controls.Add(this.ingredientField);
             this.Controls.Add(this.addBtn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "IngredientsForm";

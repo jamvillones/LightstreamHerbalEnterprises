@@ -17,5 +17,22 @@ namespace Lightstream.Forms
             InitializeComponent();
 
         }
+
+        private void _UMTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void _Add_Click(object sender, EventArgs e)
+        {
+            frmAdd add = new frmAdd();
+            add.ShowDialog();
+        }
+
+        private void _Update_Click(object sender, EventArgs e)
+        {
+            frmUpdate update = new frmUpdate();
+            update.ShowDialog();
+        }
     }
 }

@@ -224,5 +224,17 @@ namespace Lightstream.Forms
                 row.DefaultCellStyle.ForeColor = SystemColors.ControlDarkDark;
 
         }
+
+        private void _addmarkup_Click(object sender, EventArgs e)
+        {
+            _Markup markup = new _Markup();
+            markup.ShowDialog();
+        }
+
+        private void _setDiscount_Click(object sender, EventArgs e)
+        {
+            _Discount discount = new _Discount();
+            discount.ShowDialog();
+        }
     }
 }

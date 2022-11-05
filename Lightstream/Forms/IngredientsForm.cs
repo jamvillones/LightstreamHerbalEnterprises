@@ -49,7 +49,7 @@ namespace Lightstream.Forms
             NewItemCreated = true;
             DialogResult = DialogResult.OK;
         }
-
+        
         private async Task<bool> ValidateFields()
         {
 
@@ -67,6 +67,8 @@ namespace Lightstream.Forms
             }
 
             return true;
+
+            
         }
     }
 }

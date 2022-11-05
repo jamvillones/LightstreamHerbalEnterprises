@@ -111,9 +111,10 @@
             this._save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._save.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this._save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._save.Location = new System.Drawing.Point(248, 169);
+            this._save.Font = new System.Drawing.Font("Bebas Neue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._save.Location = new System.Drawing.Point(272, 169);
             this._save.Name = "_save";
-            this._save.Size = new System.Drawing.Size(174, 30);
+            this._save.Size = new System.Drawing.Size(150, 30);
             this._save.TabIndex = 6;
             this._save.Text = "Save";
             this._save.UseVisualStyleBackColor = false;
@@ -121,6 +122,7 @@
             // 
             // ProductVariantForm
             // 
+            this.AcceptButton = this._save;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 211);

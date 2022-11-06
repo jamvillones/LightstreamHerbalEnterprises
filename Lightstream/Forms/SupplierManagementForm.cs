@@ -24,7 +24,7 @@ namespace Lightstream.Forms
 
         private void _Add_Click(object sender, EventArgs e)
         {
-            frmAdd add = new frmAdd();
+            _unitFrm add = new frmAdd();
             add.ShowDialog();
         }
 

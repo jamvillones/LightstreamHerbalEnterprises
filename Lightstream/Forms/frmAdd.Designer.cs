@@ -1,6 +1,6 @@
 ﻿namespace Lightstream.Forms
 {
-    partial class frmAdd
+    partial class _unitFrm
     {
         /// <summary>
         /// Required designer variable.
@@ -123,7 +123,7 @@
             this._cancel.UseVisualStyleBackColor = false;
             this._cancel.Click += new System.EventHandler(this._cancel_Click);
             // 
-            // frmAdd
+            // _unitFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -138,7 +138,7 @@
             this.Font = new System.Drawing.Font("Bebas Neue", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmAdd";
+            this.Name = "_unitFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAdd";
             this.panel1.ResumeLayout(false);

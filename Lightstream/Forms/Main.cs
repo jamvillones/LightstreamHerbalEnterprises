@@ -198,7 +198,8 @@ namespace Lightstream
         private void button12_Click(object sender, EventArgs e)
         {
             ChangeButtonStateUponClick(sender as Button);
-            OpenForm<UnitMangmtForm>();
+            UnitMangmtForm unitmagmnt = new(new GenericRepository<Unit>());
+            OpenForm(unitmagmnt);
         }
 
         private void _btnSupplierManagement_Click(object sender, EventArgs e)

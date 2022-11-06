@@ -16,11 +16,11 @@ namespace Lightstream.Forms
     {
         Unit? SeelectedUnit
         {
-            get => _UMtable.SelectedRows[0].DataBoundItem as Unit;
+            get => _unitsTable.SelectedRows[0].DataBoundItem as Unit;
 
             set
             {
-                unit[_UMitsTable.SelectedRows[0].Index] = value;
+                unit[_unitsTable.SelectedRows[0].Index] = value;
             }
         }
         BindingList<Unit> unit = new BindingList<Unit>();
@@ -31,13 +31,14 @@ namespace Lightstream.Forms
             InitializeComponent();
             _unitService = unitService;
             _unitsTable.AutoGenerateColumns = false;
+            SetDataGridColumnBindings();
 
         }
         //gawa datagrid dataloader
         //para makuha data sa database 
         private void getUnitMngmt()
         {
-            _UMTable.AutoGenerateColumns = false;
+            _unitsTable.AutoGenerateColumns = false;
             //_UMTable.DataSource = 
            
         }
@@ -49,8 +50,7 @@ namespace Lightstream.Forms
 
         private void _Add_Click(object sender, EventArgs e)
         {
-            frmAdd add = new frmAdd();
-            add.ShowDialog();
+          
         }
 
         private void _Update_Click(object sender, EventArgs e)
@@ -58,5 +58,26 @@ namespace Lightstream.Forms
             frmUpdate update = new frmUpdate();
             update.ShowDialog();
         }
+
+        async void UnitMangmtForm_Load(object sender, EventArgs e)
+        {
+            _unitsTable.DataSource = unit;
+            await LoadAllUnits();
+        }
+        async Task LoadAllUnits()
+        {
+            var unit = await _unitService.GetAll_Async();
+
+            this.unit.Clear();
+
+            foreach (var i in unit)
+                this.unit.Add(i);
+        }
+        void SetDataGridColumnBindings()
+        {
+            _unitsTable.AutoGenerateColumns = false;
+           _unitName.DataPropertyName = nameof(Unit.SingularName);
+        }
+
     }
 }

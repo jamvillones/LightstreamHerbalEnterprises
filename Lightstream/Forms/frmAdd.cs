@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace Lightstream.Forms
 {
-    public partial class frmAdd : Form
+    public partial class _unitFrm : Form
     {
         private GenericRepository<Unit> _unitService;
-        public frmAdd(GenericRepository<Unit>unitService)
+        public _unitFrm(GenericRepository<Unit>unitService)
         {
             InitializeComponent();
         }
@@ -28,7 +28,7 @@ namespace Lightstream.Forms
 
         private void _save_Click(object sender, EventArgs e)
         {
-            UnitMangmtForm f = new UnitMangmtForm();
+            var f = new UnitForm();
             f.ShowDialog();
              //wala ka ng gagawin ishoshow mo nalang to
         }

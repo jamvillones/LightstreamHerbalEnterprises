@@ -28,107 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
-            this._UMTable = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._statusOption = new System.Windows.Forms.ComboBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this._unitsTable = new System.Windows.Forms.DataGridView();
             this._Add = new System.Windows.Forms.Button();
             this._Retrieve = new System.Windows.Forms.Button();
             this._Archive = new System.Windows.Forms.Button();
             this._Update = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this._UMTable)).BeginInit();
+            this._unitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._unitDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this._unitsTable)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // _unitsTable
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bebas Neue", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(744, 16);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 44);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Filter:";
-            // 
-            // _UMTable
-            // 
-            this._UMTable.AllowUserToAddRows = false;
-            this._UMTable.AllowUserToDeleteRows = false;
-            this._UMTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this._unitsTable.AllowUserToAddRows = false;
+            this._unitsTable.AllowUserToDeleteRows = false;
+            this._unitsTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this._UMTable.BackgroundColor = System.Drawing.Color.White;
-            this._UMTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this._UMTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this._UMTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bebas Neue", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this._UMTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this._UMTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this._UMTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2,
-            this.Column1,
-            this.Column3});
-            this._UMTable.Location = new System.Drawing.Point(98, 81);
-            this._UMTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this._UMTable.Name = "_UMTable";
-            this._UMTable.ReadOnly = true;
-            this._UMTable.RowHeadersVisible = false;
-            this._UMTable.RowHeadersWidth = 62;
-            this._UMTable.RowTemplate.Height = 25;
-            this._UMTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._UMTable.Size = new System.Drawing.Size(959, 537);
-            this._UMTable.TabIndex = 1;
-            this._UMTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._UMTable_CellContentClick);
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column2.HeaderText = "Unit Name";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 167;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Description";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column3.HeaderText = "Status";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 129;
-            // 
-            // _statusOption
-            // 
-            this._statusOption.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._statusOption.Font = new System.Drawing.Font("Bebas Neue", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._statusOption.FormattingEnabled = true;
-            this._statusOption.Items.AddRange(new object[] {
-            "Active",
-            "Inactive"});
-            this._statusOption.Location = new System.Drawing.Point(843, 13);
-            this._statusOption.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this._statusOption.Name = "_statusOption";
-            this._statusOption.Size = new System.Drawing.Size(214, 52);
-            this._statusOption.TabIndex = 4;
+            this._unitsTable.BackgroundColor = System.Drawing.Color.White;
+            this._unitsTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this._unitsTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this._unitsTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bebas Neue", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._unitsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this._unitsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._unitsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this._unitName,
+            this._unitDesc});
+            this._unitsTable.Location = new System.Drawing.Point(98, 81);
+            this._unitsTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this._unitsTable.Name = "_unitsTable";
+            this._unitsTable.ReadOnly = true;
+            this._unitsTable.RowHeadersVisible = false;
+            this._unitsTable.RowHeadersWidth = 62;
+            this._unitsTable.RowTemplate.Height = 25;
+            this._unitsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this._unitsTable.Size = new System.Drawing.Size(959, 537);
+            this._unitsTable.TabIndex = 1;
+            this._unitsTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._UMTable_CellContentClick);
             // 
             // _Add
             // 
@@ -188,6 +132,23 @@
             this._Update.UseVisualStyleBackColor = false;
             this._Update.Click += new System.EventHandler(this._Update_Click);
             // 
+            // _unitName
+            // 
+            this._unitName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this._unitName.HeaderText = "Unit Name";
+            this._unitName.MinimumWidth = 8;
+            this._unitName.Name = "_unitName";
+            this._unitName.ReadOnly = true;
+            this._unitName.Width = 167;
+            // 
+            // _unitDesc
+            // 
+            this._unitDesc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._unitDesc.HeaderText = "Description";
+            this._unitDesc.MinimumWidth = 8;
+            this._unitDesc.Name = "_unitDesc";
+            this._unitDesc.ReadOnly = true;
+            // 
             // UnitMangmtForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -198,9 +159,7 @@
             this.Controls.Add(this._Archive);
             this.Controls.Add(this._Retrieve);
             this.Controls.Add(this._Add);
-            this.Controls.Add(this._statusOption);
-            this.Controls.Add(this._UMTable);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this._unitsTable);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
@@ -208,23 +167,19 @@
             this.Name = "UnitMangmtForm";
             this.Padding = new System.Windows.Forms.Padding(29, 0, 29, 33);
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this._UMTable)).EndInit();
+            this.Load += new System.EventHandler(this.UnitMangmtForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this._unitsTable)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private Label label1;
-        private DataGridView _UMTable;
-        private ComboBox _statusOption;
+        private DataGridView _unitsTable;
         private Button _Add;
         private Button _Retrieve;
         private Button _Archive;
         private Button _Update;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn _unitName;
+        private DataGridViewTextBoxColumn _unitDesc;
     }
 }

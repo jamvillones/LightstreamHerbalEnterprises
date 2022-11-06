@@ -22,6 +22,17 @@ namespace Lightstream.Forms
         private BindingList<ProductViewModel> products;
         private BindingList<ProductVariant> variants;
 
+        private bool _changesMade = false;
+        public bool ChangesMade
+        {
+            get { return _changesMade; }
+            set
+            {
+                _changesMade = value;
+                button4.Enabled = _changesMade;
+            }
+        }
+
         private ProductVariant? selectedVariant
         {
             get
@@ -106,7 +117,10 @@ namespace Lightstream.Forms
             if (sender is DataGridView table)
                 if (table.SelectedRows.Count > 0)
                     if (table.SelectedRows[0].DataBoundItem is ProductViewModel p)
+                    {
                         SelectedProduct = p.Data;
+                        ChangesMade = false;
+                    }
         }
 
         private void _variants_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -115,14 +129,20 @@ namespace Lightstream.Forms
                 return;
 
             if (e.ColumnIndex == delCol.Index)
+            {
                 _variantsTable.Rows.RemoveAt(e.RowIndex);
+                ChangesMade = true;
+            }
 
             if (e.ColumnIndex == editCol.Index)
             {
                 var v = OpenVariantForm(selectedVariant);
 
                 if (v is not null)
+                {
                     selectedVariant = v;
+                    ChangesMade = true;
+                }
             }
         }
 
@@ -184,7 +204,10 @@ namespace Lightstream.Forms
         {
             var v = OpenVariantForm();
             if (v is not null)
+            {
                 variants.Add(v);
+                ChangesMade = true;
+            }
         }
 
         ProductVariant? OpenVariantForm(ProductVariant? v = null)
@@ -202,18 +225,21 @@ namespace Lightstream.Forms
 
             return null;
         }
-        bool changesMade = true;
+        //ool changesMade = true;
         private async void button4_Click(object sender, EventArgs e)
         {
             var prod = SelectedProduct;
             prod.ProductVariants = variants.ToList();
 
-            if (changesMade)
+            if (ChangesMade)
             {
                 var productSaved = await _productService.Update_Async(prod);
 
                 if (productSaved is not null)
+                {
                     MessageBox.Show("Product saved!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ChangesMade = false;
+                }
             }
         }
 

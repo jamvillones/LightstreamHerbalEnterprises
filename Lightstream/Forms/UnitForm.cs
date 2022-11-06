@@ -15,7 +15,9 @@ namespace Lightstream.Forms
     public partial class UnitForm : Form
     {
         DbContextFactory factory = new DbContextFactory();
-        public Unit ResultingUnit { get; private set; } = null!;
+
+        private Unit ResultingUnit = null!;
+
         public UnitForm()
         {
             InitializeComponent();
@@ -72,7 +74,10 @@ namespace Lightstream.Forms
         {
             if (ValidationSuccessful())
                 if (SaveUnit())
+                {
+                    Tag = ResultingUnit;
                     DialogResult = DialogResult.OK;
+                }
         }
     }
 }

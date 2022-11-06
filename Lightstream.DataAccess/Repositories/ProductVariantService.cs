@@ -45,7 +45,7 @@ namespace Lightstream.DataAccess.Repositories
                         if (!product.ProductVariants.Any(x => x.Id == v.Id))
                         {
                             cont.Entry(v).State = EntityState.Modified;
-                            v.Archived = true;
+                            v.IsArchived = true;
                         }
                     }
 

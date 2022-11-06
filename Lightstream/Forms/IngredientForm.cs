@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Lightstream.Forms
 {
-    public partial class IngredientsForm : Form
+    public partial class IngredientForm : Form
     {
         public string IngredientName => nameTxt.Text.Trim();
         public Unit? SelectedUnit => unitOption.SelectedItem as Unit;
@@ -41,7 +41,7 @@ namespace Lightstream.Forms
 
         bool EditMode => ReferencedIngredient is not null;
 
-        public IngredientsForm(GenericRepository<Ingredient> ingService, GenericRepository<Unit> unitService, Ingredient? ingredient = null)
+        public IngredientForm(GenericRepository<Ingredient> ingService, GenericRepository<Unit> unitService, Ingredient? ingredient = null)
         {
             InitializeComponent();
 

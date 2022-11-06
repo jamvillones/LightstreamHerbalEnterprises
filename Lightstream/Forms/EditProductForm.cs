@@ -191,7 +191,8 @@ namespace Lightstream.Forms
 
             if (result == DialogResult.OK)
             {
-                var unit = unitForm.ResultingUnit;
+                var unit = unitForm.Tag as Unit;
+
                 units.Add(unit);
                 _unitOption.SelectedItem = unit;
             }

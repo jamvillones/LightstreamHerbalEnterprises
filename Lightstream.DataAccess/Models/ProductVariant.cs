@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Lightstream.DataAccess.Models
 {
     [Table("ProductVariant")]
-    public class ProductVariant : IIDModel
+    public class ProductVariant : IIDModel,IArchivable
     {
         public int Id { get; set; }
         [Required]
@@ -20,6 +20,7 @@ namespace Lightstream.DataAccess.Models
         [Required]
         public decimal Cost { get; set; }
         [Required]
-        public bool Archived { get; set; } = false;
+        public bool IsArchived { get; set; } = false;
+        //public bool IsArchived { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

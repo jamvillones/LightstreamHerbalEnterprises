@@ -17,7 +17,6 @@ using System.Windows.Forms;
 
 namespace Lightstream
 {
-
     public partial class Main : Form, ILogoutForm
     {
         Panel[] collapsiblePanels;
@@ -191,14 +190,14 @@ namespace Lightstream
         private void button11_Click_1(object sender, EventArgs e)
         {
             ChangeButtonStateUponClick(sender as Button);
-            PriceManagementForm priceManagement = new(new ProductVariantService());
+            PriceManagementPage priceManagement = new(new ProductVariantService());
             OpenForm(priceManagement);
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
             ChangeButtonStateUponClick(sender as Button);
-            UnitMangmtForm unitmagmnt = new(new GenericRepository<Unit>());
+            UnitManagementPage unitmagmnt = new(new GenericRepository<Unit>());
             OpenForm(unitmagmnt);
         }
 

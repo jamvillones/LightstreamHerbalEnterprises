@@ -38,7 +38,7 @@ namespace Lightstream.Usercontrols
         }
         void addNewBtn_Click(object sender, EventArgs e)
         {
-            using (var ingredientForm = new Forms.IngredientsForm(_ingredientService, new GenericRepository<Unit>()))
+            using (var ingredientForm = new Forms.IngredientForm(_ingredientService, new GenericRepository<Unit>()))
             {
                 if (ingredientForm.ShowDialog() == DialogResult.OK)
                     if (ingredientForm.Tag is Ingredient i)
@@ -143,7 +143,7 @@ namespace Lightstream.Usercontrols
 
             if (e.ColumnIndex == editCol.Index)
             {
-                using (var ingredientForm = new Forms.IngredientsForm(
+                using (var ingredientForm = new Forms.IngredientForm(
                     _ingredientService,
                     new GenericRepository<Unit>(),
                     SelectedIngredient

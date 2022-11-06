@@ -1,6 +1,6 @@
 ﻿namespace Lightstream.Forms
 {
-    partial class PriceManagementForm
+    partial class PriceManagementPage
     {
         /// <summary>
         /// Required designer variable.

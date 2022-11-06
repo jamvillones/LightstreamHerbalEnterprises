@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace Lightstream.Forms
 {
-    public partial class PriceManagementForm : Form
+    public partial class PriceManagementPage : Form
     {
         GenericRepository<Product> _productService;
 
@@ -60,12 +60,12 @@ namespace Lightstream.Forms
                 _selectedProductName.Text = _selectedProduct.Name;
                 variants.Clear();
 
-                foreach (var v in _selectedProduct.ProductVariants.Where(v => !v.Archived))
+                foreach (var v in _selectedProduct.ProductVariants.Where(v => !v.IsArchived))
                     variants.Add(v);
             }
         }
 
-        public PriceManagementForm(GenericRepository<Product> productService)
+        public PriceManagementPage(GenericRepository<Product> productService)
         {
             InitializeComponent();
 

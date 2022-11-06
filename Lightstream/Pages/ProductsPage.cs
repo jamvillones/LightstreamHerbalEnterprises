@@ -336,9 +336,11 @@ namespace Lightstream.Usercontrols
 
             if (result == DialogResult.OK)
             {
-                var unit = unitForm.ResultingUnit;
-                units.Add(unit);
-                _unitOption.SelectedItem = unit;
+                if (unitForm.Tag is Unit u)
+                {
+                    units.Add(u);
+                    _unitOption.SelectedItem = u;
+                }
             }
 
         }

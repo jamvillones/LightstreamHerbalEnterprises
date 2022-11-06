@@ -53,6 +53,7 @@
             this.proc = new System.Windows.Forms.Button();
             this.srchText = new System.Windows.Forms.TextBox();
             this.pnlPOS1 = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -62,52 +63,56 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.pnlPOS1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.pnlPOS2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // labelProductname
             // 
             this.labelProductname.AutoSize = true;
-            this.labelProductname.Location = new System.Drawing.Point(34, 72);
+            this.labelProductname.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelProductname.Location = new System.Drawing.Point(50, 89);
             this.labelProductname.Name = "labelProductname";
-            this.labelProductname.Size = new System.Drawing.Size(87, 15);
+            this.labelProductname.Size = new System.Drawing.Size(65, 15);
             this.labelProductname.TabIndex = 0;
             this.labelProductname.Text = "Product Name:";
             // 
             // labelQuantity
             // 
             this.labelQuantity.AutoSize = true;
-            this.labelQuantity.Location = new System.Drawing.Point(85, 128);
+            this.labelQuantity.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelQuantity.Location = new System.Drawing.Point(85, 161);
             this.labelQuantity.Name = "labelQuantity";
-            this.labelQuantity.Size = new System.Drawing.Size(36, 15);
+            this.labelQuantity.Size = new System.Drawing.Size(30, 15);
             this.labelQuantity.TabIndex = 1;
             this.labelQuantity.Text = "Price:";
             // 
             // textBoxQuantity
             // 
-            this.textBoxQuantity.Location = new System.Drawing.Point(124, 125);
+            this.textBoxQuantity.Location = new System.Drawing.Point(124, 157);
             this.textBoxQuantity.Name = "textBoxQuantity";
             this.textBoxQuantity.Size = new System.Drawing.Size(248, 23);
             this.textBoxQuantity.TabIndex = 2;
             // 
             // textBoxProdName
             // 
-            this.textBoxProdName.Location = new System.Drawing.Point(124, 69);
+            this.textBoxProdName.Location = new System.Drawing.Point(124, 85);
             this.textBoxProdName.Name = "textBoxProdName";
             this.textBoxProdName.Size = new System.Drawing.Size(248, 23);
             this.textBoxProdName.TabIndex = 3;
             // 
             // Addbutton
             // 
-            this.Addbutton.Location = new System.Drawing.Point(54, 154);
+            this.Addbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Addbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Addbutton.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Addbutton.Location = new System.Drawing.Point(54, 190);
             this.Addbutton.Name = "Addbutton";
             this.Addbutton.Size = new System.Drawing.Size(75, 23);
             this.Addbutton.TabIndex = 4;
@@ -116,7 +121,10 @@
             // 
             // PAYbutton
             // 
-            this.PAYbutton.Location = new System.Drawing.Point(135, 154);
+            this.PAYbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.PAYbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PAYbutton.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PAYbutton.Location = new System.Drawing.Point(135, 190);
             this.PAYbutton.Name = "PAYbutton";
             this.PAYbutton.Size = new System.Drawing.Size(75, 23);
             this.PAYbutton.TabIndex = 5;
@@ -125,7 +133,10 @@
             // 
             // DELETEbutton
             // 
-            this.DELETEbutton.Location = new System.Drawing.Point(216, 154);
+            this.DELETEbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.DELETEbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DELETEbutton.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DELETEbutton.Location = new System.Drawing.Point(216, 190);
             this.DELETEbutton.Name = "DELETEbutton";
             this.DELETEbutton.Size = new System.Drawing.Size(75, 23);
             this.DELETEbutton.TabIndex = 6;
@@ -134,7 +145,10 @@
             // 
             // CANCELbutton
             // 
-            this.CANCELbutton.Location = new System.Drawing.Point(297, 154);
+            this.CANCELbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.CANCELbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CANCELbutton.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CANCELbutton.Location = new System.Drawing.Point(297, 190);
             this.CANCELbutton.Name = "CANCELbutton";
             this.CANCELbutton.Size = new System.Drawing.Size(75, 23);
             this.CANCELbutton.TabIndex = 7;
@@ -144,8 +158,9 @@
             // RETURNbtn
             // 
             this.RETURNbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.RETURNbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(144)))), ((int)(((byte)(44)))));
+            this.RETURNbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.RETURNbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RETURNbtn.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RETURNbtn.Location = new System.Drawing.Point(8, 9);
             this.RETURNbtn.Name = "RETURNbtn";
             this.RETURNbtn.Size = new System.Drawing.Size(100, 35);
@@ -156,8 +171,9 @@
             // QUEUEbtn
             // 
             this.QUEUEbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.QUEUEbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(144)))), ((int)(((byte)(44)))));
+            this.QUEUEbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.QUEUEbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.QUEUEbtn.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.QUEUEbtn.Location = new System.Drawing.Point(116, 9);
             this.QUEUEbtn.Name = "QUEUEbtn";
             this.QUEUEbtn.Size = new System.Drawing.Size(100, 35);
@@ -168,54 +184,60 @@
             // Totallbl
             // 
             this.Totallbl.AutoSize = true;
+            this.Totallbl.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Totallbl.Location = new System.Drawing.Point(41, 39);
             this.Totallbl.Name = "Totallbl";
-            this.Totallbl.Size = new System.Drawing.Size(35, 15);
+            this.Totallbl.Size = new System.Drawing.Size(30, 15);
             this.Totallbl.TabIndex = 11;
             this.Totallbl.Text = "Total:";
             // 
             // Discountlbl
             // 
             this.Discountlbl.AutoSize = true;
-            this.Discountlbl.Location = new System.Drawing.Point(19, 75);
+            this.Discountlbl.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Discountlbl.Location = new System.Drawing.Point(27, 75);
             this.Discountlbl.Name = "Discountlbl";
-            this.Discountlbl.Size = new System.Drawing.Size(57, 15);
+            this.Discountlbl.Size = new System.Drawing.Size(44, 15);
             this.Discountlbl.TabIndex = 12;
             this.Discountlbl.Text = "Discount:";
             // 
             // VATlbl
             // 
             this.VATlbl.AutoSize = true;
-            this.VATlbl.Location = new System.Drawing.Point(47, 111);
+            this.VATlbl.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.VATlbl.Location = new System.Drawing.Point(49, 111);
             this.VATlbl.Name = "VATlbl";
-            this.VATlbl.Size = new System.Drawing.Size(29, 15);
+            this.VATlbl.Size = new System.Drawing.Size(22, 15);
             this.VATlbl.TabIndex = 13;
             this.VATlbl.Text = "VAT:";
             // 
             // GrandTotallbl
             // 
             this.GrandTotallbl.AutoSize = true;
-            this.GrandTotallbl.Location = new System.Drawing.Point(6, 147);
+            this.GrandTotallbl.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.GrandTotallbl.Location = new System.Drawing.Point(14, 147);
             this.GrandTotallbl.Name = "GrandTotallbl";
-            this.GrandTotallbl.Size = new System.Drawing.Size(70, 15);
+            this.GrandTotallbl.Size = new System.Drawing.Size(57, 15);
             this.GrandTotallbl.TabIndex = 14;
             this.GrandTotallbl.Text = "Grand Total:";
             // 
             // cashlbl
             // 
             this.cashlbl.AutoSize = true;
-            this.cashlbl.Location = new System.Drawing.Point(40, 183);
+            this.cashlbl.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cashlbl.Location = new System.Drawing.Point(43, 183);
             this.cashlbl.Name = "cashlbl";
-            this.cashlbl.Size = new System.Drawing.Size(36, 15);
+            this.cashlbl.Size = new System.Drawing.Size(28, 15);
             this.cashlbl.TabIndex = 15;
             this.cashlbl.Text = "Cash:";
             // 
             // changelbl
             // 
             this.changelbl.AutoSize = true;
-            this.changelbl.Location = new System.Drawing.Point(25, 219);
+            this.changelbl.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.changelbl.Location = new System.Drawing.Point(33, 219);
             this.changelbl.Name = "changelbl";
-            this.changelbl.Size = new System.Drawing.Size(51, 15);
+            this.changelbl.Size = new System.Drawing.Size(38, 15);
             this.changelbl.TabIndex = 16;
             this.changelbl.Text = "Change:";
             // 
@@ -276,8 +298,9 @@
             // proc
             // 
             this.proc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.proc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(144)))), ((int)(((byte)(44)))));
+            this.proc.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.proc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.proc.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.proc.Location = new System.Drawing.Point(224, 9);
             this.proc.Name = "proc";
             this.proc.Size = new System.Drawing.Size(170, 35);
@@ -313,12 +336,24 @@
             this.pnlPOS1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlPOS1.Location = new System.Drawing.Point(10, 10);
             this.pnlPOS1.Name = "pnlPOS1";
-            this.pnlPOS1.Size = new System.Drawing.Size(868, 189);
+            this.pnlPOS1.Size = new System.Drawing.Size(868, 225);
             this.pnlPOS1.TabIndex = 26;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(391, 12);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.Size = new System.Drawing.Size(457, 201);
+            this.dataGridView2.TabIndex = 30;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(124, 41);
+            this.textBox2.Location = new System.Drawing.Point(124, 49);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(248, 23);
             this.textBox2.TabIndex = 29;
@@ -326,15 +361,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 44);
+            this.label3.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(40, 53);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 15);
+            this.label3.Size = new System.Drawing.Size(75, 15);
             this.label3.TabIndex = 28;
             this.label3.Text = "Product number:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(124, 97);
+            this.textBox1.Location = new System.Drawing.Point(124, 121);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(248, 23);
             this.textBox1.TabIndex = 27;
@@ -342,9 +378,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(51, 100);
+            this.label2.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(60, 125);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 15);
+            this.label2.Size = new System.Drawing.Size(55, 15);
             this.label2.TabIndex = 26;
             this.label2.Text = "Description:";
             // 
@@ -364,7 +401,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainer1.Location = new System.Drawing.Point(10, 199);
+            this.splitContainer1.Location = new System.Drawing.Point(10, 235);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -389,7 +426,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.GRANDTOTALtextbox);
             this.splitContainer1.Panel2.Controls.Add(this.cashlbl);
             this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(5);
-            this.splitContainer1.Size = new System.Drawing.Size(868, 288);
+            this.splitContainer1.Size = new System.Drawing.Size(868, 252);
             this.splitContainer1.SplitterDistance = 561;
             this.splitContainer1.TabIndex = 26;
             // 
@@ -400,7 +437,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(5, 35);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(551, 248);
+            this.dataGridView1.Size = new System.Drawing.Size(551, 212);
             this.dataGridView1.TabIndex = 25;
             // 
             // label1
@@ -425,18 +462,6 @@
             this.label4.Text = "DETAILS";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(385, 12);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(463, 165);
-            this.dataGridView2.TabIndex = 30;
-            // 
             // FPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -451,6 +476,7 @@
             this.Text = "Point of Sale";
             this.pnlPOS1.ResumeLayout(false);
             this.pnlPOS1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.pnlPOS2.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -458,7 +484,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }

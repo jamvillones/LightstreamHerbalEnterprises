@@ -34,9 +34,8 @@ namespace Lightstream.Forms
 
                 nameTxt.Text = _referecencedIngredient?.Name;
                 cost.Value = _referecencedIngredient?.Cost ?? 0;
-                //unitOption.SelectedItem = _referecencedIngredient?.UnitMeasurement;
 
-                this.Text = _referecencedIngredient is null ? "Add Ingredient" : "Edit Ingredient";
+                this.Text = _referecencedIngredient is null ? "Create Ingredient" : "Edit Ingredient";
             }
         }
 
@@ -111,7 +110,9 @@ namespace Lightstream.Forms
                 unitOption.SelectedItem = units.FirstOrDefault(x => x.Id == ReferencedIngredient.UnitMeasurement.Id);
         }
 
+        private void nameTxt_TextChanged(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

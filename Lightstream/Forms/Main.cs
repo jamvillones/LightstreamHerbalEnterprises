@@ -18,33 +18,14 @@ using System.Windows.Forms;
 namespace Lightstream
 {
 
-    public partial class Main : Form,ILogoutForm
+    public partial class Main : Form, ILogoutForm
     {
-
-        //public const int WM_NCLBUTTONDOWN = 0xA1;
-        //public const int HT_CAPTION = 0x2;
-
-        //[System.Runtime.InteropServices.DllImport("user32.dll")]
-        //public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        //[System.Runtime.InteropServices.DllImport("user32.dll")]
-        //public static extern bool ReleaseCapture();
-
         Panel[] collapsiblePanels;
         Button? currentButton = null;
         Form? currentForm = null;
         Color selectedButtonColor = Color.FromArgb(66, 120, 37);
         Color normalButtonColor = Color.FromArgb(45, 45, 45);
         public bool IsLoggedout { get; private set; } = false;
-        //protected override void WndProc(ref Message message)
-        //{
-        //    const int WM_NCHITTEST = 0x0084;
-
-        //    if (message.Msg == WM_NCHITTEST)
-        //        return;
-
-        //    base.WndProc(ref message);
-        //}
-
         public Main()
         {
             InitializeComponent();
@@ -198,6 +179,7 @@ namespace Lightstream
 
         private void button14_Click(object sender, EventArgs e)
         {
+            ChangeButtonStateUponClick(sender as Button);
             OpenForm<FPOS>();
         }
 
@@ -215,16 +197,19 @@ namespace Lightstream
 
         private void button12_Click(object sender, EventArgs e)
         {
+            ChangeButtonStateUponClick(sender as Button);
             OpenForm<UnitMangmtForm>();
         }
 
         private void _btnSupplierManagement_Click(object sender, EventArgs e)
         {
+            ChangeButtonStateUponClick(sender as Button);
             OpenForm<SupplierManagement>();
         }
 
         private void _btnPurchaseOrder_Click(object sender, EventArgs e)
         {
+            ChangeButtonStateUponClick(sender as Button);
             OpenForm<FPO>();
         }
 
@@ -236,16 +221,19 @@ namespace Lightstream
 
         private void _btnSaleSummary_Click(object sender, EventArgs e)
         {
+            ChangeButtonStateUponClick(sender as Button);
             OpenForm<_salesReport>();
         }
 
         private void _btnExpiration_Click(object sender, EventArgs e)
         {
+            ChangeButtonStateUponClick(sender as Button);
             OpenForm<_expiry>();
         }
 
         private void _btnStock_Click(object sender, EventArgs e)
         {
+            ChangeButtonStateUponClick(sender as Button);
             OpenForm<_stockReport>();
         }
     }

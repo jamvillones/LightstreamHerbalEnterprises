@@ -73,7 +73,6 @@
             // 
             // _sideButtonPanel
             // 
-            this._sideButtonPanel.AutoSize = true;
             this._sideButtonPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this._sideButtonPanel.Controls.Add(this._reportsPanel);
             this._sideButtonPanel.Controls.Add(this._mainBtn_Reports);
@@ -86,7 +85,7 @@
             this._sideButtonPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._sideButtonPanel.Location = new System.Drawing.Point(0, 0);
             this._sideButtonPanel.Name = "_sideButtonPanel";
-            this._sideButtonPanel.Size = new System.Drawing.Size(168, 610);
+            this._sideButtonPanel.Size = new System.Drawing.Size(168, 469);
             this._sideButtonPanel.TabIndex = 1;
             // 
             // _reportsPanel
@@ -115,13 +114,13 @@
             this._btnStock.Image = ((System.Drawing.Image)(resources.GetObject("_btnStock.Image")));
             this._btnStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnStock.Location = new System.Drawing.Point(0, 83);
-            this._btnStock.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this._btnStock.Margin = new System.Windows.Forms.Padding(5);
             this._btnStock.Name = "_btnStock";
-            this._btnStock.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this._btnStock.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this._btnStock.Size = new System.Drawing.Size(168, 45);
             this._btnStock.TabIndex = 6;
             this._btnStock.TabStop = false;
-            this._btnStock.Text = "Stock";
+            this._btnStock.Text = "  STOCK";
             this._btnStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._btnStock.UseVisualStyleBackColor = false;
@@ -139,13 +138,13 @@
             this._btnExpiration.Image = ((System.Drawing.Image)(resources.GetObject("_btnExpiration.Image")));
             this._btnExpiration.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnExpiration.Location = new System.Drawing.Point(0, 38);
-            this._btnExpiration.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this._btnExpiration.Margin = new System.Windows.Forms.Padding(5);
             this._btnExpiration.Name = "_btnExpiration";
-            this._btnExpiration.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this._btnExpiration.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this._btnExpiration.Size = new System.Drawing.Size(168, 45);
             this._btnExpiration.TabIndex = 5;
             this._btnExpiration.TabStop = false;
-            this._btnExpiration.Text = "Expiration";
+            this._btnExpiration.Text = "  EXPIRATION";
             this._btnExpiration.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnExpiration.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._btnExpiration.UseVisualStyleBackColor = false;
@@ -163,13 +162,13 @@
             this._btnSaleSummary.Image = ((System.Drawing.Image)(resources.GetObject("_btnSaleSummary.Image")));
             this._btnSaleSummary.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnSaleSummary.Location = new System.Drawing.Point(0, 0);
-            this._btnSaleSummary.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this._btnSaleSummary.Margin = new System.Windows.Forms.Padding(5);
             this._btnSaleSummary.Name = "_btnSaleSummary";
-            this._btnSaleSummary.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this._btnSaleSummary.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this._btnSaleSummary.Size = new System.Drawing.Size(168, 38);
             this._btnSaleSummary.TabIndex = 4;
             this._btnSaleSummary.TabStop = false;
-            this._btnSaleSummary.Text = "Sales Summary";
+            this._btnSaleSummary.Text = "  SALES SUMMARY";
             this._btnSaleSummary.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnSaleSummary.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._btnSaleSummary.UseVisualStyleBackColor = false;
@@ -186,13 +185,13 @@
             this._mainBtn_Reports.Image = ((System.Drawing.Image)(resources.GetObject("_mainBtn_Reports.Image")));
             this._mainBtn_Reports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._mainBtn_Reports.Location = new System.Drawing.Point(0, 585);
-            this._mainBtn_Reports.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this._mainBtn_Reports.Margin = new System.Windows.Forms.Padding(5);
             this._mainBtn_Reports.Name = "_mainBtn_Reports";
             this._mainBtn_Reports.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this._mainBtn_Reports.Size = new System.Drawing.Size(168, 50);
             this._mainBtn_Reports.TabIndex = 7;
             this._mainBtn_Reports.TabStop = false;
-            this._mainBtn_Reports.Text = "Reports";
+            this._mainBtn_Reports.Text = "  Reports";
             this._mainBtn_Reports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._mainBtn_Reports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._mainBtn_Reports.UseVisualStyleBackColor = true;
@@ -224,13 +223,13 @@
             this._btnVat.Image = ((System.Drawing.Image)(resources.GetObject("_btnVat.Image")));
             this._btnVat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnVat.Location = new System.Drawing.Point(0, 90);
-            this._btnVat.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this._btnVat.Margin = new System.Windows.Forms.Padding(5);
             this._btnVat.Name = "_btnVat";
-            this._btnVat.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this._btnVat.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this._btnVat.Size = new System.Drawing.Size(168, 30);
             this._btnVat.TabIndex = 6;
             this._btnVat.TabStop = false;
-            this._btnVat.Text = "VAT";
+            this._btnVat.Text = "  VAT";
             this._btnVat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnVat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._btnVat.UseVisualStyleBackColor = false;
@@ -248,13 +247,13 @@
             this._btnRawMaterials.Image = ((System.Drawing.Image)(resources.GetObject("_btnRawMaterials.Image")));
             this._btnRawMaterials.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnRawMaterials.Location = new System.Drawing.Point(0, 45);
-            this._btnRawMaterials.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this._btnRawMaterials.Margin = new System.Windows.Forms.Padding(5);
             this._btnRawMaterials.Name = "_btnRawMaterials";
-            this._btnRawMaterials.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this._btnRawMaterials.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this._btnRawMaterials.Size = new System.Drawing.Size(168, 45);
             this._btnRawMaterials.TabIndex = 5;
             this._btnRawMaterials.TabStop = false;
-            this._btnRawMaterials.Text = "Raw Materials";
+            this._btnRawMaterials.Text = "  RAW MATERIALS";
             this._btnRawMaterials.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnRawMaterials.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._btnRawMaterials.UseVisualStyleBackColor = false;
@@ -271,13 +270,13 @@
             this._btnProductionInventory.Image = ((System.Drawing.Image)(resources.GetObject("_btnProductionInventory.Image")));
             this._btnProductionInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnProductionInventory.Location = new System.Drawing.Point(0, 0);
-            this._btnProductionInventory.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this._btnProductionInventory.Margin = new System.Windows.Forms.Padding(5);
             this._btnProductionInventory.Name = "_btnProductionInventory";
-            this._btnProductionInventory.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this._btnProductionInventory.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this._btnProductionInventory.Size = new System.Drawing.Size(168, 45);
             this._btnProductionInventory.TabIndex = 4;
             this._btnProductionInventory.TabStop = false;
-            this._btnProductionInventory.Text = "Production Inventory";
+            this._btnProductionInventory.Text = "  INVENTORY";
             this._btnProductionInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnProductionInventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._btnProductionInventory.UseVisualStyleBackColor = false;
@@ -293,13 +292,13 @@
             this._mainBtn_Inventory.Image = ((System.Drawing.Image)(resources.GetObject("_mainBtn_Inventory.Image")));
             this._mainBtn_Inventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._mainBtn_Inventory.Location = new System.Drawing.Point(0, 415);
-            this._mainBtn_Inventory.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this._mainBtn_Inventory.Margin = new System.Windows.Forms.Padding(5);
             this._mainBtn_Inventory.Name = "_mainBtn_Inventory";
             this._mainBtn_Inventory.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this._mainBtn_Inventory.Size = new System.Drawing.Size(168, 50);
             this._mainBtn_Inventory.TabIndex = 4;
             this._mainBtn_Inventory.TabStop = false;
-            this._mainBtn_Inventory.Text = "Inventory";
+            this._mainBtn_Inventory.Text = "  Inventory";
             this._mainBtn_Inventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._mainBtn_Inventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._mainBtn_Inventory.UseVisualStyleBackColor = true;
@@ -330,13 +329,13 @@
             this._btnPurchaseOrder.Image = ((System.Drawing.Image)(resources.GetObject("_btnPurchaseOrder.Image")));
             this._btnPurchaseOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnPurchaseOrder.Location = new System.Drawing.Point(0, 45);
-            this._btnPurchaseOrder.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this._btnPurchaseOrder.Margin = new System.Windows.Forms.Padding(5);
             this._btnPurchaseOrder.Name = "_btnPurchaseOrder";
-            this._btnPurchaseOrder.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this._btnPurchaseOrder.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this._btnPurchaseOrder.Size = new System.Drawing.Size(168, 45);
             this._btnPurchaseOrder.TabIndex = 5;
             this._btnPurchaseOrder.TabStop = false;
-            this._btnPurchaseOrder.Text = "Purchase Order";
+            this._btnPurchaseOrder.Text = "  PURCHASE ORDER";
             this._btnPurchaseOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnPurchaseOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._btnPurchaseOrder.UseVisualStyleBackColor = false;
@@ -354,13 +353,13 @@
             this._btnPos.Image = ((System.Drawing.Image)(resources.GetObject("_btnPos.Image")));
             this._btnPos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnPos.Location = new System.Drawing.Point(0, 0);
-            this._btnPos.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this._btnPos.Margin = new System.Windows.Forms.Padding(5);
             this._btnPos.Name = "_btnPos";
-            this._btnPos.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this._btnPos.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this._btnPos.Size = new System.Drawing.Size(168, 45);
             this._btnPos.TabIndex = 4;
             this._btnPos.TabStop = false;
-            this._btnPos.Text = "POS";
+            this._btnPos.Text = "  POS";
             this._btnPos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnPos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._btnPos.UseVisualStyleBackColor = false;
@@ -377,13 +376,13 @@
             this._mainBtn_Transaction.Image = ((System.Drawing.Image)(resources.GetObject("_mainBtn_Transaction.Image")));
             this._mainBtn_Transaction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._mainBtn_Transaction.Location = new System.Drawing.Point(0, 275);
-            this._mainBtn_Transaction.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this._mainBtn_Transaction.Margin = new System.Windows.Forms.Padding(5);
             this._mainBtn_Transaction.Name = "_mainBtn_Transaction";
             this._mainBtn_Transaction.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this._mainBtn_Transaction.Size = new System.Drawing.Size(168, 50);
             this._mainBtn_Transaction.TabIndex = 8;
             this._mainBtn_Transaction.TabStop = false;
-            this._mainBtn_Transaction.Text = "Transaction";
+            this._mainBtn_Transaction.Text = "  Transaction";
             this._mainBtn_Transaction.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._mainBtn_Transaction.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._mainBtn_Transaction.UseVisualStyleBackColor = true;
@@ -417,13 +416,13 @@
             this._btnSupplierManagement.Image = ((System.Drawing.Image)(resources.GetObject("_btnSupplierManagement.Image")));
             this._btnSupplierManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnSupplierManagement.Location = new System.Drawing.Point(0, 180);
-            this._btnSupplierManagement.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this._btnSupplierManagement.Margin = new System.Windows.Forms.Padding(5);
             this._btnSupplierManagement.Name = "_btnSupplierManagement";
-            this._btnSupplierManagement.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this._btnSupplierManagement.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this._btnSupplierManagement.Size = new System.Drawing.Size(168, 45);
             this._btnSupplierManagement.TabIndex = 8;
             this._btnSupplierManagement.TabStop = false;
-            this._btnSupplierManagement.Text = "Supplier Management";
+            this._btnSupplierManagement.Text = "  SUPPLIERS";
             this._btnSupplierManagement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnSupplierManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._btnSupplierManagement.UseVisualStyleBackColor = false;
@@ -441,13 +440,13 @@
             this._btnUnitManagement.Image = ((System.Drawing.Image)(resources.GetObject("_btnUnitManagement.Image")));
             this._btnUnitManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnUnitManagement.Location = new System.Drawing.Point(0, 135);
-            this._btnUnitManagement.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this._btnUnitManagement.Margin = new System.Windows.Forms.Padding(5);
             this._btnUnitManagement.Name = "_btnUnitManagement";
-            this._btnUnitManagement.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this._btnUnitManagement.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this._btnUnitManagement.Size = new System.Drawing.Size(168, 45);
             this._btnUnitManagement.TabIndex = 7;
             this._btnUnitManagement.TabStop = false;
-            this._btnUnitManagement.Text = "Unit Mangement";
+            this._btnUnitManagement.Text = "  UNITS";
             this._btnUnitManagement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnUnitManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._btnUnitManagement.UseVisualStyleBackColor = false;
@@ -465,13 +464,13 @@
             this._btnPriceManagement.Image = ((System.Drawing.Image)(resources.GetObject("_btnPriceManagement.Image")));
             this._btnPriceManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnPriceManagement.Location = new System.Drawing.Point(0, 90);
-            this._btnPriceManagement.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this._btnPriceManagement.Margin = new System.Windows.Forms.Padding(5);
             this._btnPriceManagement.Name = "_btnPriceManagement";
-            this._btnPriceManagement.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this._btnPriceManagement.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this._btnPriceManagement.Size = new System.Drawing.Size(168, 45);
             this._btnPriceManagement.TabIndex = 6;
             this._btnPriceManagement.TabStop = false;
-            this._btnPriceManagement.Text = "Price Management";
+            this._btnPriceManagement.Text = "  PRICE MANAGEMENT";
             this._btnPriceManagement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnPriceManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._btnPriceManagement.UseVisualStyleBackColor = false;
@@ -489,13 +488,13 @@
             this._btnIngredients.Image = ((System.Drawing.Image)(resources.GetObject("_btnIngredients.Image")));
             this._btnIngredients.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnIngredients.Location = new System.Drawing.Point(0, 45);
-            this._btnIngredients.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this._btnIngredients.Margin = new System.Windows.Forms.Padding(5);
             this._btnIngredients.Name = "_btnIngredients";
-            this._btnIngredients.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this._btnIngredients.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this._btnIngredients.Size = new System.Drawing.Size(168, 45);
             this._btnIngredients.TabIndex = 5;
             this._btnIngredients.TabStop = false;
-            this._btnIngredients.Text = "Ingredients";
+            this._btnIngredients.Text = "  INGREDIENTS";
             this._btnIngredients.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnIngredients.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._btnIngredients.UseVisualStyleBackColor = false;
@@ -513,13 +512,13 @@
             this._btnProduction.Image = ((System.Drawing.Image)(resources.GetObject("_btnProduction.Image")));
             this._btnProduction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnProduction.Location = new System.Drawing.Point(0, 0);
-            this._btnProduction.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this._btnProduction.Margin = new System.Windows.Forms.Padding(5);
             this._btnProduction.Name = "_btnProduction";
-            this._btnProduction.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this._btnProduction.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this._btnProduction.Size = new System.Drawing.Size(168, 45);
             this._btnProduction.TabIndex = 4;
             this._btnProduction.TabStop = false;
-            this._btnProduction.Text = "Production";
+            this._btnProduction.Text = "  PRODUCTS";
             this._btnProduction.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnProduction.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._btnProduction.UseVisualStyleBackColor = false;
@@ -537,13 +536,13 @@
             this._mainBtn_Files.Image = ((System.Drawing.Image)(resources.GetObject("_mainBtn_Files.Image")));
             this._mainBtn_Files.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._mainBtn_Files.Location = new System.Drawing.Point(0, 0);
-            this._mainBtn_Files.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this._mainBtn_Files.Margin = new System.Windows.Forms.Padding(5);
             this._mainBtn_Files.Name = "_mainBtn_Files";
             this._mainBtn_Files.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this._mainBtn_Files.Size = new System.Drawing.Size(168, 50);
             this._mainBtn_Files.TabIndex = 3;
             this._mainBtn_Files.TabStop = false;
-            this._mainBtn_Files.Text = "Files";
+            this._mainBtn_Files.Text = "  Files";
             this._mainBtn_Files.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._mainBtn_Files.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._mainBtn_Files.UseVisualStyleBackColor = false;
@@ -551,14 +550,13 @@
             // 
             // _sidePanel
             // 
-            this._sidePanel.AutoScroll = true;
             this._sidePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this._sidePanel.Controls.Add(this.panel1);
             this._sidePanel.Controls.Add(this._sideButtonPanel);
+            this._sidePanel.Controls.Add(this.panel1);
             this._sidePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this._sidePanel.Location = new System.Drawing.Point(0, 0);
             this._sidePanel.Name = "_sidePanel";
-            this._sidePanel.Size = new System.Drawing.Size(170, 612);
+            this._sidePanel.Size = new System.Drawing.Size(170, 531);
             this._sidePanel.TabIndex = 4;
             // 
             // panel1
@@ -568,7 +566,7 @@
             this.panel1.Controls.Add(this._utilities);
             this.panel1.Controls.Add(this._logout);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 550);
+            this.panel1.Location = new System.Drawing.Point(0, 469);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(168, 60);
             this.panel1.TabIndex = 2;
@@ -582,7 +580,7 @@
             this._utilities.ForeColor = System.Drawing.Color.White;
             this._utilities.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._utilities.Location = new System.Drawing.Point(0, 0);
-            this._utilities.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this._utilities.Margin = new System.Windows.Forms.Padding(5);
             this._utilities.Name = "_utilities";
             this._utilities.Size = new System.Drawing.Size(168, 30);
             this._utilities.TabIndex = 3;
@@ -601,7 +599,7 @@
             this._logout.ForeColor = System.Drawing.Color.White;
             this._logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._logout.Location = new System.Drawing.Point(0, 30);
-            this._logout.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this._logout.Margin = new System.Windows.Forms.Padding(5);
             this._logout.Name = "_logout";
             this._logout.Size = new System.Drawing.Size(168, 30);
             this._logout.TabIndex = 2;
@@ -617,7 +615,7 @@
             this._contentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._contentsPanel.Location = new System.Drawing.Point(0, 0);
             this._contentsPanel.Name = "_contentsPanel";
-            this._contentsPanel.Size = new System.Drawing.Size(1044, 612);
+            this._contentsPanel.Size = new System.Drawing.Size(602, 531);
             this._contentsPanel.TabIndex = 4;
             this._contentsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this._contentsPanel_Paint);
             // 
@@ -628,7 +626,7 @@
             this._notifPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._notifPanel.Location = new System.Drawing.Point(0, 0);
             this._notifPanel.Name = "_notifPanel";
-            this._notifPanel.Size = new System.Drawing.Size(146, 612);
+            this._notifPanel.Size = new System.Drawing.Size(96, 100);
             this._notifPanel.TabIndex = 5;
             // 
             // divider
@@ -646,9 +644,10 @@
             // divider.Panel2
             // 
             this.divider.Panel2.Controls.Add(this._notifPanel);
+            this.divider.Panel2Collapsed = true;
             this.divider.Panel2MinSize = 110;
-            this.divider.Size = new System.Drawing.Size(1192, 612);
-            this.divider.SplitterDistance = 1044;
+            this.divider.Size = new System.Drawing.Size(602, 531);
+            this.divider.SplitterDistance = 300;
             this.divider.SplitterWidth = 2;
             this.divider.TabIndex = 6;
             // 
@@ -656,13 +655,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 612);
+            this.ClientSize = new System.Drawing.Size(772, 531);
             this.ControlBox = false;
             this.Controls.Add(this.divider);
             this.Controls.Add(this._sidePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(800, 400);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Main_Load);

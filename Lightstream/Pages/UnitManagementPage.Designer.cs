@@ -31,12 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this._unitsTable = new System.Windows.Forms.DataGridView();
-            this.editBtnCol = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abbreviationCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pluralCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._Add = new System.Windows.Forms.Button();
             this._Retrieve = new System.Windows.Forms.Button();
             this._Archive = new System.Windows.Forms.Button();
@@ -44,6 +38,12 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.editBtnCol = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abbreviationCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pluralCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this._unitsTable)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -91,55 +91,7 @@
             this._unitsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._unitsTable.Size = new System.Drawing.Size(730, 381);
             this._unitsTable.TabIndex = 1;
-            // 
-            // editBtnCol
-            // 
-            this.editBtnCol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editBtnCol.HeaderText = "";
-            this.editBtnCol.MinimumWidth = 60;
-            this.editBtnCol.Name = "editBtnCol";
-            this.editBtnCol.ReadOnly = true;
-            this.editBtnCol.Text = "EDIT";
-            this.editBtnCol.UseColumnTextForButtonValue = true;
-            this.editBtnCol.Width = 60;
-            // 
-            // idCol
-            // 
-            this.idCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idCol.HeaderText = "Id";
-            this.idCol.Name = "idCol";
-            this.idCol.ReadOnly = true;
-            this.idCol.Width = 44;
-            // 
-            // abbreviationCol
-            // 
-            this.abbreviationCol.HeaderText = "Abbreviation";
-            this.abbreviationCol.Name = "abbreviationCol";
-            this.abbreviationCol.ReadOnly = true;
-            // 
-            // nameCol
-            // 
-            this.nameCol.HeaderText = "Name";
-            this.nameCol.MinimumWidth = 8;
-            this.nameCol.Name = "nameCol";
-            this.nameCol.ReadOnly = true;
-            // 
-            // pluralCol
-            // 
-            this.pluralCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.pluralCol.FillWeight = 169.697F;
-            this.pluralCol.HeaderText = "Plural";
-            this.pluralCol.MinimumWidth = 8;
-            this.pluralCol.Name = "pluralCol";
-            this.pluralCol.ReadOnly = true;
-            // 
-            // statusCol
-            // 
-            this.statusCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.statusCol.FillWeight = 30.30302F;
-            this.statusCol.HeaderText = "Status";
-            this.statusCol.Name = "statusCol";
-            this.statusCol.ReadOnly = true;
+            this._unitsTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._unitsTable_RowsAdded);
             // 
             // _Add
             // 
@@ -245,6 +197,58 @@
             this.textBox1.Size = new System.Drawing.Size(730, 18);
             this.textBox1.TabIndex = 11;
             // 
+            // editBtnCol
+            // 
+            this.editBtnCol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editBtnCol.HeaderText = "";
+            this.editBtnCol.MinimumWidth = 60;
+            this.editBtnCol.Name = "editBtnCol";
+            this.editBtnCol.ReadOnly = true;
+            this.editBtnCol.Text = "EDIT";
+            this.editBtnCol.UseColumnTextForButtonValue = true;
+            this.editBtnCol.Width = 60;
+            // 
+            // idCol
+            // 
+            this.idCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idCol.HeaderText = "Id";
+            this.idCol.Name = "idCol";
+            this.idCol.ReadOnly = true;
+            this.idCol.Width = 44;
+            // 
+            // abbreviationCol
+            // 
+            this.abbreviationCol.HeaderText = "Abbreviation";
+            this.abbreviationCol.Name = "abbreviationCol";
+            this.abbreviationCol.ReadOnly = true;
+            // 
+            // nameCol
+            // 
+            this.nameCol.HeaderText = "Name";
+            this.nameCol.MinimumWidth = 8;
+            this.nameCol.Name = "nameCol";
+            this.nameCol.ReadOnly = true;
+            // 
+            // pluralCol
+            // 
+            this.pluralCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pluralCol.FillWeight = 169.697F;
+            this.pluralCol.HeaderText = "Plural";
+            this.pluralCol.MinimumWidth = 8;
+            this.pluralCol.Name = "pluralCol";
+            this.pluralCol.ReadOnly = true;
+            // 
+            // statusCol
+            // 
+            this.statusCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.statusCol.FillWeight = 30.30302F;
+            this.statusCol.HeaderText = "Archived";
+            this.statusCol.Name = "statusCol";
+            this.statusCol.ReadOnly = true;
+            this.statusCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.statusCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.statusCol.Visible = false;
+            // 
             // UnitManagementPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -283,6 +287,6 @@
         private DataGridViewTextBoxColumn abbreviationCol;
         private DataGridViewTextBoxColumn nameCol;
         private DataGridViewTextBoxColumn pluralCol;
-        private DataGridViewTextBoxColumn statusCol;
+        private DataGridViewCheckBoxColumn statusCol;
     }
 }

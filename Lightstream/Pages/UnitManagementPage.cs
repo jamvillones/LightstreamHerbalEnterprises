@@ -87,7 +87,15 @@ namespace Lightstream.Forms
             abbreviationCol.DataPropertyName = nameof(Unit.Abbreviation);
             nameCol.DataPropertyName = nameof(Unit.SingularName);
             pluralCol.DataPropertyName = nameof(Unit.PluralName);
+            statusCol.DataPropertyName = nameof(Unit.IsArchived);
         }
 
+        private void _unitsTable_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            var table = sender as DataGridView;
+            var row = table.Rows[e.RowIndex];
+            var u = units[e.RowIndex];
+            row.DefaultCellStyle.ForeColor = u.IsArchived ? Color.Maroon : Color.Black;
+        }
     }
 }

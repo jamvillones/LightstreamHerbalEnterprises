@@ -120,7 +120,7 @@
             this._productsTable.RowHeadersWidth = 62;
             this._productsTable.RowTemplate.Height = 25;
             this._productsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._productsTable.Size = new System.Drawing.Size(277, 319);
+            this._productsTable.Size = new System.Drawing.Size(277, 331);
             this._productsTable.StandardTab = true;
             this._productsTable.TabIndex = 9;
             this._productsTable.SelectionChanged += new System.EventHandler(this._productsTable_SelectionChanged);
@@ -188,10 +188,10 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("The Bold Font", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
-            this.label1.Location = new System.Drawing.Point(20, 0);
+            this.label1.Location = new System.Drawing.Point(35, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(660, 30);
+            this.label1.Size = new System.Drawing.Size(730, 30);
             this.label1.TabIndex = 8;
             this.label1.Text = "Price Management";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -202,7 +202,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this._divider.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this._divider.Location = new System.Drawing.Point(20, 32);
+            this._divider.Location = new System.Drawing.Point(35, 32);
             this._divider.Margin = new System.Windows.Forms.Padding(2);
             this._divider.Name = "_divider";
             // 
@@ -218,7 +218,7 @@
             // 
             this._divider.Panel2.Controls.Add(this.panel1);
             this._divider.Panel2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this._divider.Size = new System.Drawing.Size(657, 363);
+            this._divider.Size = new System.Drawing.Size(727, 375);
             this._divider.SplitterDistance = 285;
             this._divider.SplitterWidth = 3;
             this._divider.TabIndex = 10;
@@ -245,7 +245,7 @@
             this.panel1.Location = new System.Drawing.Point(4, 3);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(361, 357);
+            this.panel1.Size = new System.Drawing.Size(431, 369);
             this.panel1.TabIndex = 0;
             // 
             // _variantsTable
@@ -290,7 +290,7 @@
             this._variantsTable.RowHeadersWidth = 62;
             this._variantsTable.RowTemplate.Height = 33;
             this._variantsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._variantsTable.Size = new System.Drawing.Size(361, 282);
+            this._variantsTable.Size = new System.Drawing.Size(431, 294);
             this._variantsTable.TabIndex = 1;
             this._variantsTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._variants_CellMouseClick);
             this._variantsTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._variantsTable_RowsAdded);
@@ -366,9 +366,9 @@
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.button4);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 322);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 334);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(361, 35);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(431, 35);
             this.flowLayoutPanel1.TabIndex = 11;
             // 
             // button1
@@ -412,7 +412,7 @@
             this._selectedProductName.Location = new System.Drawing.Point(0, 20);
             this._selectedProductName.Name = "_selectedProductName";
             this._selectedProductName.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this._selectedProductName.Size = new System.Drawing.Size(361, 20);
+            this._selectedProductName.Size = new System.Drawing.Size(431, 20);
             this._selectedProductName.TabIndex = 10;
             this._selectedProductName.Text = "Product_Name";
             this._selectedProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -424,7 +424,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(361, 20);
+            this.label2.Size = new System.Drawing.Size(431, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "Product Variants";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -436,25 +436,25 @@
             this.flowLayoutPanel2.Controls.Add(this._addmarkup);
             this.flowLayoutPanel2.Controls.Add(this._setDiscount);
             this.flowLayoutPanel2.Controls.Add(this._removedisc);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(20, 400);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(35, 412);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(378, 36);
             this.flowLayoutPanel2.TabIndex = 12;
             // 
-            // PriceManagementForm
+            // PriceManagementPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(700, 473);
+            this.ClientSize = new System.Drawing.Size(800, 500);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this._divider);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "PriceManagementForm";
-            this.Padding = new System.Windows.Forms.Padding(20, 0, 20, 20);
+            this.Name = "PriceManagementPage";
+            this.Padding = new System.Windows.Forms.Padding(35, 0, 35, 35);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Price Management";

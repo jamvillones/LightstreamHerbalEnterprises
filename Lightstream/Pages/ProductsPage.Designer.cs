@@ -132,7 +132,7 @@
             this._prodTable.RowHeadersWidth = 62;
             this._prodTable.RowTemplate.Height = 25;
             this._prodTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._prodTable.Size = new System.Drawing.Size(662, 166);
+            this._prodTable.Size = new System.Drawing.Size(730, 178);
             this._prodTable.StandardTab = true;
             this._prodTable.TabIndex = 9;
             this._prodTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._prodTable_CellMouseClick);
@@ -262,7 +262,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 3, 6, 3);
-            this.groupBox1.Size = new System.Drawing.Size(290, 187);
+            this.groupBox1.Size = new System.Drawing.Size(358, 187);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Required Ingredient/s";
@@ -275,10 +275,10 @@
             this._recipe.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._recipe.FormattingEnabled = true;
             this._recipe.ItemHeight = 15;
-            this._recipe.Location = new System.Drawing.Point(6, 39);
+            this._recipe.Location = new System.Drawing.Point(6, 38);
             this._recipe.Margin = new System.Windows.Forms.Padding(5);
             this._recipe.Name = "_recipe";
-            this._recipe.Size = new System.Drawing.Size(278, 145);
+            this._recipe.Size = new System.Drawing.Size(346, 146);
             this._recipe.TabIndex = 1;
             this._recipe.TabStop = false;
             // 
@@ -287,9 +287,9 @@
             this.panel2.Controls.Add(this._removeRecipe);
             this.panel2.Controls.Add(this._addRecipe);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(6, 19);
+            this.panel2.Location = new System.Drawing.Point(6, 18);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(278, 20);
+            this.panel2.Size = new System.Drawing.Size(346, 20);
             this.panel2.TabIndex = 24;
             // 
             // _removeRecipe
@@ -408,10 +408,10 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("The Bold Font", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
-            this.label1.Location = new System.Drawing.Point(20, 0);
+            this.label1.Location = new System.Drawing.Point(35, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(662, 25);
+            this.label1.Size = new System.Drawing.Size(730, 25);
             this.label1.TabIndex = 8;
             this.label1.Text = "Create Product";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -421,19 +421,19 @@
             this.panel3.Controls.Add(this.searchTxt);
             this.panel3.Controls.Add(this._prodTable);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(20, 257);
+            this.panel3.Location = new System.Drawing.Point(35, 257);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(662, 196);
+            this.panel3.Size = new System.Drawing.Size(730, 208);
             this.panel3.TabIndex = 24;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.splitContainer1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(20, 25);
+            this.panel4.Location = new System.Drawing.Point(35, 25);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(662, 206);
+            this.panel4.Size = new System.Drawing.Size(730, 206);
             this.panel4.TabIndex = 25;
             // 
             // splitContainer1
@@ -464,7 +464,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(5);
             this.splitContainer1.Panel2MinSize = 200;
-            this.splitContainer1.Size = new System.Drawing.Size(654, 197);
+            this.splitContainer1.Size = new System.Drawing.Size(722, 197);
             this.splitContainer1.SplitterDistance = 350;
             this.splitContainer1.TabIndex = 24;
             // 
@@ -472,9 +472,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(20, 231);
+            this.panel1.Location = new System.Drawing.Point(35, 231);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(662, 1);
+            this.panel1.Size = new System.Drawing.Size(730, 1);
             this.panel1.TabIndex = 26;
             // 
             // label6
@@ -482,10 +482,10 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
             this.label6.Font = new System.Drawing.Font("The Bold Font", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
-            this.label6.Location = new System.Drawing.Point(20, 232);
+            this.label6.Location = new System.Drawing.Point(35, 232);
             this.label6.Name = "label6";
             this.label6.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.label6.Size = new System.Drawing.Size(662, 25);
+            this.label6.Size = new System.Drawing.Size(730, 25);
             this.label6.TabIndex = 27;
             this.label6.Text = "Products";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -495,7 +495,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(702, 473);
+            this.ClientSize = new System.Drawing.Size(800, 500);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
@@ -505,7 +505,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ProductsPage";
-            this.Padding = new System.Windows.Forms.Padding(20, 0, 20, 20);
+            this.Padding = new System.Windows.Forms.Padding(35, 0, 35, 35);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.ProductsPage_Load);

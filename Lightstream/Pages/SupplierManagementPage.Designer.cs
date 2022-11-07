@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this._statusOption = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this._save = new System.Windows.Forms.Button();
@@ -65,10 +65,10 @@
             this._statusOption.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this._statusOption.Location = new System.Drawing.Point(710, 16);
+            this._statusOption.Location = new System.Drawing.Point(582, 16);
             this._statusOption.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this._statusOption.Name = "_statusOption";
-            this._statusOption.Size = new System.Drawing.Size(190, 39);
+            this._statusOption.Size = new System.Drawing.Size(190, 27);
             this._statusOption.TabIndex = 0;
             // 
             // panel1
@@ -89,7 +89,7 @@
             this.panel1.Location = new System.Drawing.Point(23, 72);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(605, 263);
+            this.panel1.Size = new System.Drawing.Size(477, 263);
             this.panel1.TabIndex = 2;
             // 
             // _save
@@ -123,7 +123,7 @@
             this._contactnumber.Location = new System.Drawing.Point(157, 103);
             this._contactnumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this._contactnumber.Name = "_contactnumber";
-            this._contactnumber.Size = new System.Drawing.Size(441, 39);
+            this._contactnumber.Size = new System.Drawing.Size(441, 27);
             this._contactnumber.TabIndex = 7;
             // 
             // _address
@@ -131,7 +131,7 @@
             this._address.Location = new System.Drawing.Point(157, 148);
             this._address.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this._address.Name = "_address";
-            this._address.Size = new System.Drawing.Size(441, 39);
+            this._address.Size = new System.Drawing.Size(441, 27);
             this._address.TabIndex = 6;
             // 
             // _contactperson
@@ -139,7 +139,7 @@
             this._contactperson.Location = new System.Drawing.Point(157, 59);
             this._contactperson.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this._contactperson.Name = "_contactperson";
-            this._contactperson.Size = new System.Drawing.Size(441, 39);
+            this._contactperson.Size = new System.Drawing.Size(441, 27);
             this._contactperson.TabIndex = 5;
             // 
             // _supplier
@@ -147,7 +147,7 @@
             this._supplier.Location = new System.Drawing.Point(157, 14);
             this._supplier.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this._supplier.Name = "_supplier";
-            this._supplier.Size = new System.Drawing.Size(441, 39);
+            this._supplier.Size = new System.Drawing.Size(441, 27);
             this._supplier.TabIndex = 4;
             // 
             // label4
@@ -156,7 +156,7 @@
             this.label4.Location = new System.Drawing.Point(3, 111);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(150, 31);
+            this.label4.Size = new System.Drawing.Size(97, 19);
             this.label4.TabIndex = 3;
             this.label4.Text = "Contact Number:";
             // 
@@ -166,7 +166,7 @@
             this.label3.Location = new System.Drawing.Point(8, 62);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 31);
+            this.label3.Size = new System.Drawing.Size(94, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "Contact Person:";
             // 
@@ -176,7 +176,7 @@
             this.label2.Location = new System.Drawing.Point(62, 156);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 31);
+            this.label2.Size = new System.Drawing.Size(56, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Address:";
             // 
@@ -187,7 +187,7 @@
             this.label1.Location = new System.Drawing.Point(60, 17);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 31);
+            this.label1.Size = new System.Drawing.Size(57, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Supplier:";
             // 
@@ -198,7 +198,7 @@
             this._searchtxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this._searchtxt.Name = "_searchtxt";
             this._searchtxt.PlaceholderText = "Search....";
-            this._searchtxt.Size = new System.Drawing.Size(605, 44);
+            this._searchtxt.Size = new System.Drawing.Size(605, 30);
             this._searchtxt.TabIndex = 7;
             // 
             // label5
@@ -206,10 +206,10 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(640, 19);
+            this.label5.Location = new System.Drawing.Point(512, 19);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 31);
+            this.label5.Size = new System.Drawing.Size(44, 19);
             this.label5.TabIndex = 10;
             this.label5.Text = "Filter:";
             // 
@@ -224,14 +224,14 @@
             this._supplierTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this._supplierTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this._supplierTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bebas Neue", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this._supplierTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bebas Neue", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._supplierTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this._supplierTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._supplierTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column2,
@@ -247,7 +247,7 @@
             this._supplierTable.RowHeadersWidth = 62;
             this._supplierTable.RowTemplate.Height = 25;
             this._supplierTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._supplierTable.Size = new System.Drawing.Size(893, 426);
+            this._supplierTable.Size = new System.Drawing.Size(765, 76);
             this._supplierTable.TabIndex = 11;
             // 
             // Column2
@@ -257,7 +257,7 @@
             this.Column2.MinimumWidth = 8;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 153;
+            this.Column2.Width = 103;
             // 
             // Column1
             // 
@@ -266,7 +266,7 @@
             this.Column1.MinimumWidth = 8;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 162;
+            this.Column1.Width = 109;
             // 
             // Column4
             // 
@@ -275,7 +275,7 @@
             this.Column4.MinimumWidth = 8;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            this.Column4.Width = 167;
+            this.Column4.Width = 111;
             // 
             // Column5
             // 
@@ -292,7 +292,7 @@
             this.Column3.MinimumWidth = 8;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 97;
+            this.Column3.Width = 65;
             // 
             // _Update
             // 
@@ -300,7 +300,7 @@
             this._Update.BackColor = System.Drawing.Color.ForestGreen;
             this._Update.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._Update.ForeColor = System.Drawing.Color.White;
-            this._Update.Location = new System.Drawing.Point(313, 779);
+            this._Update.Location = new System.Drawing.Point(249, 429);
             this._Update.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._Update.Name = "_Update";
             this._Update.Size = new System.Drawing.Size(139, 57);
@@ -315,7 +315,7 @@
             this._Archive.BackColor = System.Drawing.Color.ForestGreen;
             this._Archive.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._Archive.ForeColor = System.Drawing.Color.White;
-            this._Archive.Location = new System.Drawing.Point(460, 779);
+            this._Archive.Location = new System.Drawing.Point(396, 429);
             this._Archive.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._Archive.Name = "_Archive";
             this._Archive.Size = new System.Drawing.Size(139, 57);
@@ -329,7 +329,7 @@
             this._Retrieve.BackColor = System.Drawing.Color.ForestGreen;
             this._Retrieve.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._Retrieve.ForeColor = System.Drawing.Color.White;
-            this._Retrieve.Location = new System.Drawing.Point(607, 779);
+            this._Retrieve.Location = new System.Drawing.Point(543, 429);
             this._Retrieve.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._Retrieve.Name = "_Retrieve";
             this._Retrieve.Size = new System.Drawing.Size(139, 57);
@@ -343,7 +343,7 @@
             this._Add.BackColor = System.Drawing.Color.ForestGreen;
             this._Add.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._Add.ForeColor = System.Drawing.Color.White;
-            this._Add.Location = new System.Drawing.Point(166, 779);
+            this._Add.Location = new System.Drawing.Point(102, 429);
             this._Add.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._Add.Name = "_Add";
             this._Add.Size = new System.Drawing.Size(139, 57);
@@ -354,9 +354,9 @@
             // 
             // SupplierManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 850);
+            this.ClientSize = new System.Drawing.Size(800, 500);
             this.ControlBox = false;
             this.Controls.Add(this._Update);
             this.Controls.Add(this._Archive);

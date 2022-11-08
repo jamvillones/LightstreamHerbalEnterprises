@@ -10,8 +10,8 @@ namespace Lightstream.DataAccess.Models
     [Table(nameof(Supplier))]
     public partial class Supplier : BaseEntityModel
     {
-        public string ContactPerson { get; set; } = null;
-        public string CotanctDetails { get; set; } = null;
-        public string Address { get; set; } = null;
+        public string? ContactPerson { get; set; } = null;
+        public string? ContactDetails { get; set; } = null;
+        public string? Address { get; set; } = null;
     }
 }

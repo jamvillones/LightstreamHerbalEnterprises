@@ -204,7 +204,8 @@ namespace Lightstream
         private void _btnSupplierManagement_Click(object sender, EventArgs e)
         {
             ChangeButtonStateUponClick(sender as Button);
-            OpenForm<SupplierManagement>();
+            SupplierManagement sm = new(new GenericRepository<Supplier>());
+            OpenForm(sm);
         }
 
         private void _btnPurchaseOrder_Click(object sender, EventArgs e)

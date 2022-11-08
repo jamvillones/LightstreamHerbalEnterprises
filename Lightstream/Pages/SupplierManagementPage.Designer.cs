@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this._statusOption = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this._save = new System.Windows.Forms.Button();
@@ -36,7 +36,7 @@
             this._contactnumber = new System.Windows.Forms.TextBox();
             this._address = new System.Windows.Forms.TextBox();
             this._contactperson = new System.Windows.Forms.TextBox();
-            this._supplier = new System.Windows.Forms.TextBox();
+            this._supplierName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,11 +44,11 @@
             this._searchtxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this._supplierTable = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.snCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cnCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._Update = new System.Windows.Forms.Button();
             this._Archive = new System.Windows.Forms.Button();
             this._Retrieve = new System.Windows.Forms.Button();
@@ -65,10 +65,10 @@
             this._statusOption.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this._statusOption.Location = new System.Drawing.Point(582, 16);
+            this._statusOption.Location = new System.Drawing.Point(588, 16);
             this._statusOption.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this._statusOption.Name = "_statusOption";
-            this._statusOption.Size = new System.Drawing.Size(190, 27);
+            this._statusOption.Size = new System.Drawing.Size(184, 39);
             this._statusOption.TabIndex = 0;
             // 
             // panel1
@@ -80,7 +80,7 @@
             this.panel1.Controls.Add(this._contactnumber);
             this.panel1.Controls.Add(this._address);
             this.panel1.Controls.Add(this._contactperson);
-            this.panel1.Controls.Add(this._supplier);
+            this.panel1.Controls.Add(this._supplierName);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -89,11 +89,12 @@
             this.panel1.Location = new System.Drawing.Point(23, 72);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(477, 263);
+            this.panel1.Size = new System.Drawing.Size(567, 263);
             this.panel1.TabIndex = 2;
             // 
             // _save
             // 
+            this._save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._save.BackColor = System.Drawing.Color.ForestGreen;
             this._save.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._save.ForeColor = System.Drawing.Color.White;
@@ -104,9 +105,11 @@
             this._save.TabIndex = 9;
             this._save.Text = "Save";
             this._save.UseVisualStyleBackColor = false;
+            this._save.Click += new System.EventHandler(this._save_Click);
             // 
             // _cancel
             // 
+            this._cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._cancel.BackColor = System.Drawing.Color.ForestGreen;
             this._cancel.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._cancel.ForeColor = System.Drawing.Color.White;
@@ -120,35 +123,43 @@
             // 
             // _contactnumber
             // 
+            this._contactnumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this._contactnumber.Location = new System.Drawing.Point(157, 103);
             this._contactnumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this._contactnumber.Name = "_contactnumber";
-            this._contactnumber.Size = new System.Drawing.Size(441, 27);
+            this._contactnumber.Size = new System.Drawing.Size(391, 39);
             this._contactnumber.TabIndex = 7;
             // 
             // _address
             // 
+            this._address.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this._address.Location = new System.Drawing.Point(157, 148);
             this._address.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this._address.Name = "_address";
-            this._address.Size = new System.Drawing.Size(441, 27);
+            this._address.Size = new System.Drawing.Size(391, 39);
             this._address.TabIndex = 6;
             // 
             // _contactperson
             // 
+            this._contactperson.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this._contactperson.Location = new System.Drawing.Point(157, 59);
             this._contactperson.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this._contactperson.Name = "_contactperson";
-            this._contactperson.Size = new System.Drawing.Size(441, 27);
+            this._contactperson.Size = new System.Drawing.Size(391, 39);
             this._contactperson.TabIndex = 5;
             // 
-            // _supplier
+            // _supplierName
             // 
-            this._supplier.Location = new System.Drawing.Point(157, 14);
-            this._supplier.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this._supplier.Name = "_supplier";
-            this._supplier.Size = new System.Drawing.Size(441, 27);
-            this._supplier.TabIndex = 4;
+            this._supplierName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._supplierName.Location = new System.Drawing.Point(157, 14);
+            this._supplierName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this._supplierName.Name = "_supplierName";
+            this._supplierName.Size = new System.Drawing.Size(391, 39);
+            this._supplierName.TabIndex = 4;
             // 
             // label4
             // 
@@ -156,7 +167,7 @@
             this.label4.Location = new System.Drawing.Point(3, 111);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 19);
+            this.label4.Size = new System.Drawing.Size(150, 31);
             this.label4.TabIndex = 3;
             this.label4.Text = "Contact Number:";
             // 
@@ -166,7 +177,7 @@
             this.label3.Location = new System.Drawing.Point(8, 62);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 19);
+            this.label3.Size = new System.Drawing.Size(145, 31);
             this.label3.TabIndex = 2;
             this.label3.Text = "Contact Person:";
             // 
@@ -176,7 +187,7 @@
             this.label2.Location = new System.Drawing.Point(62, 156);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 19);
+            this.label2.Size = new System.Drawing.Size(86, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "Address:";
             // 
@@ -187,18 +198,17 @@
             this.label1.Location = new System.Drawing.Point(60, 17);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 19);
+            this.label1.Size = new System.Drawing.Size(88, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Supplier:";
             // 
             // _searchtxt
             // 
-            this._searchtxt.Font = new System.Drawing.Font("Bebas Neue", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._searchtxt.Location = new System.Drawing.Point(23, 12);
             this._searchtxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this._searchtxt.Name = "_searchtxt";
             this._searchtxt.PlaceholderText = "Search....";
-            this._searchtxt.Size = new System.Drawing.Size(605, 30);
+            this._searchtxt.Size = new System.Drawing.Size(409, 31);
             this._searchtxt.TabIndex = 7;
             // 
             // label5
@@ -206,10 +216,10 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(512, 19);
+            this.label5.Location = new System.Drawing.Point(512, 20);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 19);
+            this.label5.Size = new System.Drawing.Size(66, 31);
             this.label5.TabIndex = 10;
             this.label5.Text = "Filter:";
             // 
@@ -224,21 +234,21 @@
             this._supplierTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this._supplierTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this._supplierTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bebas Neue", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this._supplierTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bebas Neue", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._supplierTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this._supplierTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._supplierTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2,
-            this.Column1,
-            this.Column4,
-            this.Column5,
-            this.Column3});
+            this.snCol,
+            this.cpCol,
+            this.cnCol,
+            this.addressCol,
+            this.statCol});
             this._supplierTable.Location = new System.Drawing.Point(23, 343);
             this._supplierTable.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this._supplierTable.Name = "_supplierTable";
@@ -250,49 +260,49 @@
             this._supplierTable.Size = new System.Drawing.Size(765, 76);
             this._supplierTable.TabIndex = 11;
             // 
-            // Column2
+            // snCol
             // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column2.HeaderText = "Supplier Name";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 103;
+            this.snCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.snCol.HeaderText = "Supplier Name";
+            this.snCol.MinimumWidth = 8;
+            this.snCol.Name = "snCol";
+            this.snCol.ReadOnly = true;
+            this.snCol.Width = 153;
             // 
-            // Column1
+            // cpCol
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column1.HeaderText = "Contact Person";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 109;
+            this.cpCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cpCol.HeaderText = "Contact Person";
+            this.cpCol.MinimumWidth = 8;
+            this.cpCol.Name = "cpCol";
+            this.cpCol.ReadOnly = true;
+            this.cpCol.Width = 162;
             // 
-            // Column4
+            // cnCol
             // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column4.HeaderText = "Contact Number";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 111;
+            this.cnCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cnCol.HeaderText = "Contact Number";
+            this.cnCol.MinimumWidth = 8;
+            this.cnCol.Name = "cnCol";
+            this.cnCol.ReadOnly = true;
+            this.cnCol.Width = 167;
             // 
-            // Column5
+            // addressCol
             // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.HeaderText = "Address";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
+            this.addressCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.addressCol.HeaderText = "Address";
+            this.addressCol.MinimumWidth = 8;
+            this.addressCol.Name = "addressCol";
+            this.addressCol.ReadOnly = true;
             // 
-            // Column3
+            // statCol
             // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column3.HeaderText = "Status";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 65;
+            this.statCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.statCol.HeaderText = "Status";
+            this.statCol.MinimumWidth = 8;
+            this.statCol.Name = "statCol";
+            this.statCol.ReadOnly = true;
+            this.statCol.Width = 97;
             // 
             // _Update
             // 
@@ -350,11 +360,12 @@
             this._Add.TabIndex = 12;
             this._Add.Text = "Add";
             this._Add.UseVisualStyleBackColor = false;
+            this._Add.Visible = false;
             this._Add.Click += new System.EventHandler(this._Add_Click);
             // 
             // SupplierManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 500);
             this.ControlBox = false;
@@ -372,6 +383,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "SupplierManagement";
+            this.Load += new System.EventHandler(this.SupplierManagement_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._supplierTable)).EndInit();
@@ -390,7 +402,7 @@
         private TextBox _contactnumber;
         private TextBox _address;
         private TextBox _contactperson;
-        private TextBox _supplier;
+        private TextBox _supplierName;
         private Label label4;
         private Label label3;
         private Label label2;
@@ -401,10 +413,10 @@
         private Button _Archive;
         private Button _Retrieve;
         private Button _Add;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn snCol;
+        private DataGridViewTextBoxColumn cpCol;
+        private DataGridViewTextBoxColumn cnCol;
+        private DataGridViewTextBoxColumn addressCol;
+        private DataGridViewTextBoxColumn statCol;
     }
 }

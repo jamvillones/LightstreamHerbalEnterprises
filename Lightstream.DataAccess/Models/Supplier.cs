@@ -13,5 +13,7 @@ namespace Lightstream.DataAccess.Models
         public string? ContactPerson { get; set; } = null;
         public string? ContactDetails { get; set; } = null;
         public string? Address { get; set; } = null;
+
+        public ICollection<SupplierToIngredient> SupplierToIngredients { get; set; }
     }
 }

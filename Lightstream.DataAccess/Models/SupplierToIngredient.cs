@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lightstream.DataAccess.Models
 {
-    public class SupplierToIngredient : IIDModel
+    public partial class SupplierToIngredient : IIDModel
     {
         public Ingredient Ingredient { get; set; }
         public Supplier Supplier { get; set; }

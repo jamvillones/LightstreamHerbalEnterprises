@@ -42,7 +42,7 @@ namespace Lightstream
         }
         private void logout_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         void ChangeButtonStateUponClick(Button nextButton)
@@ -202,7 +202,7 @@ namespace Lightstream
         private void _btnSupplierManagement_Click(object sender, EventArgs e)
         {
             ChangeButtonStateUponClick(sender as Button);
-            SupplierManagement sm = new(new GenericRepository<Supplier>());
+            SupplierManagement sm = new(new SupplierService());
             OpenForm(sm);
         }
 

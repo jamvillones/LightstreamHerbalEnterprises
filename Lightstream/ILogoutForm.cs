@@ -9,5 +9,6 @@ namespace Lightstream
     internal interface ILogoutForm
     {
         bool IsLoggedout { get; }
+        void Logout();
     }
 }

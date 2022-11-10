@@ -54,7 +54,6 @@
             this._sidePanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this._utilities = new System.Windows.Forms.Button();
-            this._logout = new System.Windows.Forms.Button();
             this._contentsPanel = new System.Windows.Forms.Panel();
             this._notifPanel = new System.Windows.Forms.Panel();
             this.divider = new System.Windows.Forms.SplitContainer();
@@ -85,7 +84,7 @@
             this._sideButtonPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._sideButtonPanel.Location = new System.Drawing.Point(0, 0);
             this._sideButtonPanel.Name = "_sideButtonPanel";
-            this._sideButtonPanel.Size = new System.Drawing.Size(170, 471);
+            this._sideButtonPanel.Size = new System.Drawing.Size(170, 501);
             this._sideButtonPanel.TabIndex = 1;
             // 
             // _reportsPanel
@@ -563,11 +562,10 @@
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.panel1.Controls.Add(this._utilities);
-            this.panel1.Controls.Add(this._logout);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 471);
+            this.panel1.Location = new System.Drawing.Point(0, 501);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(170, 60);
+            this.panel1.Size = new System.Drawing.Size(170, 30);
             this.panel1.TabIndex = 2;
             // 
             // _utilities
@@ -588,25 +586,6 @@
             this._utilities.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._utilities.UseVisualStyleBackColor = true;
             this._utilities.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // _logout
-            // 
-            this._logout.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this._logout.FlatAppearance.BorderSize = 0;
-            this._logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._logout.Font = new System.Drawing.Font("The Bold Font", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this._logout.ForeColor = System.Drawing.Color.White;
-            this._logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._logout.Location = new System.Drawing.Point(0, 30);
-            this._logout.Margin = new System.Windows.Forms.Padding(5);
-            this._logout.Name = "_logout";
-            this._logout.Size = new System.Drawing.Size(170, 30);
-            this._logout.TabIndex = 2;
-            this._logout.TabStop = false;
-            this._logout.Text = "Log out";
-            this._logout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this._logout.UseVisualStyleBackColor = true;
-            this._logout.Click += new System.EventHandler(this.logout_Click);
             // 
             // _contentsPanel
             // 
@@ -705,7 +684,6 @@
         private Button _btnSaleSummary;
         private Panel panel1;
         private Button _utilities;
-        private Button _logout;
         private Panel _notifPanel;
         private SplitContainer divider;
         private Button _btnSupplierManagement;

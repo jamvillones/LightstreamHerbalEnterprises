@@ -42,9 +42,7 @@ namespace Lightstream
         }
         private void logout_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to logout?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
-            IsLoggedout = true;
-            Close();
+          
         }
 
         void ChangeButtonStateUponClick(Button nextButton)
@@ -236,6 +234,14 @@ namespace Lightstream
         {
             ChangeButtonStateUponClick(sender as Button);
             OpenForm<_stockReport>();
+        }
+
+        public void Logout()
+        {
+            if (MessageBox.Show("Are you sure you want to logout?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
+
+            IsLoggedout = true;
+            Close();
         }
     }
 }

@@ -68,10 +68,9 @@
             this._statusOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._statusOption.Font = new System.Drawing.Font("Bebas Neue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._statusOption.FormattingEnabled = true;
-            this._statusOption.Location = new System.Drawing.Point(873, 6);
-            this._statusOption.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this._statusOption.Location = new System.Drawing.Point(573, 7);
             this._statusOption.Name = "_statusOption";
-            this._statusOption.Size = new System.Drawing.Size(184, 23);
+            this._statusOption.Size = new System.Drawing.Size(160, 23);
             this._statusOption.TabIndex = 0;
             this._statusOption.SelectedIndexChanged += new System.EventHandler(this._statusOption_SelectedIndexChanged);
             // 
@@ -90,10 +89,9 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Enabled = false;
             this.panel1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panel1.Location = new System.Drawing.Point(35, 30);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.panel1.Location = new System.Drawing.Point(30, 33);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1063, 195);
+            this.panel1.Size = new System.Drawing.Size(740, 161);
             this.panel1.TabIndex = 2;
             // 
             // _save
@@ -103,10 +101,9 @@
             this._save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._save.Font = new System.Drawing.Font("Bebas Neue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._save.ForeColor = System.Drawing.Color.Black;
-            this._save.Location = new System.Drawing.Point(1, 155);
-            this._save.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this._save.Location = new System.Drawing.Point(203, 119);
             this._save.Name = "_save";
-            this._save.Size = new System.Drawing.Size(140, 30);
+            this._save.Size = new System.Drawing.Size(197, 30);
             this._save.TabIndex = 4;
             this._save.Text = "Save";
             this._save.UseVisualStyleBackColor = false;
@@ -119,10 +116,9 @@
             this._cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._cancel.Font = new System.Drawing.Font("Bebas Neue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._cancel.ForeColor = System.Drawing.Color.Black;
-            this._cancel.Location = new System.Drawing.Point(145, 155);
-            this._cancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this._cancel.Location = new System.Drawing.Point(406, 119);
             this._cancel.Name = "_cancel";
-            this._cancel.Size = new System.Drawing.Size(140, 30);
+            this._cancel.Size = new System.Drawing.Size(196, 30);
             this._cancel.TabIndex = 5;
             this._cancel.Text = "Cancel";
             this._cancel.UseVisualStyleBackColor = false;
@@ -130,57 +126,44 @@
             // 
             // _contactnumber
             // 
-            this._contactnumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this._contactnumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this._contactnumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._contactnumber.Location = new System.Drawing.Point(105, 81);
-            this._contactnumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this._contactnumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._contactnumber.Location = new System.Drawing.Point(203, 60);
             this._contactnumber.Name = "_contactnumber";
-            this._contactnumber.Size = new System.Drawing.Size(380, 29);
+            this._contactnumber.Size = new System.Drawing.Size(399, 23);
             this._contactnumber.TabIndex = 2;
             // 
             // _address
             // 
-            this._address.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this._address.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this._address.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._address.Location = new System.Drawing.Point(105, 118);
-            this._address.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this._address.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._address.Location = new System.Drawing.Point(203, 89);
             this._address.Name = "_address";
-            this._address.Size = new System.Drawing.Size(380, 29);
+            this._address.Size = new System.Drawing.Size(399, 23);
             this._address.TabIndex = 3;
             // 
             // _contactperson
             // 
-            this._contactperson.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this._contactperson.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this._contactperson.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._contactperson.Location = new System.Drawing.Point(105, 45);
-            this._contactperson.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this._contactperson.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._contactperson.Location = new System.Drawing.Point(203, 32);
             this._contactperson.Name = "_contactperson";
-            this._contactperson.Size = new System.Drawing.Size(380, 29);
+            this._contactperson.Size = new System.Drawing.Size(399, 23);
             this._contactperson.TabIndex = 1;
             // 
             // _supplierName
             // 
-            this._supplierName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this._supplierName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this._supplierName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._supplierName.Location = new System.Drawing.Point(105, 8);
-            this._supplierName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this._supplierName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._supplierName.Location = new System.Drawing.Point(203, 3);
             this._supplierName.Name = "_supplierName";
-            this._supplierName.Size = new System.Drawing.Size(380, 29);
+            this._supplierName.Size = new System.Drawing.Size(399, 23);
             this._supplierName.TabIndex = 0;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 85);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(98, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 21);
             this.label4.TabIndex = 3;
@@ -189,8 +172,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 49);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(101, 33);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 21);
             this.label3.TabIndex = 2;
@@ -199,8 +181,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 122);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(139, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 21);
             this.label2.TabIndex = 1;
@@ -209,23 +190,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(43, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(107, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 21);
+            this.label1.Size = new System.Drawing.Size(89, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Supplier:";
+            this.label1.Text = "Supplier Name:";
             // 
             // _searchtxt
             // 
             this._searchtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._searchtxt.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._searchtxt.Location = new System.Drawing.Point(6, 10);
-            this._searchtxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this._searchtxt.Location = new System.Drawing.Point(8, 10);
             this._searchtxt.Name = "_searchtxt";
             this._searchtxt.PlaceholderText = "Search....";
-            this._searchtxt.Size = new System.Drawing.Size(409, 16);
+            this._searchtxt.Size = new System.Drawing.Size(391, 16);
             this._searchtxt.TabIndex = 7;
             // 
             // label5
@@ -233,8 +213,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(824, 7);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(522, 7);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 21);
             this.label5.TabIndex = 10;
@@ -270,20 +249,20 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkSeaGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this._supplierTable.DefaultCellStyle = dataGridViewCellStyle2;
             this._supplierTable.EnableHeadersVisualStyles = false;
-            this._supplierTable.Location = new System.Drawing.Point(0, 34);
-            this._supplierTable.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this._supplierTable.Location = new System.Drawing.Point(8, 34);
+            this._supplierTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._supplierTable.Name = "_supplierTable";
             this._supplierTable.ReadOnly = true;
             this._supplierTable.RowHeadersVisible = false;
             this._supplierTable.RowHeadersWidth = 62;
             this._supplierTable.RowTemplate.Height = 25;
             this._supplierTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._supplierTable.Size = new System.Drawing.Size(1057, 367);
+            this._supplierTable.Size = new System.Drawing.Size(725, 207);
             this._supplierTable.TabIndex = 11;
             this._supplierTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._supplierTable_RowsAdded);
             this._supplierTable.SelectionChanged += new System.EventHandler(this._supplierTable_SelectionChanged);
@@ -336,10 +315,10 @@
             this._Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._Update.Font = new System.Drawing.Font("Bebas Neue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._Update.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this._Update.Location = new System.Drawing.Point(145, 0);
-            this._Update.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this._Update.Location = new System.Drawing.Point(203, 0);
+            this._Update.Margin = new System.Windows.Forms.Padding(0, 0, 7, 0);
             this._Update.Name = "_Update";
-            this._Update.Size = new System.Drawing.Size(140, 30);
+            this._Update.Size = new System.Drawing.Size(196, 30);
             this._Update.TabIndex = 15;
             this._Update.Text = "Update";
             this._Update.UseVisualStyleBackColor = false;
@@ -353,10 +332,10 @@
             this._Archive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._Archive.Font = new System.Drawing.Font("Bebas Neue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._Archive.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this._Archive.Location = new System.Drawing.Point(290, 0);
-            this._Archive.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this._Archive.Location = new System.Drawing.Point(406, 0);
+            this._Archive.Margin = new System.Windows.Forms.Padding(0, 0, 7, 0);
             this._Archive.Name = "_Archive";
-            this._Archive.Size = new System.Drawing.Size(140, 30);
+            this._Archive.Size = new System.Drawing.Size(196, 30);
             this._Archive.TabIndex = 14;
             this._Archive.Text = "Archive";
             this._Archive.UseVisualStyleBackColor = false;
@@ -370,9 +349,9 @@
             this._Add.Font = new System.Drawing.Font("Bebas Neue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._Add.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this._Add.Location = new System.Drawing.Point(0, 0);
-            this._Add.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this._Add.Margin = new System.Windows.Forms.Padding(0, 0, 7, 0);
             this._Add.Name = "_Add";
-            this._Add.Size = new System.Drawing.Size(140, 30);
+            this._Add.Size = new System.Drawing.Size(196, 30);
             this._Add.TabIndex = 12;
             this._Add.Text = "Add";
             this._Add.UseVisualStyleBackColor = false;
@@ -381,10 +360,12 @@
             // label6
             // 
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Location = new System.Drawing.Point(50, 0);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Font = new System.Drawing.Font("The Bold Font", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
+            this.label6.Location = new System.Drawing.Point(30, 0);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(1519, 33);
+            this.label6.Size = new System.Drawing.Size(740, 33);
             this.label6.TabIndex = 16;
             this.label6.Text = "Suppliers";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -397,10 +378,11 @@
             this.panel2.Controls.Add(this._statusOption);
             this.panel2.Controls.Add(this._supplierTable);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(35, 225);
+            this.panel2.Location = new System.Drawing.Point(30, 194);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 40, 0, 0);
-            this.panel2.Size = new System.Drawing.Size(1063, 436);
+            this.panel2.Size = new System.Drawing.Size(740, 276);
             this.panel2.TabIndex = 17;
             // 
             // flowLayoutPanel1
@@ -410,26 +392,27 @@
             this.flowLayoutPanel1.Controls.Add(this._Update);
             this.flowLayoutPanel1.Controls.Add(this._Archive);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 406);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 246);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1063, 30);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(740, 30);
             this.flowLayoutPanel1.TabIndex = 12;
             // 
             // SupplierManagement
             // 
-            this.AcceptButton = this._save;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1133, 696);
+            this.ClientSize = new System.Drawing.Size(800, 500);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label6);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "SupplierManagement";
-            this.Padding = new System.Windows.Forms.Padding(50, 0, 50, 38);
+            this.Padding = new System.Windows.Forms.Padding(30, 0, 30, 30);
             this.Load += new System.EventHandler(this.SupplierManagement_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -33,6 +33,9 @@ namespace Lightstream
             if (sender is LoginForm l)
                 if (l.IsLoginSuccessful)
                 {
+                    userButton.Enabled = true;
+                    logoutButton.Enabled = true;
+                    userButton.Text = l.CurrentLogin.FullName??"Current User";
                     Form form = l.CurrentLogin!.UserType == (int)UserType.admin ? new Main() : new FPOS();
                     form.FormClosed += Form_FormClosed;
 
@@ -63,9 +66,40 @@ namespace Lightstream
         {
             currentControl = next;
             currentControl.TopLevel = false;
-            this.Controls.Add(currentControl);
+            this.panel1.Controls.Add(currentControl);
             currentControl.Dock = DockStyle.Fill;
             currentControl.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = this.WindowState == FormWindowState.Normal ? FormWindowState.Maximized : FormWindowState.Normal;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void logout_Click(object sender, EventArgs e)
+        {
+            if (currentControl is ILogoutForm il)
+                LogoutCurrentForm(il);
+        }
+
+        void LogoutCurrentForm(ILogoutForm form)
+        {
+            form.Logout();
+            if (form.IsLoggedout)
+            {
+                userButton.Enabled = false;
+                logoutButton.Enabled = false;
+            }
         }
     }
 }

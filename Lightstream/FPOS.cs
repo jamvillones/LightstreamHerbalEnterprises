@@ -12,7 +12,7 @@ namespace Lightstream
 {
     public partial class FPOS : Form, ILogoutForm
     {
-        public bool IsLoggedout => false;
+        public bool IsLoggedout { get; private set; }= false;
 
         public FPOS()
         {
@@ -27,6 +27,12 @@ namespace Lightstream
         private void listView2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        public void Logout()
+        {
+            IsLoggedout = true;
+            this.Close();
         }
     }
 }

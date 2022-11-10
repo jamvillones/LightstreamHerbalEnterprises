@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.labelProductname = new System.Windows.Forms.Label();
-            this.labelQuantity = new System.Windows.Forms.Label();
-            this.textBoxQuantity = new System.Windows.Forms.TextBox();
-            this.textBoxProdName = new System.Windows.Forms.TextBox();
             this.Addbutton = new System.Windows.Forms.Button();
             this.PAYbutton = new System.Windows.Forms.Button();
             this.DELETEbutton = new System.Windows.Forms.Button();
@@ -45,7 +42,6 @@
             this.cashlbl = new System.Windows.Forms.Label();
             this.changelbl = new System.Windows.Forms.Label();
             this.TOTALtextBox = new System.Windows.Forms.TextBox();
-            this.DISCOUNTtextBox = new System.Windows.Forms.TextBox();
             this.VATtextBox = new System.Windows.Forms.TextBox();
             this.GRANDTOTALtextbox = new System.Windows.Forms.TextBox();
             this.CASHtextBox = new System.Windows.Forms.TextBox();
@@ -53,15 +49,16 @@
             this.proc = new System.Windows.Forms.Button();
             this.srchText = new System.Windows.Forms.TextBox();
             this.pnlPOS1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnlPOS2 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pnlPOS1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -77,39 +74,12 @@
             // 
             this.labelProductname.AutoSize = true;
             this.labelProductname.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelProductname.Location = new System.Drawing.Point(71, 148);
+            this.labelProductname.Location = new System.Drawing.Point(71, 184);
             this.labelProductname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelProductname.Name = "labelProductname";
             this.labelProductname.Size = new System.Drawing.Size(97, 23);
             this.labelProductname.TabIndex = 0;
             this.labelProductname.Text = "Product Name:";
-            // 
-            // labelQuantity
-            // 
-            this.labelQuantity.AutoSize = true;
-            this.labelQuantity.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelQuantity.Location = new System.Drawing.Point(121, 268);
-            this.labelQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelQuantity.Name = "labelQuantity";
-            this.labelQuantity.Size = new System.Drawing.Size(44, 23);
-            this.labelQuantity.TabIndex = 1;
-            this.labelQuantity.Text = "Price:";
-            // 
-            // textBoxQuantity
-            // 
-            this.textBoxQuantity.Location = new System.Drawing.Point(177, 262);
-            this.textBoxQuantity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxQuantity.Name = "textBoxQuantity";
-            this.textBoxQuantity.Size = new System.Drawing.Size(353, 31);
-            this.textBoxQuantity.TabIndex = 2;
-            // 
-            // textBoxProdName
-            // 
-            this.textBoxProdName.Location = new System.Drawing.Point(177, 142);
-            this.textBoxProdName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxProdName.Name = "textBoxProdName";
-            this.textBoxProdName.Size = new System.Drawing.Size(353, 31);
-            this.textBoxProdName.TabIndex = 3;
             // 
             // Addbutton
             // 
@@ -269,18 +239,9 @@
             this.TOTALtextBox.Location = new System.Drawing.Point(117, 58);
             this.TOTALtextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TOTALtextBox.Name = "TOTALtextBox";
+            this.TOTALtextBox.ReadOnly = true;
             this.TOTALtextBox.Size = new System.Drawing.Size(155, 31);
             this.TOTALtextBox.TabIndex = 18;
-            // 
-            // DISCOUNTtextBox
-            // 
-            this.DISCOUNTtextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DISCOUNTtextBox.Location = new System.Drawing.Point(117, 118);
-            this.DISCOUNTtextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.DISCOUNTtextBox.Name = "DISCOUNTtextBox";
-            this.DISCOUNTtextBox.Size = new System.Drawing.Size(155, 31);
-            this.DISCOUNTtextBox.TabIndex = 19;
             // 
             // VATtextBox
             // 
@@ -289,6 +250,7 @@
             this.VATtextBox.Location = new System.Drawing.Point(117, 178);
             this.VATtextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.VATtextBox.Name = "VATtextBox";
+            this.VATtextBox.ReadOnly = true;
             this.VATtextBox.Size = new System.Drawing.Size(155, 31);
             this.VATtextBox.TabIndex = 20;
             // 
@@ -299,6 +261,7 @@
             this.GRANDTOTALtextbox.Location = new System.Drawing.Point(117, 238);
             this.GRANDTOTALtextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GRANDTOTALtextbox.Name = "GRANDTOTALtextbox";
+            this.GRANDTOTALtextbox.ReadOnly = true;
             this.GRANDTOTALtextbox.Size = new System.Drawing.Size(155, 31);
             this.GRANDTOTALtextbox.TabIndex = 21;
             // 
@@ -319,6 +282,7 @@
             this.CHANGEtextBox.Location = new System.Drawing.Point(117, 358);
             this.CHANGEtextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CHANGEtextBox.Name = "CHANGEtextBox";
+            this.CHANGEtextBox.ReadOnly = true;
             this.CHANGEtextBox.Size = new System.Drawing.Size(155, 31);
             this.CHANGEtextBox.TabIndex = 23;
             // 
@@ -348,16 +312,13 @@
             // 
             // pnlPOS1
             // 
+            this.pnlPOS1.Controls.Add(this.label2);
+            this.pnlPOS1.Controls.Add(this.textBox1);
             this.pnlPOS1.Controls.Add(this.dataGridView2);
             this.pnlPOS1.Controls.Add(this.textBox2);
             this.pnlPOS1.Controls.Add(this.label3);
-            this.pnlPOS1.Controls.Add(this.textBox1);
-            this.pnlPOS1.Controls.Add(this.label2);
             this.pnlPOS1.Controls.Add(this.srchText);
             this.pnlPOS1.Controls.Add(this.labelProductname);
-            this.pnlPOS1.Controls.Add(this.textBoxProdName);
-            this.pnlPOS1.Controls.Add(this.textBoxQuantity);
-            this.pnlPOS1.Controls.Add(this.labelQuantity);
             this.pnlPOS1.Controls.Add(this.Addbutton);
             this.pnlPOS1.Controls.Add(this.DELETEbutton);
             this.pnlPOS1.Controls.Add(this.PAYbutton);
@@ -368,6 +329,25 @@
             this.pnlPOS1.Name = "pnlPOS1";
             this.pnlPOS1.Size = new System.Drawing.Size(1241, 375);
             this.pnlPOS1.TabIndex = 26;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(38, 80);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 23);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Transaction number:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(177, 178);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(353, 31);
+            this.textBox1.TabIndex = 31;
             // 
             // dataGridView2
             // 
@@ -385,7 +365,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(177, 82);
+            this.textBox2.Location = new System.Drawing.Point(177, 118);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(353, 31);
@@ -395,31 +375,12 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(57, 88);
+            this.label3.Location = new System.Drawing.Point(57, 124);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 23);
             this.label3.TabIndex = 28;
             this.label3.Text = "Product number:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(177, 202);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(353, 31);
-            this.textBox1.TabIndex = 27;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(86, 208);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 23);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Description:";
             // 
             // pnlPOS2
             // 
@@ -450,11 +411,11 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.comboBox1);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
             this.splitContainer1.Panel2.Controls.Add(this.Totallbl);
             this.splitContainer1.Panel2.Controls.Add(this.TOTALtextBox);
             this.splitContainer1.Panel2.Controls.Add(this.Discountlbl);
-            this.splitContainer1.Panel2.Controls.Add(this.DISCOUNTtextBox);
             this.splitContainer1.Panel2.Controls.Add(this.VATlbl);
             this.splitContainer1.Panel2.Controls.Add(this.VATtextBox);
             this.splitContainer1.Panel2.Controls.Add(this.CASHtextBox);
@@ -465,7 +426,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.cashlbl);
             this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.splitContainer1.Size = new System.Drawing.Size(1241, 419);
-            this.splitContainer1.SplitterDistance = 932;
+            this.splitContainer1.SplitterDistance = 928;
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 26;
             // 
@@ -478,7 +439,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(918, 353);
+            this.dataGridView1.Size = new System.Drawing.Size(914, 353);
             this.dataGridView1.TabIndex = 25;
             // 
             // label1
@@ -488,10 +449,19 @@
             this.label1.Location = new System.Drawing.Point(7, 8);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(918, 50);
+            this.label1.Size = new System.Drawing.Size(914, 50);
             this.label1.TabIndex = 29;
             this.label1.Text = "Cart";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AllowDrop = true;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(117, 119);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(162, 33);
+            this.comboBox1.TabIndex = 31;
             // 
             // label4
             // 
@@ -500,7 +470,7 @@
             this.label4.Location = new System.Drawing.Point(7, 8);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(289, 50);
+            this.label4.Size = new System.Drawing.Size(293, 50);
             this.label4.TabIndex = 30;
             this.label4.Text = "DETAILS";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -534,9 +504,6 @@
 
         #endregion
         private Label labelProductname;
-        private Label labelQuantity;
-        private TextBox textBoxQuantity;
-        private TextBox textBoxProdName;
         private Button Addbutton;
         private Button PAYbutton;
         private Button DELETEbutton;
@@ -550,7 +517,6 @@
         private Label cashlbl;
         private Label changelbl;
         private TextBox TOTALtextBox;
-        private TextBox DISCOUNTtextBox;
         private TextBox VATtextBox;
         private TextBox GRANDTOTALtextbox;
         private TextBox CASHtextBox;
@@ -560,13 +526,14 @@
         private Panel pnlPOS1;
         private TextBox textBox2;
         private Label label3;
-        private TextBox textBox1;
-        private Label label2;
         private Panel pnlPOS2;
         private SplitContainer splitContainer1;
         private Label label1;
         private DataGridView dataGridView1;
         private Label label4;
         private DataGridView dataGridView2;
+        private Label label2;
+        private TextBox textBox1;
+        private ComboBox comboBox1;
     }
 }

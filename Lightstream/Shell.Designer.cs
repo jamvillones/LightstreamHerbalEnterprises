@@ -55,6 +55,7 @@
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(1264, 30);
             this.topPanel.TabIndex = 0;
+            this.topPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dragCallback_MouseDown);
             // 
             // flowLayoutPanel1
             // 

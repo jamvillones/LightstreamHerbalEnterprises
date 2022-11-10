@@ -174,8 +174,8 @@ namespace Lightstream.Forms
             var s = SelectedSupplier;
             if (s is null) return;
 
-            s.IsArchived = !s.IsArchived;
-            await _supplierService.Update_Async(s);
+
+            await _supplierService.ToggleArchive(s);
 
             ColorChange(s.IsArchived);
             ChangeArchiveRetriveButtonBehavior(s.IsArchived);

@@ -19,6 +19,30 @@ namespace Lightstream
             InitializeComponent();
         }
 
+        #region topbar functionality
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void dragCallback_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Clicks == 2)
+            {
+                this.WindowState = WindowState == FormWindowState.Maximized ? FormWindowState.Normal : FormWindowState.Maximized;
+                return;
+            }
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+        #endregion
+
         public bool CanClose { get; private set; } = true;
 
         private void Shell_Load(object sender, EventArgs e)
@@ -35,7 +59,8 @@ namespace Lightstream
                 {
                     userButton.Enabled = true;
                     logoutButton.Enabled = true;
-                    userButton.Text = l.CurrentLogin.FullName??"Current User";
+
+                    userButton.Text = l.CurrentLogin!.FullName ?? "Current User";
                     Form form = l.CurrentLogin!.UserType == (int)UserType.admin ? new Main() : new FPOS();
                     form.FormClosed += Form_FormClosed;
 

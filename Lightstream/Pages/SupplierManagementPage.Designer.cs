@@ -256,6 +256,7 @@
             this._supplierTable.EnableHeadersVisualStyles = false;
             this._supplierTable.Location = new System.Drawing.Point(8, 34);
             this._supplierTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this._supplierTable.MultiSelect = false;
             this._supplierTable.Name = "_supplierTable";
             this._supplierTable.ReadOnly = true;
             this._supplierTable.RowHeadersVisible = false;

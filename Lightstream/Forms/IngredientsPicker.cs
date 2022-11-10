@@ -14,7 +14,14 @@ namespace Lightstream.Forms
 {
     public partial class IngredientsPicker : Form
     {
-        Ingredient? SelectedIngredient => _ingredientsTable.SelectedRows[0].DataBoundItem as Ingredient;
+        Ingredient? SelectedIngredient
+        {
+            get
+            {
+                if (_ingredientsTable.RowCount == 0) return null;
+                return _ingredientsTable.SelectedRows[0].DataBoundItem as Ingredient;
+            }
+        }
         BindingList<Ingredient> ingredients = new();
         private GenericRepository<Ingredient> ingService;
         IEnumerable<Ingredient> pickedIngredients;
@@ -45,7 +52,7 @@ namespace Lightstream.Forms
 
             this.ingredients.Clear();
 
-            foreach (var i in ingredients)
+            foreach (var i in ingredients.OrderBy(x => x.Name))
                 this.ingredients.Add(i);
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -59,7 +66,6 @@ namespace Lightstream.Forms
             nameCol.DataPropertyName = nameof(Ingredient.Name);
 
             _ingredientsTable.DataSource = ingredients;
-
         }
 
         private void _ingredientsTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -69,6 +75,13 @@ namespace Lightstream.Forms
 
             Tag = SelectedIngredient;
 
+            DialogResult = DialogResult.OK;
+        }
+
+        private void _save_Click(object sender, EventArgs e)
+        {
+            if (SelectedIngredient is null) return;
+            Tag = SelectedIngredient;
             DialogResult = DialogResult.OK;
         }
     }

@@ -39,8 +39,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this._IngredientsTable = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._IngredientsTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,11 +49,11 @@
             this._save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._save.BackColor = System.Drawing.Color.ForestGreen;
             this._save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._save.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._save.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._save.ForeColor = System.Drawing.Color.White;
-            this._save.Location = new System.Drawing.Point(209, 581);
+            this._save.Location = new System.Drawing.Point(208, 566);
             this._save.Name = "_save";
-            this._save.Size = new System.Drawing.Size(120, 40);
+            this._save.Size = new System.Drawing.Size(121, 55);
             this._save.TabIndex = 9;
             this._save.Text = "Save";
             this._save.UseVisualStyleBackColor = false;
@@ -63,11 +63,11 @@
             this._cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._cancel.BackColor = System.Drawing.Color.ForestGreen;
             this._cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._cancel.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._cancel.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._cancel.ForeColor = System.Drawing.Color.White;
-            this._cancel.Location = new System.Drawing.Point(337, 581);
+            this._cancel.Location = new System.Drawing.Point(335, 566);
             this._cancel.Name = "_cancel";
-            this._cancel.Size = new System.Drawing.Size(120, 40);
+            this._cancel.Size = new System.Drawing.Size(122, 55);
             this._cancel.TabIndex = 10;
             this._cancel.Text = "Cancel";
             this._cancel.UseVisualStyleBackColor = false;
@@ -164,6 +164,7 @@
             this._IngredientsTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this._IngredientsTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this._IngredientsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._IngredientsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1});
@@ -177,22 +178,6 @@
             this._IngredientsTable.TabIndex = 19;
             this._IngredientsTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.ForestGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(25, 274);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(432, 40);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Pick Ingredient";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -200,6 +185,22 @@
             this.Column1.MinimumWidth = 8;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.ForestGreen;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(25, 262);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(432, 52);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Pick Ingredient";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // SupplierForm
             // 

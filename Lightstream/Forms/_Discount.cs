@@ -21,5 +21,10 @@ namespace Lightstream.Forms
         {
             this.Close();
         }
+
+        private void _set_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

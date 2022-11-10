@@ -77,9 +77,10 @@
             // 
             this.labelProductname.AutoSize = true;
             this.labelProductname.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelProductname.Location = new System.Drawing.Point(50, 89);
+            this.labelProductname.Location = new System.Drawing.Point(71, 148);
+            this.labelProductname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelProductname.Name = "labelProductname";
-            this.labelProductname.Size = new System.Drawing.Size(65, 15);
+            this.labelProductname.Size = new System.Drawing.Size(97, 23);
             this.labelProductname.TabIndex = 0;
             this.labelProductname.Text = "Product Name:";
             // 
@@ -87,83 +88,96 @@
             // 
             this.labelQuantity.AutoSize = true;
             this.labelQuantity.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelQuantity.Location = new System.Drawing.Point(85, 161);
+            this.labelQuantity.Location = new System.Drawing.Point(121, 268);
+            this.labelQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelQuantity.Name = "labelQuantity";
-            this.labelQuantity.Size = new System.Drawing.Size(30, 15);
+            this.labelQuantity.Size = new System.Drawing.Size(44, 23);
             this.labelQuantity.TabIndex = 1;
             this.labelQuantity.Text = "Price:";
             // 
             // textBoxQuantity
             // 
-            this.textBoxQuantity.Location = new System.Drawing.Point(124, 157);
+            this.textBoxQuantity.Location = new System.Drawing.Point(177, 262);
+            this.textBoxQuantity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxQuantity.Name = "textBoxQuantity";
-            this.textBoxQuantity.Size = new System.Drawing.Size(248, 23);
+            this.textBoxQuantity.Size = new System.Drawing.Size(353, 31);
             this.textBoxQuantity.TabIndex = 2;
             // 
             // textBoxProdName
             // 
-            this.textBoxProdName.Location = new System.Drawing.Point(124, 85);
+            this.textBoxProdName.Location = new System.Drawing.Point(177, 142);
+            this.textBoxProdName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxProdName.Name = "textBoxProdName";
-            this.textBoxProdName.Size = new System.Drawing.Size(248, 23);
+            this.textBoxProdName.Size = new System.Drawing.Size(353, 31);
             this.textBoxProdName.TabIndex = 3;
             // 
             // Addbutton
             // 
             this.Addbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Addbutton.BackColor = System.Drawing.Color.LightGreen;
             this.Addbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Addbutton.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Addbutton.Location = new System.Drawing.Point(54, 190);
+            this.Addbutton.Font = new System.Drawing.Font("Cinzel Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Addbutton.ForeColor = System.Drawing.Color.Black;
+            this.Addbutton.Location = new System.Drawing.Point(38, 317);
+            this.Addbutton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Addbutton.Name = "Addbutton";
-            this.Addbutton.Size = new System.Drawing.Size(75, 23);
+            this.Addbutton.Size = new System.Drawing.Size(107, 38);
             this.Addbutton.TabIndex = 4;
             this.Addbutton.Text = "ADD";
-            this.Addbutton.UseVisualStyleBackColor = true;
+            this.Addbutton.UseVisualStyleBackColor = false;
             // 
             // PAYbutton
             // 
             this.PAYbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.PAYbutton.BackColor = System.Drawing.Color.LightGreen;
             this.PAYbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PAYbutton.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PAYbutton.Location = new System.Drawing.Point(135, 190);
+            this.PAYbutton.Font = new System.Drawing.Font("Cinzel Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.PAYbutton.Location = new System.Drawing.Point(153, 317);
+            this.PAYbutton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PAYbutton.Name = "PAYbutton";
-            this.PAYbutton.Size = new System.Drawing.Size(75, 23);
+            this.PAYbutton.Size = new System.Drawing.Size(107, 38);
             this.PAYbutton.TabIndex = 5;
             this.PAYbutton.Text = "PAY";
-            this.PAYbutton.UseVisualStyleBackColor = true;
+            this.PAYbutton.UseVisualStyleBackColor = false;
             // 
             // DELETEbutton
             // 
             this.DELETEbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.DELETEbutton.BackColor = System.Drawing.Color.LightGreen;
             this.DELETEbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DELETEbutton.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.DELETEbutton.Location = new System.Drawing.Point(216, 190);
+            this.DELETEbutton.Font = new System.Drawing.Font("Cinzel Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DELETEbutton.Location = new System.Drawing.Point(268, 317);
+            this.DELETEbutton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DELETEbutton.Name = "DELETEbutton";
-            this.DELETEbutton.Size = new System.Drawing.Size(75, 23);
+            this.DELETEbutton.Size = new System.Drawing.Size(127, 38);
             this.DELETEbutton.TabIndex = 6;
             this.DELETEbutton.Text = "DELETE";
-            this.DELETEbutton.UseVisualStyleBackColor = true;
+            this.DELETEbutton.UseVisualStyleBackColor = false;
             // 
             // CANCELbutton
             // 
             this.CANCELbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.CANCELbutton.BackColor = System.Drawing.Color.LightGreen;
             this.CANCELbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CANCELbutton.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CANCELbutton.Location = new System.Drawing.Point(297, 190);
+            this.CANCELbutton.Font = new System.Drawing.Font("Cinzel Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CANCELbutton.Location = new System.Drawing.Point(403, 317);
+            this.CANCELbutton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CANCELbutton.Name = "CANCELbutton";
-            this.CANCELbutton.Size = new System.Drawing.Size(75, 23);
+            this.CANCELbutton.Size = new System.Drawing.Size(148, 38);
             this.CANCELbutton.TabIndex = 7;
-            this.CANCELbutton.Text = "button4";
-            this.CANCELbutton.UseVisualStyleBackColor = true;
+            this.CANCELbutton.Text = "CANCEL";
+            this.CANCELbutton.UseVisualStyleBackColor = false;
             // 
             // RETURNbtn
             // 
             this.RETURNbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.RETURNbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.RETURNbtn.BackColor = System.Drawing.Color.LightSkyBlue;
             this.RETURNbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RETURNbtn.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.RETURNbtn.Location = new System.Drawing.Point(8, 9);
+            this.RETURNbtn.Font = new System.Drawing.Font("Cinzel Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RETURNbtn.Location = new System.Drawing.Point(11, 15);
+            this.RETURNbtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.RETURNbtn.Name = "RETURNbtn";
-            this.RETURNbtn.Size = new System.Drawing.Size(100, 35);
+            this.RETURNbtn.Size = new System.Drawing.Size(143, 58);
             this.RETURNbtn.TabIndex = 9;
             this.RETURNbtn.Text = "RETURN";
             this.RETURNbtn.UseVisualStyleBackColor = false;
@@ -171,12 +185,13 @@
             // QUEUEbtn
             // 
             this.QUEUEbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.QUEUEbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.QUEUEbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.QUEUEbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.QUEUEbtn.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.QUEUEbtn.Location = new System.Drawing.Point(116, 9);
+            this.QUEUEbtn.Font = new System.Drawing.Font("Cinzel Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.QUEUEbtn.Location = new System.Drawing.Point(166, 15);
+            this.QUEUEbtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.QUEUEbtn.Name = "QUEUEbtn";
-            this.QUEUEbtn.Size = new System.Drawing.Size(100, 35);
+            this.QUEUEbtn.Size = new System.Drawing.Size(143, 58);
             this.QUEUEbtn.TabIndex = 10;
             this.QUEUEbtn.Text = "QUEUE";
             this.QUEUEbtn.UseVisualStyleBackColor = false;
@@ -185,9 +200,10 @@
             // 
             this.Totallbl.AutoSize = true;
             this.Totallbl.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Totallbl.Location = new System.Drawing.Point(41, 39);
+            this.Totallbl.Location = new System.Drawing.Point(59, 65);
+            this.Totallbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Totallbl.Name = "Totallbl";
-            this.Totallbl.Size = new System.Drawing.Size(30, 15);
+            this.Totallbl.Size = new System.Drawing.Size(46, 23);
             this.Totallbl.TabIndex = 11;
             this.Totallbl.Text = "Total:";
             // 
@@ -195,9 +211,10 @@
             // 
             this.Discountlbl.AutoSize = true;
             this.Discountlbl.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Discountlbl.Location = new System.Drawing.Point(27, 75);
+            this.Discountlbl.Location = new System.Drawing.Point(39, 125);
+            this.Discountlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Discountlbl.Name = "Discountlbl";
-            this.Discountlbl.Size = new System.Drawing.Size(44, 15);
+            this.Discountlbl.Size = new System.Drawing.Size(65, 23);
             this.Discountlbl.TabIndex = 12;
             this.Discountlbl.Text = "Discount:";
             // 
@@ -205,9 +222,10 @@
             // 
             this.VATlbl.AutoSize = true;
             this.VATlbl.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.VATlbl.Location = new System.Drawing.Point(49, 111);
+            this.VATlbl.Location = new System.Drawing.Point(70, 185);
+            this.VATlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.VATlbl.Name = "VATlbl";
-            this.VATlbl.Size = new System.Drawing.Size(22, 15);
+            this.VATlbl.Size = new System.Drawing.Size(31, 23);
             this.VATlbl.TabIndex = 13;
             this.VATlbl.Text = "VAT:";
             // 
@@ -215,9 +233,10 @@
             // 
             this.GrandTotallbl.AutoSize = true;
             this.GrandTotallbl.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.GrandTotallbl.Location = new System.Drawing.Point(14, 147);
+            this.GrandTotallbl.Location = new System.Drawing.Point(20, 245);
+            this.GrandTotallbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.GrandTotallbl.Name = "GrandTotallbl";
-            this.GrandTotallbl.Size = new System.Drawing.Size(57, 15);
+            this.GrandTotallbl.Size = new System.Drawing.Size(85, 23);
             this.GrandTotallbl.TabIndex = 14;
             this.GrandTotallbl.Text = "Grand Total:";
             // 
@@ -225,9 +244,10 @@
             // 
             this.cashlbl.AutoSize = true;
             this.cashlbl.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cashlbl.Location = new System.Drawing.Point(43, 183);
+            this.cashlbl.Location = new System.Drawing.Point(61, 305);
+            this.cashlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cashlbl.Name = "cashlbl";
-            this.cashlbl.Size = new System.Drawing.Size(28, 15);
+            this.cashlbl.Size = new System.Drawing.Size(42, 23);
             this.cashlbl.TabIndex = 15;
             this.cashlbl.Text = "Cash:";
             // 
@@ -235,9 +255,10 @@
             // 
             this.changelbl.AutoSize = true;
             this.changelbl.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.changelbl.Location = new System.Drawing.Point(33, 219);
+            this.changelbl.Location = new System.Drawing.Point(47, 365);
+            this.changelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.changelbl.Name = "changelbl";
-            this.changelbl.Size = new System.Drawing.Size(38, 15);
+            this.changelbl.Size = new System.Drawing.Size(57, 23);
             this.changelbl.TabIndex = 16;
             this.changelbl.Text = "Change:";
             // 
@@ -245,65 +266,72 @@
             // 
             this.TOTALtextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TOTALtextBox.Location = new System.Drawing.Point(82, 35);
+            this.TOTALtextBox.Location = new System.Drawing.Point(117, 58);
+            this.TOTALtextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TOTALtextBox.Name = "TOTALtextBox";
-            this.TOTALtextBox.Size = new System.Drawing.Size(201, 23);
+            this.TOTALtextBox.Size = new System.Drawing.Size(155, 31);
             this.TOTALtextBox.TabIndex = 18;
             // 
             // DISCOUNTtextBox
             // 
             this.DISCOUNTtextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DISCOUNTtextBox.Location = new System.Drawing.Point(82, 71);
+            this.DISCOUNTtextBox.Location = new System.Drawing.Point(117, 118);
+            this.DISCOUNTtextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DISCOUNTtextBox.Name = "DISCOUNTtextBox";
-            this.DISCOUNTtextBox.Size = new System.Drawing.Size(201, 23);
+            this.DISCOUNTtextBox.Size = new System.Drawing.Size(155, 31);
             this.DISCOUNTtextBox.TabIndex = 19;
             // 
             // VATtextBox
             // 
             this.VATtextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.VATtextBox.Location = new System.Drawing.Point(82, 107);
+            this.VATtextBox.Location = new System.Drawing.Point(117, 178);
+            this.VATtextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.VATtextBox.Name = "VATtextBox";
-            this.VATtextBox.Size = new System.Drawing.Size(201, 23);
+            this.VATtextBox.Size = new System.Drawing.Size(155, 31);
             this.VATtextBox.TabIndex = 20;
             // 
             // GRANDTOTALtextbox
             // 
             this.GRANDTOTALtextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GRANDTOTALtextbox.Location = new System.Drawing.Point(82, 143);
+            this.GRANDTOTALtextbox.Location = new System.Drawing.Point(117, 238);
+            this.GRANDTOTALtextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GRANDTOTALtextbox.Name = "GRANDTOTALtextbox";
-            this.GRANDTOTALtextbox.Size = new System.Drawing.Size(201, 23);
+            this.GRANDTOTALtextbox.Size = new System.Drawing.Size(155, 31);
             this.GRANDTOTALtextbox.TabIndex = 21;
             // 
             // CASHtextBox
             // 
             this.CASHtextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CASHtextBox.Location = new System.Drawing.Point(82, 179);
+            this.CASHtextBox.Location = new System.Drawing.Point(117, 298);
+            this.CASHtextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CASHtextBox.Name = "CASHtextBox";
-            this.CASHtextBox.Size = new System.Drawing.Size(201, 23);
+            this.CASHtextBox.Size = new System.Drawing.Size(155, 31);
             this.CASHtextBox.TabIndex = 22;
             // 
             // CHANGEtextBox
             // 
             this.CHANGEtextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CHANGEtextBox.Location = new System.Drawing.Point(82, 215);
+            this.CHANGEtextBox.Location = new System.Drawing.Point(117, 358);
+            this.CHANGEtextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CHANGEtextBox.Name = "CHANGEtextBox";
-            this.CHANGEtextBox.Size = new System.Drawing.Size(201, 23);
+            this.CHANGEtextBox.Size = new System.Drawing.Size(155, 31);
             this.CHANGEtextBox.TabIndex = 23;
             // 
             // proc
             // 
             this.proc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.proc.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.proc.BackColor = System.Drawing.Color.LightCoral;
             this.proc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.proc.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.proc.Location = new System.Drawing.Point(224, 9);
+            this.proc.Font = new System.Drawing.Font("Cinzel Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.proc.Location = new System.Drawing.Point(320, 15);
+            this.proc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.proc.Name = "proc";
-            this.proc.Size = new System.Drawing.Size(170, 35);
+            this.proc.Size = new System.Drawing.Size(286, 58);
             this.proc.TabIndex = 24;
             this.proc.Text = "PROCESS PAYMENT";
             this.proc.UseVisualStyleBackColor = false;
@@ -311,10 +339,11 @@
             // 
             // srchText
             // 
-            this.srchText.Location = new System.Drawing.Point(8, 12);
+            this.srchText.Location = new System.Drawing.Point(11, 20);
+            this.srchText.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.srchText.Name = "srchText";
             this.srchText.PlaceholderText = "Search....";
-            this.srchText.Size = new System.Drawing.Size(364, 23);
+            this.srchText.Size = new System.Drawing.Size(518, 31);
             this.srchText.TabIndex = 25;
             // 
             // pnlPOS1
@@ -334,9 +363,10 @@
             this.pnlPOS1.Controls.Add(this.PAYbutton);
             this.pnlPOS1.Controls.Add(this.CANCELbutton);
             this.pnlPOS1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlPOS1.Location = new System.Drawing.Point(10, 10);
+            this.pnlPOS1.Location = new System.Drawing.Point(14, 17);
+            this.pnlPOS1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlPOS1.Name = "pnlPOS1";
-            this.pnlPOS1.Size = new System.Drawing.Size(868, 225);
+            this.pnlPOS1.Size = new System.Drawing.Size(1241, 375);
             this.pnlPOS1.TabIndex = 26;
             // 
             // dataGridView2
@@ -345,43 +375,49 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(391, 12);
+            this.dataGridView2.Location = new System.Drawing.Point(559, 20);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(457, 201);
+            this.dataGridView2.Size = new System.Drawing.Size(654, 335);
             this.dataGridView2.TabIndex = 30;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(124, 49);
+            this.textBox2.Location = new System.Drawing.Point(177, 82);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(248, 23);
+            this.textBox2.Size = new System.Drawing.Size(353, 31);
             this.textBox2.TabIndex = 29;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(40, 53);
+            this.label3.Location = new System.Drawing.Point(57, 88);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 15);
+            this.label3.Size = new System.Drawing.Size(111, 23);
             this.label3.TabIndex = 28;
             this.label3.Text = "Product number:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(124, 121);
+            this.textBox1.Location = new System.Drawing.Point(177, 202);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(248, 23);
+            this.textBox1.Size = new System.Drawing.Size(353, 31);
             this.textBox1.TabIndex = 27;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(60, 125);
+            this.label2.Location = new System.Drawing.Point(86, 208);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 15);
+            this.label2.Size = new System.Drawing.Size(83, 23);
             this.label2.TabIndex = 26;
             this.label2.Text = "Description:";
             // 
@@ -391,24 +427,26 @@
             this.pnlPOS2.Controls.Add(this.QUEUEbtn);
             this.pnlPOS2.Controls.Add(this.RETURNbtn);
             this.pnlPOS2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlPOS2.Location = new System.Drawing.Point(10, 487);
+            this.pnlPOS2.Location = new System.Drawing.Point(14, 811);
+            this.pnlPOS2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlPOS2.Name = "pnlPOS2";
-            this.pnlPOS2.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlPOS2.Size = new System.Drawing.Size(868, 52);
+            this.pnlPOS2.Padding = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.pnlPOS2.Size = new System.Drawing.Size(1241, 87);
             this.pnlPOS2.TabIndex = 27;
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainer1.Location = new System.Drawing.Point(10, 235);
+            this.splitContainer1.Location = new System.Drawing.Point(14, 392);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.dataGridView1);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(5);
+            this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(7, 8, 7, 8);
             // 
             // splitContainer1.Panel2
             // 
@@ -425,28 +463,32 @@
             this.splitContainer1.Panel2.Controls.Add(this.CHANGEtextBox);
             this.splitContainer1.Panel2.Controls.Add(this.GRANDTOTALtextbox);
             this.splitContainer1.Panel2.Controls.Add(this.cashlbl);
-            this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(5);
-            this.splitContainer1.Size = new System.Drawing.Size(868, 252);
-            this.splitContainer1.SplitterDistance = 561;
+            this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.splitContainer1.Size = new System.Drawing.Size(1241, 419);
+            this.splitContainer1.SplitterDistance = 932;
+            this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 26;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(5, 35);
+            this.dataGridView1.Location = new System.Drawing.Point(7, 58);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(551, 212);
+            this.dataGridView1.Size = new System.Drawing.Size(918, 353);
             this.dataGridView1.TabIndex = 25;
             // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("The Bold Font", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(5, 5);
+            this.label1.Location = new System.Drawing.Point(7, 8);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(551, 30);
+            this.label1.Size = new System.Drawing.Size(918, 50);
             this.label1.TabIndex = 29;
             this.label1.Text = "Cart";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -455,24 +497,26 @@
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
             this.label4.Font = new System.Drawing.Font("The Bold Font", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(5, 5);
+            this.label4.Location = new System.Drawing.Point(7, 8);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(293, 30);
+            this.label4.Size = new System.Drawing.Size(289, 50);
             this.label4.TabIndex = 30;
             this.label4.Text = "DETAILS";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FPOS
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 549);
+            this.ClientSize = new System.Drawing.Size(1269, 915);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.pnlPOS2);
             this.Controls.Add(this.pnlPOS1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FPOS";
-            this.Padding = new System.Windows.Forms.Padding(10);
+            this.Padding = new System.Windows.Forms.Padding(14, 17, 14, 17);
             this.Text = "Point of Sale";
             this.pnlPOS1.ResumeLayout(false);
             this.pnlPOS1.PerformLayout();

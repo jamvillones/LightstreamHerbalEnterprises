@@ -184,6 +184,11 @@ namespace Lightstream.Forms
         {
             _supplierTable.SelectedRows[0].DefaultCellStyle.BackColor = isArchived ? Color.Gray : Color.Green;
         }
+
+        private void _cancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -98,7 +98,7 @@
             // _save
             // 
             this._save.BackColor = System.Drawing.Color.ForestGreen;
-            this._save.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._save.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._save.ForeColor = System.Drawing.Color.White;
             this._save.Location = new System.Drawing.Point(122, 216);
             this._save.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -112,7 +112,7 @@
             // _cancel
             // 
             this._cancel.BackColor = System.Drawing.Color.ForestGreen;
-            this._cancel.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._cancel.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._cancel.ForeColor = System.Drawing.Color.White;
             this._cancel.Location = new System.Drawing.Point(307, 216);
             this._cancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

@@ -51,14 +51,14 @@
             // loginBtn
             // 
             this.loginBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.loginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
+            this.loginBtn.BackColor = System.Drawing.Color.LimeGreen;
             this.loginBtn.Enabled = false;
             this.loginBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
             this.loginBtn.FlatAppearance.BorderSize = 0;
             this.loginBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.loginBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.loginBtn.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.loginBtn.Location = new System.Drawing.Point(113, 328);
             this.loginBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.loginBtn.Name = "loginBtn";

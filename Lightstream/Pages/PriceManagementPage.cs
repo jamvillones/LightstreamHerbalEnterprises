@@ -262,5 +262,15 @@ namespace Lightstream.Forms
             _Discount discount = new _Discount();
             discount.ShowDialog();
         }
+
+        private void _removedisc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

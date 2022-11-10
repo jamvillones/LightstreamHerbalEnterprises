@@ -222,9 +222,9 @@
             // _viewDetails
             // 
             this._viewDetails.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._viewDetails.BackColor = System.Drawing.Color.ForestGreen;
+            this._viewDetails.BackColor = System.Drawing.Color.LightGreen;
             this._viewDetails.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._viewDetails.ForeColor = System.Drawing.Color.White;
+            this._viewDetails.ForeColor = System.Drawing.Color.Black;
             this._viewDetails.Location = new System.Drawing.Point(176, 780);
             this._viewDetails.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._viewDetails.Name = "_viewDetails";
@@ -236,9 +236,9 @@
             // _managePO
             // 
             this._managePO.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._managePO.BackColor = System.Drawing.Color.ForestGreen;
+            this._managePO.BackColor = System.Drawing.Color.LightGreen;
             this._managePO.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._managePO.ForeColor = System.Drawing.Color.White;
+            this._managePO.ForeColor = System.Drawing.Color.Black;
             this._managePO.Location = new System.Drawing.Point(338, 780);
             this._managePO.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._managePO.Name = "_managePO";
@@ -250,9 +250,9 @@
             // _cancelOrder
             // 
             this._cancelOrder.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._cancelOrder.BackColor = System.Drawing.Color.ForestGreen;
+            this._cancelOrder.BackColor = System.Drawing.Color.LightGreen;
             this._cancelOrder.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._cancelOrder.ForeColor = System.Drawing.Color.White;
+            this._cancelOrder.ForeColor = System.Drawing.Color.Black;
             this._cancelOrder.Location = new System.Drawing.Point(485, 780);
             this._cancelOrder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._cancelOrder.Name = "_cancelOrder";
@@ -264,9 +264,9 @@
             // _newPO
             // 
             this._newPO.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._newPO.BackColor = System.Drawing.Color.ForestGreen;
+            this._newPO.BackColor = System.Drawing.Color.LightGreen;
             this._newPO.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._newPO.ForeColor = System.Drawing.Color.White;
+            this._newPO.ForeColor = System.Drawing.Color.Black;
             this._newPO.Location = new System.Drawing.Point(29, 780);
             this._newPO.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._newPO.Name = "_newPO";
@@ -298,9 +298,9 @@
             // _print
             // 
             this._print.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._print.BackColor = System.Drawing.Color.ForestGreen;
+            this._print.BackColor = System.Drawing.Color.LightGreen;
             this._print.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._print.ForeColor = System.Drawing.Color.White;
+            this._print.ForeColor = System.Drawing.Color.Black;
             this._print.Location = new System.Drawing.Point(652, 779);
             this._print.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._print.Name = "_print";
@@ -312,9 +312,9 @@
             // _close
             // 
             this._close.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._close.BackColor = System.Drawing.Color.ForestGreen;
+            this._close.BackColor = System.Drawing.Color.LightGreen;
             this._close.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._close.ForeColor = System.Drawing.Color.White;
+            this._close.ForeColor = System.Drawing.Color.Black;
             this._close.Location = new System.Drawing.Point(769, 779);
             this._close.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._close.Name = "_close";

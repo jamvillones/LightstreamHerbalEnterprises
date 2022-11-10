@@ -197,6 +197,11 @@ namespace Lightstream.Forms
         {
             ClearFields();
         }
+
+        private void _cancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

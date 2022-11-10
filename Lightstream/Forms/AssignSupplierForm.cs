@@ -16,5 +16,10 @@ namespace Lightstream.Forms
         {
             InitializeComponent();
         }
+
+        private void AssignSupplierForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

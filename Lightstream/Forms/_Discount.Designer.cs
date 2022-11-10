@@ -37,7 +37,7 @@
             // _set
             // 
             this._set.BackColor = System.Drawing.Color.ForestGreen;
-            this._set.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._set.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._set.ForeColor = System.Drawing.Color.White;
             this._set.Location = new System.Drawing.Point(43, 133);
             this._set.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -46,11 +46,12 @@
             this._set.TabIndex = 21;
             this._set.Text = "Set";
             this._set.UseVisualStyleBackColor = false;
+            this._set.Click += new System.EventHandler(this._set_Click);
             // 
             // _cancel
             // 
             this._cancel.BackColor = System.Drawing.Color.ForestGreen;
-            this._cancel.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._cancel.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._cancel.ForeColor = System.Drawing.Color.White;
             this._cancel.Location = new System.Drawing.Point(210, 133);
             this._cancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

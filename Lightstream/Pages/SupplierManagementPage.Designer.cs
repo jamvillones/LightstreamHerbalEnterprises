@@ -381,9 +381,10 @@
             // label6
             // 
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Location = new System.Drawing.Point(35, 0);
+            this.label6.Location = new System.Drawing.Point(50, 0);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(1063, 30);
+            this.label6.Size = new System.Drawing.Size(1519, 33);
             this.label6.TabIndex = 16;
             this.label6.Text = "Suppliers";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -426,11 +427,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label6);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Bebas Neue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "SupplierManagement";
-            this.Padding = new System.Windows.Forms.Padding(35, 0, 35, 35);
+            this.Padding = new System.Windows.Forms.Padding(50, 0, 50, 38);
             this.Load += new System.EventHandler(this.SupplierManagement_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

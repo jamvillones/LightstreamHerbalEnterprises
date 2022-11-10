@@ -43,10 +43,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this._IngredientsTable = new System.Windows.Forms.DataGridView();
+            this._pick = new System.Windows.Forms.Button();
             this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.removeCol = new System.Windows.Forms.DataGridViewButtonColumn();
-            this._pick = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._IngredientsTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -212,13 +212,32 @@
             this._IngredientsTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this._IngredientsTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._IngredientsTable_CellMouseClick);
             // 
+            // _pick
+            // 
+            this._pick.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._pick.BackColor = System.Drawing.SystemColors.Control;
+            this._pick.FlatAppearance.BorderSize = 0;
+            this._pick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._pick.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._pick.ForeColor = System.Drawing.Color.Black;
+            this._pick.Location = new System.Drawing.Point(18, 157);
+            this._pick.Margin = new System.Windows.Forms.Padding(2);
+            this._pick.Name = "_pick";
+            this._pick.Size = new System.Drawing.Size(410, 30);
+            this._pick.TabIndex = 4;
+            this._pick.Text = "Pick Ingredient";
+            this._pick.UseVisualStyleBackColor = false;
+            this._pick.Click += new System.EventHandler(this.button1_Click);
+            // 
             // idCol
             // 
             this.idCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.idCol.HeaderText = "Id";
             this.idCol.Name = "idCol";
             this.idCol.ReadOnly = true;
-            this.idCol.Width = 41;
+            this.idCol.Visible = false;
+            this.idCol.Width = 22;
             // 
             // Column1
             // 
@@ -242,24 +261,6 @@
             this.removeCol.Text = "REMOVE";
             this.removeCol.UseColumnTextForButtonValue = true;
             this.removeCol.Width = 60;
-            // 
-            // _pick
-            // 
-            this._pick.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this._pick.BackColor = System.Drawing.SystemColors.Control;
-            this._pick.FlatAppearance.BorderSize = 0;
-            this._pick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._pick.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._pick.ForeColor = System.Drawing.Color.Black;
-            this._pick.Location = new System.Drawing.Point(18, 157);
-            this._pick.Margin = new System.Windows.Forms.Padding(2);
-            this._pick.Name = "_pick";
-            this._pick.Size = new System.Drawing.Size(410, 30);
-            this._pick.TabIndex = 4;
-            this._pick.Text = "Pick Ingredient";
-            this._pick.UseVisualStyleBackColor = false;
-            this._pick.Click += new System.EventHandler(this.button1_Click);
             // 
             // SupplierForm
             // 

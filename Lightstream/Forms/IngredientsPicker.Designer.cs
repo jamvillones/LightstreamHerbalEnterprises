@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngredientsPicker));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.seachField = new System.Windows.Forms.TextBox();
             this._ingredientsTable = new System.Windows.Forms.DataGridView();
             this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._save = new System.Windows.Forms.Button();
@@ -40,14 +40,15 @@
             // 
             // textBox1
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(22, 13);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Search...";
-            this.textBox1.Size = new System.Drawing.Size(200, 23);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.seachField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.seachField.Location = new System.Drawing.Point(22, 13);
+            this.seachField.Margin = new System.Windows.Forms.Padding(2);
+            this.seachField.Name = "textBox1";
+            this.seachField.PlaceholderText = "Search...";
+            this.seachField.Size = new System.Drawing.Size(200, 23);
+            this.seachField.TabIndex = 0;
+            this.seachField.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.seachField.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // _ingredientsTable
             // 
@@ -125,7 +126,7 @@
             this.ClientSize = new System.Drawing.Size(385, 355);
             this.Controls.Add(this._save);
             this.Controls.Add(this._ingredientsTable);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.seachField);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "IngredientsPicker";
@@ -140,7 +141,7 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox seachField;
         private DataGridView _ingredientsTable;
         private DataGridViewTextBoxColumn nameCol;
         private Button _save;

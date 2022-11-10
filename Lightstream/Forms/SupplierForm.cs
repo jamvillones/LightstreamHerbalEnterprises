@@ -48,7 +48,7 @@ namespace Lightstream.Forms
             _contactperson.Text = RefSupplier.ContactPerson;
 
             ingredients.Clear();
-            foreach (var i in RefSupplier.SupplierToIngredients)
+            foreach (var i in RefSupplier.SupplierToIngredients.OrderBy(x => x.IngredientName))
                 ingredients.Add(i);
 
             ChangesMade = false;

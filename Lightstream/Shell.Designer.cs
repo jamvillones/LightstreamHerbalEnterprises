@@ -66,9 +66,9 @@
             this.flowLayoutPanel1.Controls.Add(this.button3);
             this.flowLayoutPanel1.Controls.Add(this.button4);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(952, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(923, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(312, 30);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(341, 30);
             this.flowLayoutPanel1.TabIndex = 2;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -79,15 +79,15 @@
             this.userButton.Enabled = false;
             this.userButton.FlatAppearance.BorderSize = 0;
             this.userButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.userButton.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.userButton.Font = new System.Drawing.Font("The Bold Font", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.userButton.ForeColor = System.Drawing.Color.White;
             this.userButton.Image = ((System.Drawing.Image)(resources.GetObject("userButton.Image")));
             this.userButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.userButton.Location = new System.Drawing.Point(1, 1);
             this.userButton.Margin = new System.Windows.Forms.Padding(1);
             this.userButton.Name = "userButton";
-            this.userButton.Padding = new System.Windows.Forms.Padding(5, 0, 20, 0);
-            this.userButton.Size = new System.Drawing.Size(101, 27);
+            this.userButton.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.userButton.Size = new System.Drawing.Size(108, 25);
             this.userButton.TabIndex = 0;
             this.userButton.TabStop = false;
             this.userButton.Text = "Username";
@@ -101,13 +101,13 @@
             this.logoutButton.Enabled = false;
             this.logoutButton.FlatAppearance.BorderSize = 0;
             this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logoutButton.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.logoutButton.Font = new System.Drawing.Font("The Bold Font", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.logoutButton.ForeColor = System.Drawing.Color.White;
-            this.logoutButton.Location = new System.Drawing.Point(104, 1);
+            this.logoutButton.Location = new System.Drawing.Point(111, 1);
             this.logoutButton.Margin = new System.Windows.Forms.Padding(1);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.logoutButton.Size = new System.Drawing.Size(69, 27);
+            this.logoutButton.Size = new System.Drawing.Size(91, 25);
             this.logoutButton.TabIndex = 4;
             this.logoutButton.TabStop = false;
             this.logoutButton.Text = "Log out";
@@ -121,7 +121,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(177, 1);
+            this.button2.Location = new System.Drawing.Point(206, 1);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(40, 25);
@@ -138,7 +138,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(223, 1);
+            this.button3.Location = new System.Drawing.Point(252, 1);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(40, 25);
@@ -155,7 +155,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(269, 1);
+            this.button4.Location = new System.Drawing.Point(298, 1);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(40, 25);

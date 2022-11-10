@@ -42,14 +42,13 @@
             // addBtn
             // 
             this.addBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addBtn.BackColor = System.Drawing.Color.ForestGreen;
+            this.addBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addBtn.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.addBtn.ForeColor = System.Drawing.Color.FloralWhite;
-            this.addBtn.Location = new System.Drawing.Point(351, 267);
-            this.addBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.addBtn.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addBtn.ForeColor = System.Drawing.Color.Black;
+            this.addBtn.Location = new System.Drawing.Point(249, 169);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(176, 65);
+            this.addBtn.Size = new System.Drawing.Size(120, 30);
             this.addBtn.TabIndex = 6;
             this.addBtn.Text = "SAVE";
             this.addBtn.UseVisualStyleBackColor = false;
@@ -59,10 +58,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(23, 188);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(16, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 23);
+            this.label3.Size = new System.Drawing.Size(90, 15);
             this.label3.TabIndex = 26;
             this.label3.Text = "Unit of Measurement:";
             // 
@@ -70,10 +68,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(23, 102);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(16, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 23);
+            this.label1.Size = new System.Drawing.Size(27, 15);
             this.label1.TabIndex = 25;
             this.label1.Text = "Cost:";
             // 
@@ -81,10 +78,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(23, 15);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(16, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 23);
+            this.label2.Size = new System.Drawing.Size(72, 15);
             this.label2.TabIndex = 24;
             this.label2.Text = "Ingredient name:";
             // 
@@ -96,10 +92,9 @@
             this.unitOption.DisplayMember = "Name";
             this.unitOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unitOption.FormattingEnabled = true;
-            this.unitOption.Location = new System.Drawing.Point(23, 218);
-            this.unitOption.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.unitOption.Location = new System.Drawing.Point(16, 131);
             this.unitOption.Name = "unitOption";
-            this.unitOption.Size = new System.Drawing.Size(503, 33);
+            this.unitOption.Size = new System.Drawing.Size(353, 23);
             this.unitOption.TabIndex = 22;
             // 
             // cost
@@ -107,15 +102,14 @@
             this.cost.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cost.DecimalPlaces = 2;
-            this.cost.Location = new System.Drawing.Point(23, 132);
-            this.cost.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cost.Location = new System.Drawing.Point(16, 79);
             this.cost.Maximum = new decimal(new int[] {
             10000000,
             0,
             0,
             0});
             this.cost.Name = "cost";
-            this.cost.Size = new System.Drawing.Size(504, 31);
+            this.cost.Size = new System.Drawing.Size(353, 23);
             this.cost.TabIndex = 23;
             this.cost.ThousandsSeparator = true;
             // 
@@ -125,19 +119,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nameTxt.BackColor = System.Drawing.Color.White;
             this.nameTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nameTxt.Location = new System.Drawing.Point(23, 45);
-            this.nameTxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nameTxt.Location = new System.Drawing.Point(16, 27);
             this.nameTxt.Name = "nameTxt";
-            this.nameTxt.Size = new System.Drawing.Size(503, 31);
+            this.nameTxt.Size = new System.Drawing.Size(353, 23);
             this.nameTxt.TabIndex = 21;
             this.nameTxt.TextChanged += new System.EventHandler(this.nameTxt_TextChanged);
             // 
             // IngredientForm
             // 
             this.AcceptButton = this.addBtn;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 352);
+            this.ClientSize = new System.Drawing.Size(384, 211);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -147,7 +140,6 @@
             this.Controls.Add(this.addBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "IngredientForm";

@@ -11,5 +11,7 @@ namespace Lightstream.DataAccess.Models
         public override string ToString() =>
             SingularName;
 
+        public string Status => IsArchived ? "Inactive" : "Active";
+
     }
 }

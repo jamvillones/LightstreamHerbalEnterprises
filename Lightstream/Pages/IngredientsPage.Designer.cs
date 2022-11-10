@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -84,16 +85,24 @@
             this._ingredientsTable.DefaultCellStyle = dataGridViewCellStyle5;
             this._ingredientsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._ingredientsTable.EnableHeadersVisualStyles = false;
-            this._ingredientsTable.Location = new System.Drawing.Point(35, 40);
-            this._ingredientsTable.Margin = new System.Windows.Forms.Padding(10);
+            this._ingredientsTable.Location = new System.Drawing.Point(30, 70);
+            this._ingredientsTable.Margin = new System.Windows.Forms.Padding(0);
             this._ingredientsTable.MultiSelect = false;
             this._ingredientsTable.Name = "_ingredientsTable";
             this._ingredientsTable.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._ingredientsTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this._ingredientsTable.RowHeadersVisible = false;
             this._ingredientsTable.RowHeadersWidth = 62;
             this._ingredientsTable.RowTemplate.Height = 25;
             this._ingredientsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._ingredientsTable.Size = new System.Drawing.Size(630, 300);
+            this._ingredientsTable.Size = new System.Drawing.Size(640, 300);
             this._ingredientsTable.TabIndex = 0;
             this._ingredientsTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._ingredientsTable_CellMouseClick);
             // 
@@ -155,7 +164,7 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Blue;
             this.editCol.DefaultCellStyle = dataGridViewCellStyle3;
-            this.editCol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editCol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.editCol.HeaderText = "";
             this.editCol.MinimumWidth = 8;
             this.editCol.Name = "editCol";
@@ -171,12 +180,12 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Red;
             this.deleteBtnCol.DefaultCellStyle = dataGridViewCellStyle4;
-            this.deleteBtnCol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteBtnCol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.deleteBtnCol.HeaderText = "";
             this.deleteBtnCol.MinimumWidth = 8;
             this.deleteBtnCol.Name = "deleteBtnCol";
             this.deleteBtnCol.ReadOnly = true;
-            this.deleteBtnCol.Text = "DELETE";
+            this.deleteBtnCol.Text = "REMOVE";
             this.deleteBtnCol.UseColumnTextForButtonValue = true;
             this.deleteBtnCol.Width = 60;
             // 
@@ -185,13 +194,12 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this._create);
             this.panel1.Controls.Add(this.searchTxt);
-            this.panel1.Controls.Add(this._ingredientsTable);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panel1.Location = new System.Drawing.Point(0, 25);
+            this.panel1.Location = new System.Drawing.Point(30, 30);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(35, 40, 35, 35);
-            this.panel1.Size = new System.Drawing.Size(700, 375);
+            this.panel1.Size = new System.Drawing.Size(640, 40);
             this.panel1.TabIndex = 1;
             // 
             // _create
@@ -202,10 +210,10 @@
             this._create.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._create.ForeColor = System.Drawing.Color.Black;
             this._create.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._create.Location = new System.Drawing.Point(545, 2);
+            this._create.Location = new System.Drawing.Point(500, 5);
             this._create.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this._create.Name = "_create";
-            this._create.Size = new System.Drawing.Size(120, 30);
+            this._create.Size = new System.Drawing.Size(140, 30);
             this._create.TabIndex = 5;
             this._create.Text = "Create";
             this._create.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -215,7 +223,7 @@
             // searchTxt
             // 
             this.searchTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.searchTxt.Location = new System.Drawing.Point(35, 10);
+            this.searchTxt.Location = new System.Drawing.Point(3, 12);
             this.searchTxt.Margin = new System.Windows.Forms.Padding(10);
             this.searchTxt.Name = "searchTxt";
             this.searchTxt.PlaceholderText = "Search...";
@@ -229,10 +237,10 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("The Bold Font", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
-            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Location = new System.Drawing.Point(30, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(700, 25);
+            this.label1.Size = new System.Drawing.Size(640, 30);
             this.label1.TabIndex = 9;
             this.label1.Text = "Ingredients";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -243,12 +251,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(700, 400);
+            this.Controls.Add(this._ingredientsTable);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "IngredientsPage";
+            this.Padding = new System.Windows.Forms.Padding(30, 0, 30, 30);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.IngredientUserControl_Load);

@@ -79,8 +79,6 @@
             // 
             // _contactnumber
             // 
-            this._contactnumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this._contactnumber.Location = new System.Drawing.Point(96, 94);
             this._contactnumber.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this._contactnumber.Name = "_contactnumber";
@@ -89,8 +87,6 @@
             // 
             // _address
             // 
-            this._address.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this._address.Location = new System.Drawing.Point(96, 126);
             this._address.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this._address.Name = "_address";
@@ -99,8 +95,6 @@
             // 
             // _contactperson
             // 
-            this._contactperson.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this._contactperson.Location = new System.Drawing.Point(96, 63);
             this._contactperson.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this._contactperson.Name = "_contactperson";
@@ -109,8 +103,6 @@
             // 
             // _supplierName
             // 
-            this._supplierName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this._supplierName.Location = new System.Drawing.Point(96, 31);
             this._supplierName.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this._supplierName.Name = "_supplierName";
@@ -217,7 +209,8 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.Black;
@@ -249,9 +242,10 @@
             this.Controls.Add(this._save);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(460, 500);
             this.Name = "SupplierForm";
             this.Padding = new System.Windows.Forms.Padding(14, 12, 14, 12);
-            this.Text = "Supplier";
+            this.Text = "Edit Supplier";
             this.Load += new System.EventHandler(this.SupplierForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this._IngredientsTable)).EndInit();
             this.ResumeLayout(false);

@@ -109,10 +109,10 @@
             this._save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._save.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._save.ForeColor = System.Drawing.Color.Black;
-            this._save.Location = new System.Drawing.Point(278, 303);
+            this._save.Location = new System.Drawing.Point(243, 303);
             this._save.Margin = new System.Windows.Forms.Padding(2);
             this._save.Name = "_save";
-            this._save.Size = new System.Drawing.Size(85, 30);
+            this._save.Size = new System.Drawing.Size(120, 30);
             this._save.TabIndex = 10;
             this._save.Text = "choose";
             this._save.UseVisualStyleBackColor = false;

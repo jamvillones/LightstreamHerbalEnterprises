@@ -1,5 +1,6 @@
 ﻿using Lightstream.DataAccess.Models;
 using Lightstream.DataAccess.Repositories;
+using Lightstream.Extensions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,12 +64,6 @@ namespace Lightstream.Forms
             }
         }
 
-        private void _Update_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         async Task LoadAllUnits()
         {
             var unit = await _unitService.GetAll_Async();
@@ -87,15 +82,35 @@ namespace Lightstream.Forms
             abbreviationCol.DataPropertyName = nameof(Unit.Abbreviation);
             nameCol.DataPropertyName = nameof(Unit.SingularName);
             pluralCol.DataPropertyName = nameof(Unit.PluralName);
-            statusCol.DataPropertyName = nameof(Unit.IsArchived);
+            statusCol.DataPropertyName = nameof(Unit.Status);
         }
 
         private void _unitsTable_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             var table = sender as DataGridView;
-            var row = table.Rows[e.RowIndex];
+            var row = table!.Rows[e.RowIndex];
             var u = units[e.RowIndex];
-            row.DefaultCellStyle.ForeColor = u.IsArchived ? Color.Maroon : Color.Black;
+
+            table.Rows[e.RowIndex].SetRowColor(u.IsArchived);
+        }
+
+        private async void _archive_retrieve_Click(object sender, EventArgs e)
+        {
+            var su = SelectedUnit;
+            if (su == null)
+                return;
+
+            await _unitService.ToggleArchive(su);
+
+            _unitsTable.SelectedRows[0].SetRowColor(su.IsArchived);
+            _archive_retrieve.SetButtonBehavior(su.IsArchived);
+        }
+
+        private void _unitsTable_SelectionChanged(object sender, EventArgs e)
+        {
+            var su = SelectedUnit;
+            if (su is null) return;
+            _archive_retrieve.SetButtonBehavior(su.IsArchived);
         }
     }
 }

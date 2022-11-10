@@ -1,5 +1,6 @@
 ﻿using Lightstream.DataAccess.Models;
 using Lightstream.DataAccess.Repositories;
+using Lightstream.Extensions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -127,13 +128,7 @@ namespace Lightstream.Forms
         {
             if (SelectedSupplier is null) return;
 
-            //_Archive.Enabled = !SelectedSupplier.IsArchived;
-            //_Retrieve.Enabled = SelectedSupplier.IsArchived;
-            ChangeArchiveRetriveButtonBehavior(SelectedSupplier.IsArchived);
-        }
-        void ChangeArchiveRetriveButtonBehavior(bool isArchived)
-        {
-            _Archive.Text = isArchived ? "Retrieve" : "Archive";
+            _Archive.SetButtonBehavior(SelectedSupplier.IsArchived);
         }
 
         private void _supplierTable_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -141,9 +136,7 @@ namespace Lightstream.Forms
             var supplier = suppliers[e.RowIndex];
 
             if (sender is DataGridView table)
-            {
-                table.Rows[e.RowIndex].DefaultCellStyle.ForeColor = supplier.IsArchived ? Color.Gray : Color.Green;
-            }
+                table.Rows[e.RowIndex].SetRowColor(supplier.IsArchived);
         }
 
         private async void _statusOption_SelectedIndexChanged(object sender, EventArgs e)
@@ -176,21 +169,8 @@ namespace Lightstream.Forms
 
 
             await _supplierService.ToggleArchive(s);
-
-            ColorChange(s.IsArchived);
-            ChangeArchiveRetriveButtonBehavior(s.IsArchived);
-        }
-
-        //private async void _Retrieve_Click(object sender, EventArgs e)
-        //{
-        //    var s = SelectedSupplier;
-        //    s.IsArchived = false;
-        //    await _supplierService.Update_Async(s);
-        //    ColorChange(s.IsArchived);
-        //}
-        void ColorChange(bool isArchived)
-        {
-            _supplierTable.SelectedRows[0].DefaultCellStyle.ForeColor = isArchived ? Color.Gray : Color.Green;
+            _supplierTable.SelectedRows[0].SetRowColor(s.IsArchived);
+            _Archive.SetButtonBehavior(s.IsArchived);
         }
 
         private void _cancel_Click(object sender, EventArgs e)

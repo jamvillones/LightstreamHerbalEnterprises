@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,6 +26,18 @@ namespace Lightstream.Extensions
 
                 return control.ShowDialog();
             }
+        }
+
+        public static Color ArchivedColor = Color.Gray;
+        public static Color ActiveColor = Color.Black;
+
+        public static void SetRowColor(this DataGridViewRow row, bool isArchived)
+        {
+            row.DefaultCellStyle.ForeColor = isArchived ? ArchivedColor : ActiveColor;
+        }
+        public static void SetButtonBehavior(this Button button, bool isArchived)
+        {
+            button.Text = isArchived ? "Retrieve" : "Archive";
         }
     }
 }

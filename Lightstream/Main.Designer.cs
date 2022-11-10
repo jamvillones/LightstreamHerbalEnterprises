@@ -85,7 +85,7 @@
             this._sideButtonPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._sideButtonPanel.Location = new System.Drawing.Point(0, 0);
             this._sideButtonPanel.Name = "_sideButtonPanel";
-            this._sideButtonPanel.Size = new System.Drawing.Size(168, 469);
+            this._sideButtonPanel.Size = new System.Drawing.Size(170, 471);
             this._sideButtonPanel.TabIndex = 1;
             // 
             // _reportsPanel
@@ -98,7 +98,7 @@
             this._reportsPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this._reportsPanel.Location = new System.Drawing.Point(0, 635);
             this._reportsPanel.Name = "_reportsPanel";
-            this._reportsPanel.Size = new System.Drawing.Size(168, 128);
+            this._reportsPanel.Size = new System.Drawing.Size(170, 128);
             this._reportsPanel.TabIndex = 12;
             this._reportsPanel.Visible = false;
             // 
@@ -117,7 +117,7 @@
             this._btnStock.Margin = new System.Windows.Forms.Padding(5);
             this._btnStock.Name = "_btnStock";
             this._btnStock.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this._btnStock.Size = new System.Drawing.Size(168, 45);
+            this._btnStock.Size = new System.Drawing.Size(170, 45);
             this._btnStock.TabIndex = 6;
             this._btnStock.TabStop = false;
             this._btnStock.Text = "  STOCK";
@@ -141,7 +141,7 @@
             this._btnExpiration.Margin = new System.Windows.Forms.Padding(5);
             this._btnExpiration.Name = "_btnExpiration";
             this._btnExpiration.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this._btnExpiration.Size = new System.Drawing.Size(168, 45);
+            this._btnExpiration.Size = new System.Drawing.Size(170, 45);
             this._btnExpiration.TabIndex = 5;
             this._btnExpiration.TabStop = false;
             this._btnExpiration.Text = "  EXPIRATION";
@@ -165,7 +165,7 @@
             this._btnSaleSummary.Margin = new System.Windows.Forms.Padding(5);
             this._btnSaleSummary.Name = "_btnSaleSummary";
             this._btnSaleSummary.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this._btnSaleSummary.Size = new System.Drawing.Size(168, 38);
+            this._btnSaleSummary.Size = new System.Drawing.Size(170, 38);
             this._btnSaleSummary.TabIndex = 4;
             this._btnSaleSummary.TabStop = false;
             this._btnSaleSummary.Text = "  SALES SUMMARY";
@@ -188,7 +188,7 @@
             this._mainBtn_Reports.Margin = new System.Windows.Forms.Padding(5);
             this._mainBtn_Reports.Name = "_mainBtn_Reports";
             this._mainBtn_Reports.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this._mainBtn_Reports.Size = new System.Drawing.Size(168, 50);
+            this._mainBtn_Reports.Size = new System.Drawing.Size(170, 50);
             this._mainBtn_Reports.TabIndex = 7;
             this._mainBtn_Reports.TabStop = false;
             this._mainBtn_Reports.Text = "  Reports";
@@ -207,7 +207,7 @@
             this._inventoryPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this._inventoryPanel.Location = new System.Drawing.Point(0, 465);
             this._inventoryPanel.Name = "_inventoryPanel";
-            this._inventoryPanel.Size = new System.Drawing.Size(168, 120);
+            this._inventoryPanel.Size = new System.Drawing.Size(170, 120);
             this._inventoryPanel.TabIndex = 11;
             this._inventoryPanel.Visible = false;
             // 
@@ -226,7 +226,7 @@
             this._btnVat.Margin = new System.Windows.Forms.Padding(5);
             this._btnVat.Name = "_btnVat";
             this._btnVat.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this._btnVat.Size = new System.Drawing.Size(168, 30);
+            this._btnVat.Size = new System.Drawing.Size(170, 30);
             this._btnVat.TabIndex = 6;
             this._btnVat.TabStop = false;
             this._btnVat.Text = "  VAT";
@@ -250,7 +250,7 @@
             this._btnRawMaterials.Margin = new System.Windows.Forms.Padding(5);
             this._btnRawMaterials.Name = "_btnRawMaterials";
             this._btnRawMaterials.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this._btnRawMaterials.Size = new System.Drawing.Size(168, 45);
+            this._btnRawMaterials.Size = new System.Drawing.Size(170, 45);
             this._btnRawMaterials.TabIndex = 5;
             this._btnRawMaterials.TabStop = false;
             this._btnRawMaterials.Text = "  RAW MATERIALS";
@@ -273,7 +273,7 @@
             this._btnProductionInventory.Margin = new System.Windows.Forms.Padding(5);
             this._btnProductionInventory.Name = "_btnProductionInventory";
             this._btnProductionInventory.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this._btnProductionInventory.Size = new System.Drawing.Size(168, 45);
+            this._btnProductionInventory.Size = new System.Drawing.Size(170, 45);
             this._btnProductionInventory.TabIndex = 4;
             this._btnProductionInventory.TabStop = false;
             this._btnProductionInventory.Text = "  INVENTORY";
@@ -295,7 +295,7 @@
             this._mainBtn_Inventory.Margin = new System.Windows.Forms.Padding(5);
             this._mainBtn_Inventory.Name = "_mainBtn_Inventory";
             this._mainBtn_Inventory.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this._mainBtn_Inventory.Size = new System.Drawing.Size(168, 50);
+            this._mainBtn_Inventory.Size = new System.Drawing.Size(170, 50);
             this._mainBtn_Inventory.TabIndex = 4;
             this._mainBtn_Inventory.TabStop = false;
             this._mainBtn_Inventory.Text = "  Inventory";
@@ -313,7 +313,7 @@
             this._transacPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this._transacPanel.Location = new System.Drawing.Point(0, 325);
             this._transacPanel.Name = "_transacPanel";
-            this._transacPanel.Size = new System.Drawing.Size(168, 90);
+            this._transacPanel.Size = new System.Drawing.Size(170, 90);
             this._transacPanel.TabIndex = 10;
             this._transacPanel.Visible = false;
             // 
@@ -332,7 +332,7 @@
             this._btnPurchaseOrder.Margin = new System.Windows.Forms.Padding(5);
             this._btnPurchaseOrder.Name = "_btnPurchaseOrder";
             this._btnPurchaseOrder.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this._btnPurchaseOrder.Size = new System.Drawing.Size(168, 45);
+            this._btnPurchaseOrder.Size = new System.Drawing.Size(170, 45);
             this._btnPurchaseOrder.TabIndex = 5;
             this._btnPurchaseOrder.TabStop = false;
             this._btnPurchaseOrder.Text = "  PURCHASE ORDER";
@@ -356,7 +356,7 @@
             this._btnPos.Margin = new System.Windows.Forms.Padding(5);
             this._btnPos.Name = "_btnPos";
             this._btnPos.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this._btnPos.Size = new System.Drawing.Size(168, 45);
+            this._btnPos.Size = new System.Drawing.Size(170, 45);
             this._btnPos.TabIndex = 4;
             this._btnPos.TabStop = false;
             this._btnPos.Text = "  POS";
@@ -379,7 +379,7 @@
             this._mainBtn_Transaction.Margin = new System.Windows.Forms.Padding(5);
             this._mainBtn_Transaction.Name = "_mainBtn_Transaction";
             this._mainBtn_Transaction.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this._mainBtn_Transaction.Size = new System.Drawing.Size(168, 50);
+            this._mainBtn_Transaction.Size = new System.Drawing.Size(170, 50);
             this._mainBtn_Transaction.TabIndex = 8;
             this._mainBtn_Transaction.TabStop = false;
             this._mainBtn_Transaction.Text = "  Transaction";
@@ -400,7 +400,7 @@
             this._filesButtonPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this._filesButtonPanel.Location = new System.Drawing.Point(0, 50);
             this._filesButtonPanel.Name = "_filesButtonPanel";
-            this._filesButtonPanel.Size = new System.Drawing.Size(168, 225);
+            this._filesButtonPanel.Size = new System.Drawing.Size(170, 225);
             this._filesButtonPanel.TabIndex = 9;
             this._filesButtonPanel.Visible = false;
             // 
@@ -419,7 +419,7 @@
             this._btnSupplierManagement.Margin = new System.Windows.Forms.Padding(5);
             this._btnSupplierManagement.Name = "_btnSupplierManagement";
             this._btnSupplierManagement.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this._btnSupplierManagement.Size = new System.Drawing.Size(168, 45);
+            this._btnSupplierManagement.Size = new System.Drawing.Size(170, 45);
             this._btnSupplierManagement.TabIndex = 8;
             this._btnSupplierManagement.TabStop = false;
             this._btnSupplierManagement.Text = "  SUPPLIERS";
@@ -443,7 +443,7 @@
             this._btnUnitManagement.Margin = new System.Windows.Forms.Padding(5);
             this._btnUnitManagement.Name = "_btnUnitManagement";
             this._btnUnitManagement.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this._btnUnitManagement.Size = new System.Drawing.Size(168, 45);
+            this._btnUnitManagement.Size = new System.Drawing.Size(170, 45);
             this._btnUnitManagement.TabIndex = 7;
             this._btnUnitManagement.TabStop = false;
             this._btnUnitManagement.Text = "  UNITS";
@@ -467,7 +467,7 @@
             this._btnPriceManagement.Margin = new System.Windows.Forms.Padding(5);
             this._btnPriceManagement.Name = "_btnPriceManagement";
             this._btnPriceManagement.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this._btnPriceManagement.Size = new System.Drawing.Size(168, 45);
+            this._btnPriceManagement.Size = new System.Drawing.Size(170, 45);
             this._btnPriceManagement.TabIndex = 6;
             this._btnPriceManagement.TabStop = false;
             this._btnPriceManagement.Text = "  PRICE MANAGEMENT";
@@ -491,7 +491,7 @@
             this._btnIngredients.Margin = new System.Windows.Forms.Padding(5);
             this._btnIngredients.Name = "_btnIngredients";
             this._btnIngredients.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this._btnIngredients.Size = new System.Drawing.Size(168, 45);
+            this._btnIngredients.Size = new System.Drawing.Size(170, 45);
             this._btnIngredients.TabIndex = 5;
             this._btnIngredients.TabStop = false;
             this._btnIngredients.Text = "  INGREDIENTS";
@@ -515,7 +515,7 @@
             this._btnProduction.Margin = new System.Windows.Forms.Padding(5);
             this._btnProduction.Name = "_btnProduction";
             this._btnProduction.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this._btnProduction.Size = new System.Drawing.Size(168, 45);
+            this._btnProduction.Size = new System.Drawing.Size(170, 45);
             this._btnProduction.TabIndex = 4;
             this._btnProduction.TabStop = false;
             this._btnProduction.Text = "  PRODUCTS";
@@ -539,7 +539,7 @@
             this._mainBtn_Files.Margin = new System.Windows.Forms.Padding(5);
             this._mainBtn_Files.Name = "_mainBtn_Files";
             this._mainBtn_Files.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this._mainBtn_Files.Size = new System.Drawing.Size(168, 50);
+            this._mainBtn_Files.Size = new System.Drawing.Size(170, 50);
             this._mainBtn_Files.TabIndex = 3;
             this._mainBtn_Files.TabStop = false;
             this._mainBtn_Files.Text = "  Files";
@@ -550,7 +550,6 @@
             // 
             // _sidePanel
             // 
-            this._sidePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this._sidePanel.Controls.Add(this._sideButtonPanel);
             this._sidePanel.Controls.Add(this.panel1);
             this._sidePanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -566,9 +565,9 @@
             this.panel1.Controls.Add(this._utilities);
             this.panel1.Controls.Add(this._logout);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 469);
+            this.panel1.Location = new System.Drawing.Point(0, 471);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(168, 60);
+            this.panel1.Size = new System.Drawing.Size(170, 60);
             this.panel1.TabIndex = 2;
             // 
             // _utilities
@@ -582,7 +581,7 @@
             this._utilities.Location = new System.Drawing.Point(0, 0);
             this._utilities.Margin = new System.Windows.Forms.Padding(5);
             this._utilities.Name = "_utilities";
-            this._utilities.Size = new System.Drawing.Size(168, 30);
+            this._utilities.Size = new System.Drawing.Size(170, 30);
             this._utilities.TabIndex = 3;
             this._utilities.TabStop = false;
             this._utilities.Text = "Utilities";
@@ -601,7 +600,7 @@
             this._logout.Location = new System.Drawing.Point(0, 30);
             this._logout.Margin = new System.Windows.Forms.Padding(5);
             this._logout.Name = "_logout";
-            this._logout.Size = new System.Drawing.Size(168, 30);
+            this._logout.Size = new System.Drawing.Size(170, 30);
             this._logout.TabIndex = 2;
             this._logout.TabStop = false;
             this._logout.Text = "Log out";
@@ -611,7 +610,6 @@
             // 
             // _contentsPanel
             // 
-            this._contentsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this._contentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._contentsPanel.Location = new System.Drawing.Point(0, 0);
             this._contentsPanel.Name = "_contentsPanel";

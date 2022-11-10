@@ -54,6 +54,7 @@
             this._unitsTable.AllowUserToDeleteRows = false;
             this._unitsTable.AllowUserToResizeRows = false;
             this._unitsTable.BackgroundColor = System.Drawing.Color.White;
+            this._unitsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._unitsTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;

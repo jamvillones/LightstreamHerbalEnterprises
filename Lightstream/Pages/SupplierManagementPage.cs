@@ -127,8 +127,13 @@ namespace Lightstream.Forms
         {
             if (SelectedSupplier is null) return;
 
-            _Archive.Enabled = !SelectedSupplier.IsArchived;
-            _Retrieve.Enabled = SelectedSupplier.IsArchived;
+            //_Archive.Enabled = !SelectedSupplier.IsArchived;
+            //_Retrieve.Enabled = SelectedSupplier.IsArchived;
+            ChangeArchiveRetriveButtonBehavior(SelectedSupplier.IsArchived);
+        }
+        void ChangeArchiveRetriveButtonBehavior(bool isArchived)
+        {
+            _Archive.Text = isArchived ? "Retrieve" : "Archive";
         }
 
         private void _supplierTable_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -137,7 +142,7 @@ namespace Lightstream.Forms
 
             if (sender is DataGridView table)
             {
-                table.Rows[e.RowIndex].DefaultCellStyle.BackColor = supplier.IsArchived ? Color.Gray : Color.Green;
+                table.Rows[e.RowIndex].DefaultCellStyle.ForeColor = supplier.IsArchived ? Color.Gray : Color.Green;
             }
         }
 
@@ -162,27 +167,35 @@ namespace Lightstream.Forms
 
             foreach (var supplier in s)
                 suppliers.Add(supplier);
-
         }
 
-        private async void _Archive_Click(object sender, EventArgs e)
+        private async void ArchiveRetrieve_Click(object sender, EventArgs e)
         {
             var s = SelectedSupplier;
-            s.IsArchived = true;
+            if (s is null) return;
+
+            s.IsArchived = !s.IsArchived;
             await _supplierService.Update_Async(s);
+
             ColorChange(s.IsArchived);
+            ChangeArchiveRetriveButtonBehavior(s.IsArchived);
         }
 
-        private async void _Retrieve_Click(object sender, EventArgs e)
-        {
-            var s = SelectedSupplier;
-            s.IsArchived = false;
-            await _supplierService.Update_Async(s);
-            ColorChange(s.IsArchived);
-        }
+        //private async void _Retrieve_Click(object sender, EventArgs e)
+        //{
+        //    var s = SelectedSupplier;
+        //    s.IsArchived = false;
+        //    await _supplierService.Update_Async(s);
+        //    ColorChange(s.IsArchived);
+        //}
         void ColorChange(bool isArchived)
         {
-            _supplierTable.SelectedRows[0].DefaultCellStyle.BackColor = isArchived ? Color.Gray : Color.Green;
+            _supplierTable.SelectedRows[0].DefaultCellStyle.ForeColor = isArchived ? Color.Gray : Color.Green;
+        }
+
+        private void _cancel_Click(object sender, EventArgs e)
+        {
+            ClearFields();
         }
     }
 }

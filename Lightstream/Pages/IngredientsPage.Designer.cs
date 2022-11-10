@@ -55,6 +55,7 @@
             this._ingredientsTable.AllowUserToDeleteRows = false;
             this._ingredientsTable.AllowUserToResizeRows = false;
             this._ingredientsTable.BackgroundColor = System.Drawing.Color.White;
+            this._ingredientsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._ingredientsTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;

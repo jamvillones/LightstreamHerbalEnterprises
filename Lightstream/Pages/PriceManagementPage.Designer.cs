@@ -88,6 +88,7 @@
             this._productsTable.AllowUserToDeleteRows = false;
             this._productsTable.AllowUserToResizeRows = false;
             this._productsTable.BackgroundColor = System.Drawing.Color.White;
+            this._productsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._productsTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -220,7 +221,7 @@
             this._divider.Panel2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this._divider.Size = new System.Drawing.Size(727, 375);
             this._divider.SplitterDistance = 285;
-            this._divider.SplitterWidth = 3;
+            this._divider.SplitterWidth = 10;
             this._divider.TabIndex = 10;
             // 
             // label3
@@ -245,7 +246,7 @@
             this.panel1.Location = new System.Drawing.Point(4, 3);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(431, 369);
+            this.panel1.Size = new System.Drawing.Size(424, 369);
             this.panel1.TabIndex = 0;
             // 
             // _variantsTable
@@ -254,6 +255,7 @@
             this._variantsTable.AllowUserToDeleteRows = false;
             this._variantsTable.AllowUserToResizeRows = false;
             this._variantsTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(244)))), ((int)(((byte)(237)))));
+            this._variantsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._variantsTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -281,7 +283,7 @@
             this._variantsTable.DefaultCellStyle = dataGridViewCellStyle6;
             this._variantsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._variantsTable.EnableHeadersVisualStyles = false;
-            this._variantsTable.Location = new System.Drawing.Point(0, 40);
+            this._variantsTable.Location = new System.Drawing.Point(0, 39);
             this._variantsTable.Margin = new System.Windows.Forms.Padding(2);
             this._variantsTable.MultiSelect = false;
             this._variantsTable.Name = "_variantsTable";
@@ -290,7 +292,7 @@
             this._variantsTable.RowHeadersWidth = 62;
             this._variantsTable.RowTemplate.Height = 33;
             this._variantsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._variantsTable.Size = new System.Drawing.Size(431, 294);
+            this._variantsTable.Size = new System.Drawing.Size(424, 295);
             this._variantsTable.TabIndex = 1;
             this._variantsTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._variants_CellMouseClick);
             this._variantsTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._variantsTable_RowsAdded);
@@ -368,7 +370,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 334);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(431, 35);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(424, 35);
             this.flowLayoutPanel1.TabIndex = 11;
             // 
             // button1
@@ -412,7 +414,7 @@
             this._selectedProductName.Location = new System.Drawing.Point(0, 20);
             this._selectedProductName.Name = "_selectedProductName";
             this._selectedProductName.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this._selectedProductName.Size = new System.Drawing.Size(431, 20);
+            this._selectedProductName.Size = new System.Drawing.Size(424, 19);
             this._selectedProductName.TabIndex = 10;
             this._selectedProductName.Text = "Product_Name";
             this._selectedProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -424,7 +426,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(431, 20);
+            this.label2.Size = new System.Drawing.Size(424, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "Product Variants";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

@@ -94,6 +94,7 @@
             this._prodTable.AllowUserToDeleteRows = false;
             this._prodTable.AllowUserToResizeRows = false;
             this._prodTable.BackgroundColor = System.Drawing.Color.White;
+            this._prodTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._prodTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;

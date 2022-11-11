@@ -238,8 +238,6 @@ namespace Lightstream
 
         public void Logout()
         {
-            if (MessageBox.Show("Are you sure you want to logout?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
-
             IsLoggedout = true;
             Close();
         }

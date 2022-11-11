@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Pages\ProductsPage.resx~RF22c86b.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="icons8_mint.ico" />
   </ItemGroup>
 

@@ -31,7 +31,7 @@ namespace Lightstream.Extensions
         }
 
         static Color ArchivedColor = Color.Gray;
-        static Color ActiveColor = Color.Black;
+        static Color ActiveColor = Color.DarkGreen;
 
         static Color RetrieveColor = SystemColors.ActiveCaption;
         static Color ArchiveColor = Color.IndianRed;

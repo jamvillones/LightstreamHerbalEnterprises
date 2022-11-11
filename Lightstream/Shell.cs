@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,8 @@ namespace Lightstream
         public Shell()
         {
             InitializeComponent();
+            divider.SplitterDistance = 1085;
+            divider.Panel2Collapsed = true;
         }
 
         #region topbar functionality
@@ -61,7 +64,9 @@ namespace Lightstream
                     logoutButton.Enabled = true;
 
                     userButton.Text = l.CurrentLogin!.FullName ?? "Current User";
-                    Form form = l.CurrentLogin!.UserType == (int)UserType.admin ? new Main() : new FPOS();
+                    bool isAdmin = l.CurrentLogin!.UserType == (int)UserType.admin;
+                    Form form = isAdmin ? new Main() : new FPOS();
+                    moduleType.Text = isAdmin ? "Main Control" : "Point of Sale";
                     form.FormClosed += Form_FormClosed;
 
                     AddControl(form);
@@ -91,7 +96,7 @@ namespace Lightstream
         {
             currentControl = next;
             currentControl.TopLevel = false;
-            this.panel1.Controls.Add(currentControl);
+            this.contentsPanel.Controls.Add(currentControl);
             currentControl.Dock = DockStyle.Fill;
             currentControl.Show();
         }
@@ -114,7 +119,10 @@ namespace Lightstream
         private void logout_Click(object sender, EventArgs e)
         {
             if (currentControl is ILogoutForm il)
-                LogoutCurrentForm(il);
+            {
+                if (MessageBox.Show("Are you sure you want to log off?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    LogoutCurrentForm(il);
+            }
         }
 
         void LogoutCurrentForm(ILogoutForm form)
@@ -124,7 +132,13 @@ namespace Lightstream
             {
                 userButton.Enabled = false;
                 logoutButton.Enabled = false;
+                moduleType.Text = string.Empty;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            divider.Panel2Collapsed = !divider.Panel2Collapsed;
         }
     }
 }

@@ -69,11 +69,20 @@ namespace Lightstream.Usercontrols
         {
             _cancel.Enabled = CanReset;
         }
-
+        int selectedStatus => radioButton1.Checked ? (int)ArchiveStatus.Active : radioButton2.Checked ? (int)ArchiveStatus.Inactive : (int)ArchiveStatus.All;
         async Task LoadProducts()
         {
             var prods = await _productService.GetAll_Async();
-            var filtered = prods.FilterByStatus(_statusOption.SelectedIndex);
+            var filtered = prods.FilterByStatus(selectedStatus);
+
+            products.Clear();
+            foreach (var i in filtered.OrderBy(x => x.Name))
+                products.Add(i);
+        }
+        async Task LoadProducts(int index)
+        {
+            var prods = await _productService.GetAll_Async();
+            var filtered = prods.FilterByStatus(index);
 
             products.Clear();
             foreach (var i in filtered.OrderBy(x => x.Name))
@@ -86,7 +95,7 @@ namespace Lightstream.Usercontrols
             _prodTable.DataSource = products;
             _recipe.DataSource = recipes;
 
-            //await LoadProducts();
+            await LoadProducts();
 
             var u = await _unitGetService.GetAll_Async();
 
@@ -95,7 +104,7 @@ namespace Lightstream.Usercontrols
             var uAutocomplete = u.Select(x => x.SingularName);
             _unitOption.AutoCompleteCustomSource.AddRange(uAutocomplete.ToArray());
 
-            _statusOption.LoadArchiveStatus();
+            //_statusOption.LoadArchiveStatus();
         }
 
         #region crud operations
@@ -306,7 +315,7 @@ namespace Lightstream.Usercontrols
             ///if the click column is the delete column or the clicked row is the header
             if (e.ColumnIndex == delCol.Index)
             {
-                if (await DeleteProduct(SelectedProduct))
+                if (await DeleteProduct(SelectedProduct!))
                     products.Remove(SelectedProduct);
 
             }
@@ -369,10 +378,10 @@ namespace Lightstream.Usercontrols
             _prodTable.SelectedRows[0].SetRowColor(s.IsArchived);
         }
 
-        private async void _statusOption_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            await LoadProducts();
-        }
+        //private async void _statusOption_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    await LoadProducts();
+        //}
 
         private void _prodTable_SelectionChanged(object sender, EventArgs e)
         {
@@ -385,6 +394,21 @@ namespace Lightstream.Usercontrols
         {
             var row = _prodTable.Rows[e.RowIndex];
             row.SetRowColor(products[e.RowIndex].IsArchived);
+        }
+
+        private async void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            await LoadProducts((int)ArchiveStatus.Active);
+        }
+
+        private async void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            await LoadProducts((int)ArchiveStatus.Inactive);
+        }
+
+        private async void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            await LoadProducts((int)ArchiveStatus.All);
         }
     }
 }

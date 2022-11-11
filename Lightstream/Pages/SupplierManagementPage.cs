@@ -1,6 +1,7 @@
 ﻿using Lightstream.DataAccess.Models;
 using Lightstream.DataAccess.Repositories;
 using Lightstream.Extensions;
+using Lightstream.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -176,6 +177,48 @@ namespace Lightstream.Forms
         private void _cancel_Click(object sender, EventArgs e)
         {
             ClearFields();
+        }
+
+        bool searchFound = false;
+
+        private async void _search_TextChanged(object sender, EventArgs e)
+        {
+            if (!searchFound) return;
+            if (!string.IsNullOrWhiteSpace(_search.Text)) return;
+
+            await LoadAllSupplier();
+            searchFound = false;
+        }
+
+        private async void _search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                var text = _search.Text.ToLower().Trim();
+                if (string.IsNullOrWhiteSpace(text))
+                    return;
+
+                var items = await _supplierService.GetAll_Async();
+
+                items = SearchHandler.FilterList(
+                   items,
+                   FilteringFlow.StopUponSatisfaction,
+                   x => x.Name.ToLower().Contains(text)
+                   );
+
+                searchFound = items.Count() > 0;
+                if (!searchFound)
+                {
+                    MessageBox.Show("No supplier found", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                this.suppliers.Clear();
+                foreach (var u in items.OrderBy(x => x.Name))
+                {
+                    this.suppliers.Add(u);
+                }
+            }
         }
     }
 }

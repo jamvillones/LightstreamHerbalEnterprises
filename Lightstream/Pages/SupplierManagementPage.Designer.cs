@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this._statusOption = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this._save = new System.Windows.Forms.Button();
@@ -42,7 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this._searchtxt = new System.Windows.Forms.TextBox();
+            this._search = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this._supplierTable = new System.Windows.Forms.DataGridView();
             this.snCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -198,15 +198,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Supplier Name:";
             // 
-            // _searchtxt
+            // _search
             // 
-            this._searchtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this._searchtxt.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._searchtxt.Location = new System.Drawing.Point(8, 10);
-            this._searchtxt.Name = "_searchtxt";
-            this._searchtxt.PlaceholderText = "Search....";
-            this._searchtxt.Size = new System.Drawing.Size(391, 16);
-            this._searchtxt.TabIndex = 7;
+            this._search.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this._search.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._search.Location = new System.Drawing.Point(8, 10);
+            this._search.Name = "_search";
+            this._search.PlaceholderText = "Search....";
+            this._search.Size = new System.Drawing.Size(391, 16);
+            this._search.TabIndex = 7;
+            this._search.TextChanged += new System.EventHandler(this._search_TextChanged);
+            this._search.KeyDown += new System.Windows.Forms.KeyEventHandler(this._search_KeyDown);
             // 
             // label5
             // 
@@ -230,14 +232,14 @@
             this._supplierTable.BackgroundColor = System.Drawing.Color.White;
             this._supplierTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._supplierTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this._supplierTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._supplierTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this._supplierTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._supplierTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.snCol,
@@ -245,14 +247,14 @@
             this.cnCol,
             this.addressCol,
             this.statCol});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._supplierTable.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._supplierTable.DefaultCellStyle = dataGridViewCellStyle4;
             this._supplierTable.EnableHeadersVisualStyles = false;
             this._supplierTable.Location = new System.Drawing.Point(8, 34);
             this._supplierTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -373,7 +375,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.flowLayoutPanel1);
-            this.panel2.Controls.Add(this._searchtxt);
+            this.panel2.Controls.Add(this._search);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this._statusOption);
             this.panel2.Controls.Add(this._supplierTable);
@@ -428,7 +430,7 @@
 
         private ComboBox _statusOption;
         private Panel panel1;
-        private TextBox _searchtxt;
+        private TextBox _search;
         private Button _save;
         private Button _cancel;
         private TextBox _contactnumber;

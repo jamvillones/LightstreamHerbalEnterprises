@@ -169,7 +169,7 @@ namespace Lightstream.Forms
             if (s is null) return;
 
 
-            await _supplierService.ToggleArchive(s);
+            await _supplierService.ToggleArchiveAsync(s);
             _supplierTable.SelectedRows[0].SetRowColor(s.IsArchived);
             _Archive.SetButtonBehavior(s.IsArchived);
         }

@@ -10,5 +10,7 @@ namespace Lightstream.DataAccess.Models
     {
         public string GetUnit => UnitMeasurement.SingularName;
         public string GetFormattedCost => string.Format("₱ {0:n}", this.Cost);
+
+        public string Status => IsArchived ? "Inactive" : "Active";
     }
 }

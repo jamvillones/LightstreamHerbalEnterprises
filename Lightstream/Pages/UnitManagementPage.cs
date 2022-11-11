@@ -46,11 +46,18 @@ namespace Lightstream.Forms
             SetDataGridColumnBindings();
         }
 
-        async void UnitMangmtForm_Load(object sender, EventArgs e)
+        void UnitMangmtForm_Load(object sender, EventArgs e)
         {
             _unitsTable.DataSource = units;
 
-            await LoadAllUnits();
+            //await LoadAllUnits();
+
+            for (int i = 0; i < (int)ArchiveStatus.Count; i++)
+            {
+                _statusOption.Items.Add((ArchiveStatus)i);
+            }
+
+            _statusOption.SelectedIndex = 0;
         }
 
         private void _Add_Click(object sender, EventArgs e)
@@ -71,11 +78,12 @@ namespace Lightstream.Forms
 
         async Task LoadAllUnits()
         {
-            var unit = await _unitService.GetAll_Async();
+            var unit = await _unitService.GetAll_Async();           
+
+            var filtered = unit.FilterByStatus(_statusOption.SelectedIndex);
 
             this.units.Clear();
-
-            foreach (var i in unit.OrderBy(x => x.SingularName))
+            foreach (var i in filtered.OrderBy(x => x.SingularName))
                 this.units.Add(i);
         }
 
@@ -105,7 +113,7 @@ namespace Lightstream.Forms
             if (su == null)
                 return;
 
-            await _unitService.ToggleArchive(su);
+            await _unitService.ToggleArchiveAsync(su);
 
             _unitsTable.SelectedRows[0].SetRowColor(su.IsArchived);
             _archive_retrieve.SetButtonBehavior(su.IsArchived);
@@ -159,6 +167,11 @@ namespace Lightstream.Forms
                     this.units.Add(u);
                 }
             }
+        }
+
+        private async void _statusOption_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            await LoadAllUnits();
         }
     }
 }

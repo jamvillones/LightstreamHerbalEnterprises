@@ -4,6 +4,7 @@ using Lightstream.Extensions;
 using Lightstream.Forms;
 using Lightstream.Services;
 using Lightstream.ViewModels;
+using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using System.ComponentModel;
 using System.Data;
 
@@ -11,7 +12,7 @@ namespace Lightstream.Usercontrols
 {
     public partial class ProductsPage : Form
     {
-        BindingList<ProductViewModel> products = new BindingList<ProductViewModel>();
+        BindingList<Product> products = new();
         BindingList<RecipeViewModel> recipes = new BindingList<RecipeViewModel>();
         BindingList<Unit> units = new BindingList<Unit>();
         Unit? SelectedUnit
@@ -19,7 +20,14 @@ namespace Lightstream.Usercontrols
             get => _unitOption.SelectedItem is Unit unit ? unit : null;
             set => _unitOption.SelectedItem = value;
         }
-        ProductViewModel? SelectedProduct => _prodTable.RowCount == 0 ? null : (ProductViewModel)_prodTable.SelectedRows[0].DataBoundItem;
+        Product? SelectedProduct
+        {
+            get => _prodTable.SelectedRows.Count == 0 ? null : (Product)_prodTable.SelectedRows[0].DataBoundItem;
+            set
+            {
+                products[_prodTable.SelectedRows[0].Index] = value;
+            }
+        }
         RecipeViewModel? SelectedRecipe => _recipe.SelectedItem is RecipeViewModel r ? r : null;
         bool CanSaveProduct => !string.IsNullOrWhiteSpace(_productName.Text.Trim()) && recipes.Count > 0;
         bool CanReset => !string.IsNullOrWhiteSpace(_productName.Text) ||
@@ -48,9 +56,13 @@ namespace Lightstream.Usercontrols
         {
             _prodTable.AutoGenerateColumns = false;
             _unitOption.DisplayMember = nameof(Unit.SingularName);
-            unitCol.DataPropertyName = nameof(ProductViewModel.Unit);
-            ingCol.DataPropertyName = nameof(ProductViewModel.Ingredients);
-            barcodeCol.DataPropertyName = nameof(ProductViewModel.Barcode);
+
+            nameCol.DataPropertyName = nameof(Product.Name);
+            barcodeCol.DataPropertyName = nameof(Product.Barcode);
+            descCol.DataPropertyName = nameof(Product.Description);
+            unitCol.DataPropertyName = nameof(Product.GetUnit);
+            ingCol.DataPropertyName = nameof(Product.GetIngredients);
+            statusCol.DataPropertyName = nameof(Product.Status);
         }
 
         private void Recipes_ListChanged(object? sender, ListChangedEventArgs e)
@@ -60,12 +72,12 @@ namespace Lightstream.Usercontrols
 
         async Task LoadProducts()
         {
-            products.Clear();
-
             var prods = await _productService.GetAll_Async();
+            var filtered = prods.FilterByStatus(_statusOption.SelectedIndex);
 
-            foreach (var i in prods)
-                products.Add(new ProductViewModel(i));
+            products.Clear();
+            foreach (var i in filtered.OrderBy(x => x.Name))
+                products.Add(i);
         }
 
         private async void ProductsPage_Load(object sender, EventArgs e)
@@ -74,7 +86,7 @@ namespace Lightstream.Usercontrols
             _prodTable.DataSource = products;
             _recipe.DataSource = recipes;
 
-            await LoadProducts();
+            //await LoadProducts();
 
             var u = await _unitGetService.GetAll_Async();
 
@@ -82,6 +94,8 @@ namespace Lightstream.Usercontrols
                 units.Add(i);
             var uAutocomplete = u.Select(x => x.SingularName);
             _unitOption.AutoCompleteCustomSource.AddRange(uAutocomplete.ToArray());
+
+            _statusOption.LoadArchiveStatus();
         }
 
         #region crud operations
@@ -172,7 +186,7 @@ namespace Lightstream.Usercontrols
                 if (savedProduct is not null)
                 {
                     ClearFields();
-                    products.Add(new ProductViewModel(savedProduct));
+                    products.Add(savedProduct);
                 }
             }
         }
@@ -191,11 +205,11 @@ namespace Lightstream.Usercontrols
         }
         void OpenEditForm()
         {
-            if (!EditValidationSuccessful(SelectedProduct.Data))
+            if (!EditValidationSuccessful(SelectedProduct))
                 return;
 
             var editProductForm = new EditProductForm(
-                SelectedProduct.Data,
+                SelectedProduct,
                 _productService,
                 _unitGetService
                 );
@@ -204,7 +218,7 @@ namespace Lightstream.Usercontrols
             if (result == DialogResult.OK)
             {
                 var data = editProductForm.Tag as Product;
-                SelectedProduct.Data = data;
+                SelectedProduct = data;
                 //handle the update of the item editted
             }
         }
@@ -230,7 +244,7 @@ namespace Lightstream.Usercontrols
         }
         private async void _deleteProduct_Click(object sender, EventArgs e)
         {
-            if (await DeleteProduct(SelectedProduct.Data))
+            if (await DeleteProduct(SelectedProduct))
                 products.Remove(SelectedProduct);
         }
         #endregion
@@ -280,7 +294,7 @@ namespace Lightstream.Usercontrols
                 this.products.Clear();
 
                 foreach (var i in filtered)
-                    this.products.Add(new ProductViewModel(i));
+                    this.products.Add(i);
             }
         }
         #endregion
@@ -292,7 +306,7 @@ namespace Lightstream.Usercontrols
             ///if the click column is the delete column or the clicked row is the header
             if (e.ColumnIndex == delCol.Index)
             {
-                if (await DeleteProduct(SelectedProduct.Data))
+                if (await DeleteProduct(SelectedProduct))
                     products.Remove(SelectedProduct);
 
             }
@@ -342,12 +356,35 @@ namespace Lightstream.Usercontrols
                     _unitOption.SelectedItem = u;
                 }
             }
-
         }
 
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        private async void _archive_retrieve_Click(object sender, EventArgs e)
         {
+            var s = SelectedProduct;
+            if (s is null) return;
 
+            await _productService.ToggleArchiveAsync(s);
+
+            _archive_retrieve.SetButtonBehavior(s.IsArchived);
+            _prodTable.SelectedRows[0].SetRowColor(s.IsArchived);
+        }
+
+        private async void _statusOption_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            await LoadProducts();
+        }
+
+        private void _prodTable_SelectionChanged(object sender, EventArgs e)
+        {
+            var su = SelectedProduct;
+            if (su is null) return;
+            _archive_retrieve.SetButtonBehavior(su.IsArchived);
+        }
+
+        private void _prodTable_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            var row = _prodTable.Rows[e.RowIndex];
+            row.SetRowColor(products[e.RowIndex].IsArchived);
         }
     }
 }

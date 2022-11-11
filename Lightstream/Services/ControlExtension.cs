@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Lightstream.DataAccess.Models;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
@@ -28,8 +30,11 @@ namespace Lightstream.Extensions
             }
         }
 
-        public static Color ArchivedColor = Color.Gray;
-        public static Color ActiveColor = Color.Black;
+        static Color ArchivedColor = Color.Gray;
+        static Color ActiveColor = Color.Black;
+
+        static Color RetrieveColor = SystemColors.ActiveCaption;
+        static Color ArchiveColor = Color.IndianRed;
 
         public static void SetRowColor(this DataGridViewRow row, bool isArchived)
         {
@@ -38,6 +43,30 @@ namespace Lightstream.Extensions
         public static void SetButtonBehavior(this Button button, bool isArchived)
         {
             button.Text = isArchived ? "Retrieve" : "Archive";
+            button.BackColor = isArchived ? RetrieveColor : ArchiveColor;
+        }
+
+        public static IEnumerable<TModel> FilterByStatus<TModel>(this IEnumerable<TModel> items, int index) where TModel : class, IArchivable
+        {
+            var status = (ArchiveStatus)index;
+            switch (status)
+            {
+                case ArchiveStatus.Active:
+                    return items.Where(i => !i.IsArchived);
+
+                case ArchiveStatus.Inactive:
+                    return items.Where(i => i.IsArchived);
+            }
+
+            return items;
+        }
+
+        public static void LoadArchiveStatus(this ComboBox option)
+        {
+            for (int i = 0; i < (int)ArchiveStatus.Count; i++)
+                option.Items.Add((ArchiveStatus)i);
+
+            option.SelectedIndex = 0;
         }
     }
 }

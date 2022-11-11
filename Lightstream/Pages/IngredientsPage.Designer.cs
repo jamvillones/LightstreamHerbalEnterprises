@@ -36,18 +36,24 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this._ingredientsTable = new System.Windows.Forms.DataGridView();
             this.Column6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.deleteBtnCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this._create = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this._statusOption = new System.Windows.Forms.ComboBox();
             this.searchTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this._Add = new System.Windows.Forms.Button();
+            this._archive_retrieve = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._ingredientsTable)).BeginInit();
             this.panel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // _ingredientsTable
@@ -69,10 +75,11 @@
             this._ingredientsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._ingredientsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column6,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
+            this.idCol,
+            this.nameCol,
+            this.costCol,
+            this.unitCol,
+            this.statusCol,
             this.editCol,
             this.deleteBtnCol});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -85,7 +92,7 @@
             this._ingredientsTable.DefaultCellStyle = dataGridViewCellStyle5;
             this._ingredientsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._ingredientsTable.EnableHeadersVisualStyles = false;
-            this._ingredientsTable.Location = new System.Drawing.Point(30, 70);
+            this._ingredientsTable.Location = new System.Drawing.Point(30, 63);
             this._ingredientsTable.Margin = new System.Windows.Forms.Padding(0);
             this._ingredientsTable.MultiSelect = false;
             this._ingredientsTable.Name = "_ingredientsTable";
@@ -102,9 +109,11 @@
             this._ingredientsTable.RowHeadersWidth = 62;
             this._ingredientsTable.RowTemplate.Height = 25;
             this._ingredientsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._ingredientsTable.Size = new System.Drawing.Size(640, 300);
+            this._ingredientsTable.Size = new System.Drawing.Size(640, 277);
             this._ingredientsTable.TabIndex = 0;
             this._ingredientsTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._ingredientsTable_CellMouseClick);
+            this._ingredientsTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._ingredientsTable_RowsAdded);
+            this._ingredientsTable.SelectionChanged += new System.EventHandler(this._ingredientsTable_SelectionChanged);
             // 
             // Column6
             // 
@@ -118,44 +127,50 @@
             this.Column6.ToolTipText = "Select";
             this.Column6.Visible = false;
             // 
-            // Column1
+            // idCol
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column1.DataPropertyName = "Id";
-            this.Column1.HeaderText = "Id";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
+            this.idCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idCol.DataPropertyName = "Id";
+            this.idCol.HeaderText = "Id";
+            this.idCol.MinimumWidth = 8;
+            this.idCol.Name = "idCol";
+            this.idCol.ReadOnly = true;
+            this.idCol.Visible = false;
             // 
-            // Column2
+            // nameCol
             // 
-            this.Column2.DataPropertyName = "Name";
-            this.Column2.HeaderText = "Name";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 150;
+            this.nameCol.DataPropertyName = "Name";
+            this.nameCol.HeaderText = "Name";
+            this.nameCol.MinimumWidth = 8;
+            this.nameCol.Name = "nameCol";
+            this.nameCol.ReadOnly = true;
+            this.nameCol.Width = 150;
             // 
-            // Column3
+            // costCol
             // 
-            this.Column3.DataPropertyName = "GetFormattedCost";
-            this.Column3.HeaderText = "Cost";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 150;
+            this.costCol.DataPropertyName = "GetFormattedCost";
+            this.costCol.HeaderText = "Cost";
+            this.costCol.MinimumWidth = 8;
+            this.costCol.Name = "costCol";
+            this.costCol.ReadOnly = true;
+            this.costCol.Width = 150;
             // 
-            // Column4
+            // unitCol
             // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.DataPropertyName = "GetUnit";
+            this.unitCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.unitCol.DataPropertyName = "GetUnit";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column4.HeaderText = "Unit of Measurement";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.unitCol.DefaultCellStyle = dataGridViewCellStyle2;
+            this.unitCol.HeaderText = "Unit of Measurement";
+            this.unitCol.MinimumWidth = 8;
+            this.unitCol.Name = "unitCol";
+            this.unitCol.ReadOnly = true;
+            // 
+            // statusCol
+            // 
+            this.statusCol.HeaderText = "Status";
+            this.statusCol.Name = "statusCol";
+            this.statusCol.ReadOnly = true;
             // 
             // editCol
             // 
@@ -187,47 +202,59 @@
             this.deleteBtnCol.ReadOnly = true;
             this.deleteBtnCol.Text = "REMOVE";
             this.deleteBtnCol.UseColumnTextForButtonValue = true;
+            this.deleteBtnCol.Visible = false;
             this.deleteBtnCol.Width = 60;
             // 
             // panel1
             // 
+            this.panel1.AutoSize = true;
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this._create);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this._statusOption);
             this.panel1.Controls.Add(this.searchTxt);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel1.Location = new System.Drawing.Point(30, 30);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(35, 40, 35, 35);
-            this.panel1.Size = new System.Drawing.Size(640, 40);
+            this.panel1.Size = new System.Drawing.Size(640, 33);
             this.panel1.TabIndex = 1;
             // 
-            // _create
+            // label5
             // 
-            this._create.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._create.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this._create.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._create.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._create.ForeColor = System.Drawing.Color.Black;
-            this._create.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._create.Location = new System.Drawing.Point(500, 5);
-            this._create.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this._create.Name = "_create";
-            this._create.Size = new System.Drawing.Size(140, 30);
-            this._create.TabIndex = 5;
-            this._create.Text = "Create";
-            this._create.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this._create.UseVisualStyleBackColor = false;
-            this._create.Click += new System.EventHandler(this.addNewBtn_Click);
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(428, 7);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 19);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Filter:";
+            // 
+            // _statusOption
+            // 
+            this._statusOption.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this._statusOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._statusOption.Font = new System.Drawing.Font("Bebas Neue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._statusOption.FormattingEnabled = true;
+            this._statusOption.Location = new System.Drawing.Point(475, 5);
+            this._statusOption.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this._statusOption.Name = "_statusOption";
+            this._statusOption.Size = new System.Drawing.Size(165, 23);
+            this._statusOption.TabIndex = 14;
+            this._statusOption.SelectedIndexChanged += new System.EventHandler(this._statusOption_SelectedIndexChanged);
             // 
             // searchTxt
             // 
+            this.searchTxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.searchTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.searchTxt.Location = new System.Drawing.Point(3, 12);
-            this.searchTxt.Margin = new System.Windows.Forms.Padding(10);
+            this.searchTxt.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchTxt.Location = new System.Drawing.Point(0, 7);
+            this.searchTxt.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.searchTxt.Name = "searchTxt";
             this.searchTxt.PlaceholderText = "Search...";
-            this.searchTxt.Size = new System.Drawing.Size(280, 16);
+            this.searchTxt.Size = new System.Drawing.Size(280, 18);
             this.searchTxt.TabIndex = 2;
             this.searchTxt.TextChanged += new System.EventHandler(this.searchTxt_TextChanged);
             this.searchTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchTxt_KeyDown);
@@ -245,6 +272,50 @@
             this.label1.Text = "Ingredients";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.Controls.Add(this._Add);
+            this.flowLayoutPanel1.Controls.Add(this._archive_retrieve);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 340);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(640, 30);
+            this.flowLayoutPanel1.TabIndex = 10;
+            // 
+            // _Add
+            // 
+            this._Add.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this._Add.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this._Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._Add.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._Add.ForeColor = System.Drawing.Color.Black;
+            this._Add.Location = new System.Drawing.Point(0, 0);
+            this._Add.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this._Add.Name = "_Add";
+            this._Add.Size = new System.Drawing.Size(140, 30);
+            this._Add.TabIndex = 5;
+            this._Add.Text = "Add";
+            this._Add.UseVisualStyleBackColor = false;
+            this._Add.Click += new System.EventHandler(this.addNewBtn_Click);
+            // 
+            // _archive_retrieve
+            // 
+            this._archive_retrieve.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this._archive_retrieve.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this._archive_retrieve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._archive_retrieve.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._archive_retrieve.ForeColor = System.Drawing.Color.Black;
+            this._archive_retrieve.Location = new System.Drawing.Point(145, 0);
+            this._archive_retrieve.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this._archive_retrieve.Name = "_archive_retrieve";
+            this._archive_retrieve.Size = new System.Drawing.Size(140, 30);
+            this._archive_retrieve.TabIndex = 7;
+            this._archive_retrieve.Text = "Archive";
+            this._archive_retrieve.UseVisualStyleBackColor = false;
+            this._archive_retrieve.Click += new System.EventHandler(this._archive_retrieve_Click);
+            // 
             // IngredientsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -252,6 +323,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(700, 400);
             this.Controls.Add(this._ingredientsTable);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -265,7 +337,9 @@
             ((System.ComponentModel.ISupportInitialize)(this._ingredientsTable)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -275,12 +349,17 @@
         private Panel panel1;
         private TextBox searchTxt;
         private Label label1;
-        private Button _create;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Button _Add;
+        private Button _archive_retrieve;
+        private Label label5;
+        private ComboBox _statusOption;
         private DataGridViewCheckBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn idCol;
+        private DataGridViewTextBoxColumn nameCol;
+        private DataGridViewTextBoxColumn costCol;
+        private DataGridViewTextBoxColumn unitCol;
+        private DataGridViewTextBoxColumn statusCol;
         private DataGridViewButtonColumn editCol;
         private DataGridViewButtonColumn deleteBtnCol;
     }

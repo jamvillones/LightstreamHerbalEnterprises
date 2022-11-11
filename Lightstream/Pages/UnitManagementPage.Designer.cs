@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this._unitsTable = new System.Windows.Forms.DataGridView();
             this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abbreviationCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abbreviationCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pluralCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editBtnCol = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -42,8 +42,12 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this._search = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this._statusOption = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this._unitsTable)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // _unitsTable
@@ -54,33 +58,33 @@
             this._unitsTable.BackgroundColor = System.Drawing.Color.White;
             this._unitsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._unitsTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this._unitsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._unitsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this._unitsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._unitsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCol,
-            this.abbreviationCol,
             this.nameCol,
+            this.abbreviationCol,
             this.pluralCol,
             this.statusCol,
             this.editBtnCol});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._unitsTable.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._unitsTable.DefaultCellStyle = dataGridViewCellStyle4;
             this._unitsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._unitsTable.EnableHeadersVisualStyles = false;
-            this._unitsTable.Location = new System.Drawing.Point(30, 48);
+            this._unitsTable.Location = new System.Drawing.Point(30, 64);
             this._unitsTable.MultiSelect = false;
             this._unitsTable.Name = "_unitsTable";
             this._unitsTable.ReadOnly = true;
@@ -88,7 +92,7 @@
             this._unitsTable.RowHeadersWidth = 62;
             this._unitsTable.RowTemplate.Height = 25;
             this._unitsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._unitsTable.Size = new System.Drawing.Size(740, 365);
+            this._unitsTable.Size = new System.Drawing.Size(740, 349);
             this._unitsTable.TabIndex = 1;
             this._unitsTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._unitsTable_RowsAdded);
             this._unitsTable.SelectionChanged += new System.EventHandler(this._unitsTable_SelectionChanged);
@@ -102,21 +106,21 @@
             this.idCol.ReadOnly = true;
             this.idCol.Visible = false;
             // 
-            // abbreviationCol
-            // 
-            this.abbreviationCol.HeaderText = "Abbreviation";
-            this.abbreviationCol.MinimumWidth = 8;
-            this.abbreviationCol.Name = "abbreviationCol";
-            this.abbreviationCol.ReadOnly = true;
-            this.abbreviationCol.Width = 150;
-            // 
             // nameCol
             // 
             this.nameCol.HeaderText = "Name";
             this.nameCol.MinimumWidth = 8;
             this.nameCol.Name = "nameCol";
             this.nameCol.ReadOnly = true;
-            this.nameCol.Width = 150;
+            this.nameCol.Width = 400;
+            // 
+            // abbreviationCol
+            // 
+            this.abbreviationCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.abbreviationCol.HeaderText = "Abbreviation";
+            this.abbreviationCol.MinimumWidth = 8;
+            this.abbreviationCol.Name = "abbreviationCol";
+            this.abbreviationCol.ReadOnly = true;
             // 
             // pluralCol
             // 
@@ -126,6 +130,7 @@
             this.pluralCol.MinimumWidth = 8;
             this.pluralCol.Name = "pluralCol";
             this.pluralCol.ReadOnly = true;
+            this.pluralCol.Visible = false;
             // 
             // statusCol
             // 
@@ -208,16 +213,54 @@
             // _search
             // 
             this._search.AcceptsReturn = true;
+            this._search.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this._search.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this._search.Dock = System.Windows.Forms.DockStyle.Top;
-            this._search.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._search.Location = new System.Drawing.Point(30, 30);
+            this._search.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._search.Location = new System.Drawing.Point(0, 9);
+            this._search.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
             this._search.Name = "_search";
             this._search.PlaceholderText = "Search...";
-            this._search.Size = new System.Drawing.Size(740, 18);
+            this._search.Size = new System.Drawing.Size(280, 16);
             this._search.TabIndex = 11;
             this._search.TextChanged += new System.EventHandler(this._search_TextChanged);
             this._search.KeyDown += new System.Windows.Forms.KeyEventHandler(this._search_KeyDown);
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(528, 8);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 19);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Filter:";
+            // 
+            // _statusOption
+            // 
+            this._statusOption.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this._statusOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._statusOption.Font = new System.Drawing.Font("Bebas Neue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._statusOption.FormattingEnabled = true;
+            this._statusOption.Location = new System.Drawing.Point(575, 6);
+            this._statusOption.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this._statusOption.Name = "_statusOption";
+            this._statusOption.Size = new System.Drawing.Size(165, 23);
+            this._statusOption.TabIndex = 12;
+            this._statusOption.SelectedIndexChanged += new System.EventHandler(this._statusOption_SelectedIndexChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.AutoSize = true;
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.Controls.Add(this._search);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this._statusOption);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(30, 30);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(740, 34);
+            this.panel1.TabIndex = 14;
             // 
             // UnitManagementPage
             // 
@@ -226,7 +269,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 473);
             this.Controls.Add(this._unitsTable);
-            this.Controls.Add(this._search);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -238,6 +281,8 @@
             this.Load += new System.EventHandler(this.UnitMangmtForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this._unitsTable)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,10 +296,13 @@
         private Label label1;
         private TextBox _search;
         private DataGridViewTextBoxColumn idCol;
-        private DataGridViewTextBoxColumn abbreviationCol;
         private DataGridViewTextBoxColumn nameCol;
+        private DataGridViewTextBoxColumn abbreviationCol;
         private DataGridViewTextBoxColumn pluralCol;
         private DataGridViewTextBoxColumn statusCol;
         private DataGridViewButtonColumn editBtnCol;
+        private Label label5;
+        private ComboBox _statusOption;
+        private Panel panel1;
     }
 }

@@ -10,7 +10,7 @@ namespace Lightstream.DataAccess.Repositories
 {
     public static class RepositoryExtension
     {
-        public static async Task<TModel?> ToggleArchive<TModel>(this GenericRepository<TModel> service, TModel model) where TModel : class, IIDModel
+        public static async Task<TModel?> ToggleArchiveAsync<TModel>(this GenericRepository<TModel> service, TModel model) where TModel : class, IIDModel
         {
             if (model is IArchivable archivable)
             {

@@ -2,9 +2,9 @@
 {
     public enum ArchiveStatus
     {
-        All,
         Active,
         Inactive,   
+        All,
         Count
     }
 }

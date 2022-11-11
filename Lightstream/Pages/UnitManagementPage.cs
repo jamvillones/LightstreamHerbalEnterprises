@@ -1,6 +1,7 @@
 ﻿using Lightstream.DataAccess.Models;
 using Lightstream.DataAccess.Repositories;
 using Lightstream.Extensions;
+using Lightstream.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,11 @@ namespace Lightstream.Forms
     {
         Unit? SelectedUnit
         {
-            get => _unitsTable.SelectedRows[0].DataBoundItem as Unit;
+            get
+            {
+                if (_unitsTable.RowCount == 0) return null;
+                return _unitsTable.SelectedRows[0].DataBoundItem as Unit;
+            }
             set => units[_unitsTable.SelectedRows[0].Index] = value;
         }
 
@@ -111,6 +116,49 @@ namespace Lightstream.Forms
             var su = SelectedUnit;
             if (su is null) return;
             _archive_retrieve.SetButtonBehavior(su.IsArchived);
+        }
+
+        bool searchFound = false;
+
+        private async void _search_TextChanged(object sender, EventArgs e)
+        {
+            if (!searchFound) return;
+            if (!string.IsNullOrWhiteSpace(_search.Text)) return;
+
+            await LoadAllUnits();
+            searchFound = false;
+        }
+
+        private async void _search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                var text = _search.Text.ToLower().Trim();
+                if (string.IsNullOrWhiteSpace(text))
+                    return;
+
+                var units = await _unitService.GetAll_Async();
+
+                units = SearchHandler.FilterList(
+                   units,
+                   FilteringFlow.StopUponSatisfaction,
+                   x => x.Abbreviation?.ToLower().Contains(text) ?? false,
+                   x => x.SingularName.ToLower().Contains(text)
+                   );
+
+                searchFound = units.Count() > 0;
+                if (!searchFound)
+                {
+                    MessageBox.Show("No unit found", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                this.units.Clear();
+                foreach (var u in units.OrderBy(x => x.SingularName))
+                {
+                    this.units.Add(u);
+                }
+            }
         }
     }
 }

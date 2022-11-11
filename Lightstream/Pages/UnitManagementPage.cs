@@ -142,8 +142,8 @@ namespace Lightstream.Forms
                 units = SearchHandler.FilterList(
                    units,
                    FilteringFlow.StopUponSatisfaction,
-                   x => x.Abbreviation?.ToLower().Contains(text) ?? false,
-                   x => x.SingularName.ToLower().Contains(text)
+                   x => x.SingularName.ToLower().Contains(text),
+                   x => x.Abbreviation?.ToLower().Contains(text) ?? false
                    );
 
                 searchFound = units.Count() > 0;

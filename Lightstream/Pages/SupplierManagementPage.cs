@@ -119,7 +119,9 @@ namespace Lightstream.Forms
                 Name = _supplierName.Text.Trim(),
                 ContactDetails = _contactnumber.Text.Trim(),
                 ContactPerson = _contactperson.Text.Trim(),
-                Address = _address.Text.Trim()
+                Address = _address.Text.Trim(),
+
+                SupplierToIngredients = new List<SupplierToIngredient>()
             };
 
             return await _supplierService.Add_Async(supplier);

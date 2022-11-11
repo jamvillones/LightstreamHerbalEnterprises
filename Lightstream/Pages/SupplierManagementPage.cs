@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Lightstream.Extensions;
 
 namespace Lightstream.Forms
 {
@@ -35,22 +36,17 @@ namespace Lightstream.Forms
         private void _Add_Click(object sender, EventArgs e)
         {
             panel1.Enabled = !panel1.Enabled;
-
         }
 
         private void _Update_Click(object sender, EventArgs e)
         {
             if (suppliers.Count == 0) return;
 
-            using (var update = new SupplierForm(SelectedSupplier) { SupplierService = _supplierService })
+            using (var update = new SupplierForm(SelectedSupplier!) { SupplierService = _supplierService })
             {
                 if (update.ShowDialog() == DialogResult.OK)
-                {
                     if (update.Tag is Supplier s)
-                    {
                         SelectedSupplier = s;
-                    }
-                }
             }
         }
 
@@ -58,18 +54,16 @@ namespace Lightstream.Forms
         {
             _supplierTable.DataSource = suppliers;
 
-            for (int i = 0; i < (int)ArchiveStatus.Count; i++)
-                _statusOption.Items.Add((ArchiveStatus)i);
-
-            _statusOption.SelectedIndex = 0;
+            _statusOption.LoadArchiveStatus();
         }
 
         async Task LoadAllSupplier()
         {
             var supplier = await _supplierService.GetAll_Async();
 
-            this.suppliers.Clear();
+            supplier = supplier.FilterByStatus(_statusOption.SelectedIndex);
 
+            this.suppliers.Clear();
             foreach (var i in supplier.OrderBy(x => x.Name))
                 this.suppliers.Add(i);
         }
@@ -119,7 +113,9 @@ namespace Lightstream.Forms
                 Name = _supplierName.Text.Trim(),
                 ContactDetails = _contactnumber.Text.Trim(),
                 ContactPerson = _contactperson.Text.Trim(),
-                Address = _address.Text.Trim()
+                Address = _address.Text.Trim(),
+
+                SupplierToIngredients = new List<SupplierToIngredient>()
             };
 
             return await _supplierService.Add_Async(supplier);
@@ -142,25 +138,7 @@ namespace Lightstream.Forms
 
         private async void _statusOption_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            var s = await _supplierService.GetAll_Async();
-
-            var index = (ArchiveStatus)(_statusOption.SelectedIndex);
-            switch (index)
-            {
-                case ArchiveStatus.Active:
-                    s = s.Where(x => !x.IsArchived);
-                    break;
-                case ArchiveStatus.Inactive:
-                    s = s.Where(x => x.IsArchived);
-                    break;
-                default:
-                    break;
-            }
-            suppliers.Clear();
-
-            foreach (var supplier in s.OrderBy(x => x.Name))
-                suppliers.Add(supplier);
+            await LoadAllSupplier();
         }
 
         private async void ArchiveRetrieve_Click(object sender, EventArgs e)

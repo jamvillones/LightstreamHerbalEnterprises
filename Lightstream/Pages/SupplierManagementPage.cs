@@ -31,11 +31,6 @@ namespace Lightstream.Forms
             SetDataGridColumnBindings();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void _Add_Click(object sender, EventArgs e)
         {
             panel1.Enabled = !panel1.Enabled;
@@ -58,7 +53,7 @@ namespace Lightstream.Forms
             }
         }
 
-        async void SupplierManagement_Load(object sender, EventArgs e)
+        void SupplierManagement_Load(object sender, EventArgs e)
         {
             _supplierTable.DataSource = suppliers;
 
@@ -74,7 +69,7 @@ namespace Lightstream.Forms
 
             this.suppliers.Clear();
 
-            foreach (var i in supplier)
+            foreach (var i in supplier.OrderBy(x => x.Name))
                 this.suppliers.Add(i);
         }
         void SetDataGridColumnBindings()
@@ -163,7 +158,7 @@ namespace Lightstream.Forms
             }
             suppliers.Clear();
 
-            foreach (var supplier in s)
+            foreach (var supplier in s.OrderBy(x => x.Name))
                 suppliers.Add(supplier);
         }
 

@@ -70,7 +70,7 @@ namespace Lightstream.Forms
 
             this.units.Clear();
 
-            foreach (var i in unit)
+            foreach (var i in unit.OrderBy(x => x.SingularName))
                 this.units.Add(i);
         }
 

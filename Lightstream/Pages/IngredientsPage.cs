@@ -74,7 +74,7 @@ namespace Lightstream.Usercontrols
                 ///clear the ingredients list
                 ingredients.Clear();
                 ///repopulate with the new values
-                foreach (var i in resultingIngredients)
+                foreach (var i in resultingIngredients.OrderBy(x => x.Name))
                     ingredients.Add(i);
             }
         }
@@ -97,7 +97,7 @@ namespace Lightstream.Usercontrols
 
             this.ingredients.Clear();
 
-            foreach (var i in ingredients)
+            foreach (var i in ingredients.OrderBy(x => x.Name))
                 this.ingredients.Add(i);
         }
 
@@ -150,7 +150,7 @@ namespace Lightstream.Usercontrols
                     ))
                 {
                     if (ingredientForm.ShowDialog() == DialogResult.OK)
-                        if (ingredientForm.Tag is Ingredient i)                        
+                        if (ingredientForm.Tag is Ingredient i)
                             SelectedIngredient = i;
                 }
             }

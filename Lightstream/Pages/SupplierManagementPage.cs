@@ -18,7 +18,7 @@ namespace Lightstream.Forms
         Supplier? SelectedSupplier
         {
             get => _supplierTable.RowCount == 0 ? null : _supplierTable.SelectedRows[0].DataBoundItem as Supplier;
-            set => suppliers[_supplierTable.SelectedRows[0].Index] = value;
+            set => suppliers[_supplierTable.SelectedRows[0].Index] = value!;
         }
 
         BindingList<Supplier> suppliers = new BindingList<Supplier>();

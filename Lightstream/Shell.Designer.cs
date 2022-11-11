@@ -46,7 +46,7 @@
             // 
             // topPanel
             // 
-            this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(80)))), ((int)(((byte)(24)))));
+            this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
             this.topPanel.Controls.Add(this.flowLayoutPanel1);
             this.topPanel.Controls.Add(this.label1);
             this.topPanel.Controls.Add(this.pictureBox1);

@@ -74,10 +74,10 @@
             this._search.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._search.Dock = System.Windows.Forms.DockStyle.Top;
             this._search.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._search.Location = new System.Drawing.Point(4, 23);
+            this._search.Location = new System.Drawing.Point(5, 25);
             this._search.Name = "_search";
             this._search.PlaceholderText = "Search...";
-            this._search.Size = new System.Drawing.Size(277, 18);
+            this._search.Size = new System.Drawing.Size(275, 18);
             this._search.TabIndex = 0;
             this._search.TextChanged += new System.EventHandler(this._search_TextChanged);
             this._search.KeyDown += new System.Windows.Forms.KeyEventHandler(this._search_KeyDown);
@@ -112,8 +112,8 @@
             this._productsTable.DefaultCellStyle = dataGridViewCellStyle2;
             this._productsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._productsTable.EnableHeadersVisualStyles = false;
-            this._productsTable.Location = new System.Drawing.Point(4, 41);
-            this._productsTable.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this._productsTable.Location = new System.Drawing.Point(5, 43);
+            this._productsTable.Margin = new System.Windows.Forms.Padding(10);
             this._productsTable.MultiSelect = false;
             this._productsTable.Name = "_productsTable";
             this._productsTable.ReadOnly = true;
@@ -121,7 +121,7 @@
             this._productsTable.RowHeadersWidth = 62;
             this._productsTable.RowTemplate.Height = 25;
             this._productsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._productsTable.Size = new System.Drawing.Size(277, 331);
+            this._productsTable.Size = new System.Drawing.Size(275, 335);
             this._productsTable.StandardTab = true;
             this._productsTable.TabIndex = 9;
             this._productsTable.SelectionChanged += new System.EventHandler(this._productsTable_SelectionChanged);
@@ -150,9 +150,10 @@
             this._addmarkup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._addmarkup.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._addmarkup.ForeColor = System.Drawing.Color.Black;
-            this._addmarkup.Location = new System.Drawing.Point(3, 3);
+            this._addmarkup.Location = new System.Drawing.Point(0, 0);
+            this._addmarkup.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this._addmarkup.Name = "_addmarkup";
-            this._addmarkup.Size = new System.Drawing.Size(142, 35);
+            this._addmarkup.Size = new System.Drawing.Size(140, 30);
             this._addmarkup.TabIndex = 2;
             this._addmarkup.Text = "Set Markup";
             this._addmarkup.UseVisualStyleBackColor = false;
@@ -165,9 +166,10 @@
             this._setDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._setDiscount.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._setDiscount.ForeColor = System.Drawing.Color.Black;
-            this._setDiscount.Location = new System.Drawing.Point(151, 3);
+            this._setDiscount.Location = new System.Drawing.Point(145, 0);
+            this._setDiscount.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this._setDiscount.Name = "_setDiscount";
-            this._setDiscount.Size = new System.Drawing.Size(142, 35);
+            this._setDiscount.Size = new System.Drawing.Size(140, 30);
             this._setDiscount.TabIndex = 3;
             this._setDiscount.Text = "Set Discount";
             this._setDiscount.UseVisualStyleBackColor = false;
@@ -180,9 +182,10 @@
             this._removedisc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._removedisc.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._removedisc.ForeColor = System.Drawing.Color.Black;
-            this._removedisc.Location = new System.Drawing.Point(299, 3);
+            this._removedisc.Location = new System.Drawing.Point(290, 0);
+            this._removedisc.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this._removedisc.Name = "_removedisc";
-            this._removedisc.Size = new System.Drawing.Size(186, 35);
+            this._removedisc.Size = new System.Drawing.Size(140, 30);
             this._removedisc.TabIndex = 4;
             this._removedisc.Text = "Remove Discount";
             this._removedisc.UseVisualStyleBackColor = false;
@@ -193,22 +196,20 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("The Bold Font", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
-            this.label1.Location = new System.Drawing.Point(35, 0);
+            this.label1.Location = new System.Drawing.Point(30, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(730, 30);
+            this.label1.Size = new System.Drawing.Size(740, 30);
             this.label1.TabIndex = 8;
             this.label1.Text = "Price Management";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _divider
             // 
-            this._divider.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this._divider.Dock = System.Windows.Forms.DockStyle.Fill;
             this._divider.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this._divider.Location = new System.Drawing.Point(35, 32);
-            this._divider.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._divider.Location = new System.Drawing.Point(30, 30);
+            this._divider.Margin = new System.Windows.Forms.Padding(2);
             this._divider.Name = "_divider";
             // 
             // _divider.Panel1
@@ -216,14 +217,14 @@
             this._divider.Panel1.Controls.Add(this._productsTable);
             this._divider.Panel1.Controls.Add(this._search);
             this._divider.Panel1.Controls.Add(this.label3);
-            this._divider.Panel1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this._divider.Panel1.Padding = new System.Windows.Forms.Padding(5);
             this._divider.Panel1MinSize = 200;
             // 
             // _divider.Panel2
             // 
             this._divider.Panel2.Controls.Add(this.panel1);
-            this._divider.Panel2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this._divider.Size = new System.Drawing.Size(727, 375);
+            this._divider.Panel2.Padding = new System.Windows.Forms.Padding(5);
+            this._divider.Size = new System.Drawing.Size(740, 383);
             this._divider.SplitterDistance = 285;
             this._divider.SplitterWidth = 7;
             this._divider.TabIndex = 10;
@@ -233,9 +234,9 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
-            this.label3.Location = new System.Drawing.Point(4, 3);
+            this.label3.Location = new System.Drawing.Point(5, 5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(277, 20);
+            this.label3.Size = new System.Drawing.Size(275, 20);
             this.label3.TabIndex = 10;
             this.label3.Text = "Products";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -247,10 +248,10 @@
             this.panel1.Controls.Add(this._selectedProductName);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(4, 3);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(5, 5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(427, 369);
+            this.panel1.Size = new System.Drawing.Size(438, 373);
             this.panel1.TabIndex = 0;
             // 
             // _variantsTable
@@ -288,7 +289,7 @@
             this._variantsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._variantsTable.EnableHeadersVisualStyles = false;
             this._variantsTable.Location = new System.Drawing.Point(0, 38);
-            this._variantsTable.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this._variantsTable.Margin = new System.Windows.Forms.Padding(1);
             this._variantsTable.MultiSelect = false;
             this._variantsTable.Name = "_variantsTable";
             this._variantsTable.ReadOnly = true;
@@ -296,7 +297,7 @@
             this._variantsTable.RowHeadersWidth = 62;
             this._variantsTable.RowTemplate.Height = 33;
             this._variantsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._variantsTable.Size = new System.Drawing.Size(427, 296);
+            this._variantsTable.Size = new System.Drawing.Size(438, 305);
             this._variantsTable.TabIndex = 1;
             this._variantsTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._variants_CellMouseClick);
             this._variantsTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._variantsTable_RowsAdded);
@@ -341,7 +342,7 @@
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkBlue;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.DarkBlue;
             this.editCol.DefaultCellStyle = dataGridViewCellStyle4;
-            this.editCol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editCol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.editCol.HeaderText = "";
             this.editCol.MinimumWidth = 60;
             this.editCol.Name = "editCol";
@@ -357,7 +358,7 @@
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Maroon;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Maroon;
             this.delCol.DefaultCellStyle = dataGridViewCellStyle5;
-            this.delCol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delCol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.delCol.HeaderText = "";
             this.delCol.MinimumWidth = 60;
             this.delCol.Name = "delCol";
@@ -372,22 +373,22 @@
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.button4);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 334);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 343);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(427, 35);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(438, 30);
             this.flowLayoutPanel1.TabIndex = 11;
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(205)))), ((int)(((byte)(161)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(0, 5);
-            this.button1.Margin = new System.Windows.Forms.Padding(0, 5, 5, 0);
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 30);
+            this.button1.Size = new System.Drawing.Size(140, 30);
             this.button1.TabIndex = 3;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = false;
@@ -396,13 +397,13 @@
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(205)))), ((int)(((byte)(161)))));
             this.button4.Enabled = false;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(105, 5);
-            this.button4.Margin = new System.Windows.Forms.Padding(0, 5, 5, 0);
+            this.button4.Location = new System.Drawing.Point(145, 0);
+            this.button4.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(150, 30);
             this.button4.TabIndex = 6;
@@ -420,7 +421,7 @@
             this._selectedProductName.Location = new System.Drawing.Point(0, 20);
             this._selectedProductName.Name = "_selectedProductName";
             this._selectedProductName.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this._selectedProductName.Size = new System.Drawing.Size(427, 18);
+            this._selectedProductName.Size = new System.Drawing.Size(438, 18);
             this._selectedProductName.TabIndex = 10;
             this._selectedProductName.Text = "Product_Name";
             this._selectedProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -432,21 +433,22 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(427, 20);
+            this.label2.Size = new System.Drawing.Size(438, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "Product Variants";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel2.Controls.Add(this._addmarkup);
             this.flowLayoutPanel2.Controls.Add(this._setDiscount);
             this.flowLayoutPanel2.Controls.Add(this._removedisc);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(35, 412);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(30, 413);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(488, 41);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(740, 30);
             this.flowLayoutPanel2.TabIndex = 12;
             this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
@@ -456,14 +458,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 473);
-            this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this._divider);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.flowLayoutPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PriceManagementPage";
-            this.Padding = new System.Windows.Forms.Padding(35, 0, 35, 35);
+            this.Padding = new System.Windows.Forms.Padding(30, 0, 30, 30);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Price Management";

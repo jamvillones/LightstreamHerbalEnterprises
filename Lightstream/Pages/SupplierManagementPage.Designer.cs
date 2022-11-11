@@ -42,7 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this._searchtxt = new System.Windows.Forms.TextBox();
+            this._search = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this._supplierTable = new System.Windows.Forms.DataGridView();
             this.snCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,7 +89,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Enabled = false;
             this.panel1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panel1.Location = new System.Drawing.Point(30, 33);
+            this.panel1.Location = new System.Drawing.Point(30, 30);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(740, 161);
             this.panel1.TabIndex = 2;
@@ -101,9 +101,9 @@
             this._save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._save.Font = new System.Drawing.Font("Bebas Neue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._save.ForeColor = System.Drawing.Color.Black;
-            this._save.Location = new System.Drawing.Point(203, 119);
+            this._save.Location = new System.Drawing.Point(145, 119);
             this._save.Name = "_save";
-            this._save.Size = new System.Drawing.Size(197, 30);
+            this._save.Size = new System.Drawing.Size(140, 30);
             this._save.TabIndex = 4;
             this._save.Text = "Save";
             this._save.UseVisualStyleBackColor = false;
@@ -116,9 +116,9 @@
             this._cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._cancel.Font = new System.Drawing.Font("Bebas Neue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._cancel.ForeColor = System.Drawing.Color.Black;
-            this._cancel.Location = new System.Drawing.Point(406, 119);
+            this._cancel.Location = new System.Drawing.Point(290, 119);
             this._cancel.Name = "_cancel";
-            this._cancel.Size = new System.Drawing.Size(196, 30);
+            this._cancel.Size = new System.Drawing.Size(140, 30);
             this._cancel.TabIndex = 5;
             this._cancel.Text = "Cancel";
             this._cancel.UseVisualStyleBackColor = false;
@@ -128,62 +128,62 @@
             // 
             this._contactnumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this._contactnumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._contactnumber.Location = new System.Drawing.Point(203, 60);
+            this._contactnumber.Location = new System.Drawing.Point(145, 60);
             this._contactnumber.Name = "_contactnumber";
-            this._contactnumber.Size = new System.Drawing.Size(399, 23);
+            this._contactnumber.Size = new System.Drawing.Size(285, 23);
             this._contactnumber.TabIndex = 2;
             // 
             // _address
             // 
             this._address.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this._address.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._address.Location = new System.Drawing.Point(203, 89);
+            this._address.Location = new System.Drawing.Point(145, 89);
             this._address.Name = "_address";
-            this._address.Size = new System.Drawing.Size(399, 23);
+            this._address.Size = new System.Drawing.Size(285, 23);
             this._address.TabIndex = 3;
             // 
             // _contactperson
             // 
             this._contactperson.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this._contactperson.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._contactperson.Location = new System.Drawing.Point(203, 32);
+            this._contactperson.Location = new System.Drawing.Point(145, 32);
             this._contactperson.Name = "_contactperson";
-            this._contactperson.Size = new System.Drawing.Size(399, 23);
+            this._contactperson.Size = new System.Drawing.Size(285, 23);
             this._contactperson.TabIndex = 1;
             // 
             // _supplierName
             // 
             this._supplierName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this._supplierName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._supplierName.Location = new System.Drawing.Point(203, 3);
+            this._supplierName.Location = new System.Drawing.Point(145, 3);
             this._supplierName.Name = "_supplierName";
-            this._supplierName.Size = new System.Drawing.Size(399, 23);
+            this._supplierName.Size = new System.Drawing.Size(285, 23);
             this._supplierName.TabIndex = 0;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(98, 61);
+            this.label4.Location = new System.Drawing.Point(41, 62);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 21);
+            this.label4.Size = new System.Drawing.Size(97, 19);
             this.label4.TabIndex = 3;
             this.label4.Text = "Contact Number:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(101, 33);
+            this.label3.Location = new System.Drawing.Point(44, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 21);
+            this.label3.Size = new System.Drawing.Size(94, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "Contact Person:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(139, 90);
+            this.label2.Location = new System.Drawing.Point(82, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 21);
+            this.label2.Size = new System.Drawing.Size(56, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Address:";
             // 
@@ -192,30 +192,32 @@
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(107, 4);
+            this.label1.Location = new System.Drawing.Point(50, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 21);
+            this.label1.Size = new System.Drawing.Size(88, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Supplier Name:";
             // 
-            // _searchtxt
+            // _search
             // 
-            this._searchtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this._searchtxt.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._searchtxt.Location = new System.Drawing.Point(8, 10);
-            this._searchtxt.Name = "_searchtxt";
-            this._searchtxt.PlaceholderText = "Search....";
-            this._searchtxt.Size = new System.Drawing.Size(391, 16);
-            this._searchtxt.TabIndex = 7;
+            this._search.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this._search.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._search.Location = new System.Drawing.Point(8, 10);
+            this._search.Name = "_search";
+            this._search.PlaceholderText = "Search....";
+            this._search.Size = new System.Drawing.Size(422, 16);
+            this._search.TabIndex = 7;
+            this._search.TextChanged += new System.EventHandler(this._search_TextChanged);
+            this._search.KeyDown += new System.Windows.Forms.KeyEventHandler(this._search_KeyDown);
             // 
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(522, 7);
+            this.label5.Location = new System.Drawing.Point(522, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 21);
+            this.label5.Size = new System.Drawing.Size(44, 19);
             this.label5.TabIndex = 10;
             this.label5.Text = "Filter:";
             // 
@@ -307,19 +309,19 @@
             this.statCol.MinimumWidth = 8;
             this.statCol.Name = "statCol";
             this.statCol.ReadOnly = true;
-            this.statCol.Width = 69;
+            this.statCol.Width = 68;
             // 
             // _Update
             // 
             this._Update.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this._Update.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this._Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._Update.Font = new System.Drawing.Font("Bebas Neue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._Update.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._Update.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this._Update.Location = new System.Drawing.Point(203, 0);
-            this._Update.Margin = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this._Update.Location = new System.Drawing.Point(145, 0);
+            this._Update.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this._Update.Name = "_Update";
-            this._Update.Size = new System.Drawing.Size(196, 30);
+            this._Update.Size = new System.Drawing.Size(140, 30);
             this._Update.TabIndex = 15;
             this._Update.Text = "Update";
             this._Update.UseVisualStyleBackColor = false;
@@ -328,15 +330,14 @@
             // _Archive
             // 
             this._Archive.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._Archive.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this._Archive.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this._Archive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._Archive.Font = new System.Drawing.Font("Bebas Neue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._Archive.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._Archive.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this._Archive.Location = new System.Drawing.Point(406, 0);
-            this._Archive.Margin = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this._Archive.Location = new System.Drawing.Point(290, 0);
+            this._Archive.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this._Archive.Name = "_Archive";
-            this._Archive.Size = new System.Drawing.Size(196, 30);
+            this._Archive.Size = new System.Drawing.Size(140, 30);
             this._Archive.TabIndex = 14;
             this._Archive.Text = "Archive";
             this._Archive.UseVisualStyleBackColor = false;
@@ -347,12 +348,12 @@
             this._Add.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this._Add.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this._Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._Add.Font = new System.Drawing.Font("Bebas Neue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._Add.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._Add.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this._Add.Location = new System.Drawing.Point(0, 0);
-            this._Add.Margin = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this._Add.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this._Add.Name = "_Add";
-            this._Add.Size = new System.Drawing.Size(196, 30);
+            this._Add.Size = new System.Drawing.Size(140, 30);
             this._Add.TabIndex = 12;
             this._Add.Text = "Add";
             this._Add.UseVisualStyleBackColor = false;
@@ -366,7 +367,7 @@
             this.label6.Location = new System.Drawing.Point(30, 0);
             this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(740, 33);
+            this.label6.Size = new System.Drawing.Size(740, 30);
             this.label6.TabIndex = 16;
             this.label6.Text = "Suppliers";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -374,16 +375,16 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.flowLayoutPanel1);
-            this.panel2.Controls.Add(this._searchtxt);
+            this.panel2.Controls.Add(this._search);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this._statusOption);
             this.panel2.Controls.Add(this._supplierTable);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(30, 194);
+            this.panel2.Location = new System.Drawing.Point(30, 191);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 40, 0, 0);
-            this.panel2.Size = new System.Drawing.Size(740, 276);
+            this.panel2.Size = new System.Drawing.Size(740, 279);
             this.panel2.TabIndex = 17;
             // 
             // flowLayoutPanel1
@@ -393,7 +394,7 @@
             this.flowLayoutPanel1.Controls.Add(this._Update);
             this.flowLayoutPanel1.Controls.Add(this._Archive);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 246);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 249);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(740, 30);
@@ -429,7 +430,7 @@
 
         private ComboBox _statusOption;
         private Panel panel1;
-        private TextBox _searchtxt;
+        private TextBox _search;
         private Button _save;
         private Button _cancel;
         private TextBox _contactnumber;

@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace Lightstream.DataAccess.Models
 {
-    public partial class Unit
+    public partial class SupplierToIngredient
     {
-        public override string ToString() =>
-            SingularName;
-
-        public string Status => IsArchived ? "Inactive" : "Active";
-
+        public string IngredientName => Ingredient?.Name;
     }
 }

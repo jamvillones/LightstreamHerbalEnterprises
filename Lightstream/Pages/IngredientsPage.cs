@@ -1,6 +1,7 @@
 ﻿using Lightstream.DataAccess.Data;
 using Lightstream.DataAccess.Models;
 using Lightstream.DataAccess.Repositories;
+using Lightstream.Extensions;
 using Lightstream.Services;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
@@ -12,7 +13,13 @@ namespace Lightstream.Usercontrols
         DbContextFactory factory = new DbContextFactory();
         Ingredient? SelectedIngredient
         {
-            get => _ingredientsTable.SelectedRows[0].DataBoundItem as Ingredient;
+            get
+            {
+                if (_ingredientsTable.SelectedRows.Count == 0)
+                    return null;
+
+                return _ingredientsTable.SelectedRows[0].DataBoundItem as Ingredient;
+            }
 
             set
             {
@@ -28,14 +35,26 @@ namespace Lightstream.Usercontrols
             InitializeComponent();
 
             _ingredientService = ingService;
-            _ingredientsTable.AutoGenerateColumns = false;
         }
-        async void IngredientUserControl_Load(object sender, EventArgs e)
-        {
-            _ingredientsTable.DataSource = ingredients;
 
-            await LoadAllIngredients();
+        void IngredientUserControl_Load(object sender, EventArgs e)
+        {
+            SetBindings();
+            _statusOption.LoadArchiveStatus();
         }
+
+        private void SetBindings()
+        {
+            _ingredientsTable.AutoGenerateColumns = false;
+
+            nameCol.DataPropertyName = nameof(Ingredient.Name);
+            costCol.DataPropertyName = nameof(Ingredient.GetFormattedCost);
+            unitCol.DataPropertyName = nameof(Ingredient.GetUnit);
+            statusCol.DataPropertyName = nameof(Ingredient.Status);
+
+            _ingredientsTable.DataSource = ingredients;
+        }
+
         void addNewBtn_Click(object sender, EventArgs e)
         {
             using (var ingredientForm = new Forms.IngredientForm(_ingredientService, new GenericRepository<Unit>()))
@@ -45,6 +64,7 @@ namespace Lightstream.Usercontrols
                         ingredients.Add(i);
             }
         }
+
         async void searchTxt_KeyDown(object sender, KeyEventArgs e)
         {
             if (sender is not TextBox textbox)
@@ -74,10 +94,11 @@ namespace Lightstream.Usercontrols
                 ///clear the ingredients list
                 ingredients.Clear();
                 ///repopulate with the new values
-                foreach (var i in resultingIngredients)
+                foreach (var i in resultingIngredients.OrderBy(x => x.Name))
                     ingredients.Add(i);
             }
         }
+
         async void searchTxt_TextChanged(object sender, EventArgs e)
         {
             if (sender is not TextBox textbox) return;
@@ -94,10 +115,11 @@ namespace Lightstream.Usercontrols
         async Task LoadAllIngredients()
         {
             var ingredients = await _ingredientService.GetAll_Async();
+            //var i = (ArchiveStatus)_statusOption.SelectedIndex;
+            var filtered = ingredients.FilterByStatus(_statusOption.SelectedIndex);
 
             this.ingredients.Clear();
-
-            foreach (var i in ingredients)
+            foreach (var i in filtered.OrderBy(x => x.Name))
                 this.ingredients.Add(i);
         }
 
@@ -116,6 +138,7 @@ namespace Lightstream.Usercontrols
                 if (await DeleteIngredient(SelectedIngredient))
                     ingredients.Remove(SelectedIngredient);
         }
+
         async Task<bool> DeleteIngredient(Ingredient? ing)
         {
             if (ing is null)
@@ -123,6 +146,7 @@ namespace Lightstream.Usercontrols
 
             return await _ingredientService.Remove_Async(ing);
         }
+
         async void _ingredientsTable_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left || e.RowIndex == -1)
@@ -150,10 +174,40 @@ namespace Lightstream.Usercontrols
                     ))
                 {
                     if (ingredientForm.ShowDialog() == DialogResult.OK)
-                        if (ingredientForm.Tag is Ingredient i)                        
+                        if (ingredientForm.Tag is Ingredient i)
                             SelectedIngredient = i;
                 }
             }
+        }
+
+        private async void _statusOption_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            await LoadAllIngredients();
+        }
+
+        private void _ingredientsTable_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            var row = _ingredientsTable.Rows[e.RowIndex];
+            row.SetRowColor(ingredients[e.RowIndex].IsArchived);
+        }
+
+        private async void _archive_retrieve_Click(object sender, EventArgs e)
+        {
+            var s = SelectedIngredient;
+            if (s is null) return;
+
+            await _ingredientService.ToggleArchiveAsync(s!);
+
+            var row = _ingredientsTable.SelectedRows[0];
+            row.SetRowColor(s.IsArchived);
+            _archive_retrieve.SetButtonBehavior(s.IsArchived);
+        }
+
+        private void _ingredientsTable_SelectionChanged(object sender, EventArgs e)
+        {
+            var s = SelectedIngredient;
+            if (s is null) return;
+            _archive_retrieve.SetButtonBehavior(s.IsArchived);
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using Lightstream.DataAccess.Models;
 using Lightstream.DataAccess.Repositories;
+using Lightstream.Extensions;
+using Lightstream.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +19,7 @@ namespace Lightstream.Forms
         Supplier? SelectedSupplier
         {
             get => _supplierTable.RowCount == 0 ? null : _supplierTable.SelectedRows[0].DataBoundItem as Supplier;
-            set => suppliers[_supplierTable.SelectedRows[0].Index] = value;
+            set => suppliers[_supplierTable.SelectedRows[0].Index] = value!;
         }
 
         BindingList<Supplier> suppliers = new BindingList<Supplier>();
@@ -30,11 +32,6 @@ namespace Lightstream.Forms
             SetDataGridColumnBindings();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void _Add_Click(object sender, EventArgs e)
         {
             panel1.Enabled = !panel1.Enabled;
@@ -43,16 +40,21 @@ namespace Lightstream.Forms
 
         private void _Update_Click(object sender, EventArgs e)
         {
-            using (var update = new SupplierForm(SelectedSupplier))
+            if (suppliers.Count == 0) return;
+
+            using (var update = new SupplierForm(SelectedSupplier) { SupplierService = _supplierService })
             {
                 if (update.ShowDialog() == DialogResult.OK)
                 {
-
+                    if (update.Tag is Supplier s)
+                    {
+                        SelectedSupplier = s;
+                    }
                 }
             }
         }
 
-        async void SupplierManagement_Load(object sender, EventArgs e)
+        void SupplierManagement_Load(object sender, EventArgs e)
         {
             _supplierTable.DataSource = suppliers;
 
@@ -68,7 +70,7 @@ namespace Lightstream.Forms
 
             this.suppliers.Clear();
 
-            foreach (var i in supplier)
+            foreach (var i in supplier.OrderBy(x => x.Name))
                 this.suppliers.Add(i);
         }
         void SetDataGridColumnBindings()
@@ -127,13 +129,7 @@ namespace Lightstream.Forms
         {
             if (SelectedSupplier is null) return;
 
-            //_Archive.Enabled = !SelectedSupplier.IsArchived;
-            //_Retrieve.Enabled = SelectedSupplier.IsArchived;
-            ChangeArchiveRetriveButtonBehavior(SelectedSupplier.IsArchived);
-        }
-        void ChangeArchiveRetriveButtonBehavior(bool isArchived)
-        {
-            _Archive.Text = isArchived ? "Retrieve" : "Archive";
+            _Archive.SetButtonBehavior(SelectedSupplier.IsArchived);
         }
 
         private void _supplierTable_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -141,9 +137,7 @@ namespace Lightstream.Forms
             var supplier = suppliers[e.RowIndex];
 
             if (sender is DataGridView table)
-            {
-                table.Rows[e.RowIndex].DefaultCellStyle.ForeColor = supplier.IsArchived ? Color.Gray : Color.Green;
-            }
+                table.Rows[e.RowIndex].SetRowColor(supplier.IsArchived);
         }
 
         private async void _statusOption_SelectedIndexChanged(object sender, EventArgs e)
@@ -165,7 +159,7 @@ namespace Lightstream.Forms
             }
             suppliers.Clear();
 
-            foreach (var supplier in s)
+            foreach (var supplier in s.OrderBy(x => x.Name))
                 suppliers.Add(supplier);
         }
 
@@ -175,27 +169,56 @@ namespace Lightstream.Forms
             if (s is null) return;
 
 
-            await _supplierService.ToggleArchive(s);
-
-            ColorChange(s.IsArchived);
-            ChangeArchiveRetriveButtonBehavior(s.IsArchived);
-        }
-
-        //private async void _Retrieve_Click(object sender, EventArgs e)
-        //{
-        //    var s = SelectedSupplier;
-        //    s.IsArchived = false;
-        //    await _supplierService.Update_Async(s);
-        //    ColorChange(s.IsArchived);
-        //}
-        void ColorChange(bool isArchived)
-        {
-            _supplierTable.SelectedRows[0].DefaultCellStyle.ForeColor = isArchived ? Color.Gray : Color.Green;
+            await _supplierService.ToggleArchiveAsync(s);
+            _supplierTable.SelectedRows[0].SetRowColor(s.IsArchived);
+            _Archive.SetButtonBehavior(s.IsArchived);
         }
 
         private void _cancel_Click(object sender, EventArgs e)
         {
             ClearFields();
+        }
+
+        bool searchFound = false;
+
+        private async void _search_TextChanged(object sender, EventArgs e)
+        {
+            if (!searchFound) return;
+            if (!string.IsNullOrWhiteSpace(_search.Text)) return;
+
+            await LoadAllSupplier();
+            searchFound = false;
+        }
+
+        private async void _search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                var text = _search.Text.ToLower().Trim();
+                if (string.IsNullOrWhiteSpace(text))
+                    return;
+
+                var items = await _supplierService.GetAll_Async();
+
+                items = SearchHandler.FilterList(
+                   items,
+                   FilteringFlow.StopUponSatisfaction,
+                   x => x.Name.ToLower().Contains(text)
+                   );
+
+                searchFound = items.Count() > 0;
+                if (!searchFound)
+                {
+                    MessageBox.Show("No supplier found", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                this.suppliers.Clear();
+                foreach (var u in items.OrderBy(x => x.Name))
+                {
+                    this.suppliers.Add(u);
+                }
+            }
         }
     }
 }

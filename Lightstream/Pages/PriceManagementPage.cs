@@ -89,7 +89,7 @@ namespace Lightstream.Forms
 
             var productValues = await _productService.GetAll_Async();
 
-            foreach (var p in productValues) products.Add(new ProductViewModel(p));
+            foreach (var p in productValues.OrderBy(x => x.Name)) products.Add(new ProductViewModel(p));
         }
 
         void SetupDataGridSettings()
@@ -195,7 +195,7 @@ namespace Lightstream.Forms
                 products.Clear();
 
                 // repopulate the products with the filtered one
-                foreach (var p in results)
+                foreach (var p in results.OrderBy(x => x.Name))
                     products.Add(new ProductViewModel(p));
             }
         }

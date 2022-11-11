@@ -124,4 +124,7 @@
   <data name="keepass_15px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\LoginButton\keepass_15px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="mint_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mint_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

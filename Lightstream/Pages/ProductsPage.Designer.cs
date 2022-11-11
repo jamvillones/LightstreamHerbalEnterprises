@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.searchTxt = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this._prodTable = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barcodeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ingCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.delCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label5 = new System.Windows.Forms.Label();
@@ -64,7 +64,13 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this._statusOption = new System.Windows.Forms.ComboBox();
+            this.searchTxt = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this._Add = new System.Windows.Forms.Button();
+            this._archive_retrieve = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._prodTable)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -74,19 +80,9 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // searchTxt
-            // 
-            this.searchTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.searchTxt.Location = new System.Drawing.Point(8, 8);
-            this.searchTxt.Margin = new System.Windows.Forms.Padding(10);
-            this.searchTxt.Name = "searchTxt";
-            this.searchTxt.PlaceholderText = "Search...";
-            this.searchTxt.Size = new System.Drawing.Size(214, 16);
-            this.searchTxt.TabIndex = 8;
-            this.searchTxt.TextChanged += new System.EventHandler(this.searchTxt_TextChanged);
-            this.searchTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchTxt_KeyDown);
             // 
             // _prodTable
             // 
@@ -96,35 +92,36 @@
             this._prodTable.BackgroundColor = System.Drawing.Color.White;
             this._prodTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._prodTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this._prodTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._prodTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this._prodTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._prodTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column2,
+            this.nameCol,
             this.barcodeCol,
-            this.Column4,
+            this.descCol,
             this.unitCol,
             this.ingCol,
+            this.statusCol,
             this.editCol,
             this.delCol});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._prodTable.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._prodTable.DefaultCellStyle = dataGridViewCellStyle4;
             this._prodTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._prodTable.EnableHeadersVisualStyles = false;
-            this._prodTable.Location = new System.Drawing.Point(0, 30);
+            this._prodTable.Location = new System.Drawing.Point(0, 0);
             this._prodTable.Margin = new System.Windows.Forms.Padding(10);
             this._prodTable.MultiSelect = false;
             this._prodTable.Name = "_prodTable";
@@ -133,11 +130,13 @@
             this._prodTable.RowHeadersWidth = 62;
             this._prodTable.RowTemplate.Height = 25;
             this._prodTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._prodTable.Size = new System.Drawing.Size(730, 151);
+            this._prodTable.Size = new System.Drawing.Size(740, 298);
             this._prodTable.StandardTab = true;
             this._prodTable.TabIndex = 9;
             this._prodTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._prodTable_CellMouseClick);
             this._prodTable.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._prodTable_CellMouseDoubleClick);
+            this._prodTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._prodTable_RowsAdded);
+            this._prodTable.SelectionChanged += new System.EventHandler(this._prodTable_SelectionChanged);
             // 
             // Column1
             // 
@@ -149,14 +148,14 @@
             this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
             // 
-            // Column2
+            // nameCol
             // 
-            this.Column2.DataPropertyName = "ProductName";
-            this.Column2.HeaderText = "NAME";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 150;
+            this.nameCol.DataPropertyName = "ProductName";
+            this.nameCol.HeaderText = "NAME";
+            this.nameCol.MinimumWidth = 8;
+            this.nameCol.Name = "nameCol";
+            this.nameCol.ReadOnly = true;
+            this.nameCol.Width = 150;
             // 
             // barcodeCol
             // 
@@ -166,14 +165,14 @@
             this.barcodeCol.ReadOnly = true;
             this.barcodeCol.Width = 150;
             // 
-            // Column4
+            // descCol
             // 
-            this.Column4.DataPropertyName = "Description";
-            this.Column4.HeaderText = "DESCRIPTION";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 150;
+            this.descCol.DataPropertyName = "Description";
+            this.descCol.HeaderText = "DESCRIPTION";
+            this.descCol.MinimumWidth = 8;
+            this.descCol.Name = "descCol";
+            this.descCol.ReadOnly = true;
+            this.descCol.Width = 150;
             // 
             // unitCol
             // 
@@ -191,13 +190,21 @@
             this.ingCol.Name = "ingCol";
             this.ingCol.ReadOnly = true;
             // 
+            // statusCol
+            // 
+            this.statusCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.statusCol.HeaderText = "Status";
+            this.statusCol.Name = "statusCol";
+            this.statusCol.ReadOnly = true;
+            this.statusCol.Width = 68;
+            // 
             // editCol
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Blue;
-            this.editCol.DefaultCellStyle = dataGridViewCellStyle6;
-            this.editCol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Blue;
+            this.editCol.DefaultCellStyle = dataGridViewCellStyle2;
+            this.editCol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.editCol.HeaderText = "";
             this.editCol.MinimumWidth = 60;
             this.editCol.Name = "editCol";
@@ -208,17 +215,18 @@
             // 
             // delCol
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Red;
-            this.delCol.DefaultCellStyle = dataGridViewCellStyle7;
-            this.delCol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Red;
+            this.delCol.DefaultCellStyle = dataGridViewCellStyle3;
+            this.delCol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.delCol.HeaderText = "";
             this.delCol.MinimumWidth = 60;
             this.delCol.Name = "delCol";
             this.delCol.ReadOnly = true;
-            this.delCol.Text = "DELETE";
+            this.delCol.Text = "REMOVE";
             this.delCol.UseColumnTextForButtonValue = true;
+            this.delCol.Visible = false;
             this.delCol.Width = 60;
             // 
             // label5
@@ -265,7 +273,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 3, 6, 3);
-            this.groupBox1.Size = new System.Drawing.Size(358, 187);
+            this.groupBox1.Size = new System.Drawing.Size(368, 187);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Required Ingredient/s";
@@ -278,10 +286,10 @@
             this._recipe.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._recipe.FormattingEnabled = true;
             this._recipe.ItemHeight = 15;
-            this._recipe.Location = new System.Drawing.Point(6, 39);
+            this._recipe.Location = new System.Drawing.Point(6, 38);
             this._recipe.Margin = new System.Windows.Forms.Padding(5);
             this._recipe.Name = "_recipe";
-            this._recipe.Size = new System.Drawing.Size(346, 145);
+            this._recipe.Size = new System.Drawing.Size(356, 146);
             this._recipe.TabIndex = 1;
             this._recipe.TabStop = false;
             // 
@@ -290,9 +298,9 @@
             this.panel2.Controls.Add(this._removeRecipe);
             this.panel2.Controls.Add(this._addRecipe);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(6, 19);
+            this.panel2.Location = new System.Drawing.Point(6, 18);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(346, 20);
+            this.panel2.Size = new System.Drawing.Size(356, 20);
             this.panel2.TabIndex = 24;
             // 
             // _removeRecipe
@@ -416,32 +424,30 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("The Bold Font", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
-            this.label1.Location = new System.Drawing.Point(35, 0);
+            this.label1.Location = new System.Drawing.Point(30, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(730, 25);
+            this.label1.Size = new System.Drawing.Size(740, 30);
             this.label1.TabIndex = 8;
             this.label1.Text = "Create Product";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.searchTxt);
             this.panel3.Controls.Add(this._prodTable);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(35, 257);
+            this.panel3.Location = new System.Drawing.Point(30, 270);
             this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(730, 181);
+            this.panel3.Size = new System.Drawing.Size(740, 298);
             this.panel3.TabIndex = 24;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.splitContainer1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(35, 25);
+            this.panel4.Location = new System.Drawing.Point(30, 30);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(730, 206);
+            this.panel4.Size = new System.Drawing.Size(740, 206);
             this.panel4.TabIndex = 25;
             // 
             // splitContainer1
@@ -464,7 +470,6 @@
             this.splitContainer1.Panel1.Controls.Add(this._productName);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this._barcode);
-            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             this.splitContainer1.Panel1MinSize = 300;
             // 
             // splitContainer1.Panel2
@@ -472,7 +477,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(5);
             this.splitContainer1.Panel2MinSize = 200;
-            this.splitContainer1.Size = new System.Drawing.Size(722, 197);
+            this.splitContainer1.Size = new System.Drawing.Size(732, 197);
             this.splitContainer1.SplitterDistance = 350;
             this.splitContainer1.TabIndex = 24;
             // 
@@ -480,32 +485,116 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(35, 231);
+            this.panel1.Location = new System.Drawing.Point(30, 236);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(730, 1);
+            this.panel1.Size = new System.Drawing.Size(740, 1);
             this.panel1.TabIndex = 26;
             // 
-            // label6
+            // panel5
             // 
-            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Font = new System.Drawing.Font("The Bold Font", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
-            this.label6.Location = new System.Drawing.Point(35, 232);
-            this.label6.Name = "label6";
-            this.label6.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.label6.Size = new System.Drawing.Size(730, 25);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "Products";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel5.AutoSize = true;
+            this.panel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this._statusOption);
+            this.panel5.Controls.Add(this.searchTxt);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.panel5.Location = new System.Drawing.Point(30, 237);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(740, 33);
+            this.panel5.TabIndex = 28;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(528, 7);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 19);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Filter:";
+            // 
+            // _statusOption
+            // 
+            this._statusOption.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this._statusOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._statusOption.Font = new System.Drawing.Font("Bebas Neue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._statusOption.FormattingEnabled = true;
+            this._statusOption.Location = new System.Drawing.Point(575, 5);
+            this._statusOption.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this._statusOption.Name = "_statusOption";
+            this._statusOption.Size = new System.Drawing.Size(165, 23);
+            this._statusOption.TabIndex = 14;
+            this._statusOption.SelectedIndexChanged += new System.EventHandler(this._statusOption_SelectedIndexChanged);
+            // 
+            // searchTxt
+            // 
+            this.searchTxt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.searchTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchTxt.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchTxt.Location = new System.Drawing.Point(0, 7);
+            this.searchTxt.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.searchTxt.Name = "searchTxt";
+            this.searchTxt.PlaceholderText = "Search...";
+            this.searchTxt.Size = new System.Drawing.Size(280, 18);
+            this.searchTxt.TabIndex = 2;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.Controls.Add(this._Add);
+            this.flowLayoutPanel1.Controls.Add(this._archive_retrieve);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 568);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(740, 30);
+            this.flowLayoutPanel1.TabIndex = 29;
+            // 
+            // _Add
+            // 
+            this._Add.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this._Add.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this._Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._Add.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._Add.ForeColor = System.Drawing.Color.Black;
+            this._Add.Location = new System.Drawing.Point(0, 0);
+            this._Add.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this._Add.Name = "_Add";
+            this._Add.Size = new System.Drawing.Size(140, 30);
+            this._Add.TabIndex = 5;
+            this._Add.Text = "Add";
+            this._Add.UseVisualStyleBackColor = false;
+            this._Add.Visible = false;
+            // 
+            // _archive_retrieve
+            // 
+            this._archive_retrieve.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this._archive_retrieve.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this._archive_retrieve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._archive_retrieve.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._archive_retrieve.ForeColor = System.Drawing.Color.Black;
+            this._archive_retrieve.Location = new System.Drawing.Point(145, 0);
+            this._archive_retrieve.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this._archive_retrieve.Name = "_archive_retrieve";
+            this._archive_retrieve.Size = new System.Drawing.Size(140, 30);
+            this._archive_retrieve.TabIndex = 7;
+            this._archive_retrieve.Text = "Archive";
+            this._archive_retrieve.UseVisualStyleBackColor = false;
+            this._archive_retrieve.Click += new System.EventHandler(this._archive_retrieve_Click);
             // 
             // ProductsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 473);
+            this.ClientSize = new System.Drawing.Size(800, 628);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label1);
@@ -513,7 +602,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ProductsPage";
-            this.Padding = new System.Windows.Forms.Padding(35, 0, 35, 35);
+            this.Padding = new System.Windows.Forms.Padding(30, 0, 30, 30);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.ProductsPage_Load);
@@ -521,20 +610,21 @@
             this.groupBox1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private TextBox searchTxt;
         private DataGridView _prodTable;
         private Label label1;
         private Button _cancel;
@@ -555,16 +645,23 @@
         private Panel panel3;
         private Panel panel4;
         private Panel panel1;
-        private Label label6;
         private Panel panel2;
+        private SplitContainer splitContainer1;
+        private Panel panel5;
+        private Label label7;
+        private ComboBox _statusOption;
+        private TextBox searchTxt;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Button _Add;
+        private Button _archive_retrieve;
         private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn nameCol;
         private DataGridViewTextBoxColumn barcodeCol;
-        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn descCol;
         private DataGridViewTextBoxColumn unitCol;
         private DataGridViewTextBoxColumn ingCol;
+        private DataGridViewTextBoxColumn statusCol;
         private DataGridViewButtonColumn editCol;
         private DataGridViewButtonColumn delCol;
-        private SplitContainer splitContainer1;
     }
 }

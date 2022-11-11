@@ -1,5 +1,6 @@
 ﻿using Lightstream.DataAccess.Models;
 using Lightstream.DataAccess.Repositories;
+using Lightstream.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -55,10 +56,6 @@ namespace Lightstream.Forms
             foreach (var i in ingredients.OrderBy(x => x.Name))
                 this.ingredients.Add(i);
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         void SetDataGridColumnBindings()
         {
             _ingredientsTable.AutoGenerateColumns = false;
@@ -83,6 +80,47 @@ namespace Lightstream.Forms
             if (SelectedIngredient is null) return;
             Tag = SelectedIngredient;
             DialogResult = DialogResult.OK;
+        }
+
+        bool SearchSuccessful = false;
+        private async void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && !string.IsNullOrWhiteSpace(seachField.Text))
+            {
+                await Search(seachField.Text.Trim());
+            }
+        }
+        async Task Search(string keyword)
+        {
+            var ingredients = await ingService.GetAll_Async();
+
+            if (pickedIngredients is not null)
+                ingredients = ingredients.Where(x => !pickedIngredients.Any(a => a.Id == x.Id));
+
+            var filtered = SearchHandler.FilterList(
+                ingredients,
+                FilteringFlow.StopUponSatisfaction,
+                i => i.Name.ToLower().Contains(keyword.ToLower()));
+
+            if (filtered.Count() == 0)
+            {
+                MessageBox.Show("No ingredient/s found.", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            SearchSuccessful = true;
+
+            _ingredientsTable.Rows.Clear();
+            foreach (var i in filtered.OrderBy(x => x.Name))
+                this.ingredients.Add(i);
+        }
+        private async void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(seachField.Text) && SearchSuccessful)
+            {
+                SearchSuccessful = false;
+                await LoadIngredient();
+            }
         }
     }
 }

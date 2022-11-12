@@ -40,6 +40,7 @@ namespace Lightstream
             supplierCol.DataPropertyName = nameof(PurchaseOrder.Supplier);
             qtyCol.DataPropertyName = nameof(PurchaseOrder.Qty);
             //dateCol.DataPropertyName = nameof(PurchaseOrder.DateOrderedString);
+            dateCol.DataPropertyName = nameof(PurchaseOrder.DateOrdered);
             costCol.DataPropertyName = nameof(PurchaseOrder.Cost);
             totalCol.DataPropertyName = nameof(PurchaseOrder.Total);
 

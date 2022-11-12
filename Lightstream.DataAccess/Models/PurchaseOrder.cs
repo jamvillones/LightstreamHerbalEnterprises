@@ -13,7 +13,7 @@ namespace Lightstream.DataAccess.Models
     {
         public int Id { get; set; }
         public bool IsArchived { get; set; } = false;
-        public DateTime DateOrdered { get; private set; } = DateTime.Now;
+        public DateTime DateOrdered { get; set; } = DateTime.Now;
         public int Qty { get; set; }
         public decimal Cost { get; set; }
 

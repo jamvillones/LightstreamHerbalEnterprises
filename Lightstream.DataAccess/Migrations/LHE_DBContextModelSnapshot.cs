@@ -177,7 +177,7 @@ namespace Lightstream.DataAccess.Migrations
 
                     b.HasIndex("IngredientId");
 
-                    b.ToTable("MaterialInventories");
+                    b.ToTable("MaterialInventories", (string)null);
                 });
 
             modelBuilder.Entity("Lightstream.DataAccess.Models.Product", b =>
@@ -309,7 +309,7 @@ namespace Lightstream.DataAccess.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductVariant");
+                    b.ToTable("ProductVariant", (string)null);
                 });
 
             modelBuilder.Entity("Lightstream.DataAccess.Models.PurchaseOrder", b =>
@@ -345,7 +345,7 @@ namespace Lightstream.DataAccess.Migrations
 
                     b.HasIndex("SupplierId");
 
-                    b.ToTable("PurchaseOrder");
+                    b.ToTable("PurchaseOrder", (string)null);
                 });
 
             modelBuilder.Entity("Lightstream.DataAccess.Models.Recipe", b =>
@@ -466,7 +466,7 @@ namespace Lightstream.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Supplier");
+                    b.ToTable("Supplier", (string)null);
                 });
 
             modelBuilder.Entity("Lightstream.DataAccess.Models.SupplierToIngredient", b =>
@@ -489,7 +489,7 @@ namespace Lightstream.DataAccess.Migrations
 
                     b.HasIndex("SupplierId");
 
-                    b.ToTable("SupplierToIngredient");
+                    b.ToTable("SupplierToIngredient", (string)null);
                 });
 
             modelBuilder.Entity("Lightstream.DataAccess.Models.Unit", b =>

@@ -226,6 +226,7 @@
             this._btnVat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._btnVat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._btnVat.UseVisualStyleBackColor = false;
+            this._btnVat.Visible = false;
             this._btnVat.Click += new System.EventHandler(this._btnVat_Click);
             // 
             // _btnRawMaterials

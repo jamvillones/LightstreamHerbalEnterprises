@@ -45,6 +45,7 @@
             this._search = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this._supplierTable = new System.Windows.Forms.DataGridView();
+            this.editCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.snCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cpCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cnCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -165,7 +166,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(41, 62);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 19);
+            this.label4.Size = new System.Drawing.Size(98, 21);
             this.label4.TabIndex = 3;
             this.label4.Text = "Contact Number:";
             // 
@@ -174,7 +175,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(44, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 19);
+            this.label3.Size = new System.Drawing.Size(95, 21);
             this.label3.TabIndex = 2;
             this.label3.Text = "Contact Person:";
             // 
@@ -183,7 +184,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(82, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 19);
+            this.label2.Size = new System.Drawing.Size(57, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "Address:";
             // 
@@ -194,7 +195,7 @@
             this.label1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(50, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 19);
+            this.label1.Size = new System.Drawing.Size(89, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Supplier Name:";
             // 
@@ -217,7 +218,7 @@
             this.label5.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(522, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 19);
+            this.label5.Size = new System.Drawing.Size(45, 21);
             this.label5.TabIndex = 10;
             this.label5.Text = "Filter:";
             // 
@@ -242,6 +243,7 @@
             this._supplierTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this._supplierTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._supplierTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.editCol,
             this.snCol,
             this.cpCol,
             this.cnCol,
@@ -249,7 +251,7 @@
             this.statCol});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
@@ -267,12 +269,23 @@
             this._supplierTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._supplierTable.Size = new System.Drawing.Size(725, 207);
             this._supplierTable.TabIndex = 11;
+            this._supplierTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._supplierTable_CellMouseClick);
             this._supplierTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._supplierTable_RowsAdded);
             this._supplierTable.SelectionChanged += new System.EventHandler(this._supplierTable_SelectionChanged);
             // 
+            // editCol
+            // 
+            this.editCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.editCol.HeaderText = "";
+            this.editCol.Name = "editCol";
+            this.editCol.ReadOnly = true;
+            this.editCol.Text = "EDIT";
+            this.editCol.UseColumnTextForButtonValue = true;
+            this.editCol.Width = 60;
+            // 
             // snCol
             // 
-            this.snCol.HeaderText = "Supplier Name";
+            this.snCol.HeaderText = "Name";
             this.snCol.MinimumWidth = 8;
             this.snCol.Name = "snCol";
             this.snCol.ReadOnly = true;
@@ -288,7 +301,7 @@
             // 
             // cnCol
             // 
-            this.cnCol.HeaderText = "Contact Number";
+            this.cnCol.HeaderText = "Contact Details";
             this.cnCol.MinimumWidth = 120;
             this.cnCol.Name = "cnCol";
             this.cnCol.ReadOnly = true;
@@ -309,7 +322,7 @@
             this.statCol.MinimumWidth = 8;
             this.statCol.Name = "statCol";
             this.statCol.ReadOnly = true;
-            this.statCol.Width = 68;
+            this.statCol.Width = 69;
             // 
             // _Update
             // 
@@ -449,6 +462,7 @@
         private Label label6;
         private Panel panel2;
         private FlowLayoutPanel flowLayoutPanel1;
+        private DataGridViewButtonColumn editCol;
         private DataGridViewTextBoxColumn snCol;
         private DataGridViewTextBoxColumn cpCol;
         private DataGridViewTextBoxColumn cnCol;

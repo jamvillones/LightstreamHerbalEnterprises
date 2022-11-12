@@ -28,17 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this._poTable = new System.Windows.Forms.DataGridView();
+            this.poNumCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ingCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtyCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._viewDetails = new System.Windows.Forms.Button();
             this._managePO = new System.Windows.Forms.Button();
             this._cancelOrder = new System.Windows.Forms.Button();
@@ -53,13 +60,6 @@
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.poNumCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ingCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplierCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qtyCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this._poTable)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -84,6 +84,7 @@
             // 
             this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.Control;
+            this.dateTimePicker1.Checked = false;
             this.dateTimePicker1.CustomFormat = "MMM d, yyyy";
             this.dateTimePicker1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -91,7 +92,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(195, 28);
             this.dateTimePicker1.TabIndex = 10;
-            this.dateTimePicker1.Value = new System.DateTime(2022, 11, 4, 0, 0, 0, 0);
             // 
             // label2
             // 
@@ -120,6 +120,7 @@
             this.dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateTimePicker2.CalendarMonthBackground = System.Drawing.SystemColors.ActiveCaption;
             this.dateTimePicker2.CalendarTrailingForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dateTimePicker2.Checked = false;
             this.dateTimePicker2.CustomFormat = "MMM d, yyyy";
             this.dateTimePicker2.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -127,7 +128,6 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(195, 28);
             this.dateTimePicker2.TabIndex = 13;
-            this.dateTimePicker2.Value = new System.DateTime(2022, 11, 4, 0, 0, 0, 0);
             // 
             // _poTable
             // 
@@ -138,14 +138,14 @@
             this._poTable.BackgroundColor = System.Drawing.Color.White;
             this._poTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._poTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this._poTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._poTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this._poTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._poTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.poNumCol,
@@ -155,14 +155,14 @@
             this.qtyCol,
             this.costCol,
             this.totalCol});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._poTable.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._poTable.DefaultCellStyle = dataGridViewCellStyle10;
             this._poTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._poTable.EnableHeadersVisualStyles = false;
             this._poTable.Location = new System.Drawing.Point(30, 131);
@@ -177,6 +177,65 @@
             this._poTable.Size = new System.Drawing.Size(915, 318);
             this._poTable.StandardTab = true;
             this._poTable.TabIndex = 18;
+            // 
+            // poNumCol
+            // 
+            this.poNumCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.poNumCol.HeaderText = "PO NO.";
+            this.poNumCol.MinimumWidth = 60;
+            this.poNumCol.Name = "poNumCol";
+            this.poNumCol.ReadOnly = true;
+            this.poNumCol.Width = 66;
+            // 
+            // dateCol
+            // 
+            dataGridViewCellStyle7.Format = "MMM d, yyyy h:mm tt";
+            dataGridViewCellStyle7.NullValue = "No Date Available";
+            this.dateCol.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dateCol.HeaderText = "Date Ordered";
+            this.dateCol.MinimumWidth = 8;
+            this.dateCol.Name = "dateCol";
+            this.dateCol.ReadOnly = true;
+            // 
+            // ingCol
+            // 
+            this.ingCol.HeaderText = "Ingredient";
+            this.ingCol.Name = "ingCol";
+            this.ingCol.ReadOnly = true;
+            // 
+            // supplierCol
+            // 
+            this.supplierCol.HeaderText = "Supplier";
+            this.supplierCol.MinimumWidth = 8;
+            this.supplierCol.Name = "supplierCol";
+            this.supplierCol.ReadOnly = true;
+            // 
+            // qtyCol
+            // 
+            this.qtyCol.HeaderText = "Qty";
+            this.qtyCol.MinimumWidth = 8;
+            this.qtyCol.Name = "qtyCol";
+            this.qtyCol.ReadOnly = true;
+            // 
+            // costCol
+            // 
+            this.costCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle8.Format = "₱ 0.00";
+            this.costCol.DefaultCellStyle = dataGridViewCellStyle8;
+            this.costCol.HeaderText = "Cost";
+            this.costCol.Name = "costCol";
+            this.costCol.ReadOnly = true;
+            // 
+            // totalCol
+            // 
+            this.totalCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle9.Format = "₱ 0.00";
+            this.totalCol.DefaultCellStyle = dataGridViewCellStyle9;
+            this.totalCol.HeaderText = "Total Amount";
+            this.totalCol.MinimumWidth = 110;
+            this.totalCol.Name = "totalCol";
+            this.totalCol.ReadOnly = true;
+            this.totalCol.Width = 110;
             // 
             // _viewDetails
             // 
@@ -371,65 +430,6 @@
             this.radioButton6.TabStop = true;
             this.radioButton6.Text = "Pending";
             this.radioButton6.UseVisualStyleBackColor = true;
-            // 
-            // poNumCol
-            // 
-            this.poNumCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.poNumCol.HeaderText = "PO NO.";
-            this.poNumCol.MinimumWidth = 60;
-            this.poNumCol.Name = "poNumCol";
-            this.poNumCol.ReadOnly = true;
-            this.poNumCol.Width = 66;
-            // 
-            // dateCol
-            // 
-            dataGridViewCellStyle2.Format = "MMM d, yyyy h:mm tt";
-            dataGridViewCellStyle2.NullValue = "No Date Available";
-            this.dateCol.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dateCol.HeaderText = "Date Ordered";
-            this.dateCol.MinimumWidth = 8;
-            this.dateCol.Name = "dateCol";
-            this.dateCol.ReadOnly = true;
-            // 
-            // ingCol
-            // 
-            this.ingCol.HeaderText = "Ingredient";
-            this.ingCol.Name = "ingCol";
-            this.ingCol.ReadOnly = true;
-            // 
-            // supplierCol
-            // 
-            this.supplierCol.HeaderText = "Supplier";
-            this.supplierCol.MinimumWidth = 8;
-            this.supplierCol.Name = "supplierCol";
-            this.supplierCol.ReadOnly = true;
-            // 
-            // qtyCol
-            // 
-            this.qtyCol.HeaderText = "Qty";
-            this.qtyCol.MinimumWidth = 8;
-            this.qtyCol.Name = "qtyCol";
-            this.qtyCol.ReadOnly = true;
-            // 
-            // costCol
-            // 
-            this.costCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Format = "₱ 0.00";
-            this.costCol.DefaultCellStyle = dataGridViewCellStyle3;
-            this.costCol.HeaderText = "Cost";
-            this.costCol.Name = "costCol";
-            this.costCol.ReadOnly = true;
-            // 
-            // totalCol
-            // 
-            this.totalCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle4.Format = "₱ 0.00";
-            this.totalCol.DefaultCellStyle = dataGridViewCellStyle4;
-            this.totalCol.HeaderText = "Total Amount";
-            this.totalCol.MinimumWidth = 110;
-            this.totalCol.Name = "totalCol";
-            this.totalCol.ReadOnly = true;
-            this.totalCol.Width = 110;
             // 
             // PurchaseOrderPage
             // 

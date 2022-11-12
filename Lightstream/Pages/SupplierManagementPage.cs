@@ -198,6 +198,20 @@ namespace Lightstream.Forms
                 }
             }
         }
+
+        private void _supplierTable_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex == -1 || e.ColumnIndex != editCol.Index) return;
+
+            if (suppliers.Count == 0) return;
+
+            using (var update = new SupplierForm(SelectedSupplier!) { SupplierService = _supplierService })
+            {
+                if (update.ShowDialog() == DialogResult.OK)
+                    if (update.Tag is Supplier s)
+                        SelectedSupplier = s;
+            }
+        }
     }
 }
 

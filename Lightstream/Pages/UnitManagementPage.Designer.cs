@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this._unitsTable = new System.Windows.Forms.DataGridView();
+            this.editBtnCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abbreviationCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pluralCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editBtnCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this._Add = new System.Windows.Forms.Button();
             this._archive_retrieve = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -55,33 +55,34 @@
             this._unitsTable.AllowUserToAddRows = false;
             this._unitsTable.AllowUserToDeleteRows = false;
             this._unitsTable.AllowUserToResizeRows = false;
+            this._unitsTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this._unitsTable.BackgroundColor = System.Drawing.Color.White;
             this._unitsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._unitsTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this._unitsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._unitsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this._unitsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._unitsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.editBtnCol,
             this.idCol,
             this.nameCol,
             this.abbreviationCol,
             this.pluralCol,
-            this.statusCol,
-            this.editBtnCol});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._unitsTable.DefaultCellStyle = dataGridViewCellStyle4;
+            this.statusCol});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._unitsTable.DefaultCellStyle = dataGridViewCellStyle2;
             this._unitsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._unitsTable.EnableHeadersVisualStyles = false;
             this._unitsTable.Location = new System.Drawing.Point(30, 64);
@@ -96,6 +97,17 @@
             this._unitsTable.TabIndex = 1;
             this._unitsTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._unitsTable_RowsAdded);
             this._unitsTable.SelectionChanged += new System.EventHandler(this._unitsTable_SelectionChanged);
+            // 
+            // editBtnCol
+            // 
+            this.editBtnCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.editBtnCol.HeaderText = "";
+            this.editBtnCol.MinimumWidth = 60;
+            this.editBtnCol.Name = "editBtnCol";
+            this.editBtnCol.ReadOnly = true;
+            this.editBtnCol.Text = "EDIT";
+            this.editBtnCol.UseColumnTextForButtonValue = true;
+            this.editBtnCol.Width = 60;
             // 
             // idCol
             // 
@@ -112,7 +124,6 @@
             this.nameCol.MinimumWidth = 8;
             this.nameCol.Name = "nameCol";
             this.nameCol.ReadOnly = true;
-            this.nameCol.Width = 400;
             // 
             // abbreviationCol
             // 
@@ -141,18 +152,7 @@
             this.statusCol.Name = "statusCol";
             this.statusCol.ReadOnly = true;
             this.statusCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.statusCol.Width = 68;
-            // 
-            // editBtnCol
-            // 
-            this.editBtnCol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.editBtnCol.HeaderText = "";
-            this.editBtnCol.MinimumWidth = 60;
-            this.editBtnCol.Name = "editBtnCol";
-            this.editBtnCol.ReadOnly = true;
-            this.editBtnCol.Text = "EDIT";
-            this.editBtnCol.UseColumnTextForButtonValue = true;
-            this.editBtnCol.Width = 60;
+            this.statusCol.Width = 69;
             // 
             // _Add
             // 
@@ -232,7 +232,7 @@
             this.label5.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(528, 8);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 19);
+            this.label5.Size = new System.Drawing.Size(45, 21);
             this.label5.TabIndex = 13;
             this.label5.Text = "Filter:";
             // 
@@ -295,14 +295,14 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Label label1;
         private TextBox _search;
+        private Label label5;
+        private ComboBox _statusOption;
+        private Panel panel1;
+        private DataGridViewButtonColumn editBtnCol;
         private DataGridViewTextBoxColumn idCol;
         private DataGridViewTextBoxColumn nameCol;
         private DataGridViewTextBoxColumn abbreviationCol;
         private DataGridViewTextBoxColumn pluralCol;
         private DataGridViewTextBoxColumn statusCol;
-        private DataGridViewButtonColumn editBtnCol;
-        private Label label5;
-        private ComboBox _statusOption;
-        private Panel panel1;
     }
 }

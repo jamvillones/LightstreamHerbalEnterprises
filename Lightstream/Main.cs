@@ -209,7 +209,8 @@ namespace Lightstream
         private void _btnPurchaseOrder_Click(object sender, EventArgs e)
         {
             ChangeButtonStateUponClick(sender as Button);
-            OpenForm<FPO>();
+            var po = new PurchaseOrderPage(new PurchaseOrderService());
+            OpenForm(po);
         }
 
         private void _btnVat_Click(object sender, EventArgs e)

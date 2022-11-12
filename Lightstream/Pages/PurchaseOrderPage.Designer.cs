@@ -28,30 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this._supplierName = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this._Status = new System.Windows.Forms.ComboBox();
-            this._PoTable = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._poTable = new System.Windows.Forms.DataGridView();
             this._viewDetails = new System.Windows.Forms.Button();
             this._managePO = new System.Windows.Forms.Button();
             this._cancelOrder = new System.Windows.Forms.Button();
             this._newPO = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this._totaltItems = new System.Windows.Forms.TextBox();
             this._print = new System.Windows.Forms.Button();
-            this._close = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this._PoTable)).BeginInit();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.poNumCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ingCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtyCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this._poTable)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -59,176 +68,124 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("The Bold Font", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(30, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(57, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(929, 50);
+            this.label1.Size = new System.Drawing.Size(915, 31);
             this.label1.TabIndex = 9;
             this.label1.Text = "Purchase Order";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.Control;
+            this.dateTimePicker1.CustomFormat = "MMM d, yyyy";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(79, 57);
+            this.dateTimePicker1.Location = new System.Drawing.Point(48, 54);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(170, 44);
+            this.dateTimePicker1.Size = new System.Drawing.Size(195, 27);
             this.dateTimePicker1.TabIndex = 10;
             this.dateTimePicker1.Value = new System.DateTime(2022, 11, 4, 0, 0, 0, 0);
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 61);
+            this.label2.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(3, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 37);
+            this.label2.Size = new System.Drawing.Size(39, 19);
             this.label2.TabIndex = 11;
             this.label2.Text = "From:";
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(255, 60);
+            this.label3.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(249, 58);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 37);
+            this.label3.Size = new System.Drawing.Size(24, 19);
             this.label3.TabIndex = 12;
             this.label3.Text = "To:";
             // 
             // dateTimePicker2
             // 
+            this.dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePicker2.CalendarMonthBackground = System.Drawing.SystemColors.ActiveCaption;
+            this.dateTimePicker2.CalendarTrailingForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dateTimePicker2.CustomFormat = "MMM d, yyyy";
+            this.dateTimePicker2.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(304, 57);
+            this.dateTimePicker2.Location = new System.Drawing.Point(279, 54);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(170, 44);
+            this.dateTimePicker2.Size = new System.Drawing.Size(195, 27);
             this.dateTimePicker2.TabIndex = 13;
             this.dateTimePicker2.Value = new System.DateTime(2022, 11, 4, 0, 0, 0, 0);
             // 
-            // _supplierName
+            // _poTable
             // 
-            this._supplierName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._supplierName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._supplierName.FormattingEnabled = true;
-            this._supplierName.Location = new System.Drawing.Point(648, 57);
-            this._supplierName.Name = "_supplierName";
-            this._supplierName.Size = new System.Drawing.Size(274, 45);
-            this._supplierName.TabIndex = 14;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(560, 114);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 37);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Status:";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(495, 61);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 37);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Supplier Name:";
-            // 
-            // _Status
-            // 
-            this._Status.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._Status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._Status.FormattingEnabled = true;
-            this._Status.Items.AddRange(new object[] {
-            "Pending",
-            "Incomplete",
-            "Received",
-            "Cancelled",
-            "All"});
-            this._Status.Location = new System.Drawing.Point(648, 114);
-            this._Status.Name = "_Status";
-            this._Status.Size = new System.Drawing.Size(274, 45);
-            this._Status.TabIndex = 16;
-            // 
-            // _PoTable
-            // 
-            this._PoTable.AllowUserToAddRows = false;
-            this._PoTable.AllowUserToDeleteRows = false;
-            this._PoTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this._PoTable.BackgroundColor = System.Drawing.Color.White;
-            this._PoTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this._PoTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this._PoTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this._PoTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this._PoTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2,
-            this.Column1,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            this._PoTable.Location = new System.Drawing.Point(13, 173);
-            this._PoTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this._PoTable.Name = "_PoTable";
-            this._PoTable.ReadOnly = true;
-            this._PoTable.RowHeadersVisible = false;
-            this._PoTable.RowHeadersWidth = 62;
-            this._PoTable.RowTemplate.Height = 25;
-            this._PoTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._PoTable.Size = new System.Drawing.Size(909, 524);
-            this._PoTable.TabIndex = 18;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "PO NO.";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Date Ordered";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.HeaderText = "Supplier Name";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.HeaderText = "Total No. of Items";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.HeaderText = "Total Amount";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
+            this._poTable.AllowUserToAddRows = false;
+            this._poTable.AllowUserToDeleteRows = false;
+            this._poTable.AllowUserToResizeRows = false;
+            this._poTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this._poTable.BackgroundColor = System.Drawing.Color.White;
+            this._poTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this._poTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._poTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this._poTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._poTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.poNumCol,
+            this.dateCol,
+            this.ingCol,
+            this.supplierCol,
+            this.qtyCol,
+            this.costCol,
+            this.totalCol});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._poTable.DefaultCellStyle = dataGridViewCellStyle2;
+            this._poTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._poTable.EnableHeadersVisualStyles = false;
+            this._poTable.Location = new System.Drawing.Point(30, 131);
+            this._poTable.Margin = new System.Windows.Forms.Padding(5);
+            this._poTable.MultiSelect = false;
+            this._poTable.Name = "_poTable";
+            this._poTable.ReadOnly = true;
+            this._poTable.RowHeadersVisible = false;
+            this._poTable.RowHeadersWidth = 62;
+            this._poTable.RowTemplate.Height = 25;
+            this._poTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this._poTable.Size = new System.Drawing.Size(915, 318);
+            this._poTable.StandardTab = true;
+            this._poTable.TabIndex = 18;
             // 
             // _viewDetails
             // 
             this._viewDetails.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._viewDetails.BackColor = System.Drawing.Color.LightGreen;
-            this._viewDetails.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._viewDetails.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this._viewDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._viewDetails.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._viewDetails.ForeColor = System.Drawing.Color.Black;
-            this._viewDetails.Location = new System.Drawing.Point(176, 780);
-            this._viewDetails.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this._viewDetails.Location = new System.Drawing.Point(369, 0);
+            this._viewDetails.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this._viewDetails.Name = "_viewDetails";
-            this._viewDetails.Size = new System.Drawing.Size(154, 57);
+            this._viewDetails.Size = new System.Drawing.Size(120, 40);
             this._viewDetails.TabIndex = 22;
             this._viewDetails.Text = "View Details";
             this._viewDetails.UseVisualStyleBackColor = false;
@@ -236,13 +193,14 @@
             // _managePO
             // 
             this._managePO.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._managePO.BackColor = System.Drawing.Color.LightGreen;
-            this._managePO.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._managePO.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this._managePO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._managePO.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._managePO.ForeColor = System.Drawing.Color.Black;
-            this._managePO.Location = new System.Drawing.Point(338, 780);
-            this._managePO.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this._managePO.Location = new System.Drawing.Point(246, 0);
+            this._managePO.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this._managePO.Name = "_managePO";
-            this._managePO.Size = new System.Drawing.Size(139, 57);
+            this._managePO.Size = new System.Drawing.Size(120, 40);
             this._managePO.TabIndex = 21;
             this._managePO.Text = "Manage PO";
             this._managePO.UseVisualStyleBackColor = false;
@@ -250,13 +208,14 @@
             // _cancelOrder
             // 
             this._cancelOrder.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._cancelOrder.BackColor = System.Drawing.Color.LightGreen;
-            this._cancelOrder.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._cancelOrder.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this._cancelOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._cancelOrder.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._cancelOrder.ForeColor = System.Drawing.Color.Black;
-            this._cancelOrder.Location = new System.Drawing.Point(485, 780);
-            this._cancelOrder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this._cancelOrder.Location = new System.Drawing.Point(123, 0);
+            this._cancelOrder.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this._cancelOrder.Name = "_cancelOrder";
-            this._cancelOrder.Size = new System.Drawing.Size(159, 57);
+            this._cancelOrder.Size = new System.Drawing.Size(120, 40);
             this._cancelOrder.TabIndex = 20;
             this._cancelOrder.Text = "Cancel Order";
             this._cancelOrder.UseVisualStyleBackColor = false;
@@ -264,95 +223,227 @@
             // _newPO
             // 
             this._newPO.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._newPO.BackColor = System.Drawing.Color.LightGreen;
-            this._newPO.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._newPO.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this._newPO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._newPO.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._newPO.ForeColor = System.Drawing.Color.Black;
-            this._newPO.Location = new System.Drawing.Point(29, 780);
-            this._newPO.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this._newPO.Location = new System.Drawing.Point(0, 0);
+            this._newPO.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this._newPO.Name = "_newPO";
-            this._newPO.Size = new System.Drawing.Size(139, 57);
+            this._newPO.Size = new System.Drawing.Size(120, 40);
             this._newPO.TabIndex = 19;
             this._newPO.Text = "New PO";
             this._newPO.UseVisualStyleBackColor = false;
             // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Bebas Neue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(675, 716);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 26);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Total No. of Items:";
-            // 
-            // _totaltItems
-            // 
-            this._totaltItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._totaltItems.Location = new System.Drawing.Point(813, 705);
-            this._totaltItems.Name = "_totaltItems";
-            this._totaltItems.ReadOnly = true;
-            this._totaltItems.Size = new System.Drawing.Size(109, 44);
-            this._totaltItems.TabIndex = 24;
-            // 
             // _print
             // 
             this._print.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._print.BackColor = System.Drawing.Color.LightGreen;
-            this._print.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._print.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this._print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._print.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._print.ForeColor = System.Drawing.Color.Black;
-            this._print.Location = new System.Drawing.Point(652, 779);
-            this._print.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this._print.Location = new System.Drawing.Point(492, 0);
+            this._print.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this._print.Name = "_print";
-            this._print.Size = new System.Drawing.Size(109, 57);
+            this._print.Size = new System.Drawing.Size(120, 40);
             this._print.TabIndex = 25;
             this._print.Text = "Print";
             this._print.UseVisualStyleBackColor = false;
             // 
-            // _close
+            // flowLayoutPanel1
             // 
-            this._close.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._close.BackColor = System.Drawing.Color.LightGreen;
-            this._close.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._close.ForeColor = System.Drawing.Color.Black;
-            this._close.Location = new System.Drawing.Point(769, 779);
-            this._close.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this._close.Name = "_close";
-            this._close.Size = new System.Drawing.Size(128, 57);
-            this._close.TabIndex = 26;
-            this._close.Text = "Close";
-            this._close.UseVisualStyleBackColor = false;
-            this._close.Click += new System.EventHandler(this._close_Click);
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.Controls.Add(this._newPO);
+            this.flowLayoutPanel1.Controls.Add(this._cancelOrder);
+            this.flowLayoutPanel1.Controls.Add(this._managePO);
+            this.flowLayoutPanel1.Controls.Add(this._viewDetails);
+            this.flowLayoutPanel1.Controls.Add(this._print);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 449);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(915, 40);
+            this.flowLayoutPanel1.TabIndex = 27;
             // 
-            // FPO
+            // panel1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 37F);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.flowLayoutPanel2);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(30, 31);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(915, 100);
+            this.panel1.TabIndex = 28;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(0, 20);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PlaceholderText = "Search...";
+            this.textBox1.Size = new System.Drawing.Size(243, 23);
+            this.textBox1.TabIndex = 19;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel2.Controls.Add(this.radioButton2);
+            this.flowLayoutPanel2.Controls.Add(this.radioButton3);
+            this.flowLayoutPanel2.Controls.Add(this.radioButton4);
+            this.flowLayoutPanel2.Controls.Add(this.radioButton5);
+            this.flowLayoutPanel2.Controls.Add(this.radioButton6);
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(482, 54);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(433, 28);
+            this.flowLayoutPanel2.TabIndex = 18;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButton2.Location = new System.Drawing.Point(391, 3);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(42, 21);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "All";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButton3.Location = new System.Drawing.Point(312, 3);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(76, 21);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Cancelled";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButton4.Location = new System.Drawing.Point(241, 3);
+            this.radioButton4.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(68, 21);
+            this.radioButton4.TabIndex = 3;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Received";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButton5.Location = new System.Drawing.Point(157, 3);
+            this.radioButton5.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(81, 21);
+            this.radioButton5.TabIndex = 4;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "Incomplete";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Checked = true;
+            this.radioButton6.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButton6.Location = new System.Drawing.Point(90, 3);
+            this.radioButton6.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(64, 21);
+            this.radioButton6.TabIndex = 5;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "Pending";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // poNumCol
+            // 
+            this.poNumCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.poNumCol.HeaderText = "PO NO.";
+            this.poNumCol.MinimumWidth = 60;
+            this.poNumCol.Name = "poNumCol";
+            this.poNumCol.ReadOnly = true;
+            this.poNumCol.Width = 65;
+            // 
+            // dateCol
+            // 
+            this.dateCol.HeaderText = "Date Ordered";
+            this.dateCol.MinimumWidth = 8;
+            this.dateCol.Name = "dateCol";
+            this.dateCol.ReadOnly = true;
+            // 
+            // ingCol
+            // 
+            this.ingCol.HeaderText = "Ingredient";
+            this.ingCol.Name = "ingCol";
+            this.ingCol.ReadOnly = true;
+            // 
+            // supplierCol
+            // 
+            this.supplierCol.HeaderText = "Supplier";
+            this.supplierCol.MinimumWidth = 8;
+            this.supplierCol.Name = "supplierCol";
+            this.supplierCol.ReadOnly = true;
+            // 
+            // qtyCol
+            // 
+            this.qtyCol.HeaderText = "Qty";
+            this.qtyCol.MinimumWidth = 8;
+            this.qtyCol.Name = "qtyCol";
+            this.qtyCol.ReadOnly = true;
+            // 
+            // costCol
+            // 
+            this.costCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.costCol.HeaderText = "Cost";
+            this.costCol.Name = "costCol";
+            this.costCol.ReadOnly = true;
+            // 
+            // totalCol
+            // 
+            this.totalCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.totalCol.HeaderText = "Total Amount";
+            this.totalCol.MinimumWidth = 110;
+            this.totalCol.Name = "totalCol";
+            this.totalCol.ReadOnly = true;
+            this.totalCol.Width = 110;
+            // 
+            // PurchaseOrderPage
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(929, 850);
-            this.Controls.Add(this._close);
-            this.Controls.Add(this._print);
-            this.Controls.Add(this._totaltItems);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this._viewDetails);
-            this.Controls.Add(this._managePO);
-            this.Controls.Add(this._cancelOrder);
-            this.Controls.Add(this._newPO);
-            this.Controls.Add(this._PoTable);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this._Status);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this._supplierName);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(975, 520);
+            this.Controls.Add(this._poTable);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Bebas Neue", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
-            this.Name = "FPO";
+            this.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
+            this.Name = "PurchaseOrderPage";
+            this.Padding = new System.Windows.Forms.Padding(30, 0, 30, 31);
             this.Text = "FPO";
-            ((System.ComponentModel.ISupportInitialize)(this._PoTable)).EndInit();
+            this.Load += new System.EventHandler(this.PurchaseOrderPage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this._poTable)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,23 +456,27 @@
         private Label label2;
         private Label label3;
         private DateTimePicker dateTimePicker2;
-        private ComboBox _supplierName;
-        private Label label4;
-        private Label label5;
-        private ComboBox _Status;
-        private DataGridView _PoTable;
+        private DataGridView _poTable;
         private Button _viewDetails;
         private Button _managePO;
         private Button _cancelOrder;
         private Button _newPO;
-        private Label label6;
-        private TextBox _totaltItems;
         private Button _print;
-        private Button _close;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Panel panel1;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private RadioButton radioButton2;
+        private RadioButton radioButton3;
+        private RadioButton radioButton4;
+        private RadioButton radioButton5;
+        private RadioButton radioButton6;
+        private TextBox textBox1;
+        private DataGridViewTextBoxColumn poNumCol;
+        private DataGridViewTextBoxColumn dateCol;
+        private DataGridViewTextBoxColumn ingCol;
+        private DataGridViewTextBoxColumn supplierCol;
+        private DataGridViewTextBoxColumn qtyCol;
+        private DataGridViewTextBoxColumn costCol;
+        private DataGridViewTextBoxColumn totalCol;
     }
 }

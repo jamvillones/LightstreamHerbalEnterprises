@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -18,6 +19,11 @@ namespace Lightstream
         private GenericRepository<PurchaseOrder> _poService;
 
         BindingList<PurchaseOrder> _poList = new BindingList<PurchaseOrder>();
+        private PurchaseOrder? SelectedPO
+        {
+            get => _poTable.SelectedRows.Count == 0 ? null : _poList[_poTable.SelectedRows[0].Index];
+            set => _poList[_poTable.SelectedRows[0].Index] = value!;
+        }
         public PurchaseOrderPage(GenericRepository<PurchaseOrder> service)
         {
             InitializeComponent();
@@ -35,7 +41,7 @@ namespace Lightstream
             supplierCol.DataPropertyName = nameof(PurchaseOrder.Supplier);
             qtyCol.DataPropertyName = nameof(PurchaseOrder.Qty);
             costCol.DataPropertyName = nameof(PurchaseOrder.CostString);
-            totalCol.DataPropertyName = nameof(PurchaseOrder.Total);
+            totalCol.DataPropertyName = nameof(PurchaseOrder.TotalString);
 
             _poTable.DataSource = _poList;
         }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Lightstream
 {
-    public partial class FPO : Form
+    public partial class PurchaseOrderPage : Form
     {
-        public FPO()
+        public PurchaseOrderPage()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace Lightstream
 {
-    partial class FPO
+    partial class PurchaseOrderPage
     {
         /// <summary>
         /// Required designer variable.

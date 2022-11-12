@@ -148,6 +148,7 @@ namespace Lightstream.DataAccess.Data
             });
 
             modelBuilder.Entity<PurchaseOrder>(e => e.Property(e => e.Cost).HasPrecision(18, 2));
+            modelBuilder.Entity<SupplierToIngredient>(si => si.Property(s => s.Cost).HasPrecision(18, 2));
 
             //modelBuilder.Entity<ProductVariant>(ent => ent.Property(e => e.Price).HasPrecision(18, 2));
 

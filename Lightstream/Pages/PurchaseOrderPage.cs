@@ -1,5 +1,6 @@
 ﻿using Lightstream.DataAccess.Models;
 using Lightstream.DataAccess.Repositories;
+using Lightstream.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -58,6 +59,30 @@ namespace Lightstream
             _poList.Clear();
             foreach (var i in list)
                 _poList.Add(i);
+        }
+
+        private void _newPO_Click(object sender, EventArgs e)
+        {
+            var newPo = OpenPOForm();
+
+            if (newPo is null) return;
+
+            _poList.Add(newPo);
+        }
+
+        PurchaseOrder? OpenPOForm()
+        {
+            using (var form = new PurchaseOrderForm(new Ingredient_Supplier_Service()))
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    if (form.Tag is PurchaseOrder po)
+                    {
+                        return po;
+                    }
+                }
+            }
+            return null;
         }
     }
 }

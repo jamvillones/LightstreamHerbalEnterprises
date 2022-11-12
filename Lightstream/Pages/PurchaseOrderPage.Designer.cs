@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -138,14 +138,14 @@
             this._poTable.BackgroundColor = System.Drawing.Color.White;
             this._poTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._poTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this._poTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._poTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this._poTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._poTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.poNumCol,
@@ -155,14 +155,14 @@
             this.qtyCol,
             this.costCol,
             this.totalCol});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._poTable.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._poTable.DefaultCellStyle = dataGridViewCellStyle5;
             this._poTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._poTable.EnableHeadersVisualStyles = false;
             this._poTable.Location = new System.Drawing.Point(30, 131);
@@ -189,9 +189,9 @@
             // 
             // dateCol
             // 
-            dataGridViewCellStyle7.Format = "MMM d, yyyy h:mm tt";
-            dataGridViewCellStyle7.NullValue = "No Date Available";
-            this.dateCol.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Format = "MMM d, yyyy h:mm tt";
+            dataGridViewCellStyle2.NullValue = "No Date Available";
+            this.dateCol.DefaultCellStyle = dataGridViewCellStyle2;
             this.dateCol.HeaderText = "Date Ordered";
             this.dateCol.MinimumWidth = 8;
             this.dateCol.Name = "dateCol";
@@ -220,8 +220,8 @@
             // costCol
             // 
             this.costCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle8.Format = "₱ 0.00";
-            this.costCol.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Format = "₱ 0.00";
+            this.costCol.DefaultCellStyle = dataGridViewCellStyle3;
             this.costCol.HeaderText = "Cost";
             this.costCol.Name = "costCol";
             this.costCol.ReadOnly = true;
@@ -229,8 +229,8 @@
             // totalCol
             // 
             this.totalCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle9.Format = "₱ 0.00";
-            this.totalCol.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Format = "₱ 0.00";
+            this.totalCol.DefaultCellStyle = dataGridViewCellStyle4;
             this.totalCol.HeaderText = "Total Amount";
             this.totalCol.MinimumWidth = 110;
             this.totalCol.Name = "totalCol";
@@ -296,6 +296,7 @@
             this._newPO.TabIndex = 19;
             this._newPO.Text = "New PO";
             this._newPO.UseVisualStyleBackColor = false;
+            this._newPO.Click += new System.EventHandler(this._newPO_Click);
             // 
             // _print
             // 

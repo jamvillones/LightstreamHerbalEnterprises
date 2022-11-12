@@ -271,7 +271,7 @@
             this.divider.Panel2.Controls.Add(this._notifPanel);
             this.divider.Panel2MinSize = 175;
             this.divider.Size = new System.Drawing.Size(1262, 649);
-            this.divider.SplitterDistance = 1081;
+            this.divider.SplitterDistance = 1083;
             this.divider.SplitterWidth = 3;
             this.divider.TabIndex = 7;
             // 
@@ -280,19 +280,19 @@
             this.contentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentsPanel.Location = new System.Drawing.Point(0, 0);
             this.contentsPanel.Name = "contentsPanel";
-            this.contentsPanel.Size = new System.Drawing.Size(1081, 649);
+            this.contentsPanel.Size = new System.Drawing.Size(1083, 649);
             this.contentsPanel.TabIndex = 1;
             // 
             // _notifPanel
             // 
             this._notifPanel.AutoScroll = true;
-            this._notifPanel.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this._notifPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(225)))), ((int)(((byte)(205)))));
             this._notifPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this._notifPanel.Controls.Add(this.label2);
             this._notifPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._notifPanel.Location = new System.Drawing.Point(0, 0);
             this._notifPanel.Name = "_notifPanel";
-            this._notifPanel.Size = new System.Drawing.Size(178, 649);
+            this._notifPanel.Size = new System.Drawing.Size(176, 649);
             this._notifPanel.TabIndex = 5;
             // 
             // label2
@@ -301,7 +301,7 @@
             this.label2.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(176, 30);
+            this.label2.Size = new System.Drawing.Size(174, 30);
             this.label2.TabIndex = 0;
             this.label2.Text = "Notifications";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

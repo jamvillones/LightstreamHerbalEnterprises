@@ -234,7 +234,7 @@
             this.TOTALtextBox.Location = new System.Drawing.Point(82, 35);
             this.TOTALtextBox.Name = "TOTALtextBox";
             this.TOTALtextBox.ReadOnly = true;
-            this.TOTALtextBox.Size = new System.Drawing.Size(353, 29);
+            this.TOTALtextBox.Size = new System.Drawing.Size(240, 29);
             this.TOTALtextBox.TabIndex = 18;
             // 
             // VATtextBox
@@ -245,7 +245,7 @@
             this.VATtextBox.Location = new System.Drawing.Point(82, 111);
             this.VATtextBox.Name = "VATtextBox";
             this.VATtextBox.ReadOnly = true;
-            this.VATtextBox.Size = new System.Drawing.Size(353, 29);
+            this.VATtextBox.Size = new System.Drawing.Size(240, 29);
             this.VATtextBox.TabIndex = 20;
             // 
             // GRANDTOTALtextbox
@@ -256,7 +256,7 @@
             this.GRANDTOTALtextbox.Location = new System.Drawing.Point(82, 149);
             this.GRANDTOTALtextbox.Name = "GRANDTOTALtextbox";
             this.GRANDTOTALtextbox.ReadOnly = true;
-            this.GRANDTOTALtextbox.Size = new System.Drawing.Size(353, 29);
+            this.GRANDTOTALtextbox.Size = new System.Drawing.Size(240, 29);
             this.GRANDTOTALtextbox.TabIndex = 21;
             // 
             // CASHtextBox
@@ -266,7 +266,7 @@
             this.CASHtextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CASHtextBox.Location = new System.Drawing.Point(82, 187);
             this.CASHtextBox.Name = "CASHtextBox";
-            this.CASHtextBox.Size = new System.Drawing.Size(353, 29);
+            this.CASHtextBox.Size = new System.Drawing.Size(240, 29);
             this.CASHtextBox.TabIndex = 22;
             // 
             // CHANGEtextBox
@@ -277,7 +277,7 @@
             this.CHANGEtextBox.Location = new System.Drawing.Point(82, 225);
             this.CHANGEtextBox.Name = "CHANGEtextBox";
             this.CHANGEtextBox.ReadOnly = true;
-            this.CHANGEtextBox.Size = new System.Drawing.Size(353, 29);
+            this.CHANGEtextBox.Size = new System.Drawing.Size(240, 29);
             this.CHANGEtextBox.TabIndex = 23;
             // 
             // proc
@@ -451,7 +451,6 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.Location = new System.Drawing.Point(10, 235);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -460,6 +459,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.dataGridView1);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(5);
+            this.splitContainer1.Panel1MinSize = 200;
             // 
             // splitContainer1.Panel2
             // 
@@ -477,8 +477,9 @@
             this.splitContainer1.Panel2.Controls.Add(this.GRANDTOTALtextbox);
             this.splitContainer1.Panel2.Controls.Add(this.cashlbl);
             this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(5);
+            this.splitContainer1.Panel2MinSize = 200;
             this.splitContainer1.Size = new System.Drawing.Size(868, 297);
-            this.splitContainer1.SplitterDistance = 422;
+            this.splitContainer1.SplitterDistance = 535;
             this.splitContainer1.TabIndex = 26;
             // 
             // dataGridView1
@@ -489,7 +490,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(412, 257);
+            this.dataGridView1.Size = new System.Drawing.Size(525, 257);
             this.dataGridView1.TabIndex = 25;
             // 
             // label1
@@ -498,7 +499,7 @@
             this.label1.Font = new System.Drawing.Font("The Bold Font", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(5, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(412, 30);
+            this.label1.Size = new System.Drawing.Size(525, 30);
             this.label1.TabIndex = 29;
             this.label1.Text = "Cart";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -513,7 +514,7 @@
             this.comboBox1.Location = new System.Drawing.Point(82, 73);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(353, 29);
+            this.comboBox1.Size = new System.Drawing.Size(240, 29);
             this.comboBox1.TabIndex = 31;
             // 
             // label4
@@ -522,7 +523,7 @@
             this.label4.Font = new System.Drawing.Font("The Bold Font", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(5, 5);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(432, 30);
+            this.label4.Size = new System.Drawing.Size(319, 30);
             this.label4.TabIndex = 30;
             this.label4.Text = "DETAILS";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

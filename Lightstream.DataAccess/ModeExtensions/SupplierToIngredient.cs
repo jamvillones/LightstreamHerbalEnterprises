@@ -8,6 +8,7 @@ namespace Lightstream.DataAccess.Models
 {
     public partial class SupplierToIngredient
     {
+
         public string IngredientName => Ingredient?.Name;
     }
 }

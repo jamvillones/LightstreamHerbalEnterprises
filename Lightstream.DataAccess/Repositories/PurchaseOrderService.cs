@@ -17,6 +17,7 @@ namespace Lightstream.DataAccess.Repositories
                 using (var context = _factory.CreateDbContext())
                 {
                     return await context.PurchaseOrders
+                        .OrderByDescending(x => x.Id)
                         .Include(x => x.Ingredient)
                         .Include(x => x.Supplier)
                         .ToListAsync();

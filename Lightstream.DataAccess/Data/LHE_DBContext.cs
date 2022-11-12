@@ -29,7 +29,9 @@ namespace Lightstream.DataAccess.Data
         public virtual DbSet<Sale> Sales { get; set; } = null!;
         public virtual DbSet<ProductInventory> ProductInventories { get; set; } = null!;
         public virtual DbSet<SoldProduct> SoldProducts { get; set; } = null!;
-        public virtual DbSet<ProductionHistory> ProducedProduct { get; set; } = null!;
+        public virtual DbSet<ProductionHistory> ProducedProducts { get; set; } = null!;
+        public virtual DbSet<PurchaseOrder> PurchaseOrders { get; set; } = null!;
+        public virtual DbSet<MaterialInventory> MaterialInventories { get; set; } = null!;
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -144,6 +146,8 @@ namespace Lightstream.DataAccess.Data
                 ent.Property(e => e.Price).HasPrecision(18, 2);
                 ent.Property(e => e.Cost).HasPrecision(18, 2);
             });
+
+            modelBuilder.Entity<PurchaseOrder>(e => e.Property(e => e.Cost).HasPrecision(18, 2));
 
             //modelBuilder.Entity<ProductVariant>(ent => ent.Property(e => e.Price).HasPrecision(18, 2));
 

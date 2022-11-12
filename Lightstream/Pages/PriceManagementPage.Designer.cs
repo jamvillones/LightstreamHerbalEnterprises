@@ -31,9 +31,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this._search = new System.Windows.Forms.TextBox();
             this._productsTable = new System.Windows.Forms.DataGridView();
             this.productNumCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,18 +48,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this._variantsTable = new System.Windows.Forms.DataGridView();
-            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prodVariantDescriptionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prodVariantPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prodVariantCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editCol = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.delCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this._selectedProductName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodVariantDescriptionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodVariantPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodVariantCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.editCol = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.delCol = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this._productsTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._divider)).BeginInit();
             this._divider.Panel1.SuspendLayout();
@@ -259,6 +261,7 @@
             this._variantsTable.AllowUserToAddRows = false;
             this._variantsTable.AllowUserToDeleteRows = false;
             this._variantsTable.AllowUserToResizeRows = false;
+            this._variantsTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this._variantsTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(244)))), ((int)(((byte)(237)))));
             this._variantsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._variantsTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -278,14 +281,14 @@
             this.prodVariantCost,
             this.editCol,
             this.delCol});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkSeaGreen;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._variantsTable.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkSeaGreen;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._variantsTable.DefaultCellStyle = dataGridViewCellStyle8;
             this._variantsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._variantsTable.EnableHeadersVisualStyles = false;
             this._variantsTable.Location = new System.Drawing.Point(0, 38);
@@ -301,71 +304,6 @@
             this._variantsTable.TabIndex = 1;
             this._variantsTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._variants_CellMouseClick);
             this._variantsTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._variantsTable_RowsAdded);
-            // 
-            // idCol
-            // 
-            this.idCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idCol.HeaderText = "Id";
-            this.idCol.MinimumWidth = 8;
-            this.idCol.Name = "idCol";
-            this.idCol.ReadOnly = true;
-            this.idCol.Visible = false;
-            // 
-            // prodVariantDescriptionCol
-            // 
-            this.prodVariantDescriptionCol.HeaderText = "Description";
-            this.prodVariantDescriptionCol.MinimumWidth = 8;
-            this.prodVariantDescriptionCol.Name = "prodVariantDescriptionCol";
-            this.prodVariantDescriptionCol.ReadOnly = true;
-            this.prodVariantDescriptionCol.Width = 150;
-            // 
-            // prodVariantPrice
-            // 
-            this.prodVariantPrice.HeaderText = "Price";
-            this.prodVariantPrice.MinimumWidth = 8;
-            this.prodVariantPrice.Name = "prodVariantPrice";
-            this.prodVariantPrice.ReadOnly = true;
-            this.prodVariantPrice.Width = 150;
-            // 
-            // prodVariantCost
-            // 
-            this.prodVariantCost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.prodVariantCost.HeaderText = "Cost";
-            this.prodVariantCost.MinimumWidth = 8;
-            this.prodVariantCost.Name = "prodVariantCost";
-            this.prodVariantCost.ReadOnly = true;
-            // 
-            // editCol
-            // 
-            this.editCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.DarkBlue;
-            this.editCol.DefaultCellStyle = dataGridViewCellStyle4;
-            this.editCol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.editCol.HeaderText = "";
-            this.editCol.MinimumWidth = 60;
-            this.editCol.Name = "editCol";
-            this.editCol.ReadOnly = true;
-            this.editCol.Text = "EDIT";
-            this.editCol.UseColumnTextForButtonValue = true;
-            this.editCol.Width = 60;
-            // 
-            // delCol
-            // 
-            this.delCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Maroon;
-            this.delCol.DefaultCellStyle = dataGridViewCellStyle5;
-            this.delCol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.delCol.HeaderText = "";
-            this.delCol.MinimumWidth = 60;
-            this.delCol.Name = "delCol";
-            this.delCol.ReadOnly = true;
-            this.delCol.Text = "REMOVE";
-            this.delCol.UseColumnTextForButtonValue = true;
-            this.delCol.Width = 60;
             // 
             // flowLayoutPanel1
             // 
@@ -451,6 +389,74 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(740, 30);
             this.flowLayoutPanel2.TabIndex = 12;
             this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
+            // 
+            // idCol
+            // 
+            this.idCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idCol.HeaderText = "Id";
+            this.idCol.MinimumWidth = 8;
+            this.idCol.Name = "idCol";
+            this.idCol.ReadOnly = true;
+            this.idCol.Visible = false;
+            this.idCol.Width = 20;
+            // 
+            // prodVariantDescriptionCol
+            // 
+            this.prodVariantDescriptionCol.HeaderText = "Description";
+            this.prodVariantDescriptionCol.MinimumWidth = 8;
+            this.prodVariantDescriptionCol.Name = "prodVariantDescriptionCol";
+            this.prodVariantDescriptionCol.ReadOnly = true;
+            // 
+            // prodVariantPrice
+            // 
+            dataGridViewCellStyle4.Format = "₱ 0.00";
+            this.prodVariantPrice.DefaultCellStyle = dataGridViewCellStyle4;
+            this.prodVariantPrice.HeaderText = "Price";
+            this.prodVariantPrice.MinimumWidth = 8;
+            this.prodVariantPrice.Name = "prodVariantPrice";
+            this.prodVariantPrice.ReadOnly = true;
+            // 
+            // prodVariantCost
+            // 
+            this.prodVariantCost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle5.Format = "₱ 0.00";
+            this.prodVariantCost.DefaultCellStyle = dataGridViewCellStyle5;
+            this.prodVariantCost.HeaderText = "Cost";
+            this.prodVariantCost.MinimumWidth = 8;
+            this.prodVariantCost.Name = "prodVariantCost";
+            this.prodVariantCost.ReadOnly = true;
+            // 
+            // editCol
+            // 
+            this.editCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.DarkBlue;
+            this.editCol.DefaultCellStyle = dataGridViewCellStyle6;
+            this.editCol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.editCol.HeaderText = "";
+            this.editCol.MinimumWidth = 60;
+            this.editCol.Name = "editCol";
+            this.editCol.ReadOnly = true;
+            this.editCol.Text = "EDIT";
+            this.editCol.UseColumnTextForButtonValue = true;
+            this.editCol.Width = 60;
+            // 
+            // delCol
+            // 
+            this.delCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Maroon;
+            this.delCol.DefaultCellStyle = dataGridViewCellStyle7;
+            this.delCol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.delCol.HeaderText = "";
+            this.delCol.MinimumWidth = 60;
+            this.delCol.Name = "delCol";
+            this.delCol.ReadOnly = true;
+            this.delCol.Text = "REMOVE";
+            this.delCol.UseColumnTextForButtonValue = true;
+            this.delCol.Width = 60;
             // 
             // PriceManagementPage
             // 

@@ -36,12 +36,12 @@ namespace Lightstream
             _poTable.AutoGenerateColumns = false;
 
             poNumCol.DataPropertyName = nameof(PurchaseOrder.Id);
-            dateCol.DataPropertyName = nameof(PurchaseOrder.DateOrderedString);
             ingCol.DataPropertyName = nameof(PurchaseOrder.Ingredient);
             supplierCol.DataPropertyName = nameof(PurchaseOrder.Supplier);
             qtyCol.DataPropertyName = nameof(PurchaseOrder.Qty);
-            costCol.DataPropertyName = nameof(PurchaseOrder.CostString);
-            totalCol.DataPropertyName = nameof(PurchaseOrder.TotalString);
+            //dateCol.DataPropertyName = nameof(PurchaseOrder.DateOrderedString);
+            costCol.DataPropertyName = nameof(PurchaseOrder.Cost);
+            totalCol.DataPropertyName = nameof(PurchaseOrder.Total);
 
             _poTable.DataSource = _poList;
         }

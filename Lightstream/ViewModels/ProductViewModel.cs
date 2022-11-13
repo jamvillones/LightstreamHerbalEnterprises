@@ -47,8 +47,8 @@ namespace Lightstream.ViewModels
                 return sb.ToString();
             }
         }
-        public string Description => _product.Description ?? string.Empty;
-        public string Barcode => _product.Barcode ?? string.Empty;
+        public string? Description => _product.Description;
+        public string? Barcode => _product.Barcode;
 
 
     }

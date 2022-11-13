@@ -34,29 +34,29 @@ namespace Lightstream.Forms
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            using (var context = new LHE_DBContext())
-            {
-                var conversion = new Conversion()
-                {
-                    FromUnitId = FromUnit!.Id,
-                    ToUnitId = ToUnit!.Id,
-                    Value = _conversionValue.Value                    
-                };
-                context.Conversions.Add(conversion);
+            //using (var context = new LHE_DBContext())
+            //{
+            //    var conversion = new Conversion()
+            //    {
+            //        FromUnitId = FromUnit!.Id,
+            //        ToUnitId = ToUnit!.Id,
+            //        Value = _conversionValue.Value                    
+            //    };
+            //    context.Conversions.Add(conversion);
 
-                var backConversion = new Conversion()
-                {
-                    FromUnitId = ToUnit.Id,
-                    ToUnitId = FromUnit.Id,
-                    Value = _backConversionValue.Value
-                };
-                context.Conversions.Add(backConversion);
+            //    var backConversion = new Conversion()
+            //    {
+            //        FromUnitId = ToUnit.Id,
+            //        ToUnitId = FromUnit.Id,
+            //        Value = _backConversionValue.Value
+            //    };
+            //    context.Conversions.Add(backConversion);
 
-                context.SaveChanges();
-                ResultConversion = conversion;
+            //    context.SaveChanges();
+            //    ResultConversion = conversion;
 
-                context.Entry(ResultConversion!).Reference(b => b.FromUnit).Load();
-            }
+            //    context.Entry(ResultConversion!).Reference(b => b.FromUnit).Load();
+            //}
 
             DialogResult = DialogResult.OK;
         }

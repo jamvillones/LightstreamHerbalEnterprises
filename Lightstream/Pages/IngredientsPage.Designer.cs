@@ -29,18 +29,19 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this._ingredientsTable = new System.Windows.Forms.DataGridView();
             this.editCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtyCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deleteBtnCol = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -79,18 +80,18 @@
             this.editCol,
             this.idCol,
             this.nameCol,
-            this.costCol,
+            this.qtyCol,
             this.unitCol,
             this.statusCol,
             this.deleteBtnCol});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._ingredientsTable.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._ingredientsTable.DefaultCellStyle = dataGridViewCellStyle8;
             this._ingredientsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._ingredientsTable.EnableHeadersVisualStyles = false;
             this._ingredientsTable.Location = new System.Drawing.Point(30, 63);
@@ -98,14 +99,14 @@
             this._ingredientsTable.MultiSelect = false;
             this._ingredientsTable.Name = "_ingredientsTable";
             this._ingredientsTable.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this._ingredientsTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._ingredientsTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this._ingredientsTable.RowHeadersVisible = false;
             this._ingredientsTable.RowHeadersWidth = 62;
             this._ingredientsTable.RowTemplate.Height = 25;
@@ -148,28 +149,31 @@
             // nameCol
             // 
             this.nameCol.DataPropertyName = "Name";
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.nameCol.DefaultCellStyle = dataGridViewCellStyle4;
             this.nameCol.HeaderText = "Name";
             this.nameCol.MinimumWidth = 8;
             this.nameCol.Name = "nameCol";
             this.nameCol.ReadOnly = true;
             // 
-            // costCol
+            // qtyCol
             // 
-            this.costCol.DataPropertyName = "GetFormattedCost";
-            dataGridViewCellStyle4.Format = "₱ 0.00";
-            dataGridViewCellStyle4.NullValue = null;
-            this.costCol.DefaultCellStyle = dataGridViewCellStyle4;
-            this.costCol.HeaderText = "Cost";
-            this.costCol.MinimumWidth = 8;
-            this.costCol.Name = "costCol";
-            this.costCol.ReadOnly = true;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N4";
+            dataGridViewCellStyle5.NullValue = null;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.qtyCol.DefaultCellStyle = dataGridViewCellStyle5;
+            this.qtyCol.HeaderText = "Qty In Stock";
+            this.qtyCol.MinimumWidth = 8;
+            this.qtyCol.Name = "qtyCol";
+            this.qtyCol.ReadOnly = true;
             // 
             // unitCol
             // 
             this.unitCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.unitCol.DataPropertyName = "GetUnit";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.unitCol.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.unitCol.DefaultCellStyle = dataGridViewCellStyle6;
             this.unitCol.HeaderText = "Unit";
             this.unitCol.MinimumWidth = 8;
             this.unitCol.Name = "unitCol";
@@ -183,11 +187,11 @@
             // 
             // deleteBtnCol
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Red;
-            this.deleteBtnCol.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Red;
+            this.deleteBtnCol.DefaultCellStyle = dataGridViewCellStyle7;
             this.deleteBtnCol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.deleteBtnCol.HeaderText = "";
             this.deleteBtnCol.MinimumWidth = 8;
@@ -349,7 +353,7 @@
         private DataGridViewButtonColumn editCol;
         private DataGridViewTextBoxColumn idCol;
         private DataGridViewTextBoxColumn nameCol;
-        private DataGridViewTextBoxColumn costCol;
+        private DataGridViewTextBoxColumn qtyCol;
         private DataGridViewTextBoxColumn unitCol;
         private DataGridViewTextBoxColumn statusCol;
         private DataGridViewButtonColumn deleteBtnCol;

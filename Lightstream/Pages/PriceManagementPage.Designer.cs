@@ -29,17 +29,16 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this._search = new System.Windows.Forms.TextBox();
             this._productsTable = new System.Windows.Forms.DataGridView();
-            this.productNumCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._addmarkup = new System.Windows.Forms.Button();
             this._setDiscount = new System.Windows.Forms.Button();
             this._removedisc = new System.Windows.Forms.Button();
@@ -52,6 +51,7 @@
             this.editCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.delCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.prodVariantDescriptionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prodVariantPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prodVariantCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -60,6 +60,8 @@
             this._selectedProductName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.productNumCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this._productsTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._divider)).BeginInit();
             this._divider.Panel1.SuspendLayout();
@@ -105,14 +107,14 @@
             this._productsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.productNumCol,
             this.nameCol});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._productsTable.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._productsTable.DefaultCellStyle = dataGridViewCellStyle3;
             this._productsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._productsTable.EnableHeadersVisualStyles = false;
             this._productsTable.Location = new System.Drawing.Point(5, 43);
@@ -128,23 +130,6 @@
             this._productsTable.StandardTab = true;
             this._productsTable.TabIndex = 9;
             this._productsTable.SelectionChanged += new System.EventHandler(this._productsTable_SelectionChanged);
-            // 
-            // productNumCol
-            // 
-            this.productNumCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.productNumCol.HeaderText = "Product Number";
-            this.productNumCol.MinimumWidth = 130;
-            this.productNumCol.Name = "productNumCol";
-            this.productNumCol.ReadOnly = true;
-            this.productNumCol.Width = 130;
-            // 
-            // nameCol
-            // 
-            this.nameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameCol.HeaderText = "Name";
-            this.nameCol.MinimumWidth = 8;
-            this.nameCol.Name = "nameCol";
-            this.nameCol.ReadOnly = true;
             // 
             // _addmarkup
             // 
@@ -266,30 +251,31 @@
             this._variantsTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(244)))), ((int)(((byte)(237)))));
             this._variantsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._variantsTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._variantsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._variantsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this._variantsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._variantsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCol,
             this.editCol,
             this.delCol,
             this.prodVariantDescriptionCol,
+            this.amountCol,
             this.prodVariantPrice,
             this.prodVariantCost});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkSeaGreen;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this._variantsTable.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DarkSeaGreen;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._variantsTable.DefaultCellStyle = dataGridViewCellStyle9;
             this._variantsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._variantsTable.EnableHeadersVisualStyles = false;
             this._variantsTable.Location = new System.Drawing.Point(0, 38);
@@ -319,10 +305,10 @@
             // editCol
             // 
             this.editCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.DarkBlue;
-            this.editCol.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DarkBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.DarkBlue;
+            this.editCol.DefaultCellStyle = dataGridViewCellStyle5;
             this.editCol.HeaderText = "";
             this.editCol.MinimumWidth = 60;
             this.editCol.Name = "editCol";
@@ -335,10 +321,10 @@
             // delCol
             // 
             this.delCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Maroon;
-            this.delCol.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Maroon;
+            this.delCol.DefaultCellStyle = dataGridViewCellStyle6;
             this.delCol.HeaderText = "";
             this.delCol.MinimumWidth = 70;
             this.delCol.Name = "delCol";
@@ -355,10 +341,16 @@
             this.prodVariantDescriptionCol.Name = "prodVariantDescriptionCol";
             this.prodVariantDescriptionCol.ReadOnly = true;
             // 
+            // amountCol
+            // 
+            this.amountCol.HeaderText = "Required  Amount";
+            this.amountCol.Name = "amountCol";
+            this.amountCol.ReadOnly = true;
+            // 
             // prodVariantPrice
             // 
-            dataGridViewCellStyle6.Format = "₱ 0.00";
-            this.prodVariantPrice.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Format = "₱ 0.00";
+            this.prodVariantPrice.DefaultCellStyle = dataGridViewCellStyle7;
             this.prodVariantPrice.HeaderText = "Price";
             this.prodVariantPrice.MinimumWidth = 8;
             this.prodVariantPrice.Name = "prodVariantPrice";
@@ -367,8 +359,8 @@
             // prodVariantCost
             // 
             this.prodVariantCost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle7.Format = "₱ 0.00";
-            this.prodVariantCost.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Format = "₱ 0.00";
+            this.prodVariantCost.DefaultCellStyle = dataGridViewCellStyle8;
             this.prodVariantCost.HeaderText = "Cost";
             this.prodVariantCost.MinimumWidth = 8;
             this.prodVariantCost.Name = "prodVariantCost";
@@ -459,6 +451,25 @@
             this.flowLayoutPanel2.TabIndex = 12;
             this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
+            // productNumCol
+            // 
+            this.productNumCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.NullValue = "*not set";
+            this.productNumCol.DefaultCellStyle = dataGridViewCellStyle2;
+            this.productNumCol.HeaderText = "Product Number";
+            this.productNumCol.MinimumWidth = 130;
+            this.productNumCol.Name = "productNumCol";
+            this.productNumCol.ReadOnly = true;
+            this.productNumCol.Width = 130;
+            // 
+            // nameCol
+            // 
+            this.nameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameCol.HeaderText = "Name";
+            this.nameCol.MinimumWidth = 8;
+            this.nameCol.Name = "nameCol";
+            this.nameCol.ReadOnly = true;
+            // 
             // PriceManagementPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -511,13 +522,14 @@
         private Button button1;
         private Button button4;
         private FlowLayoutPanel flowLayoutPanel2;
-        private DataGridViewTextBoxColumn productNumCol;
-        private DataGridViewTextBoxColumn nameCol;
         private DataGridViewTextBoxColumn idCol;
         private DataGridViewButtonColumn editCol;
         private DataGridViewButtonColumn delCol;
         private DataGridViewTextBoxColumn prodVariantDescriptionCol;
+        private DataGridViewTextBoxColumn amountCol;
         private DataGridViewTextBoxColumn prodVariantPrice;
         private DataGridViewTextBoxColumn prodVariantCost;
+        private DataGridViewTextBoxColumn productNumCol;
+        private DataGridViewTextBoxColumn nameCol;
     }
 }

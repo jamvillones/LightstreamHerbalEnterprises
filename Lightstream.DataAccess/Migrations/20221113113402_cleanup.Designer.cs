@@ -4,6 +4,7 @@ using Lightstream.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Lightstream.DataAccess.Migrations
 {
     [DbContext(typeof(LHE_DBContext))]
-    partial class LHE_DBContextModelSnapshot : ModelSnapshot
+    [Migration("20221113113402_cleanup")]
+    partial class cleanup
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -208,6 +210,9 @@ namespace Lightstream.DataAccess.Migrations
                     b.Property<DateTime>("DateTimeProduction")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("IngredientId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("LoginId")
                         .HasColumnType("int");
 
@@ -218,6 +223,8 @@ namespace Lightstream.DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("IngredientId");
 
                     b.HasIndex("LoginId");
 
@@ -523,6 +530,10 @@ namespace Lightstream.DataAccess.Migrations
 
             modelBuilder.Entity("Lightstream.DataAccess.Models.ProductionHistory", b =>
                 {
+                    b.HasOne("Lightstream.DataAccess.Models.Ingredient", null)
+                        .WithMany("ProductionHistories")
+                        .HasForeignKey("IngredientId");
+
                     b.HasOne("Lightstream.DataAccess.Models.Login", "Login")
                         .WithMany("ProductionHistories")
                         .HasForeignKey("LoginId");
@@ -654,6 +665,8 @@ namespace Lightstream.DataAccess.Migrations
 
             modelBuilder.Entity("Lightstream.DataAccess.Models.Ingredient", b =>
                 {
+                    b.Navigation("ProductionHistories");
+
                     b.Navigation("PurchaseOrders");
 
                     b.Navigation("Recipes");

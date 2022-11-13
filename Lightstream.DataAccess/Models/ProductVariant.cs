@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Lightstream.DataAccess.Models
 {
     [Table("ProductVariant")]
-    public class ProductVariant : IIDModel,IArchivable
+    public partial class ProductVariant : IIDModel,IArchivable
     {
         public int Id { get; set; }
         [Required]
@@ -20,7 +20,11 @@ namespace Lightstream.DataAccess.Models
         [Required]
         public decimal Cost { get; set; }
         [Required]
+        public decimal RequiredQty { get; set; } = 1;
+        [Required]
         public bool IsArchived { get; set; } = false;
-        //public bool IsArchived { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public virtual ICollection<ProductionHistory> ProductionHistories { get; set; } = new HashSet<ProductionHistory>();
+        public virtual ICollection<SoldProduct> ProductVariants { get; set; } =new HashSet<SoldProduct>();
     }
 }

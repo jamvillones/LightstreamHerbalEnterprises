@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this._prodTable = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this._barcode = new System.Windows.Forms.TextBox();
@@ -110,14 +111,14 @@
             this.ingCol,
             this.statusCol,
             this.delCol});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._prodTable.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._prodTable.DefaultCellStyle = dataGridViewCellStyle5;
             this._prodTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._prodTable.EnableHeadersVisualStyles = false;
             this._prodTable.Location = new System.Drawing.Point(0, 0);
@@ -547,6 +548,8 @@
             // 
             // barcodeCol
             // 
+            dataGridViewCellStyle3.NullValue = "*not set";
+            this.barcodeCol.DefaultCellStyle = dataGridViewCellStyle3;
             this.barcodeCol.HeaderText = "PRODUCT NUMBER";
             this.barcodeCol.MinimumWidth = 130;
             this.barcodeCol.Name = "barcodeCol";
@@ -588,10 +591,10 @@
             // 
             // delCol
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Red;
-            this.delCol.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Red;
+            this.delCol.DefaultCellStyle = dataGridViewCellStyle4;
             this.delCol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.delCol.HeaderText = "";
             this.delCol.MinimumWidth = 60;

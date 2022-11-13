@@ -17,7 +17,6 @@ namespace Lightstream.DataAccess.Data
         {
         }
 
-        public virtual DbSet<Conversion> Conversions { get; set; } = null!;
         public virtual DbSet<Ingredient> Ingredients { get; set; } = null!;
         public virtual DbSet<Login> Logins { get; set; } = null!;
         public virtual DbSet<Customer> Customers { get; set; } = null!;
@@ -27,11 +26,9 @@ namespace Lightstream.DataAccess.Data
         public virtual DbSet<Recipe> Recipes { get; set; } = null!;
         public virtual DbSet<Unit> Units { get; set; } = null!;
         public virtual DbSet<Sale> Sales { get; set; } = null!;
-        public virtual DbSet<ProductInventory> ProductInventories { get; set; } = null!;
         public virtual DbSet<SoldProduct> SoldProducts { get; set; } = null!;
         public virtual DbSet<ProductionHistory> ProducedProducts { get; set; } = null!;
         public virtual DbSet<PurchaseOrder> PurchaseOrders { get; set; } = null!;
-        public virtual DbSet<MaterialInventory> MaterialInventories { get; set; } = null!;
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -53,7 +50,6 @@ namespace Lightstream.DataAccess.Data
             modelBuilder.Entity<ProductionHistory>(entity => { entity.ToTable(nameof(ProductionHistory)); });
             modelBuilder.Entity<Sale>(entity => { entity.ToTable(nameof(Sale)); });
             modelBuilder.Entity<SoldProduct>(entity => { entity.ToTable(nameof(SoldProduct)); });
-            modelBuilder.Entity<ProductInventory>(entity => { entity.ToTable(nameof(ProductInventory)); });
             modelBuilder.Entity<Customer>(entity => { entity.ToTable(nameof(Customer)); });
 
             modelBuilder.Entity<Conversion>(entity =>
@@ -91,7 +87,9 @@ namespace Lightstream.DataAccess.Data
 
                 entity.Property(p => p.Cost).HasPrecision(18, 2);
 
-                entity.Navigation(i => i.UnitMeasurement).AutoInclude();
+                //entity.Navigation(i => i.UnitMeasurement).AutoInclude();
+                //entity.Navigation(i => i.PurchaseOrders).AutoInclude();
+                //entity.Navigation(i => i.Recipes).AutoInclude();
             });
 
             modelBuilder.Entity<Login>(entity =>
@@ -108,6 +106,7 @@ namespace Lightstream.DataAccess.Data
             modelBuilder.Entity<Product>(entity =>
             {
                 entity.ToTable("Product");
+                entity.Navigation(i => i.ProductVariants).AutoInclude();
             });
 
             modelBuilder.Entity<Recipe>(entity =>
@@ -116,14 +115,7 @@ namespace Lightstream.DataAccess.Data
 
                 entity.HasIndex(e => e.IngredientId, "IX_ProductToIngredientBridge_IngredientId");
 
-                entity.HasIndex(e => e.ProductId, "IX_ProductToIngredientBridge_ProductId");
-
-                entity.HasIndex(e => e.ConversionId, "IX_Recipe_ConversionId");
-
-                entity.HasOne(d => d.Conversion)
-                    .WithMany(p => p.Recipes)
-                    .HasForeignKey(d => d.ConversionId)
-                    .HasConstraintName("FK_Recipe_Conversion");
+                entity.HasIndex(e => e.ProductId, "IX_ProductToIngredientBridge_ProductId");                
 
                 entity.HasOne(d => d.Ingredient)
                     .WithMany(p => p.Recipes)

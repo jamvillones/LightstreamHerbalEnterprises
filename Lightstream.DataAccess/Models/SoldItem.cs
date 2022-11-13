@@ -15,6 +15,6 @@ namespace Lightstream.DataAccess.Models
         public int Id { get; set; }
         public decimal SoldPrice { get; set; }
         public int SoldQty { get; set; }        
-        public ProductInventory ProductInventory { get; set; }
+        public ProductVariant ProductInventory { get; set; }
     }
 }

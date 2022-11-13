@@ -24,6 +24,7 @@ namespace Lightstream
         BindingList<PurchaseOrder> _poList = new BindingList<PurchaseOrder>();
 
         private decimal GrandTotal => _poList.Count == 0 ? 0 : _poList.Sum(x=>x.Total);
+        private int TotalQty => _poList.Count == 0? 0: _poList.Sum(x=>x.Qty);
 
         private PurchaseOrder? SelectedPO
         {
@@ -62,17 +63,25 @@ namespace Lightstream
         async Task LoadPOs(PurchaseOrderStatus status = PurchaseOrderStatus.Pending)
         {
             var list = await _poService.GetAll_Async();
+            try
+            {
 
-            if (status != PurchaseOrderStatus.All)
-                list = list.Where(x => x.StatusType == (int)status);
+                if (status != PurchaseOrderStatus.All)
+                    list = list.Where(x => x.StatusType == (int)status);
 
-            list = FilterByDate(list);
+                list = FilterByDate(list);
 
-            _poList.Clear();
-            foreach (var i in list)
-                _poList.Add(i);
+                _poList.Clear();
+                foreach (var i in list)
+                    _poList.Add(i);
 
-            label2.Text = String.Format("Grand Total: ₱ {0:n}", GrandTotal);
+                label2.Text = string.Format("Grand Total: ₱ {0:n}", GrandTotal);
+                label4.Text = "Total Qty: " + TotalQty;
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
         }
         DateFilter dtFilter = DateFilter.Day;
         IEnumerable<PurchaseOrder> FilterByDate(IEnumerable<PurchaseOrder> list)
@@ -249,6 +258,9 @@ namespace Lightstream
             _poList.Clear();
             foreach (var po in result)
                 _poList.Add(po);
+
+            label2.Text = string.Format("Grand Total: ₱ {0:n}", GrandTotal);
+            label4.Text = "Total Qty: " + TotalQty;
         }
 
         PurchaseOrderStatus selectedStatus = PurchaseOrderStatus.Pending;

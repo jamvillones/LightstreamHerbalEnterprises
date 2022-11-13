@@ -136,7 +136,7 @@ namespace Lightstream
             if (sender is Button btn)
                 ChangeButtonStateUponClick(btn);
 
-            var ingForm = new IngredientsPage(new GenericRepository<Ingredient>());
+            var ingForm = new IngredientsPage(new IngredientService());
             OpenForm(ingForm);
         }
         #endregion

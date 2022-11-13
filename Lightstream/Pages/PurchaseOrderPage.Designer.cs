@@ -70,12 +70,15 @@
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this._poTable)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -179,7 +182,7 @@
             this.statusCol});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(144)))), ((int)(((byte)(44)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
@@ -589,13 +592,37 @@
             // 
             // label2
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label2.Location = new System.Drawing.Point(30, 416);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(774, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(915, 25);
+            this.label2.Size = new System.Drawing.Size(141, 25);
             this.label2.TabIndex = 30;
             this.label2.Text = "Grand Total: ₱ 0.00";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // flowLayoutPanel7
+            // 
+            this.flowLayoutPanel7.AutoSize = true;
+            this.flowLayoutPanel7.Controls.Add(this.label2);
+            this.flowLayoutPanel7.Controls.Add(this.label4);
+            this.flowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel7.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(30, 416);
+            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(915, 25);
+            this.flowLayoutPanel7.TabIndex = 31;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(657, 0);
+            this.label4.Margin = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 25);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "Total Qty: 0";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PurchaseOrderPage
             // 
@@ -603,7 +630,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(975, 520);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.flowLayoutPanel7);
             this.Controls.Add(this._poTable);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -626,6 +653,8 @@
             this.flowLayoutPanel5.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
+            this.flowLayoutPanel7.ResumeLayout(false);
+            this.flowLayoutPanel7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -670,5 +699,7 @@
         private FlowLayoutPanel flowLayoutPanel4;
         private FlowLayoutPanel flowLayoutPanel6;
         private Label label2;
+        private FlowLayoutPanel flowLayoutPanel7;
+        private Label label4;
     }
 }

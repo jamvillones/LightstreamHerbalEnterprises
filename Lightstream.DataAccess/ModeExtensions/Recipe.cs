@@ -9,6 +9,6 @@ namespace Lightstream.DataAccess.Models
     public partial class Recipe
     {
         public string DisplayMember => this.Qty + " " + GetUnit + " of " + Ingredient.Name;
-        public string GetUnit => Conversion == null ? Ingredient.UnitMeasurement.SingularName : Conversion.FromUnit.SingularName;
+        public string GetUnit => Ingredient.UnitMeasurement.SingularName;
     }
 }

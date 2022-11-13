@@ -21,8 +21,6 @@ namespace Lightstream.Forms
         {
             InitializeComponent();
         }
-        List<Unit> AvailableUnits { get; set; } = null!;
-        List<Conversion> AvailableConversion { get; set; } = null!;
 
         private void RecipeForm_Load(object sender, EventArgs e)
         {
@@ -32,76 +30,16 @@ namespace Lightstream.Forms
                     .Select(a => new { Value = a, Key = a.Name + " in " + a.UnitMeasurement.SingularName })
                     .ToArray();
 
-                AvailableUnits = context.Units.ToList();
+                //AvailableUnits = context.Units.ToList();               
 
-                AvailableConversion = context.Conversions
-                    .Include(x => x.FromUnit)
-                    .Include(y => y.ToUnit)
-                    .ToList();
-
-                ingredientOption.SelectedIndexChanged += ingredientOption_SelectedIndexChanged;
-                unitOption.SelectedIndexChanged += ingredientOption_SelectedIndexChanged;
-
-                unitOption.DataSource = AvailableUnits;
+                ingredientOption.SelectedIndexChanged += ingredientOption_SelectedIndexChanged;                
                 ingredientOption.DataSource = ingredients;
             }
         }
 
-        Conversion? selectedConversion = null;
-
         private void ingredientOption_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (AvailableConversion is null)
-                return;
-
-            if (ingredientOption.SelectedValue is Ingredient ing && unitOption.SelectedItem is Unit fromUnit)
-            {
-                bool isFound = IsConversionAvailable(fromUnit, ing.UnitMeasurement, out selectedConversion);
-
-                _save.Text = isFound ? "Save" : "Define Conversion";
-                _save.BackColor = isFound ? SystemColors.ActiveCaption : Color.IndianRed;
-            }
-        }
-
-        bool IsConversionAvailable(Unit from, Unit to, out Conversion? conversion)
-        {
-            if (from.Id == to.Id)
-            {
-                conversion = null;
-                return true;
-            }
-
-            conversion = AvailableConversion.FirstOrDefault(x => x.FromUnitId == from.Id && x.ToUnitId == to.Id);
-
-            return conversion != null;
-        }
-
-        void OpenConversionCreation()
-        {
-            using (var conversion = new ConversionForm
-                (
-                (Unit)(unitOption.SelectedItem),
-                ((Ingredient)(ingredientOption.SelectedValue)).UnitMeasurement)
-                )
-            {
-                if (conversion.ShowDialog() == DialogResult.OK)
-                {
-                    var result = conversion.ResultConversion;
-                    if (result is not null)
-                    {
-                        AvailableConversion.Add(result);
-                        if (ingredientOption.SelectedValue is Ingredient ing && unitOption.SelectedItem is Unit fromUnit)
-                        {
-                            bool isFound = IsConversionAvailable(fromUnit, ing.UnitMeasurement, out selectedConversion);
-
-                            //addConversionBtn.Enabled = !isFound;
-                            //saveBtn.Visible = isFound;
-                            _save.Text = isFound ? "Save" : "Define Conversion";
-                            _save.BackColor = isFound ? SystemColors.ActiveCaption : Color.IndianRed;
-                        }
-                    }
-                }
-            }
+ 
         }
 
         bool Save()
@@ -109,8 +47,7 @@ namespace Lightstream.Forms
             RecipeDetails = new Recipe()
             {
                 Qty = qty.Value,
-                Ingredient = (Ingredient)ingredientOption.SelectedValue,
-                Conversion = selectedConversion
+                Ingredient = (Ingredient)ingredientOption.SelectedValue
             };
 
             DialogResult = DialogResult.OK;
@@ -121,13 +58,12 @@ namespace Lightstream.Forms
         public Recipe RecipeDetails { get; private set; }
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            if (ingredientOption.SelectedValue is Ingredient ing && unitOption.SelectedItem is Unit fromUnit)
+            if (ingredientOption.SelectedValue is Ingredient ing)
             {
-                bool isFound = IsConversionAvailable(fromUnit, ing.UnitMeasurement, out selectedConversion);
-                if (isFound)
-                    Save();
-                else
-                    OpenConversionCreation();
+                //bool isFound = IsConversionAvailable(fromUnit, ing.UnitMeasurement, out selectedConversion);
+         
+               Save();
+                
             }
         }
 

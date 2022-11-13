@@ -14,5 +14,17 @@ namespace Lightstream.DataAccess.Models
         public string Status => IsArchived ? "Inactive" : "Active";
 
         public override string ToString() => Name;
+
+        public decimal Qty
+        {
+            get
+            {
+                return OrderedTotal - DeductedTotal;
+            }
+        }
+
+        public decimal OrderedTotal => PurchaseOrders.Where(x => x.Status == PurchaseOrderStatus.Received).Sum(x => x.Qty);
+
+        public decimal DeductedTotal => Recipes.Select(r => r.Qty * (r.Product.ProductVariants.Select(pv => pv.RequiredQty * (pv.ProductionHistories.Select(ph => ph.QtyProduced).Sum())).Sum())).Sum();
     }
 }

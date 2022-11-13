@@ -18,6 +18,7 @@ namespace Lightstream.DataAccess.Repositories
                 using (var cont = _factory.CreateDbContext())
                 {
                     return await cont.Products
+                        .Include(p=>p.UnitQty)
                         .Include(p => p.ProductVariants)
                         .AsNoTracking()
                         .ToListAsync();

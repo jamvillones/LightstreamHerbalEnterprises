@@ -11,13 +11,7 @@ namespace Lightstream.DataAccess.Models
         public int Id { get; set; }
         public int QtyProduced { get; set; }
         public DateTime DateTimeProduction { get; set; }
-        /// <summary>
-        /// Login who produced
-        /// </summary>
         public Login? Login { get; set; }
-        /// <summary>
-        /// PRODUCT produced
-        /// </summary>
-        public Product Product { get; set; } = null!;
+        public ProductVariant ProductVariant { get; set; } = null!;
     }
 }

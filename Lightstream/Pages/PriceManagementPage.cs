@@ -19,8 +19,8 @@ namespace Lightstream.Forms
     {
         GenericRepository<Product> _productService;
 
-        private BindingList<ProductViewModel> products;
-        private BindingList<ProductVariant> variants;
+        private BindingList<ProductViewModel> products = new BindingList<ProductViewModel>();
+        private BindingList<ProductVariant> variants = new BindingList<ProductVariant>();
 
         private bool _changesMade = false;
         public bool ChangesMade
@@ -72,13 +72,11 @@ namespace Lightstream.Forms
             //set the service using DI pattern
             _productService = productService;
 
-            products = new BindingList<ProductViewModel>();
-            variants = new BindingList<ProductVariant>();
+            SetupDataGridSettings();
         }
 
         private async void PriceManagementForm_Load(object sender, EventArgs e)
         {
-            SetupDataGridSettings();
 
             await LoadProductsAsync();
         }
@@ -106,6 +104,7 @@ namespace Lightstream.Forms
             prodVariantDescriptionCol.DataPropertyName = nameof(ProductVariant.Description);
             prodVariantPrice.DataPropertyName = nameof(ProductVariant.Price);
             prodVariantCost.DataPropertyName = nameof(ProductVariant.Cost);
+            amountCol.DataPropertyName = nameof(ProductVariant.RequiredAmount);
             idCol.DataPropertyName = nameof(ProductVariant.Id);
 
             _productsTable.DataSource = products;
@@ -205,6 +204,7 @@ namespace Lightstream.Forms
             var v = OpenVariantForm();
             if (v is not null)
             {
+                v.Product = SelectedProduct;
                 variants.Add(v);
                 ChangesMade = true;
             }

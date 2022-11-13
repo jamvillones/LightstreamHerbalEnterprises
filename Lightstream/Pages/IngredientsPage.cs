@@ -48,7 +48,7 @@ namespace Lightstream.Usercontrols
             _ingredientsTable.AutoGenerateColumns = false;
 
             nameCol.DataPropertyName = nameof(Ingredient.Name);
-            costCol.DataPropertyName = nameof(Ingredient.Cost);
+            qtyCol.DataPropertyName = nameof(Ingredient.Qty);
             unitCol.DataPropertyName = nameof(Ingredient.GetUnit);
             statusCol.DataPropertyName = nameof(Ingredient.Status);
 

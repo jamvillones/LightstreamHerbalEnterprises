@@ -39,13 +39,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this._poTable = new System.Windows.Forms.DataGridView();
-            this.poNumCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ingCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplierCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qtyCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._viewDetails = new System.Windows.Forms.Button();
             this._managePO = new System.Windows.Forms.Button();
             this._cancelOrder = new System.Windows.Forms.Button();
@@ -60,6 +53,14 @@
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.poNumCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ingCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtyCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this._poTable)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -154,13 +155,14 @@
             this.supplierCol,
             this.qtyCol,
             this.costCol,
-            this.totalCol});
+            this.totalCol,
+            this.statusCol});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(144)))), ((int)(((byte)(44)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this._poTable.DefaultCellStyle = dataGridViewCellStyle5;
             this._poTable.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -177,65 +179,7 @@
             this._poTable.Size = new System.Drawing.Size(915, 318);
             this._poTable.StandardTab = true;
             this._poTable.TabIndex = 18;
-            // 
-            // poNumCol
-            // 
-            this.poNumCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.poNumCol.HeaderText = "PO NO.";
-            this.poNumCol.MinimumWidth = 60;
-            this.poNumCol.Name = "poNumCol";
-            this.poNumCol.ReadOnly = true;
-            this.poNumCol.Width = 66;
-            // 
-            // dateCol
-            // 
-            dataGridViewCellStyle2.Format = "MMM d, yyyy h:mm tt";
-            dataGridViewCellStyle2.NullValue = "No Date Available";
-            this.dateCol.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dateCol.HeaderText = "Date Ordered";
-            this.dateCol.MinimumWidth = 8;
-            this.dateCol.Name = "dateCol";
-            this.dateCol.ReadOnly = true;
-            // 
-            // ingCol
-            // 
-            this.ingCol.HeaderText = "Ingredient";
-            this.ingCol.Name = "ingCol";
-            this.ingCol.ReadOnly = true;
-            // 
-            // supplierCol
-            // 
-            this.supplierCol.HeaderText = "Supplier";
-            this.supplierCol.MinimumWidth = 8;
-            this.supplierCol.Name = "supplierCol";
-            this.supplierCol.ReadOnly = true;
-            // 
-            // qtyCol
-            // 
-            this.qtyCol.HeaderText = "Qty";
-            this.qtyCol.MinimumWidth = 8;
-            this.qtyCol.Name = "qtyCol";
-            this.qtyCol.ReadOnly = true;
-            // 
-            // costCol
-            // 
-            this.costCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Format = "₱ 0.00";
-            this.costCol.DefaultCellStyle = dataGridViewCellStyle3;
-            this.costCol.HeaderText = "Cost";
-            this.costCol.Name = "costCol";
-            this.costCol.ReadOnly = true;
-            // 
-            // totalCol
-            // 
-            this.totalCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle4.Format = "₱ 0.00";
-            this.totalCol.DefaultCellStyle = dataGridViewCellStyle4;
-            this.totalCol.HeaderText = "Total Amount";
-            this.totalCol.MinimumWidth = 110;
-            this.totalCol.Name = "totalCol";
-            this.totalCol.ReadOnly = true;
-            this.totalCol.Width = 110;
+            this._poTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._poTable_RowsAdded);
             // 
             // _viewDetails
             // 
@@ -378,11 +322,13 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "All";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButton3.ForeColor = System.Drawing.Color.Maroon;
             this.radioButton3.Location = new System.Drawing.Point(310, 3);
             this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton3.Name = "radioButton3";
@@ -391,11 +337,13 @@
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Cancelled";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
             this.radioButton4.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButton4.ForeColor = System.Drawing.Color.Green;
             this.radioButton4.Location = new System.Drawing.Point(238, 3);
             this.radioButton4.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton4.Name = "radioButton4";
@@ -404,11 +352,13 @@
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Received";
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
             this.radioButton5.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.radioButton5.Location = new System.Drawing.Point(153, 3);
             this.radioButton5.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton5.Name = "radioButton5";
@@ -417,12 +367,14 @@
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "Incomplete";
             this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
             // 
             // radioButton6
             // 
             this.radioButton6.AutoSize = true;
             this.radioButton6.Checked = true;
             this.radioButton6.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButton6.ForeColor = System.Drawing.Color.Black;
             this.radioButton6.Location = new System.Drawing.Point(85, 3);
             this.radioButton6.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton6.Name = "radioButton6";
@@ -431,6 +383,74 @@
             this.radioButton6.TabStop = true;
             this.radioButton6.Text = "Pending";
             this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
+            // 
+            // poNumCol
+            // 
+            this.poNumCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.poNumCol.HeaderText = "PO NO.";
+            this.poNumCol.MinimumWidth = 60;
+            this.poNumCol.Name = "poNumCol";
+            this.poNumCol.ReadOnly = true;
+            this.poNumCol.Width = 66;
+            // 
+            // dateCol
+            // 
+            dataGridViewCellStyle2.Format = "MMM d, yyyy h:mm tt";
+            dataGridViewCellStyle2.NullValue = "No Date Available";
+            this.dateCol.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dateCol.HeaderText = "Date Ordered";
+            this.dateCol.MinimumWidth = 8;
+            this.dateCol.Name = "dateCol";
+            this.dateCol.ReadOnly = true;
+            // 
+            // ingCol
+            // 
+            this.ingCol.HeaderText = "Ingredient";
+            this.ingCol.Name = "ingCol";
+            this.ingCol.ReadOnly = true;
+            // 
+            // supplierCol
+            // 
+            this.supplierCol.HeaderText = "Supplier";
+            this.supplierCol.MinimumWidth = 8;
+            this.supplierCol.Name = "supplierCol";
+            this.supplierCol.ReadOnly = true;
+            // 
+            // qtyCol
+            // 
+            this.qtyCol.HeaderText = "Qty";
+            this.qtyCol.MinimumWidth = 8;
+            this.qtyCol.Name = "qtyCol";
+            this.qtyCol.ReadOnly = true;
+            // 
+            // costCol
+            // 
+            this.costCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Format = "₱ 0.00";
+            this.costCol.DefaultCellStyle = dataGridViewCellStyle3;
+            this.costCol.HeaderText = "Cost";
+            this.costCol.Name = "costCol";
+            this.costCol.ReadOnly = true;
+            // 
+            // totalCol
+            // 
+            this.totalCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle4.Format = "₱ 0.00";
+            this.totalCol.DefaultCellStyle = dataGridViewCellStyle4;
+            this.totalCol.HeaderText = "Total Amount";
+            this.totalCol.MinimumWidth = 110;
+            this.totalCol.Name = "totalCol";
+            this.totalCol.ReadOnly = true;
+            this.totalCol.Width = 110;
+            // 
+            // statusCol
+            // 
+            this.statusCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.statusCol.HeaderText = "Status";
+            this.statusCol.Name = "statusCol";
+            this.statusCol.ReadOnly = true;
+            this.statusCol.Width = 69;
             // 
             // PurchaseOrderPage
             // 
@@ -489,5 +509,6 @@
         private DataGridViewTextBoxColumn qtyCol;
         private DataGridViewTextBoxColumn costCol;
         private DataGridViewTextBoxColumn totalCol;
+        private DataGridViewTextBoxColumn statusCol;
     }
 }

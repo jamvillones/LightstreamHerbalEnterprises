@@ -44,7 +44,7 @@ namespace Lightstream
             dateCol.DataPropertyName = nameof(PurchaseOrder.DateOrdered);
             costCol.DataPropertyName = nameof(PurchaseOrder.Cost);
             totalCol.DataPropertyName = nameof(PurchaseOrder.Total);
-
+            statusCol.DataPropertyName = nameof(PurchaseOrder.Status);
             _poTable.DataSource = _poList;
         }
 
@@ -53,9 +53,13 @@ namespace Lightstream
             await LoadPOs();
         }
 
-        async Task LoadPOs()
+        async Task LoadPOs(PurchaseOrderStatus status = PurchaseOrderStatus.Pending)
         {
             var list = await _poService.GetAll_Async();
+
+            if (status != PurchaseOrderStatus.All)
+                list = list.Where(x => x.StatusType == (int)status);
+
             _poList.Clear();
             foreach (var i in list)
                 _poList.Add(i);
@@ -83,6 +87,64 @@ namespace Lightstream
                 }
             }
             return null;
+        }
+
+        private void _poTable_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            var status = (PurchaseOrderStatus)_poList[e.RowIndex].StatusType;
+            FormatRow(_poTable.Rows[e.RowIndex], status);
+        }
+
+        Color colorPending = Color.Gray;
+        Color colorIncomplete = Color.FromArgb(255, 255, 170);
+        Color colorRecieved = Color.FromArgb(180, 210, 180);
+        Color colorCancelled = Color.FromArgb(221, 146, 146);
+
+        void FormatRow(DataGridViewRow row, PurchaseOrderStatus status)
+        {
+            Color rowColor = Color.White;
+            switch (status)
+            {
+                //case PurchaseOrderStatus.Pending:
+                //    rowColor = colorPending;
+                //    break;
+                case PurchaseOrderStatus.Incomplete:
+                    rowColor = colorIncomplete;
+                    break;
+                case PurchaseOrderStatus.Recieved:
+                    rowColor = colorRecieved;
+                    break;
+                case PurchaseOrderStatus.Cancelled:
+                    rowColor = colorCancelled;
+                    break;
+
+            }
+            row.DefaultCellStyle.BackColor = rowColor;
+        }
+
+        private async void radioButton6_CheckedChanged(object sender, EventArgs e)
+        {
+            await LoadPOs();
+        }
+
+        private async void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            await LoadPOs(PurchaseOrderStatus.Incomplete);
+        }
+
+        private async void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            await LoadPOs(PurchaseOrderStatus.Recieved);
+        }
+
+        private async void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            await LoadPOs(PurchaseOrderStatus.Cancelled);
+        }
+
+        private async void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            await LoadPOs(PurchaseOrderStatus.All);
         }
     }
 }

@@ -11,8 +11,8 @@ namespace Lightstream.DataAccess.Models
     {
         [Required]
         public decimal Cost { get; set; } = 0;
-        public Ingredient Ingredient { get; set; }
-        public Supplier Supplier { get; set; }
+        public Ingredient Ingredient { get; set; } = null!;
+        public Supplier Supplier { get; set; } = null!;
         public int Id { get; set; }
     }
 }

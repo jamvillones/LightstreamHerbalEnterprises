@@ -17,7 +17,7 @@ namespace Lightstream.DataAccess.Models
         public int Qty { get; set; }
         public decimal Cost { get; set; }
         public int StatusType { get; set; } = 0;
-        public Supplier? Supplier { get; set; } = null;
+        public Supplier Supplier { get; set; } = null!;
         public Ingredient Ingredient { get; set; } = null!;
 
     }

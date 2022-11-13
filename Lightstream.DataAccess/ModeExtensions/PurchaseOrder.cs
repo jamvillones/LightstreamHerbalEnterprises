@@ -9,15 +9,6 @@ namespace Lightstream.DataAccess.Models
     public partial class PurchaseOrder
     {
         public decimal Total => Qty * Cost;
-        public PurchaseOrderStatus Status
-        {
-            get
-            {
-                return (PurchaseOrderStatus)StatusType;
-            }
-        }
-        //public string TotalString => string.Format("₱ {0:n}", Total);
-        //public string CostString => string.Format("₱ {0:n}", Cost);
-        //public string DateOrderedString => DateOrdered.ToString("MMM d, yyyy h:mm tt");
+        public PurchaseOrderStatus Status => (PurchaseOrderStatus)StatusType;
     }
 }

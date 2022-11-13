@@ -36,16 +36,18 @@ namespace Lightstream.Forms
             }
         }
 
-        private SupplierToIngredient? SelectedBridge => _supplierTable.SelectedRows.Count == 0 ? 
-                                                        null : 
+        private SupplierToIngredient? SelectedBridge => _supplierTable.SelectedRows.Count == 0 ?
+                                                        null :
                                                         _supplierTable.SelectedRows[0].DataBoundItem as SupplierToIngredient;
 
         GenericRepository<Ingredient> _ingService;
-        public PurchaseOrderForm(GenericRepository<Ingredient> ingService)
+        GenericRepository<PurchaseOrder> _poService;
+        public PurchaseOrderForm(GenericRepository<Ingredient> ingService, GenericRepository<PurchaseOrder> poService)
         {
             InitializeComponent();
             SetUpBinding();
             _ingService = ingService;
+            _poService = poService;
         }
         void SetUpBinding()
         {
@@ -122,6 +124,31 @@ namespace Lightstream.Forms
                 _cost.Value = SelectedBridge.Cost;
                 _supplier.Text = SelectedBridge.Supplier.Name;
             }
+        }
+
+        private async void _add_Click(object sender, EventArgs e)
+        {
+            if (ValidatoinSuccessful())
+            {
+                Tag = await SavePO();
+                DialogResult = DialogResult.OK;
+            }
+        }
+
+        bool ValidatoinSuccessful()
+        {
+            return true;
+        }
+        async Task<PurchaseOrder> SavePO()
+        {
+            var poAdded = new PurchaseOrder()
+            {
+                Ingredient = SelectedIngredient,
+                Supplier = SelectedBridge.Supplier,
+                Qty = (int)_qty.Value,
+                Cost = _cost.Value
+            };
+            return await _poService.Update_Async(poAdded);
         }
     }
 }

@@ -72,7 +72,7 @@ namespace Lightstream
 
         PurchaseOrder? OpenPOForm()
         {
-            using (var form = new PurchaseOrderForm(new Ingredient_Supplier_Service()))
+            using (var form = new PurchaseOrderForm(new Ingredient_Supplier_Service(), new GenericRepository<PurchaseOrder>()))
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {

@@ -1,6 +1,8 @@
 ﻿using Lightstream.DataAccess.Models;
 using Lightstream.DataAccess.Repositories;
 using Lightstream.Forms;
+using Lightstream.Services;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,7 +52,7 @@ namespace Lightstream
 
         private async void PurchaseOrderPage_Load(object sender, EventArgs e)
         {
-            await LoadPOs();
+            await LoadPOs(selectedStatus);
         }
 
         async Task LoadPOs(PurchaseOrderStatus status = PurchaseOrderStatus.Pending)
@@ -124,27 +126,115 @@ namespace Lightstream
 
         private async void radioButton6_CheckedChanged(object sender, EventArgs e)
         {
-            await LoadPOs();
+            selectedStatus = PurchaseOrderStatus.Pending;
+            await LoadPOs(selectedStatus);
         }
 
         private async void radioButton5_CheckedChanged(object sender, EventArgs e)
         {
-            await LoadPOs(PurchaseOrderStatus.Incomplete);
+            selectedStatus = PurchaseOrderStatus.Incomplete;
+            await LoadPOs(selectedStatus);
         }
 
         private async void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
-            await LoadPOs(PurchaseOrderStatus.Recieved);
+            selectedStatus = PurchaseOrderStatus.Recieved;
+            await LoadPOs(selectedStatus);
         }
 
         private async void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-            await LoadPOs(PurchaseOrderStatus.Cancelled);
+            selectedStatus = PurchaseOrderStatus.Cancelled;
+            await LoadPOs(selectedStatus);
         }
 
         private async void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            await LoadPOs(PurchaseOrderStatus.All);
+            selectedStatus = PurchaseOrderStatus.All;
+            await LoadPOs(selectedStatus);
+        }
+
+        private void _poTable_SelectionChanged(object sender, EventArgs e)
+        {
+            if (SelectedPO is null) return;
+            FormatCancelButton(SelectedPO.Status);
+        }
+
+        void FormatCancelButton(PurchaseOrderStatus status)
+        {
+            bool isPending = status == PurchaseOrderStatus.Pending;
+            _cancelOrder.Enabled = isPending;
+            button1.Enabled = isPending;
+            button2.Enabled = isPending || status == PurchaseOrderStatus.Incomplete;
+        }
+
+        async Task ChangePoStatus(PurchaseOrderStatus status)
+        {
+            if (SelectedPO is null)
+                return;
+
+            var spo = SelectedPO;
+            spo.StatusType = (int)status;
+
+            SelectedPO = await _poService.Update_Async(spo);
+        }
+
+        async void _cancelOrder_Click(object sender, EventArgs e)
+        {
+            await ChangePoStatus(PurchaseOrderStatus.Cancelled);
+            if (SelectedPO is not null)
+                FormatCancelButton(SelectedPO.Status);
+        }
+
+        async void button1_Click(object sender, EventArgs e)
+        {
+            await ChangePoStatus(PurchaseOrderStatus.Incomplete);
+            if (SelectedPO is not null)
+                FormatCancelButton(SelectedPO.Status);
+        }
+
+        async void button2_Click(object sender, EventArgs e)
+        {
+            await ChangePoStatus(PurchaseOrderStatus.Recieved);
+            if (SelectedPO is not null)
+                FormatCancelButton(SelectedPO.Status);
+        }
+
+        bool searchMade = false;
+
+        private async void _search_KeyDown(object sender, KeyEventArgs e)
+        {
+            var textBox = sender as TextBox;
+            if (e.KeyCode != Keys.Enter || string.IsNullOrWhiteSpace(textBox.Text)) return;
+
+            var text = textBox!.Text.Trim().ToLower();
+            var list = await _poService.GetAll_Async();
+
+            var result = SearchHandler.FilterList(list, FilteringFlow.StopUponSatisfaction,
+                x => x.Ingredient.Name.ToLower().Contains(text),
+                x => x.Supplier.Name.ToLower().Contains(text)
+                );
+
+            searchMade = result.Count() > 0;
+
+            if (!searchMade)
+            {
+                MessageBox.Show("No Purchase Order found", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            _poList.Clear();
+            foreach (var po in result)
+                _poList.Add(po);
+        }
+
+        PurchaseOrderStatus selectedStatus = PurchaseOrderStatus.Pending;
+        private async void _search_TextChanged(object sender, EventArgs e)
+        {
+            var text = sender as TextBox;
+
+            if (string.IsNullOrWhiteSpace(text.Text))
+                await LoadPOs(selectedStatus);
         }
     }
 }

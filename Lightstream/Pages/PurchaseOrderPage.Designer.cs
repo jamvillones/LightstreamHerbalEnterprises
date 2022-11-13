@@ -39,20 +39,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this._poTable = new System.Windows.Forms.DataGridView();
-            this._viewDetails = new System.Windows.Forms.Button();
-            this._managePO = new System.Windows.Forms.Button();
-            this._cancelOrder = new System.Windows.Forms.Button();
-            this._newPO = new System.Windows.Forms.Button();
-            this._print = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.poNumCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ingCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +47,21 @@
             this.costCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._cancelOrder = new System.Windows.Forms.Button();
+            this._newPO = new System.Windows.Forms.Button();
+            this._print = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this._search = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this._poTable)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -176,214 +177,11 @@
             this._poTable.RowHeadersWidth = 62;
             this._poTable.RowTemplate.Height = 25;
             this._poTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._poTable.Size = new System.Drawing.Size(915, 318);
+            this._poTable.Size = new System.Drawing.Size(915, 310);
             this._poTable.StandardTab = true;
             this._poTable.TabIndex = 18;
             this._poTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._poTable_RowsAdded);
-            // 
-            // _viewDetails
-            // 
-            this._viewDetails.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._viewDetails.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this._viewDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._viewDetails.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._viewDetails.ForeColor = System.Drawing.Color.Black;
-            this._viewDetails.Location = new System.Drawing.Point(369, 0);
-            this._viewDetails.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this._viewDetails.Name = "_viewDetails";
-            this._viewDetails.Size = new System.Drawing.Size(120, 40);
-            this._viewDetails.TabIndex = 22;
-            this._viewDetails.Text = "View Details";
-            this._viewDetails.UseVisualStyleBackColor = false;
-            // 
-            // _managePO
-            // 
-            this._managePO.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._managePO.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this._managePO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._managePO.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._managePO.ForeColor = System.Drawing.Color.Black;
-            this._managePO.Location = new System.Drawing.Point(246, 0);
-            this._managePO.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this._managePO.Name = "_managePO";
-            this._managePO.Size = new System.Drawing.Size(120, 40);
-            this._managePO.TabIndex = 21;
-            this._managePO.Text = "Manage PO";
-            this._managePO.UseVisualStyleBackColor = false;
-            // 
-            // _cancelOrder
-            // 
-            this._cancelOrder.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._cancelOrder.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this._cancelOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._cancelOrder.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._cancelOrder.ForeColor = System.Drawing.Color.Black;
-            this._cancelOrder.Location = new System.Drawing.Point(123, 0);
-            this._cancelOrder.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this._cancelOrder.Name = "_cancelOrder";
-            this._cancelOrder.Size = new System.Drawing.Size(120, 40);
-            this._cancelOrder.TabIndex = 20;
-            this._cancelOrder.Text = "Cancel Order";
-            this._cancelOrder.UseVisualStyleBackColor = false;
-            // 
-            // _newPO
-            // 
-            this._newPO.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._newPO.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this._newPO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._newPO.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._newPO.ForeColor = System.Drawing.Color.Black;
-            this._newPO.Location = new System.Drawing.Point(0, 0);
-            this._newPO.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this._newPO.Name = "_newPO";
-            this._newPO.Size = new System.Drawing.Size(120, 40);
-            this._newPO.TabIndex = 19;
-            this._newPO.Text = "New PO";
-            this._newPO.UseVisualStyleBackColor = false;
-            this._newPO.Click += new System.EventHandler(this._newPO_Click);
-            // 
-            // _print
-            // 
-            this._print.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._print.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this._print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._print.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._print.ForeColor = System.Drawing.Color.Black;
-            this._print.Location = new System.Drawing.Point(492, 0);
-            this._print.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this._print.Name = "_print";
-            this._print.Size = new System.Drawing.Size(120, 40);
-            this._print.TabIndex = 25;
-            this._print.Text = "Print";
-            this._print.UseVisualStyleBackColor = false;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.Controls.Add(this._newPO);
-            this.flowLayoutPanel1.Controls.Add(this._cancelOrder);
-            this.flowLayoutPanel1.Controls.Add(this._managePO);
-            this.flowLayoutPanel1.Controls.Add(this._viewDetails);
-            this.flowLayoutPanel1.Controls.Add(this._print);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 449);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(915, 40);
-            this.flowLayoutPanel1.TabIndex = 27;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.flowLayoutPanel2);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(30, 31);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(915, 100);
-            this.panel1.TabIndex = 28;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(0, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Search...";
-            this.textBox1.Size = new System.Drawing.Size(243, 23);
-            this.textBox1.TabIndex = 19;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel2.Controls.Add(this.radioButton2);
-            this.flowLayoutPanel2.Controls.Add(this.radioButton3);
-            this.flowLayoutPanel2.Controls.Add(this.radioButton4);
-            this.flowLayoutPanel2.Controls.Add(this.radioButton5);
-            this.flowLayoutPanel2.Controls.Add(this.radioButton6);
-            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(482, 54);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(433, 28);
-            this.flowLayoutPanel2.TabIndex = 18;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton2.Location = new System.Drawing.Point(390, 3);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(43, 23);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "All";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton3.ForeColor = System.Drawing.Color.Maroon;
-            this.radioButton3.Location = new System.Drawing.Point(310, 3);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(77, 23);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Cancelled";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton4.ForeColor = System.Drawing.Color.Green;
-            this.radioButton4.Location = new System.Drawing.Point(238, 3);
-            this.radioButton4.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(69, 23);
-            this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Received";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.radioButton5.Location = new System.Drawing.Point(153, 3);
-            this.radioButton5.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(82, 23);
-            this.radioButton5.TabIndex = 4;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Incomplete";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
-            // 
-            // radioButton6
-            // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Checked = true;
-            this.radioButton6.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton6.ForeColor = System.Drawing.Color.Black;
-            this.radioButton6.Location = new System.Drawing.Point(85, 3);
-            this.radioButton6.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(65, 23);
-            this.radioButton6.TabIndex = 5;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Pending";
-            this.radioButton6.UseVisualStyleBackColor = true;
-            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
+            this._poTable.SelectionChanged += new System.EventHandler(this._poTable_SelectionChanged);
             // 
             // poNumCol
             // 
@@ -452,6 +250,227 @@
             this.statusCol.ReadOnly = true;
             this.statusCol.Width = 69;
             // 
+            // _cancelOrder
+            // 
+            this._cancelOrder.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this._cancelOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
+            this._cancelOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._cancelOrder.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._cancelOrder.ForeColor = System.Drawing.Color.Black;
+            this._cancelOrder.Location = new System.Drawing.Point(123, 2);
+            this._cancelOrder.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this._cancelOrder.Name = "_cancelOrder";
+            this._cancelOrder.Size = new System.Drawing.Size(120, 40);
+            this._cancelOrder.TabIndex = 20;
+            this._cancelOrder.Text = "Cancel Order";
+            this._cancelOrder.UseVisualStyleBackColor = false;
+            this._cancelOrder.Click += new System.EventHandler(this._cancelOrder_Click);
+            // 
+            // _newPO
+            // 
+            this._newPO.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this._newPO.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this._newPO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._newPO.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._newPO.ForeColor = System.Drawing.Color.Black;
+            this._newPO.Location = new System.Drawing.Point(0, 2);
+            this._newPO.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this._newPO.Name = "_newPO";
+            this._newPO.Size = new System.Drawing.Size(120, 40);
+            this._newPO.TabIndex = 19;
+            this._newPO.Text = "New PO";
+            this._newPO.UseVisualStyleBackColor = false;
+            this._newPO.Click += new System.EventHandler(this._newPO_Click);
+            // 
+            // _print
+            // 
+            this._print.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this._print.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this._print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._print.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._print.ForeColor = System.Drawing.Color.Black;
+            this._print.Location = new System.Drawing.Point(738, 2);
+            this._print.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this._print.Name = "_print";
+            this._print.Size = new System.Drawing.Size(120, 40);
+            this._print.TabIndex = 25;
+            this._print.Text = "Print";
+            this._print.UseVisualStyleBackColor = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.Controls.Add(this._newPO);
+            this.flowLayoutPanel1.Controls.Add(this._cancelOrder);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this._print);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 441);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(915, 44);
+            this.flowLayoutPanel1.TabIndex = 27;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(246, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(243, 40);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "mark as Incomplete";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button2.BackColor = System.Drawing.Color.SeaGreen;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(492, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(243, 40);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "Mark as Recieved";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this._search);
+            this.panel1.Controls.Add(this.flowLayoutPanel2);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(30, 31);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(915, 100);
+            this.panel1.TabIndex = 28;
+            // 
+            // _search
+            // 
+            this._search.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this._search.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._search.Location = new System.Drawing.Point(0, 20);
+            this._search.Name = "_search";
+            this._search.PlaceholderText = "Search...";
+            this._search.Size = new System.Drawing.Size(243, 23);
+            this._search.TabIndex = 19;
+            this._search.TextChanged += new System.EventHandler(this._search_TextChanged);
+            this._search.KeyDown += new System.Windows.Forms.KeyEventHandler(this._search_KeyDown);
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel2.Controls.Add(this.radioButton2);
+            this.flowLayoutPanel2.Controls.Add(this.radioButton3);
+            this.flowLayoutPanel2.Controls.Add(this.radioButton4);
+            this.flowLayoutPanel2.Controls.Add(this.radioButton5);
+            this.flowLayoutPanel2.Controls.Add(this.radioButton6);
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(482, 54);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(433, 28);
+            this.flowLayoutPanel2.TabIndex = 18;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButton2.Location = new System.Drawing.Point(390, 3);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(43, 23);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "All";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButton3.ForeColor = System.Drawing.Color.Maroon;
+            this.radioButton3.Location = new System.Drawing.Point(310, 3);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(77, 23);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Cancelled";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButton4.ForeColor = System.Drawing.Color.SeaGreen;
+            this.radioButton4.Location = new System.Drawing.Point(238, 3);
+            this.radioButton4.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(69, 23);
+            this.radioButton4.TabIndex = 3;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Received";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.radioButton5.Location = new System.Drawing.Point(153, 3);
+            this.radioButton5.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(82, 23);
+            this.radioButton5.TabIndex = 4;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "Incomplete";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Checked = true;
+            this.radioButton6.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButton6.ForeColor = System.Drawing.Color.Black;
+            this.radioButton6.Location = new System.Drawing.Point(85, 3);
+            this.radioButton6.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(65, 23);
+            this.radioButton6.TabIndex = 5;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "Pending";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.AutoSize = true;
+            this.flowLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(30, 485);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(915, 4);
+            this.flowLayoutPanel3.TabIndex = 29;
+            // 
             // PurchaseOrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 25F);
@@ -462,6 +481,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.flowLayoutPanel3);
             this.Font = new System.Drawing.Font("Bebas Neue", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
@@ -488,8 +508,6 @@
         private Label label3;
         private DateTimePicker dateTimePicker2;
         private DataGridView _poTable;
-        private Button _viewDetails;
-        private Button _managePO;
         private Button _cancelOrder;
         private Button _newPO;
         private Button _print;
@@ -501,7 +519,7 @@
         private RadioButton radioButton4;
         private RadioButton radioButton5;
         private RadioButton radioButton6;
-        private TextBox textBox1;
+        private TextBox _search;
         private DataGridViewTextBoxColumn poNumCol;
         private DataGridViewTextBoxColumn dateCol;
         private DataGridViewTextBoxColumn ingCol;
@@ -510,5 +528,8 @@
         private DataGridViewTextBoxColumn costCol;
         private DataGridViewTextBoxColumn totalCol;
         private DataGridViewTextBoxColumn statusCol;
+        private FlowLayoutPanel flowLayoutPanel3;
+        private Button button1;
+        private Button button2;
     }
 }

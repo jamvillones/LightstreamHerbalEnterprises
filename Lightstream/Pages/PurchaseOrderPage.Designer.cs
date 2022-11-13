@@ -34,10 +34,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this._fromDT = new System.Windows.Forms.DateTimePicker();
+            this._fromLabel = new System.Windows.Forms.Label();
+            this._toLabel = new System.Windows.Forms.Label();
+            this._toDT = new System.Windows.Forms.DateTimePicker();
             this._poTable = new System.Windows.Forms.DataGridView();
             this.poNumCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +54,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this._search = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -62,9 +69,12 @@
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this._poTable)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.flowLayoutPanel6.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,54 +92,63 @@
             this.label1.Text = "Purchase Order";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dateTimePicker1
+            // _fromDT
             // 
-            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.Control;
-            this.dateTimePicker1.Checked = false;
-            this.dateTimePicker1.CustomFormat = "MMM d, yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(48, 54);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(195, 28);
-            this.dateTimePicker1.TabIndex = 10;
+            this._fromDT.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this._fromDT.CalendarFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._fromDT.CalendarMonthBackground = System.Drawing.SystemColors.Control;
+            this._fromDT.Checked = false;
+            this._fromDT.CustomFormat = "MMM d, yyyy";
+            this._fromDT.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._fromDT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this._fromDT.Location = new System.Drawing.Point(49, 3);
+            this._fromDT.Name = "_fromDT";
+            this._fromDT.Size = new System.Drawing.Size(120, 22);
+            this._fromDT.TabIndex = 10;
+            this._fromDT.ValueChanged += new System.EventHandler(this._fromDT_ValueChanged);
             // 
-            // label2
+            // _fromLabel
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(3, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 21);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "From:";
+            this._fromLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this._fromLabel.AutoSize = true;
+            this._fromLabel.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._fromLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this._fromLabel.Location = new System.Drawing.Point(3, 3);
+            this._fromLabel.Name = "_fromLabel";
+            this._fromLabel.Size = new System.Drawing.Size(40, 21);
+            this._fromLabel.TabIndex = 11;
+            this._fromLabel.Text = "From:";
+            this._fromLabel.Visible = false;
             // 
-            // label3
+            // _toLabel
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(249, 58);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 21);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "To:";
+            this._toLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this._toLabel.AutoSize = true;
+            this._toLabel.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._toLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this._toLabel.Location = new System.Drawing.Point(175, 3);
+            this._toLabel.Name = "_toLabel";
+            this._toLabel.Size = new System.Drawing.Size(25, 21);
+            this._toLabel.TabIndex = 12;
+            this._toLabel.Text = "To:";
+            this._toLabel.Visible = false;
             // 
-            // dateTimePicker2
+            // _toDT
             // 
-            this.dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePicker2.CalendarMonthBackground = System.Drawing.SystemColors.ActiveCaption;
-            this.dateTimePicker2.CalendarTrailingForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dateTimePicker2.Checked = false;
-            this.dateTimePicker2.CustomFormat = "MMM d, yyyy";
-            this.dateTimePicker2.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(279, 54);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(195, 28);
-            this.dateTimePicker2.TabIndex = 13;
+            this._toDT.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this._toDT.CalendarFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._toDT.CalendarMonthBackground = System.Drawing.SystemColors.ActiveCaption;
+            this._toDT.CalendarTrailingForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this._toDT.Checked = false;
+            this._toDT.CustomFormat = "MMM d, yyyy";
+            this._toDT.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._toDT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this._toDT.Location = new System.Drawing.Point(206, 3);
+            this._toDT.Name = "_toDT";
+            this._toDT.Size = new System.Drawing.Size(120, 22);
+            this._toDT.TabIndex = 13;
+            this._toDT.Visible = false;
+            this._toDT.ValueChanged += new System.EventHandler(this._fromDT_ValueChanged);
             // 
             // _poTable
             // 
@@ -168,7 +187,7 @@
             this._poTable.DefaultCellStyle = dataGridViewCellStyle5;
             this._poTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._poTable.EnableHeadersVisualStyles = false;
-            this._poTable.Location = new System.Drawing.Point(30, 131);
+            this._poTable.Location = new System.Drawing.Point(30, 139);
             this._poTable.Margin = new System.Windows.Forms.Padding(5);
             this._poTable.MultiSelect = false;
             this._poTable.Name = "_poTable";
@@ -177,7 +196,7 @@
             this._poTable.RowHeadersWidth = 62;
             this._poTable.RowTemplate.Height = 25;
             this._poTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._poTable.Size = new System.Drawing.Size(915, 310);
+            this._poTable.Size = new System.Drawing.Size(915, 302);
             this._poTable.StandardTab = true;
             this._poTable.TabIndex = 18;
             this._poTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._poTable_RowsAdded);
@@ -348,23 +367,117 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.flowLayoutPanel6);
+            this.panel1.Controls.Add(this.flowLayoutPanel5);
+            this.panel1.Controls.Add(this.flowLayoutPanel4);
             this.panel1.Controls.Add(this._search);
             this.panel1.Controls.Add(this.flowLayoutPanel2);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(30, 31);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(915, 100);
+            this.panel1.Size = new System.Drawing.Size(915, 108);
             this.panel1.TabIndex = 28;
+            // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.AutoSize = true;
+            this.flowLayoutPanel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel6.Controls.Add(this._fromLabel);
+            this.flowLayoutPanel6.Controls.Add(this._fromDT);
+            this.flowLayoutPanel6.Controls.Add(this._toLabel);
+            this.flowLayoutPanel6.Controls.Add(this._toDT);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(3, 70);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(329, 28);
+            this.flowLayoutPanel6.TabIndex = 22;
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.AutoSize = true;
+            this.flowLayoutPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel5.Controls.Add(this.radioButton10);
+            this.flowLayoutPanel5.Controls.Add(this.radioButton9);
+            this.flowLayoutPanel5.Controls.Add(this.radioButton8);
+            this.flowLayoutPanel5.Controls.Add(this.radioButton7);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 32);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(220, 29);
+            this.flowLayoutPanel5.TabIndex = 21;
+            // 
+            // radioButton10
+            // 
+            this.radioButton10.AutoSize = true;
+            this.radioButton10.Checked = true;
+            this.radioButton10.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButton10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.radioButton10.Location = new System.Drawing.Point(3, 3);
+            this.radioButton10.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.radioButton10.Name = "radioButton10";
+            this.radioButton10.Size = new System.Drawing.Size(44, 23);
+            this.radioButton10.TabIndex = 5;
+            this.radioButton10.TabStop = true;
+            this.radioButton10.Text = "Day";
+            this.radioButton10.UseVisualStyleBackColor = true;
+            this.radioButton10.CheckedChanged += new System.EventHandler(this.radioButton10_CheckedChanged);
+            // 
+            // radioButton9
+            // 
+            this.radioButton9.AutoSize = true;
+            this.radioButton9.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButton9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.radioButton9.Location = new System.Drawing.Point(50, 3);
+            this.radioButton9.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.radioButton9.Name = "radioButton9";
+            this.radioButton9.Size = new System.Drawing.Size(58, 23);
+            this.radioButton9.TabIndex = 4;
+            this.radioButton9.TabStop = true;
+            this.radioButton9.Text = "Month";
+            this.radioButton9.UseVisualStyleBackColor = true;
+            this.radioButton9.CheckedChanged += new System.EventHandler(this.radioButton9_CheckedChanged);
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.AutoSize = true;
+            this.radioButton8.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButton8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.radioButton8.Location = new System.Drawing.Point(111, 3);
+            this.radioButton8.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(50, 23);
+            this.radioButton8.TabIndex = 3;
+            this.radioButton8.TabStop = true;
+            this.radioButton8.Text = "Year";
+            this.radioButton8.UseVisualStyleBackColor = true;
+            this.radioButton8.CheckedChanged += new System.EventHandler(this.radioButton8_CheckedChanged);
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButton7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.radioButton7.Location = new System.Drawing.Point(164, 3);
+            this.radioButton7.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(56, 23);
+            this.radioButton7.TabIndex = 2;
+            this.radioButton7.TabStop = true;
+            this.radioButton7.Text = "Range";
+            this.radioButton7.UseVisualStyleBackColor = true;
+            this.radioButton7.CheckedChanged += new System.EventHandler(this.radioButton7_CheckedChanged);
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.AutoSize = true;
+            this.flowLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 64);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(0, 0);
+            this.flowLayoutPanel4.TabIndex = 20;
             // 
             // _search
             // 
-            this._search.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this._search.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._search.Location = new System.Drawing.Point(0, 20);
+            this._search.Location = new System.Drawing.Point(3, 3);
             this._search.Name = "_search";
             this._search.PlaceholderText = "Search...";
             this._search.Size = new System.Drawing.Size(243, 23);
@@ -374,23 +487,25 @@
             // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel2.Controls.Add(this.radioButton2);
             this.flowLayoutPanel2.Controls.Add(this.radioButton3);
             this.flowLayoutPanel2.Controls.Add(this.radioButton4);
             this.flowLayoutPanel2.Controls.Add(this.radioButton5);
             this.flowLayoutPanel2.Controls.Add(this.radioButton6);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(482, 54);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(564, 69);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(433, 28);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(351, 29);
             this.flowLayoutPanel2.TabIndex = 18;
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton2.Location = new System.Drawing.Point(390, 3);
+            this.radioButton2.Location = new System.Drawing.Point(308, 3);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(43, 23);
@@ -405,7 +520,7 @@
             this.radioButton3.AutoSize = true;
             this.radioButton3.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.radioButton3.ForeColor = System.Drawing.Color.Maroon;
-            this.radioButton3.Location = new System.Drawing.Point(310, 3);
+            this.radioButton3.Location = new System.Drawing.Point(228, 3);
             this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(77, 23);
@@ -420,7 +535,7 @@
             this.radioButton4.AutoSize = true;
             this.radioButton4.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.radioButton4.ForeColor = System.Drawing.Color.SeaGreen;
-            this.radioButton4.Location = new System.Drawing.Point(238, 3);
+            this.radioButton4.Location = new System.Drawing.Point(156, 3);
             this.radioButton4.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(69, 23);
@@ -435,7 +550,7 @@
             this.radioButton5.AutoSize = true;
             this.radioButton5.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.radioButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.radioButton5.Location = new System.Drawing.Point(153, 3);
+            this.radioButton5.Location = new System.Drawing.Point(71, 3);
             this.radioButton5.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(82, 23);
@@ -451,7 +566,7 @@
             this.radioButton6.Checked = true;
             this.radioButton6.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.radioButton6.ForeColor = System.Drawing.Color.Black;
-            this.radioButton6.Location = new System.Drawing.Point(85, 3);
+            this.radioButton6.Location = new System.Drawing.Point(3, 3);
             this.radioButton6.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton6.Name = "radioButton6";
             this.radioButton6.Size = new System.Drawing.Size(65, 23);
@@ -472,12 +587,23 @@
             this.flowLayoutPanel3.Size = new System.Drawing.Size(915, 4);
             this.flowLayoutPanel3.TabIndex = 29;
             // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label2.Location = new System.Drawing.Point(30, 416);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(915, 25);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Grand Total: ₱ 0.00";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // PurchaseOrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(975, 520);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this._poTable);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -494,6 +620,10 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.flowLayoutPanel6.ResumeLayout(false);
+            this.flowLayoutPanel6.PerformLayout();
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.flowLayoutPanel5.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
@@ -504,10 +634,10 @@
         #endregion
 
         private Label label1;
-        private DateTimePicker dateTimePicker1;
-        private Label label2;
-        private Label label3;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker _fromDT;
+        private Label _fromLabel;
+        private Label _toLabel;
+        private DateTimePicker _toDT;
         private DataGridView _poTable;
         private Button _cancelOrder;
         private Button _newPO;
@@ -532,5 +662,13 @@
         private FlowLayoutPanel flowLayoutPanel3;
         private Button button1;
         private Button button2;
+        private FlowLayoutPanel flowLayoutPanel5;
+        private RadioButton radioButton7;
+        private RadioButton radioButton8;
+        private RadioButton radioButton9;
+        private RadioButton radioButton10;
+        private FlowLayoutPanel flowLayoutPanel4;
+        private FlowLayoutPanel flowLayoutPanel6;
+        private Label label2;
     }
 }

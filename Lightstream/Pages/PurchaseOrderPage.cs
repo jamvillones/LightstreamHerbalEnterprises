@@ -23,6 +23,8 @@ namespace Lightstream
 
         BindingList<PurchaseOrder> _poList = new BindingList<PurchaseOrder>();
 
+        private decimal GrandTotal => _poList.Count == 0 ? 0 : _poList.Sum(x=>x.Total);
+
         private PurchaseOrder? SelectedPO
         {
             get => _poTable.SelectedRows.Count == 0 ? null : _poList[_poTable.SelectedRows[0].Index];
@@ -64,9 +66,30 @@ namespace Lightstream
             if (status != PurchaseOrderStatus.All)
                 list = list.Where(x => x.StatusType == (int)status);
 
+            list = FilterByDate(list);
+
             _poList.Clear();
             foreach (var i in list)
                 _poList.Add(i);
+
+            label2.Text = String.Format("Grand Total: ₱ {0:n}", GrandTotal);
+        }
+        DateFilter dtFilter = DateFilter.Day;
+        IEnumerable<PurchaseOrder> FilterByDate(IEnumerable<PurchaseOrder> list)
+        {
+            switch (dtFilter)
+            {
+                case DateFilter.Day:
+                    return list.Where(l => l.DateOrdered.Date == _fromDT.Value.Date);
+                case DateFilter.Moth:
+                    return list.Where(l => l.DateOrdered.Month == _fromDT.Value.Month && l.DateOrdered.Year == _fromDT.Value.Year);
+                case DateFilter.Year:
+                    return list.Where(l => l.DateOrdered.Year == _fromDT.Value.Year);
+                case DateFilter.Range:
+                    return list.Where(l => l.DateOrdered.Date >= _fromDT.Value.Date && l.DateOrdered.Date <= _toDT.Value.Date);
+            }
+
+            return Enumerable.Empty<PurchaseOrder>();
         }
 
         private void _newPO_Click(object sender, EventArgs e)
@@ -236,6 +259,63 @@ namespace Lightstream
 
             if (string.IsNullOrWhiteSpace(text.Text))
                 await LoadPOs(selectedStatus);
+        }
+
+        private void ToggleDT(bool visibillity)
+        {
+            _fromDT.CustomFormat = "MMM d,yyyy";
+            _fromLabel.Visible = _toLabel.Visible = _fromDT.Visible = _toDT.Visible = visibillity;
+        }
+        void ShowSingleDT()
+        {
+            _fromDT.Visible = true;
+            _fromLabel.Visible = _toLabel.Visible = _toDT.Visible = false;
+        }
+
+        private async void radioButton10_CheckedChanged(object sender, EventArgs e)
+        {
+            _fromDT.CustomFormat = "MMM d, yyyy";
+
+            ShowSingleDT();
+
+            dtFilter = DateFilter.Day;
+            await LoadPOs(selectedStatus);
+        }
+
+        private async void radioButton7_CheckedChanged(object sender, EventArgs e)
+        {
+            ToggleDT(true);
+
+            dtFilter = DateFilter.Range;
+
+            await LoadPOs(selectedStatus);
+        }
+
+        private async void radioButton9_CheckedChanged(object sender, EventArgs e)
+        {
+            _fromDT.CustomFormat = "MMM yyyy";
+
+            ShowSingleDT();
+
+            dtFilter = DateFilter.Moth;
+
+            await LoadPOs(selectedStatus);
+        }
+
+        private async void radioButton8_CheckedChanged(object sender, EventArgs e)
+        {
+            _fromDT.CustomFormat = "yyyy";
+
+            ShowSingleDT();
+
+            dtFilter = DateFilter.Year;
+
+            await LoadPOs(selectedStatus);
+        }
+
+        private async void _fromDT_ValueChanged(object sender, EventArgs e)
+        {
+            await LoadPOs(selectedStatus);
         }
     }
 }

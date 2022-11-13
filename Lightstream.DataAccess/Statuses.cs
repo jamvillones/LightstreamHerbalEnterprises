@@ -16,6 +16,15 @@
         All,
         Count
     }
+
+    public enum DateFilter
+    {
+        Day,
+        Moth,
+        Year,
+        Range,
+        Count
+    }
 }
 
 

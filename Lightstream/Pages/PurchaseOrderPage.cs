@@ -22,11 +22,13 @@ namespace Lightstream
         private GenericRepository<PurchaseOrder> _poService;
 
         BindingList<PurchaseOrder> _poList = new BindingList<PurchaseOrder>();
+
         private PurchaseOrder? SelectedPO
         {
             get => _poTable.SelectedRows.Count == 0 ? null : _poList[_poTable.SelectedRows[0].Index];
             set => _poList[_poTable.SelectedRows[0].Index] = value!;
         }
+
         public PurchaseOrderPage(GenericRepository<PurchaseOrder> service)
         {
             InitializeComponent();
@@ -42,11 +44,11 @@ namespace Lightstream
             ingCol.DataPropertyName = nameof(PurchaseOrder.Ingredient);
             supplierCol.DataPropertyName = nameof(PurchaseOrder.Supplier);
             qtyCol.DataPropertyName = nameof(PurchaseOrder.Qty);
-            //dateCol.DataPropertyName = nameof(PurchaseOrder.DateOrderedString);
             dateCol.DataPropertyName = nameof(PurchaseOrder.DateOrdered);
             costCol.DataPropertyName = nameof(PurchaseOrder.Cost);
             totalCol.DataPropertyName = nameof(PurchaseOrder.Total);
             statusCol.DataPropertyName = nameof(PurchaseOrder.Status);
+
             _poTable.DataSource = _poList;
         }
 
@@ -105,22 +107,20 @@ namespace Lightstream
         void FormatRow(DataGridViewRow row, PurchaseOrderStatus status)
         {
             Color rowColor = Color.White;
+
             switch (status)
             {
-                //case PurchaseOrderStatus.Pending:
-                //    rowColor = colorPending;
-                //    break;
                 case PurchaseOrderStatus.Incomplete:
                     rowColor = colorIncomplete;
                     break;
-                case PurchaseOrderStatus.Recieved:
+                case PurchaseOrderStatus.Received:
                     rowColor = colorRecieved;
                     break;
                 case PurchaseOrderStatus.Cancelled:
                     rowColor = colorCancelled;
                     break;
-
             }
+
             row.DefaultCellStyle.BackColor = rowColor;
         }
 
@@ -138,7 +138,7 @@ namespace Lightstream
 
         private async void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
-            selectedStatus = PurchaseOrderStatus.Recieved;
+            selectedStatus = PurchaseOrderStatus.Received;
             await LoadPOs(selectedStatus);
         }
 
@@ -195,7 +195,7 @@ namespace Lightstream
 
         async void button2_Click(object sender, EventArgs e)
         {
-            await ChangePoStatus(PurchaseOrderStatus.Recieved);
+            await ChangePoStatus(PurchaseOrderStatus.Received);
             if (SelectedPO is not null)
                 FormatCancelButton(SelectedPO.Status);
         }
@@ -229,6 +229,7 @@ namespace Lightstream
         }
 
         PurchaseOrderStatus selectedStatus = PurchaseOrderStatus.Pending;
+
         private async void _search_TextChanged(object sender, EventArgs e)
         {
             var text = sender as TextBox;

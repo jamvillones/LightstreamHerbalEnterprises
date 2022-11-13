@@ -296,6 +296,7 @@
             this._print.TabIndex = 25;
             this._print.Text = "Print";
             this._print.UseVisualStyleBackColor = false;
+            this._print.Visible = false;
             // 
             // flowLayoutPanel1
             // 

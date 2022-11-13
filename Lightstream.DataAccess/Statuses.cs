@@ -11,7 +11,7 @@
     {
         Pending,
         Incomplete,
-        Recieved,
+        Received,
         Cancelled,
         All,
         Count

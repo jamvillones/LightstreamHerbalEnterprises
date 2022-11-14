@@ -34,7 +34,7 @@ namespace Lightstream.Forms
 
                 nameTxt.Text = _referecencedIngredient?.Name;
                 cost.Value = _referecencedIngredient?.Cost ?? cost.Minimum;
-                numericUpDown1.Value = _referecencedIngredient.CriticalQty;
+                numericUpDown1.Value = _referecencedIngredient?.CriticalQty??numericUpDown1.Minimum;
 
                 this.Text = _referecencedIngredient is null ? "Create Ingredient" : "Edit Ingredient";
                 this.addBtn.Text = _referecencedIngredient is null ? "Add" : "Update";

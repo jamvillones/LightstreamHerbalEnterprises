@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Design;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.CompilerServices;
@@ -90,6 +91,55 @@ namespace Lightstream
             currentForm.BringToFront();
             currentForm.Show();
         }
+
+        Button currentTabButton;
+        void OpenForm(Form next, Button b)
+        {
+            //if there is an open form
+            if (currentForm is not null)
+            {
+                //abort if the incoming form type is the same as of the old one
+                if (next.GetType() == currentForm.GetType())
+                    return;
+
+                // currentForm.Close();
+            }
+
+            currentForm = next;
+
+            currentForm.FormClosed += (a, b) =>
+                currentForm = null;
+
+            currentForm.TopLevel = false;
+            currentForm.Size = _contentsPanel.Size;
+            currentForm.Dock = DockStyle.Fill;
+
+            _contentsPanel.Controls.Add(currentForm);
+
+            if (currentTabButton is not null)
+                currentTabButton.ForeColor = Color.Black;
+
+            var btn = new Button();
+            btn.ForeColor = Color.DarkGreen;
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.FlatAppearance.BorderSize = 0;
+            btn.Margin = new Padding(0);
+            btn.AutoSize = true;
+            btn.Text = b.Text;
+            btn.Click += (sender, e) =>
+            {
+                currentTabButton.ForeColor = Color.Black;
+                currentTabButton = sender as Button;
+                currentTabButton.ForeColor = Color.DarkGreen;
+
+                next.BringToFront();
+            };
+            currentTabButton = btn;
+            _tabsButtonsFlowLayoutPanel.Controls.Add(btn);
+
+            currentForm.BringToFront();
+            currentForm.Show();
+        }
         void OpenForm(Form next)
         {
             //if there is an open form
@@ -121,23 +171,27 @@ namespace Lightstream
         private void button9_Click_1(object sender, EventArgs e)
         {
             if (sender is Button btn)
+            {
                 ChangeButtonStateUponClick(btn);
 
-            var prodPage = new ProductsPage(
-                new ProductService(),
-                new GenericRepository<Unit>()
-                );
+                var prodPage = new ProductsPage(
+                    new ProductService(),
+                    new GenericRepository<Unit>()
+                    );
 
-            OpenForm(prodPage);
+                OpenForm(prodPage, btn);
+            }
             //OpenForm<ProductsPage>();
         }
         private void button10_Click_1(object sender, EventArgs e)
         {
             if (sender is Button btn)
+            {
                 ChangeButtonStateUponClick(btn);
 
-            var ingForm = new IngredientsPage(new IngredientService());
-            OpenForm(ingForm);
+                var ingForm = new IngredientsPage(new IngredientService());
+                OpenForm(ingForm, btn);
+            }
         }
         #endregion
 
@@ -187,9 +241,17 @@ namespace Lightstream
 
         private void button11_Click_1(object sender, EventArgs e)
         {
-            ChangeButtonStateUponClick(sender as Button);
-            PriceManagementPage priceManagement = new(new ProductVariantService());
-            OpenForm(priceManagement);
+            if (sender is Button b)
+            {
+                ChangeButtonStateUponClick(b);
+
+                var sm = new PriceManagementPage(new ProductVariantService());
+
+                OpenForm(sm, b);
+            }
+            //ChangeButtonStateUponClick(sender as Button);
+            //PriceManagementPage priceManagement = new(new ProductVariantService());
+            //OpenForm(priceManagement);
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -201,9 +263,14 @@ namespace Lightstream
 
         private void _btnSupplierManagement_Click(object sender, EventArgs e)
         {
-            ChangeButtonStateUponClick(sender as Button);
-            SupplierManagement sm = new(new SupplierService());
-            OpenForm(sm);
+            if (sender is Button b)
+            {
+                ChangeButtonStateUponClick(b);
+
+                var sm = new SupplierManagementPage(new SupplierService());
+
+                OpenForm(sm, b);
+            }
         }
 
         private void _btnPurchaseOrder_Click(object sender, EventArgs e)

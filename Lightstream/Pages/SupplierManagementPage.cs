@@ -15,7 +15,7 @@ using Lightstream.Extensions;
 
 namespace Lightstream.Forms
 {
-    public partial class SupplierManagement : Form
+    public partial class SupplierManagementPage : Form
     {
         Supplier? SelectedSupplier
         {
@@ -26,7 +26,7 @@ namespace Lightstream.Forms
         BindingList<Supplier> suppliers = new BindingList<Supplier>();
         private GenericRepository<Supplier> _supplierService;
 
-        public SupplierManagement(GenericRepository<Supplier> supplierService)
+        public SupplierManagementPage(GenericRepository<Supplier> supplierService)
         {
             InitializeComponent();
             _supplierService = supplierService;

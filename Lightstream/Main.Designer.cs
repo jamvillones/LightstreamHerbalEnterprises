@@ -55,6 +55,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this._utilities = new System.Windows.Forms.Button();
             this._contentsPanel = new System.Windows.Forms.Panel();
+            this._tabsButtonsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this._sideButtonPanel.SuspendLayout();
             this._reportsPanel.SuspendLayout();
             this._inventoryPanel.SuspendLayout();
@@ -586,11 +587,22 @@
             // _contentsPanel
             // 
             this._contentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._contentsPanel.Location = new System.Drawing.Point(190, 0);
+            this._contentsPanel.Location = new System.Drawing.Point(190, 6);
             this._contentsPanel.Name = "_contentsPanel";
-            this._contentsPanel.Size = new System.Drawing.Size(610, 500);
+            this._contentsPanel.Size = new System.Drawing.Size(610, 494);
             this._contentsPanel.TabIndex = 4;
             this._contentsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this._contentsPanel_Paint);
+            // 
+            // _tabsButtonsFlowLayoutPanel
+            // 
+            this._tabsButtonsFlowLayoutPanel.AutoSize = true;
+            this._tabsButtonsFlowLayoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this._tabsButtonsFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this._tabsButtonsFlowLayoutPanel.Location = new System.Drawing.Point(190, 0);
+            this._tabsButtonsFlowLayoutPanel.Name = "_tabsButtonsFlowLayoutPanel";
+            this._tabsButtonsFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(3);
+            this._tabsButtonsFlowLayoutPanel.Size = new System.Drawing.Size(610, 6);
+            this._tabsButtonsFlowLayoutPanel.TabIndex = 5;
             // 
             // Main
             // 
@@ -599,6 +611,7 @@
             this.ClientSize = new System.Drawing.Size(800, 500);
             this.ControlBox = false;
             this.Controls.Add(this._contentsPanel);
+            this.Controls.Add(this._tabsButtonsFlowLayoutPanel);
             this.Controls.Add(this._sidePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -615,6 +628,7 @@
             this._sidePanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -645,5 +659,6 @@
         private Panel panel1;
         private Button _utilities;
         private Button _btnSupplierManagement;
+        private FlowLayoutPanel _tabsButtonsFlowLayoutPanel;
     }
 }

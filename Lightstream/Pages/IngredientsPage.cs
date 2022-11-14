@@ -186,10 +186,16 @@ namespace Lightstream.Usercontrols
             await LoadAllIngredients();
         }
 
+        Color CriticalQtyColor = Color.FromArgb(238, 200, 200);
         private void _ingredientsTable_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
+            var si = ingredients[e.RowIndex];
             var row = _ingredientsTable.Rows[e.RowIndex];
-            row.SetRowColor(ingredients[e.RowIndex].IsArchived);
+
+            if (si.IsInCrititcalQty)
+                row.DefaultCellStyle.BackColor = CriticalQtyColor;
+
+            row.SetRowColor(si.IsArchived);
         }
 
         private async void _archive_retrieve_Click(object sender, EventArgs e)

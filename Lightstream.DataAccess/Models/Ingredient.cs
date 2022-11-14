@@ -14,6 +14,7 @@ namespace Lightstream.DataAccess.Models
 
         public int UnitMeasurementId { get; set; }
         public decimal Cost { get; set; }
+        public decimal CriticalQty { get; set; } = 0;
         public virtual Unit UnitMeasurement { get; set; } = null!;
         public virtual ICollection<Recipe> Recipes { get; set; }
         public virtual ICollection<SupplierToIngredient> SupplierToIngredients { get; set; }

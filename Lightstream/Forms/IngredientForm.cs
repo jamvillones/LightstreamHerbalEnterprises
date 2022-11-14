@@ -34,6 +34,7 @@ namespace Lightstream.Forms
 
                 nameTxt.Text = _referecencedIngredient?.Name;
                 cost.Value = _referecencedIngredient?.Cost ?? cost.Minimum;
+                numericUpDown1.Value = _referecencedIngredient.CriticalQty;
 
                 this.Text = _referecencedIngredient is null ? "Create Ingredient" : "Edit Ingredient";
                 this.addBtn.Text = _referecencedIngredient is null ? "Add" : "Update";
@@ -64,14 +65,17 @@ namespace Lightstream.Forms
                 Id = ReferencedIngredient?.Id ?? 0,
                 Name = this.IngredientName,
                 Cost = this.Cost,
+                CriticalQty = numericUpDown1.Value,
                 UnitMeasurement = SelectedUnit
             };
 
             await _ingService.Add_Async(ingredient);
 
+            if (ReferencedIngredient is not null)
+                ingredient.Recipes = ReferencedIngredient.Recipes;
+
             Tag = ingredient;
-            // CreatedIngredient = ingredient;
-            //NewItemCreated = true;
+
             DialogResult = DialogResult.OK;
         }
 

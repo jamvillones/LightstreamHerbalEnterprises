@@ -11,9 +11,11 @@ namespace Lightstream.DataAccess.Models
         public string GetUnit => UnitMeasurement.SingularName;
         public string GetFormattedCost => string.Format("₱ {0:n}", this.Cost);
 
-        public string Status => IsArchived ? "Inactive" : "Active";
+        public string Status => (IsArchived ? "Inactive" : "Active")+ (IsInCrititcalQty? " - In Critical Qty":"");
 
         public override string ToString() => Name;
+
+        public bool IsInCrititcalQty => CriticalQty == 0 ? false : Qty <= CriticalQty;
 
         public decimal Qty
         {

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this._statusOption = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -69,7 +70,7 @@
             this._statusOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._statusOption.Font = new System.Drawing.Font("Bebas Neue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._statusOption.FormattingEnabled = true;
-            this._statusOption.Location = new System.Drawing.Point(573, 7);
+            this._statusOption.Location = new System.Drawing.Point(579, 9);
             this._statusOption.Name = "_statusOption";
             this._statusOption.Size = new System.Drawing.Size(160, 23);
             this._statusOption.TabIndex = 0;
@@ -203,10 +204,10 @@
             // 
             this._search.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._search.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._search.Location = new System.Drawing.Point(8, 10);
+            this._search.Location = new System.Drawing.Point(0, 12);
             this._search.Name = "_search";
             this._search.PlaceholderText = "Search....";
-            this._search.Size = new System.Drawing.Size(422, 16);
+            this._search.Size = new System.Drawing.Size(275, 16);
             this._search.TabIndex = 7;
             this._search.TextChanged += new System.EventHandler(this._search_TextChanged);
             this._search.KeyDown += new System.Windows.Forms.KeyEventHandler(this._search_KeyDown);
@@ -216,7 +217,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(522, 9);
+            this.label5.Location = new System.Drawing.Point(529, 11);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 19);
             this.label5.TabIndex = 10;
@@ -227,9 +228,6 @@
             this._supplierTable.AllowUserToAddRows = false;
             this._supplierTable.AllowUserToDeleteRows = false;
             this._supplierTable.AllowUserToResizeRows = false;
-            this._supplierTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this._supplierTable.BackgroundColor = System.Drawing.Color.White;
             this._supplierTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._supplierTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -249,17 +247,18 @@
             this.cnCol,
             this.addressCol,
             this.statCol});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._supplierTable.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._supplierTable.DefaultCellStyle = dataGridViewCellStyle3;
+            this._supplierTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._supplierTable.EnableHeadersVisualStyles = false;
-            this._supplierTable.Location = new System.Drawing.Point(8, 34);
-            this._supplierTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this._supplierTable.Location = new System.Drawing.Point(30, 231);
+            this._supplierTable.Margin = new System.Windows.Forms.Padding(0);
             this._supplierTable.MultiSelect = false;
             this._supplierTable.Name = "_supplierTable";
             this._supplierTable.ReadOnly = true;
@@ -267,7 +266,7 @@
             this._supplierTable.RowHeadersWidth = 62;
             this._supplierTable.RowTemplate.Height = 25;
             this._supplierTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._supplierTable.Size = new System.Drawing.Size(725, 207);
+            this._supplierTable.Size = new System.Drawing.Size(740, 189);
             this._supplierTable.TabIndex = 11;
             this._supplierTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._supplierTable_CellMouseClick);
             this._supplierTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._supplierTable_RowsAdded);
@@ -285,6 +284,8 @@
             // 
             // snCol
             // 
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.snCol.DefaultCellStyle = dataGridViewCellStyle2;
             this.snCol.HeaderText = "Name";
             this.snCol.MinimumWidth = 8;
             this.snCol.Name = "snCol";
@@ -331,7 +332,7 @@
             this._Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._Update.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._Update.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this._Update.Location = new System.Drawing.Point(145, 0);
+            this._Update.Location = new System.Drawing.Point(145, 10);
             this._Update.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this._Update.Name = "_Update";
             this._Update.Size = new System.Drawing.Size(140, 40);
@@ -347,7 +348,7 @@
             this._Archive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._Archive.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._Archive.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this._Archive.Location = new System.Drawing.Point(290, 0);
+            this._Archive.Location = new System.Drawing.Point(290, 10);
             this._Archive.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this._Archive.Name = "_Archive";
             this._Archive.Size = new System.Drawing.Size(140, 40);
@@ -363,7 +364,7 @@
             this._Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._Add.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._Add.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this._Add.Location = new System.Drawing.Point(0, 0);
+            this._Add.Location = new System.Drawing.Point(0, 10);
             this._Add.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this._Add.Name = "_Add";
             this._Add.Size = new System.Drawing.Size(140, 40);
@@ -387,17 +388,15 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.flowLayoutPanel1);
             this.panel2.Controls.Add(this._search);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this._statusOption);
-            this.panel2.Controls.Add(this._supplierTable);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(30, 191);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(0, 40, 0, 0);
-            this.panel2.Size = new System.Drawing.Size(740, 279);
+            this.panel2.Padding = new System.Windows.Forms.Padding(0, 40, 0, 5);
+            this.panel2.Size = new System.Drawing.Size(740, 40);
             this.panel2.TabIndex = 17;
             // 
             // flowLayoutPanel1
@@ -407,10 +406,11 @@
             this.flowLayoutPanel1.Controls.Add(this._Update);
             this.flowLayoutPanel1.Controls.Add(this._Archive);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 239);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 420);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(740, 40);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(740, 50);
             this.flowLayoutPanel1.TabIndex = 12;
             // 
             // SupplierManagement
@@ -420,7 +420,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 500);
             this.ControlBox = false;
+            this.Controls.Add(this._supplierTable);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label6);
             this.DoubleBuffered = true;
@@ -436,6 +438,7 @@
             this.panel2.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

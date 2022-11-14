@@ -93,8 +93,10 @@
             this._unitsTable.RowHeadersWidth = 62;
             this._unitsTable.RowTemplate.Height = 25;
             this._unitsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._unitsTable.Size = new System.Drawing.Size(740, 349);
+            this._unitsTable.Size = new System.Drawing.Size(740, 339);
+            this._unitsTable.StandardTab = true;
             this._unitsTable.TabIndex = 1;
+            this._unitsTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._unitsTable_CellMouseClick);
             this._unitsTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._unitsTable_RowsAdded);
             this._unitsTable.SelectionChanged += new System.EventHandler(this._unitsTable_SelectionChanged);
             // 
@@ -152,19 +154,19 @@
             this.statusCol.Name = "statusCol";
             this.statusCol.ReadOnly = true;
             this.statusCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.statusCol.Width = 69;
+            this.statusCol.Width = 68;
             // 
             // _Add
             // 
             this._Add.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this._Add.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this._Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._Add.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._Add.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._Add.ForeColor = System.Drawing.Color.Black;
             this._Add.Location = new System.Drawing.Point(0, 0);
             this._Add.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this._Add.Name = "_Add";
-            this._Add.Size = new System.Drawing.Size(140, 30);
+            this._Add.Size = new System.Drawing.Size(140, 40);
             this._Add.TabIndex = 5;
             this._Add.Text = "Add";
             this._Add.UseVisualStyleBackColor = false;
@@ -175,12 +177,12 @@
             this._archive_retrieve.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this._archive_retrieve.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this._archive_retrieve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._archive_retrieve.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._archive_retrieve.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._archive_retrieve.ForeColor = System.Drawing.Color.Black;
             this._archive_retrieve.Location = new System.Drawing.Point(145, 0);
             this._archive_retrieve.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this._archive_retrieve.Name = "_archive_retrieve";
-            this._archive_retrieve.Size = new System.Drawing.Size(140, 30);
+            this._archive_retrieve.Size = new System.Drawing.Size(140, 40);
             this._archive_retrieve.TabIndex = 7;
             this._archive_retrieve.Text = "Archive";
             this._archive_retrieve.UseVisualStyleBackColor = false;
@@ -193,9 +195,9 @@
             this.flowLayoutPanel1.Controls.Add(this._Add);
             this.flowLayoutPanel1.Controls.Add(this._archive_retrieve);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 413);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 403);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(740, 30);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(740, 40);
             this.flowLayoutPanel1.TabIndex = 9;
             // 
             // label1
@@ -232,7 +234,7 @@
             this.label5.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(528, 8);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 21);
+            this.label5.Size = new System.Drawing.Size(44, 19);
             this.label5.TabIndex = 13;
             this.label5.Text = "Filter:";
             // 

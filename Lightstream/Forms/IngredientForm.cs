@@ -33,9 +33,10 @@ namespace Lightstream.Forms
                 _referecencedIngredient = value;
 
                 nameTxt.Text = _referecencedIngredient?.Name;
-                cost.Value = _referecencedIngredient?.Cost ?? 0;
+                cost.Value = _referecencedIngredient?.Cost ?? cost.Minimum;
 
                 this.Text = _referecencedIngredient is null ? "Create Ingredient" : "Edit Ingredient";
+                this.addBtn.Text = _referecencedIngredient is null ? "Add" : "Update";
             }
         }
 

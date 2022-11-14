@@ -30,15 +30,17 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this._search = new System.Windows.Forms.TextBox();
             this._productsTable = new System.Windows.Forms.DataGridView();
+            this.productNumCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._addmarkup = new System.Windows.Forms.Button();
             this._setDiscount = new System.Windows.Forms.Button();
             this._removedisc = new System.Windows.Forms.Button();
@@ -60,8 +62,6 @@
             this._selectedProductName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.productNumCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this._productsTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._divider)).BeginInit();
             this._divider.Panel1.SuspendLayout();
@@ -126,22 +126,41 @@
             this._productsTable.RowHeadersWidth = 62;
             this._productsTable.RowTemplate.Height = 25;
             this._productsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._productsTable.Size = new System.Drawing.Size(275, 335);
+            this._productsTable.Size = new System.Drawing.Size(275, 325);
             this._productsTable.StandardTab = true;
             this._productsTable.TabIndex = 9;
             this._productsTable.SelectionChanged += new System.EventHandler(this._productsTable_SelectionChanged);
+            // 
+            // productNumCol
+            // 
+            this.productNumCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.NullValue = "*not set";
+            this.productNumCol.DefaultCellStyle = dataGridViewCellStyle2;
+            this.productNumCol.HeaderText = "Product Number";
+            this.productNumCol.MinimumWidth = 130;
+            this.productNumCol.Name = "productNumCol";
+            this.productNumCol.ReadOnly = true;
+            this.productNumCol.Width = 130;
+            // 
+            // nameCol
+            // 
+            this.nameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameCol.HeaderText = "Name";
+            this.nameCol.MinimumWidth = 8;
+            this.nameCol.Name = "nameCol";
+            this.nameCol.ReadOnly = true;
             // 
             // _addmarkup
             // 
             this._addmarkup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._addmarkup.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this._addmarkup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._addmarkup.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._addmarkup.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._addmarkup.ForeColor = System.Drawing.Color.Black;
             this._addmarkup.Location = new System.Drawing.Point(0, 0);
             this._addmarkup.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this._addmarkup.Name = "_addmarkup";
-            this._addmarkup.Size = new System.Drawing.Size(140, 30);
+            this._addmarkup.Size = new System.Drawing.Size(140, 40);
             this._addmarkup.TabIndex = 2;
             this._addmarkup.Text = "Set Markup";
             this._addmarkup.UseVisualStyleBackColor = false;
@@ -152,12 +171,12 @@
             this._setDiscount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._setDiscount.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this._setDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._setDiscount.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._setDiscount.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._setDiscount.ForeColor = System.Drawing.Color.Black;
             this._setDiscount.Location = new System.Drawing.Point(145, 0);
             this._setDiscount.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this._setDiscount.Name = "_setDiscount";
-            this._setDiscount.Size = new System.Drawing.Size(140, 30);
+            this._setDiscount.Size = new System.Drawing.Size(140, 40);
             this._setDiscount.TabIndex = 3;
             this._setDiscount.Text = "Set Discount";
             this._setDiscount.UseVisualStyleBackColor = false;
@@ -168,12 +187,12 @@
             this._removedisc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._removedisc.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this._removedisc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._removedisc.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._removedisc.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._removedisc.ForeColor = System.Drawing.Color.Black;
             this._removedisc.Location = new System.Drawing.Point(290, 0);
             this._removedisc.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this._removedisc.Name = "_removedisc";
-            this._removedisc.Size = new System.Drawing.Size(140, 30);
+            this._removedisc.Size = new System.Drawing.Size(140, 40);
             this._removedisc.TabIndex = 4;
             this._removedisc.Text = "Remove Discount";
             this._removedisc.UseVisualStyleBackColor = false;
@@ -212,7 +231,7 @@
             // 
             this._divider.Panel2.Controls.Add(this.panel1);
             this._divider.Panel2.Padding = new System.Windows.Forms.Padding(5);
-            this._divider.Size = new System.Drawing.Size(740, 383);
+            this._divider.Size = new System.Drawing.Size(740, 373);
             this._divider.SplitterDistance = 285;
             this._divider.SplitterWidth = 7;
             this._divider.TabIndex = 10;
@@ -239,7 +258,7 @@
             this.panel1.Location = new System.Drawing.Point(5, 5);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(438, 373);
+            this.panel1.Size = new System.Drawing.Size(438, 363);
             this.panel1.TabIndex = 0;
             // 
             // _variantsTable
@@ -287,7 +306,7 @@
             this._variantsTable.RowHeadersWidth = 62;
             this._variantsTable.RowTemplate.Height = 25;
             this._variantsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._variantsTable.Size = new System.Drawing.Size(438, 305);
+            this._variantsTable.Size = new System.Drawing.Size(438, 295);
             this._variantsTable.StandardTab = true;
             this._variantsTable.TabIndex = 1;
             this._variantsTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._variants_CellMouseClick);
@@ -372,7 +391,7 @@
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.button4);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 343);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 333);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(438, 30);
             this.flowLayoutPanel1.TabIndex = 11;
@@ -382,7 +401,7 @@
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(205)))), ((int)(((byte)(161)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
@@ -399,7 +418,7 @@
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(205)))), ((int)(((byte)(161)))));
             this.button4.Enabled = false;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button4.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.Color.Black;
             this.button4.Location = new System.Drawing.Point(145, 0);
             this.button4.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
@@ -445,30 +464,11 @@
             this.flowLayoutPanel2.Controls.Add(this._setDiscount);
             this.flowLayoutPanel2.Controls.Add(this._removedisc);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(30, 413);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(30, 403);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(740, 30);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(740, 40);
             this.flowLayoutPanel2.TabIndex = 12;
             this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
-            // 
-            // productNumCol
-            // 
-            this.productNumCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.NullValue = "*not set";
-            this.productNumCol.DefaultCellStyle = dataGridViewCellStyle2;
-            this.productNumCol.HeaderText = "Product Number";
-            this.productNumCol.MinimumWidth = 130;
-            this.productNumCol.Name = "productNumCol";
-            this.productNumCol.ReadOnly = true;
-            this.productNumCol.Width = 130;
-            // 
-            // nameCol
-            // 
-            this.nameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameCol.HeaderText = "Name";
-            this.nameCol.MinimumWidth = 8;
-            this.nameCol.Name = "nameCol";
-            this.nameCol.ReadOnly = true;
             // 
             // PriceManagementPage
             // 

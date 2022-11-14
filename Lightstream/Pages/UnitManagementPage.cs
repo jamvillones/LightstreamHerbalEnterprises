@@ -48,7 +48,6 @@ namespace Lightstream.Forms
 
         void UnitMangmtForm_Load(object sender, EventArgs e)
         {
-            _unitsTable.DataSource = units;
 
             //await LoadAllUnits();
 
@@ -63,7 +62,7 @@ namespace Lightstream.Forms
         private void _Add_Click(object sender, EventArgs e)
         {
             /// use using to dispose the form after it is displayed
-            using (var addUnitForm = new UnitForm())
+            using (var addUnitForm = new UnitForm(new GenericRepository<Unit>()))
             {
                 ///check if the forms DialogResult is Ok
                 ///this usually happens when the dialogresult is explicitly set after successful transactions
@@ -78,7 +77,7 @@ namespace Lightstream.Forms
 
         async Task LoadAllUnits()
         {
-            var unit = await _unitService.GetAll_Async();           
+            var unit = await _unitService.GetAll_Async();
 
             var filtered = unit.FilterByStatus(_statusOption.SelectedIndex);
 
@@ -96,6 +95,8 @@ namespace Lightstream.Forms
             nameCol.DataPropertyName = nameof(Unit.SingularName);
             pluralCol.DataPropertyName = nameof(Unit.PluralName);
             statusCol.DataPropertyName = nameof(Unit.Status);
+            
+            _unitsTable.DataSource = units;
         }
 
         private void _unitsTable_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -172,6 +173,25 @@ namespace Lightstream.Forms
         private async void _statusOption_SelectedIndexChanged(object sender, EventArgs e)
         {
             await LoadAllUnits();
+        }
+
+        private void _unitsTable_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+            if (e.ColumnIndex != editBtnCol.Index) return;
+
+            var su = SelectedUnit;
+            if (su is null) return;
+
+            using (var unitForm = new UnitForm(_unitService, su))
+            {
+                if (unitForm.ShowDialog() == DialogResult.OK)
+                {
+                    var result = unitForm.Tag as Unit;
+                    if (result != null)
+                        SelectedUnit = result;
+                }
+            }
         }
     }
 }

@@ -28,6 +28,7 @@ namespace Lightstream.Forms
         {
             idCol.DataPropertyName = nameof(SupplierToIngredient.Id);
             Column1.DataPropertyName = nameof(SupplierToIngredient.IngredientName);
+            costCol.DataPropertyName = nameof(SupplierToIngredient.Cost);
 
             _IngredientsTable.AutoGenerateColumns = false;
             _IngredientsTable.DataSource = ingredients;
@@ -80,9 +81,10 @@ namespace Lightstream.Forms
             {
                 if (picker.ShowDialog() == DialogResult.OK)
                 {
-                    var i = picker.Tag as Ingredient;
+                    var i = picker.SelectedIngredient;
+                    var d = picker.Cost;
 
-                    ingredients.Add(new SupplierToIngredient() { Ingredient = i });
+                    ingredients.Add(new SupplierToIngredient() { Ingredient = i, Cost = d });
                     ChangesMade = true;
                 }
             }

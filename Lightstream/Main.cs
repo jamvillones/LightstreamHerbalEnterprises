@@ -58,11 +58,11 @@ namespace Lightstream
         {
             p.Visible = !p.Visible;
 
-            if (p.Visible)
-            {
-                foreach (var i in collapsiblePanels.Where(x => x != p))
-                    if (i.Visible) i.Visible = false;
-            }
+            //if (p.Visible)
+            //{
+            //    foreach (var i in collapsiblePanels.Where(x => x != p))
+            //        if (i.Visible) i.Visible = false;
+            //}
         }
         void OpenForm<TForm>() where TForm : Form, new()
         {

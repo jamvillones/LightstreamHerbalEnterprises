@@ -46,7 +46,7 @@
             this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addBtn.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.addBtn.ForeColor = System.Drawing.Color.Black;
-            this.addBtn.Location = new System.Drawing.Point(249, 169);
+            this.addBtn.Location = new System.Drawing.Point(249, 170);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(120, 30);
             this.addBtn.TabIndex = 6;
@@ -57,30 +57,30 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(16, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 15);
+            this.label3.Size = new System.Drawing.Size(124, 19);
             this.label3.TabIndex = 26;
             this.label3.Text = "Unit of Measurement:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(16, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 15);
+            this.label1.Size = new System.Drawing.Size(79, 19);
             this.label1.TabIndex = 25;
-            this.label1.Text = "Cost:";
+            this.label1.Text = "Default Cost:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bebas Neue", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(16, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 15);
+            this.label2.Size = new System.Drawing.Size(100, 19);
             this.label2.TabIndex = 24;
             this.label2.Text = "Ingredient name:";
             // 
@@ -92,7 +92,7 @@
             this.unitOption.DisplayMember = "Name";
             this.unitOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unitOption.FormattingEnabled = true;
-            this.unitOption.Location = new System.Drawing.Point(16, 131);
+            this.unitOption.Location = new System.Drawing.Point(16, 135);
             this.unitOption.Name = "unitOption";
             this.unitOption.Size = new System.Drawing.Size(353, 23);
             this.unitOption.TabIndex = 22;
@@ -102,9 +102,14 @@
             this.cost.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cost.DecimalPlaces = 2;
-            this.cost.Location = new System.Drawing.Point(16, 79);
+            this.cost.Location = new System.Drawing.Point(16, 83);
             this.cost.Maximum = new decimal(new int[] {
-            10000000,
+            999999999,
+            0,
+            0,
+            0});
+            this.cost.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
@@ -112,6 +117,11 @@
             this.cost.Size = new System.Drawing.Size(353, 23);
             this.cost.TabIndex = 23;
             this.cost.ThousandsSeparator = true;
+            this.cost.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // nameTxt
             // 
@@ -119,7 +129,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nameTxt.BackColor = System.Drawing.Color.White;
             this.nameTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nameTxt.Location = new System.Drawing.Point(16, 27);
+            this.nameTxt.Location = new System.Drawing.Point(16, 31);
             this.nameTxt.Name = "nameTxt";
             this.nameTxt.Size = new System.Drawing.Size(353, 23);
             this.nameTxt.TabIndex = 21;
@@ -130,7 +140,7 @@
             this.AcceptButton = this.addBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 211);
+            this.ClientSize = new System.Drawing.Size(384, 212);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);

@@ -15,7 +15,7 @@ namespace Lightstream.Forms
 {
     public partial class IngredientsPicker : Form
     {
-        Ingredient? SelectedIngredient
+        public Ingredient? SelectedIngredient
         {
             get
             {
@@ -23,6 +23,8 @@ namespace Lightstream.Forms
                 return _ingredientsTable.SelectedRows[0].DataBoundItem as Ingredient;
             }
         }
+        public decimal Cost => _cost.Value;
+
         BindingList<Ingredient> ingredients = new();
         private GenericRepository<Ingredient> ingService;
         IEnumerable<Ingredient> pickedIngredients;
@@ -70,7 +72,7 @@ namespace Lightstream.Forms
             if (e.ColumnIndex == -1)
                 return;
 
-            Tag = SelectedIngredient;
+            // Tag = SelectedIngredient;
 
             DialogResult = DialogResult.OK;
         }
@@ -121,6 +123,11 @@ namespace Lightstream.Forms
                 SearchSuccessful = false;
                 await LoadIngredient();
             }
+        }
+
+        private void _ingredientsTable_SelectionChanged(object sender, EventArgs e)
+        {
+            _cost.Value = SelectedIngredient?.Cost ?? _cost.Minimum;
         }
     }
 }

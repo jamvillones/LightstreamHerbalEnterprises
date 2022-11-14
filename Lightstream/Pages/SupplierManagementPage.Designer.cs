@@ -100,7 +100,7 @@
             this._save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this._save.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this._save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._save.Font = new System.Drawing.Font("Bebas Neue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._save.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._save.ForeColor = System.Drawing.Color.Black;
             this._save.Location = new System.Drawing.Point(145, 119);
             this._save.Name = "_save";
@@ -115,7 +115,7 @@
             this._cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this._cancel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this._cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._cancel.Font = new System.Drawing.Font("Bebas Neue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._cancel.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._cancel.ForeColor = System.Drawing.Color.Black;
             this._cancel.Location = new System.Drawing.Point(290, 119);
             this._cancel.Name = "_cancel";
@@ -166,7 +166,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(41, 62);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 21);
+            this.label4.Size = new System.Drawing.Size(97, 19);
             this.label4.TabIndex = 3;
             this.label4.Text = "Contact Number:";
             // 
@@ -175,7 +175,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(44, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 21);
+            this.label3.Size = new System.Drawing.Size(94, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "Contact Person:";
             // 
@@ -184,7 +184,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(82, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 21);
+            this.label2.Size = new System.Drawing.Size(56, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Address:";
             // 
@@ -195,7 +195,7 @@
             this.label1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(50, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 21);
+            this.label1.Size = new System.Drawing.Size(88, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Supplier Name:";
             // 
@@ -218,7 +218,7 @@
             this.label5.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(522, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 21);
+            this.label5.Size = new System.Drawing.Size(44, 19);
             this.label5.TabIndex = 10;
             this.label5.Text = "Filter:";
             // 
@@ -322,19 +322,19 @@
             this.statCol.MinimumWidth = 8;
             this.statCol.Name = "statCol";
             this.statCol.ReadOnly = true;
-            this.statCol.Width = 69;
+            this.statCol.Width = 68;
             // 
             // _Update
             // 
             this._Update.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this._Update.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this._Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._Update.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._Update.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._Update.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this._Update.Location = new System.Drawing.Point(145, 0);
             this._Update.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this._Update.Name = "_Update";
-            this._Update.Size = new System.Drawing.Size(140, 30);
+            this._Update.Size = new System.Drawing.Size(140, 40);
             this._Update.TabIndex = 15;
             this._Update.Text = "Update";
             this._Update.UseVisualStyleBackColor = false;
@@ -345,12 +345,12 @@
             this._Archive.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this._Archive.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this._Archive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._Archive.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._Archive.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._Archive.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this._Archive.Location = new System.Drawing.Point(290, 0);
             this._Archive.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this._Archive.Name = "_Archive";
-            this._Archive.Size = new System.Drawing.Size(140, 30);
+            this._Archive.Size = new System.Drawing.Size(140, 40);
             this._Archive.TabIndex = 14;
             this._Archive.Text = "Archive";
             this._Archive.UseVisualStyleBackColor = false;
@@ -361,12 +361,12 @@
             this._Add.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this._Add.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this._Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._Add.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._Add.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._Add.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this._Add.Location = new System.Drawing.Point(0, 0);
             this._Add.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this._Add.Name = "_Add";
-            this._Add.Size = new System.Drawing.Size(140, 30);
+            this._Add.Size = new System.Drawing.Size(140, 40);
             this._Add.TabIndex = 12;
             this._Add.Text = "Add";
             this._Add.UseVisualStyleBackColor = false;
@@ -407,10 +407,10 @@
             this.flowLayoutPanel1.Controls.Add(this._Update);
             this.flowLayoutPanel1.Controls.Add(this._Archive);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 249);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 239);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(740, 30);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(740, 40);
             this.flowLayoutPanel1.TabIndex = 12;
             // 
             // SupplierManagement

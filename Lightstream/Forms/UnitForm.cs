@@ -1,5 +1,6 @@
 ﻿using Lightstream.DataAccess.Data;
 using Lightstream.DataAccess.Models;
+using Lightstream.DataAccess.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,13 +15,22 @@ namespace Lightstream.Forms
 {
     public partial class UnitForm : Form
     {
-        DbContextFactory factory = new DbContextFactory();
+        //DbContextFactory factory = new DbContextFactory();
 
-        private Unit ResultingUnit = null!;
+        private GenericRepository<Unit> _unitService;
+        private Unit? RefUnit;
 
-        public UnitForm()
+        public UnitForm(GenericRepository<Unit> service, Unit unit = null)
         {
             InitializeComponent();
+            _unitService = service;
+            RefUnit = unit;
+
+            if (RefUnit is null) return;
+
+            _singular.Text = unit.SingularName;
+            _plural.Text = unit.PluralName;
+            _abbreviation.Text = unit.Abbreviation;
         }
 
         public UnitForm(string singularName, string pluralName = "", string abbreviation = "")
@@ -44,40 +54,26 @@ namespace Lightstream.Forms
             return true;
         }
 
-        bool SaveUnit()
+        async Task<Unit?> SaveUnit()
         {
-            try
+            var unit = new Unit()
             {
-                using (var context = factory.CreateDbContext())
-                {
-                    var newUnit = new Unit()
-                    {
-                        SingularName = _singular.Text.Trim(),
-                        PluralName = _plural.Text.Trim(),
-                        Abbreviation = _abbreviation.Text.Trim()
-                    };
-                    context.Units.Add(newUnit);
-                    context.SaveChanges();
+                Id = RefUnit is null ? 0 : RefUnit.Id,
+                SingularName = _singular.Text.Trim(),
+                Abbreviation = _abbreviation.Text.Trim(),
+                PluralName = _plural.Text.Trim()
+            };
 
-                    ResultingUnit = newUnit;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            return true;
+            return await _unitService.Update_Async(unit);
         }
 
-        private void _save_Click(object sender, EventArgs e)
+        private async void _save_Click(object sender, EventArgs e)
         {
-            if (ValidationSuccessful())
-                if (SaveUnit())
-                {
-                    Tag = ResultingUnit;
-                    DialogResult = DialogResult.OK;
-                }
+            if (!ValidationSuccessful())
+                return;
+
+            Tag = await SaveUnit();
+            DialogResult = DialogResult.OK;
         }
     }
 }

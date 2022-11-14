@@ -22,11 +22,16 @@ namespace Lightstream.Forms
             private set
             {
                 productVariant = value;
+
+                if (productVariant is null)
+                    return;
+
                 this.Text = productVariant is not null ? "Edit Variant" : "Add Variant";
 
-                textBox1.Text = productVariant.Description;
+                textBox1.Text = productVariant!.Description;
                 numericUpDown1.Value = productVariant.Cost;
                 numericUpDown2.Value = productVariant.Price;
+                numericUpDown4.Value = productVariant.RequiredQty;
             }
         }
 
@@ -43,6 +48,7 @@ namespace Lightstream.Forms
         public string Description => textBox1.Text.Trim();
         public decimal Price => numericUpDown2.Value;
         public decimal Cost => numericUpDown1.Value;
+        public decimal RequiredQty => numericUpDown4.Value;
 
         private void _save_Click(object sender, EventArgs e)
         {
@@ -59,6 +65,7 @@ namespace Lightstream.Forms
             Variant!.Description = Description;
             Variant!.Price = Price;
             Variant!.Cost = Cost;
+            Variant!.RequiredQty = RequiredQty;
 
             Tag = productVariant;
             DialogResult = DialogResult.OK;

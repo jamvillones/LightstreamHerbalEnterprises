@@ -189,13 +189,13 @@ namespace Lightstream
         private void _poTable_SelectionChanged(object sender, EventArgs e)
         {
             if (SelectedPO is null) return;
-            FormatCancelButton(SelectedPO.Status);
+            FormatButtons(SelectedPO.Status);
         }
 
-        void FormatCancelButton(PurchaseOrderStatus status)
+        void FormatButtons(PurchaseOrderStatus status)
         {
             bool isPending = status == PurchaseOrderStatus.Pending;
-            _cancelOrder.Enabled = isPending;
+            //_cancelOrder.Enabled = isPending;
             button1.Enabled = isPending;
             button2.Enabled = isPending || status == PurchaseOrderStatus.Incomplete;
         }
@@ -215,21 +215,21 @@ namespace Lightstream
         {
             await ChangePoStatus(PurchaseOrderStatus.Cancelled);
             if (SelectedPO is not null)
-                FormatCancelButton(SelectedPO.Status);
+                FormatButtons(SelectedPO.Status);
         }
 
         async void button1_Click(object sender, EventArgs e)
         {
             await ChangePoStatus(PurchaseOrderStatus.Incomplete);
             if (SelectedPO is not null)
-                FormatCancelButton(SelectedPO.Status);
+                FormatButtons(SelectedPO.Status);
         }
 
         async void button2_Click(object sender, EventArgs e)
         {
             await ChangePoStatus(PurchaseOrderStatus.Received);
             if (SelectedPO is not null)
-                FormatCancelButton(SelectedPO.Status);
+                FormatButtons(SelectedPO.Status);
         }
 
         bool searchMade = false;

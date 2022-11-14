@@ -64,13 +64,13 @@
             this._archive_retrieve = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editCol = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.delCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barcodeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ingCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delCol = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this._prodTable)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -105,13 +105,13 @@
             this._prodTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.editCol,
+            this.delCol,
             this.nameCol,
             this.barcodeCol,
             this.descCol,
             this.unitCol,
             this.ingCol,
-            this.statusCol,
-            this.delCol});
+            this.statusCol});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -529,11 +529,27 @@
             this.editCol.UseColumnTextForButtonValue = true;
             this.editCol.Width = 60;
             // 
+            // delCol
+            // 
+            this.delCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.delCol.DefaultCellStyle = dataGridViewCellStyle3;
+            this.delCol.HeaderText = "";
+            this.delCol.MinimumWidth = 60;
+            this.delCol.Name = "delCol";
+            this.delCol.ReadOnly = true;
+            this.delCol.Text = "VIEW";
+            this.delCol.ToolTipText = "VIEW STOCK";
+            this.delCol.UseColumnTextForButtonValue = true;
+            this.delCol.Width = 60;
+            // 
             // nameCol
             // 
             this.nameCol.DataPropertyName = "ProductName";
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.nameCol.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.nameCol.DefaultCellStyle = dataGridViewCellStyle4;
             this.nameCol.HeaderText = "NAME";
             this.nameCol.MinimumWidth = 8;
             this.nameCol.Name = "nameCol";
@@ -541,8 +557,8 @@
             // 
             // barcodeCol
             // 
-            dataGridViewCellStyle4.NullValue = "*not set";
-            this.barcodeCol.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.NullValue = "*not set";
+            this.barcodeCol.DefaultCellStyle = dataGridViewCellStyle5;
             this.barcodeCol.HeaderText = "PRODUCT NUMBER";
             this.barcodeCol.MinimumWidth = 130;
             this.barcodeCol.Name = "barcodeCol";
@@ -578,21 +594,6 @@
             this.statusCol.Name = "statusCol";
             this.statusCol.ReadOnly = true;
             this.statusCol.Width = 69;
-            // 
-            // delCol
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Red;
-            this.delCol.DefaultCellStyle = dataGridViewCellStyle5;
-            this.delCol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.delCol.HeaderText = "";
-            this.delCol.MinimumWidth = 60;
-            this.delCol.Name = "delCol";
-            this.delCol.ReadOnly = true;
-            this.delCol.Text = "REMOVE";
-            this.delCol.UseColumnTextForButtonValue = true;
-            this.delCol.Visible = false;
             // 
             // ProductsPage
             // 
@@ -663,12 +664,12 @@
         private Label label6;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewButtonColumn editCol;
+        private DataGridViewButtonColumn delCol;
         private DataGridViewTextBoxColumn nameCol;
         private DataGridViewTextBoxColumn barcodeCol;
         private DataGridViewTextBoxColumn descCol;
         private DataGridViewTextBoxColumn unitCol;
         private DataGridViewTextBoxColumn ingCol;
         private DataGridViewTextBoxColumn statusCol;
-        private DataGridViewButtonColumn delCol;
     }
 }

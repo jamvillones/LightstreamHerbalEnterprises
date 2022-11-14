@@ -39,14 +39,6 @@
             this._toLabel = new System.Windows.Forms.Label();
             this._toDT = new System.Windows.Forms.DateTimePicker();
             this._poTable = new System.Windows.Forms.DataGridView();
-            this.poNumCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ingCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplierCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qtyCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._cancelOrder = new System.Windows.Forms.Button();
             this._newPO = new System.Windows.Forms.Button();
             this._print = new System.Windows.Forms.Button();
@@ -72,6 +64,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
+            this.poNumCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ingCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtyCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this._poTable)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -104,7 +104,7 @@
             this._fromDT.CustomFormat = "MMM d, yyyy";
             this._fromDT.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._fromDT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this._fromDT.Location = new System.Drawing.Point(48, 3);
+            this._fromDT.Location = new System.Drawing.Point(49, 3);
             this._fromDT.Name = "_fromDT";
             this._fromDT.Size = new System.Drawing.Size(120, 22);
             this._fromDT.TabIndex = 10;
@@ -116,9 +116,9 @@
             this._fromLabel.AutoSize = true;
             this._fromLabel.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._fromLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this._fromLabel.Location = new System.Drawing.Point(3, 4);
+            this._fromLabel.Location = new System.Drawing.Point(3, 3);
             this._fromLabel.Name = "_fromLabel";
-            this._fromLabel.Size = new System.Drawing.Size(39, 19);
+            this._fromLabel.Size = new System.Drawing.Size(40, 21);
             this._fromLabel.TabIndex = 11;
             this._fromLabel.Text = "From:";
             this._fromLabel.Visible = false;
@@ -129,9 +129,9 @@
             this._toLabel.AutoSize = true;
             this._toLabel.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._toLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this._toLabel.Location = new System.Drawing.Point(174, 4);
+            this._toLabel.Location = new System.Drawing.Point(175, 3);
             this._toLabel.Name = "_toLabel";
-            this._toLabel.Size = new System.Drawing.Size(24, 19);
+            this._toLabel.Size = new System.Drawing.Size(25, 21);
             this._toLabel.TabIndex = 12;
             this._toLabel.Text = "To:";
             this._toLabel.Visible = false;
@@ -146,7 +146,7 @@
             this._toDT.CustomFormat = "MMM d, yyyy";
             this._toDT.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._toDT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this._toDT.Location = new System.Drawing.Point(204, 3);
+            this._toDT.Location = new System.Drawing.Point(206, 3);
             this._toDT.Name = "_toDT";
             this._toDT.Size = new System.Drawing.Size(120, 22);
             this._toDT.TabIndex = 13;
@@ -204,73 +204,6 @@
             this._poTable.TabIndex = 18;
             this._poTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._poTable_RowsAdded);
             this._poTable.SelectionChanged += new System.EventHandler(this._poTable_SelectionChanged);
-            // 
-            // poNumCol
-            // 
-            this.poNumCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.poNumCol.HeaderText = "PO NO.";
-            this.poNumCol.MinimumWidth = 60;
-            this.poNumCol.Name = "poNumCol";
-            this.poNumCol.ReadOnly = true;
-            this.poNumCol.Width = 65;
-            // 
-            // dateCol
-            // 
-            dataGridViewCellStyle2.Format = "MMM d, yyyy h:mm tt";
-            dataGridViewCellStyle2.NullValue = "No Date Available";
-            this.dateCol.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dateCol.HeaderText = "Date Ordered";
-            this.dateCol.MinimumWidth = 8;
-            this.dateCol.Name = "dateCol";
-            this.dateCol.ReadOnly = true;
-            // 
-            // ingCol
-            // 
-            this.ingCol.HeaderText = "Ingredient";
-            this.ingCol.Name = "ingCol";
-            this.ingCol.ReadOnly = true;
-            // 
-            // supplierCol
-            // 
-            this.supplierCol.HeaderText = "Supplier";
-            this.supplierCol.MinimumWidth = 8;
-            this.supplierCol.Name = "supplierCol";
-            this.supplierCol.ReadOnly = true;
-            // 
-            // qtyCol
-            // 
-            this.qtyCol.HeaderText = "Qty";
-            this.qtyCol.MinimumWidth = 8;
-            this.qtyCol.Name = "qtyCol";
-            this.qtyCol.ReadOnly = true;
-            // 
-            // costCol
-            // 
-            this.costCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Format = "₱ 0.00";
-            this.costCol.DefaultCellStyle = dataGridViewCellStyle3;
-            this.costCol.HeaderText = "Cost";
-            this.costCol.Name = "costCol";
-            this.costCol.ReadOnly = true;
-            // 
-            // totalCol
-            // 
-            this.totalCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle4.Format = "₱ 0.00";
-            this.totalCol.DefaultCellStyle = dataGridViewCellStyle4;
-            this.totalCol.HeaderText = "Total Amount";
-            this.totalCol.MinimumWidth = 110;
-            this.totalCol.Name = "totalCol";
-            this.totalCol.ReadOnly = true;
-            this.totalCol.Width = 110;
-            // 
-            // statusCol
-            // 
-            this.statusCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.statusCol.HeaderText = "Status";
-            this.statusCol.Name = "statusCol";
-            this.statusCol.ReadOnly = true;
-            this.statusCol.Width = 68;
             // 
             // _cancelOrder
             // 
@@ -391,7 +324,7 @@
             this.flowLayoutPanel6.Controls.Add(this._toDT);
             this.flowLayoutPanel6.Location = new System.Drawing.Point(3, 70);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(327, 28);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(329, 28);
             this.flowLayoutPanel6.TabIndex = 22;
             // 
             // flowLayoutPanel5
@@ -404,7 +337,7 @@
             this.flowLayoutPanel5.Controls.Add(this.radioButton7);
             this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 32);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(216, 27);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(220, 29);
             this.flowLayoutPanel5.TabIndex = 21;
             // 
             // radioButton10
@@ -416,7 +349,7 @@
             this.radioButton10.Location = new System.Drawing.Point(3, 3);
             this.radioButton10.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(43, 21);
+            this.radioButton10.Size = new System.Drawing.Size(44, 23);
             this.radioButton10.TabIndex = 5;
             this.radioButton10.TabStop = true;
             this.radioButton10.Text = "Day";
@@ -428,10 +361,10 @@
             this.radioButton9.AutoSize = true;
             this.radioButton9.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.radioButton9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton9.Location = new System.Drawing.Point(49, 3);
+            this.radioButton9.Location = new System.Drawing.Point(50, 3);
             this.radioButton9.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(57, 21);
+            this.radioButton9.Size = new System.Drawing.Size(58, 23);
             this.radioButton9.TabIndex = 4;
             this.radioButton9.TabStop = true;
             this.radioButton9.Text = "Month";
@@ -443,10 +376,10 @@
             this.radioButton8.AutoSize = true;
             this.radioButton8.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.radioButton8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton8.Location = new System.Drawing.Point(109, 3);
+            this.radioButton8.Location = new System.Drawing.Point(111, 3);
             this.radioButton8.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(49, 21);
+            this.radioButton8.Size = new System.Drawing.Size(50, 23);
             this.radioButton8.TabIndex = 3;
             this.radioButton8.TabStop = true;
             this.radioButton8.Text = "Year";
@@ -458,10 +391,10 @@
             this.radioButton7.AutoSize = true;
             this.radioButton7.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.radioButton7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton7.Location = new System.Drawing.Point(161, 3);
+            this.radioButton7.Location = new System.Drawing.Point(164, 3);
             this.radioButton7.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(55, 21);
+            this.radioButton7.Size = new System.Drawing.Size(56, 23);
             this.radioButton7.TabIndex = 2;
             this.radioButton7.TabStop = true;
             this.radioButton7.Text = "Range";
@@ -499,19 +432,19 @@
             this.flowLayoutPanel2.Controls.Add(this.radioButton5);
             this.flowLayoutPanel2.Controls.Add(this.radioButton6);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(569, 69);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(564, 69);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(346, 27);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(351, 29);
             this.flowLayoutPanel2.TabIndex = 18;
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton2.Location = new System.Drawing.Point(304, 3);
+            this.radioButton2.Location = new System.Drawing.Point(308, 3);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(42, 21);
+            this.radioButton2.Size = new System.Drawing.Size(43, 23);
             this.radioButton2.TabIndex = 1;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "All";
@@ -523,10 +456,10 @@
             this.radioButton3.AutoSize = true;
             this.radioButton3.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.radioButton3.ForeColor = System.Drawing.Color.Maroon;
-            this.radioButton3.Location = new System.Drawing.Point(225, 3);
+            this.radioButton3.Location = new System.Drawing.Point(228, 3);
             this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(76, 21);
+            this.radioButton3.Size = new System.Drawing.Size(77, 23);
             this.radioButton3.TabIndex = 2;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Cancelled";
@@ -538,10 +471,10 @@
             this.radioButton4.AutoSize = true;
             this.radioButton4.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.radioButton4.ForeColor = System.Drawing.Color.SeaGreen;
-            this.radioButton4.Location = new System.Drawing.Point(154, 3);
+            this.radioButton4.Location = new System.Drawing.Point(156, 3);
             this.radioButton4.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(68, 21);
+            this.radioButton4.Size = new System.Drawing.Size(69, 23);
             this.radioButton4.TabIndex = 3;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Received";
@@ -553,10 +486,10 @@
             this.radioButton5.AutoSize = true;
             this.radioButton5.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.radioButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.radioButton5.Location = new System.Drawing.Point(70, 3);
+            this.radioButton5.Location = new System.Drawing.Point(71, 3);
             this.radioButton5.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(81, 21);
+            this.radioButton5.Size = new System.Drawing.Size(82, 23);
             this.radioButton5.TabIndex = 4;
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "Incomplete";
@@ -572,7 +505,7 @@
             this.radioButton6.Location = new System.Drawing.Point(3, 3);
             this.radioButton6.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(64, 21);
+            this.radioButton6.Size = new System.Drawing.Size(65, 23);
             this.radioButton6.TabIndex = 5;
             this.radioButton6.TabStop = true;
             this.radioButton6.Text = "Pending";
@@ -593,10 +526,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(778, 0);
+            this.label2.Location = new System.Drawing.Point(774, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 23);
+            this.label2.Size = new System.Drawing.Size(141, 25);
             this.label2.TabIndex = 30;
             this.label2.Text = "Grand Total: ₱ 0.00";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -608,25 +541,93 @@
             this.flowLayoutPanel7.Controls.Add(this.label4);
             this.flowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel7.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(30, 418);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(30, 416);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(915, 23);
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(915, 25);
             this.flowLayoutPanel7.TabIndex = 31;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(663, 0);
+            this.label4.Location = new System.Drawing.Point(657, 0);
             this.label4.Margin = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 23);
+            this.label4.Size = new System.Drawing.Size(87, 25);
             this.label4.TabIndex = 32;
             this.label4.Text = "Total Qty: 0";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // poNumCol
+            // 
+            this.poNumCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.poNumCol.HeaderText = "PO NO.";
+            this.poNumCol.MinimumWidth = 60;
+            this.poNumCol.Name = "poNumCol";
+            this.poNumCol.ReadOnly = true;
+            this.poNumCol.Width = 66;
+            // 
+            // dateCol
+            // 
+            dataGridViewCellStyle2.Format = "MMM d, yyyy h:mm tt";
+            dataGridViewCellStyle2.NullValue = "No Date Available";
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dateCol.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dateCol.HeaderText = "Date Ordered";
+            this.dateCol.MinimumWidth = 8;
+            this.dateCol.Name = "dateCol";
+            this.dateCol.ReadOnly = true;
+            // 
+            // ingCol
+            // 
+            this.ingCol.HeaderText = "Ingredient";
+            this.ingCol.Name = "ingCol";
+            this.ingCol.ReadOnly = true;
+            // 
+            // supplierCol
+            // 
+            this.supplierCol.HeaderText = "Supplier";
+            this.supplierCol.MinimumWidth = 8;
+            this.supplierCol.Name = "supplierCol";
+            this.supplierCol.ReadOnly = true;
+            // 
+            // qtyCol
+            // 
+            this.qtyCol.HeaderText = "Qty";
+            this.qtyCol.MinimumWidth = 8;
+            this.qtyCol.Name = "qtyCol";
+            this.qtyCol.ReadOnly = true;
+            // 
+            // costCol
+            // 
+            this.costCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Format = "₱ 0.00";
+            this.costCol.DefaultCellStyle = dataGridViewCellStyle3;
+            this.costCol.HeaderText = "Cost";
+            this.costCol.Name = "costCol";
+            this.costCol.ReadOnly = true;
+            // 
+            // totalCol
+            // 
+            this.totalCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle4.Format = "₱ 0.00";
+            this.totalCol.DefaultCellStyle = dataGridViewCellStyle4;
+            this.totalCol.HeaderText = "Total Amount";
+            this.totalCol.MinimumWidth = 110;
+            this.totalCol.Name = "totalCol";
+            this.totalCol.ReadOnly = true;
+            this.totalCol.Width = 110;
+            // 
+            // statusCol
+            // 
+            this.statusCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.statusCol.HeaderText = "Status";
+            this.statusCol.Name = "statusCol";
+            this.statusCol.ReadOnly = true;
+            this.statusCol.Width = 69;
+            // 
             // PurchaseOrderPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(975, 520);
@@ -680,14 +681,6 @@
         private RadioButton radioButton5;
         private RadioButton radioButton6;
         private TextBox _search;
-        private DataGridViewTextBoxColumn poNumCol;
-        private DataGridViewTextBoxColumn dateCol;
-        private DataGridViewTextBoxColumn ingCol;
-        private DataGridViewTextBoxColumn supplierCol;
-        private DataGridViewTextBoxColumn qtyCol;
-        private DataGridViewTextBoxColumn costCol;
-        private DataGridViewTextBoxColumn totalCol;
-        private DataGridViewTextBoxColumn statusCol;
         private FlowLayoutPanel flowLayoutPanel3;
         private Button button1;
         private Button button2;
@@ -701,5 +694,13 @@
         private Label label2;
         private FlowLayoutPanel flowLayoutPanel7;
         private Label label4;
+        private DataGridViewTextBoxColumn poNumCol;
+        private DataGridViewTextBoxColumn dateCol;
+        private DataGridViewTextBoxColumn ingCol;
+        private DataGridViewTextBoxColumn supplierCol;
+        private DataGridViewTextBoxColumn qtyCol;
+        private DataGridViewTextBoxColumn costCol;
+        private DataGridViewTextBoxColumn totalCol;
+        private DataGridViewTextBoxColumn statusCol;
     }
 }

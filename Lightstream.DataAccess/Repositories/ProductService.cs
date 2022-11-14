@@ -21,6 +21,7 @@ namespace Lightstream.DataAccess.Repositories
                 {
                     return await cont.Products
                         .Include(p => p.ProductVariants)
+                            .ThenInclude(pv=>pv.ProductionHistories)
                         .Include(p => p.UnitQty)
                         .Include(p => p.Recipes)
                             .ThenInclude(r => r.Ingredient)

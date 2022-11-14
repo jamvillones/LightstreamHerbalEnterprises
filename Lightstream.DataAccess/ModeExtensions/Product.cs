@@ -15,7 +15,7 @@ namespace Lightstream.DataAccess.Models
             {
                 var sb = new StringBuilder();
                 foreach (var r in Recipes)
-                    sb.AppendLine("● " + r.Qty.ToString().TrimEnd('0', '.') + " " + r.GetUnit + " " + r.Ingredient.Name);
+                    sb.AppendLine("● " + r.Qty.ToString("N4") + " " + r.GetUnit + " " + r.Ingredient.Name);
                 return sb.ToString();
             }
         }

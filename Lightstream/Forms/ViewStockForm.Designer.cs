@@ -304,7 +304,6 @@ namespace Lightstream.Forms
             // 
             // stockinQtyCol
             // 
-            dataGridViewCellStyle4.Format = "N0";
             dataGridViewCellStyle4.NullValue = null;
             this.stockinQtyCol.DefaultCellStyle = dataGridViewCellStyle4;
             this.stockinQtyCol.HeaderText = "Qty";

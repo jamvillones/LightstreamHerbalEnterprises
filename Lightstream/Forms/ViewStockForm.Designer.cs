@@ -37,12 +37,12 @@ namespace Lightstream.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewStockForm));
             this._variantsTable = new System.Windows.Forms.DataGridView();
+            this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addStockCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
             this._stockinsTable = new System.Windows.Forms.DataGridView();
-            this.stockinQtyCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateProducedCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockRemoveCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -50,9 +50,9 @@ namespace Lightstream.Forms
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addStockCol = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.stockinQtyCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateProducedCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockRemoveCol = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this._variantsTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -108,6 +108,29 @@ namespace Lightstream.Forms
             this._variantsTable.StandardTab = true;
             this._variantsTable.TabIndex = 10;
             this._variantsTable.SelectionChanged += new System.EventHandler(this._variantsTable_SelectionChanged);
+            // 
+            // nameCol
+            // 
+            this.nameCol.HeaderText = "Name";
+            this.nameCol.Name = "nameCol";
+            this.nameCol.ReadOnly = true;
+            // 
+            // stockCol
+            // 
+            this.stockCol.HeaderText = "Stocks Qty";
+            this.stockCol.Name = "stockCol";
+            this.stockCol.ReadOnly = true;
+            // 
+            // addStockCol
+            // 
+            this.addStockCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.addStockCol.HeaderText = "";
+            this.addStockCol.MinimumWidth = 100;
+            this.addStockCol.Name = "addStockCol";
+            this.addStockCol.ReadOnly = true;
+            this.addStockCol.Text = "Add Stock";
+            this.addStockCol.UseColumnTextForButtonValue = true;
+            this.addStockCol.Visible = false;
             // 
             // splitContainer1
             // 
@@ -190,35 +213,6 @@ namespace Lightstream.Forms
             this._stockinsTable.TabIndex = 11;
             this._stockinsTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._stockinsTable_CellMouseClick);
             this._stockinsTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._stockinsTable_RowsAdded);
-            // 
-            // stockinQtyCol
-            // 
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.stockinQtyCol.DefaultCellStyle = dataGridViewCellStyle4;
-            this.stockinQtyCol.HeaderText = "Qty";
-            this.stockinQtyCol.Name = "stockinQtyCol";
-            this.stockinQtyCol.ReadOnly = true;
-            // 
-            // dateProducedCol
-            // 
-            dataGridViewCellStyle5.Format = "MMM d, yyyy h:mm tt";
-            dataGridViewCellStyle5.NullValue = null;
-            this.dateProducedCol.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dateProducedCol.HeaderText = "Date Produced";
-            this.dateProducedCol.Name = "dateProducedCol";
-            this.dateProducedCol.ReadOnly = true;
-            // 
-            // stockRemoveCol
-            // 
-            this.stockRemoveCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.stockRemoveCol.HeaderText = "";
-            this.stockRemoveCol.MinimumWidth = 60;
-            this.stockRemoveCol.Name = "stockRemoveCol";
-            this.stockRemoveCol.ReadOnly = true;
-            this.stockRemoveCol.Text = "Remove";
-            this.stockRemoveCol.UseColumnTextForButtonValue = true;
-            this.stockRemoveCol.Width = 60;
             // 
             // panel1
             // 
@@ -308,28 +302,34 @@ namespace Lightstream.Forms
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // nameCol
+            // stockinQtyCol
             // 
-            this.nameCol.HeaderText = "Name";
-            this.nameCol.Name = "nameCol";
-            this.nameCol.ReadOnly = true;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.stockinQtyCol.DefaultCellStyle = dataGridViewCellStyle4;
+            this.stockinQtyCol.HeaderText = "Qty";
+            this.stockinQtyCol.Name = "stockinQtyCol";
+            this.stockinQtyCol.ReadOnly = true;
             // 
-            // stockCol
+            // dateProducedCol
             // 
-            this.stockCol.HeaderText = "Stocks Qty";
-            this.stockCol.Name = "stockCol";
-            this.stockCol.ReadOnly = true;
+            dataGridViewCellStyle5.Format = "MMM d, yyyy h:mm tt";
+            dataGridViewCellStyle5.NullValue = null;
+            this.dateProducedCol.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dateProducedCol.HeaderText = "Date Produced";
+            this.dateProducedCol.Name = "dateProducedCol";
+            this.dateProducedCol.ReadOnly = true;
             // 
-            // addStockCol
+            // stockRemoveCol
             // 
-            this.addStockCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.addStockCol.HeaderText = "";
-            this.addStockCol.MinimumWidth = 100;
-            this.addStockCol.Name = "addStockCol";
-            this.addStockCol.ReadOnly = true;
-            this.addStockCol.Text = "Add Stock";
-            this.addStockCol.UseColumnTextForButtonValue = true;
-            this.addStockCol.Visible = false;
+            this.stockRemoveCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.stockRemoveCol.HeaderText = "";
+            this.stockRemoveCol.MinimumWidth = 60;
+            this.stockRemoveCol.Name = "stockRemoveCol";
+            this.stockRemoveCol.ReadOnly = true;
+            this.stockRemoveCol.Text = "Remove";
+            this.stockRemoveCol.UseColumnTextForButtonValue = true;
+            this.stockRemoveCol.Width = 60;
             // 
             // ViewStockForm
             // 
@@ -366,11 +366,11 @@ namespace Lightstream.Forms
         private Button button1;
         private Button button2;
         private ToolTip toolTip1;
-        private DataGridViewTextBoxColumn stockinQtyCol;
-        private DataGridViewTextBoxColumn dateProducedCol;
-        private DataGridViewButtonColumn stockRemoveCol;
         private DataGridViewTextBoxColumn nameCol;
         private DataGridViewTextBoxColumn stockCol;
         private DataGridViewButtonColumn addStockCol;
+        private DataGridViewTextBoxColumn stockinQtyCol;
+        private DataGridViewTextBoxColumn dateProducedCol;
+        private DataGridViewButtonColumn stockRemoveCol;
     }
 }

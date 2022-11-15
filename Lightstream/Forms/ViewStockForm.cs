@@ -72,14 +72,28 @@ namespace Lightstream.Forms
 
         private void ViewStockForm_Load(object sender, EventArgs e)
         {
-            foreach (var v in RefProduct.ProductVariants.Where(pv=>!pv.IsArchived))
+            foreach (var v in RefProduct.ProductVariants.Where(pv => !pv.IsArchived))
                 _variants.Add(v);
         }
 
         private void _variantsTable_SelectionChanged(object sender, EventArgs e)
         {
+            if (_variantsTable.SelectedRows.Count == 0) return;
+
             SelectedVariant = _variantsTable.SelectedRows[0].DataBoundItem as ProductVariant;
+            ChangesMade = false;
+
         }
+
+        private bool ChangesMade
+        {
+            get { return button2.Enabled; }
+            set
+            {                
+                button2.Enabled = value;
+            }
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -90,6 +104,7 @@ namespace Lightstream.Forms
             };
 
             _stockins.Add(newProdHistory);
+            ChangesMade = true;
         }
 
         private void _stockinsTable_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -101,7 +116,7 @@ namespace Lightstream.Forms
 
         private async void button2_Click(object sender, EventArgs e)
         {
-            if(_variantsTable.RowCount== 0) return;
+            if (_variantsTable.RowCount == 0) return;
 
             var variant = _variantsTable.SelectedRows[0].DataBoundItem as ProductVariant;
             variant.ProductionHistories = _stockins.ToList();
@@ -113,6 +128,7 @@ namespace Lightstream.Forms
                 _variants[_variantsTable.SelectedRows[0].Index] = result;
                 SelectedVariant = result;
                 MessageBox.Show("Save successful", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ChangesMade = false;
             }
         }
 
@@ -123,6 +139,7 @@ namespace Lightstream.Forms
             if (e.ColumnIndex == stockRemoveCol.Index)
             {
                 _stockins.RemoveAt(e.RowIndex);
+                ChangesMade = true;
             }
         }
     }

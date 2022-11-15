@@ -126,7 +126,7 @@ namespace Lightstream
         private void countdownTimer_Tick(object sender, EventArgs e)
         {
             timeCounter--;
-            loginBtn.Text = "Login locked for " + timeCounter;
+            loginBtn.Text = "Login locked for " + timeCounter + " seconds";
             if (timeCounter <= 0)
             {
                 Attempts = 3;
@@ -147,6 +147,11 @@ namespace Lightstream
 
                 }
             }
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

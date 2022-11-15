@@ -88,7 +88,7 @@
             this.panel1.Controls.Add(this.userNameLine);
             this.panel1.Location = new System.Drawing.Point(102, 93);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel1.Padding = new System.Windows.Forms.Padding(5);
             this.panel1.Size = new System.Drawing.Size(233, 30);
             this.panel1.TabIndex = 4;
             // 
@@ -120,7 +120,7 @@
             this.panel3.Controls.Add(this.passwordLine);
             this.panel3.Location = new System.Drawing.Point(102, 138);
             this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel3.Padding = new System.Windows.Forms.Padding(5);
             this.panel3.Size = new System.Drawing.Size(233, 30);
             this.panel3.TabIndex = 5;
             // 
@@ -205,6 +205,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lightstream Herbal Enterprise - Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

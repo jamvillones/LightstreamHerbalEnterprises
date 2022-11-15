@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.RETURNbtn = new System.Windows.Forms.Button();
             this.QUEUEbtn = new System.Windows.Forms.Button();
             this.Totallbl = new System.Windows.Forms.Label();
@@ -129,9 +131,9 @@
             this.Totallbl.AutoSize = true;
             this.Totallbl.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Totallbl.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.Totallbl.Location = new System.Drawing.Point(41, 39);
+            this.Totallbl.Location = new System.Drawing.Point(41, 108);
             this.Totallbl.Name = "Totallbl";
-            this.Totallbl.Size = new System.Drawing.Size(41, 19);
+            this.Totallbl.Size = new System.Drawing.Size(42, 21);
             this.Totallbl.TabIndex = 11;
             this.Totallbl.Text = "Total:";
             // 
@@ -140,9 +142,9 @@
             this.Discountlbl.AutoSize = true;
             this.Discountlbl.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Discountlbl.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.Discountlbl.Location = new System.Drawing.Point(24, 77);
+            this.Discountlbl.Location = new System.Drawing.Point(24, 73);
             this.Discountlbl.Name = "Discountlbl";
-            this.Discountlbl.Size = new System.Drawing.Size(58, 19);
+            this.Discountlbl.Size = new System.Drawing.Size(59, 21);
             this.Discountlbl.TabIndex = 12;
             this.Discountlbl.Text = "Discount:";
             // 
@@ -151,9 +153,9 @@
             this.VATlbl.AutoSize = true;
             this.VATlbl.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.VATlbl.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.VATlbl.Location = new System.Drawing.Point(54, 117);
+            this.VATlbl.Location = new System.Drawing.Point(54, 142);
             this.VATlbl.Name = "VATlbl";
-            this.VATlbl.Size = new System.Drawing.Size(28, 19);
+            this.VATlbl.Size = new System.Drawing.Size(29, 21);
             this.VATlbl.TabIndex = 13;
             this.VATlbl.Text = "VAT:";
             // 
@@ -162,9 +164,9 @@
             this.GrandTotallbl.AutoSize = true;
             this.GrandTotallbl.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.GrandTotallbl.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.GrandTotallbl.Location = new System.Drawing.Point(6, 156);
+            this.GrandTotallbl.Location = new System.Drawing.Point(6, 176);
             this.GrandTotallbl.Name = "GrandTotallbl";
-            this.GrandTotallbl.Size = new System.Drawing.Size(76, 19);
+            this.GrandTotallbl.Size = new System.Drawing.Size(77, 21);
             this.GrandTotallbl.TabIndex = 14;
             this.GrandTotallbl.Text = "Grand Total:";
             // 
@@ -173,9 +175,9 @@
             this.cashlbl.AutoSize = true;
             this.cashlbl.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cashlbl.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.cashlbl.Location = new System.Drawing.Point(19, 193);
+            this.cashlbl.Location = new System.Drawing.Point(19, 210);
             this.cashlbl.Name = "cashlbl";
-            this.cashlbl.Size = new System.Drawing.Size(63, 19);
+            this.cashlbl.Size = new System.Drawing.Size(64, 21);
             this.cashlbl.TabIndex = 15;
             this.cashlbl.Text = "Tendered:";
             // 
@@ -184,9 +186,9 @@
             this.changelbl.AutoSize = true;
             this.changelbl.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.changelbl.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.changelbl.Location = new System.Drawing.Point(32, 230);
+            this.changelbl.Location = new System.Drawing.Point(32, 244);
             this.changelbl.Name = "changelbl";
-            this.changelbl.Size = new System.Drawing.Size(50, 19);
+            this.changelbl.Size = new System.Drawing.Size(51, 21);
             this.changelbl.TabIndex = 16;
             this.changelbl.Text = "Change:";
             // 
@@ -195,7 +197,7 @@
             this.TOTALtextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TOTALtextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TOTALtextBox.Location = new System.Drawing.Point(88, 35);
+            this.TOTALtextBox.Location = new System.Drawing.Point(87, 105);
             this.TOTALtextBox.Name = "TOTALtextBox";
             this.TOTALtextBox.ReadOnly = true;
             this.TOTALtextBox.Size = new System.Drawing.Size(332, 26);
@@ -206,7 +208,7 @@
             this.VATtextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.VATtextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.VATtextBox.Location = new System.Drawing.Point(88, 112);
+            this.VATtextBox.Location = new System.Drawing.Point(87, 139);
             this.VATtextBox.Name = "VATtextBox";
             this.VATtextBox.ReadOnly = true;
             this.VATtextBox.Size = new System.Drawing.Size(332, 26);
@@ -219,7 +221,7 @@
             this.GRANDTOTALtextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(211)))), ((int)(((byte)(180)))));
             this.GRANDTOTALtextbox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.GRANDTOTALtextbox.ForeColor = System.Drawing.Color.Green;
-            this.GRANDTOTALtextbox.Location = new System.Drawing.Point(88, 152);
+            this.GRANDTOTALtextbox.Location = new System.Drawing.Point(87, 173);
             this.GRANDTOTALtextbox.Name = "GRANDTOTALtextbox";
             this.GRANDTOTALtextbox.ReadOnly = true;
             this.GRANDTOTALtextbox.Size = new System.Drawing.Size(332, 26);
@@ -232,7 +234,7 @@
             this.CHANGEtextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.CHANGEtextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CHANGEtextBox.ForeColor = System.Drawing.Color.Maroon;
-            this.CHANGEtextBox.Location = new System.Drawing.Point(88, 226);
+            this.CHANGEtextBox.Location = new System.Drawing.Point(87, 241);
             this.CHANGEtextBox.Name = "CHANGEtextBox";
             this.CHANGEtextBox.ReadOnly = true;
             this.CHANGEtextBox.Size = new System.Drawing.Size(332, 26);
@@ -324,14 +326,14 @@
             this.searchCol_Variation,
             this.searchCol_Qty,
             this.searchCol_Price});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._searchTable.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._searchTable.DefaultCellStyle = dataGridViewCellStyle3;
             this._searchTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._searchTable.EnableHeadersVisualStyles = false;
             this._searchTable.Location = new System.Drawing.Point(5, 40);
@@ -372,6 +374,8 @@
             // 
             // searchCol_Price
             // 
+            dataGridViewCellStyle2.Format = "₱ 0.00";
+            this.searchCol_Price.DefaultCellStyle = dataGridViewCellStyle2;
             this.searchCol_Price.HeaderText = "Price";
             this.searchCol_Price.Name = "searchCol_Price";
             this.searchCol_Price.ReadOnly = true;
@@ -396,7 +400,7 @@
             this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label6.Location = new System.Drawing.Point(36, 129);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 19);
+            this.label6.Size = new System.Drawing.Size(42, 21);
             this.label6.TabIndex = 35;
             this.label6.Text = "Total:";
             // 
@@ -418,7 +422,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label2.Location = new System.Drawing.Point(48, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 19);
+            this.label2.Size = new System.Drawing.Size(30, 21);
             this.label2.TabIndex = 32;
             this.label2.Text = "Qty:";
             // 
@@ -456,7 +460,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label3.Location = new System.Drawing.Point(38, 88);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 19);
+            this.label3.Size = new System.Drawing.Size(40, 21);
             this.label3.TabIndex = 28;
             this.label3.Text = "Price:";
             // 
@@ -494,7 +498,7 @@
             this.pnlPOS2.Controls.Add(this.RETURNbtn);
             this.pnlPOS2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlPOS2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.pnlPOS2.Location = new System.Drawing.Point(30, 719);
+            this.pnlPOS2.Location = new System.Drawing.Point(30, 702);
             this.pnlPOS2.Name = "pnlPOS2";
             this.pnlPOS2.Padding = new System.Windows.Forms.Padding(3);
             this.pnlPOS2.Size = new System.Drawing.Size(1123, 56);
@@ -515,6 +519,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.AutoScroll = true;
             this.splitContainer1.Panel2.Controls.Add(this.label5);
             this.splitContainer1.Panel2.Controls.Add(this._customerOption);
             this.splitContainer1.Panel2.Controls.Add(this.tenderedValue);
@@ -533,7 +538,7 @@
             this.splitContainer1.Panel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(5);
             this.splitContainer1.Panel2MinSize = 200;
-            this.splitContainer1.Size = new System.Drawing.Size(1123, 469);
+            this.splitContainer1.Size = new System.Drawing.Size(1123, 452);
             this.splitContainer1.SplitterDistance = 692;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -545,14 +550,14 @@
             this._cartTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this._cartTable.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this._cartTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this._cartTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._cartTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this._cartTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._cartTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cartCol_ProductNumber,
@@ -561,14 +566,14 @@
             this.cartCol_Qty,
             this.cartCol_Price,
             this.removeCol});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._cartTable.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._cartTable.DefaultCellStyle = dataGridViewCellStyle6;
             this._cartTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cartTable.EnableHeadersVisualStyles = false;
             this._cartTable.Location = new System.Drawing.Point(5, 35);
@@ -579,7 +584,7 @@
             this._cartTable.RowHeadersWidth = 62;
             this._cartTable.RowTemplate.Height = 25;
             this._cartTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._cartTable.Size = new System.Drawing.Size(682, 429);
+            this._cartTable.Size = new System.Drawing.Size(682, 412);
             this._cartTable.StandardTab = true;
             this._cartTable.TabIndex = 25;
             this._cartTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._cartTable_CellMouseClick);
@@ -610,6 +615,8 @@
             // 
             // cartCol_Price
             // 
+            dataGridViewCellStyle5.Format = "₱ 0.00";
+            this.cartCol_Price.DefaultCellStyle = dataGridViewCellStyle5;
             this.cartCol_Price.HeaderText = "Price";
             this.cartCol_Price.Name = "cartCol_Price";
             this.cartCol_Price.ReadOnly = true;
@@ -643,9 +650,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label5.Location = new System.Drawing.Point(19, 268);
+            this.label5.Location = new System.Drawing.Point(18, 38);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 19);
+            this.label5.Size = new System.Drawing.Size(64, 21);
             this.label5.TabIndex = 37;
             this.label5.Text = "Customer:";
             // 
@@ -657,7 +664,7 @@
             this._customerOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._customerOption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._customerOption.FormattingEnabled = true;
-            this._customerOption.Location = new System.Drawing.Point(88, 263);
+            this._customerOption.Location = new System.Drawing.Point(87, 35);
             this._customerOption.Margin = new System.Windows.Forms.Padding(2);
             this._customerOption.Name = "_customerOption";
             this._customerOption.Size = new System.Drawing.Size(332, 27);
@@ -669,7 +676,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tenderedValue.DecimalPlaces = 2;
             this.tenderedValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tenderedValue.Location = new System.Drawing.Point(88, 189);
+            this.tenderedValue.Location = new System.Drawing.Point(87, 207);
             this.tenderedValue.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -688,7 +695,7 @@
             this.discountOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.discountOption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.discountOption.FormattingEnabled = true;
-            this.discountOption.Location = new System.Drawing.Point(88, 72);
+            this.discountOption.Location = new System.Drawing.Point(87, 70);
             this.discountOption.Margin = new System.Windows.Forms.Padding(2);
             this.discountOption.Name = "discountOption";
             this.discountOption.Size = new System.Drawing.Size(332, 27);
@@ -723,7 +730,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1183, 805);
+            this.ClientSize = new System.Drawing.Size(1183, 788);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.pnlPOS2);
             this.Controls.Add(this.pnlPOS1);
@@ -786,16 +793,16 @@
         private NumericUpDown tenderedValue;
         private Label label5;
         private ComboBox _customerOption;
-        private DataGridViewTextBoxColumn searchCol_ProductNumber;
-        private DataGridViewTextBoxColumn searchCol_Name;
-        private DataGridViewTextBoxColumn searchCol_Variation;
-        private DataGridViewTextBoxColumn searchCol_Qty;
-        private DataGridViewTextBoxColumn searchCol_Price;
         private SplitContainer splitContainer2;
         private Label label6;
         private TextBox textBox1;
         private Button button1;
         private Label label7;
+        private DataGridViewTextBoxColumn searchCol_ProductNumber;
+        private DataGridViewTextBoxColumn searchCol_Name;
+        private DataGridViewTextBoxColumn searchCol_Variation;
+        private DataGridViewTextBoxColumn searchCol_Qty;
+        private DataGridViewTextBoxColumn searchCol_Price;
         private DataGridViewTextBoxColumn cartCol_ProductNumber;
         private DataGridViewTextBoxColumn cartCol_ProductName;
         private DataGridViewTextBoxColumn cartCol_Variation;

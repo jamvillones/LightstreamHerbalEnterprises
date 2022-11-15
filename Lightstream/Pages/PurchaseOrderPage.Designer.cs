@@ -158,7 +158,7 @@
             this._poTable.AllowUserToDeleteRows = false;
             this._poTable.AllowUserToResizeRows = false;
             this._poTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this._poTable.BackgroundColor = System.Drawing.Color.White;
+            this._poTable.BackgroundColor = System.Drawing.SystemColors.Control;
             this._poTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._poTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -628,7 +628,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(975, 520);
             this.Controls.Add(this.flowLayoutPanel7);
             this.Controls.Add(this._poTable);

@@ -342,7 +342,7 @@
             this._searchTable.ReadOnly = true;
             this._searchTable.RowHeadersVisible = false;
             this._searchTable.RowHeadersWidth = 62;
-            this._searchTable.RowTemplate.Height = 25;
+            this._searchTable.RowTemplate.Height = 30;
             this._searchTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._searchTable.Size = new System.Drawing.Size(679, 169);
             this._searchTable.TabIndex = 30;
@@ -582,7 +582,7 @@
             this._cartTable.ReadOnly = true;
             this._cartTable.RowHeadersVisible = false;
             this._cartTable.RowHeadersWidth = 62;
-            this._cartTable.RowTemplate.Height = 25;
+            this._cartTable.RowTemplate.Height = 30;
             this._cartTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._cartTable.Size = new System.Drawing.Size(682, 412);
             this._cartTable.StandardTab = true;

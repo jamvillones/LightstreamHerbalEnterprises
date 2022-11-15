@@ -59,9 +59,9 @@
             this.loginBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBtn.Font = new System.Drawing.Font("The Bold Font", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.loginBtn.Location = new System.Drawing.Point(79, 197);
+            this.loginBtn.Location = new System.Drawing.Point(78, 196);
             this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(279, 35);
+            this.loginBtn.Size = new System.Drawing.Size(280, 35);
             this.loginBtn.TabIndex = 1;
             this.loginBtn.TabStop = false;
             this.loginBtn.Text = "LOGIN";

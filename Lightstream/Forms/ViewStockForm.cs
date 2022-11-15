@@ -72,7 +72,7 @@ namespace Lightstream.Forms
 
         private void ViewStockForm_Load(object sender, EventArgs e)
         {
-            foreach (var v in RefProduct.ProductVariants)
+            foreach (var v in RefProduct.ProductVariants.Where(pv=>!pv.IsArchived))
                 _variants.Add(v);
         }
 

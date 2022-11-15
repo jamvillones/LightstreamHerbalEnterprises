@@ -304,9 +304,11 @@
             // 
             // statusCol
             // 
+            this.statusCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.statusCol.HeaderText = "Status";
             this.statusCol.Name = "statusCol";
             this.statusCol.ReadOnly = true;
+            this.statusCol.Width = 68;
             // 
             // deleteBtnCol
             // 

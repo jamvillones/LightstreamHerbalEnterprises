@@ -42,6 +42,7 @@
             this._mainBtn_Inventory = new System.Windows.Forms.Button();
             this._transacPanel = new System.Windows.Forms.Panel();
             this._btnPurchaseOrder = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this._btnPos = new System.Windows.Forms.Button();
             this._mainBtn_Transaction = new System.Windows.Forms.Button();
             this._filesButtonPanel = new System.Windows.Forms.Panel();
@@ -55,7 +56,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this._utilities = new System.Windows.Forms.Button();
             this._contentsPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this._sideButtonPanel.SuspendLayout();
             this._reportsPanel.SuspendLayout();
             this._inventoryPanel.SuspendLayout();
@@ -338,6 +338,30 @@
             this._btnPurchaseOrder.UseVisualStyleBackColor = false;
             this._btnPurchaseOrder.Click += new System.EventHandler(this._btnPurchaseOrder_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(165)))), ((int)(((byte)(109)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("The Bold Font", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 45);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(173, 45);
+            this.button1.TabIndex = 6;
+            this.button1.TabStop = false;
+            this.button1.Text = "  SALES";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // _btnPos
             // 
             this._btnPos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
@@ -593,29 +617,6 @@
             this._contentsPanel.Size = new System.Drawing.Size(610, 500);
             this._contentsPanel.TabIndex = 4;
             this._contentsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this._contentsPanel_Paint);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(165)))), ((int)(((byte)(109)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("The Bold Font", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 45);
-            this.button1.Margin = new System.Windows.Forms.Padding(5);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(173, 45);
-            this.button1.TabIndex = 6;
-            this.button1.TabStop = false;
-            this.button1.Text = "  SALES";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // Main
             // 

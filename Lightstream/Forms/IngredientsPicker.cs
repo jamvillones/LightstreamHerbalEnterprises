@@ -101,7 +101,7 @@ namespace Lightstream.Forms
 
             var filtered = SearchHandler.FilterList(
                 ingredients,
-                FilteringFlow.StopUponSatisfaction,
+                FilteringFlags.StopUponSatisfaction,
                 i => i.Name.ToLower().Contains(keyword.ToLower()));
 
             if (filtered.Count() == 0)

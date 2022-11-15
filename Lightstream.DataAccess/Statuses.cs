@@ -25,6 +25,14 @@
         Range,
         Count
     }
+
+    public enum SaleStatus {
+        Paid,
+        Incomplete,
+        Pending,
+        All,
+        Count
+    }
 }
 
 

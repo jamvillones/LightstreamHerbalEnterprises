@@ -180,7 +180,7 @@ namespace Lightstream.Forms
 
                 items = SearchHandler.FilterList(
                    items,
-                   FilteringFlow.StopUponSatisfaction,
+                   FilteringFlags.StopUponSatisfaction,
                    x => x.Name.ToLower().Contains(text)
                    );
 

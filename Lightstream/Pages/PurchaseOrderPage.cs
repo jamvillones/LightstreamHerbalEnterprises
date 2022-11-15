@@ -242,7 +242,7 @@ namespace Lightstream
             var text = textBox!.Text.Trim().ToLower();
             var list = await _poService.GetAll_Async();
 
-            var result = SearchHandler.FilterList(list, FilteringFlow.StopUponSatisfaction,
+            var result = SearchHandler.FilterList(list, FilteringFlags.StopUponSatisfaction,
                 x => x.Ingredient.Name.ToLower().Contains(text),
                 x => x.Supplier.Name.ToLower().Contains(text)
                 );

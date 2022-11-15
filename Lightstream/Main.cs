@@ -1,6 +1,7 @@
 ﻿using Lightstream.DataAccess.Models;
 using Lightstream.DataAccess.Repositories;
 using Lightstream.Forms;
+using Lightstream.Pages;
 using Lightstream.Usercontrols;
 using System;
 using System.Collections.Generic;
@@ -176,8 +177,12 @@ namespace Lightstream
 
         private void button14_Click(object sender, EventArgs e)
         {
-            ChangeButtonStateUponClick(sender as Button);
-            OpenForm<FPOS>();
+            ChangeButtonStateUponClick(sender! as Button);
+
+            var posService = new CartService();
+            var saleService = new SaleService();
+            var posForm = new FPOS(posService, saleService);
+            OpenForm(posForm);
         }
 
         private void _contentsPanel_Paint(object sender, PaintEventArgs e)
@@ -241,6 +246,19 @@ namespace Lightstream
         {
             IsLoggedout = true;
             Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(sender is Button b)
+            {
+                ChangeButtonStateUponClick(b);
+
+                var saleService = new SaleService();
+                var saleForm = new SalePage(saleService);
+
+                OpenForm(saleForm);
+            }
         }
     }
 }

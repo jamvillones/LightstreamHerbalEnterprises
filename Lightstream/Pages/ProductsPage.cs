@@ -296,7 +296,7 @@ namespace Lightstream.Usercontrols
 
                 var filtered = SearchHandler.FilterList(
                     products,
-                    FilteringFlow.StopUponSatisfaction,
+                    FilteringFlags.StopUponSatisfaction,
                     x => string.Equals(x.Barcode, text, StringComparison.CurrentCultureIgnoreCase),
                     x => x.Name.ToLower().Contains(text.ToLower())
                     );

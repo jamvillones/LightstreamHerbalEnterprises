@@ -174,7 +174,7 @@ namespace Lightstream.Forms
                 //filter the products by barcode/product number and if not found go next to name contain filter
                 var results = SearchHandler.FilterList(
                     prods,
-                    FilteringFlow.StopUponSatisfaction,
+                    FilteringFlags.StopUponSatisfaction,
                     p => string.Equals(p.Barcode, text, StringComparison.OrdinalIgnoreCase),
                     p => p.Name.ToLower().Contains(text.ToLower())
                     );

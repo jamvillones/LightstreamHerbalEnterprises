@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lightstream.Services
 {
-    public enum FilteringFlow { StopUponSatisfaction, LoopAll }
+    public enum FilteringFlags { StopUponSatisfaction, LoopAll }
     public static class SearchHandler
     {
         /// <summary>
@@ -17,7 +17,7 @@ namespace Lightstream.Services
         /// <param name="flow"></param>
         /// <param name="filteringConditions"></param>
         /// <returns></returns>
-        public static IEnumerable<T> FilterList<T>(IEnumerable<T> items, FilteringFlow flow = FilteringFlow.StopUponSatisfaction, params Func<T, bool>[] filteringConditions) where T : class
+        public static IEnumerable<T> FilterList<T>(IEnumerable<T> items, FilteringFlags flow = FilteringFlags.StopUponSatisfaction, params Func<T, bool>[] filteringConditions) where T : class
         {
             if (items.Count() == 0 || items is null)
                 return Enumerable.Empty<T>();
@@ -34,7 +34,7 @@ namespace Lightstream.Services
                 //else if (flow == FilteringFlow.LoopAll)
                 //    itemRef = items.ToList();
 
-                if (flow == FilteringFlow.StopUponSatisfaction)
+                if (flow == FilteringFlags.StopUponSatisfaction)
                 {
                     if (itemRef.Count() > 0)
                         break;

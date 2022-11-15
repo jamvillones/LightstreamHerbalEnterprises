@@ -11,6 +11,7 @@ namespace Lightstream.DataAccess.Models
         public string RequiredAmount => RequiredQty.ToString().TrimEnd('0','.') +" "+ (RequiredQty > 1? Product.UnitQty.PluralName : Product.UnitQty.SingularName);
 
         public string ProductName => Product.Name;
-        public decimal StockQty => ProductionHistories.Select(x => x.QtyProduced).Sum();
+        public string ProductNumber => Product.Barcode;
+        public int StockQty => ProductionHistories.Select(x => x.QtyProduced).Sum() - SoldProducts.Select(x=>x.SoldQty).Sum();
     }
 }

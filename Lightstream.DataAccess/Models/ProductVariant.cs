@@ -25,6 +25,6 @@ namespace Lightstream.DataAccess.Models
         public bool IsArchived { get; set; } = false;
 
         public virtual ICollection<ProductionHistory> ProductionHistories { get; set; } = new HashSet<ProductionHistory>();
-        public virtual ICollection<SoldProduct> ProductVariants { get; set; } =new HashSet<SoldProduct>();
+        public virtual ICollection<SoldProduct> SoldProducts { get; set; } =new HashSet<SoldProduct>();
     }
 }

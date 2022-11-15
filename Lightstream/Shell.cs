@@ -1,4 +1,5 @@
 ﻿using Lightstream.DataAccess.Models;
+using Lightstream.DataAccess.Repositories;
 using Lightstream.Forms;
 using System;
 using System.Collections.Generic;
@@ -65,7 +66,7 @@ namespace Lightstream
 
                     userButton.Text = l.CurrentLogin!.FullName ?? "Current User";
                     bool isAdmin = l.CurrentLogin!.UserType == (int)UserType.admin;
-                    Form form = isAdmin ? new Main() : new FPOS();
+                    Form form = isAdmin ? new Main() : new FPOS(new CartService(), new SaleService());
                     moduleType.Text = isAdmin ? "Main Control" : "Point of Sale";
                     form.FormClosed += Form_FormClosed;
 

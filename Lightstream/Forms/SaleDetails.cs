@@ -46,6 +46,7 @@ namespace Lightstream.Forms
             _customer.Text = _sale.CustomerName??"Walk in";
             _grandTotal.Text = string.Format("Grand Total: ₱ {0:n}", _sale.GrandTotal);
             _totalPayment.Text = string.Format("Total Payemnt: ₱ {0:n}", _sale.TotalPayment);
+            _balance.Text = string.Format("Remaining Balance: ₱ {0:n}", _sale.Balance);
 
             foreach (var i in _sale.SoldProducts)
                 soldProducts.Add(i);

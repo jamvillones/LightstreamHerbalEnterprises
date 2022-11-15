@@ -10,6 +10,7 @@ namespace Lightstream.DataAccess.Models
     {
         public decimal TotalPayment => PaymentRecords.Select(x => x.Amount).Sum();
         public decimal GrandTotal => SoldProducts.Select(x => x.Total).Sum();
+        public decimal Balance => GrandTotal - TotalPayment < 0 ? 0 : GrandTotal - TotalPayment;
         public bool PaymentCompleted => TotalPayment >= GrandTotal;
         public string? CustomerName => Customer?.Name;
         public string? UserName => Login?.FullName;

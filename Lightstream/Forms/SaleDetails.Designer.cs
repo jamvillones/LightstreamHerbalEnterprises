@@ -50,14 +50,16 @@
             this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this._grandTotal = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this._paymentHistoryTable = new System.Windows.Forms.DataGridView();
             this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this._totalPayment = new System.Windows.Forms.Label();
+            this._balance = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this._grandTotal = new System.Windows.Forms.Label();
-            this._totalPayment = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._soldProductsTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -65,6 +67,7 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._paymentHistoryTable)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,7 +81,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(30, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(740, 114);
+            this.panel1.Size = new System.Drawing.Size(744, 114);
             this.panel1.TabIndex = 0;
             // 
             // _customer
@@ -178,7 +181,7 @@
             this._soldProductsTable.RowHeadersWidth = 62;
             this._soldProductsTable.RowTemplate.Height = 30;
             this._soldProductsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._soldProductsTable.Size = new System.Drawing.Size(490, 211);
+            this._soldProductsTable.Size = new System.Drawing.Size(436, 222);
             this._soldProductsTable.TabIndex = 31;
             // 
             // colProductNumber
@@ -225,12 +228,25 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this._paymentHistoryTable);
-            this.splitContainer1.Panel2.Controls.Add(this._totalPayment);
+            this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel1);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Size = new System.Drawing.Size(740, 271);
-            this.splitContainer1.SplitterDistance = 490;
+            this.splitContainer1.Size = new System.Drawing.Size(744, 282);
+            this.splitContainer1.SplitterDistance = 436;
             this.splitContainer1.SplitterWidth = 10;
             this.splitContainer1.TabIndex = 32;
+            // 
+            // _grandTotal
+            // 
+            this._grandTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this._grandTotal.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._grandTotal.ForeColor = System.Drawing.Color.Black;
+            this._grandTotal.Location = new System.Drawing.Point(0, 252);
+            this._grandTotal.Name = "_grandTotal";
+            this._grandTotal.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this._grandTotal.Size = new System.Drawing.Size(436, 30);
+            this._grandTotal.TabIndex = 33;
+            this._grandTotal.Text = "Grand Total:";
+            this._grandTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
@@ -239,8 +255,7 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
             this.label7.Location = new System.Drawing.Point(0, 0);
             this.label7.Name = "label7";
-            this.label7.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.label7.Size = new System.Drawing.Size(490, 30);
+            this.label7.Size = new System.Drawing.Size(436, 30);
             this.label7.TabIndex = 32;
             this.label7.Text = "Items";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -283,7 +298,7 @@
             this._paymentHistoryTable.RowHeadersWidth = 62;
             this._paymentHistoryTable.RowTemplate.Height = 30;
             this._paymentHistoryTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._paymentHistoryTable.Size = new System.Drawing.Size(240, 211);
+            this._paymentHistoryTable.Size = new System.Drawing.Size(298, 222);
             this._paymentHistoryTable.TabIndex = 34;
             // 
             // colAmount
@@ -303,6 +318,44 @@
             this.colDate.Name = "colDate";
             this.colDate.ReadOnly = true;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.Controls.Add(this._totalPayment);
+            this.flowLayoutPanel1.Controls.Add(this._balance);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 252);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(298, 30);
+            this.flowLayoutPanel1.TabIndex = 36;
+            // 
+            // _totalPayment
+            // 
+            this._totalPayment.AutoSize = true;
+            this._totalPayment.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._totalPayment.ForeColor = System.Drawing.Color.Black;
+            this._totalPayment.Location = new System.Drawing.Point(3, 5);
+            this._totalPayment.Margin = new System.Windows.Forms.Padding(3, 5, 3, 4);
+            this._totalPayment.Name = "_totalPayment";
+            this._totalPayment.Size = new System.Drawing.Size(77, 21);
+            this._totalPayment.TabIndex = 35;
+            this._totalPayment.Text = "Grand Total:";
+            this._totalPayment.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // _balance
+            // 
+            this._balance.AutoSize = true;
+            this._balance.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._balance.ForeColor = System.Drawing.Color.Maroon;
+            this._balance.Location = new System.Drawing.Point(86, 5);
+            this._balance.Margin = new System.Windows.Forms.Padding(3, 5, 3, 4);
+            this._balance.Name = "_balance";
+            this._balance.Size = new System.Drawing.Size(77, 21);
+            this._balance.TabIndex = 36;
+            this._balance.Text = "Grand Total:";
+            this._balance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -310,8 +363,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.label2.Size = new System.Drawing.Size(240, 30);
+            this.label2.Size = new System.Drawing.Size(298, 30);
             this.label2.TabIndex = 33;
             this.label2.Text = "Payment History";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -323,43 +375,16 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
             this.label3.Location = new System.Drawing.Point(30, 5);
             this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.label3.Size = new System.Drawing.Size(740, 30);
+            this.label3.Size = new System.Drawing.Size(744, 30);
             this.label3.TabIndex = 33;
             this.label3.Text = "Sale Details";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // _grandTotal
-            // 
-            this._grandTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this._grandTotal.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._grandTotal.ForeColor = System.Drawing.Color.Black;
-            this._grandTotal.Location = new System.Drawing.Point(0, 241);
-            this._grandTotal.Name = "_grandTotal";
-            this._grandTotal.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this._grandTotal.Size = new System.Drawing.Size(490, 30);
-            this._grandTotal.TabIndex = 33;
-            this._grandTotal.Text = "Grand Total:";
-            this._grandTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // _totalPayment
-            // 
-            this._totalPayment.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this._totalPayment.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._totalPayment.ForeColor = System.Drawing.Color.Black;
-            this._totalPayment.Location = new System.Drawing.Point(0, 241);
-            this._totalPayment.Name = "_totalPayment";
-            this._totalPayment.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this._totalPayment.Size = new System.Drawing.Size(240, 30);
-            this._totalPayment.TabIndex = 35;
-            this._totalPayment.Text = "Grand Total:";
-            this._totalPayment.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SaleDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(804, 461);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
@@ -373,9 +398,12 @@
             ((System.ComponentModel.ISupportInitialize)(this._soldProductsTable)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._paymentHistoryTable)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -403,5 +431,7 @@
         private DataGridViewTextBoxColumn colDate;
         private Label _grandTotal;
         private Label _totalPayment;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Label _balance;
     }
 }

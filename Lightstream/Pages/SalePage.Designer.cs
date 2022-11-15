@@ -69,7 +69,6 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
             this.label1.Location = new System.Drawing.Point(30, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.label1.Size = new System.Drawing.Size(854, 30);
             this.label1.TabIndex = 10;
             this.label1.Text = "Sale";

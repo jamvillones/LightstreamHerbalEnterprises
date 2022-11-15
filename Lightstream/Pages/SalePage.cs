@@ -1,5 +1,6 @@
 ﻿using Lightstream.DataAccess.Models;
 using Lightstream.DataAccess.Repositories;
+using Lightstream.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,13 +43,36 @@ namespace Lightstream.Pages
 
             _sales.Clear();
 
-            foreach (var s in sales.OrderByDescending(x=>x.Id))
+            foreach (var s in sales.OrderByDescending(x => x.Id))
                 _sales.Add(s);
         }
 
         private async void SalePage_Load(object sender, EventArgs e)
         {
             await LoadDataAsync();
+        }
+
+        private void _saleTable_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+
+            OpenSale(e.RowIndex);
+        }
+        void OpenSale(int index)
+        {
+            var selectedSale = _sales[index];
+
+            using (var f = new SaleDetails(selectedSale))
+            {
+                f.ShowDialog();
+            }
+        }
+        private void _saleTable_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+
+            if (e.ColumnIndex == editCol.Index)
+                OpenSale(e.RowIndex);
         }
     }
 }

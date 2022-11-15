@@ -101,6 +101,8 @@ namespace Lightstream.Forms
 
         private async void button2_Click(object sender, EventArgs e)
         {
+            if(_variantsTable.RowCount== 0) return;
+
             var variant = _variantsTable.SelectedRows[0].DataBoundItem as ProductVariant;
             variant.ProductionHistories = _stockins.ToList();
 

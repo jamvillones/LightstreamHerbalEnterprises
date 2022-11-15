@@ -94,19 +94,19 @@
             this.flowLayoutPanel2.Controls.Add(this.radioButton5);
             this.flowLayoutPanel2.Controls.Add(this.radioButton6);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(603, 3);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(599, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(248, 27);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(252, 29);
             this.flowLayoutPanel2.TabIndex = 19;
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton2.Location = new System.Drawing.Point(206, 3);
+            this.radioButton2.Location = new System.Drawing.Point(209, 3);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(42, 21);
+            this.radioButton2.Size = new System.Drawing.Size(43, 23);
             this.radioButton2.TabIndex = 1;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "All";
@@ -116,10 +116,10 @@
             // 
             this.radioButton4.AutoSize = true;
             this.radioButton4.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton4.Location = new System.Drawing.Point(145, 3);
+            this.radioButton4.Location = new System.Drawing.Point(147, 3);
             this.radioButton4.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(58, 21);
+            this.radioButton4.Size = new System.Drawing.Size(59, 23);
             this.radioButton4.TabIndex = 3;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Voided";
@@ -129,10 +129,10 @@
             // 
             this.radioButton5.AutoSize = true;
             this.radioButton5.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton5.Location = new System.Drawing.Point(70, 3);
+            this.radioButton5.Location = new System.Drawing.Point(71, 3);
             this.radioButton5.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(72, 21);
+            this.radioButton5.Size = new System.Drawing.Size(73, 23);
             this.radioButton5.TabIndex = 4;
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "Complete";
@@ -147,7 +147,7 @@
             this.radioButton6.Location = new System.Drawing.Point(3, 3);
             this.radioButton6.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(64, 21);
+            this.radioButton6.Size = new System.Drawing.Size(65, 23);
             this.radioButton6.TabIndex = 5;
             this.radioButton6.TabStop = true;
             this.radioButton6.Text = "Pending";
@@ -210,6 +210,8 @@
             this._saleTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._saleTable.Size = new System.Drawing.Size(854, 445);
             this._saleTable.TabIndex = 12;
+            this._saleTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._saleTable_CellMouseClick);
+            this._saleTable.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._saleTable_CellMouseDoubleClick);
             // 
             // editCol
             // 
@@ -223,7 +225,7 @@
             this.editCol.MinimumWidth = 8;
             this.editCol.Name = "editCol";
             this.editCol.ReadOnly = true;
-            this.editCol.Text = "EDIT";
+            this.editCol.Text = "SHOW";
             this.editCol.UseColumnTextForButtonValue = true;
             this.editCol.Width = 60;
             // 
@@ -239,7 +241,6 @@
             this.idCol.Name = "idCol";
             this.idCol.ReadOnly = true;
             this.idCol.Visible = false;
-            this.idCol.Width = 25;
             // 
             // dateCol
             // 
@@ -293,7 +294,7 @@
             this.statusCol.HeaderText = "Status";
             this.statusCol.Name = "statusCol";
             this.statusCol.ReadOnly = true;
-            this.statusCol.Width = 68;
+            this.statusCol.Width = 69;
             // 
             // deleteBtnCol
             // 

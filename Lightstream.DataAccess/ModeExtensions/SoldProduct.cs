@@ -13,6 +13,8 @@ namespace Lightstream.DataAccess.Models
         public string ProductNumber => ProductVariant.ProductNumber;
         public string Variation => ProductVariant.Description;
 
+        public string ProductDetail => ProductVariant.ProductName+" ("+ProductVariant.Description+")";
+
         public decimal Total => SoldQty * SoldPrice;
     }
 }

@@ -72,8 +72,15 @@ namespace Lightstream.Forms
 
         private void ViewStockForm_Load(object sender, EventArgs e)
         {
+            bool variantsAvailable = RefProduct.ProductVariants.Count > 0;
+
+            button1.Enabled = variantsAvailable;
+
+            if (!variantsAvailable) return;
+
             foreach (var v in RefProduct.ProductVariants.Where(pv => !pv.IsArchived))
                 _variants.Add(v);
+
         }
 
         private void _variantsTable_SelectionChanged(object sender, EventArgs e)

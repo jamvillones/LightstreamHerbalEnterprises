@@ -251,7 +251,7 @@
             // 
             // customerCol
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.NullValue = "Walkin";
             dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.customerCol.DefaultCellStyle = dataGridViewCellStyle5;

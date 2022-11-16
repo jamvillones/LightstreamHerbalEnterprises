@@ -77,8 +77,9 @@ namespace Lightstream.Forms
 
         private async void PriceManagementForm_Load(object sender, EventArgs e)
         {
-
             await LoadProductsAsync();
+
+            button1.Enabled = products.Count > 0;
         }
 
         async Task LoadProductsAsync()
@@ -87,7 +88,7 @@ namespace Lightstream.Forms
 
             var productValues = await _productService.GetAll_Async();
 
-            foreach (var p in productValues.OrderBy(x => x.Name)) products.Add(new ProductViewModel(p));
+            foreach (var p in productValues.Where(p=>!p.IsArchived).OrderBy(x => x.Name)) products.Add(new ProductViewModel(p));
         }
 
         void SetupDataGridSettings()

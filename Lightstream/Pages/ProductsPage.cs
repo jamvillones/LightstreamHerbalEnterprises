@@ -232,11 +232,11 @@ namespace Lightstream.Usercontrols
             }
         }
         void OpenStockForm()
-        {           
+        {
 
-            using(var stock = new ViewStockForm(new ProductionHistoryService(), SelectedProduct))
+            using (var stock = new ViewStockForm(new ProductionHistoryService(), SelectedProduct))
             {
-                if(stock.ShowDialog()== DialogResult.OK)
+                if (stock.ShowDialog() == DialogResult.OK)
                 {
 
                 }
@@ -247,7 +247,7 @@ namespace Lightstream.Usercontrols
             if (e.RowIndex == -1)
                 return;
 
-            OpenEditForm();
+            OpenStockForm();
         }
         #endregion
 

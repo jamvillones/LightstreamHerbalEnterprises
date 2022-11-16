@@ -165,7 +165,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
             this.label1.Location = new System.Drawing.Point(112, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 37);
+            this.label1.Size = new System.Drawing.Size(214, 40);
             this.label1.TabIndex = 6;
             this.label1.Text = "Lightstream\r\n";
             // 
@@ -182,7 +182,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(120)))), ((int)(((byte)(76)))));
             this.label2.Location = new System.Drawing.Point(190, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 19);
+            this.label2.Size = new System.Drawing.Size(57, 20);
             this.label2.TabIndex = 7;
             this.label2.Text = "Login";
             // 

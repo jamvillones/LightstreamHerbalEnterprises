@@ -11,7 +11,8 @@ namespace Lightstream
     {
         private DbContextFactory dbFactory = new DbContextFactory();
         #region private fields
-        int lockinPeriod = 30;
+        int lockinPeriod = 10;
+        int loginErrorTimeIncrement = 10;
         string username => textBox2.Text.Trim();
         string password => textBox3.Text.Trim();
         bool isInCountdown => timeCounter > 0;
@@ -45,13 +46,18 @@ namespace Lightstream
         private void LockLogin()
         {
             ///disable the button
-            loginBtn.Enabled = false;
             ///set the timer for lockinperiod
             timeCounter = lockinPeriod;
+            //lockinPeriod += loginErrorTimeIncrement;
+            lockinPeriod *= 2;
             ///change the text to its prompt
-            loginBtn.Text = "Login locked for " + timeCounter + (timeCounter > 1 ? " seconds" : " second");
-            ///start the timer
-            countdownTimer.Start();
+            if (timeCounter > 0)
+            {
+                loginBtn.Enabled = false;
+                loginBtn.Text = "Login locked for " + timeCounter + (timeCounter > 1 ? " seconds" : " second");
+                ///start the timer
+                countdownTimer.Start();
+            }
         }
         private void close_Click(object sender, EventArgs e)
         {

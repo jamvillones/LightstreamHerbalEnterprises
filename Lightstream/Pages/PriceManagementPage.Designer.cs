@@ -196,7 +196,6 @@
             this._removedisc.TabIndex = 4;
             this._removedisc.Text = "Remove Discount";
             this._removedisc.UseVisualStyleBackColor = false;
-            this._removedisc.Click += new System.EventHandler(this._removedisc_Click);
             // 
             // label1
             // 
@@ -467,7 +466,6 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(740, 40);
             this.flowLayoutPanel2.TabIndex = 12;
-            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
             // PriceManagementPage
             // 

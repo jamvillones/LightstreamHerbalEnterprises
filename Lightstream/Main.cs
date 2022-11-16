@@ -93,17 +93,15 @@ namespace Lightstream
             currentForm.Show();
         }
 
+        //Dictionary<Button, Form> Tabs = new();
         Button currentTabButton;
         void OpenForm(Form next, Button b)
         {
-            //if there is an open form
-            if (currentForm is not null)
+            var buttFound = _tabsButtonsFlowLayoutPanel.Controls.Cast<Button>().FirstOrDefault(x => string.Equals(x.Text.Trim(), b.Text.Trim(), StringComparison.OrdinalIgnoreCase));
+            if(buttFound is not null)
             {
-                //abort if the incoming form type is the same as of the old one
-                if (next.GetType() == currentForm.GetType())
-                    return;
-
-                // currentForm.Close();
+                buttFound.PerformClick();
+                return;
             }
 
             currentForm = next;
@@ -118,28 +116,44 @@ namespace Lightstream
             _contentsPanel.Controls.Add(currentForm);
 
             if (currentTabButton is not null)
-                currentTabButton.ForeColor = Color.Black;
+                currentTabButton.BackColor = SystemColors.Control;
 
-            var btn = new Button();
-            btn.ForeColor = Color.DarkGreen;
-            btn.FlatStyle = FlatStyle.Flat;
-            btn.FlatAppearance.BorderSize = 0;
-            btn.Margin = new Padding(0);
-            btn.AutoSize = true;
-            btn.Text = b.Text;
+            var btn = CreateTabButton(b.Text);
+            //btn.ForeColor = Color.DarkGreen;
+
             btn.Click += (sender, e) =>
             {
-                currentTabButton.ForeColor = Color.Black;
+                currentTabButton.BackColor = SystemColors.Control;
                 currentTabButton = sender as Button;
-                currentTabButton.ForeColor = Color.DarkGreen;
+                currentTabButton.BackColor = Color_SelectedTabButton;
 
                 next.BringToFront();
             };
+
             currentTabButton = btn;
             _tabsButtonsFlowLayoutPanel.Controls.Add(btn);
 
             currentForm.BringToFront();
             currentForm.Show();
+
+            //Tabs.Add(btn, currentForm);
+        }
+        Color Color_SelectedTabButton = Color.FromArgb(143, 188, 143);
+        //Color Color_SelectedTabButton = Color.White;
+        Font Font_SelectedTabButton = new Font("The Bold Font", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+
+        Button CreateTabButton(string title)
+        {
+            var btn = new Button();
+            btn.Font = Font_SelectedTabButton;
+            btn.BackColor = Color_SelectedTabButton;
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.FlatAppearance.BorderSize = 0;
+            btn.Padding = new Padding(15,5,15,5);
+            btn.Margin = new Padding(0);
+            btn.AutoSize = true;
+            btn.Text = title.Trim();
+            return btn;
         }
         void OpenForm(Form next)
         {
@@ -231,12 +245,14 @@ namespace Lightstream
 
         private void button14_Click(object sender, EventArgs e)
         {
-            ChangeButtonStateUponClick(sender! as Button);
-
-            var posService = new CartService();
-            var saleService = new SaleService();
-            var posForm = new FPOS(posService, saleService);
-            OpenForm(posForm);
+            if (sender is Button b)
+            {
+                ChangeButtonStateUponClick(b);
+                var posService = new CartService();
+                var saleService = new SaleService();
+                var posForm = new FPOS(posService, saleService);
+                OpenForm(posForm, b);
+            }
         }
 
         private void _contentsPanel_Paint(object sender, PaintEventArgs e)
@@ -261,9 +277,12 @@ namespace Lightstream
 
         private void button12_Click(object sender, EventArgs e)
         {
-            ChangeButtonStateUponClick(sender as Button);
-            UnitManagementPage unitmagmnt = new(new GenericRepository<Unit>());
-            OpenForm(unitmagmnt);
+            if (sender is Button b)
+            {
+                ChangeButtonStateUponClick(b);
+                UnitManagementPage unitmagmnt = new(new GenericRepository<Unit>());
+                OpenForm(unitmagmnt, b);
+            }
         }
 
         private void _btnSupplierManagement_Click(object sender, EventArgs e)
@@ -280,9 +299,12 @@ namespace Lightstream
 
         private void _btnPurchaseOrder_Click(object sender, EventArgs e)
         {
-            ChangeButtonStateUponClick(sender as Button);
-            var po = new PurchaseOrderPage(new PurchaseOrderService());
-            OpenForm(po);
+            if (sender is Button b)
+            {
+                ChangeButtonStateUponClick(b);
+                var po = new PurchaseOrderPage(new PurchaseOrderService());
+                OpenForm(po, b);
+            }
         }
 
         private void _btnVat_Click(object sender, EventArgs e)
@@ -317,14 +339,14 @@ namespace Lightstream
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(sender is Button b)
+            if (sender is Button b)
             {
                 ChangeButtonStateUponClick(b);
 
                 var saleService = new SaleService();
                 var saleForm = new SalePage(saleService);
 
-                OpenForm(saleForm);
+                OpenForm(saleForm, b);
             }
         }
     }

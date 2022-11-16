@@ -8,7 +8,7 @@ namespace Lightstream.DataAccess.Models
 {
     public partial class ProductVariant
     {
-        public string RequiredAmount => RequiredQty.ToString().TrimEnd('0','.') +" "+ (RequiredQty > 1? Product.UnitQty.PluralName : Product.UnitQty.SingularName);
+        public string RequiredAmount => RequiredQty.ToString("#,#0.####") +" "+ (RequiredQty > 1? Product.UnitQty.PluralName : Product.UnitQty.SingularName);
 
         public string ProductName => Product.Name;
         public string ProductNumber => Product.Barcode;

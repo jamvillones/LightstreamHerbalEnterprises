@@ -44,11 +44,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this._IngredientsTable = new System.Windows.Forms.DataGridView();
+            this._pick = new System.Windows.Forms.Button();
             this.removeCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._pick = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._IngredientsTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,7 +131,7 @@
             this.label4.Location = new System.Drawing.Point(15, 95);
             this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 21);
+            this.label4.Size = new System.Drawing.Size(97, 19);
             this.label4.TabIndex = 14;
             this.label4.Text = "Contact Number:";
             // 
@@ -142,7 +142,7 @@
             this.label3.Location = new System.Drawing.Point(18, 64);
             this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 21);
+            this.label3.Size = new System.Drawing.Size(94, 19);
             this.label3.TabIndex = 13;
             this.label3.Text = "Contact Person:";
             // 
@@ -153,7 +153,7 @@
             this.label2.Location = new System.Drawing.Point(56, 127);
             this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 21);
+            this.label2.Size = new System.Drawing.Size(56, 19);
             this.label2.TabIndex = 12;
             this.label2.Text = "Address:";
             // 
@@ -164,7 +164,7 @@
             this.label1.Location = new System.Drawing.Point(55, 32);
             this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 21);
+            this.label1.Size = new System.Drawing.Size(57, 19);
             this.label1.TabIndex = 11;
             this.label1.Text = "Supplier:";
             // 
@@ -183,7 +183,7 @@
             this._IngredientsTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
@@ -197,7 +197,7 @@
             this.costCol});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
@@ -220,47 +220,6 @@
             this._IngredientsTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this._IngredientsTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._IngredientsTable_CellMouseClick);
             // 
-            // removeCol
-            // 
-            this.removeCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.IndianRed;
-            this.removeCol.DefaultCellStyle = dataGridViewCellStyle2;
-            this.removeCol.HeaderText = "";
-            this.removeCol.MinimumWidth = 60;
-            this.removeCol.Name = "removeCol";
-            this.removeCol.ReadOnly = true;
-            this.removeCol.Text = "REMOVE";
-            this.removeCol.UseColumnTextForButtonValue = true;
-            this.removeCol.Width = 60;
-            // 
-            // idCol
-            // 
-            this.idCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idCol.HeaderText = "Id";
-            this.idCol.Name = "idCol";
-            this.idCol.ReadOnly = true;
-            this.idCol.Visible = false;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Ingredient";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // costCol
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "₱ 0.00";
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
-            this.costCol.DefaultCellStyle = dataGridViewCellStyle3;
-            this.costCol.HeaderText = "Cost";
-            this.costCol.Name = "costCol";
-            this.costCol.ReadOnly = true;
-            // 
             // _pick
             // 
             this._pick.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -278,6 +237,49 @@
             this._pick.Text = "Pick Ingredient";
             this._pick.UseVisualStyleBackColor = false;
             this._pick.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // removeCol
+            // 
+            this.removeCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.IndianRed;
+            this.removeCol.DefaultCellStyle = dataGridViewCellStyle2;
+            this.removeCol.HeaderText = "";
+            this.removeCol.MinimumWidth = 60;
+            this.removeCol.Name = "removeCol";
+            this.removeCol.ReadOnly = true;
+            this.removeCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.removeCol.Text = "REMOVE";
+            this.removeCol.UseColumnTextForButtonValue = true;
+            this.removeCol.Width = 60;
+            // 
+            // idCol
+            // 
+            this.idCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idCol.HeaderText = "Id";
+            this.idCol.Name = "idCol";
+            this.idCol.ReadOnly = true;
+            this.idCol.Visible = false;
+            this.idCol.Width = 24;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "Ingredient";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // costCol
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "₱ #,#0.00";
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.costCol.DefaultCellStyle = dataGridViewCellStyle3;
+            this.costCol.HeaderText = "Cost";
+            this.costCol.Name = "costCol";
+            this.costCol.ReadOnly = true;
             // 
             // SupplierForm
             // 

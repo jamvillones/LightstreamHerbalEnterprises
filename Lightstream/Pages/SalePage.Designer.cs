@@ -182,7 +182,7 @@
             this.deleteBtnCol});
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.DarkGreen;
@@ -205,7 +205,7 @@
             this._saleTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this._saleTable.RowHeadersVisible = false;
             this._saleTable.RowHeadersWidth = 62;
-            this._saleTable.RowTemplate.Height = 25;
+            this._saleTable.RowTemplate.Height = 30;
             this._saleTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._saleTable.Size = new System.Drawing.Size(854, 445);
             this._saleTable.TabIndex = 12;
@@ -273,7 +273,7 @@
             // 
             // totalCol
             // 
-            dataGridViewCellStyle7.Format = "₱ 0.00";
+            dataGridViewCellStyle7.Format = "₱ #,#0.00";
             this.totalCol.DefaultCellStyle = dataGridViewCellStyle7;
             this.totalCol.HeaderText = "Grand Total";
             this.totalCol.Name = "totalCol";
@@ -281,7 +281,7 @@
             // 
             // totalPaymentCol
             // 
-            dataGridViewCellStyle8.Format = "₱ 0.00";
+            dataGridViewCellStyle8.Format = "₱ #,#0.00";
             this.totalPaymentCol.DefaultCellStyle = dataGridViewCellStyle8;
             this.totalPaymentCol.HeaderText = "Total Payment";
             this.totalPaymentCol.Name = "totalPaymentCol";

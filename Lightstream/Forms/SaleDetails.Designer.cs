@@ -30,10 +30,10 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaleDetails));
@@ -45,21 +45,21 @@
             this._Id = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this._soldProductsTable = new System.Windows.Forms.DataGridView();
-            this.colProductNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this._grandTotal = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this._paymentHistoryTable = new System.Windows.Forms.DataGridView();
-            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this._totalPayment = new System.Windows.Forms.Label();
             this._balance = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.colProductNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._soldProductsTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -99,7 +99,7 @@
             this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label6.Location = new System.Drawing.Point(89, 64);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 21);
+            this.label6.Size = new System.Drawing.Size(63, 19);
             this.label6.TabIndex = 44;
             this.label6.Text = "Customer:";
             // 
@@ -118,7 +118,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label1.Location = new System.Drawing.Point(3, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 21);
+            this.label1.Size = new System.Drawing.Size(149, 19);
             this.label1.TabIndex = 40;
             this.label1.Text = "Date/Time of Transaction:";
             // 
@@ -137,7 +137,7 @@
             this.label5.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label5.Location = new System.Drawing.Point(62, 6);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 21);
+            this.label5.Size = new System.Drawing.Size(90, 19);
             this.label5.TabIndex = 38;
             this.label5.Text = "Transaction ID:";
             // 
@@ -183,35 +183,6 @@
             this._soldProductsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._soldProductsTable.Size = new System.Drawing.Size(436, 222);
             this._soldProductsTable.TabIndex = 31;
-            // 
-            // colProductNumber
-            // 
-            this.colProductNumber.HeaderText = "Product No.";
-            this.colProductNumber.Name = "colProductNumber";
-            this.colProductNumber.ReadOnly = true;
-            // 
-            // colProduct
-            // 
-            this.colProduct.HeaderText = "Product";
-            this.colProduct.Name = "colProduct";
-            this.colProduct.ReadOnly = true;
-            // 
-            // colQty
-            // 
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.colQty.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colQty.HeaderText = "Qty";
-            this.colQty.Name = "colQty";
-            this.colQty.ReadOnly = true;
-            // 
-            // colPrice
-            // 
-            dataGridViewCellStyle3.Format = "₱ 0.00";
-            this.colPrice.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colPrice.HeaderText = "Price";
-            this.colPrice.Name = "colPrice";
-            this.colPrice.ReadOnly = true;
             // 
             // splitContainer1
             // 
@@ -298,25 +269,8 @@
             this._paymentHistoryTable.RowHeadersWidth = 62;
             this._paymentHistoryTable.RowTemplate.Height = 30;
             this._paymentHistoryTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._paymentHistoryTable.Size = new System.Drawing.Size(298, 222);
+            this._paymentHistoryTable.Size = new System.Drawing.Size(298, 224);
             this._paymentHistoryTable.TabIndex = 34;
-            // 
-            // colAmount
-            // 
-            dataGridViewCellStyle6.Format = "₱ 0.00";
-            this.colAmount.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colAmount.HeaderText = "Amount";
-            this.colAmount.Name = "colAmount";
-            this.colAmount.ReadOnly = true;
-            // 
-            // colDate
-            // 
-            dataGridViewCellStyle7.Format = "g";
-            dataGridViewCellStyle7.NullValue = null;
-            this.colDate.DefaultCellStyle = dataGridViewCellStyle7;
-            this.colDate.HeaderText = "Date/Time";
-            this.colDate.Name = "colDate";
-            this.colDate.ReadOnly = true;
             // 
             // flowLayoutPanel1
             // 
@@ -325,9 +279,9 @@
             this.flowLayoutPanel1.Controls.Add(this._totalPayment);
             this.flowLayoutPanel1.Controls.Add(this._balance);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 252);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 254);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(298, 30);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(298, 28);
             this.flowLayoutPanel1.TabIndex = 36;
             // 
             // _totalPayment
@@ -338,7 +292,7 @@
             this._totalPayment.Location = new System.Drawing.Point(3, 5);
             this._totalPayment.Margin = new System.Windows.Forms.Padding(3, 5, 3, 4);
             this._totalPayment.Name = "_totalPayment";
-            this._totalPayment.Size = new System.Drawing.Size(77, 21);
+            this._totalPayment.Size = new System.Drawing.Size(76, 19);
             this._totalPayment.TabIndex = 35;
             this._totalPayment.Text = "Grand Total:";
             this._totalPayment.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -348,10 +302,10 @@
             this._balance.AutoSize = true;
             this._balance.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._balance.ForeColor = System.Drawing.Color.Maroon;
-            this._balance.Location = new System.Drawing.Point(86, 5);
+            this._balance.Location = new System.Drawing.Point(85, 5);
             this._balance.Margin = new System.Windows.Forms.Padding(3, 5, 3, 4);
             this._balance.Name = "_balance";
-            this._balance.Size = new System.Drawing.Size(77, 21);
+            this._balance.Size = new System.Drawing.Size(76, 19);
             this._balance.TabIndex = 36;
             this._balance.Text = "Grand Total:";
             this._balance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -379,6 +333,52 @@
             this.label3.TabIndex = 33;
             this.label3.Text = "Sale Details";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // colProductNumber
+            // 
+            this.colProductNumber.HeaderText = "Product No.";
+            this.colProductNumber.Name = "colProductNumber";
+            this.colProductNumber.ReadOnly = true;
+            // 
+            // colProduct
+            // 
+            this.colProduct.HeaderText = "Product";
+            this.colProduct.Name = "colProduct";
+            this.colProduct.ReadOnly = true;
+            // 
+            // colQty
+            // 
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.colQty.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colQty.HeaderText = "Qty";
+            this.colQty.Name = "colQty";
+            this.colQty.ReadOnly = true;
+            // 
+            // colPrice
+            // 
+            dataGridViewCellStyle3.Format = "₱ #,#0.00";
+            this.colPrice.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colPrice.HeaderText = "Price";
+            this.colPrice.Name = "colPrice";
+            this.colPrice.ReadOnly = true;
+            // 
+            // colAmount
+            // 
+            dataGridViewCellStyle6.Format = "₱ #,#0.00";
+            this.colAmount.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colAmount.HeaderText = "Amount";
+            this.colAmount.Name = "colAmount";
+            this.colAmount.ReadOnly = true;
+            // 
+            // colDate
+            // 
+            dataGridViewCellStyle7.Format = "g";
+            dataGridViewCellStyle7.NullValue = null;
+            this.colDate.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colDate.HeaderText = "Date/Time";
+            this.colDate.Name = "colDate";
+            this.colDate.ReadOnly = true;
             // 
             // SaleDetails
             // 
@@ -423,15 +423,15 @@
         private Label label3;
         private TextBox _customer;
         private Label label6;
+        private Label _grandTotal;
+        private Label _totalPayment;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Label _balance;
         private DataGridViewTextBoxColumn colProductNumber;
         private DataGridViewTextBoxColumn colProduct;
         private DataGridViewTextBoxColumn colQty;
         private DataGridViewTextBoxColumn colPrice;
         private DataGridViewTextBoxColumn colAmount;
         private DataGridViewTextBoxColumn colDate;
-        private Label _grandTotal;
-        private Label _totalPayment;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private Label _balance;
     }
 }

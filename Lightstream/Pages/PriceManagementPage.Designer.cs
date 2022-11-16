@@ -30,17 +30,15 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this._search = new System.Windows.Forms.TextBox();
             this._productsTable = new System.Windows.Forms.DataGridView();
-            this.productNumCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._addmarkup = new System.Windows.Forms.Button();
             this._setDiscount = new System.Windows.Forms.Button();
             this._removedisc = new System.Windows.Forms.Button();
@@ -62,6 +60,8 @@
             this._selectedProductName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.productNumCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this._productsTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._divider)).BeginInit();
             this._divider.Panel1.SuspendLayout();
@@ -131,25 +131,6 @@
             this._productsTable.TabIndex = 9;
             this._productsTable.SelectionChanged += new System.EventHandler(this._productsTable_SelectionChanged);
             // 
-            // productNumCol
-            // 
-            this.productNumCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.NullValue = "*not set";
-            this.productNumCol.DefaultCellStyle = dataGridViewCellStyle2;
-            this.productNumCol.HeaderText = "Product Number";
-            this.productNumCol.MinimumWidth = 130;
-            this.productNumCol.Name = "productNumCol";
-            this.productNumCol.ReadOnly = true;
-            this.productNumCol.Width = 130;
-            // 
-            // nameCol
-            // 
-            this.nameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameCol.HeaderText = "Name";
-            this.nameCol.MinimumWidth = 8;
-            this.nameCol.Name = "nameCol";
-            this.nameCol.ReadOnly = true;
-            // 
             // _addmarkup
             // 
             this._addmarkup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -196,7 +177,6 @@
             this._removedisc.TabIndex = 4;
             this._removedisc.Text = "Remove Discount";
             this._removedisc.UseVisualStyleBackColor = false;
-            this._removedisc.Click += new System.EventHandler(this._removedisc_Click);
             // 
             // label1
             // 
@@ -205,7 +185,6 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
             this.label1.Location = new System.Drawing.Point(30, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.label1.Size = new System.Drawing.Size(740, 30);
             this.label1.TabIndex = 8;
             this.label1.Text = "Price Management";
@@ -368,7 +347,7 @@
             // 
             // prodVariantPrice
             // 
-            dataGridViewCellStyle7.Format = "₱ 0.00";
+            dataGridViewCellStyle7.Format = "₱ #,##.00";
             this.prodVariantPrice.DefaultCellStyle = dataGridViewCellStyle7;
             this.prodVariantPrice.HeaderText = "Price";
             this.prodVariantPrice.MinimumWidth = 8;
@@ -378,7 +357,7 @@
             // prodVariantCost
             // 
             this.prodVariantCost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle8.Format = "₱ 0.00";
+            dataGridViewCellStyle8.Format = "₱ #,##.00";
             this.prodVariantCost.DefaultCellStyle = dataGridViewCellStyle8;
             this.prodVariantCost.HeaderText = "Cost";
             this.prodVariantCost.MinimumWidth = 8;
@@ -468,7 +447,25 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(740, 40);
             this.flowLayoutPanel2.TabIndex = 12;
-            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
+            // 
+            // productNumCol
+            // 
+            this.productNumCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.NullValue = "--";
+            this.productNumCol.DefaultCellStyle = dataGridViewCellStyle2;
+            this.productNumCol.HeaderText = "Product Number";
+            this.productNumCol.MinimumWidth = 130;
+            this.productNumCol.Name = "productNumCol";
+            this.productNumCol.ReadOnly = true;
+            this.productNumCol.Width = 130;
+            // 
+            // nameCol
+            // 
+            this.nameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameCol.HeaderText = "Name";
+            this.nameCol.MinimumWidth = 8;
+            this.nameCol.Name = "nameCol";
+            this.nameCol.ReadOnly = true;
             // 
             // PriceManagementPage
             // 

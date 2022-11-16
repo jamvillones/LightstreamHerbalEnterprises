@@ -49,7 +49,7 @@ namespace Lightstream
             ///set the timer for lockinperiod
             timeCounter = lockinPeriod;
             ///change the text to its prompt
-            loginBtn.Text = "Login locked for " + timeCounter;
+            loginBtn.Text = "Login locked for " + timeCounter + (timeCounter > 1 ? " seconds" : " second");
             ///start the timer
             countdownTimer.Start();
         }
@@ -126,7 +126,7 @@ namespace Lightstream
         private void countdownTimer_Tick(object sender, EventArgs e)
         {
             timeCounter--;
-            loginBtn.Text = "Login locked for " + timeCounter;
+            loginBtn.Text = "Login locked for " + timeCounter + (timeCounter > 1 ? " seconds" : " second");
             if (timeCounter <= 0)
             {
                 Attempts = 3;
@@ -147,6 +147,11 @@ namespace Lightstream
 
                 }
             }
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -150,7 +150,7 @@ namespace Lightstream.Forms
 
                 units = SearchHandler.FilterList(
                    units,
-                   FilteringFlow.StopUponSatisfaction,
+                   FilteringFlags.StopUponSatisfaction,
                    x => x.SingularName.ToLower().Contains(text),
                    x => x.Abbreviation?.ToLower().Contains(text) ?? false
                    );

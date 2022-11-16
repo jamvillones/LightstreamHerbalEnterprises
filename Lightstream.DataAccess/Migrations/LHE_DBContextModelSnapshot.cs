@@ -163,6 +163,31 @@ namespace Lightstream.DataAccess.Migrations
                     b.ToTable("Login", (string)null);
                 });
 
+            modelBuilder.Entity("Lightstream.DataAccess.Models.PaymentRecord", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<decimal>("Amount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<DateTime>("PaymentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("SaleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SaleId");
+
+                    b.ToTable("PaymentRecord");
+                });
+
             modelBuilder.Entity("Lightstream.DataAccess.Models.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -347,7 +372,7 @@ namespace Lightstream.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("CustomerId")
+                    b.Property<int?>("CustomerId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateTimeTransaction")
@@ -373,7 +398,7 @@ namespace Lightstream.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("ProductInventoryId")
+                    b.Property<int>("ProductVariantId")
                         .HasColumnType("int");
 
                     b.Property<int?>("SaleId")
@@ -388,7 +413,7 @@ namespace Lightstream.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductInventoryId");
+                    b.HasIndex("ProductVariantId");
 
                     b.HasIndex("SaleId");
 
@@ -514,6 +539,17 @@ namespace Lightstream.DataAccess.Migrations
                     b.Navigation("UnitMeasurement");
                 });
 
+            modelBuilder.Entity("Lightstream.DataAccess.Models.PaymentRecord", b =>
+                {
+                    b.HasOne("Lightstream.DataAccess.Models.Sale", "Sale")
+                        .WithMany("PaymentRecords")
+                        .HasForeignKey("SaleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Sale");
+                });
+
             modelBuilder.Entity("Lightstream.DataAccess.Models.Product", b =>
                 {
                     b.HasOne("Lightstream.DataAccess.Models.Unit", "UnitQty")
@@ -601,9 +637,7 @@ namespace Lightstream.DataAccess.Migrations
                 {
                     b.HasOne("Lightstream.DataAccess.Models.Customer", "Customer")
                         .WithMany("Transactions")
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CustomerId");
 
                     b.HasOne("Lightstream.DataAccess.Models.Login", "Login")
                         .WithMany("Transactons")
@@ -616,17 +650,17 @@ namespace Lightstream.DataAccess.Migrations
 
             modelBuilder.Entity("Lightstream.DataAccess.Models.SoldProduct", b =>
                 {
-                    b.HasOne("Lightstream.DataAccess.Models.ProductVariant", "ProductInventory")
+                    b.HasOne("Lightstream.DataAccess.Models.ProductVariant", "ProductVariant")
                         .WithMany("ProductVariants")
-                        .HasForeignKey("ProductInventoryId")
+                        .HasForeignKey("ProductVariantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Lightstream.DataAccess.Models.Sale", null)
-                        .WithMany("SoldItems")
+                        .WithMany("SoldProducts")
                         .HasForeignKey("SaleId");
 
-                    b.Navigation("ProductInventory");
+                    b.Navigation("ProductVariant");
                 });
 
             modelBuilder.Entity("Lightstream.DataAccess.Models.SupplierToIngredient", b =>
@@ -690,7 +724,9 @@ namespace Lightstream.DataAccess.Migrations
 
             modelBuilder.Entity("Lightstream.DataAccess.Models.Sale", b =>
                 {
-                    b.Navigation("SoldItems");
+                    b.Navigation("PaymentRecords");
+
+                    b.Navigation("SoldProducts");
                 });
 
             modelBuilder.Entity("Lightstream.DataAccess.Models.Supplier", b =>

@@ -23,6 +23,7 @@ namespace Lightstream.Forms
         private BindingList<ProductVariant> variants = new BindingList<ProductVariant>();
 
         private bool _changesMade = false;
+        Product? _selectedProduct;
         public bool ChangesMade
         {
             get { return _changesMade; }
@@ -48,8 +49,7 @@ namespace Lightstream.Forms
             }
         }
 
-        Product _selectedProduct;
-        public Product SelectedProduct
+        public Product? SelectedProduct
         {
             get => _selectedProduct;
 
@@ -57,8 +57,10 @@ namespace Lightstream.Forms
             {
                 _selectedProduct = value;
 
-                _selectedProductName.Text = _selectedProduct.Name;
+                _selectedProductName.Text = _selectedProduct?.Name;
                 variants.Clear();
+
+                if (_selectedProduct is null) return;
 
                 foreach (var v in _selectedProduct.ProductVariants.Where(v => !v.IsArchived))
                     variants.Add(v);
@@ -77,8 +79,9 @@ namespace Lightstream.Forms
 
         private async void PriceManagementForm_Load(object sender, EventArgs e)
         {
-
             await LoadProductsAsync();
+
+            button1.Enabled = products.Count > 0;
         }
 
         async Task LoadProductsAsync()
@@ -87,14 +90,14 @@ namespace Lightstream.Forms
 
             var productValues = await _productService.GetAll_Async();
 
-            foreach (var p in productValues.OrderBy(x => x.Name)) products.Add(new ProductViewModel(p));
+            foreach (var p in productValues.Where(p => !p.IsArchived).OrderBy(x => x.Name))
+                products.Add(new ProductViewModel(p));
         }
 
         void SetupDataGridSettings()
         {
             products = new BindingList<ProductViewModel>();
 
-            //we manually set the values with bindings thats why we set it to false
             _productsTable.AutoGenerateColumns = false;
             _variantsTable.AutoGenerateColumns = false;
 
@@ -174,7 +177,7 @@ namespace Lightstream.Forms
                 //filter the products by barcode/product number and if not found go next to name contain filter
                 var results = SearchHandler.FilterList(
                     prods,
-                    FilteringFlow.StopUponSatisfaction,
+                    FilteringFlags.StopUponSatisfaction,
                     p => string.Equals(p.Barcode, text, StringComparison.OrdinalIgnoreCase),
                     p => p.Name.ToLower().Contains(text.ToLower())
                     );
@@ -201,6 +204,8 @@ namespace Lightstream.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (SelectedProduct is null) return;
+
             var v = OpenVariantForm();
             if (v is not null)
             {
@@ -229,6 +234,7 @@ namespace Lightstream.Forms
         private async void button4_Click(object sender, EventArgs e)
         {
             var prod = SelectedProduct;
+            if (prod is null) return;
             prod.ProductVariants = variants.ToList();
 
             if (ChangesMade)
@@ -261,16 +267,6 @@ namespace Lightstream.Forms
         {
             _Discount discount = new _Discount();
             discount.ShowDialog();
-        }
-
-        private void _removedisc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

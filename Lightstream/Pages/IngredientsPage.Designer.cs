@@ -181,7 +181,6 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
             this.label1.Location = new System.Drawing.Point(30, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.label1.Size = new System.Drawing.Size(640, 30);
             this.label1.TabIndex = 9;
             this.label1.Text = "Ingredients";
@@ -274,8 +273,8 @@
             // qtyCol
             // 
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N4";
-            dataGridViewCellStyle5.NullValue = null;
+            dataGridViewCellStyle5.Format = "#,#0.####";
+            dataGridViewCellStyle5.NullValue = "0";
             dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.qtyCol.DefaultCellStyle = dataGridViewCellStyle5;
             this.qtyCol.HeaderText = "Qty In Stock";
@@ -296,7 +295,7 @@
             // 
             // defCostCol
             // 
-            dataGridViewCellStyle7.Format = "₱ 0.00";
+            dataGridViewCellStyle7.Format = "₱ #,#0.00";
             this.defCostCol.DefaultCellStyle = dataGridViewCellStyle7;
             this.defCostCol.HeaderText = "Default Cost";
             this.defCostCol.Name = "defCostCol";
@@ -304,9 +303,11 @@
             // 
             // statusCol
             // 
+            this.statusCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.statusCol.HeaderText = "Status";
             this.statusCol.Name = "statusCol";
             this.statusCol.ReadOnly = true;
+            this.statusCol.Width = 68;
             // 
             // deleteBtnCol
             // 

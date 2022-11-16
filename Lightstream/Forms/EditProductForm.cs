@@ -144,8 +144,8 @@ namespace Lightstream.Forms
                 {
                     Id = productReferenced.Id,
                     Name = _productName.Text.Trim(),
-                    Barcode = _barcode.Text.Trim(),
-                    Description = _description.Text.Trim(),
+                    Barcode = string.IsNullOrWhiteSpace(_barcode.Text) ? null : _barcode.Text.Trim(),
+                    Description = string.IsNullOrWhiteSpace(_description.Text) ? null : _description.Text.Trim(),
                     UnitQty = (Unit)_unitOption.SelectedItem,
                     Recipes = recipes.Select(r => r.Data).ToList()
                 };

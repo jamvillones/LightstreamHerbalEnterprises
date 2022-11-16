@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lightstream.DataAccess.Models
 {
-    public sealed partial class SoldProduct
+    public sealed partial class SoldProduct : IIDModel
     {
         public SoldProduct()
         {
@@ -15,6 +15,6 @@ namespace Lightstream.DataAccess.Models
         public int Id { get; set; }
         public decimal SoldPrice { get; set; }
         public int SoldQty { get; set; }        
-        public ProductVariant ProductInventory { get; set; }
+        public ProductVariant ProductVariant { get; set; }
     }
 }

@@ -60,7 +60,7 @@
             // 
             // topPanel
             // 
-            this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
+            this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.topPanel.Controls.Add(this.moduleType);
             this.topPanel.Controls.Add(this.flowLayoutPanel1);
             this.topPanel.Controls.Add(this.label1);
@@ -93,10 +93,10 @@
             this.flowLayoutPanel1.Controls.Add(this.button3);
             this.flowLayoutPanel1.Controls.Add(this.button4);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(882, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(881, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(380, 30);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(381, 30);
             this.flowLayoutPanel1.TabIndex = 2;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -115,7 +115,7 @@
             this.userButton.Margin = new System.Windows.Forms.Padding(0);
             this.userButton.Name = "userButton";
             this.userButton.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
-            this.userButton.Size = new System.Drawing.Size(108, 29);
+            this.userButton.Size = new System.Drawing.Size(109, 31);
             this.userButton.TabIndex = 0;
             this.userButton.TabStop = false;
             this.userButton.Text = "Username";
@@ -131,11 +131,11 @@
             this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logoutButton.Font = new System.Drawing.Font("The Bold Font", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.logoutButton.ForeColor = System.Drawing.Color.White;
-            this.logoutButton.Location = new System.Drawing.Point(108, 0);
+            this.logoutButton.Location = new System.Drawing.Point(109, 0);
             this.logoutButton.Margin = new System.Windows.Forms.Padding(0);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Padding = new System.Windows.Forms.Padding(10, 2, 10, 2);
-            this.logoutButton.Size = new System.Drawing.Size(91, 29);
+            this.logoutButton.Size = new System.Drawing.Size(91, 31);
             this.logoutButton.TabIndex = 4;
             this.logoutButton.TabStop = false;
             this.logoutButton.Text = "Log out";
@@ -151,7 +151,7 @@
             this.button1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(202, 0);
+            this.button1.Location = new System.Drawing.Point(203, 0);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(40, 30);
@@ -169,7 +169,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(248, 0);
+            this.button2.Location = new System.Drawing.Point(249, 0);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(40, 30);
@@ -188,7 +188,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(294, 0);
+            this.button3.Location = new System.Drawing.Point(295, 0);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(40, 30);
@@ -209,7 +209,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(340, 0);
+            this.button4.Location = new System.Drawing.Point(341, 0);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(40, 30);
@@ -271,7 +271,7 @@
             this.divider.Panel2.Controls.Add(this._notifPanel);
             this.divider.Panel2MinSize = 175;
             this.divider.Size = new System.Drawing.Size(1262, 649);
-            this.divider.SplitterDistance = 1083;
+            this.divider.SplitterDistance = 1084;
             this.divider.SplitterWidth = 3;
             this.divider.TabIndex = 7;
             // 
@@ -280,7 +280,7 @@
             this.contentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentsPanel.Location = new System.Drawing.Point(0, 0);
             this.contentsPanel.Name = "contentsPanel";
-            this.contentsPanel.Size = new System.Drawing.Size(1083, 649);
+            this.contentsPanel.Size = new System.Drawing.Size(1084, 649);
             this.contentsPanel.TabIndex = 1;
             // 
             // _notifPanel
@@ -292,7 +292,7 @@
             this._notifPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._notifPanel.Location = new System.Drawing.Point(0, 0);
             this._notifPanel.Name = "_notifPanel";
-            this._notifPanel.Size = new System.Drawing.Size(176, 649);
+            this._notifPanel.Size = new System.Drawing.Size(175, 649);
             this._notifPanel.TabIndex = 5;
             // 
             // label2
@@ -301,7 +301,7 @@
             this.label2.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 30);
+            this.label2.Size = new System.Drawing.Size(173, 30);
             this.label2.TabIndex = 0;
             this.label2.Text = "Notifications";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

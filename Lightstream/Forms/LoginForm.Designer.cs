@@ -59,9 +59,9 @@
             this.loginBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBtn.Font = new System.Drawing.Font("The Bold Font", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.loginBtn.Location = new System.Drawing.Point(79, 197);
+            this.loginBtn.Location = new System.Drawing.Point(68, 195);
             this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(279, 35);
+            this.loginBtn.Size = new System.Drawing.Size(300, 40);
             this.loginBtn.TabIndex = 1;
             this.loginBtn.TabStop = false;
             this.loginBtn.Text = "LOGIN";
@@ -86,9 +86,9 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.userNameLine);
-            this.panel1.Location = new System.Drawing.Point(102, 93);
+            this.panel1.Location = new System.Drawing.Point(102, 92);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel1.Padding = new System.Windows.Forms.Padding(5);
             this.panel1.Size = new System.Drawing.Size(233, 30);
             this.panel1.TabIndex = 4;
             // 
@@ -118,9 +118,9 @@
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.textBox3);
             this.panel3.Controls.Add(this.passwordLine);
-            this.panel3.Location = new System.Drawing.Point(102, 138);
+            this.panel3.Location = new System.Drawing.Point(102, 137);
             this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel3.Padding = new System.Windows.Forms.Padding(5);
             this.panel3.Size = new System.Drawing.Size(233, 30);
             this.panel3.TabIndex = 5;
             // 
@@ -161,11 +161,11 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("The Bold Font", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("The Bold Font", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(120)))), ((int)(((byte)(37)))));
-            this.label1.Location = new System.Drawing.Point(127, 29);
+            this.label1.Location = new System.Drawing.Point(112, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(182, 31);
+            this.label1.Size = new System.Drawing.Size(213, 37);
             this.label1.TabIndex = 6;
             this.label1.Text = "Lightstream\r\n";
             // 
@@ -180,7 +180,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("The Bold Font", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(120)))), ((int)(((byte)(76)))));
-            this.label2.Location = new System.Drawing.Point(190, 63);
+            this.label2.Location = new System.Drawing.Point(190, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 19);
             this.label2.TabIndex = 7;
@@ -205,6 +205,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lightstream Herbal Enterprise - Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

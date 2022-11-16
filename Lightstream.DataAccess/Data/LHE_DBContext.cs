@@ -106,7 +106,7 @@ namespace Lightstream.DataAccess.Data
             modelBuilder.Entity<Product>(entity =>
             {
                 entity.ToTable("Product");
-                entity.Navigation(i => i.ProductVariants).AutoInclude();
+                //entity.Navigation(i => i.ProductVariants).AutoInclude();
             });
 
             modelBuilder.Entity<Recipe>(entity =>

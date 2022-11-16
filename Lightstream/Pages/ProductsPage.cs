@@ -231,12 +231,23 @@ namespace Lightstream.Usercontrols
                 //handle the update of the item editted
             }
         }
+        void OpenStockForm()
+        {
+
+            using (var stock = new ViewStockForm(new ProductionHistoryService(), SelectedProduct))
+            {
+                if (stock.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            }
+        }
         private void _prodTable_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex == -1)
                 return;
 
-            OpenEditForm();
+            OpenStockForm();
         }
         #endregion
 
@@ -285,7 +296,7 @@ namespace Lightstream.Usercontrols
 
                 var filtered = SearchHandler.FilterList(
                     products,
-                    FilteringFlow.StopUponSatisfaction,
+                    FilteringFlags.StopUponSatisfaction,
                     x => string.Equals(x.Barcode, text, StringComparison.CurrentCultureIgnoreCase),
                     x => x.Name.ToLower().Contains(text.ToLower())
                     );
@@ -315,8 +326,9 @@ namespace Lightstream.Usercontrols
             ///if the click column is the delete column or the clicked row is the header
             if (e.ColumnIndex == delCol.Index)
             {
-                if (await DeleteProduct(SelectedProduct!))
-                    products.Remove(SelectedProduct);
+                //if (await DeleteProduct(SelectedProduct!))
+                //    products.Remove(SelectedProduct);
+                OpenStockForm();
 
             }
             else if (e.ColumnIndex == editCol.Index)

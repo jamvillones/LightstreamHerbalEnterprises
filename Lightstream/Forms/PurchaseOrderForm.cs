@@ -1,9 +1,11 @@
 ﻿using Lightstream.DataAccess.Models;
 using Lightstream.DataAccess.Repositories;
+using Lightstream.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -62,12 +64,15 @@ namespace Lightstream.Forms
 
         }
         bool searchMade = false;
-        private void ingSearch_TextChanged(object sender, EventArgs e)
+        private async void ingSearch_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(ingSearch.Text) && searchMade)
+            var text = sender as TextBox;
+
+            if (string.IsNullOrWhiteSpace(text.Text) && searchMade)
             {
                 searchMade = false;
-                _ingredients.Clear();
+
+                await LoadAll();
             }
         }
 
@@ -76,30 +81,40 @@ namespace Lightstream.Forms
             if (e.KeyCode != Keys.Enter)
                 return;
 
+            Debug.WriteLine(e.KeyCode);
+
             var text = ((TextBox)sender).Text.Trim();
 
-            if (!string.IsNullOrEmpty(text))
-                await Search();
+            if (!string.IsNullOrWhiteSpace(text))
+                await Search(text);
         }
+
         async Task LoadAll()
         {
             _ingredients.Clear();
-
             var ings = await _ingService.GetAll_Async();
-
             foreach (var i in ings.OrderBy(x => x.Name))
             {
                 _ingredients.Add(i);
             }
         }
 
-        async Task Search()
+        async Task Search(string text)
         {
-            _ingredients.Clear();
 
             var ings = await _ingService.GetAll_Async();
 
-            foreach (var i in ings.OrderBy(x => x.Name))
+            var result = SearchHandler.FilterList(
+                ings,
+                FilteringFlags.StopUponSatisfaction,
+                x => x.Name.ToLower().Contains(text.ToLower()));
+
+            searchMade = result.Count() > 0;
+            if (!searchMade)
+                return;
+
+            _ingredients.Clear();
+            foreach (var i in result.OrderBy(x => x.Name))
             {
                 _ingredients.Add(i);
             }
@@ -107,11 +122,10 @@ namespace Lightstream.Forms
 
         private void _ingTable_SelectionChanged(object sender, EventArgs e)
         {
-            if (_ingTable.SelectedRows.Count == 0)
-                return;
-            SelectedIngredient = _ingredients[_ingTable.SelectedRows[0].Index];
+            SelectedIngredient = _ingredients.Count == 0 ? null : _ingredients[_ingTable.SelectedRows[0].Index];
+            _add.Enabled = CanAddNewPO;
         }
-
+        bool CanAddNewPO => SelectedIngredient is not null && SelectedBridge is not null;
         private async void PurchaseOrderForm_Load(object sender, EventArgs e)
         {
             await LoadAll();
@@ -137,7 +151,7 @@ namespace Lightstream.Forms
 
         bool ValidatoinSuccessful()
         {
-            return true;
+            return CanAddNewPO;
         }
         async Task<PurchaseOrder> SavePO()
         {

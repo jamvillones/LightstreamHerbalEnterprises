@@ -39,16 +39,15 @@
             this._cost = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.ingSearch = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this._ingTable = new System.Windows.Forms.DataGridView();
             this.ingredientNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._supplierTable = new System.Windows.Forms.DataGridView();
             this.suppCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this._supplier = new System.Windows.Forms.Label();
+            this._supplier = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this._qty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._cost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -66,9 +65,9 @@
             this._add.Dock = System.Windows.Forms.DockStyle.Bottom;
             this._add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._add.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._add.Location = new System.Drawing.Point(5, 122);
+            this._add.Location = new System.Drawing.Point(5, 120);
             this._add.Name = "_add";
-            this._add.Size = new System.Drawing.Size(354, 30);
+            this._add.Size = new System.Drawing.Size(352, 30);
             this._add.TabIndex = 4;
             this._add.Text = "ADD";
             this._add.UseVisualStyleBackColor = false;
@@ -79,7 +78,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(35, 92);
+            this.label2.Location = new System.Drawing.Point(35, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 21);
             this.label2.TabIndex = 3;
@@ -90,7 +89,7 @@
             this._qty.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this._qty.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this._qty.Location = new System.Drawing.Point(75, 51);
+            this._qty.Location = new System.Drawing.Point(75, 49);
             this._qty.Margin = new System.Windows.Forms.Padding(0);
             this._qty.Maximum = new decimal(new int[] {
             999999999,
@@ -103,7 +102,7 @@
             0,
             0});
             this._qty.Name = "_qty";
-            this._qty.Size = new System.Drawing.Size(284, 29);
+            this._qty.Size = new System.Drawing.Size(282, 29);
             this._qty.TabIndex = 2;
             this._qty.Value = new decimal(new int[] {
             1,
@@ -117,7 +116,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this._cost.DecimalPlaces = 2;
             this._cost.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this._cost.Location = new System.Drawing.Point(75, 88);
+            this._cost.Location = new System.Drawing.Point(75, 86);
             this._cost.Margin = new System.Windows.Forms.Padding(0);
             this._cost.Maximum = new decimal(new int[] {
             999999999,
@@ -125,7 +124,7 @@
             0,
             0});
             this._cost.Name = "_cost";
-            this._cost.Size = new System.Drawing.Size(284, 29);
+            this._cost.Size = new System.Drawing.Size(282, 29);
             this._cost.TabIndex = 1;
             // 
             // label1
@@ -133,7 +132,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(39, 55);
+            this.label1.Location = new System.Drawing.Point(39, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 21);
             this.label1.TabIndex = 0;
@@ -148,7 +147,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.splitContainer1.Panel1.Controls.Add(this.ingSearch);
+            this.splitContainer1.Panel1.Controls.Add(this.textBox1);
             this.splitContainer1.Panel1.Controls.Add(this._ingTable);
             this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
             // 
@@ -157,22 +156,20 @@
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.Control;
             this.splitContainer1.Panel2.Controls.Add(this._supplierTable);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox2);
             this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
             this.splitContainer1.Size = new System.Drawing.Size(744, 421);
             this.splitContainer1.SplitterDistance = 366;
             this.splitContainer1.TabIndex = 2;
             // 
-            // ingSearch
+            // textBox1
             // 
-            this.ingSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ingSearch.Location = new System.Drawing.Point(5, 4);
-            this.ingSearch.Name = "ingSearch";
-            this.ingSearch.PlaceholderText = "Search Ingredient...";
-            this.ingSearch.Size = new System.Drawing.Size(220, 23);
-            this.ingSearch.TabIndex = 1;
-            this.ingSearch.TextChanged += new System.EventHandler(this.ingSearch_TextChanged);
-            this.ingSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ingSearch_KeyDown);
+            this.textBox1.Location = new System.Drawing.Point(5, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PlaceholderText = "Search Ingredients...";
+            this.textBox1.Size = new System.Drawing.Size(220, 23);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.ingSearch_TextChanged);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ingSearch_KeyDown);
             // 
             // _ingTable
             // 
@@ -273,6 +270,8 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this._supplier);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -289,40 +288,30 @@
             // 
             // _supplier
             // 
-            this._supplier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._supplier.AutoSize = true;
-            this._supplier.BackColor = System.Drawing.SystemColors.Control;
-            this._supplier.Font = new System.Drawing.Font("Bebas Neue", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this._supplier.ForeColor = System.Drawing.SystemColors.Highlight;
-            this._supplier.Location = new System.Drawing.Point(75, 16);
+            this._supplier.AcceptsReturn = true;
+            this._supplier.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._supplier.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._supplier.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._supplier.Location = new System.Drawing.Point(75, 9);
             this._supplier.Name = "_supplier";
-            this._supplier.Size = new System.Drawing.Size(119, 25);
+            this._supplier.ReadOnly = true;
+            this._supplier.Size = new System.Drawing.Size(282, 29);
             this._supplier.TabIndex = 7;
-            this._supplier.Text = "Supplier_Name";
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(11, 18);
+            this.label3.Location = new System.Drawing.Point(11, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 21);
             this.label3.TabIndex = 6;
             this.label3.Text = "Supplier:";
             // 
-            // textBox2
-            // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(5, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PlaceholderText = "Search Supplier...";
-            this.textBox2.Size = new System.Drawing.Size(220, 23);
-            this.textBox2.TabIndex = 2;
-            // 
             // PurchaseOrderForm
             // 
-            this.AcceptButton = this._add;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
@@ -337,7 +326,6 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._ingTable)).EndInit();
@@ -351,10 +339,8 @@
         #endregion
         private SplitContainer splitContainer1;
         private DataGridView _ingTable;
-        private TextBox ingSearch;
         private DataGridViewTextBoxColumn ingredientNameCol;
         private DataGridView _supplierTable;
-        private TextBox textBox2;
         private Label label2;
         private NumericUpDown _qty;
         private NumericUpDown _cost;
@@ -364,6 +350,7 @@
         private DataGridViewTextBoxColumn suppCol;
         private DataGridViewTextBoxColumn costCol;
         private Label label3;
-        private Label _supplier;
+        private TextBox textBox1;
+        private TextBox _supplier;
     }
 }

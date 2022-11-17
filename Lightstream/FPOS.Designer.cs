@@ -302,6 +302,7 @@
             this.splitContainer2.Size = new System.Drawing.Size(1117, 214);
             this.splitContainer2.SplitterDistance = 689;
             this.splitContainer2.TabIndex = 0;
+            this.splitContainer2.TabStop = false;
             // 
             // _searchTable
             // 
@@ -309,8 +310,9 @@
             this._searchTable.AllowUserToDeleteRows = false;
             this._searchTable.AllowUserToResizeRows = false;
             this._searchTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this._searchTable.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this._searchTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this._searchTable.BackgroundColor = System.Drawing.SystemColors.Control;
+            this._searchTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this._searchTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -345,6 +347,7 @@
             this._searchTable.RowTemplate.Height = 30;
             this._searchTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._searchTable.Size = new System.Drawing.Size(679, 169);
+            this._searchTable.StandardTab = true;
             this._searchTable.TabIndex = 30;
             this._searchTable.SelectionChanged += new System.EventHandler(this._searchTable_SelectionChanged);
             // 
@@ -541,6 +544,7 @@
             this.splitContainer1.Size = new System.Drawing.Size(1123, 452);
             this.splitContainer1.SplitterDistance = 692;
             this.splitContainer1.TabIndex = 1;
+            this.splitContainer1.TabStop = false;
             // 
             // _cartTable
             // 
@@ -548,8 +552,9 @@
             this._cartTable.AllowUserToDeleteRows = false;
             this._cartTable.AllowUserToResizeRows = false;
             this._cartTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this._cartTable.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this._cartTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this._cartTable.BackgroundColor = System.Drawing.SystemColors.Control;
+            this._cartTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this._cartTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);

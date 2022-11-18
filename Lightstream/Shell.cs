@@ -54,6 +54,8 @@ namespace Lightstream
             var login = new LoginForm();
             login.FormClosed += Login_FormClosed;
             AddControl(login);
+
+            //notifyIcon1.ShowBalloonTip(1, "notif", "test notification", ToolTipIcon.Info);
         }
 
         private void Login_FormClosed(object? sender, FormClosedEventArgs e)

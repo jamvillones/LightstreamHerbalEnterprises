@@ -1,6 +1,7 @@
 using Lightstream.Forms;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace Lightstream
 
@@ -13,22 +14,21 @@ namespace Lightstream
         [STAThread]
         static void Main()
         {
+          
             var process = PriorProcess();
-            if(process is not null)
+            if (process is not null)
             {
                 var windowHandle = process.MainWindowHandle;
                 ShowWindow(windowHandle, 9);
                 ShowWindow(windowHandle, 5);
                 SetForegroundWindow(windowHandle);
-
                 //window.BringToFront();
                 return;
             }
 
             ApplicationConfiguration.Initialize();
-
             Application.Run(new Shell());
-        }
+        }        
 
         public static Process PriorProcess()
         {

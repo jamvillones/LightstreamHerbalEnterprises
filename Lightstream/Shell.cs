@@ -11,6 +11,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Lightstream
 {
@@ -55,7 +56,19 @@ namespace Lightstream
             login.FormClosed += Login_FormClosed;
             AddControl(login);
 
-            //notifyIcon1.ShowBalloonTip(1, "notif", "test notification", ToolTipIcon.Info);
+            Brush brush = new SolidBrush(Color.Red);
+
+            //// Create a bitmap and draw text on it
+            //Bitmap bitmap = new Bitmap(16, 16);
+            //Graphics graphics = Graphics.FromImage(bitmap);
+            //graphics.DrawString("9", this.Font, brush, 0, 0);
+
+            //// Convert the bitmap with text to an Icon
+            //Icon icon = Icon.FromHandle(bitmap.GetHicon());
+
+            //notificationIcon.Icon = icon;
+
+            //notificationIcon.ShowBalloonTip(1, "notif", "test notification", ToolTipIcon.Info);
         }
 
         private void Login_FormClosed(object? sender, FormClosedEventArgs e)
@@ -107,6 +120,7 @@ namespace Lightstream
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
+            //this.Visible = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -121,11 +135,7 @@ namespace Lightstream
 
         private void logout_Click(object sender, EventArgs e)
         {
-            if (currentControl is ILogoutForm il)
-            {
-                if (MessageBox.Show("Are you sure you want to log off?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-                    LogoutCurrentForm(il);
-            }
+            TryLogout();
         }
 
         void LogoutCurrentForm(ILogoutForm form)
@@ -142,6 +152,53 @@ namespace Lightstream
         private void button1_Click(object sender, EventArgs e)
         {
             divider.Panel2Collapsed = !divider.Panel2Collapsed;
+        }
+
+        private void notificationIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ShowShell();
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowShell();
+        }
+
+        void ShowShell()
+        {
+            if (WindowState == FormWindowState.Minimized)
+                WindowState = FormWindowState.Normal;
+
+            //this.Visible = true;
+            Activate();
+            this.BringToFront();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TryLogout();
+        }
+
+        bool TryLogout()
+        {
+            if (currentControl is null) return false;
+
+            this.Visible = true;
+            if (currentControl is ILogoutForm il)
+            {
+                if (MessageBox.Show("Are you sure you want to log off?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    LogoutCurrentForm(il);
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

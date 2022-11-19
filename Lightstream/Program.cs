@@ -14,39 +14,59 @@ namespace Lightstream
         [STAThread]
         static void Main()
         {
-          
-            var process = PriorProcess();
-            if (process is not null)
+
+            //var process = PriorProcess();
+            //if (process is not null)
+            //{
+            //    var windowHandle = process.MainWindowHandle;
+            //    ShowWindow(windowHandle, 9);
+            //    ShowWindow(windowHandle, 5);
+            //    SetForegroundWindow(windowHandle);
+            //    //window.BringToFront();
+            //    return;
+            //}
+
+            if (!SingleInstance.Start())
             {
-                var windowHandle = process.MainWindowHandle;
-                ShowWindow(windowHandle, 9);
-                ShowWindow(windowHandle, 5);
-                SetForegroundWindow(windowHandle);
-                //window.BringToFront();
+                SingleInstance.ShowFirstInstance();
                 return;
             }
 
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Shell());
-        }        
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 
-        public static Process PriorProcess()
-        {
-            Process curr = Process.GetCurrentProcess();
-            Process[] procs = Process.GetProcessesByName(curr.ProcessName);
-            foreach (Process p in procs)
+            try
             {
-                if ((p.Id != curr.Id) &&
-                    (p.MainModule.FileName == curr.MainModule.FileName))
-                    return p;
+                ApplicationConfiguration.Initialize();
+                var main = new Shell();
+                Application.Run(main);
             }
-            return null;
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+            SingleInstance.Stop();
+
         }
 
-        [DllImport("user32.dll")]
-        private static extern bool SetForegroundWindow(IntPtr hWnd);
+        //public static Process PriorProcess()
+        //{
+        //    Process curr = Process.GetCurrentProcess();
+        //    Process[] procs = Process.GetProcessesByName(curr.ProcessName);
+        //    foreach (Process p in procs)
+        //    {
+        //        if ((p.Id != curr.Id) &&
+        //            (p.MainModule.FileName == curr.MainModule.FileName))
+        //            return p;
+        //    }
+        //    return null;
+        //}
 
-        [DllImport("user32.dll")]
-        private static extern bool ShowWindow(IntPtr hwnd, int nCmdShow);
+        //[DllImport("user32.dll")]
+        //private static extern bool SetForegroundWindow(IntPtr hWnd);
+
+        //[DllImport("user32.dll")]
+        //private static extern bool ShowWindow(IntPtr hwnd, int nCmdShow);
     }
 }

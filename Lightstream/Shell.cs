@@ -119,8 +119,8 @@ namespace Lightstream
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Close();
-            //this.Visible = false;
+            //this.Close();
+            this.Visible = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -156,12 +156,14 @@ namespace Lightstream
 
         private void notificationIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            ShowShell();
+            //ShowShell();
+            ShowWindow();
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowShell();
+            //ShowShell();
+            ShowWindow();
         }
 
         void ShowShell()
@@ -199,6 +201,20 @@ namespace Lightstream
             }
 
             return false;
+        }
+
+        protected override void WndProc(ref Message message)
+        {
+            if (message.Msg == SingleInstance.WM_SHOWFIRSTINSTANCE)
+            {
+                ShowWindow();
+            }
+            base.WndProc(ref message);
+        }
+        public void ShowWindow()
+        {
+            // Insert code here to make your form show itself.
+            WinApi.ShowToFront(this.Handle);
         }
     }
 }

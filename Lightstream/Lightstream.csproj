@@ -53,6 +53,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Lightstream.DataAccess\Lightstream.DataAccess.csproj" />
+    <ProjectReference Include="..\SingleInstanceApplication\SingleInstanceApplication.csproj" />
   </ItemGroup>
 
 </Project>

@@ -84,7 +84,7 @@ namespace Lightstream
                     Form form = isAdmin ? new Main() : new FPOS(new CartService(), new SaleService());
                     moduleType.Text = isAdmin ? "Main Control" : "Point of Sale";
                     form.FormClosed += Form_FormClosed;
-
+                    label3.Visible = true;
                     AddControl(form);
                 }
         }
@@ -146,6 +146,7 @@ namespace Lightstream
                 userButton.Enabled = false;
                 logoutButton.Enabled = false;
                 moduleType.Text = string.Empty;
+                label3.Visible = false;
             }
         }
 
@@ -156,18 +157,19 @@ namespace Lightstream
 
         private void notificationIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            //ShowShell();
-            ShowWindow();
+            ShowShell();
+            //ShowWindow();
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //ShowShell();
-            ShowWindow();
+            ShowShell();
+            //ShowWindow();
         }
 
         void ShowShell()
         {
+            this.Visible = true;
             if (WindowState == FormWindowState.Minimized)
                 WindowState = FormWindowState.Normal;
 
@@ -215,6 +217,8 @@ namespace Lightstream
         {
             // Insert code here to make your form show itself.
             WinApi.ShowToFront(this.Handle);
+
+            //ShowShell();
         }
     }
 }

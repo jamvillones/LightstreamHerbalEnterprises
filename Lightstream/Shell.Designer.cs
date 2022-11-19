@@ -120,6 +120,7 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Good  day!";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.Visible = false;
             // 
             // userButton
             // 
@@ -291,7 +292,7 @@
             this.divider.Panel2.Controls.Add(this._notifPanel);
             this.divider.Panel2MinSize = 175;
             this.divider.Size = new System.Drawing.Size(1262, 649);
-            this.divider.SplitterDistance = 811;
+            this.divider.SplitterDistance = 812;
             this.divider.SplitterWidth = 3;
             this.divider.TabIndex = 7;
             // 
@@ -300,7 +301,7 @@
             this.contentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentsPanel.Location = new System.Drawing.Point(0, 0);
             this.contentsPanel.Name = "contentsPanel";
-            this.contentsPanel.Size = new System.Drawing.Size(811, 649);
+            this.contentsPanel.Size = new System.Drawing.Size(812, 649);
             this.contentsPanel.TabIndex = 1;
             // 
             // _notifPanel
@@ -312,7 +313,7 @@
             this._notifPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._notifPanel.Location = new System.Drawing.Point(0, 0);
             this._notifPanel.Name = "_notifPanel";
-            this._notifPanel.Size = new System.Drawing.Size(448, 649);
+            this._notifPanel.Size = new System.Drawing.Size(447, 649);
             this._notifPanel.TabIndex = 5;
             // 
             // label2
@@ -321,7 +322,7 @@
             this.label2.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(446, 30);
+            this.label2.Size = new System.Drawing.Size(445, 30);
             this.label2.TabIndex = 0;
             this.label2.Text = "Notifications";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

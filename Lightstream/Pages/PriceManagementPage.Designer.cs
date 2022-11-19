@@ -30,20 +30,22 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this._search = new System.Windows.Forms.TextBox();
             this._productsTable = new System.Windows.Forms.DataGridView();
+            this.productNumCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._addmarkup = new System.Windows.Forms.Button();
             this._setDiscount = new System.Windows.Forms.Button();
             this._removedisc = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this._divider = new System.Windows.Forms.SplitContainer();
+            this.searchTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this._variantsTable = new System.Windows.Forms.DataGridView();
@@ -60,8 +62,6 @@
             this._selectedProductName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.productNumCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this._productsTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._divider)).BeginInit();
             this._divider.Panel1.SuspendLayout();
@@ -72,19 +72,6 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // _search
-            // 
-            this._search.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this._search.Dock = System.Windows.Forms.DockStyle.Top;
-            this._search.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._search.Location = new System.Drawing.Point(5, 25);
-            this._search.Name = "_search";
-            this._search.PlaceholderText = "Search...";
-            this._search.Size = new System.Drawing.Size(275, 18);
-            this._search.TabIndex = 0;
-            this._search.TextChanged += new System.EventHandler(this._search_TextChanged);
-            this._search.KeyDown += new System.Windows.Forms.KeyEventHandler(this._search_KeyDown);
             // 
             // _productsTable
             // 
@@ -117,7 +104,7 @@
             this._productsTable.DefaultCellStyle = dataGridViewCellStyle3;
             this._productsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._productsTable.EnableHeadersVisualStyles = false;
-            this._productsTable.Location = new System.Drawing.Point(5, 43);
+            this._productsTable.Location = new System.Drawing.Point(5, 51);
             this._productsTable.Margin = new System.Windows.Forms.Padding(10);
             this._productsTable.MultiSelect = false;
             this._productsTable.Name = "_productsTable";
@@ -126,10 +113,29 @@
             this._productsTable.RowHeadersWidth = 62;
             this._productsTable.RowTemplate.Height = 25;
             this._productsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._productsTable.Size = new System.Drawing.Size(275, 325);
+            this._productsTable.Size = new System.Drawing.Size(275, 317);
             this._productsTable.StandardTab = true;
             this._productsTable.TabIndex = 9;
             this._productsTable.SelectionChanged += new System.EventHandler(this._productsTable_SelectionChanged);
+            // 
+            // productNumCol
+            // 
+            this.productNumCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.NullValue = "--";
+            this.productNumCol.DefaultCellStyle = dataGridViewCellStyle2;
+            this.productNumCol.HeaderText = "Product Number";
+            this.productNumCol.MinimumWidth = 130;
+            this.productNumCol.Name = "productNumCol";
+            this.productNumCol.ReadOnly = true;
+            this.productNumCol.Width = 130;
+            // 
+            // nameCol
+            // 
+            this.nameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameCol.HeaderText = "Name";
+            this.nameCol.MinimumWidth = 8;
+            this.nameCol.Name = "nameCol";
+            this.nameCol.ReadOnly = true;
             // 
             // _addmarkup
             // 
@@ -201,7 +207,7 @@
             // _divider.Panel1
             // 
             this._divider.Panel1.Controls.Add(this._productsTable);
-            this._divider.Panel1.Controls.Add(this._search);
+            this._divider.Panel1.Controls.Add(this.searchTxt);
             this._divider.Panel1.Controls.Add(this.label3);
             this._divider.Panel1.Padding = new System.Windows.Forms.Padding(5);
             this._divider.Panel1MinSize = 200;
@@ -214,6 +220,20 @@
             this._divider.SplitterDistance = 285;
             this._divider.SplitterWidth = 7;
             this._divider.TabIndex = 10;
+            // 
+            // searchTxt
+            // 
+            this.searchTxt.AcceptsReturn = true;
+            this.searchTxt.BackColor = System.Drawing.Color.White;
+            this.searchTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchTxt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.searchTxt.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchTxt.Location = new System.Drawing.Point(5, 25);
+            this.searchTxt.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.searchTxt.Name = "searchTxt";
+            this.searchTxt.PlaceholderText = "Search...";
+            this.searchTxt.Size = new System.Drawing.Size(275, 26);
+            this.searchTxt.TabIndex = 17;
             // 
             // label3
             // 
@@ -276,7 +296,7 @@
             this._variantsTable.DefaultCellStyle = dataGridViewCellStyle9;
             this._variantsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._variantsTable.EnableHeadersVisualStyles = false;
-            this._variantsTable.Location = new System.Drawing.Point(0, 38);
+            this._variantsTable.Location = new System.Drawing.Point(0, 46);
             this._variantsTable.Margin = new System.Windows.Forms.Padding(1);
             this._variantsTable.MultiSelect = false;
             this._variantsTable.Name = "_variantsTable";
@@ -285,7 +305,7 @@
             this._variantsTable.RowHeadersWidth = 62;
             this._variantsTable.RowTemplate.Height = 25;
             this._variantsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._variantsTable.Size = new System.Drawing.Size(438, 295);
+            this._variantsTable.Size = new System.Drawing.Size(438, 287);
             this._variantsTable.StandardTab = true;
             this._variantsTable.TabIndex = 1;
             this._variantsTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._variants_CellMouseClick);
@@ -418,7 +438,7 @@
             this._selectedProductName.Location = new System.Drawing.Point(0, 20);
             this._selectedProductName.Name = "_selectedProductName";
             this._selectedProductName.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this._selectedProductName.Size = new System.Drawing.Size(438, 18);
+            this._selectedProductName.Size = new System.Drawing.Size(438, 26);
             this._selectedProductName.TabIndex = 10;
             this._selectedProductName.Text = "Product_Name";
             this._selectedProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -447,25 +467,6 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(740, 40);
             this.flowLayoutPanel2.TabIndex = 12;
-            // 
-            // productNumCol
-            // 
-            this.productNumCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.NullValue = "--";
-            this.productNumCol.DefaultCellStyle = dataGridViewCellStyle2;
-            this.productNumCol.HeaderText = "Product Number";
-            this.productNumCol.MinimumWidth = 130;
-            this.productNumCol.Name = "productNumCol";
-            this.productNumCol.ReadOnly = true;
-            this.productNumCol.Width = 130;
-            // 
-            // nameCol
-            // 
-            this.nameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameCol.HeaderText = "Name";
-            this.nameCol.MinimumWidth = 8;
-            this.nameCol.Name = "nameCol";
-            this.nameCol.ReadOnly = true;
             // 
             // PriceManagementPage
             // 
@@ -502,8 +503,6 @@
         }
 
         #endregion
-
-        private TextBox _search;
         private DataGridView _productsTable;
         private Button _addmarkup;
         private Button _setDiscount;
@@ -528,5 +527,6 @@
         private DataGridViewTextBoxColumn prodVariantCost;
         private DataGridViewTextBoxColumn productNumCol;
         private DataGridViewTextBoxColumn nameCol;
+        private TextBox searchTxt;
     }
 }

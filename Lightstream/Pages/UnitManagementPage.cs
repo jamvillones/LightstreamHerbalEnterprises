@@ -95,7 +95,7 @@ namespace Lightstream.Forms
             nameCol.DataPropertyName = nameof(Unit.SingularName);
             pluralCol.DataPropertyName = nameof(Unit.PluralName);
             statusCol.DataPropertyName = nameof(Unit.Status);
-            
+
             _unitsTable.DataSource = units;
         }
 
@@ -132,6 +132,7 @@ namespace Lightstream.Forms
         private async void _search_TextChanged(object sender, EventArgs e)
         {
             if (!searchFound) return;
+            var _search = sender as TextBox;
             if (!string.IsNullOrWhiteSpace(_search.Text)) return;
 
             await LoadAllUnits();
@@ -142,7 +143,7 @@ namespace Lightstream.Forms
         {
             if (e.KeyCode == Keys.Enter)
             {
-                var text = _search.Text.ToLower().Trim();
+                var text = (sender as TextBox)!.Text.ToLower().Trim();
                 if (string.IsNullOrWhiteSpace(text))
                     return;
 

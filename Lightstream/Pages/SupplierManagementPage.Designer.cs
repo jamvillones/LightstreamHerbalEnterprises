@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this._statusOption = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this._save = new System.Windows.Forms.Button();
@@ -43,7 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this._search = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this._supplierTable = new System.Windows.Forms.DataGridView();
             this.editCol = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -58,6 +57,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.searchTxt = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._supplierTable)).BeginInit();
             this.panel2.SuspendLayout();
@@ -70,7 +70,7 @@
             this._statusOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._statusOption.Font = new System.Drawing.Font("Bebas Neue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._statusOption.FormattingEnabled = true;
-            this._statusOption.Location = new System.Drawing.Point(579, 9);
+            this._statusOption.Location = new System.Drawing.Point(579, 12);
             this._statusOption.Name = "_statusOption";
             this._statusOption.Size = new System.Drawing.Size(160, 23);
             this._statusOption.TabIndex = 0;
@@ -200,24 +200,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Supplier Name:";
             // 
-            // _search
-            // 
-            this._search.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this._search.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._search.Location = new System.Drawing.Point(0, 12);
-            this._search.Name = "_search";
-            this._search.PlaceholderText = "Search....";
-            this._search.Size = new System.Drawing.Size(275, 16);
-            this._search.TabIndex = 7;
-            this._search.TextChanged += new System.EventHandler(this._search_TextChanged);
-            this._search.KeyDown += new System.Windows.Forms.KeyEventHandler(this._search_KeyDown);
-            // 
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(529, 11);
+            this.label5.Location = new System.Drawing.Point(529, 14);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 21);
             this.label5.TabIndex = 10;
@@ -232,14 +220,14 @@
             this._supplierTable.BackgroundColor = System.Drawing.Color.White;
             this._supplierTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._supplierTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this._supplierTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._supplierTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this._supplierTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._supplierTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.editCol,
@@ -248,17 +236,17 @@
             this.cnCol,
             this.addressCol,
             this.statCol});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._supplierTable.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(180)))), ((int)(((byte)(114)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._supplierTable.DefaultCellStyle = dataGridViewCellStyle9;
             this._supplierTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this._supplierTable.EnableHeadersVisualStyles = false;
-            this._supplierTable.Location = new System.Drawing.Point(30, 231);
+            this._supplierTable.Location = new System.Drawing.Point(30, 238);
             this._supplierTable.Margin = new System.Windows.Forms.Padding(0);
             this._supplierTable.MultiSelect = false;
             this._supplierTable.Name = "_supplierTable";
@@ -267,7 +255,7 @@
             this._supplierTable.RowHeadersWidth = 62;
             this._supplierTable.RowTemplate.Height = 25;
             this._supplierTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._supplierTable.Size = new System.Drawing.Size(740, 189);
+            this._supplierTable.Size = new System.Drawing.Size(740, 182);
             this._supplierTable.TabIndex = 11;
             this._supplierTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._supplierTable_CellMouseClick);
             this._supplierTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._supplierTable_RowsAdded);
@@ -286,8 +274,8 @@
             // 
             // snCol
             // 
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.snCol.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.snCol.DefaultCellStyle = dataGridViewCellStyle8;
             this.snCol.HeaderText = "Name";
             this.snCol.MinimumWidth = 8;
             this.snCol.Name = "snCol";
@@ -388,7 +376,9 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this._search);
+            this.panel2.AutoSize = true;
+            this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel2.Controls.Add(this.searchTxt);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this._statusOption);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -396,7 +386,7 @@
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 40, 0, 5);
-            this.panel2.Size = new System.Drawing.Size(740, 40);
+            this.panel2.Size = new System.Drawing.Size(740, 47);
             this.panel2.TabIndex = 17;
             // 
             // flowLayoutPanel1
@@ -412,6 +402,21 @@
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(740, 50);
             this.flowLayoutPanel1.TabIndex = 12;
+            // 
+            // searchTxt
+            // 
+            this.searchTxt.AcceptsReturn = true;
+            this.searchTxt.BackColor = System.Drawing.SystemColors.Control;
+            this.searchTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.searchTxt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchTxt.Location = new System.Drawing.Point(0, 8);
+            this.searchTxt.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.searchTxt.Name = "searchTxt";
+            this.searchTxt.PlaceholderText = "Search...";
+            this.searchTxt.Size = new System.Drawing.Size(300, 29);
+            this.searchTxt.TabIndex = 17;
+            this.searchTxt.TextChanged += new System.EventHandler(this._search_TextChanged);
+            this.searchTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this._search_KeyDown);
             // 
             // SupplierManagement
             // 
@@ -446,7 +451,6 @@
 
         private ComboBox _statusOption;
         private Panel panel1;
-        private TextBox _search;
         private Button _save;
         private Button _cancel;
         private TextBox _contactnumber;
@@ -471,5 +475,6 @@
         private DataGridViewTextBoxColumn cnCol;
         private DataGridViewTextBoxColumn addressCol;
         private DataGridViewTextBoxColumn statCol;
+        private TextBox searchTxt;
     }
 }

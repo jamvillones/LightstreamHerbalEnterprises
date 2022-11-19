@@ -162,7 +162,8 @@ namespace Lightstream.Forms
         private async void _search_TextChanged(object sender, EventArgs e)
         {
             if (!searchFound) return;
-            if (!string.IsNullOrWhiteSpace(_search.Text)) return;
+            var text = sender as TextBox;
+            if (!string.IsNullOrWhiteSpace(text.Text)) return;
 
             await LoadAllSupplier();
             searchFound = false;
@@ -172,7 +173,8 @@ namespace Lightstream.Forms
         {
             if (e.KeyCode == Keys.Enter)
             {
-                var text = _search.Text.ToLower().Trim();
+                var text = (sender as TextBox)!.Text.ToLower().Trim();
+
                 if (string.IsNullOrWhiteSpace(text))
                     return;
 

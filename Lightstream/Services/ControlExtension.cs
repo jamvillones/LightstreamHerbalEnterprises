@@ -34,7 +34,7 @@ namespace Lightstream.Extensions
         static Color ActiveColor = Color.Black;
 
         static Color RetrieveColor = SystemColors.ActiveCaption;
-        static Color ArchiveColor = Color.IndianRed;
+        static Color ArchiveColor = Color.FromArgb(79, 144, 44);
 
         public static void SetRowColor(this DataGridViewRow row, bool isArchived)
         {

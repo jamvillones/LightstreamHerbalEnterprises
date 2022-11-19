@@ -46,18 +46,18 @@
             this._search = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this._supplierTable = new System.Windows.Forms.DataGridView();
-            this._Update = new System.Windows.Forms.Button();
-            this._Archive = new System.Windows.Forms.Button();
-            this._Add = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.editCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.snCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cpCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cnCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._Update = new System.Windows.Forms.Button();
+            this._Archive = new System.Windows.Forms.Button();
+            this._Add = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._supplierTable)).BeginInit();
             this.panel2.SuspendLayout();
@@ -273,6 +273,57 @@
             this._supplierTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._supplierTable_RowsAdded);
             this._supplierTable.SelectionChanged += new System.EventHandler(this._supplierTable_SelectionChanged);
             // 
+            // editCol
+            // 
+            this.editCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.editCol.HeaderText = "";
+            this.editCol.MinimumWidth = 60;
+            this.editCol.Name = "editCol";
+            this.editCol.ReadOnly = true;
+            this.editCol.Text = "EDIT";
+            this.editCol.UseColumnTextForButtonValue = true;
+            this.editCol.Width = 60;
+            // 
+            // snCol
+            // 
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.snCol.DefaultCellStyle = dataGridViewCellStyle2;
+            this.snCol.HeaderText = "Name";
+            this.snCol.MinimumWidth = 8;
+            this.snCol.Name = "snCol";
+            this.snCol.ReadOnly = true;
+            // 
+            // cpCol
+            // 
+            this.cpCol.HeaderText = "Contact Person";
+            this.cpCol.MinimumWidth = 120;
+            this.cpCol.Name = "cpCol";
+            this.cpCol.ReadOnly = true;
+            // 
+            // cnCol
+            // 
+            this.cnCol.HeaderText = "Contact Details";
+            this.cnCol.MinimumWidth = 120;
+            this.cnCol.Name = "cnCol";
+            this.cnCol.ReadOnly = true;
+            // 
+            // addressCol
+            // 
+            this.addressCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.addressCol.HeaderText = "Address";
+            this.addressCol.MinimumWidth = 8;
+            this.addressCol.Name = "addressCol";
+            this.addressCol.ReadOnly = true;
+            // 
+            // statCol
+            // 
+            this.statCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.statCol.HeaderText = "Status";
+            this.statCol.MinimumWidth = 8;
+            this.statCol.Name = "statCol";
+            this.statCol.ReadOnly = true;
+            this.statCol.Width = 69;
+            // 
             // _Update
             // 
             this._Update.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -287,6 +338,7 @@
             this._Update.TabIndex = 15;
             this._Update.Text = "Update";
             this._Update.UseVisualStyleBackColor = false;
+            this._Update.Visible = false;
             this._Update.Click += new System.EventHandler(this._Update_Click);
             // 
             // _Archive
@@ -360,57 +412,6 @@
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(740, 50);
             this.flowLayoutPanel1.TabIndex = 12;
-            // 
-            // editCol
-            // 
-            this.editCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.editCol.HeaderText = "";
-            this.editCol.MinimumWidth = 60;
-            this.editCol.Name = "editCol";
-            this.editCol.ReadOnly = true;
-            this.editCol.Text = "EDIT";
-            this.editCol.UseColumnTextForButtonValue = true;
-            this.editCol.Width = 60;
-            // 
-            // snCol
-            // 
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.snCol.DefaultCellStyle = dataGridViewCellStyle2;
-            this.snCol.HeaderText = "Name";
-            this.snCol.MinimumWidth = 8;
-            this.snCol.Name = "snCol";
-            this.snCol.ReadOnly = true;
-            // 
-            // cpCol
-            // 
-            this.cpCol.HeaderText = "Contact Person";
-            this.cpCol.MinimumWidth = 120;
-            this.cpCol.Name = "cpCol";
-            this.cpCol.ReadOnly = true;
-            // 
-            // cnCol
-            // 
-            this.cnCol.HeaderText = "Contact Details";
-            this.cnCol.MinimumWidth = 120;
-            this.cnCol.Name = "cnCol";
-            this.cnCol.ReadOnly = true;
-            // 
-            // addressCol
-            // 
-            this.addressCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.addressCol.HeaderText = "Address";
-            this.addressCol.MinimumWidth = 8;
-            this.addressCol.Name = "addressCol";
-            this.addressCol.ReadOnly = true;
-            // 
-            // statCol
-            // 
-            this.statCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.statCol.HeaderText = "Status";
-            this.statCol.MinimumWidth = 8;
-            this.statCol.Name = "statCol";
-            this.statCol.ReadOnly = true;
-            this.statCol.Width = 69;
             // 
             // SupplierManagement
             // 

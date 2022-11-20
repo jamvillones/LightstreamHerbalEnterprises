@@ -216,9 +216,9 @@ namespace Lightstream
         public void ShowWindow()
         {
             // Insert code here to make your form show itself.
-            WinApi.ShowToFront(this.Handle);
+            //WinApi.ShowToFront(this.Handle);
 
-            //ShowShell();
+            ShowShell();
         }
     }
 }

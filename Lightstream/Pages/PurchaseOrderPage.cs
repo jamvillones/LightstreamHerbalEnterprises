@@ -23,8 +23,8 @@ namespace Lightstream
 
         BindingList<PurchaseOrder> _poList = new BindingList<PurchaseOrder>();
 
-        private decimal GrandTotal => _poList.Count == 0 ? 0 : _poList.Sum(x=>x.Total);
-        private int TotalQty => _poList.Count == 0? 0: _poList.Sum(x=>x.Qty);
+        private decimal GrandTotal => _poList.Count == 0 ? 0 : _poList.Sum(x => x.Total);
+        private int TotalQty => _poList.Count == 0 ? 0 : _poList.Sum(x => x.Qty);
 
         private PurchaseOrder? SelectedPO
         {
@@ -78,12 +78,12 @@ namespace Lightstream
                 label2.Text = string.Format("Grand Total: ₱ {0:n}", GrandTotal);
                 label4.Text = "Total Qty: " + TotalQty;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
             }
         }
-        DateFilter dtFilter = DateFilter.Day;
+        DateFilter dtFilter = DateFilter.Moth;
         IEnumerable<PurchaseOrder> FilterByDate(IEnumerable<PurchaseOrder> list)
         {
             switch (dtFilter)
@@ -198,6 +198,7 @@ namespace Lightstream
             //_cancelOrder.Enabled = isPending;
             button1.Enabled = isPending;
             button2.Enabled = isPending || status == PurchaseOrderStatus.Incomplete;
+            _cancelOrder.Enabled = status != PurchaseOrderStatus.Cancelled;
         }
 
         async Task ChangePoStatus(PurchaseOrderStatus status)

@@ -17,7 +17,7 @@ namespace Lightstream
         string password => textBox3.Text.Trim();
         bool isInCountdown => timeCounter > 0;
         bool shouldValidateExit = true;
-        bool isLoginEnabled => !(string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password));
+        bool canLogin => !string.IsNullOrWhiteSpace(username) && !string.IsNullOrWhiteSpace(password) && !isLoading;
         int timeCounter = 0;
         int _attempts = 3;
         public int Attempts
@@ -71,7 +71,7 @@ namespace Lightstream
         }
         private void textFields_TextChanged(object sender, EventArgs e)
         {
-            loginBtn.Enabled = isLoginEnabled && !isInCountdown;
+            loginBtn.Enabled = canLogin && !isInCountdown;
         }
         /// <summary>
         /// the method that handles login validation
@@ -109,24 +109,26 @@ namespace Lightstream
 
         public Login? CurrentLogin { get; private set; }
 
+        bool isLoading = false;
         private async void loginBtn_Click(object sender, EventArgs e)
         {
+            isLoading = true;
             loginBtn.Text = "Logging in...";
-            loginBtn.Enabled = false;
+            loginBtn.Enabled = canLogin;
 
             CurrentLogin = await TryLoginAsync(username, password);
             IsLoginSuccessful = CurrentLogin is not null;
 
             if (!IsLoginSuccessful)
             {
+                isLoading = false;
                 loginBtn.Enabled = true;
                 Attempts--;
-                Main main = new Main();
-                main.WindowState = FormWindowState.Maximized;
                 return;
             }
 
             shouldValidateExit = false;
+            isLoading = false;
             this.Close();
         }
         private void countdownTimer_Tick(object sender, EventArgs e)
@@ -137,7 +139,7 @@ namespace Lightstream
             {
                 Attempts = 3;
 
-                loginBtn.Enabled = isLoginEnabled;
+                loginBtn.Enabled = canLogin;
 
                 loginBtn.Text = "Login";
                 countdownTimer.Stop();

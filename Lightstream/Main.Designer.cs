@@ -611,6 +611,7 @@
             // 
             // _contentsPanel
             // 
+            this._contentsPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_contentsPanel.BackgroundImage")));
             this._contentsPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this._contentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._contentsPanel.Location = new System.Drawing.Point(190, 0);

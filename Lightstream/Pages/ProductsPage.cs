@@ -146,6 +146,8 @@ namespace Lightstream.Usercontrols
             {
                 if (recipeForm.ShowDialog() == DialogResult.OK)
                 {
+                    if (MessageBox.Show("Are you sure you want to add ingredients?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                        return;
                     var recipe = recipeForm.RecipeDetails;
                     if (!RecipeAlreadyPresent(recipe))
                         recipes.Add(new RecipeViewModel(recipe));
@@ -158,11 +160,15 @@ namespace Lightstream.Usercontrols
         }
         private void _removeRecipe_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure you want remove the product?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                return;
             if (SelectedRecipe is null)
                 return;
 
             recipes.Remove(SelectedRecipe);
+
         }
+    
         #endregion
 
         #region add product
@@ -381,6 +387,7 @@ namespace Lightstream.Usercontrols
 
         private async void _archive_retrieve_Click(object sender, EventArgs e)
         {
+
             var s = SelectedProduct;
             if (s is null) return;
 

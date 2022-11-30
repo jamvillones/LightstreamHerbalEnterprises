@@ -260,5 +260,18 @@ namespace Lightstream
                 OpenForm(saleForm);
             }
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ChangeButtonStateUponClick(sender as Button);
+            OpenForm<AuditTrail>();
+        }
+
+        private void _btnSales_Click(object sender, EventArgs e)
+        {
+            ChangeButtonStateUponClick(sender as Button);
+            SalePage sp = new(new SaleService());
+            OpenForm(sp);
+        }
     }
 }

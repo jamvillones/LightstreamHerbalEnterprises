@@ -58,6 +58,9 @@ namespace Lightstream.Usercontrols
 
         void addNewBtn_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure you want to add Ingredients?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                return;
+
             using (var ingredientForm = new Forms.IngredientForm(_ingredientService, new GenericRepository<Unit>()))
             {
                 if (ingredientForm.ShowDialog() == DialogResult.OK)

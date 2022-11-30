@@ -1,4 +1,6 @@
-﻿namespace Lightstream.Forms
+﻿using Lightstream.CustomControls;
+
+namespace Lightstream.Forms
 {
     partial class IngredientForm
     {
@@ -34,10 +36,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.unitOption = new System.Windows.Forms.ComboBox();
-            this.cost = new System.Windows.Forms.NumericUpDown();
+            this.cost = new NumericUpDownNoArrows();
             this.nameTxt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new NumericUpDownNoArrows();
             ((System.ComponentModel.ISupportInitialize)(this.cost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -200,9 +202,9 @@
         private Label label1;
         private Label label2;
         private ComboBox unitOption;
-        private NumericUpDown cost;
+        private NumericUpDownNoArrows cost;
         private TextBox nameTxt;
         private Label label4;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDownNoArrows numericUpDown1;
     }
 }

@@ -21,10 +21,11 @@ namespace Lightstream
         private GenericRepository<Sale> _saleService;
         private BindingList<ProductVariant> _searchedList = new();
         private BindingList<CartItemViewModel> _cart = new();
-
-        public FPOS(GenericRepository<ProductVariant> variantService, GenericRepository<Sale> saleService)
+        private INotifier notificationSource;
+        public FPOS(GenericRepository<ProductVariant> variantService, GenericRepository<Sale> saleService, INotifier source = null)
         {
             InitializeComponent();
+            notificationSource = source;
             SetUpBinding();
             _variantService = variantService;
             _saleService = saleService;
@@ -125,6 +126,7 @@ namespace Lightstream
         {
             ComputeTotalSearch();
             ComputeTotalAndChange();
+            notificationSource?.ShowNotification("Welcome!", $"Please make sure that the time and date is correct.\nCurrent Date and Time: {DateTime.Now.ToString("MMM d, yyyy h:mm tt")}", ToolTipIcon.Info);
         }
         ProductVariant? selectedVariant => _searchTable.SelectedRows.Count == 0 ? null : _searchTable.SelectedRows[0].DataBoundItem as ProductVariant;
         private void button1_Click(object sender, EventArgs e)

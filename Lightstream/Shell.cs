@@ -1,6 +1,7 @@
 ﻿using Lightstream.DataAccess.Models;
 using Lightstream.DataAccess.Repositories;
 using Lightstream.Forms;
+using Lightstream.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Lightstream
 {
-    public partial class Shell : Form
+    public partial class Shell : Form, INotifier
     {
         public Shell()
         {
@@ -68,7 +69,7 @@ namespace Lightstream
 
             //notificationIcon.Icon = icon;
 
-            //notificationIcon.ShowBalloonTip(1, "notif", "test notification", ToolTipIcon.Info);
+           
         }
 
         private void Login_FormClosed(object? sender, FormClosedEventArgs e)
@@ -81,7 +82,7 @@ namespace Lightstream
 
                     userButton.Text = l.CurrentLogin!.FullName ?? "Current User";
                     bool isAdmin = l.CurrentLogin!.UserType == (int)UserType.admin;
-                    Form form = isAdmin ? new Main() : new FPOS(new CartService(), new SaleService());
+                    Form form = isAdmin ? new Main(this) : new FPOS(new CartService(), new SaleService(), this);
                     moduleType.Text = isAdmin ? "Main Control" : "Point of Sale";
                     form.FormClosed += Form_FormClosed;
                     label3.Visible = true;
@@ -219,6 +220,11 @@ namespace Lightstream
             //WinApi.ShowToFront(this.Handle);
 
             ShowShell();
+        }
+
+        public void ShowNotification(string title, string body, ToolTipIcon icon)
+        {
+            notificationIcon.ShowBalloonTip(1, title, body, icon);
         }
     }
 }

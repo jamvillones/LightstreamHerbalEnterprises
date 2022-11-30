@@ -2,6 +2,7 @@
 using Lightstream.DataAccess.Repositories;
 using Lightstream.Forms;
 using Lightstream.Pages;
+using Lightstream.Services;
 using Lightstream.Usercontrols;
 using System;
 using System.Collections.Generic;
@@ -26,10 +27,12 @@ namespace Lightstream
         Color selectedButtonColor = Color.FromArgb(66, 120, 37);
         Color normalButtonColor = Color.FromArgb(45, 45, 45);
         public bool IsLoggedout { get; private set; } = false;
-        public Main()
+        private INotifier notificationHandler;
+        public Main(INotifier source = null)
         {
             InitializeComponent();
 
+            notificationHandler = source;
             collapsiblePanels = new Panel[] {
                 _filesButtonPanel,
                 _transacPanel,
@@ -39,7 +42,7 @@ namespace Lightstream
         }
         private void Main_Load(object sender, EventArgs e)
         {
-
+            notificationHandler.ShowNotification("Welcome!", $"Please make sure that the time and date is correct.\nCurrent Date and Time: {DateTime.Now.ToString("MMM d, yyyy h:mm tt")}", ToolTipIcon.Info);
         }
         private void logout_Click(object sender, EventArgs e)
         {

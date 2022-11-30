@@ -1,4 +1,6 @@
-﻿namespace Lightstream
+﻿using Lightstream.CustomControls;
+
+namespace Lightstream
 {
     partial class FPOS
     {
@@ -60,9 +62,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.priceValue = new System.Windows.Forms.NumericUpDown();
+            this.priceValue = new NumericUpDownNoArrows();
             this.label3 = new System.Windows.Forms.Label();
-            this.qtyValue = new System.Windows.Forms.NumericUpDown();
+            this.qtyValue = new NumericUpDownNoArrows();
             this.pnlPOS2 = new System.Windows.Forms.FlowLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this._cartTable = new System.Windows.Forms.DataGridView();
@@ -75,7 +77,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this._customerOption = new System.Windows.Forms.ComboBox();
-            this.tenderedValue = new System.Windows.Forms.NumericUpDown();
+            this.tenderedValue = new NumericUpDownNoArrows();
             this.discountOption = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -793,9 +795,9 @@
         private DataGridView _searchTable;
         private Label label2;
         private ComboBox discountOption;
-        private NumericUpDown priceValue;
-        private NumericUpDown qtyValue;
-        private NumericUpDown tenderedValue;
+        private NumericUpDownNoArrows priceValue;
+        private NumericUpDownNoArrows qtyValue;
+        private NumericUpDownNoArrows tenderedValue;
         private Label label5;
         private ComboBox _customerOption;
         private SplitContainer splitContainer2;

@@ -1,4 +1,6 @@
-﻿namespace Lightstream.Forms
+﻿using Lightstream.CustomControls;
+
+namespace Lightstream.Forms
 {
     partial class IngredientsPicker
     {
@@ -36,7 +38,7 @@
             this._ingredientsTable = new System.Windows.Forms.DataGridView();
             this._save = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this._cost = new System.Windows.Forms.NumericUpDown();
+            this._cost = new NumericUpDownNoArrows();
             this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this._ingredientsTable)).BeginInit();
@@ -198,7 +200,7 @@
         private DataGridView _ingredientsTable;
         private Button _save;
         private Label label1;
-        private NumericUpDown _cost;
+        private NumericUpDownNoArrows _cost;
         private DataGridViewTextBoxColumn nameCol;
         private DataGridViewTextBoxColumn costCol;
     }

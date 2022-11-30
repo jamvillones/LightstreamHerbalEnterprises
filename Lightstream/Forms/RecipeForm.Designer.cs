@@ -1,4 +1,6 @@
-﻿namespace Lightstream.Forms
+﻿using Lightstream.CustomControls;
+
+namespace Lightstream.Forms
 {
     partial class RecipeForm
     {
@@ -30,7 +32,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecipeForm));
-            this.qty = new System.Windows.Forms.NumericUpDown();
+            this.qty = new NumericUpDownNoArrows();
             this.ingredientOption = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -136,7 +138,7 @@
 
         #endregion
 
-        private NumericUpDown qty;
+        private NumericUpDownNoArrows qty;
         private ComboBox ingredientOption;
         private Label label1;
         private Label label3;

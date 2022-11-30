@@ -1,4 +1,6 @@
-﻿namespace Lightstream.Forms
+﻿using Lightstream.CustomControls;
+
+namespace Lightstream.Forms
 {
     partial class ProductVariantForm
     {
@@ -30,14 +32,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductVariantForm));
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new NumericUpDownNoArrows();
+            this.numericUpDown2 = new NumericUpDownNoArrows();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this._save = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown4 = new NumericUpDownNoArrows();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
@@ -217,13 +219,13 @@
         #endregion
 
         private TextBox textBox1;
-        private NumericUpDown numericUpDown1;
-        private NumericUpDown numericUpDown2;
+        private NumericUpDownNoArrows numericUpDown1;
+        private NumericUpDownNoArrows numericUpDown2;
         private Label label1;
         private Label label2;
         private Button _save;
         private Label label4;
         private Label label5;
-        private NumericUpDown numericUpDown4;
+        private NumericUpDownNoArrows numericUpDown4;
     }
 }

@@ -22,6 +22,9 @@ namespace Lightstream.Forms
 
         private void _save_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure you want to Save this User?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                return;
+
             if (!DoValidation()) return;
 
             if (SaveNewCitizen())

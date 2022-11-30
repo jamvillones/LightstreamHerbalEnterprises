@@ -80,6 +80,9 @@ namespace Lightstream.Forms
 
         private async void _save_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure you want Save Supplier?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                return;
+
             if (!SuccessfullValidation)
             {
                 MessageBox.Show("Supplier must not be empty");

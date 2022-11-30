@@ -61,6 +61,9 @@ namespace Lightstream.Forms
 
         private void _Add_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure you want to Add Unit?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                return;
+            
             /// use using to dispose the form after it is displayed
             using (var addUnitForm = new UnitForm(new GenericRepository<Unit>()))
             {

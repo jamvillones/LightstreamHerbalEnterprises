@@ -204,6 +204,9 @@ namespace Lightstream.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure you want to Add Product Variants?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                return;
+
             if (SelectedProduct is null) return;
 
             var v = OpenVariantForm();
@@ -233,6 +236,9 @@ namespace Lightstream.Forms
         //ool changesMade = true;
         private async void button4_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure you want Save Changes", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                return;
+
             var prod = SelectedProduct;
             if (prod is null) return;
             prod.ProductVariants = variants.ToList();

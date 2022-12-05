@@ -57,6 +57,7 @@ namespace Lightstream
             IsLoggedout = true;
             this.Close();
         }
+
         bool searchMade = false;
         private void srchText_TextChanged(object sender, EventArgs e)
         {
@@ -128,6 +129,7 @@ namespace Lightstream
             ComputeTotalAndChange();
             notificationSource?.ShowNotification("Welcome!", $"Please make sure that the time and date is correct.\nCurrent Date and Time: {DateTime.Now.ToString("MMM d, yyyy h:mm tt")}", ToolTipIcon.Info);
         }
+
         ProductVariant? selectedVariant => _searchTable.SelectedRows.Count == 0 ? null : _searchTable.SelectedRows[0].DataBoundItem as ProductVariant;
         private void button1_Click(object sender, EventArgs e)
         {
@@ -158,10 +160,12 @@ namespace Lightstream
             _cart.Add(new CartItemViewModel(cartItem));
             ComputeTotalAndChange();
         }
+
         CartItemViewModel? CheckIfAlreadyPresentOnCart(ProductVariant v)
         {
             return _cart.FirstOrDefault(x => x.GetData.ProductVariant.Id == v.Id);
         }
+
         decimal GetVatValue => GetTotal * 0.12m;
         decimal GetTendered => tenderedValue.Value;
         decimal GetTotal => _cart.Select(x => x.Total).Sum();
@@ -184,9 +188,7 @@ namespace Lightstream
         {
             if (e.RowIndex == -1) return;
             if (e.ColumnIndex == removeCol.Index)
-            {
                 _cart.RemoveAt(e.RowIndex);
-            }
         }
 
         private async void proc_Click(object sender, EventArgs e)
@@ -202,7 +204,7 @@ namespace Lightstream
                 SoldProducts = _cart.Select(x => x.GetData).ToList(),
             };
 
-            if(GetTendered > 0)
+            if (GetTendered > 0)
             {
                 sale.PaymentRecords.Add(new PaymentRecord() { Amount = GetTendered });
             }
@@ -214,6 +216,7 @@ namespace Lightstream
                 Reset();
             }
         }
+
         void Reset()
         {
             _cart.Clear();

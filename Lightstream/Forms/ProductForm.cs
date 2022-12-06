@@ -18,25 +18,22 @@ using System.Windows.Forms;
 
 namespace Lightstream.Forms
 {
-    public partial class EditProductForm : Form
+    public partial class ProductForm : Form
     {
-        private Product productReferenced;
-        DbContextFactory factory = new DbContextFactory();
+        private Product? productReferenced;
+        public bool EditMode => productReferenced is not null;
         private BindingList<RecipeViewModel> recipes = new BindingList<RecipeViewModel>();
-        private RecipeViewModel? SelectedRecipe => _recipe.RowCount == 0 ? null : _recipe.SelectedRows[0].DataBoundItem as RecipeViewModel;
         BindingList<Unit> units = new BindingList<Unit>();
-        Unit? SelectedUnit
-        {
-            get => _unitOption.SelectedItem is Unit unit ? unit : null;
-            set => _unitOption.SelectedItem = value;
-        }
+        private RecipeViewModel? SelectedRecipe => _recipe.RowCount == 0 ? null : _recipe.SelectedRows[0].DataBoundItem as RecipeViewModel;
 
         GenericRepository<Product> _productService;
         GenericRepository<Unit> _unitService;
-        public EditProductForm(
-            Product product,
+
+        public ProductForm
+            (
             GenericRepository<Product> productService,
-            GenericRepository<Unit> unitService
+            GenericRepository<Unit> unitService,
+            Product? product = null
             )
         {
             InitializeComponent();
@@ -45,7 +42,9 @@ namespace Lightstream.Forms
             _recipe.AutoGenerateColumns = false;
             _unitOption.DisplayMember = nameof(Unit.SingularName);
             _unitOption.DataSource = units;
-            this.productReferenced = product;
+            productReferenced = product;
+
+            this.Text = EditMode ? "Edit Product" : "Create Product";
         }
 
         private void addIngBtn_Click(object sender, EventArgs e)
@@ -79,20 +78,22 @@ namespace Lightstream.Forms
         }
         async Task LoadValues()
         {
-            var prod = productReferenced;
-
             units.Clear();
             foreach (var unit in await _unitService.GetAll_Async())
                 units.Add(unit);
 
-            recipes.Clear();
-            _productName.Text = prod.Name;
-            _description.Text = prod.Description;
-            _barcode.Text = prod.Barcode;
-            SelectedUnit = units.FirstOrDefault(x => x.Id == prod.UnitQty.Id);
+            if (EditMode)
+            {
+                var prod = productReferenced!;
+                _productName.Text = prod.Name;
+                _description.Text = prod.Description;
+                _barcode.Text = prod.Barcode;
+                _unitOption.SelectedItem = units.FirstOrDefault(x => x.Id == prod.UnitQty.Id);
 
-            foreach (var i in prod.Recipes)
-                recipes.Add(new RecipeViewModel(i));
+                recipes.Clear();
+                foreach (var i in prod.Recipes)
+                    recipes.Add(new RecipeViewModel(i));
+            }
         }
 
         private async void _save_Click(object sender, EventArgs e)
@@ -105,13 +106,18 @@ namespace Lightstream.Forms
             if (await ValidationSuccessful())
                 if (await SaveProduct())
                     DialogResult = DialogResult.OK;
-            ///throw new NotImplementedException();
         }
 
         async Task<bool> ValidationSuccessful()
         {
             var products = await _productService.GetAll_Async();
-            if (products.Where(p => p.Barcode != productReferenced.Barcode && !string.IsNullOrWhiteSpace(p.Barcode)).Any(p => p.Barcode == _barcode.Text.Trim()))
+            bool BarcodeTaken = false;
+            if (EditMode)
+                BarcodeTaken = products.Where(p => p.Barcode != productReferenced.Barcode && !string.IsNullOrWhiteSpace(p.Barcode)).Any(p => p.Barcode == _barcode.Text.Trim());
+            else
+                BarcodeTaken = products.Where(p => !string.IsNullOrWhiteSpace(p.Barcode)).Any(p => p.Barcode == _barcode.Text.Trim());
+
+            if (BarcodeTaken)
             {
                 MessageBox.Show("Product number already registered.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -129,20 +135,23 @@ namespace Lightstream.Forms
         //DbContextFactory factory = new DbContextFactory();
         async Task<bool> SaveProduct()
         {
-            var product = await _productService.Update_Async(newProduct);
+            Product? product = null;
+            if (EditMode)
+                product = await _productService.Update_Async(ProductToBeSaved);
+            else
+                product = await _productService.Add_Async(ProductToBeSaved);
 
             this.Tag = product;
-
             return product != null;
         }
 
-        Product newProduct
+        Product ProductToBeSaved
         {
             get
             {
                 return new Product()
                 {
-                    Id = productReferenced.Id,
+                    Id = productReferenced?.Id ?? 0,
                     Name = _productName.Text.Trim(),
                     Barcode = string.IsNullOrWhiteSpace(_barcode.Text) ? null : _barcode.Text.Trim(),
                     Description = string.IsNullOrWhiteSpace(_description.Text) ? null : _description.Text.Trim(),
@@ -166,10 +175,10 @@ namespace Lightstream.Forms
             recipes.RemoveAt(rowIndex);
         }
 
-        private void _cancel_Click(object sender, EventArgs e)
+        private async void _cancel_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to discard changes?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel) return;
-            LoadValues();
+            await LoadValues();
         }
 
         private void _unitOption_Validated(object sender, EventArgs e)
@@ -178,7 +187,7 @@ namespace Lightstream.Forms
             if (u is null)
                 OpenUnitForm();
             else
-                SelectedUnit = u;
+                _unitOption.SelectedItem = u;
         }
 
         void OpenUnitForm()
@@ -191,12 +200,13 @@ namespace Lightstream.Forms
 
             if (result == DialogResult.OK)
             {
-                var unit = unitForm.Tag as Unit;
-
-                units.Add(unit);
-                _unitOption.SelectedItem = unit;
+                //var unit = unitForm.Tag as Unit;
+                if (unitForm.Tag is Unit unit)
+                {
+                    units.Add(unit);
+                    _unitOption.SelectedItem = unit;
+                }
             }
-
         }
     }
 }

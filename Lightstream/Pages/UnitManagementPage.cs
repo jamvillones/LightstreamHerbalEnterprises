@@ -20,7 +20,7 @@ namespace Lightstream.Forms
         {
             get
             {
-                if (_unitsTable.RowCount == 0) return null;
+                if (_unitsTable.SelectedRows.Count == 0) return null;
                 return _unitsTable.SelectedRows[0].DataBoundItem as Unit;
             }
             set => units[_unitsTable.SelectedRows[0].Index] = value;
@@ -59,11 +59,19 @@ namespace Lightstream.Forms
             _statusOption.SelectedIndex = 0;
         }
 
+        private ArchiveStatus SelectedCurrentStatus = ArchiveStatus.Active;
+
+        private async Task ChangeCurrentSelection(ArchiveStatus nextStatus)
+        {
+            SelectedCurrentStatus = nextStatus;
+            await LoadAllUnits();
+        }
+
         private void _Add_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to Add Unit?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
                 return;
-            
+
             /// use using to dispose the form after it is displayed
             using (var addUnitForm = new UnitForm(new GenericRepository<Unit>()))
             {
@@ -121,6 +129,14 @@ namespace Lightstream.Forms
 
             _unitsTable.SelectedRows[0].SetRowColor(su.IsArchived);
             _archive_retrieve.SetButtonBehavior(su.IsArchived);
+
+            if (StatusNotMatched(su.IsArchived, SelectedCurrentStatus))
+                units.Remove(su);
+        }
+
+        private bool StatusNotMatched(bool status, ArchiveStatus archiveStatus)
+        {
+            return status && archiveStatus == ArchiveStatus.Active || !status && archiveStatus == ArchiveStatus.Inactive;
         }
 
         private void _unitsTable_SelectionChanged(object sender, EventArgs e)
@@ -176,7 +192,9 @@ namespace Lightstream.Forms
 
         private async void _statusOption_SelectedIndexChanged(object sender, EventArgs e)
         {
-            await LoadAllUnits();
+            var archiveStatus = (ArchiveStatus)_statusOption.SelectedIndex;
+            await ChangeCurrentSelection(archiveStatus);
+            // await LoadAllUnits();
         }
 
         private void _unitsTable_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

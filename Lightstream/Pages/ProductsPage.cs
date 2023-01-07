@@ -247,8 +247,6 @@ namespace Lightstream.Usercontrols
             CurrentSelectedStatus = nextStatus;
 
             await LoadProducts((int)nextStatus);
-
-            //if(CurrentSelectedStatus == ArchiveStatus.Active)
         }
 
         private void _prodTable_SelectionChanged(object sender, EventArgs e)

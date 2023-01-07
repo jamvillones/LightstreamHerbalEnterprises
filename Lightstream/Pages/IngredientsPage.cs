@@ -113,10 +113,10 @@ namespace Lightstream.Usercontrols
 
             if (!searchSuccessful) return;
 
-            await LoadAllIngredients();
+            await LoadAllIngredientsAsync();
         }
 
-        async Task LoadAllIngredients()
+        async Task LoadAllIngredientsAsync()
         {
             var ingredients = await _ingredientService.GetAll_Async();
             //var i = (ArchiveStatus)_statusOption.SelectedIndex;
@@ -183,10 +183,18 @@ namespace Lightstream.Usercontrols
                 }
             }
         }
-
+        private ArchiveStatus CurrentSelectedStatus = ArchiveStatus.Active;
         private async void _statusOption_SelectedIndexChanged(object sender, EventArgs e)
         {
-            await LoadAllIngredients();
+           await  ChangeSelectionStatus((ArchiveStatus)_statusOption.SelectedIndex);
+           // await LoadAllIngredientsAsync();
+        }
+
+        private async Task ChangeSelectionStatus(ArchiveStatus nextStatus)
+        {
+            CurrentSelectedStatus = nextStatus;
+
+            await LoadAllIngredientsAsync();
         }
 
         Color CriticalQtyColor = Color.FromArgb(238, 200, 200);
@@ -211,6 +219,14 @@ namespace Lightstream.Usercontrols
             var row = _ingredientsTable.SelectedRows[0];
             row.SetRowColor(s.IsArchived);
             _archive_retrieve.SetButtonBehavior(s.IsArchived);
+
+            if (StatusNotMatched(s.IsArchived, CurrentSelectedStatus))
+                ingredients.Remove(s);
+        }
+
+        private bool StatusNotMatched(bool status, ArchiveStatus selectedStatus)
+        {
+            return (status && selectedStatus == ArchiveStatus.Active || !status && selectedStatus == ArchiveStatus.Inactive);
         }
 
         private void _ingredientsTable_SelectionChanged(object sender, EventArgs e)

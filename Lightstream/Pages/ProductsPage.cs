@@ -227,8 +227,28 @@ namespace Lightstream.Usercontrols
 
             await _productService.ToggleArchiveAsync(s);
 
+
             _archive_retrieve.SetButtonBehavior(s.IsArchived);
             _prodTable.SelectedRows[0].SetRowColor(s.IsArchived);
+
+            if (StatusDoNotMatch(s.IsArchived, CurrentSelectedStatus))
+                products.Remove(s);
+        }
+
+        private bool StatusDoNotMatch(bool archiveStatus, ArchiveStatus SelectedStatus)
+        {
+            return archiveStatus && SelectedStatus == ArchiveStatus.Active || !archiveStatus && SelectedStatus == ArchiveStatus.Inactive;
+        }
+
+        private ArchiveStatus CurrentSelectedStatus = ArchiveStatus.Active;
+
+        private async Task ChangeSelectionStatus(ArchiveStatus nextStatus)
+        {
+            CurrentSelectedStatus = nextStatus;
+
+            await LoadProducts((int)nextStatus);
+
+            //if(CurrentSelectedStatus == ArchiveStatus.Active)
         }
 
         private void _prodTable_SelectionChanged(object sender, EventArgs e)
@@ -246,17 +266,20 @@ namespace Lightstream.Usercontrols
 
         private async void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            await LoadProducts((int)ArchiveStatus.Active);
+            //await LoadProducts((int)ArchiveStatus.Active);
+            await ChangeSelectionStatus(ArchiveStatus.Active);
         }
 
         private async void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            await LoadProducts((int)ArchiveStatus.Inactive);
+            //await LoadProducts((int)ArchiveStatus.Inactive);
+            await ChangeSelectionStatus(ArchiveStatus.Inactive);
         }
 
         private async void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-            await LoadProducts((int)ArchiveStatus.All);
+            //await LoadProducts((int)ArchiveStatus.All);
+            await ChangeSelectionStatus(ArchiveStatus.All);
         }
 
         private void button1_Click(object sender, EventArgs e)

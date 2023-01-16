@@ -11,5 +11,7 @@ namespace Lightstream.DataAccess.Models
         public int Id { get; set; }
         public string Name { get; set; } = null!;
         public bool IsArchived { get; set; } = false;
+  
+
     }
 }

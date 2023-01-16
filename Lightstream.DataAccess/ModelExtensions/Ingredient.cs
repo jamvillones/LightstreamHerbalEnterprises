@@ -21,12 +21,12 @@ namespace Lightstream.DataAccess.Models
         {
             get
             {
-                return OrderedTotal - DeductedTotal;
+                return DeductedTotal - OrderedTotal;
             }
         }
 
         public decimal OrderedTotal => PurchaseOrders.Where(x => x.Status == PurchaseOrderStatus.Received).Sum(x => x.Qty);
 
-        public decimal DeductedTotal => Recipes.Select(r => r.Qty * (r.Product.ProductVariants.Select(pv => pv.RequiredQty * (pv.ProductionHistories.Select(ph => ph.QtyProduced).Sum())).Sum())).Sum();
+        public decimal DeductedTotal => Recipes.Select(r => r.Qty + (r.Product.ProductVariants.Select(pv => pv.RequiredQty + (pv.ProductionHistories.Select(ph => ph.QtyProduced).Sum())).Sum())).Sum();
     }
 }

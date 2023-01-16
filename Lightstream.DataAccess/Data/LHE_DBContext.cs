@@ -18,6 +18,7 @@ namespace Lightstream.DataAccess.Data
         }
 
         public virtual DbSet<Ingredient> Ingredients { get; set; } = null!;
+        public virtual DbSet<AuditTrail> AuditTrails { get; set; } = null!;
         public virtual DbSet<Login> Logins { get; set; } = null!;
         public virtual DbSet<Customer> Customers { get; set; } = null!;
         public virtual DbSet<Supplier> Suppliers { get; set; } = null!;

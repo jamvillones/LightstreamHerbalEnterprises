@@ -107,6 +107,7 @@ namespace Lightstream.Forms
             this._variantsTable.Size = new System.Drawing.Size(299, 411);
             this._variantsTable.StandardTab = true;
             this._variantsTable.TabIndex = 10;
+            this._variantsTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._variantsTable_CellContentClick);
             this._variantsTable.SelectionChanged += new System.EventHandler(this._variantsTable_SelectionChanged);
             // 
             // nameCol
@@ -211,6 +212,7 @@ namespace Lightstream.Forms
             this._stockinsTable.Size = new System.Drawing.Size(378, 322);
             this._stockinsTable.StandardTab = true;
             this._stockinsTable.TabIndex = 11;
+            this._stockinsTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._stockinsTable_CellContentClick);
             this._stockinsTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._stockinsTable_CellMouseClick);
             this._stockinsTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._stockinsTable_RowsAdded);
             // 

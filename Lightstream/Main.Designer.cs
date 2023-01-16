@@ -33,7 +33,6 @@
             this._reportsPanel = new System.Windows.Forms.Panel();
             this._btnSales = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this._btnStock = new System.Windows.Forms.Button();
             this._btnExpiration = new System.Windows.Forms.Button();
             this._mainBtn_Reports = new System.Windows.Forms.Button();
             this._inventoryPanel = new System.Windows.Forms.Panel();
@@ -89,12 +88,11 @@
             this._reportsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this._reportsPanel.Controls.Add(this._btnSales);
             this._reportsPanel.Controls.Add(this.button1);
-            this._reportsPanel.Controls.Add(this._btnStock);
             this._reportsPanel.Controls.Add(this._btnExpiration);
             this._reportsPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this._reportsPanel.Location = new System.Drawing.Point(0, 635);
             this._reportsPanel.Name = "_reportsPanel";
-            this._reportsPanel.Size = new System.Drawing.Size(173, 173);
+            this._reportsPanel.Size = new System.Drawing.Size(173, 128);
             this._reportsPanel.TabIndex = 12;
             this._reportsPanel.Visible = false;
             // 
@@ -109,7 +107,7 @@
             this._btnSales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this._btnSales.Image = ((System.Drawing.Image)(resources.GetObject("_btnSales.Image")));
             this._btnSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._btnSales.Location = new System.Drawing.Point(0, 128);
+            this._btnSales.Location = new System.Drawing.Point(0, 83);
             this._btnSales.Margin = new System.Windows.Forms.Padding(5);
             this._btnSales.Name = "_btnSales";
             this._btnSales.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
@@ -133,7 +131,7 @@
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 90);
+            this.button1.Location = new System.Drawing.Point(0, 45);
             this.button1.Margin = new System.Windows.Forms.Padding(5);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
@@ -145,30 +143,6 @@
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // _btnStock
-            // 
-            this._btnStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this._btnStock.Dock = System.Windows.Forms.DockStyle.Top;
-            this._btnStock.FlatAppearance.BorderSize = 0;
-            this._btnStock.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(165)))), ((int)(((byte)(109)))));
-            this._btnStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._btnStock.Font = new System.Drawing.Font("The Bold Font", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this._btnStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this._btnStock.Image = ((System.Drawing.Image)(resources.GetObject("_btnStock.Image")));
-            this._btnStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._btnStock.Location = new System.Drawing.Point(0, 45);
-            this._btnStock.Margin = new System.Windows.Forms.Padding(5);
-            this._btnStock.Name = "_btnStock";
-            this._btnStock.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this._btnStock.Size = new System.Drawing.Size(173, 45);
-            this._btnStock.TabIndex = 6;
-            this._btnStock.TabStop = false;
-            this._btnStock.Text = "  STOCK";
-            this._btnStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._btnStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this._btnStock.UseVisualStyleBackColor = false;
-            this._btnStock.Click += new System.EventHandler(this._btnStock_Click);
             // 
             // _btnExpiration
             // 
@@ -667,7 +641,6 @@
         private Button _btnRawMaterials;
         private Button _btnProductionInventory;
         private Panel _reportsPanel;
-        private Button _btnStock;
         private Button _btnExpiration;
         private Panel panel1;
         private Button _utilities;

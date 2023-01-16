@@ -53,6 +53,7 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label4 = new System.Windows.Forms.Label();
             this.topPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -142,6 +143,7 @@
             this.userButton.Text = "Username";
             this.userButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.userButton.UseVisualStyleBackColor = true;
+            this.userButton.Click += new System.EventHandler(this.userButton_Click);
             // 
             // logoutButton
             // 
@@ -292,7 +294,7 @@
             this.divider.Panel2.Controls.Add(this._notifPanel);
             this.divider.Panel2MinSize = 175;
             this.divider.Size = new System.Drawing.Size(1262, 649);
-            this.divider.SplitterDistance = 812;
+            this.divider.SplitterDistance = 814;
             this.divider.SplitterWidth = 3;
             this.divider.TabIndex = 7;
             // 
@@ -301,7 +303,7 @@
             this.contentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentsPanel.Location = new System.Drawing.Point(0, 0);
             this.contentsPanel.Name = "contentsPanel";
-            this.contentsPanel.Size = new System.Drawing.Size(812, 649);
+            this.contentsPanel.Size = new System.Drawing.Size(814, 649);
             this.contentsPanel.TabIndex = 1;
             // 
             // _notifPanel
@@ -309,11 +311,12 @@
             this._notifPanel.AutoScroll = true;
             this._notifPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(225)))), ((int)(((byte)(205)))));
             this._notifPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._notifPanel.Controls.Add(this.label4);
             this._notifPanel.Controls.Add(this.label2);
             this._notifPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._notifPanel.Location = new System.Drawing.Point(0, 0);
             this._notifPanel.Name = "_notifPanel";
-            this._notifPanel.Size = new System.Drawing.Size(447, 649);
+            this._notifPanel.Size = new System.Drawing.Size(445, 649);
             this._notifPanel.TabIndex = 5;
             // 
             // label2
@@ -322,7 +325,7 @@
             this.label2.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(445, 30);
+            this.label2.Size = new System.Drawing.Size(443, 30);
             this.label2.TabIndex = 0;
             this.label2.Text = "Notifications";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -366,6 +369,16 @@
             this.signOutToolStripMenuItem.Text = "Sign Out";
             this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(50, 59);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 15);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "label4";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
             // Shell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -392,6 +405,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.divider)).EndInit();
             this.divider.ResumeLayout(false);
             this._notifPanel.ResumeLayout(false);
+            this._notifPanel.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -422,5 +436,6 @@
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripMenuItem signOutToolStripMenuItem;
         private Label label3;
+        private Label label4;
     }
 }

@@ -36,10 +36,10 @@ namespace Lightstream.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.unitOption = new System.Windows.Forms.ComboBox();
-            this.cost = new NumericUpDownNoArrows();
+            this.cost = new Lightstream.CustomControls.NumericUpDownNoArrows();
             this.nameTxt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new NumericUpDownNoArrows();
+            this.numericUpDown1 = new Lightstream.CustomControls.NumericUpDownNoArrows();
             ((System.ComponentModel.ISupportInitialize)(this.cost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -63,9 +63,9 @@ namespace Lightstream.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(12, 125);
+            this.label3.Location = new System.Drawing.Point(16, 68);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 19);
+            this.label3.Size = new System.Drawing.Size(125, 21);
             this.label3.TabIndex = 26;
             this.label3.Text = "Unit of Measurement:";
             // 
@@ -73,11 +73,12 @@ namespace Lightstream.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 67);
+            this.label1.Location = new System.Drawing.Point(20, 186);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 19);
+            this.label1.Size = new System.Drawing.Size(80, 21);
             this.label1.TabIndex = 25;
             this.label1.Text = "Default Cost:";
+            this.label1.Visible = false;
             // 
             // label2
             // 
@@ -85,7 +86,7 @@ namespace Lightstream.Forms
             this.label2.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 19);
+            this.label2.Size = new System.Drawing.Size(101, 21);
             this.label2.TabIndex = 24;
             this.label2.Text = "Ingredient name:";
             // 
@@ -97,7 +98,7 @@ namespace Lightstream.Forms
             this.unitOption.DisplayMember = "Name";
             this.unitOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unitOption.FormattingEnabled = true;
-            this.unitOption.Location = new System.Drawing.Point(12, 147);
+            this.unitOption.Location = new System.Drawing.Point(18, 92);
             this.unitOption.Name = "unitOption";
             this.unitOption.Size = new System.Drawing.Size(353, 23);
             this.unitOption.TabIndex = 22;
@@ -107,7 +108,7 @@ namespace Lightstream.Forms
             this.cost.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cost.DecimalPlaces = 2;
-            this.cost.Location = new System.Drawing.Point(12, 89);
+            this.cost.Location = new System.Drawing.Point(20, 210);
             this.cost.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -127,6 +128,7 @@ namespace Lightstream.Forms
             0,
             0,
             0});
+            this.cost.Visible = false;
             // 
             // nameTxt
             // 
@@ -134,7 +136,7 @@ namespace Lightstream.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nameTxt.BackColor = System.Drawing.Color.White;
             this.nameTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nameTxt.Location = new System.Drawing.Point(12, 31);
+            this.nameTxt.Location = new System.Drawing.Point(19, 33);
             this.nameTxt.Name = "nameTxt";
             this.nameTxt.Size = new System.Drawing.Size(353, 23);
             this.nameTxt.TabIndex = 21;
@@ -144,9 +146,9 @@ namespace Lightstream.Forms
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(12, 183);
+            this.label4.Location = new System.Drawing.Point(16, 128);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 19);
+            this.label4.Size = new System.Drawing.Size(109, 21);
             this.label4.TabIndex = 28;
             this.label4.Text = "Critical Qty Value:";
             // 
@@ -155,7 +157,7 @@ namespace Lightstream.Forms
             this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Location = new System.Drawing.Point(12, 205);
+            this.numericUpDown1.Location = new System.Drawing.Point(20, 151);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             999999999,
             0,

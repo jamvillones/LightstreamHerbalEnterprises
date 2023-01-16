@@ -91,6 +91,7 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
             this.panel1.Size = new System.Drawing.Size(233, 30);
             this.panel1.TabIndex = 4;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox1
             // 
@@ -102,6 +103,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // userNameLine
             // 
@@ -111,6 +113,7 @@
             this.userNameLine.Name = "userNameLine";
             this.userNameLine.Size = new System.Drawing.Size(223, 2);
             this.userNameLine.TabIndex = 5;
+            this.userNameLine.Paint += new System.Windows.Forms.PaintEventHandler(this.userNameLine_Paint);
             // 
             // panel3
             // 
@@ -123,6 +126,7 @@
             this.panel3.Padding = new System.Windows.Forms.Padding(5);
             this.panel3.Size = new System.Drawing.Size(233, 30);
             this.panel3.TabIndex = 5;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // pictureBox2
             // 
@@ -134,6 +138,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // textBox3
             // 
@@ -156,6 +161,7 @@
             this.passwordLine.Name = "passwordLine";
             this.passwordLine.Size = new System.Drawing.Size(223, 2);
             this.passwordLine.TabIndex = 5;
+            this.passwordLine.Paint += new System.Windows.Forms.PaintEventHandler(this.passwordLine_Paint);
             // 
             // label1
             // 
@@ -168,6 +174,7 @@
             this.label1.Size = new System.Drawing.Size(213, 37);
             this.label1.TabIndex = 6;
             this.label1.Text = "Lightstream\r\n";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // countdownTimer
             // 
@@ -185,6 +192,7 @@
             this.label2.Size = new System.Drawing.Size(57, 19);
             this.label2.TabIndex = 7;
             this.label2.Text = "Login";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // LoginForm
             // 

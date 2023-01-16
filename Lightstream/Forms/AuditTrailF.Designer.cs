@@ -1,6 +1,6 @@
 ﻿namespace Lightstream.Forms
 {
-    partial class AuditTrail
+    partial class AuditTrailF
     {
         /// <summary>
         /// Required designer variable.

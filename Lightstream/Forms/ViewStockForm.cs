@@ -149,5 +149,15 @@ namespace Lightstream.Forms
                 ChangesMade = true;
             }
         }
+
+        private void _variantsTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void _stockinsTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -226,5 +226,15 @@ namespace Lightstream
             tenderedValue.Value = tenderedValue.Minimum;
             ComputeTotalAndChange();
         }
+
+        private void discountOption_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void _customerOption_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

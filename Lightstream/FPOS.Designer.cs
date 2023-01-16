@@ -62,9 +62,9 @@ namespace Lightstream
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.priceValue = new NumericUpDownNoArrows();
+            this.priceValue = new Lightstream.CustomControls.NumericUpDownNoArrows();
             this.label3 = new System.Windows.Forms.Label();
-            this.qtyValue = new NumericUpDownNoArrows();
+            this.qtyValue = new Lightstream.CustomControls.NumericUpDownNoArrows();
             this.pnlPOS2 = new System.Windows.Forms.FlowLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this._cartTable = new System.Windows.Forms.DataGridView();
@@ -77,7 +77,7 @@ namespace Lightstream
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this._customerOption = new System.Windows.Forms.ComboBox();
-            this.tenderedValue = new NumericUpDownNoArrows();
+            this.tenderedValue = new Lightstream.CustomControls.NumericUpDownNoArrows();
             this.discountOption = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -671,11 +671,15 @@ namespace Lightstream
             this._customerOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._customerOption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._customerOption.FormattingEnabled = true;
+            this._customerOption.Items.AddRange(new object[] {
+            "Walkin",
+            "Order"});
             this._customerOption.Location = new System.Drawing.Point(87, 35);
             this._customerOption.Margin = new System.Windows.Forms.Padding(2);
             this._customerOption.Name = "_customerOption";
             this._customerOption.Size = new System.Drawing.Size(332, 27);
             this._customerOption.TabIndex = 6;
+            this._customerOption.SelectedIndexChanged += new System.EventHandler(this._customerOption_SelectedIndexChanged);
             // 
             // tenderedValue
             // 
@@ -702,11 +706,17 @@ namespace Lightstream
             this.discountOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.discountOption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.discountOption.FormattingEnabled = true;
+            this.discountOption.Items.AddRange(new object[] {
+            "Regular",
+            "Senior",
+            "Student",
+            "PWD"});
             this.discountOption.Location = new System.Drawing.Point(87, 70);
             this.discountOption.Margin = new System.Windows.Forms.Padding(2);
             this.discountOption.Name = "discountOption";
             this.discountOption.Size = new System.Drawing.Size(332, 27);
             this.discountOption.TabIndex = 1;
+            this.discountOption.SelectedIndexChanged += new System.EventHandler(this.discountOption_SelectedIndexChanged);
             // 
             // label4
             // 

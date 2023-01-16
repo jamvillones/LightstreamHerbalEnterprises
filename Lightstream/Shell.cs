@@ -1,4 +1,5 @@
-﻿using Lightstream.DataAccess.Models;
+﻿using Lightstream.DataAccess.Data;
+using Lightstream.DataAccess.Models;
 using Lightstream.DataAccess.Repositories;
 using Lightstream.Forms;
 using Lightstream.Services;
@@ -71,12 +72,17 @@ namespace Lightstream
 
            
         }
-
+        GenericRepository<Ingredient> _ingService;
         private void Login_FormClosed(object? sender, FormClosedEventArgs e)
         {
             if (sender is LoginForm l)
                 if (l.IsLoginSuccessful)
                 {
+                    //using (var save_audit = new save_audit(new GenericRepository<Unit>())){}
+                        //save_audit sa = new save_audit(new GenericRepository<Unit>());
+                    //sa.save_trailAsync("admin", "admin", "login");
+
+
                     userButton.Enabled = true;
                     logoutButton.Enabled = true;
 
@@ -96,8 +102,10 @@ namespace Lightstream
             {
                 if (f.IsLoggedout)
                 {
+                    userButton.Visible = false;
                     var login = new LoginForm();
                     login.FormClosed += Login_FormClosed;
+                   
                     AddControl(login);
                 }
             }
@@ -144,7 +152,7 @@ namespace Lightstream
             form.Logout();
             if (form.IsLoggedout)
             {
-                userButton.Enabled = false;
+               
                 logoutButton.Enabled = false;
                 moduleType.Text = string.Empty;
                 label3.Visible = false;
@@ -225,6 +233,16 @@ namespace Lightstream
         public void ShowNotification(string title, string body, ToolTipIcon icon)
         {
             notificationIcon.ShowBalloonTip(1, title, body, icon);
+        }
+
+        private void userButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            label4.Text = nameof(ProductVariant.StockQty); 
         }
     }
 }

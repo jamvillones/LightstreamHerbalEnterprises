@@ -2,19 +2,10 @@
 using Lightstream.DataAccess.Repositories;
 using Lightstream.Extensions;
 using Lightstream.Services;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Lightstream.Extensions;
 
-namespace Lightstream.Forms
-{
+namespace Lightstream.Forms {
     public partial class SupplierManagement : Form
     {
         Supplier? SelectedSupplier
